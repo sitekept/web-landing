@@ -4,39 +4,39 @@ import { Rocket, Shield, Zap, Target, Code, Users } from "lucide-react";
 const features = [
   {
     icon: Zap,
-    title: "Lightning Fast Delivery",
+    title: "Livraison Ultra-Rapide",
     description:
-      "From brief to live website in 48-72 hours. No lengthy processes, just results.",
+      "Du brief au site web en ligne en 48-72 heures. Pas de processus longs, que des résultats.",
   },
   {
     icon: Shield,
-    title: "Production-Ready Quality",
+    title: "Qualité Prête pour la Production",
     description:
-      "Every site is built with scalability, security, and performance in mind from day one.",
+      "Chaque site est conçu avec l'évolutivité, la sécurité et la performance en tête dès le premier jour.",
   },
   {
     icon: Code,
-    title: "Modern Tech Stack",
+    title: "Stack Technologique Moderne",
     description:
-      "Next.js, TypeScript, Tailwind CSS - we use the best tools for optimal performance.",
+      "Next.js, TypeScript, Tailwind CSS - nous utilisons les meilleurs outils pour une performance optimale.",
   },
   {
     icon: Target,
-    title: "Conversion Focused",
+    title: "Axé sur la Conversion",
     description:
-      "Beautiful designs that don&apos;t just look good - they convert visitors into customers.",
+      "Des designs magnifiques qui ne font pas que bien paraître - ils convertissent les visiteurs en clients.",
   },
   {
     icon: Rocket,
-    title: "Scalable Architecture",
+    title: "Architecture Évolutive",
     description:
-      "Built to grow with your business. From startup to enterprise, we&apos;ve got you covered.",
+      "Conçu pour grandir avec votre entreprise. De la startup à l'entreprise, nous vous couvrons.",
   },
   {
     icon: Users,
-    title: "Expert Team",
+    title: "Équipe d'Experts",
     description:
-      "Senior developers and designers who&apos;ve shipped hundreds of successful projects.",
+      "Développeurs et designers seniors qui ont livré des centaines de projets réussis.",
   },
 ];
 
@@ -46,11 +46,10 @@ export function ValueProposition() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Why Choose Us?
+            Pourquoi Nous Choisir ?
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            We&apos;re not just another web agency. We&apos;re your rapid
-            deployment partner, built for speed without compromising on quality.
+            Nous ne sommes pas juste une autre agence web. Nous sommes votre partenaire de déploiement rapide, conçu pour la vitesse sans compromettre la qualité.
           </p>
         </div>
 

@@ -6,7 +6,7 @@ import { Menu, X, Zap } from "lucide-react";
 
 const navItems = [
   { name: "Services", href: "#services" },
-  { name: "Team", href: "#team" },
+  { name: "Équipe", href: "#team" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -75,7 +75,7 @@ export function Navigation() {
               onClick={() => scrollToSection("#contact")}
               className="bg-blue-600 text-white hover:bg-blue-700"
             >
-              Get Started
+              Commencer
             </Button>
           </div>
 
@@ -112,7 +112,7 @@ export function Navigation() {
                   onClick={() => scrollToSection("#contact")}
                   className="w-full bg-blue-600 text-white hover:bg-blue-700"
                 >
-                  Get Started
+                  Commencer
                 </Button>
               </div>
             </div>

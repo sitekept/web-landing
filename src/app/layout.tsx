@@ -5,27 +5,27 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SiteKept - Lightning-Fast Website Development Agency",
+  title: "SiteKept - Agence de Développement Web Ultra-Rapide",
   description:
-    "We build production-ready websites in 48-72 hours. From landing pages to e-commerce sites, we deliver fast, scalable, and conversion-focused websites that grow your business.",
+    "Nous créons des sites web prêts pour la production en 48-72 heures. Des pages d'atterrissage aux sites e-commerce, nous livrons des sites rapides, évolutifs et axés sur la conversion qui font croître votre entreprise.",
   keywords:
-    "web development, website design, Next.js, React, landing pages, e-commerce, fast delivery, agency",
-  authors: [{ name: "SiteKept Team" }],
+    "développement web, conception de site web, Next.js, React, pages d'atterrissage, e-commerce, livraison rapide, agence",
+  authors: [{ name: "Équipe SiteKept" }],
   creator: "SiteKept",
   publisher: "SiteKept",
   openGraph: {
-    title: "SiteKept - Lightning-Fast Website Development",
+    title: "SiteKept - Développement Web Ultra-Rapide",
     description:
-      "Professional websites delivered in 48-72 hours. Modern tech stack, scalable architecture, conversion-focused design.",
+      "Sites web professionnels livrés en 48-72 heures. Stack technologique moderne, architecture évolutive, design axé sur la conversion.",
     url: "https://sitekept.com",
     siteName: "SiteKept",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SiteKept - Lightning-Fast Website Development",
+    title: "SiteKept - Développement Web Ultra-Rapide",
     description:
-      "Professional websites delivered in 48-72 hours. Modern tech stack, scalable architecture, conversion-focused design.",
+      "Sites web professionnels livrés en 48-72 heures. Stack technologique moderne, architecture évolutive, design axé sur la conversion.",
     creator: "@sitekept",
   },
   robots: {
@@ -52,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="fr" className="scroll-smooth">
       <body className={inter.className}>{children}</body>
     </html>
   );

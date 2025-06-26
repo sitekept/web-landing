@@ -5,9 +5,9 @@ import * as z from "zod";
 import { ENV } from "@/lib/env";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
+  email: z.string().email("Veuillez entrer une adresse email valide"),
+  message: z.string().min(10, "Le message doit contenir au moins 10 caractères"),
 });
 
 export async function submitContactForm(formData: FormData) {
@@ -26,18 +26,18 @@ export async function submitContactForm(formData: FormData) {
     const apiKey = ENV.RESEND_API_KEY;
     if (!apiKey) {
       // Development mode - log the form submission
-      console.log("📧 Contact Form Submission (Development Mode):");
-      console.log("Name:", validatedData.name);
+      console.log("📧 Soumission Formulaire de Contact (Mode Développement):");
+      console.log("Nom:", validatedData.name);
       console.log("Email:", validatedData.email);
       console.log("Message:", validatedData.message);
-      console.log("Timestamp:", new Date().toLocaleString());
+      console.log("Horodatage:", new Date().toLocaleString());
       console.log(
-        "⚠️  To send actual emails, configure RESEND_API_KEY in .env"
+        "⚠️  Pour envoyer de vrais emails, configurez RESEND_API_KEY dans .env"
       );
 
       return {
         success: true,
-        message: "Message received! (Development mode - check console logs)",
+        message: "Message reçu ! (Mode développement - vérifiez les logs de la console)",
       };
     }
 
@@ -52,75 +52,75 @@ export async function submitContactForm(formData: FormData) {
     const { data: emailData, error } = await resend.emails.send({
       from: fromEmail,
       to: [toEmail],
-      subject: `New Contact Form Submission from ${validatedData.name}`,
+      subject: `Nouvelle soumission de formulaire de contact de ${validatedData.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
-            New Contact Form Submission
+            Nouvelle Soumission de Formulaire de Contact
           </h2>
           
           <div style="margin: 20px 0;">
-            <h3 style="color: #374151; margin-bottom: 5px;">Contact Information:</h3>
-            <p style="margin: 5px 0;"><strong>Name:</strong> ${validatedData.name}</p>
-            <p style="margin: 5px 0;"><strong>Email:</strong> ${validatedData.email}</p>
+            <h3 style="color: #374151; margin-bottom: 5px;">Informations de Contact :</h3>
+            <p style="margin: 5px 0;"><strong>Nom :</strong> ${validatedData.name}</p>
+            <p style="margin: 5px 0;"><strong>Email :</strong> ${validatedData.email}</p>
           </div>
           
           <div style="margin: 20px 0;">
-            <h3 style="color: #374151; margin-bottom: 5px;">Message:</h3>
+            <h3 style="color: #374151; margin-bottom: 5px;">Message :</h3>
             <div style="background-color: #f9fafb; padding: 15px; border-radius: 5px; border-left: 4px solid #2563eb;">
               ${validatedData.message.replace(/\n/g, "<br>")}
             </div>
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px;">
-            <p>This email was sent from the SiteKept contact form on ${new Date().toLocaleString()}.</p>
-            <p><strong>Reply to:</strong> ${validatedData.email}</p>
+            <p>Cet email a été envoyé depuis le formulaire de contact SiteKept le ${new Date().toLocaleString()}.</p>
+            <p><strong>Répondre à :</strong> ${validatedData.email}</p>
           </div>
         </div>
       `,
       text: `
-        New Contact Form Submission
+        Nouvelle Soumission de Formulaire de Contact
         
-        Name: ${validatedData.name}
+        Nom: ${validatedData.name}
         Email: ${validatedData.email}
         
         Message:
         ${validatedData.message}
         
-        Sent on: ${new Date().toLocaleString()}
-        Reply to: ${validatedData.email}
+        Envoyé le: ${new Date().toLocaleString()}
+        Répondre à: ${validatedData.email}
       `,
       replyTo: validatedData.email,
     });
 
     if (error) {
-      console.error("Resend error:", error);
+      console.error("Erreur Resend:", error);
 
       // Handle specific domain verification error
       if (error.message && error.message.includes("domain is not verified")) {
         return {
           success: false,
           error:
-            "Email configuration error. Please contact us directly at sitekept@gmail.com",
+            "Erreur de configuration email. Veuillez nous contacter directement à sitekept@gmail.com",
         };
       }
 
-      return { success: false, error: "Failed to send email" };
+      return { success: false, error: "Échec de l'envoi de l'email" };
     }
 
-    console.log("Email sent successfully:", emailData);
-    return { success: true, message: "Email sent successfully" };
+    console.log("Email envoyé avec succès:", emailData);
+    return { success: true, message: "Email envoyé avec succès" };
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("Erreur formulaire de contact:", error);
 
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        error: "Invalid form data",
+        error: "Données de formulaire invalides",
         details: error.errors,
       };
     }
 
-    return { success: false, error: "Failed to send email" };
+    return { success: false, error: "Échec de l'envoi de l'email" };
   }
 }

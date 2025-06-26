@@ -36,11 +36,11 @@ function SubmitButton() {
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Sending...
+          Envoi...
         </>
       ) : (
         <>
-          Send Message
+          Envoyer le Message
           <Send className="ml-2 h-4 w-4" />
         </>
       )}
@@ -49,7 +49,7 @@ function SubmitButton() {
 }
 
 export function ContactForm({
-  title = "Send us a message",
+  title = "Envoyez-nous un message",
   description,
   className,
   onSubmit,
@@ -64,12 +64,12 @@ export function ContactForm({
       // Use provided onSubmit handler or default behavior
       const result = onSubmit 
         ? await onSubmit(formData)
-        : { success: false, error: "No submit handler provided" };
+        : { success: false, error: "Aucun gestionnaire de soumission fourni" };
 
       if (result.success) {
         setStatus({ 
           type: "success", 
-          message: "Message sent successfully! We'll get back to you within 2 hours." 
+          message: "Message envoyé avec succès ! Nous vous recontacterons sous 2 heures." 
         });
         
         // Reset form
@@ -78,14 +78,14 @@ export function ContactForm({
       } else {
         setStatus({ 
           type: "error", 
-          message: result.error || "Failed to send message. Please try again." 
+          message: result.error || "Échec de l'envoi du message. Veuillez réessayer." 
         });
       }
     } catch (error) {
-      console.error("Contact form error:", error);
+      console.error("Erreur formulaire de contact:", error);
       setStatus({ 
         type: "error", 
-        message: "An unexpected error occurred. Please try again." 
+        message: "Une erreur inattendue s'est produite. Veuillez réessayer." 
       });
     }
   }
@@ -118,7 +118,7 @@ export function ContactForm({
         {/* Name Field */}
         <div className="space-y-2">
           <Label htmlFor="name" className="text-sm font-medium">
-            Name *
+            Nom *
           </Label>
           <Input
             id="name"
@@ -126,7 +126,7 @@ export function ContactForm({
             required
             minLength={2}
             maxLength={100}
-            placeholder="Your full name"
+            placeholder="Votre nom complet"
             className="w-full"
             autoComplete="name"
           />
@@ -143,7 +143,7 @@ export function ContactForm({
             type="email"
             required
             maxLength={255}
-            placeholder="your@email.com"
+            placeholder="votre@email.com"
             className="w-full"
             autoComplete="email"
           />
@@ -152,13 +152,13 @@ export function ContactForm({
         {/* Subject Field (Optional) */}
         <div className="space-y-2">
           <Label htmlFor="subject" className="text-sm font-medium">
-            Subject
+            Sujet
           </Label>
           <Input
             id="subject"
             name="subject"
             maxLength={200}
-            placeholder="What's this about?"
+            placeholder="De quoi s'agit-il ?"
             className="w-full"
           />
         </div>
@@ -175,7 +175,7 @@ export function ContactForm({
             minLength={10}
             maxLength={2000}
             rows={5}
-            placeholder="Tell us about your project, timeline, and any specific requirements..."
+            placeholder="Parlez-nous de votre projet, délais et exigences spécifiques..."
             className="w-full resize-y"
           />
         </div>
@@ -203,7 +203,7 @@ export function ContactForm({
         <div className="flex flex-col sm:flex-row gap-3 pt-2">
           <SubmitButton />
           <p className="text-xs text-slate-500 self-center">
-            We typically respond within 2 hours during business hours
+            Nous répondons généralement sous 2 heures pendant les heures ouvrables
           </p>
         </div>
       </form>
@@ -228,7 +228,7 @@ export function ContactForm({
             {/* Name Field */}
             <div className="space-y-2">
               <Label htmlFor="name" className="text-sm font-medium">
-                Name *
+                Nom *
               </Label>
               <Input
                 id="name"
@@ -236,7 +236,7 @@ export function ContactForm({
                 required
                 minLength={2}
                 maxLength={100}
-                placeholder="Your full name"
+                placeholder="Votre nom complet"
                 className="w-full"
                 autoComplete="name"
               />
@@ -253,7 +253,7 @@ export function ContactForm({
                 type="email"
                 required
                 maxLength={255}
-                placeholder="your@email.com"
+                placeholder="votre@email.com"
                 className="w-full"
                 autoComplete="email"
               />
@@ -262,13 +262,13 @@ export function ContactForm({
             {/* Subject Field (Optional) */}
             <div className="space-y-2">
               <Label htmlFor="subject" className="text-sm font-medium">
-                Subject
+                Sujet
               </Label>
               <Input
                 id="subject"
                 name="subject"
                 maxLength={200}
-                placeholder="What's this about?"
+                placeholder="De quoi s'agit-il ?"
                 className="w-full"
               />
             </div>
@@ -285,7 +285,7 @@ export function ContactForm({
                 minLength={10}
                 maxLength={2000}
                 rows={5}
-                placeholder="Tell us about your project, timeline, and any specific requirements..."
+                placeholder="Parlez-nous de votre projet, délais et exigences spécifiques..."
                 className="w-full resize-y"
               />
             </div>
@@ -313,7 +313,7 @@ export function ContactForm({
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <SubmitButton />
               <p className="text-xs text-slate-500 self-center">
-                We typically respond within 2 hours during business hours
+                Nous répondons généralement sous 2 heures pendant les heures ouvrables
               </p>
             </div>
           </form>

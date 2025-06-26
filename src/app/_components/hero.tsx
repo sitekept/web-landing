@@ -10,21 +10,18 @@ export function Hero() {
       <div className="relative mx-auto max-w-4xl text-center">
         <div className="mb-8 inline-flex items-center rounded-full bg-slate-800/50 px-4 py-2 text-sm text-slate-300 ring-1 ring-slate-700">
           <Zap className="mr-2 h-4 w-4 text-yellow-400" />
-          Ship faster. Scale better. Win more.
+          Livrez plus vite. Évoluez mieux. Gagnez plus.
         </div>
 
         <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          We Build{" "}
+          Nous Créons des{" "}
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
-            Lightning-Fast
-          </span>{" "}
-          Websites
+            Sites Ultra-Rapides
+          </span>
         </h1>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-          From concept to launch in record time. We&apos;re the agency that
-          turns your vision into production-ready websites that perform, scale,
-          and convert.
+          Du concept au lancement en un temps record. Nous sommes l&apos;agence qui transforme votre vision en sites web prêts pour la production qui performent, évoluent et convertissent.
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
@@ -37,7 +34,7 @@ export function Hero() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Start Your Project
+            Démarrer Votre Projet
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button
@@ -50,22 +47,22 @@ export function Hero() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            View Our Work
+            Voir Nos Réalisations
           </Button>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
           <div className="text-center">
             <div className="text-3xl font-bold text-white">48h</div>
-            <div className="text-sm text-slate-400">Average Delivery</div>
+            <div className="text-sm text-slate-400">Livraison Moyenne</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-white">99%</div>
-            <div className="text-sm text-slate-400">Client Satisfaction</div>
+            <div className="text-sm text-slate-400">Satisfaction Client</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-white">100+</div>
-            <div className="text-sm text-slate-400">Projects Shipped</div>
+            <div className="text-sm text-slate-400">Projets Livrés</div>
           </div>
         </div>
       </div>

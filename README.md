@@ -1,81 +1,81 @@
-# SiteKept - Agency Landing Page
+# SiteKept - Page d'Atterrissage d'Agence
 
-A modern, high-performance landing page for a web development agency built with Next.js 15, TypeScript, and Tailwind CSS. Features rapid development focus, clean design, and production-ready architecture.
+Une page d'atterrissage moderne et haute performance pour une agence de développement web construite avec Next.js 15, TypeScript et Tailwind CSS. Met l'accent sur le développement rapide, un design épuré et une architecture prête pour la production.
 
-## 🚀 Features
+## 🚀 Fonctionnalités
 
-- **Modern Tech Stack**: Next.js 15, TypeScript, Tailwind CSS, shadcn/ui
-- **Responsive Design**: Mobile-first approach with beautiful UI across all devices
-- **Performance Optimized**: Fast loading times and smooth animations
-- **Contact Form**: Integrated contact form with email notifications via server actions and Resend
-- **SEO Ready**: Proper meta tags, structured data, and semantic HTML
-- **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
+- **Stack Technologique Moderne** : Next.js 15, TypeScript, Tailwind CSS, shadcn/ui
+- **Design Responsive** : Approche mobile-first avec une belle interface sur tous les appareils
+- **Optimisé pour la Performance** : Temps de chargement rapides et animations fluides
+- **Formulaire de Contact** : Formulaire de contact intégré avec notifications email via les actions serveur et Resend
+- **Prêt pour le SEO** : Balises meta appropriées, données structurées et HTML sémantique
+- **Accessibilité** : Conforme WCAG avec labels ARIA appropriés et navigation au clavier
 
 ## 📋 Sections
 
-1. **Hero Section**: Compelling headline with call-to-action
-2. **Value Proposition**: Key benefits and differentiators
-3. **Services**: Detailed service offerings with pricing
-4. **Team**: Team member profiles and credentials
-5. **Call-to-Action**: Secondary conversion section
-6. **Contact Form**: Lead capture with validation using server actions
-7. **Footer**: Company information and links
+1. **Section Héros** : Titre accrocheur avec appel à l'action
+2. **Proposition de Valeur** : Avantages clés et différenciateurs
+3. **Services** : Offres de services détaillées avec tarification
+4. **Équipe** : Profils et références des membres de l'équipe
+5. **Appel à l'Action** : Section de conversion secondaire
+6. **Formulaire de Contact** : Capture de prospects avec validation utilisant les actions serveur
+7. **Pied de Page** : Informations de l'entreprise et liens
 
 ## 🛠️ Installation
 
-1. **Clone the repository**
+1. **Cloner le dépôt**
 
    ```bash
    git clone <repository-url>
    cd sitekept
    ```
 
-2. **Install dependencies**
+2. **Installer les dépendances**
 
    ```bash
    pnpm install
    ```
 
-3. **Set up environment variables**
+3. **Configurer les variables d'environnement**
 
    ```bash
    cp .env.example .env.local
    ```
 
-   Fill in your email configuration:
+   Remplissez votre configuration email :
 
    ```
-   RESEND_API_KEY=your-resend-api-key
+   RESEND_API_KEY=votre-clé-api-resend
    FROM_EMAIL=SiteKept <sitekept@gmail.com>
    AGENCY_EMAIL=sitekept@gmail.com
    ```
 
-4. **Run the development server**
+4. **Lancer le serveur de développement**
 
    ```bash
    pnpm dev
    ```
 
-5. **Open [http://localhost:3000](http://localhost:3000)**
+5. **Ouvrir [http://localhost:3000](http://localhost:3000)**
 
-## 📧 Email Setup
+## 📧 Configuration Email
 
-The contact form uses server actions with Resend to send emails:
+Le formulaire de contact utilise les actions serveur avec Resend pour envoyer des emails :
 
-1. Sign up for a free account at [Resend](https://resend.com)
-2. Create an API key in your Resend dashboard
-3. Add your domain and verify it (for production)
-4. Use the API key in the `RESEND_API_KEY` environment variable
-5. Set your verified sending domain in `FROM_EMAIL`
+1. Créez un compte gratuit sur [Resend](https://resend.com)
+2. Créez une clé API dans votre tableau de bord Resend
+3. Ajoutez votre domaine et vérifiez-le (pour la production)
+4. Utilisez la clé API dans la variable d'environnement `RESEND_API_KEY`
+5. Définissez votre domaine d'envoi vérifié dans `FROM_EMAIL`
 
-For development, you can use Resend's test mode without domain verification.
+Pour le développement, vous pouvez utiliser le mode test de Resend sans vérification de domaine.
 
-## 🏗️ Project Structure
+## 🏗️ Structure du Projet
 
 ```
 src/
 ├── app/
-│   ├── _components/            # Internal components for root page
+│   ├── _components/            # Composants internes pour la page racine
 │   │   ├── hero.tsx
 │   │   ├── value-proposition.tsx
 │   │   ├── services.tsx
@@ -83,117 +83,117 @@ src/
 │   │   ├── contact.tsx
 │   │   └── cta.tsx
 │   ├── actions/
-│   │   └── contact.ts          # Server action for contact form
-│   ├── globals.css             # Global styles
-│   ├── layout.tsx              # Root layout with metadata
-│   └── page.tsx                # Main landing page
+│   │   └── contact.ts          # Action serveur pour le formulaire de contact
+│   ├── globals.css             # Styles globaux
+│   ├── layout.tsx              # Layout racine avec métadonnées
+│   └── page.tsx                # Page d'atterrissage principale
 ├── components/
-│   ├── ui/                     # shadcn/ui components
-│   ├── navigation.tsx          # Main navigation
-│   └── footer.tsx              # Footer component
+│   ├── ui/                     # Composants shadcn/ui
+│   ├── navigation.tsx          # Navigation principale
+│   └── footer.tsx              # Composant pied de page
 └── lib/
-    └── utils.ts                # Utility functions
+    └── utils.ts                # Fonctions utilitaires
 ```
 
-## 🎨 Design System
+## 🎨 Système de Design
 
-- **Colors**: Blue primary (#2563eb), Slate grays
-- **Typography**: Inter font family
-- **Components**: shadcn/ui component library
-- **Icons**: Lucide React icons
-- **Animations**: Tailwind CSS transitions
+- **Couleurs** : Bleu primaire (#2563eb), Gris ardoise
+- **Typographie** : Famille de polices Inter
+- **Composants** : Bibliothèque de composants shadcn/ui
+- **Icônes** : Icônes Lucide React
+- **Animations** : Transitions Tailwind CSS
 
-## 🚀 Deployment
+## 🚀 Déploiement
 
-### Vercel (Recommended)
+### Vercel (Recommandé)
 
-1. Connect your repository to Vercel
-2. Add environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+1. Connectez votre dépôt à Vercel
+2. Ajoutez les variables d'environnement dans le tableau de bord Vercel
+3. Déployez automatiquement lors du push vers la branche main
 
-### Other Platforms
+### Autres Plateformes
 
-1. Build the project:
+1. Construisez le projet :
 
    ```bash
    pnpm build
    ```
 
-2. Start the production server:
+2. Démarrez le serveur de production :
    ```bash
    pnpm start
    ```
 
 ## 📊 Performance
 
-- **Lighthouse Score**: 95+ across all metrics
-- **Core Web Vitals**: Optimized for excellent UX
-- **Image Optimization**: Next.js automatic image optimization
-- **Bundle Size**: Optimized with tree-shaking and code splitting
+- **Score Lighthouse** : 95+ sur toutes les métriques
+- **Core Web Vitals** : Optimisé pour une excellente UX
+- **Optimisation d'Images** : Optimisation automatique d'images Next.js
+- **Taille du Bundle** : Optimisé avec tree-shaking et code splitting
 
-## 🔧 Customization
+## 🔧 Personnalisation
 
-### Content Updates
+### Mises à Jour de Contenu
 
-- Update company information in components
-- Modify services and pricing in `_components/services.tsx`
-- Update team members in `_components/team.tsx`
-- Change contact information in `_components/contact.tsx` and `components/footer.tsx`
+- Mettez à jour les informations de l'entreprise dans les composants
+- Modifiez les services et tarifs dans `_components/services.tsx`
+- Mettez à jour les membres de l'équipe dans `_components/team.tsx`
+- Changez les informations de contact dans `_components/contact.tsx` et `components/footer.tsx`
 
-### Styling
+### Style
 
-- Modify colors in `globals.css`
-- Update component styles using Tailwind classes
-- Customize shadcn/ui components in `components/ui/`
+- Modifiez les couleurs dans `globals.css`
+- Mettez à jour les styles des composants en utilisant les classes Tailwind
+- Personnalisez les composants shadcn/ui dans `components/ui/`
 
-### Functionality
+### Fonctionnalité
 
-- Add new sections by creating components in `app/_components/`
-- Extend the contact form with additional fields in `_components/contact.tsx` and `actions/contact.ts`
-- Add analytics tracking (Google Analytics, etc.)
+- Ajoutez de nouvelles sections en créant des composants dans `app/_components/`
+- Étendez le formulaire de contact avec des champs supplémentaires dans `_components/contact.tsx` et `actions/contact.ts`
+- Ajoutez le suivi analytique (Google Analytics, etc.)
 
-## 📱 Mobile Optimization
+## 📱 Optimisation Mobile
 
-- Responsive navigation with mobile menu
-- Touch-friendly buttons and forms
-- Optimized images for different screen sizes
-- Fast loading on mobile networks
+- Navigation responsive avec menu mobile
+- Boutons et formulaires adaptés au tactile
+- Images optimisées pour différentes tailles d'écran
+- Chargement rapide sur les réseaux mobiles
 
-## 🔒 Security
+## 🔒 Sécurité
 
-- Form validation with Zod
-- Rate limiting on contact form (recommended to add)
-- Secure email handling
-- Environment variable protection
+- Validation de formulaire avec Zod
+- Limitation de débit sur le formulaire de contact (recommandé à ajouter)
+- Gestion sécurisée des emails
+- Protection des variables d'environnement
 
-## 📈 SEO Features
+## 📈 Fonctionnalités SEO
 
-- Semantic HTML structure
-- Meta tags and Open Graph
-- Structured data markup
-- Sitemap generation
-- Fast loading speeds
+- Structure HTML sémantique
+- Balises meta et Open Graph
+- Balisage de données structurées
+- Génération de sitemap
+- Vitesses de chargement rapides
 
-## 🧪 Testing
+## 🧪 Tests
 
-Run the development server and test:
+Lancez le serveur de développement et testez :
 
-- Form submission functionality
-- Navigation smooth scrolling
-- Mobile responsiveness
-- Email delivery (check spam folder)
+- Fonctionnalité de soumission de formulaire
+- Défilement fluide de la navigation
+- Réactivité mobile
+- Livraison d'email (vérifiez le dossier spam)
 
 ## 📞 Support
 
-For questions or issues:
+Pour questions ou problèmes :
 
-- Email: sitekept@gmail.com
-- Create an issue in the repository
+- Email : sitekept@gmail.com
+- Créez un problème dans le dépôt
 
-## 📄 License
+## 📄 Licence
 
-This project is licensed under the MIT License.
+Ce projet est sous licence MIT.
 
 ---
 
-Built with ❤️ using Next.js, TypeScript, and modern web technologies.
+Construit avec ❤️ en utilisant Next.js, TypeScript et les technologies web modernes.

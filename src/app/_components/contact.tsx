@@ -16,10 +16,10 @@ function SubmitButton() {
   return (
     <Button type="submit" disabled={pending} className="w-full" size="lg">
       {pending ? (
-        "Sending..."
+        "Envoi en cours..."
       ) : (
         <>
-          Send Message
+          Envoyer le Message
           <Send className="ml-2 h-4 w-4" />
         </>
       )}
@@ -46,7 +46,7 @@ export function Contact() {
       form?.reset();
     } else {
       setSubmitStatus("error");
-      setErrorMessage(result.error || "Failed to send message");
+      setErrorMessage(result.error || "Échec de l'envoi du message");
     }
   }
 
@@ -55,11 +55,10 @@ export function Contact() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Let&apos;s Build Something Amazing
+            Construisons Quelque Chose d&apos;Extraordinaire
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Ready to transform your vision into reality? Get in touch and
-            let&apos;s discuss your project.
+            Prêt à transformer votre vision en réalité ? Contactez-nous et discutons de votre projet.
           </p>
         </div>
 
@@ -68,46 +67,36 @@ export function Contact() {
           <div className="space-y-8">
             <div>
               <h3 className="mb-6 text-xl font-semibold text-slate-900">
-                Get in Touch
+                Nous Contacter
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Mail className="mr-3 h-5 w-5 text-blue-600" />
                   <span className="text-slate-600">sitekept@gmail.com</span>
                 </div>
-                {/* TODO: Add phone number 
-                <div className="flex items-center">
-                  <Phone className="h-5 w-5 text-blue-600 mr-3" />
-                  <span className="text-slate-600">+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="h-5 w-5 text-blue-600 mr-3" />
-                  <span className="text-slate-600">Paris, France</span>
-                </div>
-                */}
               </div>
             </div>
 
             <div>
               <h4 className="mb-4 text-lg font-semibold text-slate-900">
-                What to Expect
+                À Quoi S&apos;Attendre
               </h4>
               <ul className="space-y-3 text-slate-600">
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Response within 2 hours during business hours
+                  Réponse sous 2 heures pendant les heures ouvrables
                 </li>
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Free consultation and project scoping
+                  Consultation gratuite et définition du projet
                 </li>
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Detailed proposal within 24 hours
+                  Proposition détaillée sous 24 heures
                 </li>
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Project kickoff within 48 hours of approval
+                  Lancement du projet sous 48 heures après approbation
                 </li>
               </ul>
             </div>
@@ -116,7 +105,7 @@ export function Contact() {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle>Send us a message</CardTitle>
+              <CardTitle>Envoyez-nous un message</CardTitle>
             </CardHeader>
             <CardContent>
               <form
@@ -125,14 +114,14 @@ export function Contact() {
                 className="space-y-6"
               >
                 <div>
-                  <Label htmlFor="name">Name *</Label>
+                  <Label htmlFor="name">Nom *</Label>
                   <Input
                     id="name"
                     name="name"
                     required
                     minLength={2}
                     className="mt-1"
-                    placeholder="Your full name"
+                    placeholder="Votre nom complet"
                   />
                 </div>
 
@@ -144,7 +133,7 @@ export function Contact() {
                     type="email"
                     required
                     className="mt-1"
-                    placeholder="your@email.com"
+                    placeholder="votre@email.com"
                   />
                 </div>
 
@@ -157,7 +146,7 @@ export function Contact() {
                     minLength={10}
                     className="mt-1"
                     rows={5}
-                    placeholder="Tell us about your project, timeline, and any specific requirements..."
+                    placeholder="Parlez-nous de votre projet, délais et exigences spécifiques..."
                   />
                 </div>
 
@@ -165,8 +154,7 @@ export function Contact() {
                   <div className="flex items-center rounded-md bg-green-50 p-4 text-green-800">
                     <CheckCircle className="mr-2 h-5 w-5" />
                     <span className="text-sm">
-                      Message sent successfully! We&apos;ll get back to you
-                      within 2 hours.
+                      Message envoyé avec succès ! Nous vous recontacterons sous 2 heures.
                     </span>
                   </div>
                 )}
@@ -176,7 +164,7 @@ export function Contact() {
                     <AlertCircle className="mr-2 h-5 w-5" />
                     <span className="text-sm">
                       {errorMessage ||
-                        "Failed to send message. Please try again or email us directly."}
+                        "Échec de l'envoi du message. Veuillez réessayer ou nous contacter directement par email."}
                     </span>
                   </div>
                 )}

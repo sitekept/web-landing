@@ -13,55 +13,55 @@ import {
 const services = [
   {
     icon: Globe,
-    title: "Landing Pages",
+    title: "Pages d'Atterrissage",
     description:
-      "High-converting landing pages that turn visitors into customers. Optimized for speed and conversions.",
+      "Pages d'atterrissage à haute conversion qui transforment les visiteurs en clients. Optimisées pour la vitesse et les conversions.",
     features: [
-      "A/B Test Ready",
-      "SEO Optimized",
+      "Prêt pour les Tests A/B",
+      "Optimisé SEO",
       "Mobile First",
-      "Analytics Integrated",
+      "Analytics Intégrées",
     ],
-    price: "From $1,499",
+    price: "À partir de 1 499€",
   },
   {
     icon: ShoppingCart,
-    title: "E-commerce Sites",
+    title: "Sites E-commerce",
     description:
-      "Full-featured online stores built for scale. From product catalogs to checkout optimization.",
+      "Boutiques en ligne complètes conçues pour l'évolutivité. Des catalogues produits à l'optimisation du checkout.",
     features: [
-      "Payment Integration",
-      "Inventory Management",
-      "Admin Dashboard",
-      "Mobile Commerce",
+      "Intégration Paiement",
+      "Gestion Inventaire",
+      "Tableau de Bord Admin",
+      "Commerce Mobile",
     ],
-    price: "From $2,999",
+    price: "À partir de 2 999€",
   },
   {
     icon: Building,
-    title: "Corporate Websites",
+    title: "Sites Corporate",
     description:
-      "Professional corporate presence that builds trust and drives business growth.",
+      "Présence corporate professionnelle qui inspire confiance et stimule la croissance des affaires.",
     features: [
-      "CMS Integration",
-      "Multi-language",
-      "Team Portals",
-      "Brand Guidelines",
+      "Intégration CMS",
+      "Multi-langues",
+      "Portails Équipe",
+      "Guidelines de Marque",
     ],
-    price: "From $2,499",
+    price: "À partir de 2 499€",
   },
   {
     icon: Palette,
-    title: "Custom Solutions",
+    title: "Solutions Sur Mesure",
     description:
-      "Unique web applications tailored to your specific business needs and workflows.",
+      "Applications web uniques adaptées aux besoins spécifiques de votre entreprise et à vos flux de travail.",
     features: [
-      "Custom Features",
-      "API Integration",
-      "Database Design",
-      "Ongoing Support",
+      "Fonctionnalités Personnalisées",
+      "Intégration API",
+      "Conception Base de Données",
+      "Support Continu",
     ],
-    price: "Custom Quote",
+    price: "Devis Personnalisé",
   },
 ];
 
@@ -71,11 +71,10 @@ export function Services() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Our Services
+            Nos Services
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            From simple landing pages to complex web applications, we deliver
-            exactly what your business needs to succeed online.
+            Des simples pages d&apos;atterrissage aux applications web complexes, nous livrons exactement ce dont votre entreprise a besoin pour réussir en ligne.
           </p>
         </div>
 
@@ -118,7 +117,7 @@ export function Services() {
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
                   >
-                    Get Started <ArrowRight className="ml-2 h-4 w-4" />
+                    Commencer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
               </CardContent>
@@ -128,8 +127,7 @@ export function Services() {
 
         <div className="mt-16 text-center">
           <p className="mb-4 text-sm text-slate-500">
-            All projects include: Free hosting setup • SSL certificate • Mobile
-            optimization • Basic SEO
+            Tous les projets incluent : Configuration hébergement gratuite • Certificat SSL • Optimisation mobile • SEO de base
           </p>
           <Button
             size="lg"
@@ -139,7 +137,7 @@ export function Services() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Discuss Your Project
+            Discuter de Votre Projet
           </Button>
         </div>
       </div>

@@ -15,15 +15,15 @@ interface ContactFormStandaloneProps {
  * This component can be used anywhere in the app where a contact form is needed
  */
 export function ContactFormStandalone({
-  title = "Contact Us",
-  description = "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+  title = "Nous Contacter",
+  description = "Nous aimerions avoir de vos nouvelles. Envoyez-nous un message et nous vous répondrons dès que possible.",
   className,
   showCard = true,
   onSubmit,
 }: ContactFormStandaloneProps) {
   const defaultSubmitHandler = async (formData: FormData) => {
     // Default behavior - log to console in development
-    console.log("Contact form submitted:", {
+    console.log("Formulaire de contact soumis:", {
       name: formData.get("name"),
       email: formData.get("email"),
       subject: formData.get("subject"),
@@ -35,7 +35,7 @@ export function ContactFormStandalone({
     
     return { 
       success: true, 
-      message: "Message received! We'll get back to you soon." 
+      message: "Message reçu ! Nous vous recontacterons bientôt." 
     };
   };
 

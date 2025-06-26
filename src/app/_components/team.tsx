@@ -5,8 +5,8 @@ import { Github, Linkedin, Twitter } from "lucide-react";
 const team = [
   {
     name: "Alex Chen",
-    role: "Lead Developer",
-    bio: "Full-stack wizard with 8+ years building scalable web applications. Next.js expert.",
+    role: "Développeur Principal",
+    bio: "Magicien full-stack avec 8+ années à construire des applications web évolutives. Expert Next.js.",
     image:
       "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
     social: {
@@ -17,8 +17,8 @@ const team = [
   },
   {
     name: "Sarah Johnson",
-    role: "UI/UX Designer",
-    bio: "Design systems architect who creates beautiful, conversion-focused user experiences.",
+    role: "Designer UI/UX",
+    bio: "Architecte de systèmes de design qui crée de belles expériences utilisateur axées sur la conversion.",
     image:
       "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
     social: {
@@ -29,8 +29,8 @@ const team = [
   },
   {
     name: "Mike Rodriguez",
-    role: "DevOps Engineer",
-    bio: "Cloud infrastructure specialist ensuring your sites are fast, secure, and always online.",
+    role: "Ingénieur DevOps",
+    bio: "Spécialiste infrastructure cloud qui s'assure que vos sites sont rapides, sécurisés et toujours en ligne.",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
     social: {
@@ -41,8 +41,8 @@ const team = [
   },
   {
     name: "Emma Thompson",
-    role: "Project Manager",
-    bio: "Agile expert who keeps projects on track and ensures seamless client communication.",
+    role: "Chef de Projet",
+    bio: "Experte Agile qui maintient les projets sur la bonne voie et assure une communication client fluide.",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
     social: {
@@ -59,11 +59,10 @@ export function Team() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Meet Our Team
+            Rencontrez Notre Équipe
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Seasoned professionals with a track record of delivering exceptional
-            results for clients across industries.
+            Professionnels expérimentés avec un historique de livraison de résultats exceptionnels pour des clients de tous secteurs.
           </p>
         </div>
 
@@ -92,21 +91,21 @@ export function Team() {
                   <a
                     href={member.social.github}
                     className="text-slate-400 transition-colors hover:text-slate-600"
-                    aria-label={`${member.name}'s GitHub`}
+                    aria-label={`GitHub de ${member.name}`}
                   >
                     <Github className="h-5 w-5" />
                   </a>
                   <a
                     href={member.social.linkedin}
                     className="text-slate-400 transition-colors hover:text-slate-600"
-                    aria-label={`${member.name}'s LinkedIn`}
+                    aria-label={`LinkedIn de ${member.name}`}
                   >
                     <Linkedin className="h-5 w-5" />
                   </a>
                   <a
                     href={member.social.twitter}
                     className="text-slate-400 transition-colors hover:text-slate-600"
-                    aria-label={`${member.name}'s Twitter`}
+                    aria-label={`Twitter de ${member.name}`}
                   >
                     <Twitter className="h-5 w-5" />
                   </a>
@@ -119,22 +118,22 @@ export function Team() {
         <div className="mt-16 text-center">
           <div className="mx-auto max-w-2xl">
             <h3 className="mb-4 text-xl font-semibold text-slate-900">
-              Why Experience Matters
+              Pourquoi l&apos;Expérience Compte
             </h3>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
               <div>
                 <div className="text-2xl font-bold text-blue-600">25+</div>
                 <div className="text-sm text-slate-600">
-                  Years Combined Experience
+                  Années d&apos;Expérience Combinée
                 </div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-blue-600">500+</div>
-                <div className="text-sm text-slate-600">Projects Delivered</div>
+                <div className="text-sm text-slate-600">Projets Livrés</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-blue-600">50+</div>
-                <div className="text-sm text-slate-600">Happy Clients</div>
+                <div className="text-sm text-slate-600">Clients Satisfaits</div>
               </div>
             </div>
           </div>

@@ -14,24 +14,14 @@ export function Footer() {
               <span className="text-xl font-bold text-white">SiteKept</span>
             </div>
             <p className="mb-4 text-sm text-slate-400">
-              Lightning-fast website development for modern businesses.
-              Professional, scalable, and ready to convert.
+              Développement web ultra-rapide pour les entreprises modernes.
+              Professionnel, évolutif et prêt à convertir.
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-sm text-slate-400">
                 <Mail className="mr-2 h-4 w-4" />
                 sitekept@gmail.com
               </div>
-              {/* TODO: Add phone number 
-              <div className="flex items-center text-sm text-slate-400">
-                <Phone className="h-4 w-4 mr-2" />
-                +1 (555) 123-4567
-              </div>
-              <div className="flex items-center text-sm text-slate-400">
-                <MapPin className="h-4 w-4 mr-2" />
-                San Francisco, CA
-              </div>
-              */}
             </div>
           </div>
 
@@ -39,21 +29,21 @@ export function Footer() {
           <div>
             <h3 className="mb-4 font-semibold text-white">Services</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Landing Pages</li>
-              <li>E-commerce Sites</li>
-              <li>Corporate Websites</li>
-              <li>Custom Solutions</li>
+              <li>Pages d&apos;Atterrissage</li>
+              <li>Sites E-commerce</li>
+              <li>Sites Corporate</li>
+              <li>Solutions Sur Mesure</li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">Company</h3>
+            <h3 className="mb-4 font-semibold text-white">Entreprise</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>About Us</li>
-              <li>Our Process</li>
-              <li>Case Studies</li>
-              <li>Careers</li>
+              <li>À Propos</li>
+              <li>Notre Processus</li>
+              <li>Études de Cas</li>
+              <li>Carrières</li>
             </ul>
           </div>
 
@@ -61,17 +51,17 @@ export function Footer() {
           <div>
             <h3 className="mb-4 font-semibold text-white">Support</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Help Center</li>
-              <li>Contact Support</li>
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
+              <li>Centre d&apos;Aide</li>
+              <li>Support Contact</li>
+              <li>Politique de Confidentialité</li>
+              <li>Conditions d&apos;Utilisation</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 border-t border-slate-800 pt-8 text-center">
           <p className="text-sm text-slate-400">
-            © 2025 SiteKept. All rights reserved. Built with Next.js and ❤️
+            © 2025 SiteKept. Tous droits réservés. Créé avec Next.js et ❤️
           </p>
         </div>
       </div>

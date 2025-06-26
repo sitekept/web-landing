@@ -10,20 +10,18 @@ export function CallToAction() {
       <div className="relative mx-auto max-w-4xl text-center">
         <div className="mb-8 inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm text-blue-100 backdrop-blur-sm">
           <Sparkles className="mr-2 h-4 w-4" />
-          Ready to launch your next project?
+          Prêt à lancer votre prochain projet ?
         </div>
 
         <h2 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-          Your Website,{" "}
+          Votre Site Web,{" "}
           <span className="bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
-            Live in 48 Hours
+            En Ligne en 48 Heures
           </span>
         </h2>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-blue-100 sm:text-xl">
-          Don&apos;t wait months for your website. Join the fast lane with our
-          rapid development process. Professional, scalable, and ready to
-          convert from day one.
+          N&apos;attendez pas des mois pour votre site web. Rejoignez la voie rapide avec notre processus de développement accéléré. Professionnel, évolutif et prêt à convertir dès le premier jour.
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
@@ -36,7 +34,7 @@ export function CallToAction() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Start Your Project Today
+            Démarrez Votre Projet Aujourd&apos;hui
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button
@@ -45,28 +43,28 @@ export function CallToAction() {
             className="border-white/30 px-8 py-4 text-lg font-bold text-yellow-500 backdrop-blur-sm hover:bg-white/10"
             onClick={() => window.open("mailto:sitekept@gmail.com", "_blank")}
           >
-            Email Us Directly
+            Nous Contacter Directement
           </Button>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
           <div className="text-center">
-            <div className="mb-2 text-3xl font-bold text-white">Free</div>
-            <div className="text-sm text-blue-200">Consultation & Quote</div>
+            <div className="mb-2 text-3xl font-bold text-white">Gratuit</div>
+            <div className="text-sm text-blue-200">Consultation & Devis</div>
           </div>
           <div className="text-center">
             <div className="mb-2 text-3xl font-bold text-white">48-72h</div>
-            <div className="text-sm text-blue-200">Typical Delivery Time</div>
+            <div className="text-sm text-blue-200">Délai de Livraison Typique</div>
           </div>
           <div className="text-center">
             <div className="mb-2 text-3xl font-bold text-white">100%</div>
-            <div className="text-sm text-blue-200">Satisfaction Guarantee</div>
+            <div className="text-sm text-blue-200">Garantie Satisfaction</div>
           </div>
         </div>
 
         <div className="mt-12 text-center">
           <p className="text-sm text-blue-200">
-            No contracts • No hidden fees • No lengthy processes
+            Pas de contrats • Pas de frais cachés • Pas de processus longs
           </p>
         </div>
       </div>
