@@ -13,6 +13,27 @@ export const metadata: Metadata = {
   authors: [{ name: "Équipe SiteKept" }],
   creator: "SiteKept",
   publisher: "SiteKept",
+  icons: {
+    icon: [
+      {
+        url: "/my-favicon/icon0.svg",
+        type: "image/svg+xml",
+      },
+      {
+        url: "/my-favicon/icon1.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    apple: [
+      {
+        url: "/my-favicon/apple-icon.png",
+        type: "image/png",
+        sizes: "180x180",
+      },
+    ],
+  },
+  manifest: "/my-favicon/site.webmanifest",
   openGraph: {
     title: "SiteKept - Développement Web Ultra-Rapide",
     description:
@@ -53,6 +74,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className="scroll-smooth">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="SiteKept" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
