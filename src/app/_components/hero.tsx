@@ -40,7 +40,7 @@ export function Hero() {
           <Button
             variant="outline"
             size="lg"
-            className="group border-slate-600 px-8 py-3 text-lg text-slate-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:border-transparent hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
+            className="group border-white/30 bg-white/10 px-8 py-3 text-lg text-white backdrop-blur-sm hover:bg-black hover:border-black hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-black/25"
             onClick={() =>
               document
                 .getElementById("services")
