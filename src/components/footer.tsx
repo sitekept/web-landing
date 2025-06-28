@@ -14,8 +14,8 @@ export function Footer() {
               <span className="text-xl font-bold text-white">SiteKept</span>
             </div>
             <p className="mb-4 text-sm text-slate-400">
-              Développement web ultra-rapide pour les entreprises modernes.
-              Professionnel, évolutif et prêt à convertir.
+              Création de sites web haute performance pour entreprises ambitieuses.
+              Technologie de pointe, design moderne, résultats garantis.
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-sm text-slate-400">
@@ -27,23 +27,23 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">Services</h3>
+            <h3 className="mb-4 font-semibold text-white">Nos Solutions</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Pages d&apos;Atterrissage</li>
-              <li>Sites E-commerce</li>
+              <li>Sites Vitrines</li>
+              <li>E-commerce</li>
               <li>Sites Corporate</li>
-              <li>Solutions Sur Mesure</li>
+              <li>Développement Sur Mesure</li>
             </ul>
           </div>
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">Entreprise</h3>
+            <h3 className="mb-4 font-semibold text-white">SiteKept</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>À Propos</li>
-              <li>Notre Processus</li>
-              <li>Études de Cas</li>
-              <li>Carrières</li>
+              <li>Notre Approche</li>
+              <li>Processus</li>
+              <li>Réalisations</li>
+              <li>Rejoindre l&apos;Équipe</li>
             </ul>
           </div>
 
@@ -52,8 +52,8 @@ export function Footer() {
             <h3 className="mb-4 font-semibold text-white">Support</h3>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>Centre d&apos;Aide</li>
-              <li>Support Contact</li>
-              <li>Politique de Confidentialité</li>
+              <li>Contact Support</li>
+              <li>Confidentialité</li>
               <li>Conditions d&apos;Utilisation</li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="mt-8 border-t border-slate-800 pt-8 text-center">
           <p className="text-sm text-slate-400">
-            © 2025 SiteKept. Tous droits réservés. Créé avec Next.js et ❤️
+            © 2025 SiteKept. Tous droits réservés. Créé avec passion et Next.js ⚡
           </p>
         </div>
       </div>

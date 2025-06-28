@@ -4,39 +4,39 @@ import { Rocket, Shield, Zap, Target, Code, Users } from "lucide-react";
 const features = [
   {
     icon: Zap,
-    title: "Livraison Ultra-Rapide",
+    title: "Livraison Express 48h",
     description:
-      "Du brief au site web en ligne en 48-72 heures. Pas de processus longs, que des résultats.",
+      "Votre site en ligne en 48h chrono ! Pas de délais interminables, que des résultats concrets et rapides.",
   },
   {
     icon: Shield,
-    title: "Qualité Prête pour la Production",
+    title: "Qualité Professionnelle",
     description:
-      "Chaque site est conçu avec l'évolutivité, la sécurité et la performance en tête dès le premier jour.",
+      "Sites robustes et évolutifs dès le premier jour. Sécurité, performance et fiabilité garanties.",
   },
   {
     icon: Code,
-    title: "Stack Technologique Moderne",
+    title: "Technologies de Pointe",
     description:
-      "Next.js, TypeScript, Tailwind CSS - nous utilisons les meilleurs outils pour une performance optimale.",
+      "Next.js, TypeScript, Tailwind CSS - nous utilisons les meilleures technologies pour des performances optimales.",
   },
   {
     icon: Target,
-    title: "Axé sur la Conversion",
+    title: "Conçu pour Convertir",
     description:
-      "Des designs magnifiques qui ne font pas que bien paraître - ils convertissent les visiteurs en clients.",
+      "Chaque élément est pensé pour transformer vos visiteurs en clients. Design persuasif et expérience utilisateur optimisée.",
   },
   {
     icon: Rocket,
-    title: "Architecture Évolutive",
+    title: "Évolutif et Puissant",
     description:
-      "Conçu pour grandir avec votre entreprise. De la startup à l'entreprise, nous vous couvrons.",
+      "Votre site grandit avec votre business. De la startup à l&apos;entreprise, nous anticipons votre croissance.",
   },
   {
     icon: Users,
-    title: "Équipe d'Experts",
+    title: "Équipe d&apos;Experts",
     description:
-      "Développeurs et designers seniors qui ont livré des centaines de projets réussis.",
+      "Développeurs et designers seniors avec des centaines de projets réussis. Votre succès est notre priorité.",
   },
 ];
 
@@ -46,10 +46,10 @@ export function ValueProposition() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Pourquoi Nous Choisir ?
+            Pourquoi Choisir SiteKept ?
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Nous ne sommes pas juste une autre agence web. Nous sommes votre partenaire de déploiement rapide, conçu pour la vitesse sans compromettre la qualité.
+            Nous ne sommes pas une agence comme les autres. Nous sommes vos partenaires pour un succès digital immédiat, sans compromis sur la qualité.
           </p>
         </div>
 

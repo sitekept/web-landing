@@ -19,7 +19,7 @@ function SubmitButton() {
         "Envoi en cours..."
       ) : (
         <>
-          Envoyer le Message
+          Lancer Mon Projet
           <Send className="ml-2 h-4 w-4" />
         </>
       )}
@@ -55,10 +55,10 @@ export function Contact() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Construisons Quelque Chose d&apos;Extraordinaire
+            Transformons Votre Vision en Succès
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Prêt à transformer votre vision en réalité ? Contactez-nous et discutons de votre projet.
+            Prêt à révolutionner votre présence en ligne ? Contactez-nous et découvrez comment nous pouvons propulser votre business vers de nouveaux sommets.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export function Contact() {
           <div className="space-y-8">
             <div>
               <h3 className="mb-6 text-xl font-semibold text-slate-900">
-                Nous Contacter
+                Parlons de Votre Projet
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -79,24 +79,24 @@ export function Contact() {
 
             <div>
               <h4 className="mb-4 text-lg font-semibold text-slate-900">
-                À Quoi S&apos;Attendre
+                Notre Engagement
               </h4>
               <ul className="space-y-3 text-slate-600">
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Réponse sous 2 heures pendant les heures ouvrables
+                  Réponse sous 2h pendant les heures ouvrables
                 </li>
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Consultation gratuite et définition du projet
+                  Consultation stratégique gratuite et sans engagement
                 </li>
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Proposition détaillée sous 24 heures
+                  Proposition détaillée sous 24h
                 </li>
                 <li className="flex items-start">
                   <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Lancement du projet sous 48 heures après approbation
+                  Démarrage de votre projet sous 48h
                 </li>
               </ul>
             </div>
@@ -105,7 +105,7 @@ export function Contact() {
           {/* Contact Form */}
           <Card>
             <CardHeader>
-              <CardTitle>Envoyez-nous un message</CardTitle>
+              <CardTitle>Démarrons Votre Projet</CardTitle>
             </CardHeader>
             <CardContent>
               <form
@@ -138,7 +138,7 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message">Message *</Label>
+                  <Label htmlFor="message">Décrivez votre projet *</Label>
                   <Textarea
                     id="message"
                     name="message"
@@ -146,7 +146,7 @@ export function Contact() {
                     minLength={10}
                     className="mt-1"
                     rows={5}
-                    placeholder="Parlez-nous de votre projet, délais et exigences spécifiques..."
+                    placeholder="Parlez-nous de votre vision, vos objectifs, votre secteur d'activité et vos attentes..."
                   />
                 </div>
 
@@ -154,7 +154,7 @@ export function Contact() {
                   <div className="flex items-center rounded-md bg-green-50 p-4 text-green-800">
                     <CheckCircle className="mr-2 h-5 w-5" />
                     <span className="text-sm">
-                      Message envoyé avec succès ! Nous vous recontacterons sous 2 heures.
+                      Parfait ! Votre projet nous intéresse. Nous vous recontactons sous 2h pour discuter de votre stratégie.
                     </span>
                   </div>
                 )}
@@ -164,7 +164,7 @@ export function Contact() {
                     <AlertCircle className="mr-2 h-5 w-5" />
                     <span className="text-sm">
                       {errorMessage ||
-                        "Échec de l'envoi du message. Veuillez réessayer ou nous contacter directement par email."}
+                        "Erreur technique. Contactez-nous directement par email ou réessayez."}
                     </span>
                   </div>
                 )}

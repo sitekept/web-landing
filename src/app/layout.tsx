@@ -5,11 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SiteKept - Agence de Développement Web Ultra-Rapide",
+  title: "SiteKept - Sites Web Haute Performance en 48h",
   description:
-    "Nous créons des sites web prêts pour la production en 48-72 heures. Des pages d'atterrissage aux sites e-commerce, nous livrons des sites rapides, évolutifs et axés sur la conversion qui font croître votre entreprise.",
+    "Créez votre site web professionnel en 48h chrono ! Sites vitrines, e-commerce, applications sur mesure. Technologies de pointe, design moderne, résultats garantis. Votre succès digital commence maintenant.",
   keywords:
-    "développement web, conception de site web, Next.js, React, pages d'atterrissage, e-commerce, livraison rapide, agence",
+    "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne",
   authors: [{ name: "Équipe SiteKept" }],
   creator: "SiteKept",
   publisher: "SiteKept",
@@ -35,18 +35,18 @@ export const metadata: Metadata = {
   },
   manifest: "/my-favicon/site.webmanifest",
   openGraph: {
-    title: "SiteKept - Développement Web Ultra-Rapide",
+    title: "SiteKept - Sites Web Haute Performance en 48h",
     description:
-      "Sites web professionnels livrés en 48-72 heures. Stack technologique moderne, architecture évolutive, design axé sur la conversion.",
+      "Votre site web professionnel en ligne en 48h ! Technologies de pointe, design moderne, performance maximale. Transformez vos visiteurs en clients dès maintenant.",
     url: "https://sitekept.com",
     siteName: "SiteKept",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SiteKept - Développement Web Ultra-Rapide",
+    title: "SiteKept - Sites Web Haute Performance en 48h",
     description:
-      "Sites web professionnels livrés en 48-72 heures. Stack technologique moderne, architecture évolutive, design axé sur la conversion.",
+      "Votre site web professionnel en ligne en 48h ! Technologies de pointe, design moderne, performance maximale.",
     creator: "@sitekept",
   },
   robots: {

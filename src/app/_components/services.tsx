@@ -13,55 +13,55 @@ import {
 const services = [
   {
     icon: Globe,
-    title: "Pages d'Atterrissage",
+    title: "Sites Vitrines Performants",
     description:
-      "Pages d'atterrissage à haute conversion qui transforment les visiteurs en clients. Optimisées pour la vitesse et les conversions.",
+      "Pages d&apos;atterrissage qui convertissent à 100%. Design moderne, optimisation SEO et vitesse de chargement éclair.",
     features: [
-      "Prêt pour les Tests A/B",
-      "Optimisé SEO",
-      "Mobile First",
-      "Analytics Intégrées",
+      "Optimisation conversions",
+      "SEO intégré",
+      "Mobile-first",
+      "Analytics avancées",
     ],
     price: "À partir de 1 499€",
   },
   {
     icon: ShoppingCart,
-    title: "Sites E-commerce",
+    title: "E-commerce Clé en Main",
     description:
-      "Boutiques en ligne complètes conçues pour l'évolutivité. Des catalogues produits à l'optimisation du checkout.",
+      "Boutiques en ligne complètes et rentables. Gestion produits, paiements sécurisés et tableau de bord intuitif.",
     features: [
-      "Intégration Paiement",
-      "Gestion Inventaire",
-      "Tableau de Bord Admin",
-      "Commerce Mobile",
+      "Paiements sécurisés",
+      "Gestion stock automatisée",
+      "Dashboard vendeur",
+      "Mobile commerce",
     ],
     price: "À partir de 2 999€",
   },
   {
     icon: Building,
-    title: "Sites Corporate",
+    title: "Sites Corporate Premium",
     description:
-      "Présence corporate professionnelle qui inspire confiance et stimule la croissance des affaires.",
+      "Présence digitale professionnelle qui inspire confiance et génère des leads qualifiés pour votre entreprise.",
     features: [
-      "Intégration CMS",
+      "CMS sur mesure",
       "Multi-langues",
-      "Portails Équipe",
-      "Guidelines de Marque",
+      "Espace collaborateurs",
+      "Charte graphique",
     ],
     price: "À partir de 2 499€",
   },
   {
     icon: Palette,
-    title: "Solutions Sur Mesure",
+    title: "Développement Sur Mesure",
     description:
-      "Applications web uniques adaptées aux besoins spécifiques de votre entreprise et à vos flux de travail.",
+      "Applications web uniques adaptées à vos besoins spécifiques. Innovation technique et créativité au service de vos objectifs.",
     features: [
-      "Fonctionnalités Personnalisées",
-      "Intégration API",
-      "Conception Base de Données",
-      "Support Continu",
+      "Fonctionnalités exclusives",
+      "Intégrations API",
+      "Base de données optimisée",
+      "Support prioritaire",
     ],
-    price: "Devis Personnalisé",
+    price: "Devis personnalisé",
   },
 ];
 
@@ -71,10 +71,10 @@ export function Services() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Nos Services
+            Nos Solutions Web
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Des simples pages d&apos;atterrissage aux applications web complexes, nous livrons exactement ce dont votre entreprise a besoin pour réussir en ligne.
+            Du site vitrine à l&apos;application complexe, nous créons exactement ce dont votre business a besoin pour dominer votre marché en ligne.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export function Services() {
                         ?.scrollIntoView({ behavior: "smooth" })
                     }
                   >
-                    Commencer <ArrowRight className="ml-2 h-4 w-4" />
+                    Démarrer <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
               </CardContent>
@@ -127,7 +127,7 @@ export function Services() {
 
         <div className="mt-16 text-center">
           <p className="mb-4 text-sm text-slate-500">
-            Tous les projets incluent : Configuration hébergement gratuite • Certificat SSL • Optimisation mobile • SEO de base
+            Tous nos projets incluent : Hébergement premium • SSL gratuit • Responsive design • SEO de base • Formation
           </p>
           <Button
             size="lg"
@@ -137,7 +137,7 @@ export function Services() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Discuter de Votre Projet
+            Discuter de Mon Projet
           </Button>
         </div>
       </div>
