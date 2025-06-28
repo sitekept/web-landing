@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap, Eye } from "lucide-react";
 
 export function Hero() {
   return (
@@ -27,7 +27,7 @@ export function Hero() {
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <Button
             size="lg"
-            className="bg-blue-600 px-8 py-3 text-lg text-white hover:bg-blue-700"
+            className="bg-blue-600 px-8 py-3 text-lg text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200"
             onClick={() =>
               document
                 .getElementById("contact")
@@ -40,13 +40,14 @@ export function Hero() {
           <Button
             variant="outline"
             size="lg"
-            className="border-slate-600 px-8 py-3 text-lg text-slate-300 hover:bg-slate-800"
+            className="group border-slate-600 px-8 py-3 text-lg text-slate-300 hover:bg-gradient-to-r hover:from-blue-600 hover:to-purple-600 hover:border-transparent hover:text-white transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25"
             onClick={() =>
               document
                 .getElementById("services")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
+            <Eye className="mr-2 h-5 w-5 group-hover:animate-pulse" />
             Voir Nos Réalisations
           </Button>
         </div>
