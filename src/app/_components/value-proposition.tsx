@@ -30,11 +30,11 @@ const features = [
     icon: Rocket,
     title: "Évolutif et Puissant",
     description:
-      "Votre site grandit avec votre business. De la startup à l&apos;entreprise, nous anticipons votre croissance.",
+      "Votre site grandit avec votre business. De la startup à l'entreprise, nous anticipons votre croissance.",
   },
   {
     icon: Users,
-    title: "Équipe d&apos;Experts",
+    title: "Équipe d'experts",
     description:
       "Développeurs et designers seniors avec des centaines de projets réussis. Votre succès est notre priorité.",
   },
