@@ -57,14 +57,14 @@ export function CallToAction() {
             <div className="text-sm text-blue-200">Mise en ligne garantie</div>
           </div>
           <div className="text-center">
-            <div className="mb-2 text-3xl font-bold text-white">100%</div>
-            <div className="text-sm text-blue-200">Satisfaction ou remboursé</div>
+            <div className="mb-2 text-3xl font-bold text-white">Votre Site</div>
+            <div className="text-sm text-blue-200">Vous appartient à 100%</div>
           </div>
         </div>
 
         <div className="mt-12 text-center">
           <p className="text-sm text-blue-200">
-            Sans engagement • Sans frais cachés • Sans délais interminables
+            Sans engagement • Sans abonnement mensuel • Propriété complète du site
           </p>
         </div>
       </div>
