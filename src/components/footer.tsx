@@ -1,10 +1,11 @@
-import { Zap, Mail } from "lucide-react";
+import { Zap, Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 export function Footer() {
   return (
     <footer className="bg-slate-900 px-6 py-12 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {/* Company Info */}
           <div className="col-span-1 sm:col-span-2 lg:col-span-1">
             <div className="mb-4 flex items-center space-x-2">
@@ -13,48 +14,99 @@ export function Footer() {
               </div>
               <span className="text-xl font-bold text-white">SiteKept</span>
             </div>
-            <p className="mb-4 text-sm text-slate-400">
+            <p className="mb-6 text-sm text-slate-400">
               Création de sites web haute performance pour entreprises ambitieuses.
               Technologie de pointe, design moderne, résultats garantis.
             </p>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="flex items-center text-sm text-slate-400">
                 <Mail className="mr-2 h-4 w-4" />
-                sitekept@gmail.com
+                <a 
+                  href="mailto:sitekept@gmail.com"
+                  className="hover:text-white transition-colors"
+                >
+                  sitekept@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center text-sm text-slate-400">
+                <Phone className="mr-2 h-4 w-4" />
+                <a 
+                  href="tel:+33651179925"
+                  className="hover:text-white transition-colors"
+                >
+                  +33 6 51 17 99 25
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Navigation Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">Nos Solutions</h3>
+            <h3 className="mb-4 font-semibold text-white">Navigation</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Sites Vitrines</li>
-              <li>E-commerce</li>
-              <li>Sites Corporate</li>
-              <li>Développement Sur Mesure</li>
+              <li>
+                <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="hover:text-white transition-colors"
+                >
+                  Accueil
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="hover:text-white transition-colors"
+                >
+                  Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("contact")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="hover:text-white transition-colors"
+                >
+                  Contact
+                </button>
+              </li>
+              <li>
+                <Link 
+                  href="/contact"
+                  className="hover:text-white transition-colors"
+                >
+                  Page Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Legal Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-white">SiteKept</h3>
+            <h3 className="mb-4 font-semibold text-white">Informations Légales</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>Notre Approche</li>
-              <li>Processus</li>
-              <li>Réalisations</li>
-              <li>Rejoindre l&apos;Équipe</li>
-            </ul>
-          </div>
-
-          {/* Support */}
-          <div>
-            <h3 className="mb-4 font-semibold text-white">Support</h3>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>Centre d&apos;Aide</li>
-              <li>Contact Support</li>
-              <li>Confidentialité</li>
-              <li>Conditions d&apos;Utilisation</li>
+              <li>
+                <Link 
+                  href="/conditions-utilisation"
+                  className="hover:text-white transition-colors"
+                >
+                  Conditions d&apos;Utilisation
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/confidentialite"
+                  className="hover:text-white transition-colors"
+                >
+                  Confidentialité
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
