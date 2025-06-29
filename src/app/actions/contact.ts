@@ -32,7 +32,7 @@ export async function submitContactForm(formData: FormData) {
       console.log("Message:", validatedData.message);
       console.log("Horodatage:", new Date().toLocaleString());
       console.log(
-        "⚠️  Pour envoyer de vrais emails, configurez RESEND_API_KEY dans .env"
+        "⚠️  Pour envoyer de vrais emails, configurez RESEND_API_KEY dans .env.local"
       );
 
       return {
@@ -45,8 +45,8 @@ export async function submitContactForm(formData: FormData) {
     const resend = new Resend(apiKey);
 
     // Use a verified domain or Resend's onboarding domain
-    const fromEmail = ENV.FROM_EMAIL;
-    const toEmail = ENV.AGENCY_EMAIL;
+    const fromEmail = ENV.FROM_EMAIL || "onboarding@resend.dev";
+    const toEmail = ENV.AGENCY_EMAIL || "sitekept@gmail.com";
 
     // Send email using Resend
     const { data: emailData, error } = await resend.emails.send({
