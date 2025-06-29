@@ -48,12 +48,12 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
-                <button
-                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                <Link
+                  href="/"
                   className="hover:text-white transition-colors block"
                 >
                   Accueil
-                </button>
+                </Link>
               </li>
               <li>
                 <button
@@ -68,23 +68,11 @@ export function Footer() {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="hover:text-white transition-colors block"
-                >
-                  Contact
-                </button>
-              </li>
-              <li>
                 <Link 
                   href="/contact"
                   className="hover:text-white transition-colors block"
                 >
-                  Page Contact
+                  Contact
                 </Link>
               </li>
             </ul>

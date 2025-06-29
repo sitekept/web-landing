@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Zap } from "lucide-react";
+import Link from "next/link";
 
 const navItems = [
   { name: "Services", href: "#services" },
@@ -31,10 +32,6 @@ export function Navigation() {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
@@ -45,8 +42,8 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <button
-              onClick={scrollToTop}
+            <Link
+              href="/"
               className="flex items-center space-x-2 text-xl font-bold transition-colors hover:text-blue-600"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
@@ -55,7 +52,7 @@ export function Navigation() {
               <span className={isScrolled ? "text-slate-900" : "text-white"}>
                 SiteKept
               </span>
-            </button>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
