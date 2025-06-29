@@ -3,12 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "description": "SiteKept - Lightning-fast website development agency",
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next node_modules",
+    "reinstall": "pnpm clean && pnpm install",
+    "update-deps": "pnpm update --interactive"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
