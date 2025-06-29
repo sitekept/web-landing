@@ -75,7 +75,7 @@ export default function ConditionsUtilisationPage() {
               <li>Acompte de 50% à la signature du contrat</li>
               <li>Solde à la livraison du projet</li>
               <li>Paiements acceptés : virement bancaire, carte bancaire</li>
-              <li>Délai de paiement : 30 jours maximum</li>
+              <li>Délai de paiement : 3 jours maximum</li>
             </ul>
 
             <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Délais de Livraison</h2>
