@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   Globe,
   ArrowRight,
-  Star,
   Sparkles,
   CheckCircle,
 } from "lucide-react";
@@ -67,14 +66,6 @@ export function Services() {
         {/* Single Service Card */}
         <div className="mx-auto mt-20 max-w-2xl">
           <Card className="relative overflow-hidden border-2 border-blue-200 bg-gradient-to-br from-white via-blue-50/30 to-white shadow-2xl ring-1 ring-blue-100 transform hover:scale-105 transition-all duration-300">
-            {/* Premium Badge */}
-            <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
-              <span className="inline-flex items-center rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-sm font-bold text-white shadow-lg">
-                <Star className="mr-2 h-4 w-4" />
-                ⭐ Notre Expertise Premium
-              </span>
-            </div>
-            
             <CardHeader className="relative pt-8 pb-6">
               <div className="mb-6 flex justify-center">
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 shadow-lg">
