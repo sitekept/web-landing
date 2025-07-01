@@ -106,7 +106,7 @@ export function Services() {
                     À partir de 400€
                   </div>
                   <div className="mt-2 text-sm opacity-90">
-                    Tout inclus • Sans frais cachés
+                    Tout inclus • Sans frais cachés • Nom de domaine offert la 1ère année • Déploiement gratuit
                   </div>
                 </div>
                 

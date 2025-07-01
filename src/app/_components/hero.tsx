@@ -39,6 +39,12 @@ export function Hero() {
           </Button>
         </div>
 
+        <div className="mt-8 text-center">
+          <p className="text-sm text-blue-200">
+            Nom de domaine offert la 1ère année • Déploiement gratuit
+          </p>
+        </div>
+
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
           <div className="text-center">
             <div className="text-3xl font-bold text-white">48h</div>
