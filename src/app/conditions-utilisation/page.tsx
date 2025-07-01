@@ -78,6 +78,14 @@ export default function ConditionsUtilisationPage() {
               <li>Délai de paiement : 3 jours maximum</li>
             </ul>
 
+            <h3 className="text-lg font-semibold text-slate-900 mb-3">Nom de Domaine</h3>
+            <p className="text-slate-600 mb-6">
+              SiteKept offre la prise en charge du nom de domaine pour la première année dans la limite de 14,99€ TTC. 
+              Si le coût du nom de domaine souhaité dépasse cette limite, la différence sera à la charge du client. 
+              Le renouvellement du nom de domaine après la première année est entièrement à la charge du client. 
+              Le client reste propriétaire de son nom de domaine et peut le transférer vers un autre registraire à tout moment.
+            </p>
+
             <h2 className="text-2xl font-bold text-slate-900 mb-4">6. Délais de Livraison</h2>
             <p className="text-slate-600 mb-6">
               Nous nous engageons à respecter les délais convenus. Les délais peuvent être prolongés en cas de :

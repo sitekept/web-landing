@@ -64,7 +64,7 @@ export function CallToAction() {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-blue-200">
-            Sans engagement • Sans abonnement mensuel • Propriété complète du site
+            Sans engagement • Déploiement gratuit • Nom de domaine offert la 1ère année • Propriété complète du site
           </p>
         </div>
       </div>
