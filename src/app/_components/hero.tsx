@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap, Gift, Star } from "lucide-react";
 
 export function Hero() {
   return (
@@ -24,6 +24,41 @@ export function Hero() {
           Fini l&apos;attente ! Nous créons des sites web haute performance qui convertissent vos visiteurs en clients. Design moderne, technologie de pointe, résultats immédiats.
         </p>
 
+        {/* Enhanced Promotional Offer */}
+        <div className="mb-10 flex justify-center">
+          <div className="relative">
+            {/* Animated background glow */}
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 opacity-75 blur animate-pulse"></div>
+            
+            {/* Main promotional badge */}
+            <div className="relative flex items-center gap-3 rounded-2xl bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 px-6 py-4 sm:px-8 sm:py-5">
+              {/* Promotional icon */}
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                <Gift className="h-5 w-5 text-white animate-bounce" />
+              </div>
+              
+              {/* Promotional text */}
+              <div className="text-center">
+                <div className="text-xl font-black text-white sm:text-2xl lg:text-3xl tracking-tight">
+                  OFFRE SPÉCIALE
+                </div>
+                <div className="text-base font-bold text-white/95 sm:text-lg lg:text-xl">
+                  Nom de domaine offert la 1ère année • Déploiement gratuit
+                </div>
+              </div>
+              
+              {/* Star decoration */}
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                <Star className="h-5 w-5 text-white animate-spin" style={{ animationDuration: '3s' }} />
+              </div>
+            </div>
+            
+            {/* Floating elements for extra attention */}
+            <div className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-yellow-300 animate-ping"></div>
+            <div className="absolute -bottom-2 -left-2 h-3 w-3 rounded-full bg-orange-300 animate-ping" style={{ animationDelay: '0.5s' }}></div>
+          </div>
+        </div>
+
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <Button
             size="lg"
@@ -37,12 +72,6 @@ export function Hero() {
             Lancer Mon Projet
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-        </div>
-
-        <div className="mt-8 text-center">
-          <p className="text-sm text-blue-200">
-            Nom de domaine offert la 1ère année • Déploiement gratuit
-          </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
