@@ -37,12 +37,9 @@ export function Hero() {
                 <Gift className="h-5 w-5 text-white animate-bounce" />
               </div>
               
-              {/* Promotional text */}
+              {/* Promotional text - removed "OFFRE SPÉCIALE" */}
               <div className="text-center">
                 <div className="text-xl font-black text-white sm:text-2xl lg:text-3xl tracking-tight">
-                  OFFRE SPÉCIALE
-                </div>
-                <div className="text-base font-bold text-white/95 sm:text-lg lg:text-xl">
                   Nom de domaine offert la 1ère année • Déploiement gratuit
                 </div>
               </div>
