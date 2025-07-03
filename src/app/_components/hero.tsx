@@ -28,10 +28,10 @@ export function Hero() {
         <div className="mb-10 flex justify-center">
           <div className="relative">
             {/* Animated background glow */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 opacity-75 blur animate-pulse"></div>
+            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 opacity-75 blur animate-pulse"></div>
             
             {/* Main promotional badge */}
-            <div className="relative flex items-center gap-3 rounded-2xl bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 px-6 py-4 sm:px-8 sm:py-5">
+            <div className="relative flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 px-6 py-4 sm:px-8 sm:py-5">
               {/* Promotional icon */}
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
                 <Gift className="h-5 w-5 text-white animate-bounce" />
@@ -51,8 +51,8 @@ export function Hero() {
             </div>
             
             {/* Floating elements for extra attention */}
-            <div className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-yellow-300 animate-ping"></div>
-            <div className="absolute -bottom-2 -left-2 h-3 w-3 rounded-full bg-orange-300 animate-ping" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-blue-300 animate-ping"></div>
+            <div className="absolute -bottom-2 -left-2 h-3 w-3 rounded-full bg-purple-300 animate-ping" style={{ animationDelay: '0.5s' }}></div>
           </div>
         </div>
 
