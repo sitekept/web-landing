@@ -1,6 +1,7 @@
 'use client';
 
-import { Zap, Mail, Phone } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -11,9 +12,13 @@ export function Footer() {
           {/* Company Info - Takes more space on large screens */}
           <div className="lg:col-span-6">
             <div className="mb-4 flex items-center space-x-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600">
-                <Zap className="h-4 w-4 text-white" />
-              </div>
+              <Image
+                src="/ChatGPT Image 15 juil. 2025 à 01_28_34.png"
+                alt="SiteKept Logo"
+                width={28}
+                height={28}
+                className="h-7 w-7 object-contain"
+              />
               <span className="text-lg font-bold text-white">SiteKept</span>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-slate-400 max-w-md">
