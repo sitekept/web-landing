@@ -1,9 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Zap } from "lucide-react";
 import Link from "next/link";
 
 const navItems = [
@@ -47,13 +46,9 @@ export function Navigation() {
               href="/"
               className="flex items-center space-x-2 text-xl font-bold transition-colors hover:text-blue-600"
             >
-              <Image
-                src="/sitekept-logo.png"
-                alt="SiteKept Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8 object-contain"
-              />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
+                <Zap className="h-5 w-5 text-white" />
+              </div>
               <span className={isScrolled ? "text-slate-900" : "text-white"}>
                 SiteKept
               </span>

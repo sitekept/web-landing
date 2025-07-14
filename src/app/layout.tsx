@@ -16,18 +16,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/sitekept-logo.png",
-        type: "image/png",
+        url: "/favicon.ico",
+        sizes: "any",
       },
       {
-        url: "/sitekept-logo.png",
+        url: "/icon.svg",
         type: "image/png",
         sizes: "32x32",
       },
     ],
     apple: [
       {
-        url: "/sitekept-logo.png",
+        url: "/apple-icon.png",
         type: "image/png",
         sizes: "180x180",
       },
