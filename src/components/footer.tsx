@@ -13,7 +13,7 @@ export function Footer() {
           <div className="lg:col-span-6">
             <div className="mb-4 flex items-center space-x-2">
               <Image
-                src="/ChatGPT Image 15 juil. 2025 à 01_28_34.png"
+                src="/sitekept-logo.png"
                 alt="SiteKept Logo"
                 width={28}
                 height={28}

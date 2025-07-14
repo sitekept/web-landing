@@ -48,7 +48,7 @@ export function Navigation() {
               className="flex items-center space-x-2 text-xl font-bold transition-colors hover:text-blue-600"
             >
               <Image
-                src="/ChatGPT Image 15 juil. 2025 à 01_28_34.png"
+                src="/sitekept-logo.png"
                 alt="SiteKept Logo"
                 width={32}
                 height={32}

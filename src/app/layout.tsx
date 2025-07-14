@@ -16,18 +16,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/ChatGPT Image 15 juil. 2025 à 01_28_34.png",
+        url: "/sitekept-logo.png",
         type: "image/png",
       },
       {
-        url: "/ChatGPT Image 15 juil. 2025 à 01_28_34.png",
+        url: "/sitekept-logo.png",
         type: "image/png",
         sizes: "32x32",
       },
     ],
     apple: [
       {
-        url: "/ChatGPT Image 15 juil. 2025 à 01_28_34.png",
+        url: "/sitekept-logo.png",
         type: "image/png",
         sizes: "180x180",
       },
