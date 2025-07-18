@@ -14,52 +14,60 @@ export function Hero() {
         </div>
 
         <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Votre Site Web{" "}
+          Le Site Web Pour Tous{" "}
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
-            En Ligne en 48h
+            en 48h
           </span>
         </h1>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-          Fini l&apos;attente ! Nous créons des sites web haute performance qui convertissent vos visiteurs en clients. Design moderne, technologie de pointe, résultats immédiats.
+          Fini l&apos;attente ! Nous créons des sites web haute performance qui
+          convertissent vos visiteurs en clients. Design moderne, technologie de
+          pointe, résultats immédiats.
         </p>
 
         {/* Enhanced Promotional Offer */}
         <div className="mb-10 flex justify-center">
           <div className="relative">
             {/* Animated background glow */}
-            <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 opacity-75 blur animate-pulse"></div>
-            
+            <div className="absolute -inset-1 animate-pulse rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 opacity-75 blur"></div>
+
             {/* Main promotional badge */}
             <div className="relative flex items-center gap-3 rounded-2xl bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 px-6 py-4 sm:px-8 sm:py-5">
               {/* Promotional icon */}
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                <Gift className="h-5 w-5 text-white animate-bounce" />
+                <Gift className="h-5 w-5 animate-bounce text-white" />
               </div>
-              
+
               {/* Promotional text - removed "OFFRE SPÉCIALE" */}
               <div className="text-center">
-                <div className="text-xl font-black text-white sm:text-2xl lg:text-3xl tracking-tight">
+                <div className="text-xl font-black tracking-tight text-white sm:text-2xl lg:text-3xl">
                   Nom de domaine offert la 1ère année • Déploiement gratuit
                 </div>
               </div>
-              
+
               {/* Star decoration */}
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-                <Star className="h-5 w-5 text-white animate-spin" style={{ animationDuration: '3s' }} />
+                <Star
+                  className="h-5 w-5 animate-spin text-white"
+                  style={{ animationDuration: "3s" }}
+                />
               </div>
             </div>
-            
+
             {/* Floating elements for extra attention */}
-            <div className="absolute -top-2 -right-2 h-4 w-4 rounded-full bg-blue-300 animate-ping"></div>
-            <div className="absolute -bottom-2 -left-2 h-3 w-3 rounded-full bg-purple-300 animate-ping" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -top-2 -right-2 h-4 w-4 animate-ping rounded-full bg-blue-300"></div>
+            <div
+              className="absolute -bottom-2 -left-2 h-3 w-3 animate-ping rounded-full bg-purple-300"
+              style={{ animationDelay: "0.5s" }}
+            ></div>
           </div>
         </div>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <Button
             size="lg"
-            className="bg-blue-600 px-8 py-3 text-lg text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200"
+            className="transform bg-blue-600 px-8 py-3 text-lg text-white transition-all duration-200 hover:scale-105 hover:bg-blue-700"
             onClick={() =>
               document
                 .getElementById("contact")
@@ -89,3 +97,4 @@ export function Hero() {
     </section>
   );
 }
+
