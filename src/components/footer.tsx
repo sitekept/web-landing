@@ -16,8 +16,8 @@ export function Footer() {
                 <Image
                   src="/logo.png"
                   alt="SiteKept Logo"
-                  width={28}
-                  height={28}
+                  width={50}
+                  height={50}
                   className="rounded-lg"
                 />
               </div>
