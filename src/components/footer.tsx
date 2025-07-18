@@ -106,7 +106,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <Link
-                  href="/cgu"
+                  href="/terms"
                   className="block transition-colors hover:text-white"
                 >
                   Conditions d&apos;Utilisation
