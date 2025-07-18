@@ -1,21 +1,19 @@
-import { Navigation } from "@/components/navigation";
 import { Hero } from "./_components/hero";
 import { ValueProposition } from "./_components/value-proposition";
 import { Services } from "./_components/services";
-import { Contact } from "./_components/contact";
+import { PortfolioPreview } from "./_components/portfolio-preview";
 import { CallToAction } from "./_components/cta";
-import { Footer } from "@/components/footer";
+import { Contact } from "./_components/contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <Navigation />
+    <>
       <Hero />
       <ValueProposition />
       <Services />
+      <PortfolioPreview />
       <CallToAction />
       <Contact />
-      <Footer />
-    </main>
+    </>
   );
 }

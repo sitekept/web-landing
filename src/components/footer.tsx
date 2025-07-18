@@ -1,7 +1,8 @@
-'use client';
+"use client";
 
-import { Mail, Phone, Zap } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -11,29 +12,36 @@ export function Footer() {
           {/* Company Info - Takes more space on large screens */}
           <div className="lg:col-span-6">
             <div className="mb-4 flex items-center space-x-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600">
-                <Zap className="h-4 w-4 text-white" />
+              <div className="flex h-7 w-7 items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="SiteKept Logo"
+                  width={28}
+                  height={28}
+                  className="rounded-lg"
+                />
               </div>
               <span className="text-lg font-bold text-white">SiteKept</span>
             </div>
-            <p className="mb-4 text-sm leading-relaxed text-slate-400 max-w-md">
-              Création de sites web haute performance pour entreprises ambitieuses.
+            <p className="mb-4 max-w-md text-sm leading-relaxed text-slate-400">
+              Création de sites web haute performance pour entreprises
+              ambitieuses.
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-sm text-slate-400">
                 <Mail className="mr-2 h-4 w-4 flex-shrink-0" />
-                <a 
+                <a
                   href="mailto:sitekept@gmail.com"
-                  className="hover:text-white transition-colors"
+                  className="transition-colors hover:text-white"
                 >
                   sitekept@gmail.com
                 </a>
               </div>
               <div className="flex items-center text-sm text-slate-400">
                 <Phone className="mr-2 h-4 w-4 flex-shrink-0" />
-                <a 
+                <a
                   href="tel:+33651179925"
-                  className="hover:text-white transition-colors"
+                  className="transition-colors hover:text-white"
                 >
                   +33 6 51 17 99 25
                 </a>
@@ -43,14 +51,14 @@ export function Footer() {
 
           {/* Navigation Links - Compact column */}
           <div className="lg:col-span-3">
-            <h3 className="mb-3 text-sm font-semibold text-white uppercase tracking-wider">
+            <h3 className="mb-3 text-sm font-semibold tracking-wider text-white uppercase">
               Navigation
             </h3>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-white transition-colors block"
+                  className="block transition-colors hover:text-white"
                 >
                   Accueil
                 </Link>
@@ -62,15 +70,27 @@ export function Footer() {
                       .getElementById("services")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
-                  className="hover:text-white transition-colors block"
+                  className="block transition-colors hover:text-white"
                 >
                   Services
                 </button>
               </li>
               <li>
-                <Link 
-                  href="/contact"
-                  className="hover:text-white transition-colors block"
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("our-work")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="block transition-colors hover:text-white"
+                >
+                  Nos créations
+                </button>
+              </li>
+              <li>
+                <Link
+                  href="/#contact"
+                  className="block transition-colors hover:text-white"
                 >
                   Contact
                 </Link>
@@ -80,22 +100,22 @@ export function Footer() {
 
           {/* Legal Links - Compact column */}
           <div className="lg:col-span-3">
-            <h3 className="mb-3 text-sm font-semibold text-white uppercase tracking-wider">
+            <h3 className="mb-3 text-sm font-semibold tracking-wider text-white uppercase">
               Légal
             </h3>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
-                <Link 
-                  href="/conditions-utilisation"
-                  className="hover:text-white transition-colors block"
+                <Link
+                  href="/cgu"
+                  className="block transition-colors hover:text-white"
                 >
                   Conditions d&apos;Utilisation
                 </Link>
               </li>
               <li>
-                <Link 
-                  href="/confidentialite"
-                  className="hover:text-white transition-colors block"
+                <Link
+                  href="/privacy"
+                  className="block transition-colors hover:text-white"
                 >
                   Confidentialité
                 </Link>

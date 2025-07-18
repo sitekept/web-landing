@@ -1,15 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
-const navItems = [
-  { name: "Services", href: "#services" },
-  { name: "Équipe", href: "#team" },
-  { name: "Contact", href: "#contact" },
-];
+const NAVIGATION_ITEMS = [
+  { name: "Accueil", href: "/#hero" },
+  { name: "Services", href: "/#services" },
+  { name: "Nos créations", href: "/#our-work" },
+  { name: "Contact", href: "/#contact" },
+] as const;
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,17 +22,17 @@ export function Navigation() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
-  };
+  const closeMenu = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const toggleMenu = useCallback(() => {
+    setIsOpen((prev) => !prev);
+  }, []);
 
   return (
     <nav
@@ -46,8 +48,14 @@ export function Navigation() {
               href="/"
               className="flex items-center space-x-2 text-xl font-bold transition-colors hover:text-blue-600"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-600">
-                <Zap className="h-5 w-5 text-white" />
+              <div className="flex h-8 w-8 items-center justify-center">
+                <Image
+                  src="/logo.png"
+                  alt="SiteKept Logo"
+                  width={32}
+                  height={32}
+                  className="rounded-lg"
+                />
               </div>
               <span className={isScrolled ? "text-slate-900" : "text-white"}>
                 SiteKept
@@ -57,30 +65,33 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isScrolled ? "text-slate-700" : "text-slate-300"
-                }`}
-              >
-                {item.name}
-              </button>
-            ))}
+            {NAVIGATION_ITEMS.map((item) => {
+              const linkClass = `text-sm font-medium transition-colors hover:text-blue-600 ${
+                isScrolled ? "text-slate-700" : "text-slate-300"
+              }`;
+
+              return (
+                <Link key={item.name} href={item.href} className={linkClass}>
+                  {item.name}
+                </Link>
+              );
+            })}
             <Button
-              onClick={() => scrollToSection("#contact")}
+              asChild
               className="bg-blue-600 text-white hover:bg-blue-700"
             >
-              Commencer
+              <Link href="/#contact">Commencer</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={toggleMenu}
               className={`p-2 ${isScrolled ? "text-slate-900" : "text-white"}`}
+              type="button"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -95,21 +106,29 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden">
             <div className="mt-2 space-y-1 rounded-lg bg-white px-2 pt-2 pb-3 shadow-lg">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full rounded-md px-3 py-2 text-left text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600"
-                >
-                  {item.name}
-                </button>
-              ))}
+              {NAVIGATION_ITEMS.map((item) => {
+                const mobileClass =
+                  "block w-full rounded-md px-3 py-2 text-left text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600";
+
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={mobileClass}
+                    onClick={closeMenu}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
               <div className="px-3 py-2">
                 <Button
-                  onClick={() => scrollToSection("#contact")}
+                  asChild
                   className="w-full bg-blue-600 text-white hover:bg-blue-700"
                 >
-                  Commencer
+                  <Link href="/#contact" onClick={closeMenu}>
+                    Commencer
+                  </Link>
                 </Button>
               </div>
             </div>
