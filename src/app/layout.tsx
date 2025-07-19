@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { NextIntlClientProvider } from "next-intl";
@@ -95,6 +96,7 @@ export default async function RootLayout({
             <Footer />
           </main>
         </NextIntlClientProvider>
+        <GoogleAnalytics gaId="G-XYZ" />
       </body>
     </html>
   );
