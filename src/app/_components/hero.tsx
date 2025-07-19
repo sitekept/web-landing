@@ -1,29 +1,28 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Gift, Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+  const t = useTranslations("hero");
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 py-24 sm:py-32 lg:px-8">
       <div className="absolute inset-0 bg-[url('/grid.svg')] [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] bg-center" />
       <div className="relative mx-auto max-w-4xl text-center">
         <div className="mb-8 inline-flex items-center rounded-full bg-slate-800/50 px-4 py-2 text-sm text-slate-300 ring-1 ring-slate-700">
           <Zap className="mr-2 h-4 w-4 text-yellow-400" />
-          Livraison express. Performance maximale. Résultats garantis.
+          {t("tagline")}
         </div>
 
         <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-          Le Site Web Pour Tous{" "}
+          {t("title")}{" "}
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
-            en 48h
+            {t("titleHighlight")}
           </span>
         </h1>
 
         <p className="mx-auto mb-10 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-          Fini l&apos;attente ! Nous créons des sites web haute performance qui
-          convertissent vos visiteurs en clients. Design moderne, technologie de
-          pointe, résultats immédiats.
+          {t("description")}
         </p>
 
         {/* Enhanced Promotional Offer */}
@@ -39,10 +38,10 @@ export function Hero() {
                 <Gift className="h-5 w-5 animate-bounce text-white" />
               </div>
 
-              {/* Promotional text - removed "OFFRE SPÉCIALE" */}
+              {/* Promotional text */}
               <div className="text-center">
                 <div className="text-xl font-black tracking-tight text-white sm:text-2xl lg:text-3xl">
-                  Nom de domaine offert la 1ère année • Déploiement gratuit
+                  {t("offer")}
                 </div>
               </div>
 
@@ -74,27 +73,34 @@ export function Hero() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Lancer Mon Projet
+            {t("cta")}
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">48h</div>
-            <div className="text-sm text-slate-400">Mise en ligne garantie</div>
+            <div className="text-3xl font-bold text-white">
+              {t("stats.time")}
+            </div>
+            <div className="text-sm text-slate-400">
+              {t("stats.guaranteed")}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">99%</div>
-            <div className="text-sm text-slate-400">Clients satisfaits</div>
+            <div className="text-3xl font-bold text-white">
+              {t("stats.satisfaction")}
+            </div>
+            <div className="text-sm text-slate-400">{t("stats.clients")}</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-white">500+</div>
-            <div className="text-sm text-slate-400">Sites créés</div>
+            <div className="text-3xl font-bold text-white">
+              {t("stats.sitesCount")}
+            </div>
+            <div className="text-sm text-slate-400">{t("stats.sites")}</div>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

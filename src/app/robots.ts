@@ -9,4 +9,3 @@ export default function robots(): MetadataRoute.Robots {
     sitemap: `${process.env.NEXT_PUBLIC_BASE_URL || "https://sitekept.com"}/sitemap.xml`,
   };
 }
-

@@ -1,33 +1,33 @@
+import { getTranslations } from "next-intl/server";
 import { ProjectCard } from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const REALIZATIONS = [
-  {
-    name: "IAFormaPlus",
-    url: "https://iaformaplus.fr",
-    description:
-      "Plateforme de formation en intelligence artificielle avec système de gestion d'utilisateurs, cours interactifs et certification. Interface moderne et responsive.",
-    screenshot: "/realization/iaformaplus.png",
-  },
-  {
-    name: "Orhakerem",
-    url: "https://orhakerem.com",
-    description:
-      "Site vitrine pour cabinet dentaire avec système de prise de rendez-vous en ligne, galerie avant/après et présentation des services.",
-    screenshot: "/realization/orhakerem.png",
-  },
-  {
-    name: "PinckIt",
-    url: "https://pinckit.com",
-    description:
-      "Application web de gestion de contenu visuel avec fonctionnalités de collaboration, partage et organisation d'images et vidéos.",
-    screenshot: "/realization/pinckit.png",
-  },
-] as const;
+export default async function RealizationPage() {
+  const t = await getTranslations("realization");
 
-export default function RealizationPage() {
+  const REALIZATIONS = [
+    {
+      name: "IAFormaPlus",
+      url: "https://iaformaplus.fr",
+      description: t("projects.iaformaplus.description"),
+      screenshot: "/realization/iaformaplus.png",
+    },
+    {
+      name: "Orhakerem",
+      url: "https://orhakerem.com",
+      description: t("projects.orhakerem.description"),
+      screenshot: "/realization/orhakerem.png",
+    },
+    {
+      name: "PinckIt",
+      url: "https://pinckit.com",
+      description: t("projects.pinckit.description"),
+      screenshot: "/realization/pinckit.png",
+    },
+  ] as const;
+
   return (
     <>
       {/* Hero Section */}
@@ -35,17 +35,13 @@ export default function RealizationPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
-              Nos Réalisations
+              {t("title")}
             </h1>
-            <p className="mb-8 text-xl text-gray-600">
-              Découvrez nos projets récents qui ont transformé des idées en
-              succès numériques. Chaque réalisation reflète notre expertise et
-              notre engagement envers l&apos;excellence.
-            </p>
+            <p className="mb-8 text-xl text-gray-600">{t("description")}</p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="px-8 text-lg">
                 <Link href="/#contact">
-                  Démarrer votre projet
+                  {t("buttons.startProject")}
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
               </Button>
@@ -55,7 +51,7 @@ export default function RealizationPage() {
                 size="lg"
                 className="px-8 text-lg"
               >
-                <Link href="/template">Voir nos templates</Link>
+                <Link href="/template">{t("buttons.viewTemplates")}</Link>
               </Button>
             </div>
           </div>
@@ -74,7 +70,7 @@ export default function RealizationPage() {
                 description={project.description}
                 screenshot={project.screenshot}
                 category="realisation"
-                ctaText="Discuter d'un projet similaire"
+                ctaText={t("cta")}
                 ctaLink="/#contact"
               />
             ))}

@@ -1,45 +1,47 @@
 "use client";
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Globe, ArrowRight, Sparkles, CheckCircle } from "lucide-react";
-
-const FEATURES = [
-  {
-    title: "Design sur mesure",
-    description: "Interface unique qui reflète votre identité de marque",
-  },
-  {
-    title: "Optimisation SEO avancée",
-    description: "Meilleur classement Google pour plus de visibilité",
-  },
-  {
-    title: "Vitesse de chargement éclair",
-    description: "Site ultra-rapide qui retient vos visiteurs",
-  },
-  {
-    title: "Taux de conversion optimisé",
-    description: "Plus de visiteurs transformés en clients",
-  },
-  {
-    title: "Responsive parfait",
-    description: "Affichage parfait sur tous les appareils",
-  },
-  {
-    title: "Fonctionnalités exclusives",
-    description: "Outils avancés pour vous démarquer",
-  },
-  {
-    title: "Support prioritaire",
-    description: "Assistance rapide quand vous en avez besoin",
-  },
-  {
-    title: "Analyse des performances",
-    description: "Suivi détaillé de vos résultats",
-  },
-] as const;
+import { useTranslations } from "next-intl";
 
 export function Services() {
+  const t = useTranslations("services");
+
+  const FEATURES = [
+    {
+      title: t("features.customDesign"),
+      description: t("features.customDesignDesc"),
+    },
+    {
+      title: t("features.seoOptimization"),
+      description: t("features.seoOptimizationDesc"),
+    },
+    {
+      title: t("features.loadingSpeed"),
+      description: t("features.loadingSpeedDesc"),
+    },
+    {
+      title: t("features.conversionRate"),
+      description: t("features.conversionRateDesc"),
+    },
+    {
+      title: t("features.responsive"),
+      description: t("features.responsiveDesc"),
+    },
+    {
+      title: t("features.exclusiveFeatures"),
+      description: t("features.exclusiveFeaturesDesc"),
+    },
+    {
+      title: t("features.prioritySupport"),
+      description: t("features.prioritySupportDesc"),
+    },
+    {
+      title: t("features.performanceAnalysis"),
+      description: t("features.performanceAnalysisDesc"),
+    },
+  ] as const;
+
   return (
     <section
       id="services"
@@ -53,20 +55,18 @@ export function Services() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700 ring-1 ring-blue-200">
             <Sparkles className="mr-2 h-4 w-4" />
-            Notre Spécialité Premium
+            {t("title")}
           </div>
 
           <h2 className="mb-6 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Sites Vitrines{" "}
+            {t("subtitle")}{" "}
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
-              Haute Performance
+              {t("subtitleHighlight")}
             </span>
           </h2>
 
           <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-            Nous créons des sites vitrines qui transforment vos visiteurs en
-            clients. Chaque projet est conçu pour maximiser votre impact digital
-            et votre croissance.
+            {t("description")}
           </p>
         </div>
 
@@ -83,11 +83,11 @@ export function Services() {
                 </div>
 
                 <CardTitle className="text-center text-xl font-bold text-slate-900 sm:text-2xl">
-                  Site Vitrine Essentiel
+                  {t("pricing.essential.title")}
                 </CardTitle>
 
                 <p className="mt-2 text-center text-sm text-slate-600">
-                  Parfait pour démarrer votre présence digitale
+                  {t("pricing.essential.subtitle")}
                 </p>
               </CardHeader>
 
@@ -116,14 +116,18 @@ export function Services() {
                 <div className="mb-6 text-center">
                   <div className="rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 p-4 text-white">
                     <div className="mb-1 text-sm font-medium opacity-90">
-                      Tarif de lancement
+                      {t("pricing.essential.launch")}
                     </div>
                     <div className="flex items-center justify-center gap-2">
-                      <div className="text-lg font-medium line-through opacity-70">600€</div>
-                      <div className="text-3xl font-bold">450€</div>
+                      <div className="text-lg font-medium line-through opacity-70">
+                        {t("pricing.essential.originalPrice")}
+                      </div>
+                      <div className="text-3xl font-bold">
+                        {t("pricing.essential.price")}
+                      </div>
                     </div>
                     <div className="mt-1 text-xs opacity-90">
-                      Tout inclus • Domaine offert 1 an
+                      {t("pricing.essential.included")}
                     </div>
                   </div>
                 </div>
@@ -137,7 +141,7 @@ export function Services() {
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  Démarrer Maintenant
+                  {t("pricing.essential.cta")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -153,11 +157,11 @@ export function Services() {
                 </div>
 
                 <CardTitle className="text-center text-xl font-bold text-slate-900 sm:text-2xl">
-                  Fonctionnalités Avancées
+                  {t("pricing.advanced.title")}
                 </CardTitle>
 
                 <p className="mt-2 text-center text-sm text-slate-600">
-                  Pour des besoins spécifiques et complexes
+                  {t("pricing.advanced.subtitle")}
                 </p>
               </CardHeader>
 
@@ -168,10 +172,10 @@ export function Services() {
                     <CheckCircle className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-purple-600" />
                     <div>
                       <span className="text-sm font-medium">
-                        Intégration Email
+                        {t("advancedFeatures.emailIntegration")}
                       </span>
                       <p className="mt-0.5 text-xs text-slate-500">
-                        Formulaires et notifications automatisées
+                        {t("advancedFeatures.emailIntegrationDesc")}
                       </p>
                     </div>
                   </div>
@@ -179,10 +183,10 @@ export function Services() {
                     <CheckCircle className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-purple-600" />
                     <div>
                       <span className="text-sm font-medium">
-                        Base de Données
+                        {t("advancedFeatures.database")}
                       </span>
                       <p className="mt-0.5 text-xs text-slate-500">
-                        Gestion de contenu dynamique et stockage
+                        {t("advancedFeatures.databaseDesc")}
                       </p>
                     </div>
                   </div>
@@ -190,10 +194,10 @@ export function Services() {
                     <CheckCircle className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-purple-600" />
                     <div>
                       <span className="text-sm font-medium">
-                        Automatisation
+                        {t("advancedFeatures.automation")}
                       </span>
                       <p className="mt-0.5 text-xs text-slate-500">
-                        Processus métier automatisés sur mesure
+                        {t("advancedFeatures.automationDesc")}
                       </p>
                     </div>
                   </div>
@@ -201,10 +205,10 @@ export function Services() {
                     <CheckCircle className="mt-0.5 mr-2 h-4 w-4 flex-shrink-0 text-purple-600" />
                     <div>
                       <span className="text-sm font-medium">
-                        Intégrations Externes
+                        {t("advancedFeatures.externalIntegrations")}
                       </span>
                       <p className="mt-0.5 text-xs text-slate-500">
-                        Connexion avec vos outils existants
+                        {t("advancedFeatures.externalIntegrationsDesc")}
                       </p>
                     </div>
                   </div>
@@ -214,11 +218,13 @@ export function Services() {
                 <div className="mb-6 text-center">
                   <div className="rounded-xl bg-gradient-to-r from-purple-700 to-indigo-600 p-4 text-white">
                     <div className="mb-1 text-sm font-medium opacity-90">
-                      Sur Devis Personnalisé
+                      {t("pricing.advanced.custom")}
                     </div>
-                    <div className="text-3xl font-bold">Sur Mesure</div>
+                    <div className="text-3xl font-bold">
+                      {t("pricing.advanced.bespoke")}
+                    </div>
                     <div className="mt-1 text-xs opacity-90">
-                      Tarif selon complexité technique
+                      {t("pricing.advanced.pricing")}
                     </div>
                   </div>
                 </div>
@@ -232,7 +238,7 @@ export function Services() {
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >
-                  Devis Gratuit
+                  {t("pricing.advanced.cta")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </CardContent>
@@ -241,14 +247,10 @@ export function Services() {
 
           {/* Bottom Trust Signal */}
           <div className="mt-8 text-center">
-            <p className="text-sm text-slate-500">
-              ✅ Consultation gratuite • ✅ Devis sous 24h • ✅ Satisfaction
-              garantie
-            </p>
+            <p className="text-sm text-slate-500">{t("trustSignals")}</p>
           </div>
         </div>
       </div>
     </section>
   );
 }
-

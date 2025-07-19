@@ -2,18 +2,20 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Code, Palette } from "lucide-react";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
-export function PortfolioPreview() {
+export async function PortfolioPreview() {
+  const t = await getTranslations("portfolio");
+
   return (
     <section id="our-work" className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-gray-900">
-            Découvrez Notre Travail
+            {t("title")}
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-600">
-            Explorez nos réalisations récentes et nos templates prêts à
-            l&apos;emploi
+            {t("subtitle")}
           </p>
         </div>
 
@@ -29,17 +31,15 @@ export function PortfolioPreview() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">
-                  Nos Réalisations
+                  {t("realizations.title")}
                 </h3>
                 <p className="mb-4 text-sm text-gray-600">
-                  Découvrez nos projets récents : sites web, applications et
-                  solutions sur mesure qui ont transformé la présence digitale
-                  de nos clients.
+                  {t("realizations.description")}
                 </p>
                 <div className="flex items-center justify-between">
                   <Button asChild className="flex items-center gap-2">
                     <Link href="/realization">
-                      Voir nos réalisations
+                      {t("realizations.cta")}
                       <ArrowRight size={16} />
                     </Link>
                   </Button>
@@ -59,12 +59,10 @@ export function PortfolioPreview() {
               </div>
               <div className="p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">
-                  Templates Prêts
+                  {t("templates.title")}
                 </h3>
                 <p className="mb-4 text-sm text-gray-600">
-                  Vous ne savez pas par où commencer ? Explorez nos templates
-                  professionnels conçus pour différents secteurs
-                  d&apos;activité.
+                  {t("templates.description")}
                 </p>
                 <div className="flex items-center justify-between">
                   <Button
@@ -73,7 +71,7 @@ export function PortfolioPreview() {
                     className="flex items-center gap-2"
                   >
                     <Link href="/template">
-                      Parcourir les templates
+                      {t("templates.cta")}
                       <ArrowRight size={16} />
                     </Link>
                   </Button>
@@ -85,12 +83,10 @@ export function PortfolioPreview() {
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <p className="mb-6 text-gray-600">
-            Prêt à concrétiser votre projet ? Parlons-en !
-          </p>
+          <p className="mb-6 text-gray-600">{t("finalCta")}</p>
           <Button asChild size="lg" className="px-8 text-lg">
             <Link href="/#contact">
-              Commencer maintenant
+              {t("startNow")}
               <ArrowRight className="ml-2" size={20} />
             </Link>
           </Button>

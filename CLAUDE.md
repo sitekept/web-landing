@@ -16,6 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Architecture
 
 ### Tech Stack
+
 - **Framework**: Next.js 15 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
@@ -48,17 +49,20 @@ src/
 ## Key Architecture Patterns
 
 ### Contact Form Architecture
+
 - **Form Component**: `src/features/contact-form/contact-form.tsx`
 - **Server Action**: `src/features/contact-form/contact-form.action.ts`
 - **Validation**: Zod schema for form data validation
 - **Email Service**: Resend API with fallback to console logging in development
 
 ### Environment Configuration
+
 - Environment variables validated through `src/lib/env.ts` using Zod
 - Development mode automatically detected when `RESEND_API_KEY` is missing
 - Email configuration: `FROM_EMAIL`, `AGENCY_EMAIL`, `RESEND_API_KEY`
 
 ### Component Organization
+
 - Page-specific components in `app/_components/`
 - Reusable components in `components/`
 - Feature-based modules in `features/`
@@ -67,17 +71,20 @@ src/
 ## Development Notes
 
 ### Adding New Components
+
 - Use shadcn/ui components from `components/ui/`
 - Follow the existing pattern with TypeScript and Tailwind
 - Page-specific components go in `app/_components/`
 - Reusable components go in `components/`
 
 ### Email Configuration
+
 - Development: Form submissions logged to console
 - Production: Requires `RESEND_API_KEY` environment variable
 - Email templates use inline CSS for compatibility
 
 ### Styling
+
 - Tailwind CSS v4 with CSS variables
 - Custom colors defined in `globals.css`
 - Responsive design with mobile-first approach

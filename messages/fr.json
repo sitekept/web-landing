@@ -1,0 +1,472 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "services": "Services",
+    "ourWork": "Nos créations",
+    "contact": "Contact",
+    "start": "Commencer",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "hero": {
+    "tagline": "Livraison express. Performance maximale. Résultats garantis.",
+    "title": "Le Site Web Pour Tous",
+    "titleHighlight": "en 48h",
+    "description": "Fini l'attente ! Nous créons des sites web haute performance qui convertissent vos visiteurs en clients. Design moderne, technologie de pointe, résultats immédiats.",
+    "offer": "Nom de domaine offert la 1ère année • Déploiement gratuit",
+    "cta": "Lancer Mon Projet",
+    "stats": {
+      "time": "48h",
+      "guaranteed": "Mise en ligne garantie",
+      "satisfaction": "99%",
+      "clients": "Clients satisfaits",
+      "sitesCount": "500+",
+      "sites": "Sites créés"
+    }
+  },
+  "valueProposition": {
+    "title": "Pourquoi Choisir SiteKept ?",
+    "subtitle": "Nous ne sommes pas une agence comme les autres. Nous sommes vos partenaires pour un succès digital immédiat, sans compromis sur la qualité.",
+    "features": {
+      "express": {
+        "title": "Livraison Express 48h",
+        "description": "Votre site en ligne en 48h chrono ! Pas de délais interminables, que des résultats concrets et rapides."
+      },
+      "quality": {
+        "title": "Qualité Professionnelle",
+        "description": "Sites robustes et évolutifs dès le premier jour. Sécurité, performance et fiabilité garanties."
+      },
+      "technology": {
+        "title": "Technologies de Pointe",
+        "description": "Next.js, TypeScript, Tailwind CSS - nous utilisons les meilleures technologies pour des performances optimales."
+      },
+      "conversion": {
+        "title": "Conçu pour Convertir",
+        "description": "Chaque élément est pensé pour transformer vos visiteurs en clients. Design persuasif et expérience utilisateur optimisée."
+      },
+      "scalable": {
+        "title": "Évolutif et Puissant",
+        "description": "Votre site grandit avec votre business. De la startup à l'entreprise, nous anticipons votre croissance."
+      },
+      "experts": {
+        "title": "Équipe d'experts",
+        "description": "Développeurs et designers seniors avec des centaines de projets réussis. Votre succès est notre priorité."
+      }
+    }
+  },
+  "services": {
+    "title": "Notre Spécialité Premium",
+    "subtitle": "Sites Vitrines",
+    "subtitleHighlight": "Haute Performance",
+    "description": "Nous créons des sites vitrines qui transforment vos visiteurs en clients. Chaque projet est conçu pour maximiser votre impact digital et votre croissance.",
+    "features": {
+      "customDesign": "Design sur mesure",
+      "customDesignDesc": "Interface unique qui reflète votre identité de marque",
+      "seoOptimization": "Optimisation SEO avancée",
+      "seoOptimizationDesc": "Meilleur classement Google pour plus de visibilité",
+      "loadingSpeed": "Vitesse de chargement éclair",
+      "loadingSpeedDesc": "Site ultra-rapide qui retient vos visiteurs",
+      "conversionRate": "Taux de conversion optimisé",
+      "conversionRateDesc": "Plus de visiteurs transformés en clients",
+      "responsive": "Responsive parfait",
+      "responsiveDesc": "Affichage parfait sur tous les appareils",
+      "exclusiveFeatures": "Fonctionnalités exclusives",
+      "exclusiveFeaturesDesc": "Outils avancés pour vous démarquer",
+      "prioritySupport": "Support prioritaire",
+      "prioritySupportDesc": "Assistance rapide quand vous en avez besoin",
+      "performanceAnalysis": "Analyse des performances",
+      "performanceAnalysisDesc": "Suivi détaillé de vos résultats"
+    },
+    "pricing": {
+      "essential": {
+        "title": "Site Vitrine Essentiel",
+        "subtitle": "Parfait pour démarrer votre présence digitale",
+        "launch": "Tarif de lancement",
+        "originalPrice": "600€",
+        "price": "450€",
+        "included": "Tout inclus • Domaine offert 1 an",
+        "cta": "Démarrer Maintenant"
+      },
+      "advanced": {
+        "title": "Fonctionnalités Avancées",
+        "subtitle": "Pour des besoins spécifiques et complexes",
+        "custom": "Sur Devis Personnalisé",
+        "bespoke": "Sur Mesure",
+        "pricing": "Tarif selon complexité technique",
+        "cta": "Devis Gratuit"
+      }
+    },
+    "advancedFeatures": {
+      "emailIntegration": "Intégration Email",
+      "emailIntegrationDesc": "Formulaires et notifications automatisées",
+      "database": "Base de Données",
+      "databaseDesc": "Gestion de contenu dynamique et stockage",
+      "automation": "Automatisation",
+      "automationDesc": "Processus métier automatisés sur mesure",
+      "externalIntegrations": "Intégrations Externes",
+      "externalIntegrationsDesc": "Connexion avec vos outils existants"
+    },
+    "trustSignals": "✅ Consultation gratuite • ✅ Devis sous 24h • ✅ Satisfaction garantie"
+  },
+  "portfolio": {
+    "title": "Découvrez Notre Travail",
+    "subtitle": "Explorez nos réalisations récentes et nos templates prêts à l'emploi",
+    "realizations": {
+      "title": "Nos Réalisations",
+      "description": "Découvrez nos projets récents : sites web, applications et solutions sur mesure qui ont transformé la présence digitale de nos clients.",
+      "cta": "Voir nos réalisations"
+    },
+    "templates": {
+      "title": "Templates Prêts",
+      "description": "Vous ne savez pas par où commencer ? Explorez nos templates professionnels conçus pour différents secteurs d'activité.",
+      "cta": "Parcourir les templates"
+    },
+    "finalCta": "Prêt à concrétiser votre projet ? Parlons-en !",
+    "startNow": "Commencer maintenant"
+  },
+  "cta": {
+    "title": "Prêt à dominer votre marché en ligne ?",
+    "subtitle": "Votre Succès Digital",
+    "subtitleHighlight": "Commence Maintenant",
+    "description": "Stop aux excuses ! Pendant que vos concurrents hésitent, prenez l'avantage avec un site web qui performe dès le premier jour. Votre croissance ne peut plus attendre.",
+    "mainCta": "Je Lance Mon Projet Maintenant",
+    "callCta": "Appel Stratégique Gratuit",
+    "stats": {
+      "free": "Gratuit",
+      "consultation": "Consultation & Stratégie",
+      "time": "48h",
+      "guaranteed": "Mise en ligne garantie",
+      "yourSite": "Votre Site",
+      "ownership": "Vous appartient à 100%"
+    },
+    "guarantees": "Sans engagement • Déploiement gratuit • Nom de domaine offert la 1ère année • Propriété complète du site"
+  },
+  "contact": {
+    "title": "Transformons Votre Vision en Succès",
+    "subtitle": "Prêt à révolutionner votre présence en ligne ? Contactez-nous et découvrez comment nous pouvons propulser votre business vers de nouveaux sommets.",
+    "formTitle": "Parlons de Votre Projet",
+    "commitmentTitle": "Notre Engagement",
+    "commitments": [
+      "Réponse sous 2h pendant les heures ouvrables",
+      "Consultation stratégique gratuite et sans engagement",
+      "Proposition détaillée sous 24h",
+      "Démarrage de votre projet sous 48h"
+    ]
+  },
+  "contactForm": {
+    "title": "Démarrons Votre Projet",
+    "name": "Nom",
+    "namePlaceholder": "Votre nom complet",
+    "email": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "project": "Décrivez votre projet",
+    "projectPlaceholder": "Parlez-nous de votre vision, vos objectifs, votre secteur d'activité et vos attentes...",
+    "required": "*",
+    "submitting": "Envoi en cours...",
+    "submit": "Lancer Mon Projet",
+    "successMessage": "Parfait ! Votre projet nous intéresse. Nous vous recontactons sous 2h pour discuter de votre stratégie.",
+    "errorMessage": "Erreur technique. Contactez-nous directement par email ou réessayez."
+  },
+  "footer": {
+    "description": "Création de sites web haute performance pour entreprises ambitieuses.",
+    "navigation": "Navigation",
+    "legal": "Légal",
+    "terms": "Conditions d'Utilisation",
+    "privacy": "Confidentialité",
+    "copyright": "© 2025 SiteKept. Tous droits réservés."
+  },
+  "seo": {
+    "title": "SiteKept - Sites Web Haute Performance en 48h",
+    "description": "Créez votre site web professionnel en 48h chrono ! Sites vitrines, e-commerce, applications sur mesure. Technologies de pointe, design moderne, résultats garantis. Votre succès digital commence maintenant.",
+    "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne"
+  },
+  "metadata": {
+    "title": "SiteKept - Sites Web Haute Performance en 48h",
+    "description": "Créez votre site web professionnel en 48h chrono ! Sites vitrines, e-commerce, applications sur mesure. Technologies de pointe, design moderne, résultats garantis. Votre succès digital commence maintenant.",
+    "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne",
+    "authors": "Équipe SiteKept",
+    "creator": "SiteKept",
+    "publisher": "SiteKept",
+    "openGraph": {
+      "title": "SiteKept - Sites Web Haute Performance en 48h",
+      "description": "Votre site web professionnel en ligne en 48h ! Technologies de pointe, design moderne, performance maximale. Transformez vos visiteurs en clients dès maintenant.",
+      "siteName": "SiteKept"
+    },
+    "twitter": {
+      "title": "SiteKept - Sites Web Haute Performance en 48h",
+      "description": "Votre site web professionnel en ligne en 48h ! Technologies de pointe, design moderne, performance maximale.",
+      "creator": "@sitekept"
+    },
+    "appleMobileWebAppTitle": "SiteKept"
+  },
+  "realization": {
+    "title": "Nos Réalisations",
+    "description": "Découvrez nos projets récents qui ont transformé la présence digitale de nos clients. Chaque réalisation reflète notre engagement pour l'excellence et notre expertise technique.",
+    "buttons": {
+      "startProject": "Démarrer votre projet",
+      "viewTemplates": "Voir nos templates"
+    },
+    "cta": "Discuter d'un projet similaire",
+    "projects": {
+      "iaformaplus": {
+        "name": "IAFormaPlus",
+        "description": "Plateforme de formation en intelligence artificielle avec système de gestion des cours, suivi des progressions et certification automatisée. Interface moderne et expérience utilisateur optimale."
+      },
+      "orhakerem": {
+        "name": "Orhakerem",
+        "description": "Site vitrine élégant pour cabinet d'avocat, mettant en valeur l'expertise juridique avec un design professionnel et une navigation intuitive pour les clients potentiels."
+      },
+      "pinckit": {
+        "name": "PinckIt",
+        "description": "Application web de gestion collaborative permettant aux équipes de planifier, suivre et optimiser leurs projets avec des outils visuels innovants et des tableaux de bord personnalisés."
+      }
+    }
+  },
+  "template": {
+    "title": "Templates Prêts à l'Emploi",
+    "description": "Explorez notre collection de templates professionnels conçus pour différents secteurs d'activité. Chaque template est optimisé pour la conversion et peut être personnalisé selon vos besoins.",
+    "buttons": {
+      "chooseTemplate": "Choisir un template",
+      "viewRealizations": "Voir nos réalisations"
+    },
+    "cta": "Obtenir ce template",
+    "templates": {
+      "bakery": {
+        "name": "Template Boulangerie",
+        "description": "Template élégant conçu spécialement pour les boulangeries artisanales. Met en valeur vos créations avec une galerie photo appétissante, système de commande en ligne et présentation de vos horaires."
+      },
+      "florist": {
+        "name": "Template Fleuriste",
+        "description": "Design frais et coloré pour les fleuristes. Catalogue de bouquets avec filtres, système de réservation pour événements et intégration avec les réseaux sociaux pour partager vos créations."
+      },
+      "computerRepair": {
+        "name": "Template Réparation Ordinateur",
+        "description": "Interface moderne pour les services de réparation informatique. Système de prise de rendez-vous, suivi des réparations en temps réel et section FAQ détaillée pour les problèmes courants."
+      },
+      "pastryShop": {
+        "name": "Template Pâtisserie",
+        "description": "Vitrine gourmande pour pâtisseries haut de gamme. Présentation raffinée de vos créations, système de précommande pour les événements et blog intégré pour partager vos recettes et actualités."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "lastUpdate": "Dernière mise à jour : {date}",
+    "sections": {
+      "introduction": {
+        "title": "Introduction",
+        "content": "SiteKept s'engage à protéger la confidentialité et la sécurité de vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos informations lorsque vous utilisez notre site web et nos services."
+      },
+      "dataCollected": {
+        "title": "Données Collectées",
+        "content": "Nous pouvons collecter et traiter les données suivantes :",
+        "items": [
+          "Informations d'identification : nom, prénom, adresse e-mail",
+          "Informations de contact : numéro de téléphone, adresse postale",
+          "Informations professionnelles : nom de l'entreprise, secteur d'activité",
+          "Données de navigation : adresse IP, type de navigateur, pages visitées",
+          "Données techniques : cookies, identifiants de session"
+        ]
+      },
+      "purposeOfProcessing": {
+        "title": "Finalité du Traitement",
+        "content": "Vos données personnelles sont utilisées pour :",
+        "items": [
+          "Fournir et améliorer nos services",
+          "Répondre à vos demandes et communications",
+          "Gérer votre compte client",
+          "Vous envoyer des informations sur nos services",
+          "Assurer la sécurité de notre site web",
+          "Respecter nos obligations légales"
+        ]
+      },
+      "legalBasis": {
+        "title": "Base Légale",
+        "content": "Le traitement de vos données repose sur :",
+        "items": [
+          "Votre consentement explicite",
+          "L'exécution d'un contrat",
+          "Le respect d'obligations légales",
+          "Nos intérêts légitimes"
+        ]
+      },
+      "dataSharing": {
+        "title": "Partage des Données",
+        "content": "Nous ne vendons jamais vos données personnelles. Nous pouvons partager vos informations uniquement avec :",
+        "items": [
+          "Nos prestataires de services techniques",
+          "Les autorités compétentes sur demande légale",
+          "Nos partenaires avec votre consentement explicite"
+        ]
+      },
+      "dataRetention": {
+        "title": "Conservation des Données",
+        "content": "Nous conservons vos données personnelles uniquement pendant la durée nécessaire aux finalités pour lesquelles elles ont été collectées, conformément à la législation applicable."
+      },
+      "dataSecurity": {
+        "title": "Sécurité des Données",
+        "content": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, destruction ou altération."
+      },
+      "yourRights": {
+        "title": "Vos Droits",
+        "content": "Conformément au RGPD, vous disposez des droits suivants :",
+        "items": [
+          "Droit d'accès à vos données personnelles",
+          "Droit de rectification des données inexactes",
+          "Droit à l'effacement (droit à l'oubli)",
+          "Droit à la limitation du traitement",
+          "Droit à la portabilité des données",
+          "Droit d'opposition au traitement",
+          "Droit de retirer votre consentement"
+        ]
+      },
+      "cookies": {
+        "title": "Cookies",
+        "content": "Notre site utilise des cookies pour améliorer votre expérience. Vous pouvez gérer vos préférences de cookies à tout moment via les paramètres de votre navigateur."
+      },
+      "internationalTransfers": {
+        "title": "Transferts Internationaux",
+        "content": "Si nous transférons vos données en dehors de l'Espace Économique Européen, nous nous assurons que des garanties appropriées sont en place pour protéger vos données."
+      },
+      "modifications": {
+        "title": "Modifications",
+        "content": "Nous nous réservons le droit de modifier cette politique de confidentialité. Toute modification sera publiée sur cette page avec une date de mise à jour."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Pour toute question concernant cette politique ou vos données personnelles, contactez-nous :",
+        "email": "Email : contact@sitekept.com",
+        "phone": "Téléphone : +33 1 23 45 67 89"
+      },
+      "complaints": {
+        "title": "Réclamations",
+        "content": "Si vous estimez que vos droits n'ont pas été respectés, vous pouvez déposer une réclamation auprès de la CNIL (Commission Nationale de l'Informatique et des Libertés)."
+      }
+    }
+  },
+  "terms": {
+    "title": "Conditions d'Utilisation",
+    "lastUpdate": "Dernière mise à jour : {date}",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptation des Conditions",
+        "content": "En accédant et en utilisant les services de SiteKept, vous acceptez d'être lié par les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services."
+      },
+      "serviceDescription": {
+        "title": "Description des Services",
+        "content": "SiteKept propose des services de création de sites web professionnels, incluant :",
+        "items": [
+          "Conception et développement de sites vitrines",
+          "Optimisation SEO et performance",
+          "Hébergement et maintenance technique",
+          "Support client et mises à jour",
+          "Nom de domaine (offert la première année)"
+        ]
+      },
+      "clientObligations": {
+        "title": "Obligations du Client",
+        "content": "En tant que client, vous vous engagez à :",
+        "items": [
+          "Fournir des informations exactes et complètes",
+          "Respecter les délais de fourniture des contenus",
+          "Ne pas utiliser nos services à des fins illégales",
+          "Respecter les droits de propriété intellectuelle",
+          "Effectuer les paiements selon les modalités convenues",
+          "Collaborer de bonne foi dans la réalisation du projet"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "Propriété Intellectuelle",
+        "content": "Propriété du site web :",
+        "items": [
+          "Une fois le paiement intégral effectué, vous devenez propriétaire de votre site web",
+          "Le code source vous est entièrement transféré",
+          "Les contenus (textes, images) que vous fournissez restent votre propriété",
+          "SiteKept conserve le droit d'utiliser le projet dans son portfolio",
+          "Les technologies tierces restent soumises à leurs licences respectives"
+        ]
+      },
+      "pricing": {
+        "title": "Tarifs et Paiements",
+        "content": "Modalités de paiement :",
+        "items": [
+          "Les tarifs sont indiqués en euros, toutes taxes comprises",
+          "Un acompte de 30% est requis pour démarrer le projet",
+          "Le solde est dû à la livraison du site",
+          "Les paiements s'effectuent par virement bancaire ou carte bancaire",
+          "Tout retard de paiement entraîne des pénalités de 10% par mois"
+        ]
+      },
+      "deliveryTimes": {
+        "title": "Délais de Livraison",
+        "content": "Engagement de livraison :",
+        "items": [
+          "Livraison garantie en 48h pour les sites vitrines standards",
+          "Les délais courent à partir de la réception de l'acompte et des contenus",
+          "Les projets complexes font l'objet d'un planning spécifique",
+          "Les retards dus au client ne sont pas imputables à SiteKept",
+          "En cas de retard de notre part, une remise de 5% par jour est appliquée"
+        ]
+      },
+      "warranties": {
+        "title": "Garanties et Support",
+        "content": "Nos garanties :",
+        "items": [
+          "Garantie de bon fonctionnement de 6 mois",
+          "Correction gratuite des bugs pendant la période de garantie",
+          "Support technique par email inclus pendant 3 mois",
+          "Formation à l'utilisation du site incluse",
+          "Mises à jour de sécurité critiques pendant 1 an"
+        ]
+      },
+      "liability": {
+        "title": "Limitation de Responsabilité",
+        "content": "Limites de notre responsabilité :",
+        "items": [
+          "SiteKept n'est pas responsable des pertes indirectes ou conséquentielles",
+          "Notre responsabilité est limitée au montant payé pour le service",
+          "Nous ne garantissons pas les résultats commerciaux du site",
+          "Les interruptions de service dues à des tiers ne sont pas de notre responsabilité",
+          "Le client est responsable du contenu publié sur son site"
+        ]
+      },
+      "termination": {
+        "title": "Résiliation",
+        "content": "Conditions de résiliation :",
+        "items": [
+          "Le client peut annuler dans les 7 jours suivant la signature",
+          "Au-delà, l'acompte reste acquis à SiteKept",
+          "En cas de manquement grave, chaque partie peut résilier avec préavis",
+          "Les travaux réalisés restent dus même en cas de résiliation",
+          "La résiliation n'affecte pas les droits acquis"
+        ]
+      },
+      "applicableLaw": {
+        "title": "Droit Applicable",
+        "content": "Ces conditions sont régies par le droit français. Tout litige sera soumis aux tribunaux compétents de Paris. Les parties s'engagent à tenter une résolution amiable avant toute action judiciaire."
+      },
+      "modifications": {
+        "title": "Modifications",
+        "content": "SiteKept se réserve le droit de modifier ces conditions d'utilisation à tout moment. Les modifications s'appliquent aux nouveaux contrats uniquement. Les clients existants restent soumis aux conditions acceptées lors de la signature."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Pour toute question concernant ces conditions d'utilisation :",
+        "email": "Email : contact@sitekept.com",
+        "phone": "Téléphone : +33 1 23 45 67 89",
+        "address": "Adresse : SiteKept, 123 Avenue des Champs, 75008 Paris, France"
+      }
+    },
+    "domainPolicy": {
+      "title": "Politique des Noms de Domaine",
+      "content": "Concernant le nom de domaine offert la première année :",
+      "items": [
+        "Le nom de domaine est enregistré au nom du client",
+        "SiteKept gère l'enregistrement initial et le renouvellement la première année",
+        "Après la première année, le client est responsable du renouvellement",
+        "Les frais de renouvellement sont à la charge du client",
+        "Le transfert vers un autre registrar est possible à tout moment"
+      ]
+    }
+  }
+}

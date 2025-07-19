@@ -1,18 +1,19 @@
 import { Mail } from "lucide-react";
 import { ContactForm } from "@/features/contact-form";
+import { getTranslations } from "next-intl/server";
 
-export function Contact() {
+export async function Contact() {
+  const t = await getTranslations("contact");
+
   return (
     <section id="contact" className="bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Transformons Votre Vision en Succès
+            {t("title")}
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Prêt à révolutionner votre présence en ligne ? Contactez-nous et
-            découvrez comment nous pouvons propulser votre business vers de
-            nouveaux sommets.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -21,7 +22,7 @@ export function Contact() {
           <div className="space-y-8">
             <div>
               <h3 className="mb-6 text-xl font-semibold text-slate-900">
-                Parlons de Votre Projet
+                {t("formTitle")}
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center">
@@ -33,25 +34,17 @@ export function Contact() {
 
             <div>
               <h4 className="mb-4 text-lg font-semibold text-slate-900">
-                Notre Engagement
+                {t("commitmentTitle")}
               </h4>
               <ul className="space-y-3 text-slate-600">
-                <li className="flex items-start">
-                  <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Réponse sous 2h pendant les heures ouvrables
-                </li>
-                <li className="flex items-start">
-                  <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Consultation stratégique gratuite et sans engagement
-                </li>
-                <li className="flex items-start">
-                  <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Proposition détaillée sous 24h
-                </li>
-                <li className="flex items-start">
-                  <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
-                  Démarrage de votre projet sous 48h
-                </li>
+                {t
+                  .raw("commitments")
+                  .map((commitment: string, index: number) => (
+                    <li key={index} className="flex items-start">
+                      <div className="mt-1 mr-2 h-1.5 w-1.5 rounded-full bg-blue-600" />
+                      {commitment}
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>

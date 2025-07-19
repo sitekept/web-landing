@@ -5,17 +5,20 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "@/components/language-switcher";
 
 const NAVIGATION_ITEMS = [
-  { name: "Accueil", href: "/#hero" },
-  { name: "Services", href: "/#services" },
-  { name: "Nos créations", href: "/#our-work" },
-  { name: "Contact", href: "/#contact" },
+  { key: "navigation.home", href: "/#hero" },
+  { key: "navigation.services", href: "/#services" },
+  { key: "navigation.ourWork", href: "/#our-work" },
+  { key: "navigation.contact", href: "/#contact" },
 ] as const;
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const t = useTranslations();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,16 +74,17 @@ export function Navigation() {
               }`;
 
               return (
-                <Link key={item.name} href={item.href} className={linkClass}>
-                  {item.name}
+                <Link key={item.key} href={item.href} className={linkClass}>
+                  {t(item.key)}
                 </Link>
               );
             })}
+            <LanguageSwitcher />
             <Button
               asChild
               className="bg-blue-600 text-white hover:bg-blue-700"
             >
-              <Link href="/#contact">Commencer</Link>
+              <Link href="/#contact">{t("navigation.start")}</Link>
             </Button>
           </div>
 
@@ -91,7 +95,9 @@ export function Navigation() {
               className={`p-2 ${isScrolled ? "text-slate-900" : "text-white"}`}
               type="button"
               aria-expanded={isOpen}
-              aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-label={
+                isOpen ? t("navigation.closeMenu") : t("navigation.openMenu")
+              }
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -112,22 +118,23 @@ export function Navigation() {
 
                 return (
                   <Link
-                    key={item.name}
+                    key={item.key}
                     href={item.href}
                     className={mobileClass}
                     onClick={closeMenu}
                   >
-                    {item.name}
+                    {t(item.key)}
                   </Link>
                 );
               })}
-              <div className="px-3 py-2">
+              <div className="flex items-center gap-2 px-3 py-2">
+                <LanguageSwitcher />
                 <Button
                   asChild
-                  className="w-full bg-blue-600 text-white hover:bg-blue-700"
+                  className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
                 >
                   <Link href="/#contact" onClick={closeMenu}>
-                    Commencer
+                    {t("navigation.start")}
                   </Link>
                 </Button>
               </div>

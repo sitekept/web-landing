@@ -3,8 +3,12 @@
 import { Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export function Footer() {
+  const t = useTranslations("footer");
+  const nav = useTranslations("navigation");
+
   return (
     <footer className="bg-slate-900 px-6 py-8 lg:px-8">
       <div className="mx-auto max-w-7xl">
@@ -24,8 +28,7 @@ export function Footer() {
               <span className="text-lg font-bold text-white">SiteKept</span>
             </div>
             <p className="mb-4 max-w-md text-sm leading-relaxed text-slate-400">
-              Création de sites web haute performance pour entreprises
-              ambitieuses.
+              {t("description")}
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-sm text-slate-400">
@@ -52,7 +55,7 @@ export function Footer() {
           {/* Navigation Links - Compact column */}
           <div className="lg:col-span-3">
             <h3 className="mb-3 text-sm font-semibold tracking-wider text-white uppercase">
-              Navigation
+              {t("navigation")}
             </h3>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
@@ -60,7 +63,7 @@ export function Footer() {
                   href="/"
                   className="block transition-colors hover:text-white"
                 >
-                  Accueil
+                  {nav("home")}
                 </Link>
               </li>
               <li>
@@ -72,7 +75,7 @@ export function Footer() {
                   }
                   className="block transition-colors hover:text-white"
                 >
-                  Services
+                  {nav("services")}
                 </button>
               </li>
               <li>
@@ -84,7 +87,7 @@ export function Footer() {
                   }
                   className="block transition-colors hover:text-white"
                 >
-                  Nos créations
+                  {nav("ourWork")}
                 </button>
               </li>
               <li>
@@ -92,7 +95,7 @@ export function Footer() {
                   href="/#contact"
                   className="block transition-colors hover:text-white"
                 >
-                  Contact
+                  {nav("contact")}
                 </Link>
               </li>
             </ul>
@@ -101,7 +104,7 @@ export function Footer() {
           {/* Legal Links - Compact column */}
           <div className="lg:col-span-3">
             <h3 className="mb-3 text-sm font-semibold tracking-wider text-white uppercase">
-              Légal
+              {t("legal")}
             </h3>
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
@@ -109,7 +112,7 @@ export function Footer() {
                   href="/terms"
                   className="block transition-colors hover:text-white"
                 >
-                  Conditions d&apos;Utilisation
+                  {t("terms")}
                 </Link>
               </li>
               <li>
@@ -117,7 +120,7 @@ export function Footer() {
                   href="/privacy"
                   className="block transition-colors hover:text-white"
                 >
-                  Confidentialité
+                  {t("privacy")}
                 </Link>
               </li>
             </ul>
@@ -126,9 +129,7 @@ export function Footer() {
 
         {/* Copyright - Minimal padding */}
         <div className="mt-6 border-t border-slate-800 pt-4">
-          <p className="text-center text-xs text-slate-400">
-            © 2025 SiteKept. Tous droits réservés.
-          </p>
+          <p className="text-center text-xs text-slate-400">{t("copyright")}</p>
         </div>
       </div>
     </footer>

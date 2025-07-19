@@ -1,40 +1,39 @@
+import { getTranslations } from "next-intl/server";
 import { ProjectCard } from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import { Lightbulb, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-const TEMPLATES = [
-  {
-    name: "Template Boulangerie",
-    url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/boulangerie",
-    description:
-      "Site vitrine complet pour boulangerie avec galerie de produits, horaires, présentation de l'équipe et formulaire de contact. Design chaleureux et appétissant.",
-    screenshot: "/template/boulangerie.png",
-  },
-  {
-    name: "Template Fleuriste",
-    url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/fleuriste",
-    description:
-      "Élégant site pour fleuriste avec catalogue de créations, service de livraison, événements spéciaux et système de commande en ligne.",
-    screenshot: "/template/fleuriste.png",
-  },
-  {
-    name: "Template Réparation Ordinateur",
-    url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/ordinateur",
-    description:
-      "Site professionnel pour service de réparation informatique avec système de diagnostic en ligne, tarifs transparents et prise de RDV.",
-    screenshot: "/template/ordinateur.png",
-  },
-  {
-    name: "Template Pâtisserie",
-    url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/pattiserie",
-    description:
-      "Site raffiné pour pâtisserie artisanale avec présentation des créations, commandes personnalisées, et système de réservation pour événements.",
-    screenshot: "/template/patisserie.png",
-  },
-] as const;
+export default async function TemplatePage() {
+  const t = await getTranslations("template");
 
-export default function TemplatePage() {
+  const TEMPLATES = [
+    {
+      name: t("templates.bakery.name"),
+      url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/boulangerie",
+      description: t("templates.bakery.description"),
+      screenshot: "/template/boulangerie.png",
+    },
+    {
+      name: t("templates.florist.name"),
+      url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/fleuriste",
+      description: t("templates.florist.description"),
+      screenshot: "/template/fleuriste.png",
+    },
+    {
+      name: t("templates.computerRepair.name"),
+      url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/ordinateur",
+      description: t("templates.computerRepair.description"),
+      screenshot: "/template/ordinateur.png",
+    },
+    {
+      name: t("templates.pastryShop.name"),
+      url: "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/pattiserie",
+      description: t("templates.pastryShop.description"),
+      screenshot: "/template/patisserie.png",
+    },
+  ] as const;
+
   return (
     <>
       {/* Hero Section */}
@@ -44,18 +43,14 @@ export default function TemplatePage() {
             <div className="mb-6 flex items-center justify-center">
               <Lightbulb className="mr-4 h-12 w-12 text-yellow-500" />
               <h1 className="text-4xl font-bold text-gray-900 md:text-5xl">
-                Templates Prêts à l&apos;Emploi
+                {t("title")}
               </h1>
             </div>
-            <p className="mb-8 text-xl text-gray-600">
-              Vous ne savez pas par où commencer ? Nos templates professionnels
-              sont conçus pour vous donner l&apos;inspiration et accélérer votre
-              projet en ligne.
-            </p>
+            <p className="mb-8 text-xl text-gray-600">{t("description")}</p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="px-8 text-lg">
                 <Link href="/#contact">
-                  Choisir un template
+                  {t("buttons.chooseTemplate")}
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
               </Button>
@@ -65,7 +60,7 @@ export default function TemplatePage() {
                 size="lg"
                 className="px-8 text-lg"
               >
-                <Link href="/realization">Voir nos réalisations</Link>
+                <Link href="/realization">{t("buttons.viewRealizations")}</Link>
               </Button>
             </div>
           </div>
@@ -84,7 +79,7 @@ export default function TemplatePage() {
                 description={template.description}
                 screenshot={template.screenshot}
                 category="template"
-                ctaText="Obtenir ce template"
+                ctaText={t("cta")}
                 ctaLink="/#contact"
               />
             ))}

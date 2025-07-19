@@ -32,33 +32,37 @@ export function ProjectCard({
   };
 
   return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+    <Card className="transform overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <CardContent className="p-0">
-        <div className="relative h-48 bg-gray-100 overflow-hidden">
+        <div className="relative h-48 overflow-hidden bg-gray-100">
           <Image
             src={screenshot}
             alt={`Aperçu de ${name}`}
             fill
-            className="object-cover hover:scale-105 transition-transform duration-300"
+            className="object-cover transition-transform duration-300 hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
           />
         </div>
         <div className="p-6">
-          <div className="flex items-center gap-2 mb-2">
-            <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-              category === "realisation" 
-                ? "bg-green-100 text-green-800"
-                : "bg-blue-100 text-blue-800"
-            }`}>
+          <div className="mb-2 flex items-center gap-2">
+            <span
+              className={`rounded-full px-2 py-1 text-xs font-medium ${
+                category === "realisation"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-blue-100 text-blue-800"
+              }`}
+            >
               {category === "realisation" ? "Réalisation" : "Template"}
             </span>
           </div>
-          
-          <h3 className="font-bold text-xl text-gray-900 mb-2">{name}</h3>
-          <p className="text-gray-600 mb-4 text-sm leading-relaxed">{description}</p>
-          
+
+          <h3 className="mb-2 text-xl font-bold text-gray-900">{name}</h3>
+          <p className="mb-4 text-sm leading-relaxed text-gray-600">
+            {description}
+          </p>
+
           <div className="flex gap-2">
             <Button
               onClick={handleVisit}
@@ -69,7 +73,7 @@ export function ProjectCard({
               <ExternalLink size={16} />
               Visiter
             </Button>
-            
+
             {ctaLink ? (
               <Button asChild size="sm" className="flex items-center gap-2">
                 <Link href={ctaLink}>
