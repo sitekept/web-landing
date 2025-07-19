@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import "./globals.css";
+import { ENV } from "@/lib/env";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -96,7 +97,7 @@ export default async function RootLayout({
             <Footer />
           </main>
         </NextIntlClientProvider>
-        <GoogleAnalytics gaId="G-XYZ" />
+        <GoogleAnalytics gaId={ENV.NEXT_PUBLIC_GA_ID ?? ""} />
       </body>
     </html>
   );
