@@ -58,7 +58,9 @@ export function ProjectCard({
             </span>
           </div>
 
-          <h3 className="mb-2 text-xl font-bold text-gray-900">{name}</h3>
+          {category === "realisation" && (
+            <h3 className="mb-2 text-xl font-bold text-gray-900">{name}</h3>
+          )}
           <p className="mb-4 text-sm leading-relaxed text-gray-600">
             {description}
           </p>

@@ -103,3 +103,23 @@ src/
 - Primary language: French (fr)
 - Content is in French throughout the application
 - SEO metadata configured for French market
+
+## Recent Updates (Feature: Website Redesign and Enhancement)
+
+### Portfolio Components
+- **Portfolio Section**: Dynamic portfolio gallery with optimized images
+- **Portfolio Data**: Static configuration in TypeScript interfaces
+- **Asset Management**: Images in `/public/realization/` with Next.js optimization
+- **Featured Projects**: flowcycleaccounting.com (Noa), mathintegral.com (Matthias)
+
+### Footer Enhancements
+- **Animation Support**: Majin Vegeta animation with motion preference detection
+- **Social Links**: LinkedIn company page integration
+- **Responsive Layout**: Flexbox-based footer with proper element positioning
+- **Accessibility**: Proper ARIA labels and keyboard navigation
+
+### Template System
+- **Variant-Based Design**: Configurable color schemes and content placeholders
+- **Brand Generalization**: Removal of business-specific references
+- **Template Interfaces**: TypeScript contracts for consistent component props
+- **French Content**: All template variations maintain French localization

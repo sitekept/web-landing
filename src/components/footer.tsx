@@ -127,9 +127,23 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright - Minimal padding */}
-        <div className="mt-6 border-t border-slate-800 pt-4">
+        {/* Copyright with animation - More padding for character space */}
+        <div className="relative mt-14 border-t border-slate-800 pt-4 pb-8">
           <p className="text-center text-xs text-slate-400">{t("copyright")}</p>
+
+          {/* Walking Majin Vegeta Animation - positioned above the border line */}
+          <div className="pointer-events-none absolute -top-12 left-0 z-10 h-16 w-full overflow-hidden">
+            <div className="animate-walk-across h-12 w-12">
+              <Image
+                src="/majin-vegeta/walk.gif"
+                alt="majin-vegeta"
+                width={48}
+                height={48}
+                className="h-full w-full object-contain"
+                unoptimized
+              />
+            </div>
+          </div>
         </div>
       </div>
     </footer>

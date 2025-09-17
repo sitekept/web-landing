@@ -120,3 +120,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes walk-across {
+  0% {
+    transform: translateX(-48px);
+  }
+  100% {
+    transform: translateX(calc(100vw - 48px));
+  }
+}
+
+.animate-walk-across {
+  animation: walk-across 12s linear infinite;
+}

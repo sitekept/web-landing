@@ -219,6 +219,14 @@
       "pinckit": {
         "name": "PinckIt",
         "description": "Application web de gestion collaborative permettant aux équipes de planifier, suivre et optimiser leurs projets avec des outils visuels innovants et des tableaux de bord personnalisés."
+      },
+      "flowcycleaccounting": {
+        "name": "FlowCycleAccounting",
+        "description": "Plateforme moderne de comptabilité et de gestion pour les propriétaires et gestionnaires immobiliers, avec un suivi simplifié des finances."
+      },
+      "mathintegral": {
+        "name": "MathIntegral",
+        "description": "Marketplace éducatif dédié aux exercices et solutions mathématiques manuscrits, avec intégration d’IA pour la transcription en texte."
       }
     }
   },
