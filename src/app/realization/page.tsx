@@ -26,18 +26,6 @@ export default async function RealizationPage() {
       description: t("projects.pinckit.description"),
       screenshot: "/realization/pinckit.png",
     },
-    {
-      name: "FlowCycleAccounting",
-      url: "https://flowcycleaccounting.com",
-      description: t("projects.flowcycleaccounting.description"),
-      screenshot: "/realization/flowcycleaccounting.png",
-    },
-    {
-      name: "MathIntegral",
-      url: "https://mathintegral.com",
-      description: t("projects.mathintegral.description"),
-      screenshot: "/realization/mathintegral.png",
-    },
   ] as const;
 
   return (
