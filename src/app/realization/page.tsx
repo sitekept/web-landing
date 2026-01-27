@@ -26,6 +26,12 @@ export default async function RealizationPage() {
       description: t("projects.pinckit.description"),
       screenshot: "/realization/pinckit.png",
     },
+    {
+      name: "Bismuthcpa",
+      url: "https://bismuthcpa.com",
+      description: t("projects.bismuthcpa.description"),
+      screenshot: "/realization/flowcycleaccounting.png",
+    },
   ] as const;
 
   return (
