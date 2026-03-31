@@ -89,7 +89,7 @@ export default async function RootLayout({
           content={t("appleMobileWebAppTitle")}
         />
       </head>
-      <body className={inter.className}>
+      <body suppressHydrationWarning className={inter.className}>
         <NextIntlClientProvider>
           <main className="min-h-screen">
             <Navigation />
