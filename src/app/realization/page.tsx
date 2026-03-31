@@ -26,6 +26,24 @@ export default async function RealizationPage() {
       description: t("projects.pinckit.description"),
       screenshot: "/realization/pinckit.png",
     },
+    {
+      name: "LegitBrainrot",
+      url: "https://www.legitbrainrot.com/",
+      description: t("projects.iaformaplus.description"),
+      screenshot: "/realization/legitbrainrot.png",
+    },
+    {
+      name: "ComizGlobal",
+      url: "https://www.comizglobal.com/",
+      description: t("projects.orhakerem.description"),
+      screenshot: "/realization/comizglobal.png",
+    },
+    {
+      name: "BismuthCPA",
+      url: "https://www.bismuthcpa.com/",
+      description: t("projects.pinckit.description"),
+      screenshot: "/realization/bismuthcpa.png",
+    },
   ] as const;
 
   return (
