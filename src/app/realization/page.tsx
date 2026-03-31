@@ -44,6 +44,12 @@ export default async function RealizationPage() {
       description: t("projects.pinckit.description"),
       screenshot: "/realization/bismuthcpa.png",
     },
+    {
+      name: "Les assureurs experts",
+      url: "https://lesassureursexperts.fr/",
+      description: t("projects.iaformaplus.description"),
+      screenshot: "/realization/lesassureursexperts.png",
+    },
   ] as const;
 
   return (
