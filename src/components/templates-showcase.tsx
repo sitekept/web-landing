@@ -38,7 +38,7 @@ export function TemplatesShowcase({
   return (
     <section
       id={sectionId}
-      className="bg-white px-6 py-20 sm:py-24 lg:px-8"
+      className="bg-slate-50 px-6 py-20 sm:py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         {title ? (

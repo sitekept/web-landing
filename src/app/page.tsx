@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  BadgeEuro,
-  CheckCircle2,
-  Clock3,
-  Globe,
-  MessagesSquare,
-  Rocket,
-  Search,
-  Shield,
-  ShieldCheck,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TemplatesShowcase } from "@/components/templates-showcase";
 import {
@@ -28,22 +16,6 @@ import {
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
 import { Contact } from "./_components/contact";
-
-const offerIconMap = {
-  badgeEuro: BadgeEuro,
-  clock3: Clock3,
-  shieldCheck: ShieldCheck,
-  rocket: Rocket,
-  globe: Globe,
-  wrench: Wrench,
-} as const;
-
-const whyIconMap = {
-  rocket: Rocket,
-  shield: Shield,
-  search: Search,
-  messagesSquare: MessagesSquare,
-} as const;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
@@ -70,11 +42,13 @@ export default async function Home() {
     <>
       <section
         id="hero"
-        className="bg-[linear-gradient(180deg,#020617_0%,#0f172a_100%)] px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"
+        className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.24),_transparent_28%),linear-gradient(135deg,#0f172a_0%,#1d4ed8_58%,#7c3aed_100%)] px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"
       >
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0.1))]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center rounded-sm border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200">
+            <div className="inline-flex items-center rounded-sm border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur">
+              <span className="mr-2 h-2 w-2 rounded-full bg-blue-300" />
               {getLocalizedText(hero.eyebrow, locale)}
             </div>
 
@@ -90,7 +64,7 @@ export default async function Home() {
               <Button
                 asChild
                 size="lg"
-                className="bg-blue-700 px-8 text-base font-semibold text-white hover:bg-blue-800"
+                className="bg-blue-600 px-8 text-base font-semibold text-white hover:bg-blue-700"
               >
                 <Link href="/#contact">
                   {getLocalizedText(hero.primaryCta, locale)}
@@ -121,11 +95,11 @@ export default async function Home() {
             </div>
           </div>
 
-          <aside className="rounded-md border border-slate-800 bg-slate-900 p-6 shadow-xl shadow-slate-950/20">
+          <aside className="rounded-md border border-white/10 bg-white/5 p-6 shadow-xl shadow-slate-950/20 backdrop-blur">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
               {locale === "fr" ? "Offre de départ" : "Starter offer"}
             </p>
-            <div className="mt-5 rounded-sm border border-slate-800 bg-slate-950 p-6">
+            <div className="mt-5 rounded-sm bg-slate-950/60 p-6">
               <p className="text-sm text-slate-300">
                 {locale === "fr"
                   ? "Pour PME locales, indépendants et équipes qui veulent aller vite sans s'enfermer."
@@ -184,17 +158,14 @@ export default async function Home() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {offerHighlights.map((highlight) => {
-              const Icon = offerIconMap[highlight.icon];
               const copy = getLocalizedValue(highlight.copy, locale);
 
               return (
                 <article
                   key={highlight.id}
-                  className="rounded-md border border-slate-200 bg-white p-6 shadow-sm"
+                  className="rounded-md border border-blue-100 bg-slate-50 p-6 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-slate-100 text-blue-700">
-                    <Icon className="h-6 w-6" />
-                  </div>
+                  <div className="h-0.5 w-12 bg-blue-600" />
                   <h3 className="mt-5 text-xl font-semibold text-slate-950">
                     {copy.title}
                   </h3>
@@ -224,27 +195,20 @@ export default async function Home() {
 
           <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {whySitekeptItems.map((item) => {
-              const Icon = whyIconMap[item.icon];
               const copy = getLocalizedValue(item.copy, locale);
 
               return (
                 <article
                   key={item.id}
-                  className="rounded-md bg-white p-8 shadow-sm ring-1 ring-slate-200"
+                  className="rounded-md bg-white p-8 shadow-sm ring-1 ring-blue-100"
                 >
-                  <div className="flex items-start gap-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-slate-950 text-white">
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-slate-950">
-                        {copy.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-7 text-slate-600">
-                        {copy.description}
-                      </p>
-                    </div>
-                  </div>
+                  <div className="h-0.5 w-12 bg-blue-600" />
+                  <h3 className="mt-5 text-xl font-semibold text-slate-950">
+                    {copy.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {copy.description}
+                  </p>
                 </article>
               );
             })}
@@ -254,7 +218,7 @@ export default async function Home() {
 
       <section
         id="seo-geo"
-        className="bg-slate-950 px-6 py-20 text-white sm:py-24 lg:px-8"
+        className="bg-[linear-gradient(135deg,#0f172a_0%,#1e3a8a_70%,#1d4ed8_100%)] px-6 py-20 text-white sm:py-24 lg:px-8"
       >
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_420px]">
           <div>
@@ -273,7 +237,7 @@ export default async function Home() {
                 (bullet) => (
                   <div
                     key={bullet}
-                    className="rounded-sm border border-slate-800 bg-slate-900 p-4 text-sm text-slate-200"
+                    className="rounded-sm border border-blue-300/20 bg-white/8 p-4 text-sm text-slate-100"
                   >
                     {bullet}
                   </div>
@@ -285,7 +249,7 @@ export default async function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="mt-8 border-slate-600 bg-transparent text-white hover:bg-white/5"
+                className="mt-8 border-white/20 bg-transparent text-white hover:bg-white/10"
               >
                 <Link href={`/blog/${seoArticle.slug}`}>
                   {getLocalizedText(homeContent.visibilitySection.linkLabel, locale)}
@@ -299,7 +263,7 @@ export default async function Home() {
             {blogPosts.map((post) => (
               <article
                 key={post.slug}
-                className="rounded-md border border-slate-800 bg-slate-900 p-6"
+                className="rounded-md border border-blue-300/20 bg-white/8 p-6"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-300">
                   {getLocalizedText(post.category, locale)}
@@ -312,7 +276,7 @@ export default async function Home() {
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="mt-5 inline-flex items-center text-sm font-medium text-white hover:text-slate-300"
+                  className="mt-5 inline-flex items-center text-sm font-medium text-white hover:text-blue-100"
                 >
                   {locale === "fr" ? "Lire la page" : "Read the page"}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -344,9 +308,9 @@ export default async function Home() {
               return (
                 <article
                   key={step.id}
-                  className="rounded-md border border-slate-200 bg-white p-6"
+                  className="rounded-md border border-blue-100 bg-slate-50 p-6"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-slate-950 text-sm font-semibold text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-blue-600 text-sm font-semibold text-white">
                     {index + 1}
                   </div>
                   <h3 className="mt-5 text-xl font-semibold text-slate-950">
