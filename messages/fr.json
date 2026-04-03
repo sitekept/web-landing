@@ -1,10 +1,13 @@
 {
   "navigation": {
     "home": "Accueil",
+    "templates": "Templates",
+    "visibility": "SEO / GEO",
+    "faq": "FAQ",
     "services": "Services",
     "ourWork": "Nos créations",
     "contact": "Contact",
-    "start": "Commencer",
+    "start": "Demander un devis",
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu"
   },
@@ -142,38 +145,43 @@
     "guarantees": "Sans engagement • Déploiement gratuit • Nom de domaine offert la 1ère année • Propriété complète du site"
   },
   "contact": {
-    "title": "Transformons Votre Vision en Succès",
-    "subtitle": "Prêt à révolutionner votre présence en ligne ? Contactez-nous et découvrez comment nous pouvons propulser votre business vers de nouveaux sommets.",
-    "formTitle": "Parlons de Votre Projet",
+    "title": "Demandez un devis clair, rapide et sans jargon",
+    "subtitle": "Expliquez votre activité, votre objectif et le style souhaité. Nous revenons vers vous avec un cadre simple: prix, délai, périmètre et mise en ligne.",
+    "formTitle": "Parlons de votre projet",
     "commitmentTitle": "Notre Engagement",
     "commitments": [
-      "Réponse sous 2h pendant les heures ouvrables",
-      "Consultation stratégique gratuite et sans engagement",
-      "Proposition détaillée sous 24h",
-      "Démarrage de votre projet sous 48h"
+      "Réponse rapide pendant les heures ouvrables",
+      "Cadre clair sur le prix d'entrée et le délai",
+      "Déploiement et mise en ligne pris en charge par Sitekept",
+      "Aucun jargon inutile, aucun abonnement imposé"
     ]
   },
   "contactForm": {
-    "title": "Démarrons Votre Projet",
+    "title": "Recevez votre devis",
     "name": "Nom",
     "namePlaceholder": "Votre nom complet",
     "email": "Email",
     "emailPlaceholder": "votre@email.com",
     "project": "Décrivez votre projet",
-    "projectPlaceholder": "Parlez-nous de votre vision, vos objectifs, votre secteur d'activité et vos attentes...",
+    "projectPlaceholder": "Parlez-nous de votre activité, de votre objectif, de votre secteur et du style de site recherché...",
     "required": "*",
     "submitting": "Envoi en cours...",
-    "submit": "Lancer Mon Projet",
-    "successMessage": "Parfait ! Votre projet nous intéresse. Nous vous recontactons sous 2h pour discuter de votre stratégie.",
+    "submit": "Demander un devis",
+    "successMessage": "Merci. Nous revenons vers vous rapidement avec un cadre clair pour votre projet.",
     "errorMessage": "Erreur technique. Contactez-nous directement par email ou réessayez."
   },
   "footer": {
-    "description": "Création de sites web haute performance pour entreprises ambitieuses.",
+    "description": "Sites professionnels rapides à lancer, transparents à acheter et entièrement détenus par le client.",
     "navigation": "Navigation",
+    "resources": "Ressources",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "visibility": "SEO / GEO",
+    "quote": "Demander un devis",
     "legal": "Légal",
     "terms": "Conditions d'Utilisation",
     "privacy": "Confidentialité",
-    "copyright": "© 2025 SiteKept. Tous droits réservés."
+    "copyright": "© 2026 Sitekept. Tous droits réservés."
   },
   "seo": {
     "title": "SiteKept - Sites Web Haute Performance en 48h",
@@ -181,20 +189,20 @@
     "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne"
   },
   "metadata": {
-    "title": "SiteKept - Sites Web Haute Performance en 48h",
-    "description": "Créez votre site web professionnel en 48h chrono ! Sites vitrines, e-commerce, applications sur mesure. Technologies de pointe, design moderne, résultats garantis. Votre succès digital commence maintenant.",
-    "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne",
+    "title": "Sitekept - Site pro en 48h, sans abonnement et 100% à vous",
+    "description": "Sitekept livre des sites professionnels à partir de 500€, mis en ligne en 48h, sans abonnement imposé, avec déploiement inclus, domaine offert 1 an et optimisation SEO + GEO.",
+    "keywords": "site professionnel 48h, creation site rapide, site sans abonnement, site 100% propriétaire, déploiement inclus, SEO GEO, site vitrine PME, site indépendant",
     "authors": "Équipe SiteKept",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "SiteKept - Sites Web Haute Performance en 48h",
-      "description": "Votre site web professionnel en ligne en 48h ! Technologies de pointe, design moderne, performance maximale. Transformez vos visiteurs en clients dès maintenant.",
+      "title": "Sitekept - Site pro en 48h, sans abonnement et 100% à vous",
+      "description": "Un site pro à partir de 500€, livré vite, déployé par Sitekept, optimisé SEO + GEO et entièrement détenu par le client.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "SiteKept - Sites Web Haute Performance en 48h",
-      "description": "Votre site web professionnel en ligne en 48h ! Technologies de pointe, design moderne, performance maximale.",
+      "title": "Sitekept - Site pro en 48h, sans abonnement et 100% à vous",
+      "description": "Site professionnel rapide à lancer, transparent à acheter et conçu pour la visibilité.",
       "creator": "@sitekept"
     },
     "appleMobileWebAppTitle": "SiteKept"

@@ -1,150 +1,139 @@
-"use client";
-
-import { Mail, Phone } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { Mail, Phone } from "lucide-react";
+import { SiteLocale } from "@/content/site-content";
+import { getMessage } from "@/lib/site-messages";
 
-export function Footer() {
-  const t = useTranslations("footer");
-  const nav = useTranslations("navigation");
+interface FooterProps {
+  locale: SiteLocale;
+}
+
+export async function Footer({ locale }: FooterProps) {
 
   return (
-    <footer className="bg-slate-900 px-6 py-8 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8">
-          {/* Company Info - Takes more space on large screens */}
-          <div className="lg:col-span-6">
-            <div className="mb-4 flex items-center space-x-2">
-              <div className="flex h-7 w-7 items-center justify-center">
-                <Image
-                  src="/logo.png"
-                  alt="SiteKept Logo"
-                  width={50}
-                  height={50}
-                  className="rounded-lg"
-                />
-              </div>
-              <span className="text-lg font-bold text-white">SiteKept</span>
-            </div>
-            <p className="mb-4 max-w-md text-sm leading-relaxed text-slate-400">
-              {t("description")}
-            </p>
-            <div className="space-y-2">
-              <div className="flex items-center text-sm text-slate-400">
-                <Mail className="mr-2 h-4 w-4 flex-shrink-0" />
-                <a
-                  href="mailto:sitekept@gmail.com"
-                  className="transition-colors hover:text-white"
-                >
-                  sitekept@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center text-sm text-slate-400">
-                <Phone className="mr-2 h-4 w-4 flex-shrink-0" />
-                <a
-                  href="tel:+33651179925"
-                  className="transition-colors hover:text-white"
-                >
-                  +33 6 51 17 99 25
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Navigation Links - Compact column */}
-          <div className="lg:col-span-3">
-            <h3 className="mb-3 text-sm font-semibold tracking-wider text-white uppercase">
-              {t("navigation")}
-            </h3>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>
-                <Link
-                  href="/"
-                  className="block transition-colors hover:text-white"
-                >
-                  {nav("home")}
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("services")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="block transition-colors hover:text-white"
-                >
-                  {nav("services")}
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() =>
-                    document
-                      .getElementById("our-work")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                  className="block transition-colors hover:text-white"
-                >
-                  {nav("ourWork")}
-                </button>
-              </li>
-              <li>
-                <Link
-                  href="/#contact"
-                  className="block transition-colors hover:text-white"
-                >
-                  {nav("contact")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal Links - Compact column */}
-          <div className="lg:col-span-3">
-            <h3 className="mb-3 text-sm font-semibold tracking-wider text-white uppercase">
-              {t("legal")}
-            </h3>
-            <ul className="space-y-2 text-sm text-slate-400">
-              <li>
-                <Link
-                  href="/terms"
-                  className="block transition-colors hover:text-white"
-                >
-                  {t("terms")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="block transition-colors hover:text-white"
-                >
-                  {t("privacy")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Copyright with animation - More padding for character space */}
-        <div className="relative mt-14 border-t border-slate-800 pt-4 pb-8">
-          <p className="text-center text-xs text-slate-400">{t("copyright")}</p>
-
-          {/* Walking Majin Vegeta Animation - positioned above the border line */}
-          <div className="pointer-events-none absolute -top-12 left-0 z-10 h-16 w-full overflow-hidden">
-            <div className="animate-walk-across h-12 w-12">
+    <footer className="border-t border-slate-200 bg-slate-950 px-6 py-16 text-white lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,1fr))]">
+        <div>
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center">
               <Image
-                src="/majin-vegeta/walk.gif"
-                alt="majin-vegeta"
-                width={48}
-                height={48}
-                className="h-full w-full object-contain"
-                unoptimized
+                src="/logo.png"
+                alt="Sitekept logo"
+                width={36}
+                height={36}
+                className="rounded-lg"
               />
             </div>
+            <div>
+              <p className="text-lg font-semibold">Sitekept</p>
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-400">
+                SEO, GEO, lancement rapide
+              </p>
+            </div>
+          </div>
+          <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">
+            {getMessage(locale, "footer.description")}
+          </p>
+          <div className="mt-6 space-y-3 text-sm text-slate-300">
+            <a
+              href="mailto:sitekept@gmail.com"
+              className="flex items-center gap-3 transition-colors hover:text-white"
+            >
+              <Mail className="h-4 w-4" />
+              <span>sitekept@gmail.com</span>
+            </a>
+            <a
+              href="tel:+33651179925"
+              className="flex items-center gap-3 transition-colors hover:text-white"
+            >
+              <Phone className="h-4 w-4" />
+              <span>+33 6 51 17 99 25</span>
+            </a>
           </div>
         </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
+            {getMessage(locale, "footer.navigation")}
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-slate-300">
+            <li>
+              <Link href="/" className="transition-colors hover:text-white">
+                {getMessage(locale, "navigation.home")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/templates" className="transition-colors hover:text-white">
+                {getMessage(locale, "navigation.templates")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/#seo-geo" className="transition-colors hover:text-white">
+                {getMessage(locale, "navigation.visibility")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/#contact" className="transition-colors hover:text-white">
+                {getMessage(locale, "navigation.contact")}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
+            {getMessage(locale, "footer.resources")}
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-slate-300">
+            <li>
+              <Link href="/blog" className="transition-colors hover:text-white">
+                {getMessage(locale, "footer.blog")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog/site-optimise-seo-geo"
+                className="transition-colors hover:text-white"
+              >
+                {getMessage(locale, "footer.visibility")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/#faq" className="transition-colors hover:text-white">
+                {getMessage(locale, "footer.faq")}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
+            {getMessage(locale, "footer.legal")}
+          </h3>
+          <ul className="mt-4 space-y-3 text-sm text-slate-300">
+            <li>
+              <Link href="/terms" className="transition-colors hover:text-white">
+                {getMessage(locale, "footer.terms")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/privacy" className="transition-colors hover:text-white">
+                {getMessage(locale, "footer.privacy")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/#contact" className="transition-colors hover:text-white">
+                {getMessage(locale, "footer.quote")}
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-12 max-w-7xl border-t border-slate-800 pt-6">
+        <p className="text-sm text-slate-400">
+          {getMessage(locale, "footer.copyright")}
+        </p>
       </div>
     </footer>
   );

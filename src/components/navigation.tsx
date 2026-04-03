@@ -1,146 +1,158 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { SiteLocale } from "@/content/site-content";
 
 const NAVIGATION_ITEMS = [
-  { key: "navigation.home", href: "/#hero" },
-  { key: "navigation.services", href: "/#services" },
-  { key: "navigation.ourWork", href: "/#our-work" },
-  { key: "navigation.contact", href: "/#contact" },
+  { key: "templates", href: "/templates" },
+  { key: "visibility", href: "/#seo-geo" },
+  { key: "faq", href: "/#faq" },
+  { key: "contact", href: "/#contact" },
 ] as const;
 
-export function Navigation() {
+const navigationLabels = {
+  fr: {
+    templates: "Templates",
+    visibility: "SEO / GEO",
+    faq: "FAQ",
+    contact: "Contact",
+    start: "Demander un devis",
+    openMenu: "Ouvrir le menu",
+    closeMenu: "Fermer le menu",
+    brandMeta: "SEO, GEO, lancement rapide",
+  },
+  en: {
+    templates: "Templates",
+    visibility: "SEO / GEO",
+    faq: "FAQ",
+    contact: "Contact",
+    start: "Request a quote",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    brandMeta: "SEO, GEO, fast launch",
+  },
+} as const;
+
+interface NavigationProps {
+  locale: SiteLocale;
+}
+
+export function Navigation({ locale }: NavigationProps) {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const t = useTranslations();
+  const labels = navigationLabels[locale];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 24);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const closeMenu = useCallback(() => {
-    setIsOpen(false);
-  }, []);
-
-  const toggleMenu = useCallback(() => {
-    setIsOpen((prev) => !prev);
-  }, []);
+  const solidNavigation = pathname !== "/" || isScrolled;
+  const navClassName = solidNavigation
+    ? "bg-white/95 shadow-sm backdrop-blur-md"
+    : "bg-transparent";
+  const textClassName = solidNavigation ? "text-slate-700" : "text-slate-200";
+  const brandClassName = solidNavigation ? "text-slate-950" : "text-white";
+  const menuButtonClassName = solidNavigation ? "text-slate-900" : "text-white";
 
   return (
-    <nav
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        isScrolled ? "bg-white/95 shadow-sm backdrop-blur-md" : "bg-transparent"
-      }`}
-    >
+    <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${navClassName}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link
-              href="/"
-              className="flex items-center space-x-2 text-xl font-bold transition-colors hover:text-blue-600"
-            >
-              <div className="flex h-8 w-8 items-center justify-center">
-                <Image
-                  src="/logo.png"
-                  alt="SiteKept Logo"
-                  width={32}
-                  height={32}
-                  className="rounded-lg"
-                />
-              </div>
-              <span className={isScrolled ? "text-slate-900" : "text-white"}>
-                SiteKept
+          <Link href="/" className="flex items-center gap-3">
+            <div className="flex h-8 w-8 items-center justify-center">
+              <Image
+                src="/logo.png"
+                alt="Sitekept logo"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
+            </div>
+            <div className="leading-tight">
+              <span className={`block text-lg font-semibold ${brandClassName}`}>
+                Sitekept
               </span>
-            </Link>
-          </div>
+              <span
+                className={`hidden text-xs uppercase tracking-[0.22em] sm:block ${
+                  solidNavigation ? "text-slate-500" : "text-slate-400"
+                }`}
+              >
+                {labels.brandMeta}
+              </span>
+            </div>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
-            {NAVIGATION_ITEMS.map((item) => {
-              const linkClass = `text-sm font-medium transition-colors hover:text-blue-600 ${
-                isScrolled ? "text-slate-700" : "text-slate-300"
-              }`;
-
-              return (
-                <Link key={item.key} href={item.href} className={linkClass}>
-                  {t(item.key)}
-                </Link>
-              );
-            })}
-            <LanguageSwitcher />
+          <div className="hidden items-center gap-8 md:flex">
+            {NAVIGATION_ITEMS.map((item) => (
+              <Link
+                key={item.key}
+                href={item.href}
+                className={`text-sm font-medium transition-colors hover:text-amber-500 ${textClassName}`}
+              >
+                {labels[item.key]}
+              </Link>
+            ))}
+            <LanguageSwitcher locale={locale} />
             <Button
               asChild
-              className="bg-blue-600 text-white hover:bg-blue-700"
+              className="bg-slate-950 text-white hover:bg-slate-800"
             >
-              <Link href="/#contact">{t("navigation.start")}</Link>
+              <Link href="/#contact">{labels.start}</Link>
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className={`p-2 ${isScrolled ? "text-slate-900" : "text-white"}`}
-              type="button"
-              aria-expanded={isOpen}
-              aria-label={
-                isOpen ? t("navigation.closeMenu") : t("navigation.openMenu")
-              }
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={() => setIsOpen((current) => !current)}
+            className={`rounded-lg p-2 md:hidden ${menuButtonClassName}`}
+            aria-label={isOpen ? labels.closeMenu : labels.openMenu}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden">
-            <div className="mt-2 space-y-1 rounded-lg bg-white px-2 pt-2 pb-3 shadow-lg">
-              {NAVIGATION_ITEMS.map((item) => {
-                const mobileClass =
-                  "block w-full rounded-md px-3 py-2 text-left text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600";
-
-                return (
-                  <Link
-                    key={item.key}
-                    href={item.href}
-                    className={mobileClass}
-                    onClick={closeMenu}
-                  >
-                    {t(item.key)}
-                  </Link>
-                );
-              })}
-              <div className="flex items-center gap-2 px-3 py-2">
-                <LanguageSwitcher />
-                <Button
-                  asChild
-                  className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
+        {isOpen ? (
+          <div className="border-t border-slate-200 bg-white py-4 md:hidden">
+            <div className="space-y-2">
+              {NAVIGATION_ITEMS.map((item) => (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block rounded-xl px-3 py-2 text-base font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
                 >
-                  <Link href="/#contact" onClick={closeMenu}>
-                    {t("navigation.start")}
-                  </Link>
-                </Button>
-              </div>
+                  {labels[item.key]}
+                </Link>
+              ))}
+            </div>
+            <div className="mt-4 flex items-center gap-3 px-3">
+              <LanguageSwitcher locale={locale} />
+              <Button
+                asChild
+                className="flex-1 bg-slate-950 text-white hover:bg-slate-800"
+              >
+                <Link href="/#contact" onClick={() => setIsOpen(false)}>
+                  {labels.start}
+                </Link>
+              </Button>
             </div>
           </div>
-        )}
+        ) : null}
       </div>
     </nav>
   );

@@ -1,7 +1,7 @@
-import { getTranslations } from "next-intl/server";
+import { getMessage, getRawMessage, getSiteLocale } from "@/lib/site-messages";
 
 export default async function PrivacyPage() {
-  const t = await getTranslations("privacy");
+  const locale = await getSiteLocale();
 
   return (
     <div className="bg-white">
@@ -10,11 +10,13 @@ export default async function PrivacyPage() {
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
-              {t("title")}
+              {getMessage(locale, "privacy.title")}
             </span>
           </h1>
           <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-300">
-            {t("lastUpdate", { date: "1er janvier 2025" })}
+            {getMessage(locale, "privacy.lastUpdate", {
+              date: "1er janvier 2025",
+            })}
           </p>
         </div>
       </section>
@@ -24,20 +26,23 @@ export default async function PrivacyPage() {
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="prose prose-slate max-w-none">
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              1. {t("sections.introduction.title")}
+              1. {getMessage(locale, "privacy.sections.introduction.title")}
             </h2>
             <p className="mb-6 text-slate-600">
-              {t("sections.introduction.content")}
+              {getMessage(locale, "privacy.sections.introduction.content")}
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              2. {t("sections.dataCollected.title")}
+              2. {getMessage(locale, "privacy.sections.dataCollected.title")}
             </h2>
             <p className="mb-4 text-slate-600">
-              {t("sections.dataCollected.content")}
+              {getMessage(locale, "privacy.sections.dataCollected.content")}
             </p>
             <ul className="mb-6 list-disc pl-6 text-slate-600">
-              {(t.raw("sections.dataCollected.items") as string[]).map(
+              {(getRawMessage(
+                locale,
+                "privacy.sections.dataCollected.items"
+              ) as string[]).map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 )
@@ -45,13 +50,17 @@ export default async function PrivacyPage() {
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              3. {t("sections.purposeOfProcessing.title")}
+              3.{" "}
+              {getMessage(locale, "privacy.sections.purposeOfProcessing.title")}
             </h2>
             <p className="mb-4 text-slate-600">
-              {t("sections.purposeOfProcessing.content")}
+              {getMessage(locale, "privacy.sections.purposeOfProcessing.content")}
             </p>
             <ul className="mb-6 list-disc pl-6 text-slate-600">
-              {(t.raw("sections.purposeOfProcessing.items") as string[]).map(
+              {(getRawMessage(
+                locale,
+                "privacy.sections.purposeOfProcessing.items"
+              ) as string[]).map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 )
@@ -59,13 +68,16 @@ export default async function PrivacyPage() {
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              4. {t("sections.legalBasis.title")}
+              4. {getMessage(locale, "privacy.sections.legalBasis.title")}
             </h2>
             <p className="mb-4 text-slate-600">
-              {t("sections.legalBasis.content")}
+              {getMessage(locale, "privacy.sections.legalBasis.content")}
             </p>
             <ul className="mb-6 list-disc pl-6 text-slate-600">
-              {(t.raw("sections.legalBasis.items") as string[]).map(
+              {(getRawMessage(
+                locale,
+                "privacy.sections.legalBasis.items"
+              ) as string[]).map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 )
@@ -73,13 +85,16 @@ export default async function PrivacyPage() {
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              5. {t("sections.dataSharing.title")}
+              5. {getMessage(locale, "privacy.sections.dataSharing.title")}
             </h2>
             <p className="mb-4 text-slate-600">
-              {t("sections.dataSharing.content")}
+              {getMessage(locale, "privacy.sections.dataSharing.content")}
             </p>
             <ul className="mb-6 list-disc pl-6 text-slate-600">
-              {(t.raw("sections.dataSharing.items") as string[]).map(
+              {(getRawMessage(
+                locale,
+                "privacy.sections.dataSharing.items"
+              ) as string[]).map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 )
@@ -87,27 +102,30 @@ export default async function PrivacyPage() {
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              6. {t("sections.dataRetention.title")}
+              6. {getMessage(locale, "privacy.sections.dataRetention.title")}
             </h2>
             <p className="mb-6 text-slate-600">
-              {t("sections.dataRetention.content")}
+              {getMessage(locale, "privacy.sections.dataRetention.content")}
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              7. {t("sections.dataSecurity.title")}
+              7. {getMessage(locale, "privacy.sections.dataSecurity.title")}
             </h2>
             <p className="mb-6 text-slate-600">
-              {t("sections.dataSecurity.content")}
+              {getMessage(locale, "privacy.sections.dataSecurity.content")}
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              8. {t("sections.yourRights.title")}
+              8. {getMessage(locale, "privacy.sections.yourRights.title")}
             </h2>
             <p className="mb-4 text-slate-600">
-              {t("sections.yourRights.content")}
+              {getMessage(locale, "privacy.sections.yourRights.content")}
             </p>
             <ul className="mb-6 list-disc pl-6 text-slate-600">
-              {(t.raw("sections.yourRights.items") as string[]).map(
+              {(getRawMessage(
+                locale,
+                "privacy.sections.yourRights.items"
+              ) as string[]).map(
                 (item, index) => (
                   <li key={index}>{item}</li>
                 )
@@ -115,42 +133,47 @@ export default async function PrivacyPage() {
             </ul>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              9. {t("sections.cookies.title")}
+              9. {getMessage(locale, "privacy.sections.cookies.title")}
             </h2>
             <p className="mb-6 text-slate-600">
-              {t("sections.cookies.content")}
+              {getMessage(locale, "privacy.sections.cookies.content")}
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              10. {t("sections.internationalTransfers.title")}
+              10.{" "}
+              {getMessage(locale, "privacy.sections.internationalTransfers.title")}
             </h2>
             <p className="mb-6 text-slate-600">
-              {t("sections.internationalTransfers.content")}
+              {getMessage(
+                locale,
+                "privacy.sections.internationalTransfers.content"
+              )}
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              11. {t("sections.modifications.title")}
+              11. {getMessage(locale, "privacy.sections.modifications.title")}
             </h2>
             <p className="mb-6 text-slate-600">
-              {t("sections.modifications.content")}
+              {getMessage(locale, "privacy.sections.modifications.content")}
             </p>
 
             <h2 className="mb-4 text-2xl font-bold text-slate-900">
-              12. {t("sections.contact.title")}
+              12. {getMessage(locale, "privacy.sections.contact.title")}
             </h2>
             <p className="mb-4 text-slate-600">
-              {t("sections.contact.content")}
+              {getMessage(locale, "privacy.sections.contact.content")}
             </p>
             <div className="mb-6 rounded-lg bg-slate-50 p-6">
               <p className="mb-2 text-slate-600">
-                <strong>Email :</strong> {t("sections.contact.email")}
+                <strong>Email :</strong>{" "}
+                {getMessage(locale, "privacy.sections.contact.email")}
               </p>
               <p className="mb-4 text-slate-600">
-                <strong>{t("sections.contact.phone")} :</strong>{" "}
-                {t("sections.contact.phone")}
+                <strong>{getMessage(locale, "privacy.sections.contact.phone")} :</strong>{" "}
+                {getMessage(locale, "privacy.sections.contact.phone")}
               </p>
               <p className="text-sm text-slate-600">
-                {t("sections.complaints.content")}
+                {getMessage(locale, "privacy.sections.complaints.content")}
               </p>
             </div>
           </div>

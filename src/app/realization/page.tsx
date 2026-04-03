@@ -1,53 +1,53 @@
-import { getTranslations } from "next-intl/server";
 import { ProjectCard } from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { getMessage, getSiteLocale } from "@/lib/site-messages";
 
 export default async function RealizationPage() {
-  const t = await getTranslations("realization");
+  const locale = await getSiteLocale();
 
   const REALIZATIONS = [
     {
       name: "IAFormaPlus",
       url: "https://iaformaplus.fr",
-      description: t("projects.iaformaplus.description"),
+      description: getMessage(locale, "realization.projects.iaformaplus.description"),
       screenshot: "/realization/iaformaplus.png",
     },
     {
       name: "Orhakerem",
       url: "https://orhakerem.com",
-      description: t("projects.orhakerem.description"),
+      description: getMessage(locale, "realization.projects.orhakerem.description"),
       screenshot: "/realization/orhakerem.png",
     },
     {
       name: "PinckIt",
       url: "https://pinckit.com",
-      description: t("projects.pinckit.description"),
+      description: getMessage(locale, "realization.projects.pinckit.description"),
       screenshot: "/realization/pinckit.png",
     },
     {
       name: "LegitBrainrot",
       url: "https://www.legitbrainrot.com/",
-      description: t("projects.iaformaplus.description"),
+      description: getMessage(locale, "realization.projects.iaformaplus.description"),
       screenshot: "/realization/legitbrainrot.png",
     },
     {
       name: "ComizGlobal",
       url: "https://www.comizglobal.com/",
-      description: t("projects.orhakerem.description"),
+      description: getMessage(locale, "realization.projects.orhakerem.description"),
       screenshot: "/realization/comizglobal.png",
     },
     {
       name: "BismuthCPA",
       url: "https://www.bismuthcpa.com/",
-      description: t("projects.pinckit.description"),
+      description: getMessage(locale, "realization.projects.pinckit.description"),
       screenshot: "/realization/bismuthcpa.png",
     },
     {
       name: "Les assureurs experts",
       url: "https://lesassureursexperts.fr/",
-      description: t("projects.iaformaplus.description"),
+      description: getMessage(locale, "realization.projects.iaformaplus.description"),
       screenshot: "/realization/lesassureursexperts.png",
     },
   ] as const;
@@ -59,13 +59,15 @@ export default async function RealizationPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
-              {t("title")}
+              {getMessage(locale, "realization.title")}
             </h1>
-            <p className="mb-8 text-xl text-gray-600">{t("description")}</p>
+            <p className="mb-8 text-xl text-gray-600">
+              {getMessage(locale, "realization.description")}
+            </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="px-8 text-lg">
                 <Link href="/#contact">
-                  {t("buttons.startProject")}
+                  {getMessage(locale, "realization.buttons.startProject")}
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
               </Button>
@@ -75,7 +77,9 @@ export default async function RealizationPage() {
                 size="lg"
                 className="px-8 text-lg"
               >
-                <Link href="/template">{t("buttons.viewTemplates")}</Link>
+                <Link href="/templates">
+                  {getMessage(locale, "realization.buttons.viewTemplates")}
+                </Link>
               </Button>
             </div>
           </div>
@@ -94,7 +98,7 @@ export default async function RealizationPage() {
                 description={project.description}
                 screenshot={project.screenshot}
                 category="realisation"
-                ctaText={t("cta")}
+                ctaText={getMessage(locale, "realization.cta")}
                 ctaLink="/#contact"
               />
             ))}

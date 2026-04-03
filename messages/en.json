@@ -1,10 +1,13 @@
 {
   "navigation": {
     "home": "Home",
+    "templates": "Templates",
+    "visibility": "SEO / GEO",
+    "faq": "FAQ",
     "services": "Services",
     "ourWork": "Our Work",
     "contact": "Contact",
-    "start": "Get Started",
+    "start": "Request a quote",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -142,38 +145,43 @@
     "guarantees": "No commitment • Free deployment • Free domain for the 1st year • Complete website ownership"
   },
   "contact": {
-    "title": "Transform Your Vision into Success",
-    "subtitle": "Ready to revolutionize your online presence? Contact us and discover how we can propel your business to new heights.",
-    "formTitle": "Let's Talk About Your Project",
+    "title": "Ask for a clear, fast quote without the jargon",
+    "subtitle": "Tell us about your business, your goal and the direction you want. We come back with a simple frame: price, timing, scope and launch.",
+    "formTitle": "Let's talk about your project",
     "commitmentTitle": "Our Commitment",
     "commitments": [
-      "Response within 2h during business hours",
-      "Free and no-commitment strategic consultation",
-      "Detailed proposal within 24h",
-      "Your project starts within 48h"
+      "Fast reply during business hours",
+      "Clear framing on entry price and timing",
+      "Deployment and launch handled by Sitekept",
+      "No unnecessary jargon and no forced subscription"
     ]
   },
   "contactForm": {
-    "title": "Let's Start Your Project",
+    "title": "Get your quote",
     "name": "Name",
     "namePlaceholder": "Your full name",
     "email": "Email",
     "emailPlaceholder": "your@email.com",
     "project": "Describe your project",
-    "projectPlaceholder": "Tell us about your vision, goals, business sector and expectations...",
+    "projectPlaceholder": "Tell us about your business, your goal, your industry and the style of website you need...",
     "required": "*",
     "submitting": "Sending...",
-    "submit": "Launch My Project",
-    "successMessage": "Perfect! Your project interests us. We'll contact you within 2h to discuss your strategy.",
+    "submit": "Request a quote",
+    "successMessage": "Thanks. We will come back quickly with a clear frame for your project.",
     "errorMessage": "Technical error. Contact us directly by email or try again."
   },
   "footer": {
-    "description": "High-performance website creation for ambitious companies.",
+    "description": "Professional websites that launch fast, stay transparent to buy and remain fully owned by the client.",
     "navigation": "Navigation",
+    "resources": "Resources",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "visibility": "SEO / GEO",
+    "quote": "Request a quote",
     "legal": "Legal",
     "terms": "Terms of Use",
     "privacy": "Privacy",
-    "copyright": "© 2025 SiteKept. All rights reserved."
+    "copyright": "© 2026 Sitekept. All rights reserved."
   },
   "seo": {
     "title": "SiteKept - High Performance Websites in 48h",
@@ -181,20 +189,20 @@
     "keywords": "website creation, fast web development, professional website, e-commerce, Next.js, web agency, showcase site, web application, SEO, modern design"
   },
   "metadata": {
-    "title": "SiteKept - High Performance Websites in 48h",
-    "description": "Create your professional website in 48h flat! Showcase sites, e-commerce, custom applications. Cutting-edge technologies, modern design, guaranteed results. Your digital success starts now.",
-    "keywords": "website creation, fast web development, professional website, e-commerce, Next.js, web agency, showcase site, web application, SEO, modern design",
+    "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
+    "description": "Sitekept delivers professional websites from €500, launched in 48 hours, with no forced subscription, deployment included, a free first-year domain and SEO + GEO optimization.",
+    "keywords": "professional website 48h, fast website creation, website without subscription, fully owned website, deployment included, SEO GEO website, SMB website, solo founder website",
     "authors": "SiteKept Team",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "SiteKept - High Performance Websites in 48h",
-      "description": "Your professional website online in 48h! Cutting-edge technology, modern design, maximum performance. Turn your visitors into customers starting now.",
+      "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
+      "description": "A professional website from €500, launched fast, deployed by Sitekept, optimized for SEO + GEO and fully owned by the client.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "SiteKept - High Performance Websites in 48h",
-      "description": "Your professional website online in 48h! Cutting-edge technology, modern design, maximum performance.",
+      "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
+      "description": "A fast-to-launch professional website that is transparent to buy and built for visibility.",
       "creator": "@sitekept"
     },
     "appleMobileWebAppTitle": "SiteKept"

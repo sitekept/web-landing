@@ -1,4 +1,4 @@
-"use server";
+import "server-only";
 
 import { cookies, headers } from "next/headers";
 import { type Locale, defaultLocale, locales } from "@/i18n/config";
@@ -15,7 +15,6 @@ export async function getUserLocale(): Promise<Locale> {
   // 1️⃣ Try from cookies
   const cookieLocale = (await cookies()).get(COOKIE_NAME)?.value;
   if (isSupportedLocale(cookieLocale)) {
-    console.log(`[getUserLocale] Locale from cookie: ${cookieLocale}`);
     return cookieLocale;
   }
 
@@ -23,19 +22,9 @@ export async function getUserLocale(): Promise<Locale> {
   const acceptLang = (await headers()).get("accept-language");
   const headerLocale = acceptLang?.split(",")[0]?.split("-")[0];
   if (isSupportedLocale(headerLocale)) {
-    console.log(
-      `[getUserLocale] Locale from Accept-Language header: ${headerLocale}`
-    );
     return headerLocale;
   }
 
   // 3️⃣ Fallback
-  console.log(
-    `[getUserLocale] No valid locale found, using default: ${defaultLocale}`
-  );
   return defaultLocale;
-}
-
-export async function setUserLocale(locale: Locale) {
-  (await cookies()).set(COOKIE_NAME, locale);
 }

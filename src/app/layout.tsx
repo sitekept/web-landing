@@ -3,23 +3,22 @@ import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getTranslations } from "next-intl/server";
 import "./globals.css";
 import { ENV } from "@/lib/env";
+import { getMessage, getSiteLocale } from "@/lib/site-messages";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("metadata");
+  const locale = await getSiteLocale();
 
   return {
-    title: t("title"),
-    description: t("description"),
-    keywords: t("keywords"),
-    authors: [{ name: t("authors") }],
-    creator: t("creator"),
-    publisher: t("publisher"),
+    title: getMessage(locale, "metadata.title"),
+    description: getMessage(locale, "metadata.description"),
+    keywords: getMessage(locale, "metadata.keywords"),
+    authors: [{ name: getMessage(locale, "metadata.authors") }],
+    creator: getMessage(locale, "metadata.creator"),
+    publisher: getMessage(locale, "metadata.publisher"),
     icons: {
       icon: [
         {
@@ -42,17 +41,17 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     manifest: "/my-favicon/site.webmanifest",
     openGraph: {
-      title: t("openGraph.title"),
-      description: t("openGraph.description"),
+      title: getMessage(locale, "metadata.openGraph.title"),
+      description: getMessage(locale, "metadata.openGraph.description"),
       url: "https://sitekept.com",
-      siteName: t("openGraph.siteName"),
+      siteName: getMessage(locale, "metadata.openGraph.siteName"),
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: t("twitter.title"),
-      description: t("twitter.description"),
-      creator: t("twitter.creator"),
+      title: getMessage(locale, "metadata.twitter.title"),
+      description: getMessage(locale, "metadata.twitter.description"),
+      creator: getMessage(locale, "metadata.twitter.creator"),
     },
     robots: {
       index: true,
@@ -78,25 +77,22 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const locale = await getLocale();
-  const t = await getTranslations("metadata");
+  const locale = await getSiteLocale();
 
   return (
     <html lang={locale} className="scroll-smooth">
       <head>
         <meta
           name="apple-mobile-web-app-title"
-          content={t("appleMobileWebAppTitle")}
+          content={getMessage(locale, "metadata.appleMobileWebAppTitle")}
         />
       </head>
       <body suppressHydrationWarning className={inter.className}>
-        <NextIntlClientProvider>
-          <main className="min-h-screen">
-            <Navigation />
-            {children}
-            <Footer />
-          </main>
-        </NextIntlClientProvider>
+        <main className="min-h-screen">
+          <Navigation locale={locale} />
+          {children}
+          <Footer locale={locale} />
+        </main>
       </body>
       {ENV.NEXT_PUBLIC_GA_ID ? (
         <GoogleAnalytics gaId={ENV.NEXT_PUBLIC_GA_ID} />
