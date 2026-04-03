@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -62,7 +61,7 @@ export function Navigation({ locale }: NavigationProps) {
 
   const solidNavigation = pathname !== "/" || isScrolled;
   const navClassName = solidNavigation
-    ? "bg-white/95 shadow-sm backdrop-blur-md"
+    ? "border-b border-slate-200 bg-white shadow-sm"
     : "bg-transparent";
   const textClassName = solidNavigation ? "text-slate-700" : "text-slate-200";
   const brandClassName = solidNavigation ? "text-slate-950" : "text-white";
@@ -72,28 +71,17 @@ export function Navigation({ locale }: NavigationProps) {
     <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${navClassName}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center">
-              <Image
-                src="/logo.png"
-                alt="Sitekept logo"
-                width={32}
-                height={32}
-                className="rounded-lg"
-              />
-            </div>
-            <div className="leading-tight">
-              <span className={`block text-lg font-semibold ${brandClassName}`}>
-                Sitekept
-              </span>
-              <span
-                className={`hidden text-xs uppercase tracking-[0.22em] sm:block ${
-                  solidNavigation ? "text-slate-500" : "text-blue-200"
-                }`}
-              >
-                {labels.brandMeta}
-              </span>
-            </div>
+          <Link href="/" className="leading-tight">
+            <span className={`block text-lg font-semibold tracking-tight ${brandClassName}`}>
+              Sitekept
+            </span>
+            <span
+              className={`hidden text-[10px] uppercase tracking-[0.24em] sm:block ${
+                solidNavigation ? "text-slate-500" : "text-slate-300"
+              }`}
+            >
+              {labels.brandMeta}
+            </span>
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
@@ -101,7 +89,7 @@ export function Navigation({ locale }: NavigationProps) {
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${textClassName}`}
+                className={`text-sm font-medium transition-colors hover:text-blue-700 ${textClassName}`}
               >
                 {labels[item.key]}
               </Link>
@@ -109,7 +97,7 @@ export function Navigation({ locale }: NavigationProps) {
             <LanguageSwitcher locale={locale} />
             <Button
               asChild
-              className="bg-blue-600 text-white hover:bg-blue-700"
+              className="bg-blue-700 text-white hover:bg-blue-800"
             >
               <Link href="/#contact">{labels.start}</Link>
             </Button>
@@ -134,7 +122,7 @@ export function Navigation({ locale }: NavigationProps) {
                   key={item.key}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                className="block rounded-lg px-3 py-2 text-base font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-slate-950"
+                className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
               >
                   {labels[item.key]}
                 </Link>
@@ -144,7 +132,7 @@ export function Navigation({ locale }: NavigationProps) {
               <LanguageSwitcher locale={locale} />
               <Button
                 asChild
-                className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
+                className="flex-1 bg-blue-700 text-white hover:bg-blue-800"
               >
                 <Link href="/#contact" onClick={() => setIsOpen(false)}>
                   {labels.start}

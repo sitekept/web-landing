@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { SiteLocale } from "@/content/site-content";
@@ -14,22 +13,11 @@ export async function Footer({ locale }: FooterProps) {
     <footer className="border-t border-slate-800 bg-slate-950 px-6 py-16 text-white lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,1fr))]">
         <div>
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center">
-              <Image
-                src="/logo.png"
-                alt="Sitekept logo"
-                width={36}
-                height={36}
-                className="rounded-md"
-              />
-            </div>
-            <div>
-              <p className="text-lg font-semibold">Sitekept</p>
-              <p className="text-xs uppercase tracking-[0.24em] text-blue-200">
-                SEO, GEO, lancement rapide
-              </p>
-            </div>
+          <div>
+            <p className="text-lg font-semibold tracking-tight">Sitekept</p>
+            <p className="text-[10px] uppercase tracking-[0.24em] text-slate-400">
+              SEO, GEO, lancement rapide
+            </p>
           </div>
           <p className="mt-5 max-w-md text-sm leading-7 text-slate-300">
             {getMessage(locale, "footer.description")}

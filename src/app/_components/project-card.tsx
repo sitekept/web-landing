@@ -32,7 +32,7 @@ export function ProjectCard({
   };
 
   return (
-    <Card className="transform overflow-hidden rounded-2xl border border-blue-100 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <Card className="transform overflow-hidden !rounded-md border border-slate-200 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <CardContent className="p-0">
         <div className="relative h-48 overflow-hidden bg-slate-100">
           <Image
@@ -48,10 +48,10 @@ export function ProjectCard({
         <div className="p-6">
           <div className="mb-2 flex items-center gap-2">
             <span
-              className={`rounded-md px-2 py-1 text-xs font-medium ${
+              className={`rounded-sm px-2 py-1 text-xs font-medium ${
                 category === "realisation"
                   ? "bg-green-100 text-green-800"
-                  : "bg-blue-100 text-blue-800"
+                  : "bg-slate-100 text-slate-700"
               }`}
             >
               {category === "realisation" ? "Réalisation" : "Template"}
@@ -68,14 +68,14 @@ export function ProjectCard({
               onClick={handleVisit}
               variant="outline"
               size="sm"
-              className="flex items-center gap-2 border-blue-200 hover:bg-blue-50"
+              className="flex items-center gap-2 border-slate-300 hover:bg-slate-100"
             >
               <ExternalLink size={16} />
               Visiter
             </Button>
 
             {ctaLink ? (
-              <Button asChild size="sm" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700">
+              <Button asChild size="sm" className="flex items-center gap-2 bg-blue-700 hover:bg-blue-800">
                 <Link href={ctaLink}>
                   {ctaText}
                   <ArrowRight size={16} />
@@ -85,7 +85,7 @@ export function ProjectCard({
               <Button
                 onClick={ctaAction}
                 size="sm"
-                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700"
+                className="flex items-center gap-2 bg-blue-700 hover:bg-blue-800"
               >
                 {ctaText}
                 <ArrowRight size={16} />
