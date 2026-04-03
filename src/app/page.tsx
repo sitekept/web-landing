@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { TemplatesShowcase } from "@/components/templates-showcase";
 import {
   blogPosts,
   faqItems,
@@ -16,6 +15,7 @@ import {
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
 import { Contact } from "./_components/contact";
+import { PortfolioPreview } from "./_components/portfolio-preview";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
@@ -326,16 +326,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <TemplatesShowcase
-        locale={locale}
-        sectionId="selected-templates"
-        eyebrow={getLocalizedText(homeContent.templatesSection.eyebrow, locale)}
-        title={getLocalizedText(homeContent.templatesSection.title, locale)}
-        description={getLocalizedText(homeContent.templatesSection.description, locale)}
-        ctaText={locale === "fr" ? "Demander un devis" : "Request a quote"}
-        showViewAll
-        viewAllLabel={getLocalizedText(homeContent.templatesSection.cta, locale)}
-      />
+      <PortfolioPreview locale={locale} />
 
       <section id="faq" className="bg-white px-6 py-20 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">

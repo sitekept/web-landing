@@ -1,95 +1,108 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { type SiteLocale } from "@/content/site-content";
+import { getMessage } from "@/lib/site-messages";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Code, Palette } from "lucide-react";
-import Link from "next/link";
-import { getTranslations } from "next-intl/server";
 
-export async function PortfolioPreview() {
-  const t = await getTranslations("portfolio");
+interface PortfolioPreviewProps {
+  locale: SiteLocale;
+  sectionId?: string;
+}
+
+export function PortfolioPreview({
+  locale,
+  sectionId = "selected-templates",
+}: PortfolioPreviewProps) {
+  const cards = [
+    {
+      id: "templates",
+      eyebrow: locale === "fr" ? "Templates" : "Templates",
+      title: getMessage(locale, "portfolio.templates.title"),
+      description: getMessage(locale, "portfolio.templates.description"),
+      cta: getMessage(locale, "portfolio.templates.cta"),
+      href: "/templates",
+      screenshot: "/template/ordinateur.png",
+    },
+    {
+      id: "realizations",
+      eyebrow: locale === "fr" ? "Realisations" : "Our work",
+      title: getMessage(locale, "portfolio.realizations.title"),
+      description: getMessage(locale, "portfolio.realizations.description"),
+      cta: getMessage(locale, "portfolio.realizations.cta"),
+      href: "/realization",
+      screenshot: "/realization/iaformaplus.png",
+    },
+  ] as const;
 
   return (
-    <section id="our-work" className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900">
-            {t("title")}
+    <section id={sectionId} className="bg-slate-50 px-6 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
+            {locale === "fr" ? "Templates et realisations" : "Templates and work"}
+          </p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            {getMessage(locale, "portfolio.title")}
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-gray-600">
-            {t("subtitle")}
+          <p className="mt-4 text-lg leading-8 text-slate-600">
+            {getMessage(locale, "portfolio.subtitle")}
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-          {/* Réalisations Card */}
-          <Card className="transform overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <CardContent className="p-0">
-              <div className="relative h-48 bg-gradient-to-br from-blue-500 to-purple-600">
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Code className="h-16 w-16 text-white" />
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+          {cards.map((card, index) => (
+            <Card
+              key={card.id}
+              className="overflow-hidden rounded-md border border-blue-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <CardContent className="p-0">
+                <div className="relative h-56 overflow-hidden bg-slate-100">
+                  <Image
+                    src={card.screenshot}
+                    alt={card.title}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-slate-950/10 to-transparent" />
+                  <div className="absolute left-6 top-6">
+                    <span className="rounded-sm border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-white backdrop-blur-sm">
+                      {card.eyebrow}
+                    </span>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-violet-500" />
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-gray-900">
-                  {t("realizations.title")}
-                </h3>
-                <p className="mb-4 text-sm text-gray-600">
-                  {t("realizations.description")}
-                </p>
-                <div className="flex items-center justify-between">
-                  <Button asChild className="flex items-center gap-2">
-                    <Link href="/realization">
-                      {t("realizations.cta")}
-                      <ArrowRight size={16} />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
 
-          {/* Templates Card */}
-          <Card className="transform overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-            <CardContent className="p-0">
-              <div className="relative h-48 bg-gradient-to-br from-green-500 to-teal-600">
-                <div className="absolute inset-0 bg-black/20" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Palette className="h-16 w-16 text-white" />
+                <div className="p-6 sm:p-8">
+                  <div className="h-0.5 w-12 bg-blue-600" />
+                  <h3 className="mt-5 text-2xl font-semibold tracking-tight text-slate-950">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    {card.description}
+                  </p>
+                  <div className="mt-6">
+                    <Button
+                      asChild
+                      variant={index === 0 ? "default" : "outline"}
+                      className={
+                        index === 0
+                          ? "bg-blue-600 text-white hover:bg-blue-700"
+                          : "border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
+                      }
+                    >
+                      <Link href={card.href}>
+                        {card.cta}
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-gray-900">
-                  {t("templates.title")}
-                </h3>
-                <p className="mb-4 text-sm text-gray-600">
-                  {t("templates.description")}
-                </p>
-                <div className="flex items-center justify-between">
-                  <Button
-                    asChild
-                    variant="outline"
-                    className="flex items-center gap-2"
-                  >
-                    <Link href="/template">
-                      {t("templates.cta")}
-                      <ArrowRight size={16} />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-12 text-center">
-          <p className="mb-6 text-gray-600">{t("finalCta")}</p>
-          <Button asChild size="lg" className="px-8 text-lg">
-            <Link href="/#contact">
-              {t("startNow")}
-              <ArrowRight className="ml-2" size={20} />
-            </Link>
-          </Button>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
