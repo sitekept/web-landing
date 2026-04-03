@@ -31,9 +31,9 @@ export default async function TemplatesPage() {
 
   return (
     <>
-      <section className="bg-[linear-gradient(180deg,#fff7ed_0%,#ffffff_100%)] px-6 pb-16 pt-28 sm:pt-32 lg:px-8">
+      <section className="bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] px-6 pb-16 pt-28 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
             {getLocalizedText(templatesPageCopy.eyebrow, locale)}
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
@@ -43,7 +43,7 @@ export default async function TemplatesPage() {
             {getLocalizedText(templatesPageCopy.description, locale)}
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-slate-950 text-white hover:bg-slate-800">
+            <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
               <Link href="/#contact">
                 {locale === "fr" ? "Demander un devis" : "Request a quote"}
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -53,7 +53,7 @@ export default async function TemplatesPage() {
               asChild
               size="lg"
               variant="outline"
-              className="border-slate-300 bg-white text-slate-900 hover:bg-slate-100"
+              className="border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
             >
               <Link href="/blog/site-web-rapide-pme-independant">
                 {locale === "fr" ? "Lire la methode" : "Read the approach"}

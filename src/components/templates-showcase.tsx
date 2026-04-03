@@ -38,13 +38,13 @@ export function TemplatesShowcase({
   return (
     <section
       id={sectionId}
-      className="bg-stone-50 px-6 py-20 sm:py-24 lg:px-8"
+      className="bg-slate-50 px-6 py-20 sm:py-24 lg:px-8"
     >
       <div className="mx-auto max-w-7xl">
         {title ? (
           <div className="mx-auto max-w-3xl text-center">
             {eyebrow ? (
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
                 {eyebrow}
               </p>
             ) : null}
@@ -83,7 +83,7 @@ export function TemplatesShowcase({
             <Button
               asChild
               variant="outline"
-              className="border-slate-300 bg-white text-slate-900 hover:bg-slate-100"
+              className="border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
             >
               <Link href="/templates">
                 {viewAllLabel}

@@ -31,9 +31,9 @@ export default async function BlogPage() {
 
   return (
     <>
-      <section className="bg-[linear-gradient(180deg,#ecfeff_0%,#ffffff_100%)] px-6 pb-16 pt-28 sm:pt-32 lg:px-8">
+      <section className="bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] px-6 pb-16 pt-28 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
             {getLocalizedText(blogPageCopy.eyebrow, locale)}
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
@@ -50,9 +50,9 @@ export default async function BlogPage() {
           {blogPosts.map((post) => (
             <article
               key={post.slug}
-              className="rounded-[28px] border border-stone-200 bg-stone-50 p-8 shadow-sm"
+              className="rounded-2xl border border-blue-100 bg-slate-50 p-8 shadow-sm"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-700">
                 {getLocalizedText(post.category, locale)}
               </p>
               <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">
@@ -64,7 +64,7 @@ export default async function BlogPage() {
               <Button
                 asChild
                 variant="outline"
-                className="mt-6 border-slate-300 bg-white text-slate-900 hover:bg-slate-100"
+                className="mt-6 border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
               >
                 <Link href={`/blog/${post.slug}`}>
                   {locale === "fr" ? "Lire la page" : "Read the page"}

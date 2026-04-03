@@ -55,9 +55,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <section className="bg-[linear-gradient(180deg,#f8fafc_0%,#ffffff_100%)] px-6 pb-14 pt-28 sm:pt-32 lg:px-8">
+      <section className="bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] px-6 pb-14 pt-28 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
             {getLocalizedText(post.category, locale)}
           </p>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 : undefined;
 
               return (
-                <section key={section.id} className="rounded-[28px] border border-stone-200 bg-stone-50 p-8">
+                <section key={section.id} className="rounded-2xl border border-blue-100 bg-slate-50 p-8">
                   <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
                     {getLocalizedText(section.title, locale)}
                   </h2>
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
                       {bullets.map((bullet) => (
                         <li key={bullet} className="flex gap-3">
-                          <span className="mt-2 h-2 w-2 rounded-full bg-cyan-600" />
+                          <span className="mt-2 h-2 w-2 rounded-full bg-blue-600" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -104,8 +104,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </article>
 
           <aside className="space-y-6">
-            <div className="rounded-[28px] border border-slate-200 bg-slate-950 p-8 text-white">
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-300">
+            <div className="rounded-2xl border border-blue-900 bg-slate-950 p-8 text-white">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
                 Sitekept
               </p>
               <h2 className="mt-4 text-2xl font-semibold">
@@ -115,7 +115,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {getLocalizedText(post.ctaDescription, locale)}
               </p>
               <div className="mt-6 flex flex-col gap-3">
-                <Button asChild className="bg-amber-400 text-slate-950 hover:bg-amber-300">
+                <Button asChild className="bg-blue-600 text-white hover:bg-blue-700">
                   <Link href="/#contact">
                     {locale === "fr" ? "Demander un devis" : "Request a quote"}
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -124,7 +124,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <Button
                   asChild
                   variant="outline"
-                  className="border-white/20 bg-transparent text-white hover:bg-white/10"
+                  className="border-blue-300/30 bg-transparent text-white hover:bg-blue-500/10"
                 >
                   <Link href="/templates">
                     {locale === "fr" ? "Voir les templates" : "Browse templates"}
@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             </div>
 
-            <div className="rounded-[28px] border border-stone-200 bg-white p-6 shadow-sm">
+            <div className="rounded-2xl border border-blue-100 bg-white p-6 shadow-sm">
               <h3 className="text-lg font-semibold text-slate-950">
                 {locale === "fr" ? "Autres pages utiles" : "Other useful pages"}
               </h3>
@@ -144,9 +144,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <Link
                       key={candidate.slug}
                       href={`/blog/${candidate.slug}`}
-                      className="block rounded-2xl bg-stone-50 p-4 transition hover:bg-stone-100"
+                      className="block rounded-xl bg-slate-50 p-4 transition hover:bg-blue-50"
                     >
-                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-cyan-700">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-700">
                         {getLocalizedText(candidate.category, locale)}
                       </p>
                       <p className="mt-2 text-sm font-medium leading-6 text-slate-900">

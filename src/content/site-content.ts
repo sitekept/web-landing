@@ -43,7 +43,7 @@ export interface OfferHighlight {
 
 export interface WhySitekeptItem {
   id: string;
-  icon: "sparkles" | "shield" | "search" | "messagesSquare";
+  icon: "rocket" | "shield" | "search" | "messagesSquare";
   copy: {
     fr: {
       title: string;
@@ -426,7 +426,7 @@ export const offerHighlights: OfferHighlight[] = [
 export const whySitekeptItems: WhySitekeptItem[] = [
   {
     id: "transparent-pricing",
-    icon: "sparkles",
+    icon: "rocket",
     copy: {
       fr: {
         title: "Une offre qui s'explique vite",

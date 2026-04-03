@@ -11,7 +11,6 @@ import {
   Search,
   Shield,
   ShieldCheck,
-  Sparkles,
   Wrench,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -40,7 +39,7 @@ const offerIconMap = {
 } as const;
 
 const whyIconMap = {
-  sparkles: Sparkles,
+  rocket: Rocket,
   shield: Shield,
   search: Search,
   messagesSquare: MessagesSquare,
@@ -71,13 +70,13 @@ export default async function Home() {
     <>
       <section
         id="hero"
-        className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.18),_transparent_28%),linear-gradient(135deg,#0f172a_0%,#111827_48%,#1f2937_100%)] px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"
+        className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.24),_transparent_28%),linear-gradient(135deg,#020617_0%,#0f172a_48%,#172554_100%)] px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"
       >
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0.1))]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur">
-              <span className="mr-2 h-2 w-2 rounded-full bg-amber-400" />
+            <div className="inline-flex items-center rounded-lg border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur">
+              <span className="mr-2 h-2 w-2 rounded-full bg-blue-400" />
               {getLocalizedText(hero.eyebrow, locale)}
             </div>
 
@@ -93,7 +92,7 @@ export default async function Home() {
               <Button
                 asChild
                 size="lg"
-                className="bg-amber-400 px-8 text-base font-semibold text-slate-950 hover:bg-amber-300"
+                className="bg-blue-600 px-8 text-base font-semibold text-white hover:bg-blue-700"
               >
                 <Link href="/#contact">
                   {getLocalizedText(hero.primaryCta, locale)}
@@ -116,7 +115,7 @@ export default async function Home() {
               {getLocalizedValue(hero.proofPoints, locale).map((proofPoint) => (
                 <span
                   key={proofPoint}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
+                  className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
                 >
                   {proofPoint}
                 </span>
@@ -124,11 +123,11 @@ export default async function Home() {
             </div>
           </div>
 
-          <aside className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-slate-950/30 backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-300">
+          <aside className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-2xl shadow-slate-950/30 backdrop-blur">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
               {locale === "fr" ? "Offre de départ" : "Starter offer"}
             </p>
-            <div className="mt-5 rounded-3xl bg-slate-950/60 p-6">
+            <div className="mt-5 rounded-xl bg-slate-950/60 p-6">
               <p className="text-sm text-slate-300">
                 {locale === "fr"
                   ? "Pour PME locales, indépendants et équipes qui veulent aller vite sans s'enfermer."
@@ -158,12 +157,12 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="border-y border-stone-200 bg-stone-50 px-6 py-4 lg:px-8">
+      <section className="border-y border-blue-100 bg-slate-50 px-6 py-4 lg:px-8">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 text-sm font-medium text-slate-700">
           {getLocalizedValue(homeContent.trustStrip, locale).map((item) => (
             <span
               key={item}
-              className="rounded-full bg-white px-4 py-2 text-sm shadow-sm ring-1 ring-stone-200"
+              className="rounded-lg bg-white px-4 py-2 text-sm shadow-sm ring-1 ring-blue-100"
             >
               {item}
             </span>
@@ -174,7 +173,7 @@ export default async function Home() {
       <section className="bg-white px-6 py-20 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
               {getLocalizedText(homeContent.offerSection.eyebrow, locale)}
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -193,9 +192,9 @@ export default async function Home() {
               return (
                 <article
                   key={highlight.id}
-                  className="rounded-[28px] border border-stone-200 bg-stone-50 p-6 shadow-sm"
+                  className="rounded-2xl border border-blue-100 bg-slate-50 p-6 shadow-sm"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-700">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100 text-blue-700">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 text-xl font-semibold text-slate-950">
@@ -211,10 +210,10 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-stone-100 px-6 py-20 sm:py-24 lg:px-8">
+      <section className="bg-slate-50 px-6 py-20 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
               {getLocalizedText(homeContent.whySection.eyebrow, locale)}
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -233,10 +232,10 @@ export default async function Home() {
               return (
                 <article
                   key={item.id}
-                  className="rounded-[32px] bg-white p-8 shadow-sm ring-1 ring-stone-200"
+                  className="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-blue-100"
                 >
                   <div className="flex items-start gap-5">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white">
                       <Icon className="h-5 w-5" />
                     </div>
                     <div>
@@ -255,10 +254,13 @@ export default async function Home() {
         </div>
       </section>
 
-      <section id="seo-geo" className="bg-slate-950 px-6 py-20 text-white sm:py-24 lg:px-8">
+      <section
+        id="seo-geo"
+        className="bg-[linear-gradient(135deg,#020617_0%,#0f172a_48%,#172554_100%)] px-6 py-20 text-white sm:py-24 lg:px-8"
+      >
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_420px]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-300">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
               {getLocalizedText(homeContent.visibilitySection.eyebrow, locale)}
             </p>
             <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -273,7 +275,7 @@ export default async function Home() {
                 (bullet) => (
                   <div
                     key={bullet}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-slate-200"
+                    className="rounded-xl border border-blue-400/20 bg-white/5 p-4 text-sm text-slate-200"
                   >
                     {bullet}
                   </div>
@@ -285,7 +287,7 @@ export default async function Home() {
               <Button
                 asChild
                 variant="outline"
-                className="mt-8 border-white/20 bg-transparent text-white hover:bg-white/10"
+                className="mt-8 border-blue-300/30 bg-transparent text-white hover:bg-blue-500/10"
               >
                 <Link href={`/blog/${seoArticle.slug}`}>
                   {getLocalizedText(homeContent.visibilitySection.linkLabel, locale)}
@@ -299,9 +301,9 @@ export default async function Home() {
             {blogPosts.map((post) => (
               <article
                 key={post.slug}
-                className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur"
+                className="rounded-2xl border border-blue-400/20 bg-white/5 p-6 backdrop-blur"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-amber-300">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-300">
                   {getLocalizedText(post.category, locale)}
                 </p>
                 <h3 className="mt-3 text-xl font-semibold text-white">
@@ -312,7 +314,7 @@ export default async function Home() {
                 </p>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="mt-5 inline-flex items-center text-sm font-medium text-white hover:text-amber-300"
+                  className="mt-5 inline-flex items-center text-sm font-medium text-white hover:text-blue-200"
                 >
                   {locale === "fr" ? "Lire la page" : "Read the page"}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -326,7 +328,7 @@ export default async function Home() {
       <section className="bg-white px-6 py-20 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
               {getLocalizedText(homeContent.processSection.eyebrow, locale)}
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -344,9 +346,9 @@ export default async function Home() {
               return (
                 <article
                   key={step.id}
-                  className="rounded-[28px] border border-stone-200 bg-stone-50 p-6"
+                  className="rounded-2xl border border-blue-100 bg-slate-50 p-6"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600 text-sm font-semibold text-white">
                     {index + 1}
                   </div>
                   <h3 className="mt-5 text-xl font-semibold text-slate-950">
@@ -376,7 +378,7 @@ export default async function Home() {
       <section id="faq" className="bg-white px-6 py-20 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-amber-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
               {getLocalizedText(homeContent.faqSection.eyebrow, locale)}
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
@@ -391,7 +393,7 @@ export default async function Home() {
             {faqItems.map((item) => (
               <article
                 key={item.id}
-                className="rounded-[28px] border border-stone-200 bg-stone-50 p-6 shadow-sm"
+                className="rounded-2xl border border-blue-100 bg-slate-50 p-6 shadow-sm"
               >
                 <h3 className="text-lg font-semibold text-slate-950">
                   {getLocalizedText(item.question, locale)}

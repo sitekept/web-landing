@@ -88,7 +88,7 @@ export function Navigation({ locale }: NavigationProps) {
               </span>
               <span
                 className={`hidden text-xs uppercase tracking-[0.22em] sm:block ${
-                  solidNavigation ? "text-slate-500" : "text-slate-400"
+                  solidNavigation ? "text-slate-500" : "text-blue-200"
                 }`}
               >
                 {labels.brandMeta}
@@ -101,7 +101,7 @@ export function Navigation({ locale }: NavigationProps) {
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-amber-500 ${textClassName}`}
+                className={`text-sm font-medium transition-colors hover:text-blue-600 ${textClassName}`}
               >
                 {labels[item.key]}
               </Link>
@@ -109,7 +109,7 @@ export function Navigation({ locale }: NavigationProps) {
             <LanguageSwitcher locale={locale} />
             <Button
               asChild
-              className="bg-slate-950 text-white hover:bg-slate-800"
+              className="bg-blue-600 text-white hover:bg-blue-700"
             >
               <Link href="/#contact">{labels.start}</Link>
             </Button>
@@ -118,7 +118,7 @@ export function Navigation({ locale }: NavigationProps) {
           <button
             type="button"
             onClick={() => setIsOpen((current) => !current)}
-            className={`rounded-lg p-2 md:hidden ${menuButtonClassName}`}
+            className={`rounded-md p-2 md:hidden ${menuButtonClassName}`}
             aria-label={isOpen ? labels.closeMenu : labels.openMenu}
             aria-expanded={isOpen}
           >
@@ -134,8 +134,8 @@ export function Navigation({ locale }: NavigationProps) {
                   key={item.key}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block rounded-xl px-3 py-2 text-base font-medium text-slate-700 transition-colors hover:bg-slate-100 hover:text-slate-950"
-                >
+                className="block rounded-lg px-3 py-2 text-base font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-slate-950"
+              >
                   {labels[item.key]}
                 </Link>
               ))}
@@ -144,7 +144,7 @@ export function Navigation({ locale }: NavigationProps) {
               <LanguageSwitcher locale={locale} />
               <Button
                 asChild
-                className="flex-1 bg-slate-950 text-white hover:bg-slate-800"
+                className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
               >
                 <Link href="/#contact" onClick={() => setIsOpen(false)}>
                   {labels.start}

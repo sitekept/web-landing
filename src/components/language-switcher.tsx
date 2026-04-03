@@ -25,11 +25,11 @@ export function LanguageSwitcher({
 
   const containerClassName =
     variant === "footer"
-      ? "inline-flex rounded-full border border-white/15 bg-white/5 p-1"
-      : "inline-flex rounded-full border border-slate-200 bg-white p-1 shadow-sm";
+      ? "inline-flex rounded-lg border border-white/15 bg-white/5 p-1"
+      : "inline-flex rounded-lg border border-slate-200 bg-white p-1 shadow-sm";
 
   const baseButtonClassName =
-    "rounded-full px-3 py-1.5 text-xs font-semibold transition-colors";
+    "rounded-md px-3 py-1.5 text-xs font-semibold transition-colors";
 
   const inactiveClassName =
     variant === "footer"
@@ -39,7 +39,7 @@ export function LanguageSwitcher({
   const activeClassName =
     variant === "footer"
       ? "bg-white text-slate-950"
-      : "bg-slate-950 text-white";
+      : "bg-blue-600 text-white";
 
   const handleLanguageChange = (nextLocale: Locale) => {
     if (nextLocale === locale || isPending) {
