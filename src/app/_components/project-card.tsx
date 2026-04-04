@@ -8,7 +8,7 @@ import Link from "next/link";
 
 interface ProjectCardProps {
   name: string;
-  url: string;
+  url?: string;
   description: string;
   screenshot: string;
   category: "realisation" | "template";
@@ -28,6 +28,10 @@ export function ProjectCard({
   ctaLink,
 }: ProjectCardProps) {
   const handleVisit = () => {
+    if (!url) {
+      return;
+    }
+
     window.open(url, "_blank", "noopener,noreferrer");
   };
 
@@ -64,15 +68,17 @@ export function ProjectCard({
           </p>
 
           <div className="flex gap-2">
-            <Button
-              onClick={handleVisit}
-              variant="outline"
-              size="sm"
-              className="flex items-center gap-2 border-blue-200 hover:bg-blue-50"
-            >
-              <ExternalLink size={16} />
-              Visiter
-            </Button>
+            {url ? (
+              <Button
+                onClick={handleVisit}
+                variant="outline"
+                size="sm"
+                className="flex items-center gap-2 border-blue-200 hover:bg-blue-50"
+              >
+                <ExternalLink size={16} />
+                Visiter
+              </Button>
+            ) : null}
 
             {ctaLink ? (
               <Button asChild size="sm" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700">

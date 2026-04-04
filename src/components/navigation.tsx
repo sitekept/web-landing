@@ -11,6 +11,7 @@ import { SiteLocale } from "@/content/site-content";
 
 const NAVIGATION_ITEMS = [
   { key: "templates", href: "/templates" },
+  { key: "realizations", href: "/realization" },
   { key: "visibility", href: "/#seo-geo" },
   { key: "faq", href: "/#faq" },
   { key: "contact", href: "/#contact" },
@@ -22,6 +23,7 @@ const navigationLabels = {
     visibility: "SEO / GEO",
     faq: "FAQ",
     contact: "Contact",
+    realizations: "Nos réalisations",
     start: "Demander un devis",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
@@ -32,6 +34,7 @@ const navigationLabels = {
     visibility: "SEO / GEO",
     faq: "FAQ",
     contact: "Contact",
+    realizations: "Our work",
     start: "Request a quote",
     openMenu: "Open menu",
     closeMenu: "Close menu",

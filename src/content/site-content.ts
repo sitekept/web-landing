@@ -5,7 +5,7 @@ export type LocalizedText = Record<SiteLocale, string>;
 export interface FeaturedTemplate {
   id: string;
   slug: string;
-  externalUrl: string;
+  externalUrl?: string;
   screenshot: string;
   featured: boolean;
   copy: {
@@ -703,6 +703,150 @@ export const featuredTemplates: FeaturedTemplate[] = [
       },
     },
   },
+  {
+    id: "dentiste",
+    slug: "dentiste",
+    screenshot: "/template/dentiste.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Dentiste",
+        description:
+          "Une base clinique premium pour structurer l'information, rassurer dès le hero et pousser la prise de rendez-vous sans friction.",
+      },
+      en: {
+        name: "Dentist Template",
+        description:
+          "A premium clinical base designed to structure information, reassure from the hero and drive appointment booking without friction.",
+      },
+    },
+  },
+  {
+    id: "plombier-chauffagiste",
+    slug: "plombier-chauffagiste",
+    screenshot: "/template/plombier-chauffagiste.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Plombier Chauffagiste",
+        description:
+          "Une landing d'urgence locale pensée pour les appels rapides, les zones d'intervention et une conversion immédiate.",
+      },
+      en: {
+        name: "Plumber & Heating Template",
+        description:
+          "A local emergency landing page built for rapid calls, service areas and immediate lead conversion.",
+      },
+    },
+  },
+  {
+    id: "salon-coiffure",
+    slug: "salon-coiffure",
+    screenshot: "/template/salon-coiffure.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Salon de coiffure",
+        description:
+          "Une direction lifestyle et booking-first avec lookbook, prestations, équipe et réservations dans un cadre plus éditorial.",
+      },
+      en: {
+        name: "Hair Salon Template",
+        description:
+          "A lifestyle, booking-first direction with lookbook, services, team and reservations in a more editorial frame.",
+      },
+    },
+  },
+  {
+    id: "menage-nettoyage",
+    slug: "menage-nettoyage",
+    screenshot: "/template/menage-nettoyage.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Ménage & Nettoyage",
+        description:
+          "Une page claire et rassurante pour vendre des formules, des zones couvertes et une promesse de simplicité immédiate.",
+      },
+      en: {
+        name: "Cleaning Services Template",
+        description:
+          "A clear and reassuring page to sell service plans, covered areas and a simple promise from the first screen.",
+      },
+    },
+  },
+  {
+    id: "restaurant-bistrot",
+    slug: "restaurant-bistrot",
+    screenshot: "/template/restaurant-bistrot.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Restaurant Bistrot",
+        description:
+          "Un univers d'hospitalité plus immersif pour mettre en avant ambiance, carte, réservation et privatisation.",
+      },
+      en: {
+        name: "Bistro Restaurant Template",
+        description:
+          "A more immersive hospitality direction built to highlight atmosphere, menu, bookings and private events.",
+      },
+    },
+  },
+  {
+    id: "architecte-interieur",
+    slug: "architecte-interieur",
+    screenshot: "/template/architecte-interieur.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Architecte d'intérieur",
+        description:
+          "Une base narrative et premium pour vendre une direction artistique, des projets et une méthode en format portfolio.",
+      },
+      en: {
+        name: "Interior Architect Template",
+        description:
+          "A premium narrative base to sell an artistic direction, featured projects and process in a portfolio format.",
+      },
+    },
+  },
+  {
+    id: "cabinet-avocat",
+    slug: "cabinet-avocat",
+    screenshot: "/template/cabinet-avocat.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Cabinet d'avocat",
+        description:
+          "Une landing sobre et autoritaire pour convertir sur la consultation initiale avec preuve d'expertise et structure documentaire.",
+      },
+      en: {
+        name: "Law Firm Template",
+        description:
+          "A sober, authoritative landing page built to convert on the first consultation with expertise proof and documentary structure.",
+      },
+    },
+  },
+  {
+    id: "agence-immobiliere",
+    slug: "agence-immobiliere",
+    screenshot: "/template/agence-immobiliere.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Agence immobilière",
+        description:
+          "Un modèle orienté recherche et estimation pour présenter les biens, les quartiers, les agents et les leads vendeurs.",
+      },
+      en: {
+        name: "Real Estate Agency Template",
+        description:
+          "A search- and valuation-oriented model designed for listings, neighborhoods, agents and seller lead capture.",
+      },
+    },
+  },
 ];
 
 export const templatesPageCopy: ListingPageCopy = {
@@ -715,8 +859,8 @@ export const templatesPageCopy: ListingPageCopy = {
     en: "Templates ready to adapt to your business.",
   },
   description: {
-    fr: "Ces quatre directions servent de base de depart publique. Vous choisissez un style, nous adaptons les contenus, les sections, le ton et les details commerciaux a votre activite.",
-    en: "These four directions are the public starting points. You choose a style and we adapt the content, sections, tone and commercial details to your business.",
+    fr: "Cette selection publique vous donne plusieurs points de depart. Vous choisissez un style, nous adaptons les contenus, les sections, le ton et les details commerciaux a votre activite.",
+    en: "This public selection gives you multiple starting points. You choose a style and we adapt the content, sections, tone and commercial details to your business.",
   },
 };
 

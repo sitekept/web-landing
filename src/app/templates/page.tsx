@@ -20,8 +20,8 @@ export async function generateMetadata(): Promise<Metadata> {
         : "Sitekept Templates | Fast website bases to customize",
     description:
       locale === "fr"
-        ? "Decouvrez les templates publiques Sitekept: des bases rapides a adapter pour boulangerie, fleuriste, reparation informatique ou patisserie, avec mise en ligne et personnalisation incluses."
-        : "Explore Sitekept public templates: fast bases to adapt for bakeries, florists, computer repair services or pastry brands, with launch and customization included.",
+        ? "Decouvrez les templates publiques Sitekept: boulangerie, fleuriste, dentiste, plombier, salon de coiffure, menage, restaurant, architecte, cabinet d'avocat, immobilier et plus, avec personnalisation et mise en ligne incluses."
+        : "Explore Sitekept public templates for bakeries, florists, dentists, plumbers, hair salons, cleaning services, restaurants, architects, law firms, real estate and more, with customization and launch included.",
     path: "/templates",
   });
 }
