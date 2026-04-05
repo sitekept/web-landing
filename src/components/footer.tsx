@@ -68,7 +68,7 @@ export async function Footer({ locale }: FooterProps) {
               </Link>
             </li>
             <li>
-              <Link href="/#seo-geo" className="transition-colors hover:text-blue-200">
+              <Link href="/seo-geo" className="transition-colors hover:text-blue-200">
                 {getMessage(locale, "navigation.visibility")}
               </Link>
             </li>

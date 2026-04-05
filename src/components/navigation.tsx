@@ -13,7 +13,7 @@ const NAVIGATION_ITEMS = [
   { key: "templates", href: "/templates" },
   { key: "realizations", href: "/realization" },
   { key: "blog", href: "/blog" },
-  { key: "visibility", href: "/#seo-geo" },
+  { key: "visibility", href: "/seo-geo" },
   { key: "faq", href: "/#faq" },
   { key: "contact", href: "/#contact" },
 ] as const;
