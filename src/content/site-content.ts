@@ -120,13 +120,15 @@ export interface HomeContent {
     eyebrow: LocalizedText;
     title: LocalizedText;
     description: LocalizedText;
-    bullets: Record<SiteLocale, string[]>;
+    explanation: LocalizedText;
     linkLabel: LocalizedText;
   };
   processSection: {
     eyebrow: LocalizedText;
     title: LocalizedText;
     description: LocalizedText;
+    ownershipParagraph: LocalizedText;
+    linkLabel: LocalizedText;
   };
   templatesSection: {
     eyebrow: LocalizedText;
@@ -145,6 +147,18 @@ export interface ListingPageCopy {
   eyebrow: LocalizedText;
   title: LocalizedText;
   description: LocalizedText;
+}
+
+export interface SeoGeoPageContent {
+  eyebrow: LocalizedText;
+  title: LocalizedText;
+  intro: LocalizedText;
+  importanceTitle: LocalizedText;
+  importanceParagraphs: Record<SiteLocale, string[]>;
+  primaryCta: LocalizedText;
+  optimizationTitle: LocalizedText;
+  optimizationParagraphs: Record<SiteLocale, string[]>;
+  secondaryCta: LocalizedText;
 }
 
 export function toSiteLocale(locale: string): SiteLocale {
@@ -168,16 +182,16 @@ export function getLocalizedValue<T>(
 export const homeContent: HomeContent = {
   hero: {
     eyebrow: {
-      fr: "Site professionnel à partir de 500€. Mise en ligne en 48h.",
-      en: "Professional website from €500. Live in 48 hours.",
+      fr: "Le site web pour tous en 48 heures.",
+      en: "The website for everyone in 48 hours.",
     },
     title: {
-      fr: "Un site rapide à lancer, beau à voir et 100% à vous.",
-      en: "A fast launch website that looks sharp and stays fully yours.",
+      fr: "Concevez un site web qui vous appartient à 100%.",
+      en: "Build a website that belongs to you 100%.",
     },
     description: {
-      fr: "Sitekept conçoit, met en ligne et vous remet un site clair, rapide et visible sans abonnement impose. Vous gardez la propriete complete, nous gerons le deploiement, le domaine est offert la premiere annee.",
-      en: "Sitekept designs, deploys and hands over a clear, fast and visible website without forced subscriptions. You keep full ownership, we handle deployment, and the domain is free for the first year.",
+      fr: "Vous gardez la propriété complète, nous gérons le déploiement, le domaine est offert la première année.",
+      en: "You keep full ownership, we handle deployment, and the domain is included for the first year.",
     },
     primaryCta: {
       fr: "Demander un devis",
@@ -250,30 +264,20 @@ export const homeContent: HomeContent = {
       en: "SEO + GEO",
     },
     title: {
-      fr: "Un site pense pour Google, mais aussi pour les interfaces IA qui recommandent des entreprises.",
-      en: "A website built for Google and for AI interfaces that recommend businesses.",
+      fr: "Un site pensé pour être compris, indexé et recommandé.",
+      en: "A website designed to be understood, indexed, and recommended.",
     },
     description: {
-      fr: "La visibilite ne depend pas seulement du design. Nous structurons les pages pour qu'elles chargent vite, repondent clairement a une intention et donnent aux moteurs comme aux assistants IA de bons signaux a reutiliser.",
-      en: "Visibility is not just a design problem. We structure pages so they load fast, answer intent clearly and give both search engines and AI assistants strong signals to reuse.",
+      fr: "Chez Sitekept, l’optimisation ne s’arrête pas au design. Nous construisons le site avec un code lisible, des contenus structurés pour répondre naturellement aux recherches de l’IA, une sitemap claire pour guider l’exploration des pages, et une base propre pour favoriser l’indexation sur Google.",
+      en: "At Sitekept, optimization goes beyond design. We build the website with readable code, content structured to answer AI-style searches naturally, a clear sitemap that guides discovery, and a clean foundation that supports Google indexing.",
     },
-    bullets: {
-      fr: [
-        "Pages rapides, propres et semantiques",
-        "Message commercial explicite pour les recherches locales",
-        "Contenus concis qui se reprennent bien dans les apercus IA",
-        "Base saine pour enrichir ensuite votre acquisition",
-      ],
-      en: [
-        "Fast, clean and semantic pages",
-        "Explicit commercial messaging for local search intent",
-        "Concise content that works well in AI summaries",
-        "A healthy base for long-term acquisition growth",
-      ],
+    explanation: {
+      fr: "Le SEO correspond au référencement naturel sur les moteurs comme Google. Le GEO désigne la façon dont un site reste exploitable dans les réponses générées par l’IA. Pour une entreprise, les deux se complètent: l’un améliore la visibilité dans les résultats, l’autre aide votre activité à apparaître dans les réponses et recommandations que les prospects consultent de plus en plus. Pour aller plus loin, notre blog détaille ces sujets simplement.",
+      en: "SEO is organic visibility in search engines such as Google. GEO refers to how well a website can be reused in AI-generated answers. For a business, both work together: one improves discoverability in search results, the other helps your company appear in answers and recommendations that prospects increasingly rely on. Our blog explains both in simple terms.",
     },
     linkLabel: {
-      fr: "Lire notre page sur le SEO et le GEO",
-      en: "Read our SEO and GEO page",
+      fr: "En savoir plus",
+      en: "Learn more",
     },
   },
   processSection: {
@@ -288,6 +292,14 @@ export const homeContent: HomeContent = {
     description: {
       fr: "Vous choisissez une direction, nous nous occupons du cadre technique, du design final et de la mise en ligne.",
       en: "You pick the direction, we handle the technical setup, the final polish and the launch.",
+    },
+    ownershipParagraph: {
+      fr: "Chaque site est développé en interne, puis livré dans un cadre qui vous laisse réellement la main. Nous créons un compte GitHub à votre nom pour y pousser le projet, un compte Vercel ou une plateforme similaire pour le déploiement, ainsi qu’un compte Hostinger ou équivalent pour l’achat du nom de domaine, pris en charge la première année. Toute la structure, du code au déploiement, reste claire pour qu’un futur développeur puisse reprendre le site facilement si vous changez de prestataire.",
+      en: "Each website is developed in-house and delivered in a setup that leaves you in control. We create a GitHub account in your name to push the project, a Vercel account or similar platform for deployment, and a Hostinger account or equivalent for the domain purchase, covered during the first year. The full structure, from code to deployment, stays clear so a future developer can take over easily if you ever change provider.",
+    },
+    linkLabel: {
+      fr: "En lire plus sur notre blog",
+      en: "Read more on our blog",
     },
   },
   templatesSection: {
@@ -879,6 +891,57 @@ export const blogPageCopy: ListingPageCopy = {
   },
 };
 
+export const seoGeoPageContent: SeoGeoPageContent = {
+  eyebrow: {
+    fr: "SEO + GEO",
+    en: "SEO + GEO",
+  },
+  title: {
+    fr: "Comprendre le référencement naturel et ce qu’un site doit faire pour rester visible.",
+    en: "Understand organic search and what a website needs to stay visible.",
+  },
+  intro: {
+    fr: "Le référencement naturel reste une base essentielle dès qu’un site doit être trouvé au bon moment. Pour une PME, un indépendant ou une activité locale, un site n’a de valeur que s’il est compréhensible par Google, accessible à l’indexation et assez clair pour répondre à une intention de recherche réelle.",
+    en: "Organic search remains a core foundation whenever a website needs to be found at the right moment. For an SMB, solo founder or local business, a website only creates value if Google can understand it, index it and match it to a real search intent.",
+  },
+  importanceTitle: {
+    fr: "Pourquoi le référencement naturel reste décisif",
+    en: "Why organic search still matters",
+  },
+  importanceParagraphs: {
+    fr: [
+      "Un bon référencement naturel permet à votre activité d’apparaître quand un prospect formule déjà un besoin. Cette visibilité est précieuse parce qu’elle ne dépend pas uniquement d’une campagne payante ou d’une publication ponctuelle: elle s’appuie sur la structure du site, la qualité des pages et la clarté de l’information proposée.",
+      "Dans la pratique, cela signifie qu’un site bien pensé continue de travailler pour vous après sa mise en ligne. Il peut renforcer votre crédibilité, capter des recherches qualifiées et donner à Google des signaux cohérents sur votre activité, vos services et vos pages clés.",
+    ],
+    en: [
+      "Strong organic visibility helps your business appear when a prospect already expresses a need. That visibility matters because it does not rely only on paid campaigns or one-off posts: it depends on the website structure, page quality and clarity of the information you publish.",
+      "In practice, that means a well-structured website keeps working after launch. It can strengthen credibility, capture qualified searches and give Google consistent signals about your business, services and key pages.",
+    ],
+  },
+  primaryCta: {
+    fr: "En lire plus sur notre blog",
+    en: "Read more on our blog",
+  },
+  optimizationTitle: {
+    fr: "Ce qu’un site doit avoir pour être vraiment optimisé",
+    en: "What a website needs to be truly optimized",
+  },
+  optimizationParagraphs: {
+    fr: [
+      "Un site réellement optimisé repose sur plusieurs éléments qui se renforcent entre eux: des pages utiles, une hiérarchie claire, des titres compréhensibles, des contenus rédigés pour répondre à de vraies questions, un maillage interne logique et une base technique propre. Une sitemap bien tenue et des pages indexables aident ensuite Google à explorer le site plus proprement.",
+      "Aujourd’hui, cette logique sert aussi les interfaces IA. Quand un contenu est clair, bien structuré, contextuel et appuyé par des signaux cohérents, il devient plus facile à reprendre dans des réponses générées, des aperçus enrichis ou des recommandations. C’est là que SEO et GEO se rejoignent concrètement.",
+    ],
+    en: [
+      "A truly optimized website combines several reinforcing elements: useful pages, clear hierarchy, understandable titles, content written to answer real questions, logical internal linking and a clean technical base. A maintained sitemap and indexable pages then help Google explore the site more reliably.",
+      "Today, the same logic also serves AI interfaces. When content is clear, well-structured, contextual and backed by consistent signals, it becomes easier to reuse in generated answers, enriched previews or recommendations. That is where SEO and GEO meet in practice.",
+    ],
+  },
+  secondaryCta: {
+    fr: "En lire plus sur notre blog",
+    en: "Read more on our blog",
+  },
+};
+
 export const blogPosts: BlogPost[] = [
   {
     slug: "site-web-rapide-pme-independant",
@@ -1184,6 +1247,446 @@ export const blogPosts: BlogPost[] = [
     ctaDescription: {
       fr: "Nous pouvons cadrer une home et des pages piliers qui parlent a la fois aux humains, a Google et aux interfaces IA.",
       en: "We can structure a home page and pillar pages that speak to people, Google and AI interfaces at the same time.",
+    },
+  },
+  {
+    slug: "qu-est-ce-que-le-seo-et-le-geo",
+    category: {
+      fr: "SEO + GEO",
+      en: "SEO + GEO",
+    },
+    title: {
+      fr: "Qu’est-ce que le SEO et le GEO ?",
+      en: "What are SEO and GEO?",
+    },
+    excerpt: {
+      fr: "SEO et GEO poursuivent le même objectif: rendre un site plus facile à trouver et à comprendre, que la recherche passe par Google ou par une interface IA.",
+      en: "SEO and GEO pursue the same goal: making a website easier to find and understand, whether discovery happens through Google or an AI interface.",
+    },
+    seoTitle: {
+      fr: "Qu’est-ce que le SEO et le GEO ? | Sitekept",
+      en: "What are SEO and GEO? | Sitekept",
+    },
+    seoDescription: {
+      fr: "Une explication simple du SEO et du GEO pour comprendre comment un site peut rester visible sur Google et dans les réponses générées par l’IA.",
+      en: "A simple explanation of SEO and GEO to understand how a website can stay visible on Google and in AI-generated answers.",
+    },
+    intro: {
+      fr: "Quand on parle de visibilité en ligne, beaucoup d’entreprises pensent d’abord à Google. C’est logique. Mais les usages évoluent: une partie des recherches passe désormais par des aperçus générés, des assistants conversationnels ou des interfaces IA qui reformulent les résultats. Pour rester visible dans ce contexte, il faut comprendre deux notions complémentaires: le SEO et le GEO.",
+      en: "When people talk about online visibility, most businesses first think about Google. That makes sense. But search behavior is evolving: part of discovery now happens through generated overviews, conversational assistants and AI interfaces that reformulate results. To stay visible in that context, two complementary ideas matter: SEO and GEO.",
+    },
+    sections: [
+      {
+        id: "seo-definition",
+        title: {
+          fr: "Le SEO: être bien compris par les moteurs de recherche",
+          en: "SEO: being well understood by search engines",
+        },
+        paragraphs: {
+          fr: [
+            "Le SEO, ou référencement naturel, désigne tout ce qui aide un site à apparaître dans les résultats non payants des moteurs de recherche. Cela repose sur des pages utiles, une structure claire, des titres compréhensibles, un bon maillage interne, une indexation correcte et une base technique saine.",
+            "En pratique, le SEO permet à votre activité d’être trouvée quand un prospect exprime déjà un besoin. C’est ce qui transforme un site en outil commercial plutôt qu’en simple présence en ligne.",
+          ],
+          en: [
+            "SEO, or search engine optimization, covers everything that helps a website appear in unpaid search results. It relies on useful pages, clear structure, understandable titles, strong internal linking, proper indexing and a sound technical foundation.",
+            "In practice, SEO helps your business be found when a prospect already expresses a need. That is what turns a website into a commercial tool rather than a simple online presence.",
+          ],
+        },
+      },
+      {
+        id: "geo-definition",
+        title: {
+          fr: "Le GEO: rester exploitable dans les réponses générées par l’IA",
+          en: "GEO: staying reusable in AI-generated answers",
+        },
+        paragraphs: {
+          fr: [
+            "Le terme GEO est souvent utilisé pour parler de la capacité d’un site à rester clair, fiable et réutilisable dans les réponses générées par l’IA. Ici, l’enjeu n’est pas seulement d’apparaître sur une page de résultats, mais aussi d’être suffisamment compréhensible pour qu’une interface IA puisse s’appuyer sur votre contenu ou recommander votre activité.",
+            "Cela suppose un contenu précis, des réponses naturelles aux questions fréquentes, des signaux de confiance visibles, ainsi qu’une structure qui aide les systèmes à identifier qui vous êtes, ce que vous proposez et pourquoi cela peut être utile à l’utilisateur.",
+          ],
+          en: [
+            "The term GEO is often used to describe a website’s ability to stay clear, reliable and reusable in AI-generated answers. The goal is not only to appear on a search results page, but also to be understandable enough for an AI interface to rely on your content or recommend your business.",
+            "That requires precise content, natural answers to frequent questions, visible trust signals and a structure that helps systems identify who you are, what you offer and why it may be useful to the user.",
+          ],
+        },
+      },
+      {
+        id: "how-they-work-together",
+        title: {
+          fr: "Pourquoi ils se complètent au lieu de s’opposer",
+          en: "Why they complement each other instead of competing",
+        },
+        paragraphs: {
+          fr: [
+            "Le SEO et le GEO reposent sur une base commune: un site clair, utile, rapide et indexable. Un contenu bien structuré aide Google à classer vos pages, mais il aide aussi les interfaces IA à reformuler correctement votre offre.",
+            "Autrement dit, le GEO ne remplace pas le SEO. Il prolonge sa logique dans de nouveaux usages. Pour une entreprise, la bonne approche consiste donc à construire un site qui répond clairement à des questions humaines, tout en restant lisible pour les moteurs et les systèmes génératifs.",
+          ],
+          en: [
+            "SEO and GEO share the same foundation: a website that is clear, useful, fast and indexable. Well-structured content helps Google rank your pages, but it also helps AI interfaces restate your offer correctly.",
+            "In other words, GEO does not replace SEO. It extends the same logic into new usage patterns. For a business, the right approach is to build a website that answers human questions clearly while staying readable to search engines and generative systems.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Vous voulez un site pensé pour Google et pour les interfaces IA ?",
+      en: "Want a website designed for Google and AI interfaces?",
+    },
+    ctaDescription: {
+      fr: "Nous pouvons structurer vos pages pour qu’elles restent utiles à la fois pour la recherche classique et pour les réponses générées.",
+      en: "We can structure your pages so they stay useful for both classic search and generated answers.",
+    },
+  },
+  {
+    slug: "site-sans-referencement-peut-devenir-inutile",
+    category: {
+      fr: "Visibilité",
+      en: "Visibility",
+    },
+    title: {
+      fr: "Un site sans référencement peut s’avérer inutile : une vitrine que personne ne voit, c’est comme si elle n’existait pas",
+      en: "A website without search visibility can become useless: if nobody sees the storefront, it may as well not exist",
+    },
+    excerpt: {
+      fr: "Un site peut être propre et bien conçu, mais s’il n’est jamais trouvé, il ne joue pas son rôle commercial. La visibilité fait partie de son utilité réelle.",
+      en: "A website can be clean and well designed, but if nobody finds it, it does not fulfill its commercial role. Visibility is part of its real usefulness.",
+    },
+    seoTitle: {
+      fr: "Pourquoi un site sans référencement peut devenir inutile | Sitekept",
+      en: "Why a website without search visibility can become useless | Sitekept",
+    },
+    seoDescription: {
+      fr: "Pourquoi un site qui n’est pas trouvé sur Google ou dans les réponses IA peut échouer commercialement, même s’il est bien présenté.",
+      en: "Why a website that cannot be found on Google or in AI answers can fail commercially, even when it looks good.",
+    },
+    intro: {
+      fr: "Un site web n’est pas seulement un objet de présentation. Il doit aider à être trouvé, rassurer au bon moment et faciliter la prise de contact. Quand il manque de visibilité, il perd une partie essentielle de sa valeur. Une vitrine invisible ne soutient ni les ventes, ni la notoriété, ni la crédibilité d’une entreprise.",
+      en: "A website is not just something to present. It should help a business be found, reassure people at the right moment and make contact easier. When visibility is missing, the website loses a key part of its value. An invisible storefront does not support sales, awareness or credibility.",
+    },
+    sections: [
+      {
+        id: "beautiful-is-not-enough",
+        title: {
+          fr: "Un beau site ne suffit pas à créer de la demande",
+          en: "A beautiful website is not enough to create demand",
+        },
+        paragraphs: {
+          fr: [
+            "Beaucoup d’entreprises investissent d’abord dans l’apparence du site. C’est important, mais ce n’est pas suffisant. Si le site ne répond pas à des recherches précises, s’il n’est pas correctement indexé ou s’il ne donne pas des signaux clairs sur l’activité, il restera peu visible.",
+            "Le problème n’est donc pas seulement esthétique. Il est fonctionnel. Un site n’est utile que s’il peut être découvert par les bonnes personnes au bon moment.",
+          ],
+          en: [
+            "Many businesses first invest in how the website looks. That matters, but it is not enough. If the site does not answer precise searches, is not indexed correctly or does not provide clear business signals, it will remain hard to discover.",
+            "The problem is not only aesthetic. It is functional. A website is only useful if the right people can find it at the right moment.",
+          ],
+        },
+      },
+      {
+        id: "local-business-cases",
+        title: {
+          fr: "Pour une activité locale, la visibilité est souvent la vraie différence",
+          en: "For a local business, visibility is often the real difference-maker",
+        },
+        paragraphs: {
+          fr: [
+            "Prenons des cas simples: un avocat, un dentiste, un restaurant ou un artisan local. Les prospects ne cherchent pas seulement un nom de marque. Ils cherchent un service, un besoin, une spécialité ou une zone géographique. Si votre site ne se positionne pas sur ces demandes, il laisse toute la place à des concurrents pourtant parfois moins convaincants.",
+            "Dans ces contextes, le référencement naturel ne sert pas à “faire du trafic” au sens abstrait. Il sert à capter des personnes déjà proches d’une décision ou d’une prise de contact.",
+          ],
+          en: [
+            "Take simple examples: a lawyer, a dentist, a restaurant or a local trades business. Prospects are not only searching for a brand name. They search for a service, a need, a specialty or an area. If your website does not show up for those requests, it leaves room to competitors who may be less convincing.",
+            "In those cases, organic search is not about generating traffic in the abstract. It is about capturing people who are already close to making a decision or getting in touch.",
+          ],
+        },
+      },
+      {
+        id: "visibility-is-utility",
+        title: {
+          fr: "La visibilité fait partie de l’utilité du site",
+          en: "Visibility is part of the website’s usefulness",
+        },
+        paragraphs: {
+          fr: [
+            "Quand on évalue un site, il faut donc regarder plus loin que le rendu visuel. Est-il clair pour Google ? Répond-il à des recherches naturelles ? Est-il assez lisible pour être repris dans des réponses IA ? Est-ce qu’il aide réellement un prospect à comprendre l’offre et à agir ?",
+            "C’est pour cette raison que Sitekept traite la visibilité comme une composante du site lui-même, pas comme une couche optionnelle à ajouter plus tard. Un site qui n’est pas vu reste incomplet, même s’il est bien dessiné.",
+          ],
+          en: [
+            "When assessing a website, you need to look beyond the visual result. Is it clear to Google? Does it answer natural searches? Is it readable enough to be reused in AI answers? Does it actually help a prospect understand the offer and take action?",
+            "That is why Sitekept treats visibility as part of the website itself, not as an optional layer added later. A website that is not seen stays incomplete, even if it is well designed.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Vous voulez un site qui ne reste pas invisible après sa mise en ligne ?",
+      en: "Want a website that does not stay invisible after launch?",
+    },
+    ctaDescription: {
+      fr: "Nous pouvons cadrer un site clair, utile et pensé pour être trouvé par les bonnes recherches.",
+      en: "We can frame a website that is clear, useful and designed to be found through the right searches.",
+    },
+  },
+  {
+    slug: "pourquoi-optimisation-referencement-naturel-importante",
+    category: {
+      fr: "Référencement naturel",
+      en: "Organic search",
+    },
+    title: {
+      fr: "Pourquoi l’optimisation au référencement naturel est importante et ce qu’elle apporte réellement",
+      en: "Why organic search optimization matters and what it really brings",
+    },
+    excerpt: {
+      fr: "Le référencement naturel n’est pas un supplément technique. C’est ce qui permet à un site d’attirer une audience qualifiée, de rester crédible et de continuer à être trouvé dans le temps.",
+      en: "Organic search optimization is not a technical add-on. It is what helps a website attract qualified traffic, stay credible and keep being discovered over time.",
+    },
+    seoTitle: {
+      fr: "Pourquoi le référencement naturel est important | Sitekept",
+      en: "Why organic search optimization matters | Sitekept",
+    },
+    seoDescription: {
+      fr: "Visibilité, trafic qualifié, crédibilité, présence durable: voici ce que le référencement naturel apporte réellement à un site web.",
+      en: "Visibility, qualified traffic, credibility and durable discoverability: here is what organic search optimization really brings to a website.",
+    },
+    intro: {
+      fr: "Le référencement naturel est parfois résumé à une affaire de mots-clés. C’est une vision trop courte. En réalité, il s’agit surtout de rendre un site trouvable, compréhensible et crédible pour des prospects qui cherchent déjà une réponse. C’est cette capacité qui lui donne une vraie valeur commerciale dans le temps.",
+      en: "Organic search optimization is sometimes reduced to a keyword exercise. That view is too narrow. In reality, it is about making a website findable, understandable and credible for prospects who are already looking for an answer. That is what gives it long-term commercial value.",
+    },
+    sections: [
+      {
+        id: "qualified-visibility",
+        title: {
+          fr: "Le premier bénéfice: une visibilité plus qualifiée",
+          en: "The first benefit: more qualified visibility",
+        },
+        paragraphs: {
+          fr: [
+            "Le référencement naturel aide votre site à apparaître face à des personnes qui formulent déjà un besoin. On ne parle donc pas d’une audience vague ou distraite, mais de visiteurs potentiellement plus pertinents pour votre activité.",
+            "Pour une PME ou un indépendant, cela change beaucoup de choses: les visites ont plus de sens, les prises de contact sont mieux alignées avec l’offre et le site devient un vrai support commercial.",
+          ],
+          en: [
+            "Organic search helps your website appear in front of people who already express a need. This is not vague or distracted traffic, but visitors who are potentially much more relevant for your business.",
+            "For an SMB or solo founder, that changes a lot: visits make more sense, contact requests are better aligned with the offer and the website becomes a true commercial asset.",
+          ],
+        },
+      },
+      {
+        id: "credibility-and-trust",
+        title: {
+          fr: "Le deuxième bénéfice: de la crédibilité et de la confiance",
+          en: "The second benefit: credibility and trust",
+        },
+        paragraphs: {
+          fr: [
+            "Un site bien référencé n’est pas seulement mieux exposé. Il paraît aussi plus crédible, parce qu’il répond mieux aux attentes de recherche, structure clairement son information et montre des pages utiles sur ses services, ses expertises ou ses réponses aux questions fréquentes.",
+            "Cette crédibilité est essentielle, en particulier pour les services où la décision se prend avec un niveau élevé de confiance: santé, droit, immobilier, artisanat spécialisé ou services B2B.",
+          ],
+          en: [
+            "A well-optimized website is not only more visible. It also feels more credible because it aligns better with search expectations, structures information clearly and offers useful pages about services, expertise and frequent questions.",
+            "That credibility matters especially in services where decisions require a high level of trust: health, law, real estate, specialized trades or B2B services.",
+          ],
+        },
+      },
+      {
+        id: "long-term-discoverability",
+        title: {
+          fr: "Le troisième bénéfice: une présence qui continue dans le temps",
+          en: "The third benefit: discoverability that lasts over time",
+        },
+        paragraphs: {
+          fr: [
+            "Un travail sérieux sur le référencement naturel crée une base durable. Contrairement à une action ponctuelle, il renforce la capacité du site à rester visible, à être recrawlé, à être mieux compris et à soutenir de futures pages ou futures campagnes.",
+            "C’est aussi ce qui rend le SEO particulièrement intéressant pour un site livré comme un actif durable: vous investissez dans une structure qui peut continuer à progresser, au lieu de repartir de zéro à chaque changement.",
+          ],
+          en: [
+            "Serious organic optimization creates a durable base. Unlike one-off actions, it strengthens the website’s ability to remain visible, be recrawled, be better understood and support future pages or campaigns.",
+            "That is also what makes SEO especially valuable for a website delivered as a durable asset: you invest in a structure that can keep progressing instead of restarting from scratch each time things change.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Vous voulez un site qui attire une visibilité utile, pas seulement du passage ?",
+      en: "Want a website that attracts useful visibility, not just visits?",
+    },
+    ctaDescription: {
+      fr: "Nous pouvons construire une base claire, indexable et durable pour votre acquisition organique.",
+      en: "We can build a clear, indexable and durable base for your organic acquisition.",
+    },
+  },
+  {
+    slug: "pourquoi-avoir-un-site-qui-nous-appartient-a-100-change-tout",
+    category: {
+      fr: "Propriété du site",
+      en: "Website ownership",
+    },
+    title: {
+      fr: "Pourquoi avoir un site qui nous appartient à 100 % change tout",
+      en: "Why having a website that belongs to you 100% changes everything",
+    },
+    excerpt: {
+      fr: "Un site entièrement détenu par le client change le budget, la liberté de mouvement, la reprise du projet et la qualité de la relation avec le prestataire.",
+      en: "A website fully owned by the client changes the budget, the room to move, the ability to take over the project and the quality of the agency relationship.",
+    },
+    seoTitle: {
+      fr: "Pourquoi avoir un site qui nous appartient à 100 % change tout | Sitekept",
+      en: "Why full website ownership changes everything | Sitekept",
+    },
+    seoDescription: {
+      fr: "Abonnements, autonomie, changement de prestataire, accès et contrôle du code: pourquoi la propriété complète du site change la donne.",
+      en: "Subscriptions, autonomy, provider changes, access and code control: why full website ownership changes the game.",
+    },
+    intro: {
+      fr: "La question de la propriété du site paraît parfois abstraite jusqu’au jour où l’on veut modifier un outil, récupérer des accès ou changer de prestataire. À ce moment-là, tout devient très concret. Un site qui vous appartient vraiment vous laisse de la marge. Un site verrouillé vous rend dépendant.",
+      en: "Website ownership can seem abstract until the day you want to change a tool, recover access or switch providers. At that point, everything becomes very concrete. A website you truly own gives you room to move. A locked website keeps you dependent.",
+    },
+    sections: [
+      {
+        id: "subscription-dependency",
+        title: {
+          fr: "La dépendance aux abonnements change le rapport de force",
+          en: "Subscription dependency changes the balance of power",
+        },
+        paragraphs: {
+          fr: [
+            "Quand le site repose sur un abonnement opaque, chaque évolution peut devenir un point de blocage. Le client ne sait pas toujours ce qu’il paie, ce qu’il possède réellement ni ce qu’il pourra récupérer plus tard.",
+            "Cette dépendance crée un coût mental et budgétaire. Elle freine les décisions, complique les arbitrages et affaiblit la liberté de changer de cap ou de partenaire.",
+          ],
+          en: [
+            "When a website depends on an opaque subscription, every change can become a blocker. The client does not always know what they are paying for, what they truly own or what they will be able to recover later.",
+            "That dependency creates both mental and budget cost. It slows decisions, complicates trade-offs and reduces the freedom to change direction or switch partner.",
+          ],
+        },
+      },
+      {
+        id: "autonomy-and-access",
+        title: {
+          fr: "Autonomie, accès et contrôle: ce qui change au quotidien",
+          en: "Autonomy, access and control: what changes day to day",
+        },
+        paragraphs: {
+          fr: [
+            "Quand vous détenez le site à 100 %, vous gardez la main sur le code, le dépôt, les accès techniques et le déploiement. Vous pouvez faire évoluer le projet, faire intervenir un autre développeur ou reprendre vous-même certains sujets sans dépendre d’un verrou artificiel.",
+            "Cette autonomie n’oblige pas à devenir technique. Elle garantit simplement que la technique reste à votre service, et non l’inverse.",
+          ],
+          en: [
+            "When you own the website 100%, you keep control over the code, repository, technical access and deployment. You can evolve the project, involve another developer or take over some topics yourself without depending on artificial lock-in.",
+            "That autonomy does not force you to become technical. It simply ensures that technology stays in your service, not the other way around.",
+          ],
+        },
+      },
+      {
+        id: "durable-asset",
+        title: {
+          fr: "Un site web doit rester un actif durable",
+          en: "A website should remain a durable asset",
+        },
+        paragraphs: {
+          fr: [
+            "Un site bien livré garde de la valeur dans le temps. Il peut être repris, enrichi, retravaillé ou migré sans remise à zéro. C’est ce qui le transforme en actif durable pour l’entreprise.",
+            "C’est aussi la logique Sitekept: livrer un site que vous pouvez conserver, comprendre et transmettre plus tard à un autre prestataire si vous le souhaitez.",
+          ],
+          en: [
+            "A well-delivered website keeps value over time. It can be taken over, enriched, reworked or migrated without a full reset. That is what turns it into a durable business asset.",
+            "That is also the Sitekept logic: deliver a website you can keep, understand and hand over to another provider later if you want to.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Vous voulez un site livré comme un actif durable, pas comme une dépendance ?",
+      en: "Want a website delivered as a durable asset, not a dependency?",
+    },
+    ctaDescription: {
+      fr: "Nous pouvons cadrer un site clair dans sa propriété, ses accès et sa reprise future.",
+      en: "We can frame a website with clear ownership, access and future handoff.",
+    },
+  },
+  {
+    slug: "comment-se-passe-la-livraison-d-un-site-web-chez-sitekept",
+    category: {
+      fr: "Livraison",
+      en: "Delivery",
+    },
+    title: {
+      fr: "Comment se passe la livraison d’un site web chez Sitekept ?",
+      en: "How does website delivery work at Sitekept?",
+    },
+    excerpt: {
+      fr: "La livraison ne s’arrête pas à la mise en ligne. Elle comprend le code, les accès, le dépôt GitHub, le déploiement et le domaine, pour que le client possède réellement son site.",
+      en: "Delivery does not stop at launch. It includes the code, access, GitHub repository, deployment and domain so the client truly owns the website.",
+    },
+    seoTitle: {
+      fr: "Comment se passe la livraison d’un site web chez Sitekept ? | Sitekept",
+      en: "How does website delivery work at Sitekept? | Sitekept",
+    },
+    seoDescription: {
+      fr: "Développement en interne, dépôt GitHub client, déploiement sur Vercel, domaine pris la première année et structure claire: voici comment Sitekept livre un site web.",
+      en: "In-house development, client GitHub repository, Vercel deployment, first-year domain purchase and a clear structure: here is how Sitekept delivers a website.",
+    },
+    intro: {
+      fr: "Pour Sitekept, livrer un site ne veut pas seulement dire publier une URL. La livraison doit aussi garantir que le client possède réellement le projet, ses accès et sa capacité à le faire évoluer plus tard. C’est cette logique qui guide la façon dont nous développons, déployons et remettons chaque site.",
+      en: "For Sitekept, delivering a website does not simply mean publishing a URL. Delivery must also guarantee that the client truly owns the project, its access and the ability to evolve it later. That is the logic that guides how we build, deploy and hand over each website.",
+    },
+    sections: [
+      {
+        id: "developed-in-house",
+        title: {
+          fr: "Le site est développé en interne dans un cadre clair",
+          en: "The website is developed in-house within a clear framework",
+        },
+        paragraphs: {
+          fr: [
+            "Le projet est développé en interne par Sitekept, avec une structure pensée pour rester lisible. Les fichiers, les pages, les composants et l’organisation générale ne sont pas montés comme une boîte noire. Le but est qu’un autre développeur puisse comprendre le projet sans repartir de zéro.",
+            "Cette étape reprend l’esprit du process présenté sur la home: vous validez une direction, nous développons, nous ajustons, puis nous préparons une livraison exploitable et compréhensible.",
+          ],
+          en: [
+            "The project is developed in-house by Sitekept with a structure designed to remain readable. Files, pages, components and the overall organization are not assembled like a black box. The goal is that another developer can understand the project without starting from zero.",
+            "This follows the same logic as the process shown on the homepage: you validate a direction, we build, we adjust and then we prepare a delivery that stays usable and understandable.",
+          ],
+        },
+      },
+      {
+        id: "accounts-and-deployment",
+        title: {
+          fr: "Les comptes sont créés au nom du client, puis le projet y est livré",
+          en: "Accounts are created in the client’s name and the project is delivered there",
+        },
+        paragraphs: {
+          fr: [
+            "Pour garantir la propriété à 100 %, nous créons un compte GitHub au client puis nous y poussons le projet. Le code n’est donc pas conservé dans un espace inaccessible: le dépôt appartient au client dès la livraison.",
+            "Nous créons ensuite un compte Vercel ou une plateforme similaire au nom du client pour y déployer le site. Enfin, nous créons un compte Hostinger ou une plateforme comparable afin d’acheter le nom de domaine, pris en charge la première année. Le déploiement et le domaine sont donc remis dans un environnement que le client contrôle.",
+          ],
+          en: [
+            "To guarantee 100% ownership, we create a GitHub account for the client and push the project into it. The code is not kept in an inaccessible space: the repository belongs to the client from delivery onward.",
+            "We then create a Vercel account or similar platform in the client’s name to deploy the website. Finally, we create a Hostinger account or comparable platform to purchase the domain, covered during the first year. Deployment and domain are therefore handed over in an environment the client controls.",
+          ],
+        },
+      },
+      {
+        id: "handoff-and-takeover",
+        title: {
+          fr: "La reprise du site reste possible si le client change de prestataire",
+          en: "The website remains easy to take over if the client changes provider",
+        },
+        paragraphs: {
+          fr: [
+            "La livraison comprend une logique de reprise future. Toute la structure du projet, du code au déploiement, est pensée pour rester compréhensible. Cela ne veut pas dire que le client doit gérer la technique au quotidien, mais qu’il n’est jamais enfermé dans un système flou.",
+            "Si le client souhaite plus tard travailler avec un autre développeur ou une autre agence, le site peut être repris dans de bonnes conditions parce que le dépôt, les accès et le domaine sont déjà dans un cadre clair et propriétaire.",
+          ],
+          en: [
+            "Delivery includes a future takeover logic. The full project structure, from code to deployment, is designed to remain understandable. That does not mean the client must handle the technical side every day, but it does mean they are never locked into a vague system.",
+            "If the client later wants to work with another developer or agency, the website can be taken over in good conditions because the repository, access and domain already live in a clear ownership framework.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Vous voulez un site livré proprement, avec vos accès et votre dépôt ?",
+      en: "Want a website delivered cleanly, with your own access and repository?",
+    },
+    ctaDescription: {
+      fr: "Nous pouvons vous montrer comment cadrer un site rapide sans sacrifier la propriété ni la reprise future.",
+      en: "We can show you how to frame a fast website without sacrificing ownership or future handoff.",
     },
   },
 ];

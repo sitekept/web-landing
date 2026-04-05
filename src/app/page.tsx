@@ -36,7 +36,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const locale = await getSiteLocale();
   const hero = homeContent.hero;
-  const seoArticle = blogPosts.find((post) => post.slug === "site-optimise-seo-geo");
+  const deliveryArticle = blogPosts.find(
+    (post) => post.slug === "comment-se-passe-la-livraison-d-un-site-web-chez-sitekept"
+  );
 
   return (
     <>
@@ -220,70 +222,30 @@ export default async function Home() {
         id="seo-geo"
         className="bg-[linear-gradient(135deg,#0f172a_0%,#1e3a8a_70%,#1d4ed8_100%)] px-6 py-20 text-white sm:py-24 lg:px-8"
       >
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_420px]">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
-              {getLocalizedText(homeContent.visibilitySection.eyebrow, locale)}
-            </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              {getLocalizedText(homeContent.visibilitySection.title, locale)}
-            </h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
-              {getLocalizedText(homeContent.visibilitySection.description, locale)}
-            </p>
+        <div className="mx-auto max-w-5xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
+            {getLocalizedText(homeContent.visibilitySection.eyebrow, locale)}
+          </p>
+          <h2 className="mt-4 max-w-4xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            {getLocalizedText(homeContent.visibilitySection.title, locale)}
+          </h2>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
+            {getLocalizedText(homeContent.visibilitySection.description, locale)}
+          </p>
+          <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">
+            {getLocalizedText(homeContent.visibilitySection.explanation, locale)}
+          </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              {getLocalizedValue(homeContent.visibilitySection.bullets, locale).map(
-                (bullet) => (
-                  <div
-                    key={bullet}
-                    className="rounded-sm border border-blue-300/20 bg-white/8 p-4 text-sm text-slate-100"
-                  >
-                    {bullet}
-                  </div>
-                )
-              )}
-            </div>
-
-            {seoArticle ? (
-              <Button
-                asChild
-                variant="outline"
-                className="mt-8 border-white/20 bg-transparent text-white hover:bg-white/10"
-              >
-                <Link href={`/blog/${seoArticle.slug}`}>
-                  {getLocalizedText(homeContent.visibilitySection.linkLabel, locale)}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            ) : null}
-          </div>
-
-          <div className="space-y-4">
-            {blogPosts.map((post) => (
-              <article
-                key={post.slug}
-                className="rounded-md border border-blue-300/20 bg-white/8 p-6"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-300">
-                  {getLocalizedText(post.category, locale)}
-                </p>
-                <h3 className="mt-3 text-xl font-semibold text-white">
-                  {getLocalizedText(post.title, locale)}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-300">
-                  {getLocalizedText(post.excerpt, locale)}
-                </p>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="mt-5 inline-flex items-center text-sm font-medium text-white hover:text-blue-100"
-                >
-                  {locale === "fr" ? "Lire la page" : "Read the page"}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </article>
-            ))}
-          </div>
+          <Button
+            asChild
+            variant="outline"
+            className="mt-8 border-white/20 bg-transparent text-white hover:bg-white/10"
+          >
+            <Link href="/blog">
+              {getLocalizedText(homeContent.visibilitySection.linkLabel, locale)}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </section>
 
@@ -322,6 +284,24 @@ export default async function Home() {
                 </article>
               );
             })}
+          </div>
+
+          <div className="mt-10 rounded-md border border-blue-100 bg-slate-50 p-6 sm:p-8">
+            <p className="text-base leading-8 text-slate-700">
+              {getLocalizedText(homeContent.processSection.ownershipParagraph, locale)}
+            </p>
+            {deliveryArticle ? (
+              <Button
+                asChild
+                variant="outline"
+                className="mt-6 border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
+              >
+                <Link href={`/blog/${deliveryArticle.slug}`}>
+                  {getLocalizedText(homeContent.processSection.linkLabel, locale)}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            ) : null}
           </div>
         </div>
       </section>

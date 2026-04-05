@@ -12,6 +12,7 @@ import { SiteLocale } from "@/content/site-content";
 const NAVIGATION_ITEMS = [
   { key: "templates", href: "/templates" },
   { key: "realizations", href: "/realization" },
+  { key: "blog", href: "/blog" },
   { key: "visibility", href: "/#seo-geo" },
   { key: "faq", href: "/#faq" },
   { key: "contact", href: "/#contact" },
@@ -20,6 +21,7 @@ const NAVIGATION_ITEMS = [
 const navigationLabels = {
   fr: {
     templates: "Templates",
+    blog: "Blog",
     visibility: "SEO / GEO",
     faq: "FAQ",
     contact: "Contact",
@@ -31,6 +33,7 @@ const navigationLabels = {
   },
   en: {
     templates: "Templates",
+    blog: "Blog",
     visibility: "SEO / GEO",
     faq: "FAQ",
     contact: "Contact",
@@ -99,7 +102,7 @@ export function Navigation({ locale }: NavigationProps) {
             </div>
           </Link>
 
-          <div className="hidden items-center gap-8 md:flex">
+          <div className="hidden items-center gap-8 lg:flex">
             {NAVIGATION_ITEMS.map((item) => (
               <Link
                 key={item.key}
@@ -121,7 +124,7 @@ export function Navigation({ locale }: NavigationProps) {
           <button
             type="button"
             onClick={() => setIsOpen((current) => !current)}
-            className={`rounded-md p-2 md:hidden ${menuButtonClassName}`}
+            className={`rounded-md p-2 lg:hidden ${menuButtonClassName}`}
             aria-label={isOpen ? labels.closeMenu : labels.openMenu}
             aria-expanded={isOpen}
           >
@@ -130,7 +133,7 @@ export function Navigation({ locale }: NavigationProps) {
         </div>
 
         {isOpen ? (
-          <div className="border-t border-slate-200 bg-white py-4 md:hidden">
+          <div className="border-t border-slate-200 bg-white py-4 lg:hidden">
             <div className="space-y-2">
               {NAVIGATION_ITEMS.map((item) => (
                 <Link
