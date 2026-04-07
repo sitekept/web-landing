@@ -14,8 +14,8 @@ import {
 } from "@/content/site-content";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
-import { Contact } from "./_components/contact";
-import { PortfolioPreview } from "./_components/portfolio-preview";
+import { Contact } from "../_components/contact";
+import { PortfolioPreview } from "../_components/portfolio-preview";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();

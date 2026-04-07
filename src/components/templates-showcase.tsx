@@ -67,7 +67,7 @@ export function TemplatesShowcase({
               <ProjectCard
                 key={template.id}
                 name={copy.name}
-                url={template.externalUrl}
+                url={template.externalUrl ?? `/${template.slug}`}
                 description={copy.description}
                 screenshot={template.screenshot}
                 category="template"

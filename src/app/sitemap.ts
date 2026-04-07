@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/content/site-content";
+import { PUBLIC_TEMPLATE_SLUGS } from "@/lib/public-template-routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://sitekept.com";
@@ -17,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    ...PUBLIC_TEMPLATE_SLUGS.map((slug) => ({
+      url: `${baseUrl}/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),

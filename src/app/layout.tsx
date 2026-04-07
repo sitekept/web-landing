@@ -1,8 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import "./globals.css";
 import { ENV } from "@/lib/env";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
@@ -87,13 +85,7 @@ export default async function RootLayout({
           content={getMessage(locale, "metadata.appleMobileWebAppTitle")}
         />
       </head>
-      <body suppressHydrationWarning className={inter.className}>
-        <main className="min-h-screen">
-          <Navigation locale={locale} />
-          {children}
-          <Footer locale={locale} />
-        </main>
-      </body>
+      <body suppressHydrationWarning className={inter.className}>{children}</body>
       {ENV.NEXT_PUBLIC_GA_ID ? (
         <GoogleAnalytics gaId={ENV.NEXT_PUBLIC_GA_ID} />
       ) : null}

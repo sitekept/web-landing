@@ -638,8 +638,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "boulangerie",
     slug: "boulangerie",
-    externalUrl:
-      "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/boulangerie",
+    externalUrl: "/boulangerie",
     screenshot: "/template/boulangerie.png",
     featured: true,
     copy: {
@@ -658,8 +657,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "fleuriste",
     slug: "fleuriste",
-    externalUrl:
-      "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/fleuriste",
+    externalUrl: "/fleuriste",
     screenshot: "/template/fleuriste.png",
     featured: true,
     copy: {
@@ -678,8 +676,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "ordinateur",
     slug: "ordinateur",
-    externalUrl:
-      "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/ordinateur",
+    externalUrl: "/ordinateur",
     screenshot: "/template/ordinateur.png",
     featured: true,
     copy: {
@@ -696,10 +693,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
     },
   },
   {
-    id: "patisserie",
-    slug: "patisserie",
-    externalUrl:
-      "https://6867a5f6b7d25d0008457ed6--thunderous-heliotrope-ff8341.netlify.app/pattiserie",
+    id: "pattiserie",
+    slug: "pattiserie",
+    externalUrl: "/pattiserie",
     screenshot: "/template/patisserie.png",
     featured: true,
     copy: {
@@ -718,6 +714,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "dentiste",
     slug: "dentiste",
+    externalUrl: "/dentiste",
     screenshot: "/template/dentiste.png",
     featured: true,
     copy: {
@@ -736,6 +733,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "plombier-chauffagiste",
     slug: "plombier-chauffagiste",
+    externalUrl: "/plombier-chauffagiste",
     screenshot: "/template/plombier-chauffagiste.png",
     featured: true,
     copy: {
@@ -754,6 +752,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "salon-coiffure",
     slug: "salon-coiffure",
+    externalUrl: "/salon-coiffure",
     screenshot: "/template/salon-coiffure.png",
     featured: true,
     copy: {
@@ -772,6 +771,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "menage-nettoyage",
     slug: "menage-nettoyage",
+    externalUrl: "/menage-nettoyage",
     screenshot: "/template/menage-nettoyage.png",
     featured: true,
     copy: {
@@ -790,6 +790,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "restaurant-bistrot",
     slug: "restaurant-bistrot",
+    externalUrl: "/restaurant-bistrot",
     screenshot: "/template/restaurant-bistrot.png",
     featured: true,
     copy: {
@@ -808,6 +809,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "architecte-interieur",
     slug: "architecte-interieur",
+    externalUrl: "/architecte-interieur",
     screenshot: "/template/architecte-interieur.png",
     featured: true,
     copy: {
@@ -826,6 +828,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "cabinet-avocat",
     slug: "cabinet-avocat",
+    externalUrl: "/cabinet-avocat",
     screenshot: "/template/cabinet-avocat.png",
     featured: true,
     copy: {
@@ -844,6 +847,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "agence-immobiliere",
     slug: "agence-immobiliere",
+    externalUrl: "/agence-immobiliere",
     screenshot: "/template/agence-immobiliere.png",
     featured: true,
     copy: {
