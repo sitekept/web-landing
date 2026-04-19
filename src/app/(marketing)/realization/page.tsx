@@ -50,6 +50,12 @@ export default async function RealizationPage() {
       description: getMessage(locale, "realization.projects.iaformaplus.description"),
       screenshot: "/realization/lesassureursexperts.png",
     },
+    {
+      name: "ETS RUNI",
+      url: "https://www.etsruni.com/",
+      description: getMessage(locale, "realization.projects.etsruni.description"),
+      screenshot: "/realization/etsruni.png",
+    },
   ] as const;
 
   return (

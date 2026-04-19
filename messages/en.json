@@ -235,6 +235,10 @@
       "mathintegral": {
         "name": "MathIntegral",
         "description": "Educational marketplace for handwritten math exercises and solutions, featuring AI integration to convert handwriting into text."
+      },
+      "etsruni": {
+        "name": "ETS RUNI",
+        "description": "Multilingual showcase website for a spirits importer and distributor in Morocco, with polished branding and a category-based catalog experience."
       }
     }
   },

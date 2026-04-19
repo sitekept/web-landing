@@ -235,6 +235,10 @@
       "mathintegral": {
         "name": "MathIntegral",
         "description": "Marketplace éducatif dédié aux exercices et solutions mathématiques manuscrits, avec intégration d’IA pour la transcription en texte."
+      },
+      "etsruni": {
+        "name": "ETS RUNI",
+        "description": "Site vitrine multilingue pour importateur et distributeur de spiritueux au Maroc, avec identité de marque soignée et catalogue structuré par catégories."
       }
     }
   },
