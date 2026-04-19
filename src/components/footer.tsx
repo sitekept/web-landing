@@ -9,7 +9,6 @@ interface FooterProps {
 }
 
 export async function Footer({ locale }: FooterProps) {
-
   return (
     <footer className="border-t border-slate-800 bg-slate-950 px-6 py-16 text-white lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,1fr))]">
@@ -130,7 +129,19 @@ export async function Footer({ locale }: FooterProps) {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-7xl border-t border-slate-800 pt-6">
+      <div className="relative mx-auto mt-14 max-w-7xl border-t border-slate-800 pb-8 pt-6">
+        <div className="pointer-events-none absolute -top-12 left-0 z-10 h-16 w-full overflow-hidden">
+          <div className="animate-walk-across h-12 w-12">
+            <Image
+              src="/majin-vegeta/walk.gif"
+              alt="Majin Vegeta walking"
+              width={48}
+              height={48}
+              className="h-full w-full object-contain"
+              unoptimized
+            />
+          </div>
+        </div>
         <p className="text-sm text-slate-400">
           {getMessage(locale, "footer.copyright")}
         </p>
