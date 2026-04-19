@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface ProjectCardProps {
   name: string;
@@ -34,6 +35,17 @@ export function ProjectCard({
 
     window.open(url, "_blank", "noopener,noreferrer");
   };
+
+  const isTemplateCard = category === "template";
+  const actionWrapperClassName = isTemplateCard
+    ? "flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4"
+    : "flex gap-2";
+  const visitButtonClassName = isTemplateCard
+    ? "h-8 gap-1.5 rounded-sm border-slate-200 px-2.5 text-xs font-medium text-slate-700 shadow-none hover:border-blue-200 hover:bg-blue-50 hover:text-slate-900"
+    : "flex items-center gap-2 border-blue-200 hover:bg-blue-50";
+  const primaryButtonClassName = isTemplateCard
+    ? "h-8 gap-1.5 rounded-sm bg-blue-600 px-3 text-xs font-medium shadow-none hover:bg-blue-700"
+    : "flex items-center gap-2 bg-blue-600 hover:bg-blue-700";
 
   return (
     <Card className="transform overflow-hidden !rounded-md border border-blue-100 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
@@ -67,34 +79,38 @@ export function ProjectCard({
             {description}
           </p>
 
-          <div className="flex gap-2">
+          <div className={actionWrapperClassName}>
             {url ? (
               <Button
                 onClick={handleVisit}
                 variant="outline"
                 size="sm"
-                className="flex items-center gap-2 border-blue-200 hover:bg-blue-50"
+                className={cn(visitButtonClassName)}
               >
-                <ExternalLink size={16} />
+                <ExternalLink size={isTemplateCard ? 14 : 16} />
                 Visiter
               </Button>
             ) : null}
 
             {ctaLink ? (
-              <Button asChild size="sm" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700">
+              <Button
+                asChild
+                size="sm"
+                className={cn(primaryButtonClassName)}
+              >
                 <Link href={ctaLink}>
                   {ctaText}
-                  <ArrowRight size={16} />
+                  <ArrowRight size={isTemplateCard ? 14 : 16} />
                 </Link>
               </Button>
             ) : (
               <Button
                 onClick={ctaAction}
                 size="sm"
-                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700"
+                className={cn(primaryButtonClassName)}
               >
                 {ctaText}
-                <ArrowRight size={16} />
+                <ArrowRight size={isTemplateCard ? 14 : 16} />
               </Button>
             )}
           </div>

@@ -638,7 +638,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "boulangerie",
     slug: "boulangerie",
-    externalUrl: "http://127.0.0.1:3007/boulangerie",
+    externalUrl: "/boulangerie",
     screenshot: "/template/boulangerie.png",
     featured: true,
     copy: {
@@ -657,7 +657,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "fleuriste",
     slug: "fleuriste",
-    externalUrl: "http://127.0.0.1:3007/fleuriste",
+    externalUrl: "/fleuriste",
     screenshot: "/template/fleuriste.png",
     featured: true,
     copy: {
@@ -676,7 +676,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "ordinateur",
     slug: "ordinateur",
-    externalUrl: "http://127.0.0.1:3007/ordinateur",
+    externalUrl: "/ordinateur",
     screenshot: "/template/ordinateur.png",
     featured: true,
     copy: {
@@ -695,7 +695,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "pattiserie",
     slug: "pattiserie",
-    externalUrl: "http://127.0.0.1:3007/pattiserie",
+    externalUrl: "/pattiserie",
     screenshot: "/template/patisserie.png",
     featured: true,
     copy: {
@@ -714,7 +714,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "dentiste",
     slug: "dentiste",
-    externalUrl: "http://127.0.0.1:3007/dentiste",
+    externalUrl: "/dentiste",
     screenshot: "/template/dentiste.png",
     featured: true,
     copy: {
@@ -733,7 +733,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "plombier-chauffagiste",
     slug: "plombier-chauffagiste",
-    externalUrl: "http://127.0.0.1:3007/plombier-chauffagiste",
+    externalUrl: "/plombier-chauffagiste",
     screenshot: "/template/plombier-chauffagiste.png",
     featured: true,
     copy: {
@@ -752,7 +752,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "salon-coiffure",
     slug: "salon-coiffure",
-    externalUrl: "http://127.0.0.1:3007/salon-coiffure",
+    externalUrl: "/salon-coiffure",
     screenshot: "/template/salon-coiffure.png",
     featured: true,
     copy: {
@@ -771,7 +771,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "menage-nettoyage",
     slug: "menage-nettoyage",
-    externalUrl: "http://127.0.0.1:3007/menage-nettoyage",
+    externalUrl: "/menage-nettoyage",
     screenshot: "/template/menage-nettoyage.png",
     featured: true,
     copy: {
@@ -790,7 +790,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "restaurant-bistrot",
     slug: "restaurant-bistrot",
-    externalUrl: "http://127.0.0.1:3007/restaurant-bistrot",
+    externalUrl: "/restaurant-bistrot",
     screenshot: "/template/restaurant-bistrot.png",
     featured: true,
     copy: {
@@ -809,7 +809,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "architecte-interieur",
     slug: "architecte-interieur",
-    externalUrl: "http://127.0.0.1:3007/architecte-interieur",
+    externalUrl: "/architecte-interieur",
     screenshot: "/template/architecte-interieur.png",
     featured: true,
     copy: {
@@ -828,7 +828,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "cabinet-avocat",
     slug: "cabinet-avocat",
-    externalUrl: "http://127.0.0.1:3007/cabinet-avocat",
+    externalUrl: "/cabinet-avocat",
     screenshot: "/template/cabinet-avocat.png",
     featured: true,
     copy: {
@@ -847,7 +847,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
   {
     id: "agence-immobiliere",
     slug: "agence-immobiliere",
-    externalUrl: "http://127.0.0.1:3007/agence-immobiliere",
+    externalUrl: "/agence-immobiliere",
     screenshot: "/template/agence-immobiliere.png",
     featured: true,
     copy: {
