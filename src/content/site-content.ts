@@ -843,7 +843,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
     slug: "avocate-tel-aviv",
     externalUrl: "/avocate-tel-aviv",
     screenshot: "/template/avocate-tel-aviv.png",
-    featured: true,
+    featured: false,
     copy: {
       fr: {
         name: "Template Avocate Tel Aviv",
