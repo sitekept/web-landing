@@ -22,13 +22,7 @@ export interface FeaturedTemplate {
 
 export interface OfferHighlight {
   id: string;
-  icon:
-    | "badgeEuro"
-    | "clock3"
-    | "shieldCheck"
-    | "rocket"
-    | "globe"
-    | "wrench";
+  icon: "badgeEuro" | "clock3" | "shieldCheck" | "rocket" | "globe" | "wrench";
   copy: {
     fr: {
       title: string;
@@ -841,6 +835,25 @@ export const featuredTemplates: FeaturedTemplate[] = [
         name: "Law Firm Template",
         description:
           "A sober, authoritative landing page built to convert on the first consultation with expertise proof and documentary structure.",
+      },
+    },
+  },
+  {
+    id: "avocate-tel-aviv",
+    slug: "avocate-tel-aviv",
+    externalUrl: "/avocate-tel-aviv",
+    screenshot: "/template/avocate-tel-aviv.png",
+    featured: true,
+    copy: {
+      fr: {
+        name: "Template Avocate Tel Aviv",
+        description:
+          "Un site chic et sobre pour une avocate spécialisée en immobilier et successions France-Israël, avec blog et contact front-only.",
+      },
+      en: {
+        name: "Tel Aviv Lawyer Template",
+        description:
+          "A chic, restrained site for a lawyer focused on real estate and France-Israel inheritance matters, with blog and front-only contact.",
       },
     },
   },

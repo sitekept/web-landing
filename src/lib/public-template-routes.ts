@@ -10,6 +10,7 @@ export const PUBLIC_TEMPLATE_SLUGS = [
   "restaurant-bistrot",
   "architecte-interieur",
   "cabinet-avocat",
+  "avocate-tel-aviv",
   "agence-immobiliere",
 ] as const;
 
