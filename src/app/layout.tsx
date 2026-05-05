@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { ENV } from "@/lib/env";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
@@ -85,7 +86,10 @@ export default async function RootLayout({
           content={getMessage(locale, "metadata.appleMobileWebAppTitle")}
         />
       </head>
-      <body suppressHydrationWarning className={inter.className}>{children}</body>
+      <body suppressHydrationWarning className={inter.className}>
+        {children}
+        <SpeedInsights />
+      </body>
       {ENV.NEXT_PUBLIC_GA_ID ? (
         <GoogleAnalytics gaId={ENV.NEXT_PUBLIC_GA_ID} />
       ) : null}
