@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TubesCursor from "@/components/ui/tubes-cursor";
 import {
   blogPosts,
   faqItems,
@@ -44,10 +45,11 @@ export default async function Home() {
     <>
       <section
         id="hero"
-        className="relative overflow-hidden bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.24),_transparent_28%),linear-gradient(135deg,#0f172a_0%,#1d4ed8_58%,#7c3aed_100%)] px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"
+        className="relative overflow-hidden bg-black px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"
       >
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0.1))]" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
+        <TubesCursor className="z-0 opacity-90" />
+        <div className="pointer-events-none absolute inset-0 z-0 bg-black/45" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
           <div className="max-w-3xl">
             <div className="inline-flex items-center rounded-sm border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur">
               <span className="mr-2 h-2 w-2 rounded-full bg-blue-300" />
