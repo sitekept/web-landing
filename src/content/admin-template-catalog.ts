@@ -193,10 +193,9 @@ export const adminTemplateCatalog: AdminTemplateCatalogEntry[] = [
     slug: "alex-spa-massage",
     name: "Alex Spa Massage",
     sector: "Bien-être",
-    vercelUrl:
-      "https://sitekept-templates-74vnel8xg-jonathans-projects-8295665d.vercel.app/alex-spa-massage",
+    vercelUrl: "https://sitekept-templates.vercel.app/alex-spa-massage",
     notes:
-      "Preview privée Vercel pour Alex Spa Massage, conservée hors catalogue public sitekept.com.",
+      "URL Vercel publique pour Alex Spa Massage, conservée hors catalogue public sitekept.com.",
   }),
   withLinks({
     slug: "annecyelec",
