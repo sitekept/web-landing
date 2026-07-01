@@ -21,6 +21,12 @@ export default async function RealizationPage() {
       screenshot: "/realization/orhakerem.png",
     },
     {
+      name: "Balinjera",
+      url: "https://www.balinjera.com/",
+      description: getMessage(locale, "realization.projects.balinjera.description"),
+      screenshot: "/realization/balinjera.png",
+    },
+    {
       name: "PinckIt",
       url: "https://pinckit.com",
       description: getMessage(locale, "realization.projects.pinckit.description"),

@@ -224,6 +224,10 @@
         "name": "Orhakerem",
         "description": "Site vitrine élégant pour cabinet d'avocat, mettant en valeur l'expertise juridique avec un design professionnel et une navigation intuitive pour les clients potentiels."
       },
+      "balinjera": {
+        "name": "Balinjera",
+        "description": "Site vitrine bilingue pour restaurant éthiopien casher à Tel Aviv, avec identité visuelle marquée, navigation RTL/LTR et pages dédiées aux événements et au blog."
+      },
       "pinckit": {
         "name": "PinckIt",
         "description": "Application web de gestion collaborative permettant aux équipes de planifier, suivre et optimiser leurs projets avec des outils visuels innovants et des tableaux de bord personnalisés."
