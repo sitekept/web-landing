@@ -140,11 +140,9 @@ export default async function TermsPage() {
             </p>
             <div className="rounded-lg bg-slate-50 p-6">
               <p className="mb-2 text-slate-600">
-                <strong>{getMessage(locale, "terms.sections.contact.email")}</strong> :{" "}
                 {getMessage(locale, "terms.sections.contact.email")}
               </p>
               <p className="text-slate-600">
-                <strong>{getMessage(locale, "terms.sections.contact.phone")}</strong> :{" "}
                 {getMessage(locale, "terms.sections.contact.phone")}
               </p>
             </div>

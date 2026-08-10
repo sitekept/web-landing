@@ -1,0 +1,5 @@
+sitekept-templates/
+.next/
+node_modules/
+test-results/
+coverage/

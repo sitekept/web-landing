@@ -181,6 +181,7 @@
     "legal": "Legal",
     "terms": "Terms of Use",
     "privacy": "Privacy",
+    "legalNotice": "Legal Notice",
     "copyright": "© 2026 Sitekept. All rights reserved."
   },
   "seo": {
@@ -243,6 +244,22 @@
       "etsruni": {
         "name": "ETS RUNI",
         "description": "Multilingual showcase website for a spirits importer and distributor in Morocco, with polished branding and a category-based catalog experience."
+      },
+      "legitbrainrot": {
+        "name": "LegitBrainrot",
+        "description": "Access platform for professionally moderated private Roblox servers, offering a secure gaming experience and a simple purchase flow."
+      },
+      "comizglobal": {
+        "name": "ComizGlobal",
+        "description": "International sourcing platform connecting businesses with verified manufacturers, tracking the supply chain from factory verification to final delivery."
+      },
+      "bismuthcpa": {
+        "name": "BismuthCPA",
+        "description": "Showcase website for an accounting firm, presenting bookkeeping, financial advisory and tax preparation services for small businesses and property managers."
+      },
+      "lesassureursexperts": {
+        "name": "Les assureurs experts",
+        "description": "Showcase website for an insurance and health coverage broker, with a clear presentation of offers and a simplified inquiry flow."
       }
     }
   },
@@ -359,8 +376,8 @@
       "contact": {
         "title": "Contact",
         "content": "For any questions regarding this policy or your personal data, please contact us:",
-        "email": "Email: contact@sitekept.com",
-        "phone": "Phone: +33 1 23 45 67 89"
+        "email": "Email: sitekept@gmail.com",
+        "phone": "Phone: +33 6 51 17 99 25"
       },
       "complaints": {
         "title": "Complaints",
@@ -476,9 +493,9 @@
       "contact": {
         "title": "Contact",
         "content": "For any questions regarding these terms of use:",
-        "email": "Email: contact@sitekept.com",
-        "phone": "Phone: +33 1 23 45 67 89",
-        "address": "Address: SiteKept, 123 Avenue des Champs, 75008 Paris, France"
+        "email": "Email: sitekept@gmail.com",
+        "phone": "Phone: +33 6 51 17 99 25",
+        "address": "Address: TO BE COMPLETED"
       }
     },
     "domainPolicy": {
@@ -491,6 +508,48 @@
         "Renewal fees are the client's responsibility",
         "Transfer to another registrar is possible at any time"
       ]
+    }
+  },
+  "legalNotice": {
+    "title": "Legal Notice",
+    "lastUpdate": "Last updated: {date}",
+    "sections": {
+      "editor": {
+        "title": "Site Publisher",
+        "content": "The site sitekept.com is published by:",
+        "companyName": "Company name: TO BE COMPLETED",
+        "legalForm": "Legal form: TO BE COMPLETED",
+        "siren": "Company registration number: TO BE COMPLETED",
+        "vat": "VAT number: TO BE COMPLETED",
+        "address": "Registered address: TO BE COMPLETED",
+        "email": "Email: sitekept@gmail.com",
+        "phone": "Phone: +33 6 51 17 99 25",
+        "publicationDirector": "Publication director: TO BE COMPLETED"
+      },
+      "hosting": {
+        "title": "Hosting",
+        "content": "The site is hosted by:",
+        "hostName": "Host: TO BE COMPLETED",
+        "hostAddress": "Host address: TO BE COMPLETED"
+      },
+      "intellectualProperty": {
+        "title": "Intellectual Property",
+        "content": "All content on this site (text, images, logos, layout) is protected by intellectual property law. Any reproduction, representation or distribution, in whole or in part, without prior authorization from SiteKept is prohibited."
+      },
+      "liability": {
+        "title": "Liability",
+        "content": "SiteKept strives to ensure the accuracy of the information published on this site but cannot guarantee that it is free of errors, omissions or inaccuracies. Users acknowledge using this information at their own responsibility."
+      },
+      "personalData": {
+        "title": "Personal Data",
+        "content": "The processing of personal data collected on this site is detailed in our privacy policy, accessible from the site footer."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "For any question regarding this legal notice, contact us:",
+        "email": "Email: sitekept@gmail.com",
+        "phone": "Phone: +33 6 51 17 99 25"
+      }
     }
   }
 }

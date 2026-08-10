@@ -38,7 +38,7 @@ export function PortfolioPreview({
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
-            {locale === "fr" ? "Templates et realisations" : "Templates and work"}
+            {locale === "fr" ? "Templates et réalisations" : "Templates and work"}
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             {getMessage(locale, "portfolio.title")}

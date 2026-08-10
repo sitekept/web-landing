@@ -1,18 +1,6 @@
-export const PUBLIC_TEMPLATE_SLUGS = [
-  "boulangerie",
-  "fleuriste",
-  "ordinateur",
-  "pattiserie",
-  "dentiste",
-  "plombier-chauffagiste",
-  "salon-coiffure",
-  "menage-nettoyage",
-  "restaurant-bistrot",
-  "architecte-interieur",
-  "cabinet-avocat",
-  "avocate-tel-aviv",
-  "agence-immobiliere",
-] as const;
+import { sitekeptPublicTemplateSlugs } from "@/content/admin-template-catalog";
+
+export const PUBLIC_TEMPLATE_SLUGS = sitekeptPublicTemplateSlugs;
 
 export function isPublicTemplatePathname(pathname: string | null): boolean {
   if (!pathname) {

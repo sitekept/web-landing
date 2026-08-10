@@ -165,11 +165,9 @@ export default async function PrivacyPage() {
             </p>
             <div className="mb-6 rounded-lg bg-slate-50 p-6">
               <p className="mb-2 text-slate-600">
-                <strong>Email :</strong>{" "}
                 {getMessage(locale, "privacy.sections.contact.email")}
               </p>
               <p className="mb-4 text-slate-600">
-                <strong>{getMessage(locale, "privacy.sections.contact.phone")} :</strong>{" "}
                 {getMessage(locale, "privacy.sections.contact.phone")}
               </p>
               <p className="text-sm text-slate-600">

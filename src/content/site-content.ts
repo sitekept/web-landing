@@ -230,11 +230,11 @@ export const homeContent: HomeContent = {
       en: "What you get",
     },
     title: {
-      fr: "Une offre simple a acheter, simple a comprendre et simple a posseder.",
+      fr: "Une offre simple à acheter, simple à comprendre et simple à posséder.",
       en: "An offer that is easy to buy, easy to understand and easy to own.",
     },
     description: {
-      fr: "Chaque projet est structure pour retirer les zones grises commerciales: vous savez ce qui est inclus, ce que vous possedez et comment le site est mis en ligne.",
+      fr: "Chaque projet est structuré pour retirer les zones grises commerciales : vous savez ce qui est inclus, ce que vous possédez et comment le site est mis en ligne.",
       en: "Every project is structured to remove commercial ambiguity: you know what is included, what you own and how the website goes live.",
     },
   },
@@ -244,7 +244,7 @@ export const homeContent: HomeContent = {
       en: "Why Sitekept",
     },
     title: {
-      fr: "La rapidite compte, mais la clarte commerciale et la propriete comptent tout autant.",
+      fr: "La rapidité compte, mais la clarté commerciale et la propriété comptent tout autant.",
       en: "Speed matters, but commercial clarity and ownership matter just as much.",
     },
     description: {
@@ -276,11 +276,11 @@ export const homeContent: HomeContent = {
   },
   processSection: {
     eyebrow: {
-      fr: "Comment ca se passe",
+      fr: "Comment ça se passe",
       en: "How it works",
     },
     title: {
-      fr: "Un process court pour des clients qui ne veulent pas gerer la technique.",
+      fr: "Un process court pour des clients qui ne veulent pas gérer la technique.",
       en: "A short process for clients who do not want to manage technical work.",
     },
     description: {
@@ -298,15 +298,15 @@ export const homeContent: HomeContent = {
   },
   templatesSection: {
     eyebrow: {
-      fr: "Templates selectionnees",
+      fr: "Templates sélectionnés",
       en: "Selected templates",
     },
     title: {
-      fr: "Choisissez une base claire et nous l'adaptons a votre activite.",
+      fr: "Choisissez une base claire et nous l'adaptons à votre activité.",
       en: "Choose a clear starting point and we adapt it to your business.",
     },
     description: {
-      fr: "Chaque template est une base de lancement: structure, design, rythme de page et contenus de conversion deja penses.",
+      fr: "Chaque template est une base de lancement : structure, design, rythme de page et contenus de conversion déjà pensés.",
       en: "Each template is a launch-ready base: structure, design, page rhythm and conversion content are already mapped out.",
     },
     cta: {
@@ -316,11 +316,11 @@ export const homeContent: HomeContent = {
   },
   faqSection: {
     eyebrow: {
-      fr: "Questions frequentes",
+      fr: "Questions fréquentes",
       en: "Frequently asked questions",
     },
     title: {
-      fr: "Les objections les plus courantes, traitees sans jargon.",
+      fr: "Les objections les plus courantes, traitées sans jargon.",
       en: "The most common objections, answered without jargon.",
     },
     description: {
@@ -338,7 +338,7 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "À partir de 500€",
         description:
-          "Un prix d'entree public, lisible et sans abonnement a ajouter pour exister en ligne.",
+          "Un prix d'entrée public, lisible et sans abonnement à ajouter pour exister en ligne.",
       },
       en: {
         title: "From €500",
@@ -354,7 +354,7 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "Mise en ligne en 48h",
         description:
-          "Un cadre court pour les projets simples, avec une promesse de rapidite comprise des le premier contact.",
+          "Un cadre court pour les projets simples, avec une promesse de rapidité comprise dès le premier contact.",
       },
       en: {
         title: "Live in 48 hours",
@@ -370,7 +370,7 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "Vous possédez 100% du site",
         description:
-          "Le client garde le controle de son site, de ses contenus et de sa mise en ligne finale.",
+          "Le client garde le contrôle de son site, de ses contenus et de sa mise en ligne finale.",
       },
       en: {
         title: "You own 100% of the website",
@@ -386,7 +386,7 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "Aucun abonnement imposé",
         description:
-          "Vous achetez un site, pas une dependance. Le modele est simple et assume.",
+          "Vous achetez un site, pas une dépendance. Le modèle est simple et assumé.",
       },
       en: {
         title: "No forced subscription",
@@ -402,7 +402,7 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "Déploiement inclus",
         description:
-          "Nous gerons la mise en ligne, le domaine, le SSL et le cadre technique sans vous laisser seul.",
+          "Nous gérons la mise en ligne, le domaine, le SSL et le cadre technique sans vous laisser seul.",
       },
       en: {
         title: "Deployment included",
@@ -418,7 +418,7 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "Aucune technique à gérer",
         description:
-          "Vous validez le fond et l'image. Nous prenons en charge la partie technique du debut a la mise en ligne.",
+          "Vous validez le fond et l'image. Nous prenons en charge la partie technique du début à la mise en ligne.",
       },
       en: {
         title: "No technical admin on your side",
@@ -437,7 +437,7 @@ export const whySitekeptItems: WhySitekeptItem[] = [
       fr: {
         title: "Une offre qui s'explique vite",
         description:
-          "Le prix d'entree, le delai, la propriete et l'absence d'abonnement sont clairs des la premiere lecture.",
+          "Le prix d'entrée, le délai, la propriété et l'absence d'abonnement sont clairs dès la première lecture.",
       },
       en: {
         title: "An offer that explains itself quickly",
@@ -451,9 +451,9 @@ export const whySitekeptItems: WhySitekeptItem[] = [
     icon: "shield",
     copy: {
       fr: {
-        title: "La propriete n'est pas negociee",
+        title: "La propriété n'est pas négociée",
         description:
-          "Le site vous appartient. Sitekept ne construit pas un tunnel pour vous garder captif apres la livraison.",
+          "Le site vous appartient. Sitekept ne construit pas un tunnel pour vous garder captif après la livraison.",
       },
       en: {
         title: "Ownership is not negotiable",
@@ -467,9 +467,9 @@ export const whySitekeptItems: WhySitekeptItem[] = [
     icon: "search",
     copy: {
       fr: {
-        title: "Visibilite pensee des la base",
+        title: "Visibilité pensée dès la base",
         description:
-          "Le SEO et le GEO sont integres dans la structure de page, le message et la vitesse, pas ajoutes a la fin.",
+          "Le SEO et le GEO sont intégrés dans la structure de page, le message et la vitesse, pas ajoutés à la fin.",
       },
       en: {
         title: "Visibility designed from day one",
@@ -485,7 +485,7 @@ export const whySitekeptItems: WhySitekeptItem[] = [
       fr: {
         title: "Un discours non technique",
         description:
-          "Nous vendons une solution simple a acheter pour des PME et independants qui veulent un site utile, pas une stack.",
+          "Nous vendons une solution simple à acheter pour des PME et indépendants qui veulent un site utile, pas une stack.",
       },
       en: {
         title: "A non-technical sales language",
@@ -501,12 +501,12 @@ export const processSteps: ProcessStep[] = [
     id: "brief",
     copy: {
       fr: {
-        title: "1. Vous nous donnez le cadre",
+        title: "Vous nous donnez le cadre",
         description:
-          "Activite, objectif, style prefere, template ou direction sur mesure: on verrouille rapidement le bon point de depart.",
+          "Activité, objectif, style préféré, template ou direction sur mesure : on verrouille rapidement le bon point de départ.",
       },
       en: {
-        title: "1. You give us the frame",
+        title: "You give us the frame",
         description:
           "Business, goal, preferred style, template or custom direction: we lock the right starting point quickly.",
       },
@@ -516,12 +516,12 @@ export const processSteps: ProcessStep[] = [
     id: "build",
     copy: {
       fr: {
-        title: "2. Nous adaptons et produisons",
+        title: "Nous adaptons et produisons",
         description:
-          "Sitekept prepare la structure, le design, les contenus essentiels et l'ensemble technique pour que le site soit pret a etre valide.",
+          "Sitekept prépare la structure, le design, les contenus essentiels et l'ensemble technique pour que le site soit prêt à être validé.",
       },
       en: {
-        title: "2. We adapt and build",
+        title: "We adapt and build",
         description:
           "Sitekept prepares the structure, design, essential content and technical setup so the website is ready for review.",
       },
@@ -531,12 +531,12 @@ export const processSteps: ProcessStep[] = [
     id: "review",
     copy: {
       fr: {
-        title: "3. Vous validez, nous ajustons",
+        title: "Vous validez, nous ajustons",
         description:
-          "Vous corrigez les derniers details, nous appliquons les ajustements et nous verrouillons les points de conversion.",
+          "Vous corrigez les derniers détails, nous appliquons les ajustements et nous verrouillons les points de conversion.",
       },
       en: {
-        title: "3. You review, we adjust",
+        title: "You review, we adjust",
         description:
           "You validate the last details, we apply the adjustments and tighten the conversion-critical parts.",
       },
@@ -546,12 +546,12 @@ export const processSteps: ProcessStep[] = [
     id: "launch",
     copy: {
       fr: {
-        title: "4. Nous mettons en ligne",
+        title: "Nous mettons en ligne",
         description:
-          "Deploiement, domaine, performance et remise du site: vous repartez avec une presence en ligne claire et exploitable.",
+          "Déploiement, domaine, performance et remise du site : vous repartez avec une présence en ligne claire et exploitable.",
       },
       en: {
-        title: "4. We launch it",
+        title: "We launch it",
         description:
           "Deployment, domain, performance checks and handoff: you leave with a clear online presence you fully control.",
       },
@@ -567,29 +567,29 @@ export const faqItems: FaqItem[] = [
       en: "Is there any mandatory subscription?",
     },
     answer: {
-      fr: "Non. L'offre est pensee pour vendre un site, pas une dependance. Les frais incompressibles comme l'hebergement ou le domaine peuvent exister selon le contexte, mais Sitekept n'impose pas un abonnement mensuel pour conserver votre site.",
+      fr: "Non. L'offre est pensée pour vendre un site, pas une dépendance. Les frais incompressibles comme l'hébergement ou le domaine peuvent exister selon le contexte, mais Sitekept n'impose pas un abonnement mensuel pour conserver votre site.",
       en: "No. The offer is built to sell a website, not a dependency. Unavoidable costs like hosting or domain renewal may exist depending on the setup, but Sitekept does not force a monthly subscription to keep your website alive.",
     },
   },
   {
     id: "ownership",
     question: {
-      fr: "Est-ce que je possede vraiment le site ?",
+      fr: "Est-ce que je possède vraiment le site ?",
       en: "Do I really own the website?",
     },
     answer: {
-      fr: "Oui. Le site, sa structure et ses contenus vous appartiennent. Nous livrons un actif que vous pouvez garder, faire evoluer et reprendre sans blocage artificiel.",
+      fr: "Oui. Le site, sa structure et ses contenus vous appartiennent. Nous livrons un actif que vous pouvez garder, faire évoluer et reprendre sans blocage artificiel.",
       en: "Yes. The website, its structure and its content belong to you. We deliver an asset you can keep, evolve and take over without artificial lock-in.",
     },
   },
   {
     id: "launch",
     question: {
-      fr: "Qui gere la mise en ligne ?",
+      fr: "Qui gère la mise en ligne ?",
       en: "Who handles the launch?",
     },
     answer: {
-      fr: "Sitekept gere le deploiement, la configuration du domaine et la mise en ligne. Le but est que vous n'ayez pas a manipuler la partie technique.",
+      fr: "Sitekept gère le déploiement, la configuration du domaine et la mise en ligne. Le but est que vous n'ayez pas à manipuler la partie technique.",
       en: "Sitekept handles deployment, domain configuration and the production launch. The point is to keep the technical side off your plate.",
     },
   },
@@ -600,29 +600,29 @@ export const faqItems: FaqItem[] = [
       en: "Is the domain included?",
     },
     answer: {
-      fr: "Oui, le nom de domaine est offert pendant la premiere annee sur l'offre d'entree. Nous cadrons ensuite avec vous le renouvellement et la gestion future.",
+      fr: "Oui, le nom de domaine est offert pendant la première année sur l'offre d'entrée. Nous cadrons ensuite avec vous le renouvellement et la gestion future.",
       en: "Yes, the domain is included for the first year on the entry offer. We then clarify renewal and future management with you.",
     },
   },
   {
     id: "timing",
     question: {
-      fr: "Combien de temps faut-il pour etre en ligne ?",
+      fr: "Combien de temps faut-il pour être en ligne ?",
       en: "How long does it take to go live?",
     },
     answer: {
-      fr: "Pour les projets qui entrent dans le cadre de l'offre, la promesse commerciale reste une mise en ligne en 48h. Si le besoin depasse ce cadre, nous vous l'annoncons avant de demarrer.",
+      fr: "Pour les projets qui entrent dans le cadre de l'offre, la promesse commerciale reste une mise en ligne en 48h. Si le besoin dépasse ce cadre, nous vous l'annonçons avant de démarrer.",
       en: "For projects that fit the offer, the commercial promise remains a 48-hour launch. If the need goes beyond that frame, we say it before anything starts.",
     },
   },
   {
     id: "seo-geo",
     question: {
-      fr: "Le site est-il vraiment pense pour la visibilite SEO et GEO ?",
+      fr: "Le site est-il vraiment pensé pour la visibilité SEO et GEO ?",
       en: "Is the website really designed for SEO and GEO visibility?",
     },
     answer: {
-      fr: "Oui. Nous structurons les pages pour charger vite, etre claires pour Google et rester faciles a citer dans les interfaces IA. Le SEO et le GEO sont des benefices integres a l'offre, pas une option ajoutee ensuite.",
+      fr: "Oui. Nous structurons les pages pour charger vite, être claires pour Google et rester faciles à citer dans les interfaces IA. Le SEO et le GEO sont des bénéfices intégrés à l'offre, pas une option ajoutée ensuite.",
       en: "Yes. We structure the pages to load fast, stay clear for Google and remain easy to cite in AI interfaces. SEO and GEO are integrated benefits of the offer, not an afterthought.",
     },
   },
@@ -675,9 +675,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
     featured: true,
     copy: {
       fr: {
-        name: "Template Reparation Ordinateur",
+        name: "Template Réparation Ordinateur",
         description:
-          "Une vitrine directe et rassurante pour presenter vos services, vos garanties et vos prises de contact sans friction.",
+          "Une vitrine directe et rassurante pour présenter vos services, vos garanties et vos prises de contact sans friction.",
       },
       en: {
         name: "Computer Repair Template",
@@ -694,9 +694,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
     featured: true,
     copy: {
       fr: {
-        name: "Template Patisserie",
+        name: "Template Pâtisserie",
         description:
-          "Une base plus haut de gamme pour valoriser des creations, des evenements et une promesse de maison premium.",
+          "Une base plus haut de gamme pour valoriser des créations, des événements et une promesse de maison premium.",
       },
       en: {
         name: "Pastry Template",
@@ -884,11 +884,11 @@ export const templatesPageCopy: ListingPageCopy = {
     en: "Public gallery",
   },
   title: {
-    fr: "Templates prêtes a adapter a votre activite.",
+    fr: "Templates prêts à adapter à votre activité.",
     en: "Templates ready to adapt to your business.",
   },
   description: {
-    fr: "Cette selection publique vous donne plusieurs points de depart. Vous choisissez un style, nous adaptons les contenus, les sections, le ton et les details commerciaux a votre activite.",
+    fr: "Cette sélection publique vous donne plusieurs points de départ. Vous choisissez un style, nous adaptons les contenus, les sections, le ton et les détails commerciaux à votre activité.",
     en: "This public selection gives you multiple starting points. You choose a style and we adapt the content, sections, tone and commercial details to your business.",
   },
 };
@@ -903,7 +903,7 @@ export const blogPageCopy: ListingPageCopy = {
     en: "Helpful pages to understand the offer before you buy.",
   },
   description: {
-    fr: "Le blog Sitekept sert d'abord a expliquer notre positionnement: rapidite, clarte commerciale, propriete du site et visibilite SEO/GEO.",
+    fr: "Le blog Sitekept sert d'abord à expliquer notre positionnement : rapidité, clarté commerciale, propriété du site et visibilité SEO/GEO.",
     en: "The Sitekept blog is primarily here to explain our positioning: speed, commercial clarity, website ownership and SEO/GEO visibility.",
   },
 };
@@ -967,23 +967,23 @@ export const blogPosts: BlogPost[] = [
       en: "Fast launch",
     },
     title: {
-      fr: "Pourquoi un site rapide a lancer compte autant pour une PME ou un independant",
+      fr: "Pourquoi un site rapide à lancer compte autant pour une PME ou un indépendant",
       en: "Why a fast launch website matters so much for an SMB or solo founder",
     },
     excerpt: {
-      fr: "Un bon site n'est pas seulement beau. Il doit etre en ligne vite, cadrer votre offre et commencer a travailler commercialement sans delais inutiles.",
+      fr: "Un bon site n'est pas seulement beau. Il doit être en ligne vite, cadrer votre offre et commencer à travailler commercialement sans délais inutiles.",
       en: "A good website is not only beautiful. It should go live fast, frame your offer and start working commercially without useless delays.",
     },
     seoTitle: {
-      fr: "Site web rapide a lancer pour PME et independant | Sitekept",
+      fr: "Site web rapide à lancer pour PME et indépendant | Sitekept",
       en: "Fast launch website for SMBs and solo founders | Sitekept",
     },
     seoDescription: {
-      fr: "Pourquoi la rapidite de mise en ligne change la rentabilite d'un site pour une PME ou un independant, et comment Sitekept structure cette promesse.",
+      fr: "Pourquoi la rapidité de mise en ligne change la rentabilité d'un site pour une PME ou un indépendant, et comment Sitekept structure cette promesse.",
       en: "Why fast launch changes the ROI of a website for SMBs and solo founders, and how Sitekept structures that promise.",
     },
     intro: {
-      fr: "Quand une PME ou un independant achete un site, le vrai cout ne se limite pas a la facture. Il y a aussi le temps perdu quand le projet traine, les ventes qui n'arrivent pas et l'image qui reste floue trop longtemps.",
+      fr: "Quand une PME ou un indépendant achète un site, le vrai coût ne se limite pas à la facture. Il y a aussi le temps perdu quand le projet traîne, les ventes qui n'arrivent pas et l'image qui reste floue trop longtemps.",
       en: "When an SMB or solo founder buys a website, the real cost is not limited to the invoice. There is also the time lost when the project drags on, the sales that do not happen and the unclear brand image that lasts too long.",
     },
     sections: [
@@ -995,8 +995,8 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Un site qui sort vite permet de clarifier une offre, de lancer des campagnes, d'envoyer un lien propre apres un rendez-vous et d'arreter de bricoler sa presence en ligne.",
-            "Pour beaucoup de petites structures, attendre plusieurs semaines revient surtout a continuer sans support de vente clair. La rapidite cree un levier commercial immediat.",
+            "Un site qui sort vite permet de clarifier une offre, de lancer des campagnes, d'envoyer un lien propre après un rendez-vous et d'arrêter de bricoler sa présence en ligne.",
+            "Pour beaucoup de petites structures, attendre plusieurs semaines revient surtout à continuer sans support de vente clair. La rapidité crée un levier commercial immédiat.",
           ],
           en: [
             "A website that launches quickly helps clarify the offer, support campaigns, send a strong link after meetings and stop improvising your online presence.",
@@ -1007,13 +1007,13 @@ export const blogPosts: BlogPost[] = [
       {
         id: "good-fast-vs-rushed",
         title: {
-          fr: "Rapide ne veut pas dire baclé",
+          fr: "Rapide ne veut pas dire bâclé",
           en: "Fast does not mean rushed",
         },
         paragraphs: {
           fr: [
-            "La rapidite devient credible quand le cadre est clair: une offre simple, des decisions reduites, une base de design preparee et un process de validation court.",
-            "C'est exactement le sens d'une offre Sitekept: aller vite sur ce qui compte sans vous embarquer dans un projet lourd ou une refonte ouverte sans fin.",
+            "La rapidité devient crédible quand le cadre est clair : une offre simple, des décisions réduites, une base de design préparée et un process de validation court.",
+            "C'est exactement le sens d'une offre Sitekept : aller vite sur ce qui compte sans vous embarquer dans un projet lourd ou une refonte ouverte sans fin.",
           ],
           en: [
             "Speed becomes credible when the frame is clear: a simple offer, fewer decisions, a prepared design base and a short review loop.",
@@ -1022,10 +1022,10 @@ export const blogPosts: BlogPost[] = [
         },
         bullets: {
           fr: [
-            "un point de depart clair",
-            "des contenus essentiels identifies",
-            "un cadre technique deja gere",
-            "une validation concentree sur l'utile",
+            "un point de départ clair",
+            "des contenus essentiels identifiés",
+            "un cadre technique déjà géré",
+            "une validation concentrée sur l'utile",
           ],
           en: [
             "a clear starting point",
@@ -1043,8 +1043,8 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Vous achetez du temps recupere, une offre mieux presentee, un support de prospection plus propre et un meilleur controle de votre image.",
-            "Si le site est bien structure des le depart, il devient aussi une base solide pour le SEO, le GEO et les futures iterations commerciales.",
+            "Vous achetez du temps récupéré, une offre mieux présentée, un support de prospection plus propre et un meilleur contrôle de votre image.",
+            "Si le site est bien structuré dès le départ, il devient aussi une base solide pour le SEO, le GEO et les futures itérations commerciales.",
           ],
           en: [
             "You buy recovered time, a better framed offer, a cleaner prospecting asset and stronger control over your brand image.",
@@ -1058,47 +1058,47 @@ export const blogPosts: BlogPost[] = [
       en: "Want a fast website without commercial gray zones?",
     },
     ctaDescription: {
-      fr: "Parlez-nous de votre activite. Nous vous dirons vite si votre projet entre dans le cadre de l'offre 48h.",
+      fr: "Parlez-nous de votre activité. Nous vous dirons vite si votre projet entre dans le cadre de l'offre 48h.",
       en: "Tell us about your business and we will quickly tell you whether your project fits the 48-hour offer.",
     },
   },
   {
     slug: "posseder-son-site-sans-abonnement",
     category: {
-      fr: "Propriete du site",
+      fr: "Propriété du site",
       en: "Website ownership",
     },
     title: {
-      fr: "Pourquoi posseder 100% de son site sans abonnement change la relation avec son prestataire",
+      fr: "Pourquoi posséder 100% de son site sans abonnement change la relation avec son prestataire",
       en: "Why owning 100% of your website without a subscription changes the agency relationship",
     },
     excerpt: {
-      fr: "Un site peut etre un actif ou une dependance. La difference se joue souvent dans le contrat, la livraison et le niveau de controle que garde le client.",
+      fr: "Un site peut être un actif ou une dépendance. La différence se joue souvent dans le contrat, la livraison et le niveau de contrôle que garde le client.",
       en: "A website can be an asset or a dependency. The difference is often hidden in the contract, delivery model and the level of control the client keeps.",
     },
     seoTitle: {
-      fr: "Posseder son site sans abonnement | Sitekept",
+      fr: "Posséder son site sans abonnement | Sitekept",
       en: "Own your website without a subscription | Sitekept",
     },
     seoDescription: {
-      fr: "Pourquoi la propriete complete du site et l'absence d'abonnement imposee sont des avantages commerciaux, budgetaires et operationnels.",
+      fr: "Pourquoi la propriété complète du site et l'absence d'abonnement imposée sont des avantages commerciaux, budgétaires et opérationnels.",
       en: "Why full website ownership and the absence of forced subscriptions are commercial, budgetary and operational advantages.",
     },
     intro: {
-      fr: "Beaucoup d'entreprises pensent acheter un site alors qu'elles achetent en realite un acces conditionnel a un site. Quand la propriete reste floue, la relation avec le prestataire devient plus fragile et plus couteuse.",
+      fr: "Beaucoup d'entreprises pensent acheter un site alors qu'elles achètent en réalité un accès conditionnel à un site. Quand la propriété reste floue, la relation avec le prestataire devient plus fragile et plus coûteuse.",
       en: "Many businesses think they are buying a website while they are really buying conditional access to one. When ownership stays unclear, the agency relationship becomes more fragile and more expensive.",
     },
     sections: [
       {
         id: "asset-vs-dependency",
         title: {
-          fr: "Un site doit etre un actif, pas une laisse",
+          fr: "Un site doit être un actif, pas une laisse",
           en: "A website should be an asset, not a leash",
         },
         paragraphs: {
           fr: [
-            "Quand vous possedez vraiment votre site, vous gardez votre liberte de faire evoluer le projet, de changer de prestataire ou de reprendre la main plus tard.",
-            "A l'inverse, un modele ou tout passe par un abonnement opaque cree de la friction a chaque changement, meme minime.",
+            "Quand vous possédez vraiment votre site, vous gardez votre liberté de faire évoluer le projet, de changer de prestataire ou de reprendre la main plus tard.",
+            "À l'inverse, un modèle où tout passe par un abonnement opaque crée de la friction à chaque changement, même minime.",
           ],
           en: [
             "When you truly own your website, you keep the freedom to evolve the project, change providers or take over later.",
@@ -1109,13 +1109,13 @@ export const blogPosts: BlogPost[] = [
       {
         id: "what-ownership-means",
         title: {
-          fr: "Ce que la propriete complete change concretement",
+          fr: "Ce que la propriété complète change concrètement",
           en: "What full ownership changes in practice",
         },
         paragraphs: {
           fr: [
-            "La propriete ne releve pas seulement d'un principe. Elle change votre budget, votre pouvoir de negociation et votre serenite sur le long terme.",
-            "Un client qui possede son site peut investir dans l'acquisition, le contenu ou l'evolution produit sans craindre de repartir de zero pour des raisons contractuelles.",
+            "La propriété ne relève pas seulement d'un principe. Elle change votre budget, votre pouvoir de négociation et votre sérénité sur le long terme.",
+            "Un client qui possède son site peut investir dans l'acquisition, le contenu ou l'évolution produit sans craindre de repartir de zéro pour des raisons contractuelles.",
           ],
           en: [
             "Ownership is not only a principle. It changes your budget, your negotiation leverage and your long-term peace of mind.",
@@ -1124,9 +1124,9 @@ export const blogPosts: BlogPost[] = [
         },
         bullets: {
           fr: [
-            "moins de dependance commerciale",
-            "moins de surprises budgetaires",
-            "plus de marge pour changer ou faire evoluer",
+            "moins de dépendance commerciale",
+            "moins de surprises budgétaires",
+            "plus de marge pour changer ou faire évoluer",
             "une meilleure valeur patrimoniale du site",
           ],
           en: [
@@ -1146,7 +1146,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: {
           fr: [
             "Nous assumons une logique simple: vous achetez un site, pas un verrou. L'absence d'abonnement imposé et la propriété frontale font partie de l'offre, pas d'une option premium.",
-            "C'est aussi ce qui rend l'offre plus facile a acheter pour des clients non techniques: ils comprennent ce qu'ils paient et ce qu'ils recuperent.",
+            "C'est aussi ce qui rend l'offre plus facile à acheter pour des clients non techniques : ils comprennent ce qu'ils paient et ce qu'ils récupèrent.",
           ],
           en: [
             "We keep it simple: you buy a website, not a lock. No forced subscription and explicit ownership are part of the offer, not a premium upsell.",
@@ -1156,11 +1156,11 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     ctaTitle: {
-      fr: "Vous voulez un site utile sans rester captive d'un abonnement ?",
+      fr: "Vous voulez un site utile sans rester captif d'un abonnement ?",
       en: "Want a useful website without staying trapped in a subscription?",
     },
     ctaDescription: {
-      fr: "Nous pouvons cadrer une offre simple, rapide et livree comme un vrai actif pour votre entreprise.",
+      fr: "Nous pouvons cadrer une offre simple, rapide et livrée comme un vrai actif pour votre entreprise.",
       en: "We can frame a simple, fast offer delivered as a real business asset.",
     },
   },
@@ -1216,8 +1216,8 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Un site visible ne doit pas seulement parler technique. Il doit dire clairement ce qu'on vend, pour qui, a quel point d'entree et avec quelles garanties. C'est ce qui permet aussi aux interfaces IA de reprendre une reponse fiable.",
-            "Plus l'offre est claire, plus elle peut etre reformulee sans perdre son sens. C'est un vrai avantage GEO.",
+            "Un site visible ne doit pas seulement parler technique. Il doit dire clairement ce qu'on vend, pour qui, à quel point d'entrée et avec quelles garanties. C'est ce qui permet aussi aux interfaces IA de reprendre une réponse fiable.",
+            "Plus l'offre est claire, plus elle peut être reformulée sans perdre son sens. C'est un vrai avantage GEO.",
           ],
           en: [
             "A visible website should not only talk about technology. It must clearly say what is being sold, for whom, at which entry point and with which guarantees. That also makes AI interfaces more likely to reuse a reliable answer.",
@@ -1247,8 +1247,8 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Nous integrons la visibilite dans la structure du site des le debut: vitesse, sections claires, copy concise, signaux de confiance et pages utiles a l'acquisition.",
-            "Le SEO et le GEO ne remplacent pas la promesse commerciale. Ils l'amplifient quand le site est deja clair, rapide et credible.",
+            "Nous intégrons la visibilité dans la structure du site dès le début : vitesse, sections claires, copy concise, signaux de confiance et pages utiles à l'acquisition.",
+            "Le SEO et le GEO ne remplacent pas la promesse commerciale. Ils l'amplifient quand le site est déjà clair, rapide et crédible.",
           ],
           en: [
             "We integrate visibility into the website structure from the start: speed, clear sections, concise copy, trust signals and pages that support acquisition.",

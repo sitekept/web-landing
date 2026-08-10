@@ -35,25 +35,25 @@ export default async function RealizationPage() {
     {
       name: "LegitBrainrot",
       url: "https://www.legitbrainrot.com/",
-      description: getMessage(locale, "realization.projects.iaformaplus.description"),
+      description: getMessage(locale, "realization.projects.legitbrainrot.description"),
       screenshot: "/realization/legitbrainrot.png",
     },
     {
       name: "ComizGlobal",
       url: "https://www.comizglobal.com/",
-      description: getMessage(locale, "realization.projects.orhakerem.description"),
+      description: getMessage(locale, "realization.projects.comizglobal.description"),
       screenshot: "/realization/comizglobal.png",
     },
     {
       name: "BismuthCPA",
       url: "https://www.bismuthcpa.com/",
-      description: getMessage(locale, "realization.projects.pinckit.description"),
+      description: getMessage(locale, "realization.projects.bismuthcpa.description"),
       screenshot: "/realization/bismuthcpa.png",
     },
     {
       name: "Les assureurs experts",
       url: "https://lesassureursexperts.fr/",
-      description: getMessage(locale, "realization.projects.iaformaplus.description"),
+      description: getMessage(locale, "realization.projects.lesassureursexperts.description"),
       screenshot: "/realization/lesassureursexperts.png",
     },
     {

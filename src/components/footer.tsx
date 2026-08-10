@@ -121,6 +121,14 @@ export async function Footer({ locale }: FooterProps) {
               </Link>
             </li>
             <li>
+              <Link
+                href="/mentions-legales"
+                className="transition-colors hover:text-blue-200"
+              >
+                {getMessage(locale, "footer.legalNotice")}
+              </Link>
+            </li>
+            <li>
               <Link href="/#contact" className="transition-colors hover:text-blue-200">
                 {getMessage(locale, "footer.quote")}
               </Link>

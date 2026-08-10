@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/app/_components/project-card";
+import { isSitekeptPublicTemplate } from "@/content/admin-template-catalog";
 import {
   featuredTemplates,
   getLocalizedValue,
@@ -32,7 +33,7 @@ export function TemplatesShowcase({
   viewAllLabel,
 }: TemplatesShowcaseProps) {
   const templates = featuredTemplates
-    .filter((template) => template.featured)
+    .filter((template) => isSitekeptPublicTemplate(template.slug))
     .slice(0, limit ?? featuredTemplates.length);
 
   return (

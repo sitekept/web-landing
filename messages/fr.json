@@ -181,6 +181,7 @@
     "legal": "Légal",
     "terms": "Conditions d'Utilisation",
     "privacy": "Confidentialité",
+    "legalNotice": "Mentions Légales",
     "copyright": "© 2026 Sitekept. Tous droits réservés."
   },
   "seo": {
@@ -243,6 +244,22 @@
       "etsruni": {
         "name": "ETS RUNI",
         "description": "Site vitrine multilingue pour importateur et distributeur de spiritueux au Maroc, avec identité de marque soignée et catalogue structuré par catégories."
+      },
+      "legitbrainrot": {
+        "name": "LegitBrainrot",
+        "description": "Plateforme d'accès à des serveurs Roblox privés avec modération professionnelle, offrant une expérience de jeu sécurisée et un parcours d'achat simple."
+      },
+      "comizglobal": {
+        "name": "ComizGlobal",
+        "description": "Plateforme de sourcing international mettant en relation les entreprises avec des fabricants vérifiés, avec un suivi de la chaîne d'approvisionnement de la vérification usine à la livraison finale."
+      },
+      "bismuthcpa": {
+        "name": "BismuthCPA",
+        "description": "Site vitrine pour cabinet comptable, présentant les services de tenue de livres, conseils financiers et préparation fiscale destinés aux petites entreprises et gestionnaires immobiliers."
+      },
+      "lesassureursexperts": {
+        "name": "Les assureurs experts",
+        "description": "Site vitrine pour courtier en mutuelle et assurances, avec présentation claire des offres et parcours de mise en relation simplifié."
       }
     }
   },
@@ -359,8 +376,8 @@
       "contact": {
         "title": "Contact",
         "content": "Pour toute question concernant cette politique ou vos données personnelles, contactez-nous :",
-        "email": "Email : contact@sitekept.com",
-        "phone": "Téléphone : +33 1 23 45 67 89"
+        "email": "Email : sitekept@gmail.com",
+        "phone": "Téléphone : +33 6 51 17 99 25"
       },
       "complaints": {
         "title": "Réclamations",
@@ -476,9 +493,9 @@
       "contact": {
         "title": "Contact",
         "content": "Pour toute question concernant ces conditions d'utilisation :",
-        "email": "Email : contact@sitekept.com",
-        "phone": "Téléphone : +33 1 23 45 67 89",
-        "address": "Adresse : SiteKept, 123 Avenue des Champs, 75008 Paris, France"
+        "email": "Email : sitekept@gmail.com",
+        "phone": "Téléphone : +33 6 51 17 99 25",
+        "address": "Adresse : À COMPLÉTER"
       }
     },
     "domainPolicy": {
@@ -491,6 +508,48 @@
         "Les frais de renouvellement sont à la charge du client",
         "Le transfert vers un autre registrar est possible à tout moment"
       ]
+    }
+  },
+  "legalNotice": {
+    "title": "Mentions Légales",
+    "lastUpdate": "Dernière mise à jour : {date}",
+    "sections": {
+      "editor": {
+        "title": "Éditeur du site",
+        "content": "Le site sitekept.com est édité par :",
+        "companyName": "Raison sociale : À COMPLÉTER",
+        "legalForm": "Forme juridique : À COMPLÉTER",
+        "siren": "SIREN / SIRET : À COMPLÉTER",
+        "vat": "N° de TVA intracommunautaire : À COMPLÉTER",
+        "address": "Siège social : À COMPLÉTER",
+        "email": "Email : sitekept@gmail.com",
+        "phone": "Téléphone : +33 6 51 17 99 25",
+        "publicationDirector": "Directeur de la publication : À COMPLÉTER"
+      },
+      "hosting": {
+        "title": "Hébergement",
+        "content": "Le site est hébergé par :",
+        "hostName": "Hébergeur : À COMPLÉTER",
+        "hostAddress": "Adresse de l'hébergeur : À COMPLÉTER"
+      },
+      "intellectualProperty": {
+        "title": "Propriété intellectuelle",
+        "content": "L'ensemble des contenus présents sur ce site (textes, images, logos, mise en page) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou diffusion, totale ou partielle, sans autorisation préalable de SiteKept est interdite."
+      },
+      "liability": {
+        "title": "Responsabilité",
+        "content": "SiteKept s'efforce d'assurer l'exactitude des informations publiées sur ce site, mais ne peut garantir qu'elles sont exemptes d'erreurs, d'omissions ou d'inexactitudes. L'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive."
+      },
+      "personalData": {
+        "title": "Données personnelles",
+        "content": "Le traitement des données personnelles collectées sur ce site est détaillé dans notre politique de confidentialité, accessible depuis le pied de page du site."
+      },
+      "contact": {
+        "title": "Contact",
+        "content": "Pour toute question relative à ces mentions légales, contactez-nous :",
+        "email": "Email : sitekept@gmail.com",
+        "phone": "Téléphone : +33 6 51 17 99 25"
+      }
     }
   }
 }
