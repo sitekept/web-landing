@@ -8,6 +8,28 @@ Chaque étape suit le même format : **Pourquoi → Action → Vérification**. 
 
 ---
 
+## État d'avancement au 11 août 2026
+
+**Blocs A, B et C terminés et vérifiés en production** (commit `06b31f0`, déployé sur `main`).
+
+| Étape | État | Vérification en production |
+|---|---|---|
+| 1. Domaine canonique | ✅ | `<link rel="canonical" href="https://www.sitekept.com"/>` |
+| 2. Redirection 308 | ✅ | `sitekept.com → 308 → www.sitekept.com` |
+| 3. `metadataBase` + `/icon.svg` | ✅ | `og:image` résolu en absolu ; référence 404 retirée |
+| 4. Déploiement `dev` → `main` | ✅ | `/mentions-legales` → 200 ; accents rétablis |
+| 5. Resoumission du sitemap | ✅ | Resoumis le 11 août 2026 ; 16 URLs, toutes en `www` |
+| 6. Vrais liens vers les démos | ✅ | **0 → 13 ancres** sur `/templates` |
+| 7. `noindex` sur les démos | ⚠️ Partiel | `X-Robots-Tag: noindex, follow` actif sur les 14 démos et leurs sous-pages. **Coordonnées fictives et bannière de démonstration : à faire** |
+| 8. Sitemap aligné | ✅ | 28 → 16 URLs, `lastmod` retiré |
+| 9. Image OG + `Organization` | ✅ | `/opengraph-image` → 200, PNG 134 Ko ; 1 bloc JSON-LD |
+| 10. Événement `generate_lead` | ✅ Code | Émis à l'envoi du formulaire |
+| 11. Marquer l'événement clé | ⏳ Bloqué | Nécessite un premier déclenchement réel |
+
+**Reste à faire :** le point ouvert de l'étape 7, l'étape 11, puis les blocs D et E.
+
+---
+
 ## Vue d'ensemble
 
 | Bloc | Étapes | Durée | Effet attendu |
