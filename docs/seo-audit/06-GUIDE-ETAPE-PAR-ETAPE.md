@@ -20,13 +20,33 @@ Chaque étape suit le même format : **Pourquoi → Action → Vérification**. 
 | 4. Déploiement `dev` → `main` | ✅ | `/mentions-legales` → 200 ; accents rétablis |
 | 5. Resoumission du sitemap | ✅ | Resoumis le 11 août 2026 ; 16 URLs, toutes en `www` |
 | 6. Vrais liens vers les démos | ✅ | **0 → 13 ancres** sur `/templates` |
-| 7. `noindex` sur les démos | ⚠️ Partiel | `X-Robots-Tag: noindex, follow` actif sur les 14 démos et leurs sous-pages. **Coordonnées fictives et bannière de démonstration : à faire** |
+| 7. `noindex` + coordonnées + bandeau | ✅ | `noindex, follow` sur les 14 démos ; téléphones en plages ARCEP réservées à la fiction, e-mails en `.example` ; bandeau « Démonstration » avec lien retour. **Reste `/balinjera`, voir ci-dessous** |
 | 8. Sitemap aligné | ✅ | 28 → 16 URLs, `lastmod` retiré |
 | 9. Image OG + `Organization` | ✅ | `/opengraph-image` → 200, PNG 134 Ko ; 1 bloc JSON-LD |
 | 10. Événement `generate_lead` | ✅ Code | Émis à l'envoi du formulaire |
 | 11. Marquer l'événement clé | ⏳ Bloqué | Nécessite un premier déclenchement réel |
 
-**Reste à faire :** le point ouvert de l'étape 7, l'étape 11, puis les blocs D et E.
+**Reste à faire :** `/balinjera`, l'étape 11, puis les blocs D et E.
+
+> ### ⚠️ Point ouvert — `/balinjera`
+> Cette page expose `fantaprada25@gmail.com` et le numéro `+972 3 525 2527`
+> (`src/app/balinjera/balinjera-content.ts:56` et `:190`,
+> `src/app/balinjera/balinjera-shell.tsx:572`).
+>
+> Contrairement aux 13 autres démos, **balinjera n'est pas une entreprise
+> fictive** : c'est une réalisation client réelle, en hébreu, avec ce qui
+> ressemble à une **adresse Gmail personnelle**. Je n'ai donc pas remplacé ces
+> coordonnées par des valeurs fictives — cela reviendrait à falsifier les
+> informations d'un vrai client.
+>
+> La page est désormais en `noindex`, ce qui la retire des résultats de
+> recherche, mais elle reste publiquement accessible et aspirable par les
+> robots collecteurs d'adresses.
+>
+> **Trois options, à arbitrer :** retirer la page du domaine ; remplacer les
+> coordonnées par celles de SiteKept ; ou obtenir l'accord explicite du client
+> pour les conserver. Une adresse Gmail personnelle exposée sur une page
+> publique est une question de données personnelles, pas de SEO.
 
 ---
 
