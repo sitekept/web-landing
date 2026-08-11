@@ -411,11 +411,11 @@ export default function Pattiserie() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Phone className="mt-1 h-4 w-4 text-[#9c7650]" />
-                    <span>01 42 33 44 55</span>
+                    <span>01 99 00 00 55</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Mail className="mt-1 h-4 w-4 text-[#9c7650]" />
-                    <span>contact@patisserie-douceur.fr</span>
+                    <span>contact@patisserie-douceur.example</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Calendar className="mt-1 h-4 w-4 text-[#9c7650]" />

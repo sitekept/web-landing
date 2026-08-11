@@ -11,7 +11,7 @@ export default function RestaurantBistrotContactPage() {
           {[
             "17 rue Keller, Paris 11e",
             "Mar-Sam, 12h-14h30 et 19h-22h30",
-            "reservation@lesillon.fr",
+            "reservation@lesillon.example",
           ].map((item) => (
             <div
               key={item}

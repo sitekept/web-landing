@@ -80,7 +80,7 @@ export default function AgenceImmobiliereLayout({
           </div>
           <div className="space-y-2 text-sm text-[#16211d]/58 sm:text-right">
             <p>Annecy & bassin lémanique</p>
-            <p>bonjour@maisonlatitude.fr</p>
+            <p>bonjour@maisonlatitude.example</p>
             <p>Lun-Sam sur rendez-vous</p>
           </div>
         </div>

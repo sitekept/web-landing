@@ -14,8 +14,8 @@ export default function DentisteContactPage() {
           <div className="grid gap-4">
             {[
               "15 avenue du Parc, 92300 Levallois-Perret",
-              "01 84 12 00 18",
-              "contact@novasourire.fr",
+              "01 99 00 00 18",
+              "contact@novasourire.example",
               "Lun-Ven 8h30-19h00, Sam 9h00-13h00",
             ].map((item) => (
               <div

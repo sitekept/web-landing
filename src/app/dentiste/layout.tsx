@@ -51,11 +51,11 @@ export default function DentisteLayout({ children }: { children: ReactNode }) {
           </nav>
 
           <a
-            href="tel:+33184120018"
+            href="tel:+33199000018"
             className="inline-flex items-center gap-2 rounded-[14px] border border-[#b6d8d5] bg-white px-4 py-2 text-sm font-medium text-[#12323a]"
           >
             <Phone className="size-4" />
-            01 84 12 00 18
+            01 99 00 00 18
           </a>
         </div>
       </header>
@@ -100,7 +100,7 @@ export default function DentisteLayout({ children }: { children: ReactNode }) {
           <div className="space-y-2 text-sm text-[#12323a]/70 sm:text-right">
             <p>15 avenue du Parc, Levallois-Perret</p>
             <p>Lun-Ven 8h30-19h00, Sam 9h00-13h00</p>
-            <p>contact@novasourire.fr</p>
+            <p>contact@novasourire.example</p>
           </div>
         </div>
       </footer>

@@ -61,16 +61,16 @@ export default function MenageNettoyagePage() {
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
               <a
-                href="mailto:bonjour@maisonnette.fr"
+                href="mailto:bonjour@maisonnette.example"
                 className="inline-flex items-center justify-center rounded-[18px] bg-white px-4 py-3 text-sm font-semibold text-[#163845] transition hover:bg-[#e7f5f8]"
               >
-                bonjour@maisonnette.fr
+                bonjour@maisonnette.example
               </a>
               <a
-                href="tel:+33173650091"
+                href="tel:+33199000091"
                 className="inline-flex items-center justify-center rounded-[18px] border border-white/16 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/8"
               >
-                01 73 65 00 91
+                01 99 00 00 91
               </a>
             </div>
           </QuoteCard>

@@ -242,7 +242,7 @@ export default function Boulangerie() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Phone className="mt-0.5 h-4 w-4 text-orange-600" />
-                    <span>05 56 78 90 12</span>
+                    <span>05 36 49 00 12</span>
                   </div>
                 </div>
               </div>
@@ -458,7 +458,7 @@ export default function Boulangerie() {
               </div>
               <div className="flex items-start gap-3">
                 <Phone className="mt-1 h-4 w-4 text-orange-600" />
-                <span>05 56 78 90 12</span>
+                <span>05 36 49 00 12</span>
               </div>
             </div>
           </ScrollReveal>
@@ -533,7 +533,7 @@ export default function Boulangerie() {
               <br />
               33000 Bordeaux
               <br />
-              05 56 78 90 12
+              05 36 49 00 12
             </p>
           </div>
         </div>

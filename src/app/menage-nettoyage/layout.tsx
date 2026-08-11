@@ -81,7 +81,7 @@ export default function MenageNettoyageLayout({
           </div>
           <div className="space-y-2 text-sm text-[#163845]/58 sm:text-right">
             <p>Paris intra-muros & première couronne</p>
-            <p>bonjour@maisonnette.fr</p>
+            <p>bonjour@maisonnette.example</p>
             <p>Lun-Sam 8h00-19h00</p>
           </div>
         </div>

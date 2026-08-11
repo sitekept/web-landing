@@ -12,7 +12,7 @@ export default function SalonCoiffureContactPage() {
           {[
             "28 rue des Martyrs, Paris 9e",
             "Mardi au samedi, 10h00-20h00",
-            "01 85 44 02 71",
+            "01 99 00 00 71",
           ].map((item) => (
             <div
               key={item}

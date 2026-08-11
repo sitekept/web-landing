@@ -473,14 +473,14 @@ export default function Ordinateur() {
                   <Phone className="mt-1 h-6 w-6 text-blue-400" />
                   <div>
                     <h3 className="mb-1 font-semibold">Téléphone</h3>
-                    <p className="text-white/80">05 61 23 45 67</p>
+                    <p className="text-white/80">05 36 49 00 67</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
                   <Mail className="mt-1 h-6 w-6 text-blue-400" />
                   <div>
                     <h3 className="mb-1 font-semibold">Email</h3>
-                    <p className="text-white/80">contact@techrepair-pro.fr</p>
+                    <p className="text-white/80">contact@techrepair-pro.example</p>
                   </div>
                 </div>
               </div>

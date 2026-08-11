@@ -79,8 +79,8 @@ export default function CabinetAvocatLayout({
           </div>
           <div className="space-y-2 text-sm text-[#16181d]/58 sm:text-right">
             <p>Paris 8e</p>
-            <p>contact@cabinetvalmont.fr</p>
-            <p>01 77 31 00 43</p>
+            <p>contact@cabinetvalmont.example</p>
+            <p>01 99 00 00 43</p>
           </div>
         </div>
       </footer>

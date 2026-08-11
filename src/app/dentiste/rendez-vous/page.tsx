@@ -74,7 +74,7 @@ export default function DentisteRendezVousPage() {
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <a
-            href="tel:+33184120018"
+            href="tel:+33199000018"
             className="inline-flex items-center justify-center rounded-[14px] border border-[#12323a] bg-[#12323a] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0e262d]"
           >
             Appeler le secrétariat

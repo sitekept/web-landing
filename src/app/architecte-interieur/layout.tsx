@@ -56,7 +56,7 @@ export default function ArchitecteInterieurLayout({
 
           <div className="mt-auto border-t border-[#cdbfad] pt-6 text-sm leading-6 text-[#1d1816]/58">
             <p>Paris, Lyon, Genève</p>
-            <p>contact@atelier-mineral.fr</p>
+            <p>contact@atelier-mineral.example</p>
             <p>Études sur rendez-vous</p>
           </div>
         </div>

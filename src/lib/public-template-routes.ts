@@ -1,5 +1,11 @@
 import { sitekeptPublicTemplateSlugs } from "@/content/admin-template-catalog";
 
+/**
+ * En-tête de requête posé par le middleware sur les pages de démonstration,
+ * lu par le layout racine pour afficher le bandeau.
+ */
+export const DEMO_HEADER = "x-sitekept-demo";
+
 export const PUBLIC_TEMPLATE_SLUGS = sitekeptPublicTemplateSlugs;
 
 /**

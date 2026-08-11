@@ -378,11 +378,11 @@ export default function Fleuriste() {
                   </div>
                   <div className="flex items-start gap-3">
                     <Phone className="mt-1 h-4 w-4 text-[#b67a84]" />
-                    <span>04 78 95 12 34</span>
+                    <span>04 65 71 00 34</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Mail className="mt-1 h-4 w-4 text-[#b67a84]" />
-                    <span>contact@fleurs-emeraude.fr</span>
+                    <span>contact@fleurs-emeraude.example</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Calendar className="mt-1 h-4 w-4 text-[#b67a84]" />

@@ -76,7 +76,7 @@ export default function SalonCoiffureLayout({
           </div>
           <div className="space-y-2 text-sm text-[#261a1f]/60 sm:text-right">
             <p>28 rue des Martyrs, Paris 9e</p>
-            <p>bonjour@studio-lune.fr</p>
+            <p>bonjour@studio-lune.example</p>
             <p>Mar-Sam 10h00-20h00</p>
           </div>
         </div>

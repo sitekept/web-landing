@@ -23,8 +23,8 @@ export default function PlombierChauffagistePage() {
             <TriangleAlert className="size-4 animate-pulse" />
             Intervention chauffage et fuite sous 2h dans le sud-ouest parisien
           </div>
-          <a href="tel:+33176830014" className="hidden md:inline-flex">
-            01 76 83 00 14
+          <a href="tel:+33199000014" className="hidden md:inline-flex">
+            01 99 00 00 14
           </a>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function PlombierChauffagistePage() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="tel:+33176830014"
+                href="tel:+33199000014"
                 className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#d24b2a] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#b83f23]"
               >
                 <PhoneCall className="size-4 animate-pulse" />
@@ -310,10 +310,10 @@ export default function PlombierChauffagistePage() {
           </div>
           <div className="flex flex-col gap-3">
             <a
-              href="tel:+33176830014"
+              href="tel:+33199000014"
               className="inline-flex items-center justify-center rounded-[10px] bg-[#d24b2a] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#b83f23]"
             >
-              01 76 83 00 14
+              01 99 00 00 14
             </a>
             <Link
               href="/"
@@ -327,7 +327,7 @@ export default function PlombierChauffagistePage() {
 
       <div className="fixed inset-x-3 bottom-3 z-40 md:hidden">
         <a
-          href="tel:+33176830014"
+          href="tel:+33199000014"
           className="inline-flex w-full items-center justify-center gap-2 rounded-[10px] bg-[#d24b2a] px-5 py-4 text-sm font-semibold text-white shadow-[0_18px_50px_rgba(210,75,42,0.35)]"
         >
           <PhoneCall className="size-4 animate-pulse" />

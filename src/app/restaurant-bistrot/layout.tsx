@@ -73,7 +73,7 @@ export default function RestaurantBistrotLayout({
           </div>
           <div className="space-y-2 text-sm text-white/56 sm:text-right">
             <p>17 rue Keller, Paris 11e</p>
-            <p>reservation@lesillon.fr</p>
+            <p>reservation@lesillon.example</p>
             <p>Mar-Sam service midi & soir</p>
           </div>
         </div>
