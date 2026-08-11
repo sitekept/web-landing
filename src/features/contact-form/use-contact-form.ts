@@ -18,6 +18,17 @@ export function useContactForm() {
 
     if (result.success) {
       setSubmitStatus("success");
+
+      // Conversion : c'est l'unique objectif du site. À marquer comme
+      // « événement clé » dans GA4 (Administration → Événements) pour qu'elle
+      // remonte dans les rapports d'acquisition.
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          event_category: "contact",
+          event_label: "formulaire_contact",
+        });
+      }
+
       // Reset form by reloading the page or using a ref to reset
       const form = document.getElementById("contact-form") as HTMLFormElement;
       form?.reset();

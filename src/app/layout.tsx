@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ENV } from "@/lib/env";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
+import { SITE_URL } from "@/lib/site-url";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: getMessage(locale, "metadata.title"),
     description: getMessage(locale, "metadata.description"),
     keywords: getMessage(locale, "metadata.keywords"),
@@ -24,11 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
         {
           url: "/favicon.ico",
           sizes: "any",
-        },
-        {
-          url: "/icon.svg",
-          type: "image/png",
-          sizes: "32x32",
         },
       ],
       apple: [
@@ -43,15 +40,17 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: getMessage(locale, "metadata.openGraph.title"),
       description: getMessage(locale, "metadata.openGraph.description"),
-      url: "https://sitekept.com",
+      url: SITE_URL,
       siteName: getMessage(locale, "metadata.openGraph.siteName"),
       type: "website",
+      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: getMessage(locale, "metadata.twitter.title"),
       description: getMessage(locale, "metadata.twitter.description"),
       creator: getMessage(locale, "metadata.twitter.creator"),
+      images: ["/opengraph-image"],
     },
     robots: {
       index: true,

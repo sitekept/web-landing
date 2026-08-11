@@ -28,13 +28,10 @@ export function ProjectCard({
   ctaAction,
   ctaLink,
 }: ProjectCardProps) {
-  const handleVisit = () => {
-    if (!url) {
-      return;
-    }
-
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
+  // Le lien doit être une vraie ancre : un window.open() dans un onClick est
+  // invisible pour les moteurs de recherche, ce qui rendait les pages de
+  // démonstration inatteignables par exploration.
+  const isExternalUrl = Boolean(url && /^https?:\/\//i.test(url));
 
   const isTemplateCard = category === "template";
   const actionWrapperClassName = isTemplateCard
@@ -82,13 +79,19 @@ export function ProjectCard({
           <div className={actionWrapperClassName}>
             {url ? (
               <Button
-                onClick={handleVisit}
+                asChild
                 variant="outline"
                 size="sm"
                 className={cn(visitButtonClassName)}
               >
-                <ExternalLink size={isTemplateCard ? 14 : 16} />
-                Visiter
+                <a
+                  href={url}
+                  target="_blank"
+                  rel={isExternalUrl ? "noopener noreferrer" : "noopener"}
+                >
+                  <ExternalLink size={isTemplateCard ? 14 : 16} />
+                  Visiter
+                </a>
               </Button>
             ) : null}
 
