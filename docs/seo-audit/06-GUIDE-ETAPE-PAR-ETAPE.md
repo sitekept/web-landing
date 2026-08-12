@@ -100,9 +100,52 @@ l'appeler plante.
 les 86 pages sous Node 25, et le site déployé fonctionne. Un `.nvmrc` (Node 22)
 a été ajouté ; utilisez-le en local.
 
-**Reste à faire :** `/balinjera`, l'étape 11, et la rédaction éditoriale du
-bloc D (étapes 14 et 15c). Les blocs A, B, C, D et E sont terminés pour tout ce
-qui relève du technique.
+### Rédaction éditoriale — première vague
+
+| Livrable | Volume | Cible |
+|---|---|---|
+| `/tarifs` étoffée | 733 → **1 631 mots** | « prix création site internet », « combien coûte un site internet » |
+| `/site-internet-plombier` | 735 mots | « site internet plombier » |
+| `/site-internet-dentiste` | 718 mots | « site internet dentiste » |
+| `/site-internet-restaurant` | 740 mots | « site internet restaurant » |
+| `/site-internet-salon-de-coiffure` | 704 mots | « site internet salon de coiffure » |
+| `/blog/recuperer-son-site-web-chez-un-prestataire` | **1 536 mots** | « changer de prestataire site internet », « récupérer son site web » |
+
+Sitemap passé à **22 URLs**. Les pages métier reçoivent des liens depuis
+`/templates` — sans quoi elles seraient orphelines.
+
+**Règles de rédaction appliquées, à conserver pour la suite :**
+
+- **Aucun prix de concurrent avancé.** Les tarifs varient trop d'un
+  prestataire à l'autre pour qu'une moyenne soit honnête ; `/tarifs` le dit
+  explicitement. Le coût sur cinq ans est posé comme une arithmétique que le
+  lecteur applique lui-même, pas comme une affirmation sur un tiers.
+- **Substance propre à chaque métier.** Treize pages interchangeables
+  seraient du contenu de faible valeur produit à l'échelle. Les neuf pages
+  métier restantes doivent recevoir le même travail de fond, sinon elles
+  desserviront le domaine.
+- **Les limites de l'argumentaire sont dites.** Un site qu'on ne touche
+  jamais vieillit ; un prestataire qui refuse de livrer le code n'est pas
+  nécessairement de mauvaise foi ; sur les petits montants, la procédure
+  judiciaire coûte plus cher que la reconstruction.
+- **Aucune affirmation juridique péremptoire**, et aucun avis client ou
+  `AggregateRating` inventé.
+
+**Reste à écrire :** neuf pages métier (boulangerie, fleuriste, pâtisserie,
+ménage-nettoyage, cabinet d'avocat, agence immobilière, architecte
+d'intérieur, réparation informatique, avocat) et deux à trois articles
+piliers — coût réel d'un abonnement sur cinq ans, checklist SEO avant mise en
+ligne, refonte de `/seo-geo` en page pilier.
+
+> **Point à trancher — les versions anglaises.** Le site ne sert plus que le
+> français, mais le type `BlogPost` et `LocalizedText` exigent toujours un
+> champ `en`. Les traductions écrites depuis la bascule sont donc du contenu
+> mort. Soit on retire `LocalizedText` du contenu, soit on l'assume comme
+> réversibilité — mais il ne faut pas continuer à rédiger de l'anglais
+> inatteignable sans l'avoir décidé.
+
+**Reste à faire :** `/balinjera`, l'étape 11, et la suite de la rédaction. Tout
+ce qui relève du technique est terminé sur les blocs A à E.
 
 > ### ⚠️ Point ouvert — `/balinjera`
 > Cette page expose `fantaprada25@gmail.com` et le numéro `+972 3 525 2527`
