@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/content/site-content";
+import { metierPages } from "@/content/metier-pages";
 import { SITE_URL } from "@/lib/site-url";
 
 /**
@@ -34,6 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    // Pages métier : cible « site internet {métier} », longue traîne à forte
+    // intention commerciale.
+    ...metierPages.map((page) => ({
+      url: `${baseUrl}/${page.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
     {
       url: `${baseUrl}/blog`,
       changeFrequency: "weekly",

@@ -9,6 +9,7 @@ import {
 } from "@/content/site-content";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
+import { metierPages } from "@/content/metier-pages";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
@@ -79,6 +80,37 @@ export default async function TemplatesPage() {
         }
         ctaText={locale === "fr" ? "Demander un devis" : "Request a quote"}
       />
+
+      {/* Liens entrants vers les pages métier. Sans eux, elles seraient
+          orphelines : présentes au sitemap mais sans aucun lien du site. */}
+      <section className="bg-white px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+            Ce qu&apos;il faut savoir avant de créer le site de votre métier
+          </h2>
+          <p className="mt-4 text-slate-600">
+            Chaque activité a ses attentes propres. Ces guides détaillent ce que
+            cherchent vos clients, ce que le site doit afficher et ce
+            qu&apos;il faut préparer avant de démarrer.
+          </p>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+            {metierPages.map((page) => (
+              <li key={page.slug}>
+                <Link
+                  href={`/${page.slug}`}
+                  className="flex items-center justify-between gap-3 rounded-lg border border-slate-200 px-5 py-4 transition-colors hover:border-blue-200 hover:bg-blue-50"
+                >
+                  <span className="font-medium text-slate-900">{page.h1}</span>
+                  <ArrowRight
+                    className="h-4 w-4 shrink-0 text-blue-600"
+                    aria-hidden="true"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   );
 }
