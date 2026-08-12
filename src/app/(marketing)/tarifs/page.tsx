@@ -65,6 +65,94 @@ const FAQ = [
     answer:
       "Les besoins spécifiques — boutique en ligne, système de réservation, espace client, intégrations métier — sortent du cadre du site vitrine essentiel et font l'objet d'un devis sur mesure, chiffré selon la complexité technique réelle.",
   },
+  {
+    question: "Un site à 500 € est-il de moins bonne qualité ?",
+    answer:
+      "Le prix vient de la méthode, pas d'un travail bâclé. Nous partons de bases éprouvées et adaptées à chaque métier plutôt que de redessiner chaque écran depuis une page blanche, et nous ne facturons pas de temps commercial ni de gestion de projet sur un site vitrine. Ce qui est réellement moins couvert qu'en agence, nous le disons : la production éditoriale, les photos et les fonctionnalités sur mesure ne sont pas comprises dans ce tarif.",
+  },
+  {
+    question: "Faut-il payer l'hébergement en plus ?",
+    answer:
+      "La mise en ligne et l'hébergement sont mis en place dans le cadre du projet, et les modalités précises figurent sur le devis. Le seul coût récurrent prévu est le renouvellement du nom de domaine à partir de la deuxième année : il est offert la première, puis payé directement au registrar à son tarif public, sans marge de notre part.",
+  },
+];
+
+/**
+ * Facteurs de prix : contenu éditorial, pas de chiffres avancés sur des
+ * prestataires tiers. Chaque ligne explique un déterminant réel du devis.
+ */
+const PRICE_FACTORS = [
+  {
+    factor: "Le nombre de pages",
+    detail:
+      "Un site de cinq pages ne demande pas le même travail qu'un site de quarante. C'est le facteur le plus simple à estimer, et souvent le seul que l'on vous demande au départ.",
+  },
+  {
+    factor: "Sur-mesure ou base existante",
+    detail:
+      "Partir d'une base éprouvée et l'adapter à votre activité coûte nettement moins cher que dessiner chaque écran depuis une page blanche. C'est le principal levier d'écart de prix, et celui dont on parle le moins.",
+  },
+  {
+    factor: "Les fonctionnalités",
+    detail:
+      "Un site vitrine présente une activité. Dès qu'il faut vendre en ligne, gérer des réservations, ouvrir un espace client ou se connecter à un logiciel métier, le travail change de nature et le prix aussi.",
+  },
+  {
+    factor: "Qui produit les contenus",
+    detail:
+      "Textes, photos, mentions légales : si le prestataire les rédige et les produit, cela s'ajoute au devis. Si vous les fournissez, le projet avance plus vite et coûte moins cher.",
+  },
+  {
+    factor: "Ce qui se passe après la livraison",
+    detail:
+      "Hébergement, maintenance, corrections, évolutions. Un prix affiché bas s'accompagne parfois d'un engagement mensuel qui, lui, ne s'arrête jamais. C'est là que les additions divergent le plus.",
+  },
+];
+
+/**
+ * Approches du marché décrites par leur structure de coût, sans nommer de
+ * prestataire ni avancer de tarif qui ne serait pas vérifiable. Les fourchettes
+ * sont des ordres de grandeur observés sur le marché français, à vérifier au
+ * cas par cas.
+ */
+const APPROACHES = [
+  {
+    name: "Le faire soi-même",
+    cost: "Abonnement mensuel",
+    reality:
+      "Le coût affiché est faible, mais le temps que vous y passez ne l'est pas, et le résultat dépend entièrement de vos compétences. Le site cesse d'exister si l'abonnement s'arrête.",
+  },
+  {
+    name: "Éditeur en ligne par abonnement",
+    cost: "Abonnement mensuel, sans fin",
+    reality:
+      "Mise en route rapide, mais vous louez votre présence. Au bout de quelques années, le cumul dépasse souvent le prix d'un site développé, et vous ne possédez toujours rien.",
+  },
+  {
+    name: "Freelance",
+    cost: "Paiement au projet",
+    reality:
+      "Bon rapport qualité-prix, très variable selon la personne. La question à poser dès le premier échange : le code et les accès vous sont-ils remis à la fin ?",
+  },
+  {
+    name: "Agence traditionnelle",
+    cost: "Paiement au projet, montant plus élevé",
+    reality:
+      "Accompagnement complet, adapté aux projets complexes. Souvent surdimensionné — et surfacturé — pour un simple site vitrine de PME ou d'artisan.",
+  },
+];
+
+/**
+ * Checklist volontairement neutre : elle vaut pour n'importe quel prestataire,
+ * nous compris. C'est ce qui la rend utile — et citable.
+ */
+const QUESTIONS_TO_ASK = [
+  "Le code source m'est-il remis, et sur un dépôt à mon nom ?",
+  "Le nom de domaine est-il déposé à mon nom ou à celui du prestataire ?",
+  "Que se passe-t-il si j'arrête de payer, dans six mois ou dans cinq ans ?",
+  "Puis-je confier les évolutions à quelqu'un d'autre sans tout reconstruire ?",
+  "Qu'est-ce qui est exclu du devis : textes, photos, mentions légales ?",
+  "Le prix affiché est-il TTC, et l'acompte est-il remboursable ?",
 ];
 
 const MODELS = [
@@ -229,6 +317,121 @@ export default function TarifsPage() {
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+            Pourquoi les prix vont de quelques euros par mois à plusieurs
+            milliers d&apos;euros
+          </h2>
+          <p className="mt-4 max-w-3xl text-slate-600">
+            Quand on cherche combien coûte un site internet, on tombe sur tout
+            et son contraire. Ce n&apos;est pas que le marché est opaque&nbsp;:
+            c&apos;est que le mot «&nbsp;site&nbsp;» recouvre des travaux très
+            différents. Cinq éléments expliquent l&apos;essentiel de
+            l&apos;écart.
+          </p>
+
+          <dl className="mt-10 space-y-6">
+            {PRICE_FACTORS.map((item) => (
+              <div
+                key={item.factor}
+                className="border-l-2 border-blue-100 pl-5"
+              >
+                <dt className="text-lg font-semibold text-slate-900">
+                  {item.factor}
+                </dt>
+                <dd className="mt-2 text-slate-600">{item.detail}</dd>
+              </div>
+            ))}
+          </dl>
+
+          <p className="mt-8 max-w-3xl text-slate-600">
+            Pour un site vitrine de PME, d&apos;artisan ou d&apos;indépendant,
+            ces cinq facteurs se ramènent le plus souvent à une seule question
+            de fond&nbsp;: payez-vous une fois, ou payez-vous
+            indéfiniment&nbsp;?
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+            Les quatre façons de faire faire un site
+          </h2>
+          <p className="mt-4 max-w-3xl text-slate-600">
+            Chacune a sa logique et son public. Aucune n&apos;est mauvaise en
+            soi&nbsp;: elles ne répondent simplement pas au même besoin ni au
+            même budget.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {APPROACHES.map((item) => (
+              <div
+                key={item.name}
+                className="rounded-lg border border-slate-200 bg-white p-6"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {item.name}
+                </h3>
+                <p className="mt-1 text-sm font-medium text-blue-700">
+                  {item.cost}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  {item.reality}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 max-w-3xl text-sm text-slate-500">
+            Nous ne publions pas de fourchettes chiffrées pour les autres
+            approches&nbsp;: les tarifs varient trop d&apos;un prestataire à
+            l&apos;autre et d&apos;une année sur l&apos;autre pour qu&apos;une
+            moyenne soit honnête. Demandez plutôt un devis à chacun, et
+            comparez ce qui reste entre vos mains à la fin.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+            Le calcul à faire&nbsp;: le coût sur cinq ans
+          </h2>
+          <p className="mt-4 text-slate-600">
+            Un site n&apos;est pas un achat qu&apos;on refait tous les six mois.
+            La bonne unité de comparaison n&apos;est donc pas le prix
+            d&apos;entrée, mais le total sur la durée de vie réelle du site —
+            trois à cinq ans en général.
+          </p>
+          <p className="mt-4 text-slate-600">
+            L&apos;arithmétique est simple, et vous pouvez la faire avec les
+            chiffres de n&apos;importe quelle offre. Un abonnement à 20&nbsp;€
+            par mois représente 1&nbsp;200&nbsp;€ sur cinq ans. À
+            30&nbsp;€&nbsp;: 1&nbsp;800&nbsp;€. À 50&nbsp;€&nbsp;:
+            3&nbsp;000&nbsp;€. Et à la fin de ces cinq ans, si vous arrêtez de
+            payer, il ne vous reste rien&nbsp;: ni le site, ni le code, ni,
+            parfois, le nom de domaine.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Un paiement unique de 500&nbsp;€ reste 500&nbsp;€ la cinquième
+            année. Le seul coût récurrent est le renouvellement du nom de
+            domaine à partir de la deuxième année, payé directement au
+            registrar, à son tarif public — de l&apos;ordre de quelques dizaines
+            d&apos;euros par an, sans marge de notre part.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Ce raisonnement a une limite qu&apos;il faut dire&nbsp;: un site
+            qu&apos;on ne touche jamais vieillit. Si votre activité change, il
+            faudra le faire évoluer, et cela représente un coût. La différence
+            est qu&apos;il s&apos;agit alors d&apos;une dépense que vous
+            décidez, quand vous le décidez, et que vous pouvez confier à qui
+            vous voulez — puisque le code est à vous.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
             Paiement unique ou abonnement&nbsp;: ce qui change vraiment
           </h2>
           <p className="mt-4 max-w-3xl text-slate-600">
@@ -276,6 +479,43 @@ export default function TarifsPage() {
             Nous ne comparons pas de montants&nbsp;: les tarifs des autres
             prestataires varient trop pour qu&apos;une moyenne veuille dire
             quelque chose. La colonne qui compte est la dernière.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
+            Six questions à poser avant de signer, à n&apos;importe quel
+            prestataire
+          </h2>
+          <p className="mt-4 text-slate-600">
+            Y compris à nous. Un devis se compare mal sur le seul montant&nbsp;:
+            deux propositions au même prix peuvent vous laisser dans des
+            situations radicalement différentes trois ans plus tard. Ces six
+            questions font apparaître l&apos;écart avant que vous ne vous
+            engagiez.
+          </p>
+
+          <ol className="mt-8 space-y-4">
+            {QUESTIONS_TO_ASK.map((question, index) => (
+              <li key={question} className="flex gap-4">
+                <span
+                  className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-blue-50 text-sm font-semibold text-blue-700"
+                  aria-hidden="true"
+                >
+                  {index + 1}
+                </span>
+                <span className="text-slate-700">{question}</span>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-8 text-slate-600">
+            Si une réponse est évasive, ce n&apos;est pas nécessairement de
+            mauvaise foi&nbsp;: beaucoup de prestataires n&apos;ont simplement
+            jamais eu à la formuler. Mais c&apos;est le moment de la faire
+            écrire dans le devis plutôt qu&apos;après la mise en ligne.
           </p>
         </div>
       </section>
