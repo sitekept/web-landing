@@ -100,13 +100,14 @@ l'appeler plante.
 les 86 pages sous Node 25, et le site déployé fonctionne. Un `.nvmrc` (Node 22)
 a été ajouté ; utilisez-le en local.
 
-**Reste à faire :** `/balinjera`, l'étape 11, l'étape 17, et la rédaction
-éditoriale du bloc D.
+**Reste à faire :** `/balinjera`, l'étape 11, et la rédaction éditoriale du
+bloc D (étapes 14 et 15c). Les blocs A, B, C, D et E sont terminés pour tout ce
+qui relève du technique.
 
 > ### ⚠️ Point ouvert — `/balinjera`
 > Cette page expose `fantaprada25@gmail.com` et le numéro `+972 3 525 2527`
-> (`src/app/balinjera/balinjera-content.ts:56` et `:190`,
-> `src/app/balinjera/balinjera-shell.tsx:572`).
+> (`src/app/(demos)/balinjera/balinjera-content.ts:56` et `:190`,
+> `src/app/(demos)/balinjera/balinjera-shell.tsx:572`).
 >
 > Contrairement aux 13 autres démos, **balinjera n'est pas une entreprise
 > fictive** : c'est une réalisation client réelle, en hébreu, avec ce qui
