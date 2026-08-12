@@ -6,7 +6,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { LanguageSwitcher } from "@/components/language-switcher";
 import { SiteLocale } from "@/content/site-content";
 
 const NAVIGATION_ITEMS = [
@@ -115,7 +114,6 @@ export function Navigation({ locale }: NavigationProps) {
                 {labels[item.key]}
               </Link>
             ))}
-            <LanguageSwitcher locale={locale} />
             <Button
               asChild
               className="bg-blue-600 text-white hover:bg-blue-700"
@@ -150,7 +148,6 @@ export function Navigation({ locale }: NavigationProps) {
               ))}
             </div>
             <div className="mt-4 flex items-center gap-3 px-3">
-              <LanguageSwitcher locale={locale} />
               <Button
                 asChild
                 className="flex-1 bg-blue-600 text-white hover:bg-blue-700"

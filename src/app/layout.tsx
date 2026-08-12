@@ -7,9 +7,6 @@ import "./globals.css";
 import { ENV } from "@/lib/env";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
 import { SITE_URL } from "@/lib/site-url";
-import { DemoBanner } from "@/components/demo-banner";
-import { DEMO_HEADER } from "@/lib/public-template-routes";
-import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,7 +77,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const locale = await getSiteLocale();
-  const isDemo = (await headers()).get(DEMO_HEADER) === "1";
 
   return (
     <html lang={locale} className="scroll-smooth">
@@ -91,7 +87,6 @@ export default async function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className={inter.className}>
-        {isDemo ? <DemoBanner /> : null}
         {children}
         <SpeedInsights />
         <Analytics />

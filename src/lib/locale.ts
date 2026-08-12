@@ -1,30 +1,21 @@
-import "server-only";
+import { type Locale, defaultLocale } from "@/i18n/config";
 
-import { cookies, headers } from "next/headers";
-import { type Locale, defaultLocale, locales } from "@/i18n/config";
-
-// In this example the locale is read from a cookie. You could alternatively
-// also read it from a database, backend service, or any other source.
-const COOKIE_NAME = "locale";
-
-function isSupportedLocale(locale: string | undefined): locale is Locale {
-  return locales.includes(locale as Locale);
-}
-
+/**
+ * Locale du site.
+ *
+ * Le site ne sert plus que le français. La locale était auparavant résolue à
+ * partir d'un cookie puis de l'en-tête `Accept-Language`, ce qui appelait
+ * `cookies()` et `headers()` depuis le layout racine — et basculait de ce fait
+ * **l'intégralité des routes en rendu dynamique**, sans aucune mise en cache
+ * CDN possible (`cache-control: no-store` sur toutes les pages).
+ *
+ * Servir une locale constante restaure le prerendering statique. La version
+ * anglaise n'était de toute façon pas indexable : elle partageait l'URL de la
+ * version française, le contenu variant selon un cookie.
+ *
+ * La signature reste asynchrone pour ne pas modifier les quinze appelants ;
+ * elle n'effectue plus aucune lecture dynamique.
+ */
 export async function getUserLocale(): Promise<Locale> {
-  // 1️⃣ Try from cookies
-  const cookieLocale = (await cookies()).get(COOKIE_NAME)?.value;
-  if (isSupportedLocale(cookieLocale)) {
-    return cookieLocale;
-  }
-
-  // 2️⃣ Try from Accept-Language header
-  const acceptLang = (await headers()).get("accept-language");
-  const headerLocale = acceptLang?.split(",")[0]?.split("-")[0];
-  if (isSupportedLocale(headerLocale)) {
-    return headerLocale;
-  }
-
-  // 3️⃣ Fallback
   return defaultLocale;
 }
