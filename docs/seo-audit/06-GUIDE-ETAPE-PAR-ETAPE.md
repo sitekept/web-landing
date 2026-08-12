@@ -46,41 +46,47 @@ Chaque étape suit le même format : **Pourquoi → Action → Vérification**. 
 
 | Étape | État | Mesure en production |
 |---|---|---|
-| 17. i18n par préfixe d'URL | ⏳ **En attente d'arbitrage** | Voir « Décision requise » ci-dessous |
+| 17. Rendu statique | ✅ | **70 routes ○ statiques** (contre 84 ƒ dynamiques avant), 75 HTML prérendus. `x-vercel-cache: HIT`, `cache-control: public` |
 | 18. Hero allégé | ✅ | Animation désactivée sous 768px, en connexion lente et en économie de données ; `requestIdleCallback` au lieu d'un délai fixe ; canvas plafonné à DPR 1 |
 | 19. Région d'exécution | ✅ | `x-vercel-id` passé de `fra1::iad1` (Washington) à **`fra1::cdg1`** (Paris) |
 | 20. Images AVIF | ✅ | `orhakerem.png` (2,6 Mo source) servie en **AVIF, 20 892 octets** à w=640 |
 
-**TTFB de la page d'accueil, mesuré au curl (médiane sur 5 requêtes) :**
+**TTFB de la page d'accueil, mesuré au curl depuis une même machine :**
 
-| Avant (iad1) | Après (cdg1) | Gain |
+| État | TTFB médian | Temps serveur |
 |---|---|---|
-| ~390 ms | **~311 ms** | **−79 ms sur chaque chargement de page** |
+| Dynamique, origine `iad1` (Washington) | ~390 ms | ~150 ms |
+| Dynamique, origine `cdg1` (Paris) | ~311 ms | ~70 ms |
+| **Statique, servi par le CDN** | **253 ms** | **~12 ms** |
 
-Le TTFB résiduel de ~311 ms tient au rendu dynamique : rien n'est mis en cache
-(`cache-control: no-store`), donc chaque requête exécute la fonction serveur.
-C'est précisément ce que débloque l'étape 17.
+> **Lecture honnête de ces chiffres.** Les 241 ms restants sont le **plancher
+> réseau depuis la machine de mesure** : `/favicon.ico`, simple fichier statique
+> servi par le même edge, met lui aussi 241 ms en médiane. La page d'accueil
+> n'est donc plus qu'à **12 ms au-dessus d'un fichier statique pur** — la part
+> serveur est éliminée.
+>
+> Ce plancher de 241 ms est propre au réseau du poste de mesure ; un visiteur
+> français, bien plus proche de l'edge, ne le paiera pas. **Ne comparez ces
+> valeurs qu'entre elles**, pas à un objectif absolu de Core Web Vitals : les
+> mesures individuelles varient de 0,24 à 0,79 s selon l'état du réseau, et
+> seule la médiane sur 15 requêtes est exploitable.
 
-> ### 🔀 Décision requise avant l'étape 17
-> L'étape 17 rend les pages statiques (**TTFB attendu : ~30 à 60 ms, soit
-> encore ~250 ms de moins**). Deux chemins y mènent, et le choix dépend d'une
-> question commerciale, pas technique : **voulez-vous une version anglaise
-> indexable ?**
->
-> **Si oui — migration vers `[locale]` dans l'URL.** Le français garde ses URLs
-> actuelles (`localePrefix: "as-needed"`), l'anglais passe sous `/en/…`.
-> Bénéfices : pages statiques, version anglaise indexable, `hreflang` possible.
-> Coût : refonte de l'arborescence des pages marketing, propagation de
-> `params.locale`, composition avec le middleware existant. **C'est le plus
-> gros changement de tout l'audit, et le plus risqué.**
->
-> **Si non — suppression de l'i18n par cookie.** Le site sert le français
-> uniquement, le sélecteur de langue disparaît. Bénéfice : pages statiques,
-> avec un changement bien plus petit et bien plus sûr.
->
-> À noter : la version anglaise actuelle n'est de toute façon **pas indexable**
-> (même URL, contenu servi selon un cookie). Elle n'apporte aujourd'hui aucun
+> ### ✅ Arbitrage rendu — français uniquement
+> L'i18n par cookie a été retirée : le site ne sert plus que le français, et le
+> sélecteur de langue a disparu. La version anglaise n'était de toute façon pas
+> indexable (même URL, contenu servi selon un cookie) et n'apportait aucun
 > trafic de recherche.
+>
+> Deux points relevés au passage : `next-intl` n'était en réalité **pas
+> branché** (aucun plugin dans `next.config`, aucun `NextIntlClientProvider`,
+> et les seuls `useTranslations` dans trois composants jamais importés) ; et un
+> appel à `headers()` introduit à l'étape 7 pour le bandeau de démonstration
+> forçait lui aussi le rendu dynamique de **tout** le site. Les 14 démos ont été
+> regroupées sous `src/app/(demos)/` — groupe de routes, donc **aucune URL ne
+> change** — avec un layout commun qui rend le bandeau en statique.
+>
+> `messages/en.json` et les variantes `en` du contenu sont conservés mais
+> inatteignables, pour que la décision reste réversible.
 
 ### Note d'environnement — `pnpm dev` sous Node 25
 
