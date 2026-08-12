@@ -16,11 +16,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "Templates Sitekept | Bases de sites rapides a personnaliser"
+        ? "Modèles de sites internet par métier | Sitekept"
         : "Sitekept Templates | Fast website bases to customize",
     description:
       locale === "fr"
-        ? "Decouvrez les templates publiques Sitekept: boulangerie, fleuriste, dentiste, plombier, salon de coiffure, menage, restaurant, architecte, cabinet d'avocat, immobilier et plus, avec personnalisation et mise en ligne incluses."
+        ? "13 modèles de sites prêts à personnaliser : boulangerie, dentiste, plombier, restaurant, avocat, immobilier. Adaptés à votre activité en 48h."
         : "Explore Sitekept public templates for bakeries, florists, dentists, plumbers, hair salons, cleaning services, restaurants, architects, law firms, real estate and more, with customization and launch included.",
     path: "/templates",
   });
@@ -56,15 +56,27 @@ export default async function TemplatesPage() {
               className="border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
             >
               <Link href="/blog/site-web-rapide-pme-independant">
-                {locale === "fr" ? "Lire la methode" : "Read the approach"}
+                {locale === "fr" ? "Lire la méthode" : "Read the approach"}
               </Link>
             </Button>
           </div>
         </div>
       </section>
 
+      {/* Le titre porte le <h2> de section : sans lui, la page enchaînait
+          directement du <h1> aux <h3> des cartes, sans niveau intermédiaire. */}
       <TemplatesShowcase
         locale={locale}
+        title={
+          locale === "fr"
+            ? "Nos modèles de sites internet par métier"
+            : "Our website templates by trade"
+        }
+        description={
+          locale === "fr"
+            ? "Chaque modèle est adapté aux besoins réels d’un métier : parcours de réservation, présentation des prestations, zone d’intervention ou prise de contact. Nous le personnalisons à votre activité et le mettons en ligne en 48h."
+            : "Each template matches the real needs of a trade: booking flow, service presentation, coverage area or contact capture. We tailor it to your business and put it online in 48 hours."
+        }
         ctaText={locale === "fr" ? "Demander un devis" : "Request a quote"}
       />
     </>

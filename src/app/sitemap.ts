@@ -10,11 +10,10 @@ import { SITE_URL } from "@/lib/site-url";
  * src/middleware.ts. Déclarer dans un sitemap des URLs qu'on demande par
  * ailleurs de ne pas indexer enverrait deux signaux contradictoires à Google.
  *
- * `lastModified` est volontairement omis : aucune date de modification réelle
- * n'est disponible aujourd'hui (les articles n'ont pas encore de champ de
- * publication). Un `lastmod` égal à la date de build sur toutes les URLs est un
- * signal de fraîcheur faux, que Google apprend à ignorer. À réintroduire quand
- * les contenus porteront de vraies dates.
+ * `lastModified` n'est renseigné que là où une date réelle existe : les
+ * articles portent désormais `updatedAt`. Il reste omis sur les pages
+ * statiques, faute de date de modification fiable — un `lastmod` égal à la
+ * date de build est un signal de fraîcheur faux, que Google apprend à ignorer.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL;
@@ -31,6 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/tarifs`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog`,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -42,6 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogPosts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),

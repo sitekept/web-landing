@@ -1,4 +1,13 @@
 import { getMessage, getRawMessage, getSiteLocale } from "@/lib/site-messages";
+import { buildPageMetadata } from "@/lib/page-metadata";
+
+export const metadata = buildPageMetadata({
+  title: "Conditions générales d'utilisation | Sitekept",
+  description:
+    "Conditions d'utilisation des services Sitekept : prestations, tarifs, propriété intellectuelle, délais de livraison et garanties.",
+  path: "/terms",
+});
+
 
 export default async function TermsPage() {
   const locale = await getSiteLocale();

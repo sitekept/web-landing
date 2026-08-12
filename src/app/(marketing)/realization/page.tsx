@@ -3,6 +3,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
+import { buildPageMetadata } from "@/lib/page-metadata";
+
+export const metadata = buildPageMetadata({
+  title: "Nos réalisations | Sites web livrés par Sitekept",
+  description:
+    "Découvrez les sites livrés par Sitekept pour des PME, indépendants et commerces : design, structure SEO et mise en ligne. Demandez un devis gratuit.",
+  path: "/realization",
+});
+
 
 export default async function RealizationPage() {
   const locale = await getSiteLocale();
@@ -101,6 +110,21 @@ export default async function RealizationPage() {
       {/* Projects Section */}
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-4">
+          {/* <h2> de section : la page enchaînait le <h1> directement sur les
+              <h3> des cartes, sans niveau intermédiaire porteur de mot-clé. */}
+          <div className="mx-auto mb-12 max-w-3xl text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              {locale === "fr"
+                ? "Des sites livrés pour des PME, indépendants et associations"
+                : "Websites delivered for small businesses, freelancers and nonprofits"}
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              {locale === "fr"
+                ? "Chaque projet a été développé, déployé et remis à son propriétaire, code compris."
+                : "Every project was built, deployed and handed over to its owner, source code included."}
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
             {REALIZATIONS.map((project) => (
               <ProjectCard

@@ -9,7 +9,8 @@
     "contact": "Contact",
     "start": "Demander un devis",
     "openMenu": "Ouvrir le menu",
-    "closeMenu": "Fermer le menu"
+    "closeMenu": "Fermer le menu",
+    "pricing": "Tarifs"
   },
   "hero": {
     "tagline": "Livraison express. Performance maximale. Résultats garantis.",
@@ -190,19 +191,19 @@
     "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne"
   },
   "metadata": {
-    "title": "Sitekept - Site pro en 48h, sans abonnement et 100% à vous",
-    "description": "Sitekept livre des sites professionnels à partir de 500€, mis en ligne en 48h, sans abonnement imposé, avec déploiement inclus, domaine offert 1 an et optimisation SEO + GEO.",
+    "title": "Création de site internet dès 500€ | Sitekept",
+    "description": "Agence web spécialisée PME et artisans : votre site professionnel livré en 48h, sans abonnement, 100 % à vous. Devis gratuit en 24h.",
     "keywords": "site professionnel 48h, creation site rapide, site sans abonnement, site 100% propriétaire, déploiement inclus, SEO GEO, site vitrine PME, site indépendant",
     "authors": "Équipe SiteKept",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "Sitekept - Site pro en 48h, sans abonnement et 100% à vous",
+      "title": "Création de site internet dès 500€ | Sitekept",
       "description": "Un site pro à partir de 500€, livré vite, déployé par Sitekept, optimisé SEO + GEO et entièrement détenu par le client.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "Sitekept - Site pro en 48h, sans abonnement et 100% à vous",
+      "title": "Création de site internet dès 500€ | Sitekept",
       "description": "Site professionnel rapide à lancer, transparent à acheter et conçu pour la visibilité.",
       "creator": "@sitekept"
     },

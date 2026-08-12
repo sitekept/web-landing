@@ -11,6 +11,10 @@ import {
 } from "@/content/site-content";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
+import {
+  BlogPostingJsonLd,
+  BreadcrumbJsonLd,
+} from "@/components/structured-data";
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -53,8 +57,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const dateFormatter = new Intl.DateTimeFormat(
+    locale === "fr" ? "fr-FR" : "en-GB",
+    { day: "numeric", month: "long", year: "numeric" }
+  );
+  const publishedLabel = dateFormatter.format(new Date(post.publishedAt));
+  const updatedLabel = dateFormatter.format(new Date(post.updatedAt));
+  const wasUpdated = post.updatedAt !== post.publishedAt;
+
   return (
     <>
+      <BlogPostingJsonLd
+        slug={post.slug}
+        headline={getLocalizedText(post.title, locale)}
+        description={getLocalizedText(post.seoDescription, locale)}
+        publishedAt={post.publishedAt}
+        updatedAt={post.updatedAt}
+        author={post.author}
+        locale={locale}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: locale === "fr" ? "Accueil" : "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          {
+            name: getLocalizedText(post.title, locale),
+            path: `/blog/${post.slug}`,
+          },
+        ]}
+      />
+
       <section className="bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] px-6 pb-14 pt-28 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
@@ -63,6 +95,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
             {getLocalizedText(post.title, locale)}
           </h1>
+
+          {/* Signature et datation : deux signaux E-E-A-T absents jusqu'ici,
+              et prérequis du schéma BlogPosting. */}
+          <p className="mt-5 text-sm text-slate-500">
+            <span>{post.author}</span>
+            <span aria-hidden="true"> · </span>
+            <time dateTime={post.publishedAt}>
+              {locale === "fr"
+                ? `Publié le ${publishedLabel}`
+                : `Published on ${publishedLabel}`}
+            </time>
+            {wasUpdated ? (
+              <>
+                <span aria-hidden="true"> · </span>
+                <time dateTime={post.updatedAt}>
+                  {locale === "fr"
+                    ? `mis à jour le ${updatedLabel}`
+                    : `updated on ${updatedLabel}`}
+                </time>
+              </>
+            ) : null}
+          </p>
+
           <p className="mt-6 text-lg leading-8 text-slate-600">
             {getLocalizedText(post.intro, locale)}
           </p>

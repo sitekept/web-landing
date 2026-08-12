@@ -17,11 +17,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "SEO + GEO | Comprendre la visibilité naturelle d’un site"
-        : "SEO + GEO | Understanding a website's organic visibility",
+        ? "SEO et GEO : rendre votre site visible | Sitekept"
+        : "SEO and GEO: making your website visible | Sitekept",
     description:
       locale === "fr"
-        ? "Comprenez pourquoi le référencement naturel compte, ce qu’un site doit avoir pour être vraiment optimisé, et comment approfondir ces sujets sur le blog Sitekept."
+        ? "Comment un site devient visible sur Google et dans les réponses IA : structure, contenu, vitesse. Nos sites sont optimisés dès la livraison."
         : "Understand why organic search matters, what a website needs to be truly optimized, and how to go deeper on the Sitekept blog.",
     path: "/seo-geo",
   });

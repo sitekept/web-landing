@@ -16,11 +16,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "Blog Sitekept | Rapidite, propriete du site, SEO et GEO"
+        ? "Blog Sitekept | Guides création de site et SEO"
         : "Sitekept Blog | Speed, ownership, SEO and GEO",
     description:
       locale === "fr"
-        ? "Le hub editorial Sitekept regroupe des pages utiles pour comprendre notre offre: rapidite de lancement, propriete complete du site et visibilite SEO + GEO."
+        ? "Nos guides pour créer, posséder et référencer votre site web : prix, propriété du code, SEO et visibilité dans les réponses IA."
         : "The Sitekept editorial hub explains the offer through useful pages on fast launch, full website ownership and SEO + GEO visibility.",
     path: "/blog",
   });

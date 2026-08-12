@@ -65,3 +65,108 @@ export function OrganizationJsonLd() {
     />
   );
 }
+
+interface BlogPostingJsonLdProps {
+  slug: string;
+  headline: string;
+  description: string;
+  publishedAt: string;
+  updatedAt: string;
+  author: string;
+  locale: string;
+}
+
+/**
+ * Schéma d'article. `datePublished` et `author` sont obligatoires côté Google
+ * pour l'éligibilité aux résultats enrichis d'article — ils n'existaient pas
+ * dans le contenu avant l'ajout des champs correspondants à `BlogPost`.
+ */
+export function BlogPostingJsonLd({
+  slug,
+  headline,
+  description,
+  publishedAt,
+  updatedAt,
+  author,
+  locale,
+}: BlogPostingJsonLdProps) {
+  const url = `${SITE_URL}/blog/${slug}`;
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    headline,
+    description,
+    datePublished: publishedAt,
+    dateModified: updatedAt,
+    inLanguage: locale === "fr" ? "fr-FR" : "en",
+    author: { "@type": "Organization", name: author, url: SITE_URL },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    image: `${SITE_URL}/opengraph-image`,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/**
+ * FAQ. À n'utiliser que si les questions/réponses sont réellement visibles
+ * sur la page : Google exige que le contenu balisé soit présent à l'écran.
+ */
+export function FaqJsonLd({
+  items,
+}: {
+  items: { question: string; answer: string }[];
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+/**
+ * Fil d'Ariane. `items` est ordonné de la racine à la page courante ; le
+ * dernier élément est la page elle-même.
+ */
+export function BreadcrumbJsonLd({
+  items,
+}: {
+  items: { name: string; path: string }[];
+}) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${SITE_URL}${item.path === "/" ? "" : item.path}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}

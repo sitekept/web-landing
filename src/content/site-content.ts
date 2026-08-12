@@ -79,6 +79,11 @@ export interface BlogSection {
 
 export interface BlogPost {
   slug: string;
+  /** Date de première publication, au format ISO (AAAA-MM-JJ). */
+  publishedAt: string;
+  /** Date de dernière modification de fond. Alimente <lastmod> et dateModified. */
+  updatedAt: string;
+  author: string;
   category: LocalizedText;
   title: LocalizedText;
   excerpt: LocalizedText;
@@ -180,8 +185,8 @@ export const homeContent: HomeContent = {
       en: "The website for everyone in 48 hours.",
     },
     title: {
-      fr: "Concevez un site web qui vous appartient à 100%.",
-      en: "Build a website that belongs to you 100%.",
+      fr: "Création de site internet pour PME et artisans, livré en 48h et 100 % à vous.",
+      en: "Website design for small businesses and trades, delivered in 48h and 100% yours.",
     },
     description: {
       fr: "Vous gardez la propriété complète, nous gérons le déploiement, le domaine est offert la première année.",
@@ -310,7 +315,7 @@ export const homeContent: HomeContent = {
       en: "Each template is a launch-ready base: structure, design, page rhythm and conversion content are already mapped out.",
     },
     cta: {
-      fr: "Voir toutes les templates",
+      fr: "Voir tous les templates",
       en: "See all templates",
     },
   },
@@ -962,6 +967,9 @@ export const seoGeoPageContent: SeoGeoPageContent = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "site-web-rapide-pme-independant",
+    publishedAt: "2026-04-03",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
       fr: "Lancement rapide",
       en: "Fast launch",
@@ -1064,6 +1072,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "posseder-son-site-sans-abonnement",
+    publishedAt: "2026-04-03",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
       fr: "Propriété du site",
       en: "Website ownership",
@@ -1166,28 +1177,31 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "site-optimise-seo-geo",
+    publishedAt: "2026-04-03",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
-      fr: "Visibilite",
+      fr: "Visibilité",
       en: "Visibility",
     },
     title: {
-      fr: "Ce qu'un site optimise SEO et GEO doit faire pour rester visible sur Google et dans les interfaces IA",
+      fr: "Ce qu'un site optimisé SEO et GEO doit faire pour rester visible sur Google et dans les interfaces IA",
       en: "What an SEO and GEO optimized website needs to do to stay visible on Google and in AI interfaces",
     },
     excerpt: {
-      fr: "La visibilite moderne ne se limite plus au SEO classique. Les interfaces IA reprennent, resumment et recommandent des contenus. Le site doit etre lisible pour les deux mondes.",
+      fr: "La visibilité moderne ne se limite plus au SEO classique. Les interfaces IA reprennent, résument et recommandent des contenus. Le site doit être lisible pour les deux mondes.",
       en: "Modern visibility is not limited to classic SEO anymore. AI interfaces reuse, summarize and recommend content. A website must stay legible to both worlds.",
     },
     seoTitle: {
-      fr: "Site optimise SEO et GEO | Sitekept",
+      fr: "Site optimisé SEO et GEO : le guide | Sitekept",
       en: "SEO and GEO optimized website | Sitekept",
     },
     seoDescription: {
-      fr: "Comment penser un site visible a la fois pour Google et pour les interfaces IA: structure, vitesse, clarte et signaux de confiance.",
+      fr: "Comment penser un site visible à la fois pour Google et pour les interfaces IA : structure, vitesse, clarté et signaux de confiance.",
       en: "How to design a website that stays visible for both Google and AI interfaces: structure, speed, clarity and trust signals.",
     },
     intro: {
-      fr: "Le SEO reste essentiel, mais il ne suffit plus a expliquer toute la visibilite. De plus en plus d'utilisateurs decouvrent des entreprises via des reponses generees par IA, des apercus enrichis ou des assistants qui reformulent l'information.",
+      fr: "Le SEO reste essentiel, mais il ne suffit plus à expliquer toute la visibilité. De plus en plus d'utilisateurs découvrent des entreprises via des réponses générées par IA, des aperçus enrichis ou des assistants qui reformulent l'information.",
       en: "SEO remains essential, but it no longer explains visibility on its own. More and more users discover businesses through AI-generated answers, enriched summaries or assistants that reformulate information.",
     },
     sections: [
@@ -1199,8 +1213,8 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Pour Google comme pour les interfaces IA, un site doit annoncer clairement son offre, son public, sa promesse et ses preuves de confiance. C'est ce qui rend l'information exploitable et facile a citer.",
-            "Une page rapide, bien hierarchisee et semantiquement propre aide autant le moteur classique que les systemes qui resumment vos contenus.",
+            "Pour Google comme pour les interfaces IA, un site doit annoncer clairement son offre, son public, sa promesse et ses preuves de confiance. C'est ce qui rend l'information exploitable et facile à citer.",
+            "Une page rapide, bien hiérarchisée et sémantiquement propre aide autant le moteur classique que les systèmes qui résument vos contenus.",
           ],
           en: [
             "For Google and AI interfaces alike, a website must clearly state its offer, audience, promise and trust proof. That is what makes the information reusable and easy to cite.",
@@ -1211,7 +1225,7 @@ export const blogPosts: BlogPost[] = [
       {
         id: "commercial-clarity",
         title: {
-          fr: "La clarte commerciale devient un vrai signal",
+          fr: "La clarté commerciale devient un vrai signal",
           en: "Commercial clarity becomes a real signal",
         },
         paragraphs: {
@@ -1228,8 +1242,8 @@ export const blogPosts: BlogPost[] = [
           fr: [
             "une promesse simple",
             "des garanties visibles",
-            "des CTA coherents",
-            "des contenus faciles a citer",
+            "des CTA cohérents",
+            "des contenus faciles à citer",
           ],
           en: [
             "a simple promise",
@@ -1268,6 +1282,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "qu-est-ce-que-le-seo-et-le-geo",
+    publishedAt: "2026-04-05",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
       fr: "SEO + GEO",
       en: "SEO + GEO",
@@ -1356,6 +1373,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "site-sans-referencement-peut-devenir-inutile",
+    publishedAt: "2026-04-05",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
       fr: "Visibilité",
       en: "Visibility",
@@ -1369,7 +1389,7 @@ export const blogPosts: BlogPost[] = [
       en: "A website can be clean and well designed, but if nobody finds it, it does not fulfill its commercial role. Visibility is part of its real usefulness.",
     },
     seoTitle: {
-      fr: "Pourquoi un site sans référencement peut devenir inutile | Sitekept",
+      fr: "Site sans référencement : pourquoi il devient inutile",
       en: "Why a website without search visibility can become useless | Sitekept",
     },
     seoDescription: {
@@ -1444,6 +1464,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "pourquoi-optimisation-referencement-naturel-importante",
+    publishedAt: "2026-04-05",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
       fr: "Référencement naturel",
       en: "Organic search",
@@ -1532,6 +1555,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "pourquoi-avoir-un-site-qui-nous-appartient-a-100-change-tout",
+    publishedAt: "2026-04-05",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
       fr: "Propriété du site",
       en: "Website ownership",
@@ -1545,7 +1571,7 @@ export const blogPosts: BlogPost[] = [
       en: "A website fully owned by the client changes the budget, the room to move, the ability to take over the project and the quality of the agency relationship.",
     },
     seoTitle: {
-      fr: "Pourquoi avoir un site qui nous appartient à 100 % change tout | Sitekept",
+      fr: "Posséder son site à 100 % : pourquoi ça change tout",
       en: "Why full website ownership changes everything | Sitekept",
     },
     seoDescription: {
@@ -1620,6 +1646,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "comment-se-passe-la-livraison-d-un-site-web-chez-sitekept",
+    publishedAt: "2026-04-05",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
     category: {
       fr: "Livraison",
       en: "Delivery",
@@ -1633,11 +1662,11 @@ export const blogPosts: BlogPost[] = [
       en: "Delivery does not stop at launch. It includes the code, access, GitHub repository, deployment and domain so the client truly owns the website.",
     },
     seoTitle: {
-      fr: "Comment se passe la livraison d’un site web chez Sitekept ? | Sitekept",
-      en: "How does website delivery work at Sitekept? | Sitekept",
+      fr: "Livraison d’un site web : notre process | Sitekept",
+      en: "Website delivery: our process | Sitekept",
     },
     seoDescription: {
-      fr: "Développement en interne, dépôt GitHub client, déploiement sur Vercel, domaine pris la première année et structure claire: voici comment Sitekept livre un site web.",
+      fr: "Développement en interne, dépôt GitHub à votre nom, déploiement Vercel et domaine offert la première année. Voici comment Sitekept livre.",
       en: "In-house development, client GitHub repository, Vercel deployment, first-year domain purchase and a clear structure: here is how Sitekept delivers a website.",
     },
     intro: {

@@ -11,6 +11,7 @@ import { SiteLocale } from "@/content/site-content";
 
 const NAVIGATION_ITEMS = [
   { key: "templates", href: "/templates" },
+  { key: "pricing", href: "/tarifs" },
   { key: "realizations", href: "/realization" },
   { key: "blog", href: "/blog" },
   { key: "visibility", href: "/seo-geo" },
@@ -21,6 +22,7 @@ const NAVIGATION_ITEMS = [
 const navigationLabels = {
   fr: {
     templates: "Templates",
+    pricing: "Tarifs",
     blog: "Blog",
     visibility: "SEO / GEO",
     faq: "FAQ",
@@ -33,6 +35,7 @@ const navigationLabels = {
   },
   en: {
     templates: "Templates",
+    pricing: "Pricing",
     blog: "Blog",
     visibility: "SEO / GEO",
     faq: "FAQ",

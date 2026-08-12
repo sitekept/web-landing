@@ -1,4 +1,13 @@
 import { getMessage, getRawMessage, getSiteLocale } from "@/lib/site-messages";
+import { buildPageMetadata } from "@/lib/page-metadata";
+
+export const metadata = buildPageMetadata({
+  title: "Politique de confidentialité | Sitekept",
+  description:
+    "Comment Sitekept collecte, utilise et protège vos données personnelles conformément au RGPD, et comment exercer vos droits.",
+  path: "/privacy",
+});
+
 
 export default async function PrivacyPage() {
   const locale = await getSiteLocale();
