@@ -530,8 +530,8 @@
       "hosting": {
         "title": "Hébergement",
         "content": "Le site est hébergé par :",
-        "hostName": "Hébergeur : À COMPLÉTER",
-        "hostAddress": "Adresse de l'hébergeur : À COMPLÉTER"
+        "hostName": "Hébergeur : Vercel Inc.",
+        "hostAddress": "Adresse de l'hébergeur : 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis — vercel.com"
       },
       "intellectualProperty": {
         "title": "Propriété intellectuelle",
