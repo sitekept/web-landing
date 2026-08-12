@@ -1959,6 +1959,400 @@ export const blogPosts: BlogPost[] = [
       en: "At Sitekept the code sits in a repository under your name and the access is handed over at delivery. There is no subscription to keep the site online, and nothing to negotiate the day you want to leave.",
     },
   },
+
+  {
+    slug: "louer-ou-posseder-son-site-internet",
+    publishedAt: "2026-08-12",
+    updatedAt: "2026-08-12",
+    author: "Équipe Sitekept",
+    category: {
+      fr: "Propriété du site",
+      en: "Website ownership",
+    },
+    title: {
+      fr: "Louer ou posséder son site : ce que coûte vraiment un abonnement",
+      en: "Renting or owning your website: what a subscription really costs",
+    },
+    excerpt: {
+      fr: "Au-delà du montant mensuel, un abonnement crée trois dépendances qui se paient le jour où vous voulez partir. Et les cas, réels, où il reste le bon choix.",
+      en: "Beyond the monthly fee, a subscription creates three dependencies you pay for the day you want to leave. And the real cases where it remains the right choice.",
+    },
+    seoTitle: {
+      fr: "Abonnement site internet : le vrai coût | Sitekept",
+      en: "Website subscriptions: what they really cost | Sitekept",
+    },
+    seoDescription: {
+      fr: "Ce qu'un abonnement site internet coûte sur cinq ans, les trois dépendances qu'il crée, et les situations où il reste malgré tout le bon choix.",
+      en: "What a website subscription costs over five years, the three dependencies it creates, and when it is still the right choice.",
+    },
+    intro: {
+      fr: "Comparer un site à 500 € payés une fois et un site à 29 € par mois semble simple : on multiplie, on compare, on conclut. Ce calcul est juste, mais il passe à côté de l'essentiel. Ce qui distingue vraiment les deux modèles, ce n'est pas le total au bout de cinq ans — c'est ce qu'il vous reste le jour où vous arrêtez de payer.",
+      en: "Comparing a €500 one-off website with a €29-a-month one looks simple: multiply, compare, conclude. The maths is right, but it misses the point. What really separates the two models is not the five-year total — it is what you are left with the day you stop paying.",
+    },
+    sections: [
+      {
+        id: "ce-que-vous-payez",
+        title: {
+          fr: "Ce que vous payez vraiment dans un abonnement",
+          en: "What you actually pay for in a subscription",
+        },
+        paragraphs: {
+          fr: [
+            "Un abonnement mélange plusieurs choses dans une seule ligne de facture, et c'est précisément ce qui rend la comparaison difficile. On y trouve généralement l'hébergement, l'usage d'un éditeur, la maintenance technique de la plateforme, et parfois un support.",
+            "Prises séparément, ces prestations ont des prix très différents. L'hébergement d'un site vitrine coûte quelques euros par mois, parfois rien. La maintenance d'une plateforme mutualisée entre des centaines de milliers de clients revient à une fraction de centime par site. Ce que vous payez majoritairement, ce n'est donc pas un service : c'est un droit d'usage, qui s'interrompt en même temps que le paiement.",
+            "Ce n'est ni scandaleux ni caché — c'est le modèle économique du logiciel en ligne, et il finance un produit réellement pratique. Mais il faut le nommer pour décider en connaissance de cause.",
+          ],
+          en: [
+            "A subscription bundles several things into a single invoice line, which is exactly what makes comparison hard: hosting, use of an editor, platform maintenance, sometimes support.",
+            "Taken separately, these have very different costs. Hosting a brochure site costs a few euros a month, sometimes nothing. What you mostly pay for is not a service but a right of use, which stops when the payment does.",
+            "This is neither scandalous nor hidden — it is the business model of online software. But it needs naming to decide knowingly.",
+          ],
+        },
+      },
+      {
+        id: "dependances",
+        title: {
+          fr: "Les trois dépendances que crée un abonnement",
+          en: "The three dependencies a subscription creates",
+        },
+        paragraphs: {
+          fr: [
+            "Le coût financier est le plus visible, et paradoxalement le moins problématique. Les trois dépendances suivantes coûtent souvent bien davantage, et elles ne se manifestent qu'au moment du départ.",
+          ],
+          en: [
+            "The financial cost is the most visible and, paradoxically, the least problematic. The three dependencies below often cost more, and only show up when you leave.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "La dépendance technique : le site est construit avec les outils de la plateforme et n'existe pas en dehors d'elle. Il n'y a rien à « emporter » — l'export, quand il existe, produit du HTML inexploitable pour reconstruire le site ailleurs.",
+            "La dépendance de contenu : vos textes, vos photos et souvent vos avis clients vivent dans la base de la plateforme. Les récupérer est possible, les réinstaller ailleurs demande un travail manuel que personne n'anticipe.",
+            "La dépendance tarifaire : le prix du premier mois n'engage pas la plateforme. Les tarifs évoluent, les fonctionnalités migrent vers des formules supérieures, et votre marge de négociation est nulle une fois le site en production.",
+          ],
+          en: [
+            "Technical dependency: the site is built with the platform's tools and does not exist outside it. There is nothing to take away.",
+            "Content dependency: your text, photos and often your reviews live in the platform's database. Recovering them is possible; reinstalling them elsewhere is manual work nobody plans for.",
+            "Pricing dependency: the first month's price does not bind the platform. Rates change, features migrate to higher tiers, and your negotiating power is nil once the site is live.",
+          ],
+        },
+      },
+      {
+        id: "calcul",
+        title: {
+          fr: "Le calcul sur cinq ans, et ce qu'il oublie",
+          en: "The five-year calculation, and what it leaves out",
+        },
+        paragraphs: {
+          fr: [
+            "L'arithmétique est à la portée de tous : un abonnement à 20 € par mois représente 1 200 € sur cinq ans, à 30 € il en représente 1 800, à 50 € il atteint 3 000 €. Faites-la avec les chiffres de l'offre que vous examinez, pas avec une moyenne du marché.",
+            "Mais ce calcul oublie deux choses. D'abord, il suppose un tarif stable sur cinq ans, ce qui est rarement le cas. Ensuite, et surtout, il compare des montants alors que les deux situations ne sont pas comparables : au bout de cinq ans, dans un cas vous possédez un site que vous pouvez faire évoluer ou héberger ailleurs ; dans l'autre, vous avez financé un droit d'usage arrivé à son terme.",
+            "Une manière plus honnête de poser la question : combien vous coûterait, aujourd'hui, de tout reconstruire ailleurs ? Si la réponse est « le prix d'un site neuf », alors les mensualités versées n'ont rien capitalisé.",
+          ],
+          en: [
+            "The maths is simple: €20 a month is €1,200 over five years; €30 is €1,800; €50 is €3,000. Run it with the figures of the offer in front of you.",
+            "But it leaves out two things: it assumes a stable price for five years, and it compares amounts when the two situations are not comparable.",
+            "A more honest question: what would it cost you today to rebuild everything elsewhere? If the answer is 'the price of a new site', the monthly payments capitalised nothing.",
+          ],
+        },
+      },
+      {
+        id: "quand-abonnement",
+        title: {
+          fr: "Quand l'abonnement est le bon choix",
+          en: "When a subscription is the right choice",
+        },
+        paragraphs: {
+          fr: [
+            "Il faut le dire, parce que c'est vrai et que l'ignorer décrédibiliserait tout ce qui précède : dans plusieurs situations, un abonnement est le choix rationnel.",
+            "Si vous testez une idée et que le site ne vivra peut-être que six mois, payer 150 € au total est plus sensé qu'investir dans un site que vous jetterez. Si vous avez besoin de modifier vos pages vous-même chaque semaine sans jamais faire appel à personne, les éditeurs en ligne sont excellents à cet exercice, et un site développé ne le sera pas autant. Si votre activité repose sur une fonctionnalité que la plateforme fournit d'office — un catalogue de plusieurs milliers de produits, un système de réservation complexe — reconstruire cela sur mesure coûterait bien davantage.",
+            "Le raisonnement bascule lorsque le site devient durable et central. À partir du moment où il représente votre présence commerciale principale et qu'il est destiné à durer plusieurs années, la location devient le modèle le plus cher, et le seul qui ne laisse rien derrière lui.",
+          ],
+          en: [
+            "This needs saying, because it is true: in several situations a subscription is the rational choice.",
+            "If you are testing an idea, if you need to edit pages yourself every week, or if your business relies on a feature the platform provides out of the box, subscriptions are excellent.",
+            "The reasoning flips once the site becomes durable and central to your business.",
+          ],
+        },
+      },
+      {
+        id: "sortir",
+        title: {
+          fr: "Comment sortir d'un abonnement sans tout perdre",
+          en: "How to leave a subscription without losing everything",
+        },
+        paragraphs: {
+          fr: [
+            "Si vous êtes déjà engagé et que vous souhaitez en sortir, l'ordre des opérations compte plus que la vitesse. Une résiliation prononcée avant d'avoir sécurisé le reste vous laisse quelques jours pour tout récupérer, souvent moins.",
+            "Commencez toujours par le nom de domaine, avant même d'annoncer votre intention. S'il est déposé à votre nom, demandez le code de transfert et emmenez-le chez un bureau d'enregistrement indépendant : il devient alors hors d'atteinte, quoi qu'il arrive ensuite. S'il appartient à la plateforme ou au prestataire, c'est le point à négocier en priorité, car c'est le seul élément réellement irremplaçable.",
+            "Récupérez ensuite vos contenus : textes, photos en pleine résolution, avis clients si la plateforme permet de les exporter. Prenez aussi des captures de chaque page, qui serviront de référence pour reconstruire. Enfin, notez la liste complète de vos adresses de pages : elle vous permettra de poser les redirections vers le nouveau site et d'éviter de perdre le référencement acquis.",
+            "Ne résiliez qu'une fois ces trois étapes terminées, et laissez si possible l'ancien site en ligne le temps que le nouveau soit publié et que les redirections fonctionnent. Payer un mois d'abonnement de plus coûte moins cher qu'une coupure de présence en ligne.",
+          ],
+          en: [
+            "If you are already committed, the order of operations matters more than speed.",
+            "Always start with the domain name, before announcing your intention.",
+            "Then recover your content, and record the full list of your page addresses so you can set redirects.",
+            "Only cancel once those steps are done, and keep the old site online until the new one is live.",
+          ],
+        },
+      },
+      {
+        id: "questions",
+        title: {
+          fr: "Les questions à poser avant de s'engager",
+          en: "Questions to ask before committing",
+        },
+        paragraphs: {
+          fr: [
+            "Quel que soit le modèle retenu, ces questions vous éviteront les mauvaises surprises. Posez-les par écrit et conservez les réponses.",
+          ],
+          en: [
+            "Whatever model you choose, these questions prevent bad surprises. Ask them in writing and keep the answers.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Le nom de domaine est-il déposé à mon nom, et puis-je le transférer librement ?",
+            "Que se passe-t-il exactement si j'arrête de payer : le site disparaît-il, et sous quel délai ?",
+            "Puis-je exporter mes contenus, dans quel format, et cet export est-il réutilisable ailleurs ?",
+            "Le tarif est-il garanti, et pour combien de temps ?",
+            "Quelles fonctionnalités que j'utilise aujourd'hui peuvent basculer dans une formule supérieure ?",
+          ],
+          en: [
+            "Is the domain registered in my name, and can I transfer it freely?",
+            "What exactly happens if I stop paying, and how quickly?",
+            "Can I export my content, in what format, and is that export reusable elsewhere?",
+            "Is the price guaranteed, and for how long?",
+            "Which features I use today could move to a higher tier?",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Un site payé une fois, et qui reste le vôtre",
+      en: "A website paid for once, that stays yours",
+    },
+    ctaDescription: {
+      fr: "Le détail de ce qui est inclus, les modalités de paiement et la comparaison des modèles figurent sur notre page tarifs. Le code est déposé à votre nom, et il n'y a aucun abonnement à régler pour que le site reste en ligne.",
+      en: "The details of what is included and how payment works are on our pricing page. The code sits in a repository under your name, with no subscription required to keep the site online.",
+    },
+  },
+
+  {
+    slug: "checklist-seo-avant-mise-en-ligne",
+    publishedAt: "2026-08-12",
+    updatedAt: "2026-08-12",
+    author: "Équipe Sitekept",
+    category: {
+      fr: "Référencement",
+      en: "Search visibility",
+    },
+    title: {
+      fr: "Checklist SEO : 20 points à vérifier avant de mettre un site en ligne",
+      en: "SEO checklist: 20 things to check before launching a website",
+    },
+    excerpt: {
+      fr: "Les vérifications à faire avant la mise en ligne, classées par gravité, avec la commande ou l'outil qui permet de contrôler chacune d'elles.",
+      en: "The checks to run before launch, ordered by severity, each with the command or tool that verifies it.",
+    },
+    seoTitle: {
+      fr: "Checklist SEO avant mise en ligne : 20 points | Sitekept",
+      en: "Pre-launch SEO checklist: 20 points | Sitekept",
+    },
+    seoDescription: {
+      fr: "20 vérifications SEO à faire avant de publier un site : indexabilité, canonical, titles, vitesse, données structurées. Avec comment vérifier chacune.",
+      en: "20 SEO checks to run before publishing a site: indexability, canonicals, titles, speed, structured data — and how to verify each.",
+    },
+    intro: {
+      fr: "La plupart des problèmes de référencement ne viennent pas d'un manque d'optimisation, mais d'une erreur de configuration passée inaperçue à la mise en ligne. Un noindex oublié, un canonical qui pointe ailleurs, un sitemap listant des adresses qui redirigent : chacune de ces erreurs suffit à rendre invisible un site par ailleurs bien construit. Cette liste est classée par gravité, et chaque point indique comment le vérifier soi-même.",
+      en: "Most search visibility problems come not from a lack of optimisation but from a configuration error that slipped through at launch. This list is ordered by severity, and each point says how to check it yourself.",
+    },
+    sections: [
+      {
+        id: "bloquants",
+        title: {
+          fr: "Les cinq points bloquants — à vérifier en premier",
+          en: "The five blockers — check these first",
+        },
+        paragraphs: {
+          fr: [
+            "Si l'un de ces cinq points est défaillant, tout le reste est sans effet. Ce sont eux qui expliquent l'écrasante majorité des sites qui « ne sortent pas sur Google » malgré un contenu correct.",
+            "Le plus insidieux est le premier. Une balise noindex laissée en place après une phase de préproduction rend le site totalement invisible, sans qu'aucune alerte ne le signale. Vérifiez-le le jour de la mise en ligne, puis une semaine plus tard.",
+          ],
+          en: [
+            "If any of these five fails, everything else is pointless. They explain the vast majority of sites that never appear on Google despite decent content.",
+            "The most insidious is the first: a noindex tag left in place after staging makes the site entirely invisible, with no warning.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Aucune balise noindex résiduelle. Vérifiez le code source de plusieurs pages et l'en-tête HTTP X-Robots-Tag, qui n'apparaît pas dans le HTML.",
+            "Le robots.txt n'interdit rien d'essentiel. Consultez votredomaine.fr/robots.txt : un Disallow: / oublié bloque l'ensemble du site.",
+            "Une seule version du domaine répond. Testez avec et sans www, en http et en https : trois des quatre doivent rediriger vers la quatrième, en 301 ou 308 permanent, jamais en 302 ou 307.",
+            "Les balises canonical pointent vers l'adresse réellement servie. Un canonical qui désigne une URL qui redirige envoie un signal contradictoire à Google.",
+            "Le site est accessible en HTTPS avec un certificat valide, et aucune ressource n'est chargée en HTTP.",
+          ],
+          en: [
+            "No leftover noindex tag. Check the source of several pages and the X-Robots-Tag HTTP header.",
+            "robots.txt blocks nothing essential.",
+            "Only one version of the domain answers; the others redirect permanently.",
+            "Canonical tags point to the URL actually served.",
+            "The site is served over HTTPS with a valid certificate.",
+          ],
+        },
+      },
+      {
+        id: "structure",
+        title: {
+          fr: "Structure et contenu — six points",
+          en: "Structure and content — six points",
+        },
+        paragraphs: {
+          fr: [
+            "Une fois le site accessible, ces vérifications déterminent la façon dont il sera compris et présenté dans les résultats. Elles se contrôlent page par page, en commençant par les pages qui comptent commercialement.",
+            "L'unicité est le fil conducteur : deux pages qui partagent le même title sont deux pages que Google traitera comme des doublons, et il en choisira une seule.",
+          ],
+          en: [
+            "Once the site is reachable, these determine how it is understood and displayed. Check page by page, starting with the commercially important ones.",
+            "Uniqueness is the common thread.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Chaque page a un title unique, sous 60 caractères, contenant le terme sur lequel elle vise à être trouvée.",
+            "Chaque page a une meta description unique, sous 155 caractères. Elle n'influence pas le classement mais détermine le taux de clic.",
+            "Une seule balise h1 par page, et elle décrit le contenu réel plutôt que le nom de la marque.",
+            "La hiérarchie des titres ne saute pas de niveau : pas de h3 directement sous un h1.",
+            "Chaque image porte un attribut alt descriptif, ou un alt vide si elle est purement décorative.",
+            "Aucune information essentielle — tarifs, carte, horaires — n'est enfermée dans une image ou un PDF.",
+          ],
+          en: [
+            "Each page has a unique title under 60 characters.",
+            "Each page has a unique meta description under 155 characters.",
+            "One h1 per page, describing the actual content.",
+            "Heading levels do not skip.",
+            "Every image has a descriptive alt, or an empty alt if decorative.",
+            "No essential information locked inside an image or PDF.",
+          ],
+        },
+      },
+      {
+        id: "technique",
+        title: {
+          fr: "Technique et exploration — cinq points",
+          en: "Technical and crawling — five points",
+        },
+        paragraphs: {
+          fr: [
+            "Ces points conditionnent la capacité de Google à découvrir vos pages et la vitesse à laquelle il le fera. Ils comptent particulièrement pour un site neuf, qui ne bénéficie d'aucun historique.",
+            "Un point mérite une attention particulière : un sitemap n'est utile que s'il est exact. Un sitemap contenant des adresses qui redirigent ou renvoient une erreur est traité comme défaillant, et Google finit par cesser de le consulter.",
+          ],
+          en: [
+            "These determine Google's ability to discover your pages and how fast it does so.",
+            "A sitemap is only useful if it is accurate. One containing redirecting or erroring URLs is treated as faulty.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Le sitemap.xml existe, ne contient que des adresses répondant en 200, et toutes dans la version canonique du domaine.",
+            "Le sitemap est déclaré dans le robots.txt et soumis dans la Search Console.",
+            "Chaque page indexable reçoit au moins un lien depuis une autre page du site. Une page présente au sitemap mais sans lien entrant est une page orpheline.",
+            "Les liens internes sont de véritables balises <a href>. Un bouton qui navigue en JavaScript est invisible pour les moteurs.",
+            "Les pages inexistantes renvoient un vrai code 404, et non une page d'accueil déguisée en erreur.",
+          ],
+          en: [
+            "sitemap.xml exists, contains only URLs returning 200, all on the canonical domain.",
+            "The sitemap is declared in robots.txt and submitted in Search Console.",
+            "Every indexable page has at least one internal link.",
+            "Internal links are real <a href> tags.",
+            "Missing pages return a genuine 404.",
+          ],
+        },
+      },
+      {
+        id: "performance",
+        title: {
+          fr: "Performance et données structurées — quatre points",
+          en: "Performance and structured data — four points",
+        },
+        paragraphs: {
+          fr: [
+            "La vitesse influence le classement, mais surtout le taux d'abandon : un visiteur qui attend trop repart avant d'avoir vu la page. Les données structurées, elles, n'améliorent pas directement la position, mais conditionnent l'affichage enrichi dans les résultats.",
+            "Une précision utile : les Core Web Vitals se mesurent sur des visiteurs réels. Un site neuf n'en a pas encore, et n'apparaîtra donc dans aucun rapport terrain avant plusieurs semaines de trafic. Les outils de laboratoire donnent une indication, pas une mesure.",
+          ],
+          en: [
+            "Speed affects ranking, but above all bounce rate. Structured data does not directly improve position but enables rich results.",
+            "Core Web Vitals are measured on real visitors. A new site has none yet.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Les images sont servies dans un format moderne, dimensionnées, et celle qui s'affiche en premier est chargée en priorité.",
+            "Les pages sont mises en cache lorsque leur contenu le permet. Un no-store sur une page statique impose un calcul serveur à chaque visite.",
+            "Un balisage de données structurées décrit l'organisation, et les articles portent une date de publication et un auteur.",
+            "Une image de partage social est définie, et les balises Open Graph pointent vers des URL absolues.",
+          ],
+          en: [
+            "Images use a modern format, are sized, and the first-displayed one is prioritised.",
+            "Pages are cached where content allows.",
+            "Structured data describes the organisation; articles carry a publication date and author.",
+            "A social sharing image is defined with absolute URLs.",
+          ],
+        },
+      },
+      {
+        id: "outils",
+        title: {
+          fr: "Les outils pour vérifier, tous gratuits",
+          en: "The tools to check with, all free",
+        },
+        paragraphs: {
+          fr: [
+            "Aucune de ces vérifications ne demande d'abonnement à un outil payant. Les quatre suivants suffisent à couvrir l'intégralité de la liste, et ce sont ceux qu'utilisent les professionnels pour l'essentiel du travail quotidien.",
+            "La Search Console de Google est la source de vérité sur l'indexation : elle seule indique quelles pages sont réellement indexées et pourquoi les autres ne le sont pas. Son outil d'inspection d'URL permet de voir une page telle que Google la reçoit, ce qu'aucun autre outil ne peut faire.",
+            "Le code source de la page, accessible d'un clic droit dans n'importe quel navigateur, permet de contrôler les balises title, description, canonical et les données structurées. C'est l'outil le plus simple et le plus sous-utilisé.",
+            "Le test des résultats enrichis de Google valide les données structurées et signale les propriétés manquantes. Enfin, PageSpeed Insights donne une indication de performance, en gardant à l'esprit que ses scores de laboratoire ne sont pas des Core Web Vitals réels.",
+            "Une dernière méthode, très efficace et souvent oubliée : consultez votre site dans une fenêtre de navigation privée, sur un téléphone, avec une connexion mobile. Beaucoup de problèmes visibles pour un visiteur ne le sont pas depuis un poste de développement.",
+          ],
+          en: [
+            "None of these checks requires a paid tool. Four free ones cover the entire list.",
+            "Google Search Console is the source of truth on indexing.",
+            "The page source, one right-click away, lets you check title, description, canonical and structured data.",
+            "The Rich Results Test validates structured data; PageSpeed Insights gives a performance indication.",
+            "One last method, often forgotten: view your site in a private window, on a phone, on mobile data.",
+          ],
+        },
+      },
+      {
+        id: "apres",
+        title: {
+          fr: "Après la mise en ligne",
+          en: "After launch",
+        },
+        paragraphs: {
+          fr: [
+            "La checklist ne s'arrête pas à la publication. Deux gestes conditionnent votre capacité à savoir si le site fonctionne, et à corriger vite s'il ne fonctionne pas.",
+            "Le premier est d'ouvrir un compte Search Console et d'y soumettre le sitemap le jour même. C'est le seul endroit où vous verrez ce que Google a réellement indexé, et les motifs pour lesquels il a écarté certaines pages.",
+            "Le second est de définir ce qui compte comme conversion — un envoi de formulaire, un appel — et de le mesurer dès le premier jour. Les outils d'analyse n'appliquent pas les conversions rétroactivement : chaque semaine sans suivi est une semaine de données perdue définitivement.",
+            "Enfin, s'il s'agit d'une refonte et non d'un site neuf, vérifiez une dernière fois que chaque ancienne adresse redirige vers son équivalent. C'est la première cause de chute de trafic après une migration, et la plus simple à éviter.",
+          ],
+          en: [
+            "The checklist does not end at publication.",
+            "Open a Search Console account and submit the sitemap the same day.",
+            "Define what counts as a conversion and measure it from day one. Analytics tools do not apply conversions retroactively.",
+            "If this is a redesign, check one last time that every old URL redirects to its equivalent.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Un site livré avec ces points déjà en place",
+      en: "A website delivered with these already in place",
+    },
+    ctaDescription: {
+      fr: "Chaque site que nous livrons part avec ces vérifications faites : structure, canonical, sitemap, données structurées et performance. Ce que nous ne promettons pas, c'est une position — personne ne la contrôle.",
+      en: "Every site we deliver ships with these checks done. What we do not promise is a ranking position — nobody controls that.",
+    },
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
