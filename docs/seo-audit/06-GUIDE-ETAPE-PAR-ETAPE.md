@@ -42,7 +42,60 @@ Chaque étape suit le même format : **Pourquoi → Action → Vérification**. 
 - **Étoffer les pages commerciales de 250 à 800-1 200 mots** (étape 14) et **produire 4-6 articles piliers de 1 500+ mots** (étape 15c) : ce sont des travaux de rédaction éditoriale, pas des correctifs techniques. Les plans et les mots-clés cibles sont dans [02-onpage-contenu.md § 8](02-onpage-contenu.md).
 - **Pages géolocalisées** : bloquées tant que les mentions légales portent « À COMPLÉTER » sur la raison sociale et l'adresse. Sans adresse réelle et vérifiable, créer des pages « agence web à [ville] » exposerait à une action manuelle.
 
-**Reste à faire :** `/balinjera`, l'étape 11, la rédaction éditoriale ci-dessus, puis le bloc E.
+### Bloc E — mesures avant / après
+
+| Étape | État | Mesure en production |
+|---|---|---|
+| 17. i18n par préfixe d'URL | ⏳ **En attente d'arbitrage** | Voir « Décision requise » ci-dessous |
+| 18. Hero allégé | ✅ | Animation désactivée sous 768px, en connexion lente et en économie de données ; `requestIdleCallback` au lieu d'un délai fixe ; canvas plafonné à DPR 1 |
+| 19. Région d'exécution | ✅ | `x-vercel-id` passé de `fra1::iad1` (Washington) à **`fra1::cdg1`** (Paris) |
+| 20. Images AVIF | ✅ | `orhakerem.png` (2,6 Mo source) servie en **AVIF, 20 892 octets** à w=640 |
+
+**TTFB de la page d'accueil, mesuré au curl (médiane sur 5 requêtes) :**
+
+| Avant (iad1) | Après (cdg1) | Gain |
+|---|---|---|
+| ~390 ms | **~311 ms** | **−79 ms sur chaque chargement de page** |
+
+Le TTFB résiduel de ~311 ms tient au rendu dynamique : rien n'est mis en cache
+(`cache-control: no-store`), donc chaque requête exécute la fonction serveur.
+C'est précisément ce que débloque l'étape 17.
+
+> ### 🔀 Décision requise avant l'étape 17
+> L'étape 17 rend les pages statiques (**TTFB attendu : ~30 à 60 ms, soit
+> encore ~250 ms de moins**). Deux chemins y mènent, et le choix dépend d'une
+> question commerciale, pas technique : **voulez-vous une version anglaise
+> indexable ?**
+>
+> **Si oui — migration vers `[locale]` dans l'URL.** Le français garde ses URLs
+> actuelles (`localePrefix: "as-needed"`), l'anglais passe sous `/en/…`.
+> Bénéfices : pages statiques, version anglaise indexable, `hreflang` possible.
+> Coût : refonte de l'arborescence des pages marketing, propagation de
+> `params.locale`, composition avec le middleware existant. **C'est le plus
+> gros changement de tout l'audit, et le plus risqué.**
+>
+> **Si non — suppression de l'i18n par cookie.** Le site sert le français
+> uniquement, le sélecteur de langue disparaît. Bénéfice : pages statiques,
+> avec un changement bien plus petit et bien plus sûr.
+>
+> À noter : la version anglaise actuelle n'est de toute façon **pas indexable**
+> (même URL, contenu servi selon un cookie). Elle n'apporte aujourd'hui aucun
+> trafic de recherche.
+
+### Note d'environnement — `pnpm dev` sous Node 25
+
+`next dev` renvoie une erreur 500 (`localStorage.getItem is not a function`)
+sous **Node v25.2.1** : cette version expose un `localStorage` global dont
+`getItem` est `undefined` tant qu'aucun `--localstorage-file` n'est fourni.
+Toute dépendance qui teste `typeof localStorage !== "undefined"` avant de
+l'appeler plante.
+
+**Ni le build ni la production ne sont affectés** : `pnpm build` génère bien
+les 86 pages sous Node 25, et le site déployé fonctionne. Un `.nvmrc` (Node 22)
+a été ajouté ; utilisez-le en local.
+
+**Reste à faire :** `/balinjera`, l'étape 11, l'étape 17, et la rédaction
+éditoriale du bloc D.
 
 > ### ⚠️ Point ouvert — `/balinjera`
 > Cette page expose `fantaprada25@gmail.com` et le numéro `+972 3 525 2527`
