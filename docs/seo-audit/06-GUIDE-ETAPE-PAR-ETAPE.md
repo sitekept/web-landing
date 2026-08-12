@@ -158,9 +158,29 @@ sitemap.
 > affaiblies mutuellement. Une seule page avocat existe, avec un champ
 > `secondaryDemo` qui renvoie vers les deux modèles. Aucune démo n'est perdue.
 
-**Reste à écrire :** deux à trois articles piliers — coût réel d'un abonnement
-sur cinq ans, checklist SEO avant mise en ligne, refonte de `/seo-geo` en page
-pilier.
+### Contenus de fond — livrés
+
+| Page | Volume | Cible |
+|---|---|---|
+| `/seo-geo` | 224 → **1 469 mots** | « SEO GEO », « référencement IA » |
+| `/blog/louer-ou-posseder-son-site-internet` | **1 181 mots** | « abonnement site internet », « alternative éditeur en ligne » |
+| `/blog/checklist-seo-avant-mise-en-ligne` | **1 300 mots** | « checklist SEO », fort potentiel de citation |
+
+Sitemap à **32 URLs**. Onze articles au blog.
+
+> **Sur les volumes.** L'audit visait 1 500 mots et plus pour un article
+> pilier. Les deux articles atteignent 1 181 et 1 300 mots. L'écart est
+> assumé : allonger artificiellement aurait dilué une densité qui est
+> aujourd'hui leur principal atout. À enrichir plus tard par des exemples
+> concrets, pas par du remplissage.
+
+> **Refonte de `/seo-geo` plutôt qu'un article GEO séparé.** Un article de
+> blog sur le même sujet serait entré en concurrence directe avec la page qui
+> vend la prestation. La page existante, déjà indexée, a donc été transformée
+> en pilier — même logique que pour la page avocat.
+
+**Reste à écrire :** rien d'identifié comme prioritaire. La suite relève de la
+publication régulière, pas d'un rattrapage.
 
 > **Point à trancher — les versions anglaises.** Le site ne sert plus que le
 > français, mais le type `BlogPost` et `LocalizedText` exigent toujours un
