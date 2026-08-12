@@ -167,14 +167,27 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             avant de décider&nbsp;: c&apos;est une démonstration publique, avec
             des coordonnées fictives.
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild variant="outline">
               <Link href={`/${page.demoSlug}`}>
                 {page.demoName}
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
+            {page.secondaryDemo ? (
+              <Button asChild variant="outline">
+                <Link href={`/${page.secondaryDemo.slug}`}>
+                  {page.secondaryDemo.name}
+                  <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Button>
+            ) : null}
           </div>
+          {page.secondaryDemo ? (
+            <p className="mt-4 text-sm text-slate-600">
+              {page.secondaryDemo.note}
+            </p>
+          ) : null}
           <p className="mt-6 text-sm text-slate-500">
             Voir aussi{" "}
             <Link

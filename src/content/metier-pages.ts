@@ -26,6 +26,12 @@ export interface MetierPage {
   label: string;
   demoSlug: string;
   demoName: string;
+  /**
+   * Seconde démo à montrer quand deux modèles servent le même métier. Évite
+   * de créer une page par démo, ce qui ferait se concurrencer deux pages sur
+   * la même requête.
+   */
+  secondaryDemo?: { slug: string; name: string; note: string };
   seoTitle: string;
   seoDescription: string;
   h1: string;
@@ -290,6 +296,515 @@ export const metierPages: MetierPage[] = [
         question: "Puis-je publier des photos de mes clientes ?",
         answer:
           "Uniquement avec leur accord, et il est prudent de le recueillir par écrit. Une photo identifiable est une donnée personnelle : l'accord doit être explicite et la personne doit pouvoir demander le retrait. Une mention simple dans votre fiche client suffit généralement.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-boulangerie",
+    metier: "boulangerie",
+    label: "une boulangerie",
+    demoSlug: "boulangerie",
+    demoName: "Démo boulangerie",
+    seoTitle: "Site internet pour boulangerie | Sitekept",
+    seoDescription:
+      "Créer le site d'une boulangerie : horaires et jour de fermeture, gamme, commandes spéciales. Ce que cherchent vos clients, site livré en 48h dès 500€.",
+    h1: "Site internet pour boulangerie",
+    intro:
+      "Une boulangerie vit de proximité et d'habitude, pas de prospection. Le site n'a donc pas à convaincre : il doit répondre vite à trois questions très concrètes — êtes-vous ouverts maintenant, faites-vous ce que je cherche, et puis-je commander. Le reste est du confort.",
+    searchIntent: [
+      "Une envie immédiate : « boulangerie ouverte près de moi », souvent tôt le matin ou un dimanche. Le visiteur veut vos horaires du jour, pas votre histoire.",
+      "Une commande à passer : galette, bûche, pain pour un buffet, sandwichs pour un chantier. Il cherche vos conditions et votre délai de commande.",
+      "Un régime ou une allergie : sans gluten, levain naturel, farines locales. Requêtes peu concurrentielles et très qualifiées, presque jamais traitées par les sites du métier.",
+    ],
+    siteMustDo: [
+      {
+        title: "Les horaires, jour de fermeture en tête",
+        detail:
+          "C'est l'information la plus consultée, et la plus souvent fausse en ligne. Indiquez le jour de fermeture, les horaires du dimanche et les périodes de congés — un client qui trouve porte close ne revient pas vérifier votre site.",
+      },
+      {
+        title: "Ce que vous faites vraiment vous-même",
+        detail:
+          "Pain au levain, viennoiseries pur beurre, cuisson sur place : c'est votre différence avec le pain industriel du supermarché, et c'est exactement ce que le client veut lire avant de traverser la rue.",
+      },
+      {
+        title: "Les commandes, avec le délai",
+        detail:
+          "Pièces montées, buffets, plateaux, pains spéciaux : dites ce qui se commande, sous quel délai et comment. Une commande de 80 sandwichs est un chiffre d'affaires qui ne passe pas par la vitrine.",
+      },
+      {
+        title: "Les allergènes et les farines",
+        detail:
+          "L'information sur les allergènes est une obligation qui s'applique aussi en vente directe. La porter en ligne vous évite des questions répétées au comptoir et vous positionne sur des recherches très ciblées.",
+      },
+      {
+        title: "Où se garer, et pour combien de temps",
+        detail:
+          "Un arrêt minute, une place devant, un parking à cinquante mètres : trivial pour vous, décisif pour quelqu'un qui hésite entre vous et la boulangerie du rond-point.",
+      },
+    ],
+    toPrepare: [
+      "Vos horaires précis, jour de fermeture et congés compris",
+      "La liste de vos produits et de vos spécialités",
+      "Vos conditions de commande et vos délais",
+      "Dix à quinze photos de vos produits et de la boutique",
+    ],
+    faq: [
+      {
+        question: "Une boulangerie de quartier a-t-elle besoin d'un site ?",
+        answer:
+          "Pour attirer de nouveaux clients, l'effet est limité : on choisit sa boulangerie en passant devant. Le site sert surtout à capter deux choses que la vitrine ne capte pas — les recherches d'horaires, très nombreuses, et les commandes pour événements, qui représentent des montants sans commune mesure avec une vente au comptoir.",
+      },
+      {
+        question: "Faut-il vendre en ligne quand on est boulanger ?",
+        answer:
+          "Rarement utile pour la vente quotidienne : le client vient de toute façon. Un simple formulaire de commande avec retrait en boutique couvre l'essentiel du besoin et n'implique ni paiement en ligne ni logistique. Une vraie boutique en ligne est une fonctionnalité sur mesure, chiffrée séparément.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-patisserie",
+    metier: "pâtisserie",
+    label: "une pâtisserie",
+    demoSlug: "pattiserie",
+    demoName: "Démo pâtisserie",
+    seoTitle: "Site internet pour pâtisserie | Sitekept",
+    seoDescription:
+      "Créer le site d'une pâtisserie : portfolio de créations, délais et tarifs de commande, gâteaux personnalisés. Site professionnel livré en 48h dès 500€.",
+    h1: "Site internet pour pâtisserie",
+    intro:
+      "La pâtisserie ne se vend pas comme le pain. On ne passe pas par hasard commander une pièce montée : on cherche, on compare des photos, on se projette. Le site d'une pâtisserie est donc d'abord un portfolio, et son enjeu principal est de transformer une envie visuelle en commande — avec les délais et les prix affichés avant que la question ne se pose.",
+    searchIntent: [
+      "Un événement à préparer : anniversaire, mariage, baptême. Le visiteur cherche des photos, un ordre de prix et un délai de commande, souvent plusieurs semaines à l'avance.",
+      "Une envie du moment : il cherche une pâtisserie de qualité à proximité, et regarde la vitrine en ligne avant de se déplacer.",
+      "Une contrainte alimentaire : sans gluten, sans lactose, végétalien. Requêtes précises, peu concurrentielles, à forte intention.",
+    ],
+    siteMustDo: [
+      {
+        title: "Un portfolio de créations, en grand",
+        detail:
+          "C'est le cœur du site. Vos gâteaux, photographiés correctement et à la lumière du jour. Sur ce métier, la photo est l'argument de vente ; un texte élogieux ne compense jamais une image médiocre.",
+      },
+      {
+        title: "Les délais de commande, très visibles",
+        detail:
+          "Quarante-huit heures pour un entremets, trois semaines pour une pièce montée : c'est la première frustration du client quand il l'apprend trop tard, et la première cause de commande perdue.",
+      },
+      {
+        title: "Des ordres de prix par nombre de parts",
+        detail:
+          "Peu de pâtisseries les affichent, et c'est précisément ce que tout le monde cherche. Une fourchette par format évite les demandes hors budget et vous fait gagner un temps considérable.",
+      },
+      {
+        title: "Les parfums et la carte du moment",
+        detail:
+          "Une carte saisonnière montre que la production est vivante. Datez-la : une carte de Noël encore en ligne au printemps produit l'effet inverse de celui recherché.",
+      },
+      {
+        title: "Les allergènes, sans détour",
+        detail:
+          "Fruits à coque, gluten, lactose, œufs. L'information est obligatoire et, sur ce métier, elle est souvent le critère qui décide de la commande.",
+      },
+    ],
+    toPrepare: [
+      "Vingt à trente photos de créations, bien éclairées",
+      "Vos délais de commande par type de pièce",
+      "Une grille de prix indicative par nombre de parts",
+      "La liste des allergènes et des alternatives proposées",
+    ],
+    faq: [
+      {
+        question: "Faut-il afficher ses prix de pâtisserie en ligne ?",
+        answer:
+          "Au moins des ordres de grandeur par nombre de parts. C'est la question posée dans presque tous les premiers messages : y répondre en amont vous évite des échanges qui n'aboutiront pas, et rassure les clients qui craignent une facture imprévisible sur une commande sur mesure.",
+      },
+      {
+        question: "Puis-je vendre mes pâtisseries en ligne ?",
+        answer:
+          "Techniquement oui, mais la vente à distance de produits frais implique une logistique, une chaîne du froid et des responsabilités qui dépassent largement le site. Un formulaire de commande avec retrait en boutique couvre l'essentiel du besoin sans ces contraintes. Une boutique en ligne complète relève du devis sur mesure.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-fleuriste",
+    metier: "fleuriste",
+    label: "un fleuriste",
+    demoSlug: "fleuriste",
+    demoName: "Démo fleuriste",
+    seoTitle: "Site internet pour fleuriste | Sitekept",
+    seoDescription:
+      "Créer le site d'un fleuriste : livraison, compositions par occasion, commandes de deuil et de mariage. Site professionnel livré en 48h à partir de 500€.",
+    h1: "Site internet pour fleuriste",
+    intro:
+      "Le métier de fleuriste a une particularité que peu partagent : on vient rarement chez vous pour vous, on vient pour une occasion. Naissance, anniversaire, mariage, deuil. Le site doit donc s'organiser autour de ces moments plutôt qu'autour de votre catalogue — et traiter le plus délicat d'entre eux avec la sobriété qu'il exige.",
+    searchIntent: [
+      "Une urgence affective : un deuil, un oubli d'anniversaire. Le visiteur cherche une livraison rapide et veut être rassuré en trois lignes, pas séduit.",
+      "Un événement préparé : mariage, entreprise, décoration. Parcours long, budget plus élevé, il compare les réalisations et cherche un rendez-vous.",
+      "Un achat de proximité : il cherche un fleuriste ouvert près de lui et regarde vos horaires et votre zone de livraison.",
+    ],
+    siteMustDo: [
+      {
+        title: "La zone et le délai de livraison, en évidence",
+        detail:
+          "Quelles communes, jusqu'à quelle heure pour une livraison le jour même, quel coût. C'est la question numéro un, et l'absence de réponse fait partir le visiteur chez un concurrent ou vers une plateforme nationale.",
+      },
+      {
+        title: "Les compositions organisées par occasion",
+        detail:
+          "Naissance, remerciement, mariage, deuil : le visiteur cherche un moment, pas une variété de fleur. Un catalogue classé par type de fleur l'oblige à traduire lui-même son besoin.",
+      },
+      {
+        title: "Le deuil traité avec sobriété",
+        detail:
+          "Gerbes, coussins, raquettes, livraison en funérarium ou à l'église, délais très courts. Une page dédiée, factuelle et sans effet de style, rend un vrai service à des gens qui commandent dans l'urgence et l'émotion.",
+      },
+      {
+        title: "La commande par téléphone facilitée",
+        detail:
+          "Sur ce métier, beaucoup de commandes se règlent en deux minutes de conversation : le message sur la carte, la couleur, l'adresse. Le numéro doit être cliquable sur chaque page.",
+      },
+      {
+        title: "Les abonnements et les contrats entreprise",
+        detail:
+          "Bouquets hebdomadaires pour un hall d'accueil, un cabinet, un hôtel : c'est du chiffre d'affaires récurrent qui ne passe jamais par la vitrine, et presque aucun site de fleuriste ne le mentionne.",
+      },
+    ],
+    toPrepare: [
+      "Vos communes de livraison, les délais et les tarifs",
+      "Des photos classées par occasion",
+      "Vos horaires, y compris les dimanches et jours fériés",
+      "Vos conditions pour les mariages et les contrats d'entreprise",
+    ],
+    faq: [
+      {
+        question: "Faut-il vendre ses bouquets en ligne ?",
+        answer:
+          "Ce n'est pas indispensable, et c'est souvent contre-productif au début. Une composition florale se discute : couleurs, budget, message. Un formulaire de commande avec rappel téléphonique convertit généralement mieux qu'un panier d'achat, tout en évitant les frustrations liées aux fleurs indisponibles en saison.",
+      },
+      {
+        question: "Comment se différencier des plateformes de livraison de fleurs ?",
+        answer:
+          "Par ce qu'elles ne peuvent pas offrir : vos créations réelles plutôt que des visuels standardisés, une livraison locale le jour même, et un interlocuteur qui adapte le bouquet. Les plateformes prennent une commission importante sur chaque commande ; un site vous donne un canal direct, sans intermédiaire.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-reparation-informatique",
+    metier: "réparation informatique",
+    label: "un réparateur informatique",
+    demoSlug: "ordinateur",
+    demoName: "Démo réparation informatique",
+    seoTitle: "Site internet pour réparateur informatique | Sitekept",
+    seoDescription:
+      "Créer le site d'un réparateur informatique : pannes traitées, tarifs, délais et confidentialité des données. Site professionnel livré en 48h dès 500€.",
+    h1: "Site internet pour réparateur informatique",
+    intro:
+      "Confier son ordinateur, c'est confier ses photos, ses documents et ses mots de passe. Le site d'un réparateur informatique a donc un travail que les autres métiers n'ont pas : lever une inquiétude sur la confidentialité, en même temps qu'il rassure sur la compétence et sur le prix. C'est un métier où l'opacité tarifaire est la norme, et où l'afficher suffit à se démarquer.",
+    searchIntent: [
+      "Une panne bloquante : écran noir, ordinateur qui ne démarre plus, virus. Le visiteur est inquiet, pressé, et cherche quelqu'un de joignable aujourd'hui.",
+      "Une perte de données : disque dur en panne, fichiers effacés. Intention très forte, budget élevé, et une angoisse réelle à traiter avec des mots simples.",
+      "Un besoin plus calme : lenteur, mise à niveau, achat de matériel, contrat de maintenance pour une petite entreprise.",
+    ],
+    siteMustDo: [
+      {
+        title: "Les pannes nommées dans les mots du client",
+        detail:
+          "Personne ne cherche « diagnostic matériel ». On cherche « mon ordinateur ne s'allume plus » ou « écran bleu ». Reprenez ces formulations, puis expliquez ce qu'elles recouvrent techniquement.",
+      },
+      {
+        title: "Les tarifs, ou au minimum des fourchettes",
+        detail:
+          "C'est le premier frein du métier, et la première raison pour laquelle les clients hésitent à pousser la porte. Afficher un tarif de diagnostic et des fourchettes par type d'intervention vous distingue immédiatement.",
+      },
+      {
+        title: "Ce que deviennent les données",
+        detail:
+          "Dites explicitement si vous accédez aux fichiers, ce que vous en faites, et comment vous les protégez. C'est l'inquiétude que personne ne formule à voix haute, et presque aucun site du métier ne l'adresse.",
+      },
+      {
+        title: "Le délai, et ce qui est possible dans la journée",
+        detail:
+          "Un client sans ordinateur est un client sans travail. Distinguez ce qui se règle sur place, ce qui prend deux jours et ce qui dépend d'une pièce à commander.",
+      },
+      {
+        title: "Atelier, domicile, ou à distance",
+        detail:
+          "Ces trois modes n'ont ni le même prix ni le même public. Les particuliers et les petites entreprises ne cherchent pas la même chose : séparez-les clairement.",
+      },
+    ],
+    toPrepare: [
+      "La liste des pannes que vous traitez, et celles que vous refusez",
+      "Votre grille tarifaire ou vos fourchettes par intervention",
+      "Vos délais habituels et vos conditions d'urgence",
+      "Votre politique de confidentialité des données clients",
+    ],
+    faq: [
+      {
+        question: "Faut-il afficher ses tarifs de réparation informatique ?",
+        answer:
+          "Le prix exact dépend du diagnostic, mais afficher le coût du diagnostic lui-même et des fourchettes par type d'intervention lève le principal frein du métier. L'opacité tarifaire est tellement répandue que la transparence devient à elle seule un argument commercial.",
+      },
+      {
+        question: "Comment rassurer sur la confidentialité des données ?",
+        answer:
+          "En l'écrivant noir sur blanc : ce à quoi vous accédez, ce que vous ne consultez jamais, si vous effectuez une sauvegarde avant intervention, et ce que vous faites des données à la restitution. Une page courte et factuelle vaut mieux qu'un long texte juridique que personne ne lira.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-entreprise-nettoyage",
+    metier: "entreprise de nettoyage",
+    label: "une entreprise de nettoyage",
+    demoSlug: "menage-nettoyage",
+    demoName: "Démo ménage et nettoyage",
+    seoTitle: "Site internet pour entreprise de nettoyage | Sitekept",
+    seoDescription:
+      "Créer le site d'une entreprise de nettoyage : prestations particuliers et professionnels, zone d'intervention, devis. Site livré en 48h à partir de 500€.",
+    h1: "Site internet pour entreprise de nettoyage",
+    intro:
+      "Le nettoyage est l'un des rares métiers qui s'adresse à deux publics n'ayant presque rien en commun. Un particulier cherche quelqu'un de confiance à qui remettre ses clés ; une entreprise cherche un prestataire capable de tenir un cahier des charges et de facturer proprement. Un site qui mélange les deux perd les deux.",
+    searchIntent: [
+      "Un particulier : ménage régulier, repassage, aide après une hospitalisation. Il cherche la confiance, le tarif horaire et l'éligibilité au crédit d'impôt.",
+      "Une entreprise : bureaux, commerce, copropriété. Elle cherche une zone d'intervention, des références et un devis, souvent après un prestataire décevant.",
+      "Un besoin ponctuel : remise en état après travaux, fin de bail, nettoyage de vitres. Intention forte, décision rapide, faible concurrence en ligne.",
+    ],
+    siteMustDo: [
+      {
+        title: "Séparer nettement particuliers et professionnels",
+        detail:
+          "Deux parcours, deux vocabulaires, deux modes de facturation. Une page unique qui tente de parler aux deux ne convainc ni l'un ni l'autre.",
+      },
+      {
+        title: "La zone d'intervention, commune par commune",
+        detail:
+          "C'est le premier critère de sélection et souvent le premier motif d'abandon. Nommer les communes vous positionne aussi sur des recherches locales que « toute la région » ne capte jamais.",
+      },
+      {
+        title: "Les prestations avec leur fréquence",
+        detail:
+          "Hebdomadaire, bimensuel, ponctuel : le client raisonne en rythme autant qu'en tâche. Décrire les formules par fréquence permet de se projeter et de comparer.",
+      },
+      {
+        title: "Les garanties, écrites",
+        detail:
+          "Personnel déclaré, assurance responsabilité civile professionnelle, remplacement en cas d'absence, produits utilisés. C'est le cœur de la confiance dans un métier où l'on remet ses clés à un inconnu.",
+      },
+      {
+        title: "Le devis : gratuit, sur place, sous quel délai",
+        detail:
+          "Presque toutes les prestations passent par un devis. Dire comment il s'obtient et en combien de temps transforme une hésitation en prise de contact.",
+      },
+    ],
+    toPrepare: [
+      "Vos communes d'intervention",
+      "Vos prestations, distinguées par public et par fréquence",
+      "Vos attestations d'assurance et vos éventuels agréments",
+      "Vos modalités de devis et vos délais de réponse",
+    ],
+    faq: [
+      {
+        question: "Faut-il parler du crédit d'impôt sur son site ?",
+        answer:
+          "Si vous êtes déclaré ou agréé au titre des services à la personne, c'est un argument décisif pour les particuliers, puisqu'il divise sensiblement le coût réel. Mentionnez le dispositif et vos conditions d'éligibilité, en renvoyant vers la source officielle plutôt qu'en promettant un montant : les règles évoluent et l'éligibilité dépend de la situation de chaque client.",
+      },
+      {
+        question: "Faut-il afficher un tarif horaire ?",
+        answer:
+          "Pour les particuliers, oui : c'est ce qu'ils cherchent, et un ordre de grandeur évite des appels sans suite. Pour les entreprises, un tarif horaire isolé a peu de sens — la surface, la fréquence et les contraintes d'accès déterminent le prix. Mieux vaut y présenter une démarche de devis claire.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-architecte-interieur",
+    metier: "architecte d'intérieur",
+    label: "un architecte d'intérieur",
+    demoSlug: "architecte-interieur",
+    demoName: "Démo architecte d'intérieur",
+    seoTitle: "Site internet pour architecte d'intérieur | Sitekept",
+    seoDescription:
+      "Créer le site d'un architecte d'intérieur : portfolio de projets, mode d'honoraires, déroulé d'une mission. Site professionnel livré en 48h dès 500€.",
+    h1: "Site internet pour architecte d'intérieur",
+    intro:
+      "Un projet d'architecture d'intérieur se décide lentement et se paie cher. Le visiteur qui arrive sur votre site n'achète rien aujourd'hui : il constitue une liste courte, qu'il consultera plusieurs fois avant de prendre contact. Votre site doit donc supporter ces allers-retours, et répondre à la question que presque aucun confrère n'ose traiter en ligne — combien ça coûte, et comment.",
+    searchIntent: [
+      "Un projet qui se précise : rénovation d'appartement, extension, réaménagement. Le visiteur cherche des réalisations comparables à la sienne, en surface et en style.",
+      "Une question de budget : « tarif architecte d'intérieur », « prix rénovation au m² ». Requête très fréquente, très rarement traitée par les sites du métier.",
+      "Une recherche de style : il a une idée esthétique et cherche quelqu'un dont le travail lui ressemble. Le portfolio décide seul.",
+    ],
+    siteMustDo: [
+      {
+        title: "Un portfolio par projet, pas par photo",
+        detail:
+          "Chaque projet mérite sa page : la demande initiale, les contraintes, la réponse apportée, la surface, le résultat. Un mur d'images sans contexte ne permet pas au visiteur de s'y reconnaître.",
+      },
+      {
+        title: "Le mode d'honoraires expliqué",
+        detail:
+          "Pourcentage du montant des travaux, forfait, vacation horaire : dire lequel vous pratiquez et ce qu'il recouvre est le plus fort différenciateur possible sur ce métier. L'opacité y est la règle, et elle fait fuir des clients solvables.",
+      },
+      {
+        title: "Le périmètre exact de la mission",
+        detail:
+          "Conception seule, suivi de chantier, coordination des artisans, achat du mobilier. Un client qui découvre au troisième rendez-vous que le suivi de chantier n'était pas compris ne signera pas.",
+      },
+      {
+        title: "Le déroulé d'un projet, étape par étape",
+        detail:
+          "Premier rendez-vous, relevé, esquisses, plans, chantier, livraison — avec des durées indicatives. Cela cadre les attentes et vous évite un grand nombre de questions préliminaires.",
+      },
+      {
+        title: "Les surfaces et budgets des projets montrés",
+        detail:
+          "Un visiteur qui rénove 45 m² ne se projette pas dans une villa de 300 m². Indiquer l'ordre de grandeur permet à chacun de savoir s'il est au bon endroit.",
+      },
+    ],
+    toPrepare: [
+      "Cinq à dix projets photographiés correctement, avec leur contexte",
+      "Votre mode d'honoraires et ce qu'il comprend",
+      "Le déroulé type d'une mission, avec des durées",
+      "Vos assurances et votre éventuelle inscription à un ordre ou syndicat",
+    ],
+    faq: [
+      {
+        question: "Faut-il afficher ses honoraires d'architecte d'intérieur ?",
+        answer:
+          "Pas nécessairement un montant, mais toujours le mode de calcul. Expliquer que vous facturez au pourcentage des travaux, au forfait ou à la vacation, et donner un ordre de grandeur, filtre les demandes hors budget et attire celles qui ne le sont pas. Le silence total sur ce point est le premier motif d'abandon sur les sites du métier.",
+      },
+      {
+        question: "Puis-je publier les photos des projets de mes clients ?",
+        answer:
+          "Avec leur accord, qu'il est prudent d'obtenir par écrit dès le contrat de mission plutôt qu'après coup. Précisez si le lieu peut être identifiable et si le nom du client peut être cité. Créditez également le photographe : les droits sur les images lui appartiennent sauf cession prévue.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-avocat",
+    metier: "avocat",
+    label: "un cabinet d'avocat",
+    demoSlug: "cabinet-avocat",
+    demoName: "Démo cabinet d'avocat",
+    secondaryDemo: {
+      slug: "avocate-tel-aviv",
+      name: "Démo avocate à Tel-Aviv",
+      note: "Une seconde base, pensée pour un cabinet exerçant à l'international auprès d'une clientèle francophone.",
+    },
+    seoTitle: "Site internet pour avocat et cabinet | Sitekept",
+    seoDescription:
+      "Créer le site d'un cabinet d'avocat : domaines d'intervention, honoraires, première consultation. Cadre déontologique respecté. Site livré en 48h dès 500€.",
+    h1: "Site internet pour cabinet d'avocat",
+    intro:
+      "Le site d'un avocat n'a pas à vendre, et ne le peut d'ailleurs pas librement : la communication de la profession est encadrée. Ce qu'il doit faire, c'est permettre à quelqu'un qui traverse une difficulté de comprendre si vous traitez son problème, ce que coûtera un premier rendez-vous, et à qui il aura affaire. C'est très différent d'une plaquette institutionnelle.",
+    searchIntent: [
+      "Un problème urgent : licenciement, litige, convocation. Le visiteur cherche un avocat du bon domaine, disponible rapidement, et souvent dans sa ville.",
+      "Une question de coût : « honoraires avocat », « première consultation prix ». Frein majeur à la prise de contact, très peu traité en ligne.",
+      "Une vérification : il a votre nom par une recommandation et veut confirmer votre barreau, votre parcours et vos domaines avant d'appeler.",
+    ],
+    siteMustDo: [
+      {
+        title: "Les domaines dits dans les mots du justiciable",
+        detail:
+          "On ne cherche pas « contentieux prud'homal », on cherche « licenciement abusif ». Nommez le problème tel qu'il est vécu, puis rattachez-le à la matière juridique.",
+      },
+      {
+        title: "Les honoraires et la première consultation",
+        detail:
+          "Le principe de la convention d'honoraires, votre mode de facturation, et le coût d'un premier rendez-vous. C'est le premier frein à la prise de contact, et l'information la plus recherchée après le domaine.",
+      },
+      {
+        title: "Qui vous êtes, précisément",
+        detail:
+          "Barreau d'inscription, année de prestation de serment, formations, langues pratiquées. Ce sont des éléments vérifiables, et c'est exactement ce qui construit la confiance dans une profession réglementée.",
+      },
+      {
+        title: "Ce qui se passe au premier rendez-vous",
+        detail:
+          "Durée, documents à apporter, déroulé, confidentialité. Beaucoup de justiciables n'ont jamais consulté d'avocat et n'osent pas poser ces questions.",
+      },
+      {
+        title: "L'accès et les modalités de rendez-vous",
+        detail:
+          "Adresse, accessibilité, possibilité de consultation à distance. La visioconférence a élargi la zone de recrutement de nombreux cabinets, encore faut-il l'annoncer.",
+      },
+    ],
+    toPrepare: [
+      "Vos domaines d'intervention, et ceux que vous ne traitez pas",
+      "Votre mode de facturation et le coût d'une première consultation",
+      "Votre parcours, votre barreau et vos langues de travail",
+      "Vos modalités de rendez-vous, en cabinet et à distance",
+    ],
+    faq: [
+      {
+        question: "Un avocat a-t-il le droit d'avoir un site internet ?",
+        answer:
+          "Oui. La publicité et la sollicitation personnalisée sont autorisées pour les avocats depuis 2014, mais elles restent encadrées : l'information doit être sincère, respecter la dignité de la profession, la confraternité et le secret professionnel, et ne peut comporter ni élément comparatif ni promesse de résultat. Nous construisons le site sur des informations factuelles, et il vous revient de faire valider les contenus au regard des règles de votre barreau.",
+      },
+      {
+        question: "Peut-on publier ses résultats ou ses affaires gagnées ?",
+        answer:
+          "C'est le point le plus délicat. Le secret professionnel s'oppose à la divulgation d'éléments identifiants, et la publicité comparative ou laissant espérer un résultat est prohibée. Beaucoup de cabinets présentent à la place des cas types anonymisés et généralisés, qui expliquent une démarche sans se référer à un dossier réel — une approche à valider avec votre ordre.",
+      },
+    ],
+  },
+  {
+    slug: "site-internet-agence-immobiliere",
+    metier: "agence immobilière",
+    label: "une agence immobilière",
+    demoSlug: "agence-immobiliere",
+    demoName: "Démo agence immobilière",
+    seoTitle: "Site internet pour agence immobilière | Sitekept",
+    seoDescription:
+      "Créer le site d'une agence immobilière : estimation en ligne, biens à jour, honoraires affichés, secteurs couverts. Site livré en 48h à partir de 500€.",
+    h1: "Site internet pour agence immobilière",
+    intro:
+      "Une erreur structure la plupart des sites d'agence : ils sont construits pour les acheteurs, alors que le client à conquérir est le vendeur. Les acheteurs viennent de toute façon par les portails d'annonces. Ce que votre site doit capter, c'est le propriétaire qui se demande ce que vaut son bien — et il commence toujours par une estimation.",
+    searchIntent: [
+      "Un vendeur qui s'interroge : « estimation maison », « prix au m² » dans sa commune. Intention commerciale maximale, et c'est le client qui vous rapporte un mandat.",
+      "Un acheteur ou un locataire : il cherche des biens, souvent après les avoir vus sur un portail. Il vient vérifier qui vous êtes.",
+      "Une recherche d'agence : il compare les honoraires, les secteurs couverts et l'équipe avant de confier un mandat.",
+    ],
+    siteMustDo: [
+      {
+        title: "L'estimation comme porte d'entrée principale",
+        detail:
+          "C'est votre meilleur outil de captation de mandats. Un formulaire simple, une promesse claire de rappel sous 24 ou 48 heures, et une visibilité sur chaque page : c'est ce qui transforme un site vitrine en outil commercial.",
+      },
+      {
+        title: "Des biens réellement à jour",
+        detail:
+          "Un bien vendu resté en ligne détruit la confiance plus sûrement qu'une absence d'annonces. Si vous ne pouvez pas maintenir un portefeuille à jour, mieux vaut montrer les biens vendus récemment, qui prouvent votre activité.",
+      },
+      {
+        title: "Les honoraires affichés",
+        detail:
+          "L'affichage du barème est une obligation réglementaire pour les professionnels de l'immobilier, en agence comme en ligne. Autant en faire un argument de clarté plutôt qu'une mention réglementaire enfouie en pied de page.",
+      },
+      {
+        title: "Les secteurs couverts, quartier par quartier",
+        detail:
+          "L'immobilier est un métier d'hyper-proximité. Nommer les quartiers et les communes vous positionne sur des recherches locales très qualifiées, que « toute l'agglomération » ne capte jamais.",
+      },
+      {
+        title: "L'équipe, avec de vrais visages",
+        detail:
+          "Confier la vente de son logement est une décision engageante, et elle se prend envers une personne plus qu'envers une enseigne. Photos réelles, prénoms, spécialités et secteurs de chacun.",
+      },
+    ],
+    toPrepare: [
+      "Votre barème d'honoraires, vente et location",
+      "Vos secteurs et quartiers d'intervention",
+      "Les photos et présentations de l'équipe",
+      "Votre carte professionnelle et vos garanties",
+    ],
+    faq: [
+      {
+        question: "Faut-il un site quand on diffuse déjà sur les portails ?",
+        answer:
+          "Les portails vous apportent des acheteurs, pas des mandats — et ils vous facturent la diffusion tout en mettant vos annonces à côté de celles de vos concurrents. Le site sert l'autre moitié du métier : capter les vendeurs, par l'estimation, et démontrer votre ancrage local. Les deux sont complémentaires, mais un seul vous appartient.",
+      },
+      {
+        question: "Faut-il un moteur de recherche de biens sur le site ?",
+        answer:
+          "Pas nécessairement au démarrage. Un portefeuille de quelques biens bien présentés, mis à jour à la main, sert mieux qu'un moteur alimenté par un flux mal synchronisé. La connexion automatique à un logiciel de transaction est une fonctionnalité sur mesure, qui se chiffre séparément une fois le besoin avéré.",
       },
     ],
   },
