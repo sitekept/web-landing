@@ -3,11 +3,17 @@ import { sitekeptPublicTemplateSlugs } from "@/content/admin-template-catalog";
 export const PUBLIC_TEMPLATE_SLUGS = sitekeptPublicTemplateSlugs;
 
 /**
- * Démos hébergées sur sitekept.com mais absentes du catalogue public : elles
- * ont une route locale et répondent 200, donc elles sont indexables si on ne
- * les traite pas comme les autres démos.
+ * Démos hébergées sur sitekept.com mais absentes du catalogue public.
+ *
+ * Vide aujourd'hui : `balinjera` en faisait partie, sa route a été retirée du
+ * domaine. Il s'agissait de la reproduction du site d'une cliente réelle, qui
+ * exposait publiquement son adresse e-mail personnelle. La cliente disposant
+ * de son propre domaine, la copie était sans objet — la page réalisations
+ * pointe désormais directement vers son site.
+ *
+ * À réutiliser si une démo est de nouveau servie hors catalogue public.
  */
-const UNLISTED_DEMO_SLUGS = ["balinjera"] as const;
+const UNLISTED_DEMO_SLUGS: readonly string[] = [];
 
 /**
  * Tous les slugs de démonstration servis par ce domaine, publics ou non.

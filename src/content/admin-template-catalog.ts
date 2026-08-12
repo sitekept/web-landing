@@ -187,7 +187,8 @@ export const adminTemplateCatalog: AdminTemplateCatalogEntry[] = [
     slug: "balinjera",
     name: "Balinjera",
     sector: "Restauration",
-    notes: "Masquée du catalogue public, conservée pour revue admin.",
+    notes:
+      "Route retirée de sitekept.com : il s'agissait de la reproduction du site d'une cliente réelle, exposant son e-mail personnel. La cliente a son propre domaine, vers lequel pointe la page réalisations.",
   }),
   withLinks({
     slug: "alex-spa-massage",
