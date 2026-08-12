@@ -131,11 +131,36 @@ Sitemap passé à **22 URLs**. Les pages métier reçoivent des liens depuis
 - **Aucune affirmation juridique péremptoire**, et aucun avis client ou
   `AggregateRating` inventé.
 
-**Reste à écrire :** neuf pages métier (boulangerie, fleuriste, pâtisserie,
-ménage-nettoyage, cabinet d'avocat, agence immobilière, architecte
-d'intérieur, réparation informatique, avocat) et deux à trois articles
-piliers — coût réel d'un abonnement sur cinq ans, checklist SEO avant mise en
-ligne, refonte de `/seo-geo` en page pilier.
+### Pages métier — les 13 démos sont couvertes
+
+**Douze pages, 704 à 783 mots chacune**, toutes prérendues, avec
+`BreadcrumbList` et `FAQPage`, liées depuis `/templates` et présentes au
+sitemap.
+
+| Page | Démo liée |
+|---|---|
+| `/site-internet-plombier` | plombier-chauffagiste |
+| `/site-internet-dentiste` | dentiste |
+| `/site-internet-restaurant` | restaurant-bistrot |
+| `/site-internet-salon-de-coiffure` | salon-coiffure |
+| `/site-internet-boulangerie` | boulangerie |
+| `/site-internet-patisserie` | pattiserie |
+| `/site-internet-fleuriste` | fleuriste |
+| `/site-internet-reparation-informatique` | ordinateur |
+| `/site-internet-entreprise-nettoyage` | menage-nettoyage |
+| `/site-internet-architecte-interieur` | architecte-interieur |
+| `/site-internet-avocat` | cabinet-avocat **+** avocate-tel-aviv |
+| `/site-internet-agence-immobiliere` | agence-immobiliere |
+
+> **Douze pages pour treize démos, volontairement.** `cabinet-avocat` et
+> `avocate-tel-aviv` viseraient tous deux « site internet avocat » : deux
+> pages en cannibalisation directe sur la même requête, qui se seraient
+> affaiblies mutuellement. Une seule page avocat existe, avec un champ
+> `secondaryDemo` qui renvoie vers les deux modèles. Aucune démo n'est perdue.
+
+**Reste à écrire :** deux à trois articles piliers — coût réel d'un abonnement
+sur cinq ans, checklist SEO avant mise en ligne, refonte de `/seo-geo` en page
+pilier.
 
 > **Point à trancher — les versions anglaises.** Le site ne sert plus que le
 > français, mais le type `BlogPost` et `LocalizedText` exigent toujours un
