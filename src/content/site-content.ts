@@ -1735,6 +1735,230 @@ export const blogPosts: BlogPost[] = [
       en: "We can show you how to frame a fast website without sacrificing ownership or future handoff.",
     },
   },
+
+  {
+    slug: "recuperer-son-site-web-chez-un-prestataire",
+    publishedAt: "2026-08-11",
+    updatedAt: "2026-08-11",
+    author: "Équipe Sitekept",
+    category: {
+      fr: "Propriété du site",
+      en: "Website ownership",
+    },
+    title: {
+      fr: "Récupérer son site web chez un prestataire : le guide complet",
+      en: "Getting your website back from a provider: the complete guide",
+    },
+    excerpt: {
+      fr: "Nom de domaine, code source, contenus, accès : ce qu'il faut réclamer, dans quel ordre, et quoi faire quand le prestataire ne répond plus.",
+      en: "Domain name, source code, content, access: what to reclaim, in what order, and what to do when the provider stops answering.",
+    },
+    seoTitle: {
+      fr: "Récupérer son site web chez un prestataire | Sitekept",
+      en: "Getting your website back from a provider | Sitekept",
+    },
+    seoDescription: {
+      fr: "Changer de prestataire web : la procédure pour récupérer votre nom de domaine, votre code source, vos contenus et vos accès, étape par étape.",
+      en: "Changing web provider: the step-by-step procedure to recover your domain, source code, content and access.",
+    },
+    intro: {
+      fr: "Vouloir changer de prestataire est une décision banale. La rendre possible l'est beaucoup moins. Beaucoup d'entreprises découvrent à ce moment précis qu'elles ne possèdent presque rien de leur propre site : ni le nom de domaine, ni le code, parfois pas même les textes. Ce guide décrit ce qu'il faut réclamer, dans quel ordre, et ce que vous pouvez faire quand le dialogue se bloque.",
+      en: "Wanting to change provider is an ordinary decision. Making it possible is much less so. Many companies discover at that exact moment that they own almost nothing of their own website. This guide covers what to reclaim, in what order, and what to do when the conversation stalls.",
+    },
+    sections: [
+      {
+        id: "inventaire",
+        title: {
+          fr: "Étape 1 — Faire l'inventaire de ce que vous ne contrôlez pas",
+          en: "Step 1 — Take stock of what you do not control",
+        },
+        paragraphs: {
+          fr: [
+            "Avant d'annoncer quoi que ce soit, établissez la liste de ce qui compose votre présence en ligne et, pour chaque élément, qui en détient réellement les clés. Cet inventaire détermine votre marge de manœuvre : il vaut mieux le faire avant d'ouvrir la discussion qu'après.",
+            "Le plus simple est de commencer par le nom de domaine, parce que c'est le seul élément dont la titularité est publique et vérifiable en quelques secondes, sans rien demander à personne.",
+          ],
+          en: [
+            "Before announcing anything, list what makes up your online presence and, for each item, who actually holds the keys. This inventory determines your room for manoeuvre.",
+            "Start with the domain name: it is the only item whose ownership is public and verifiable in seconds, without asking anyone.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Le nom de domaine : à quel nom est-il déposé, et chez quel bureau d'enregistrement ?",
+            "Le code source : existe-t-il un dépôt, et y avez-vous accès ?",
+            "L'hébergement : le contrat est-il à votre nom ou à celui du prestataire ?",
+            "Les contenus : textes, photos, logo — qui les a produits, et sous quelles conditions ?",
+            "Les comptes de mesure : Search Console, Analytics, fiche d'établissement Google.",
+            "Les boîtes e-mail rattachées au domaine, souvent oubliées jusqu'au jour de la coupure.",
+          ],
+          en: [
+            "The domain name: in whose name is it registered, and with which registrar?",
+            "The source code: does a repository exist, and do you have access?",
+            "Hosting: is the contract in your name or the provider's?",
+            "Content: text, photos, logo — who produced them, and under what terms?",
+            "Measurement accounts: Search Console, Analytics, Google Business Profile.",
+            "Email boxes attached to the domain, often forgotten until the day they stop working.",
+          ],
+        },
+      },
+      {
+        id: "nom-de-domaine",
+        title: {
+          fr: "Le nom de domaine : l'élément à sécuriser en premier",
+          en: "The domain name: secure this one first",
+        },
+        paragraphs: {
+          fr: [
+            "Le nom de domaine est votre adresse. Sans lui, un site tout neuf ne sert à rien : vos clients, vos cartes de visite et vos référencements pointent vers une adresse que vous ne contrôlez pas. C'est donc le premier point à traiter, avant même de parler du site lui-même.",
+            "Vérifiez à quel nom il est déposé au moyen d'une requête WHOIS publique, ou directement auprès de l'AFNIC pour un .fr. Trois situations se présentent. S'il est à votre nom, vous êtes propriétaire : il vous suffira de demander le code de transfert pour l'emmener chez un autre bureau d'enregistrement. S'il est au nom du prestataire, vous devrez négocier un changement de titulaire. S'il est déposé au nom d'un salarié parti depuis, la situation est souvent plus délicate qu'avec le prestataire lui-même.",
+            "Un point mérite d'être connu : un nom de domaine se renouvelle. S'il expire pendant un conflit, il peut être racheté par un tiers, et vous n'aurez aucun recours simple. Vérifiez la date d'expiration dès l'inventaire, et considérez-la comme votre échéance réelle.",
+          ],
+          en: [
+            "The domain is your address. Without it, a brand-new website is useless: your customers and your search rankings point to an address you do not control.",
+            "Check the registrant with a public WHOIS lookup, or with AFNIC for a .fr domain. Three situations arise: registered in your name, in the provider's name, or in the name of a former employee — the last being the trickiest.",
+            "One point worth knowing: domains expire. If yours lapses during a dispute, a third party can buy it and you will have little simple recourse. Check the expiry date during the inventory.",
+          ],
+        },
+      },
+      {
+        id: "contrat",
+        title: {
+          fr: "Étape 2 — Relire le contrat avant d'annoncer votre départ",
+          en: "Step 2 — Reread the contract before announcing your departure",
+        },
+        paragraphs: {
+          fr: [
+            "C'est l'étape que l'on saute le plus souvent, et celle qui change le plus l'issue. Reprenez le devis signé, les conditions générales et les éventuels avenants. Vous cherchez trois choses : ce que vous avez acheté exactement, la durée d'engagement et son préavis, et la présence ou l'absence d'une clause de cession des droits.",
+            "Ce dernier point surprend beaucoup de dirigeants. En droit français, payer le développement d'un site ne vous en transfère pas automatiquement les droits d'auteur : la cession doit être expressément prévue par écrit et délimitée. Autrement dit, un prestataire qui refuse de livrer le code source n'est pas nécessairement de mauvaise foi — il peut être dans son droit si le contrat ne prévoit rien. C'est une raison de plus de traiter ce point à l'achat plutôt qu'au départ.",
+            "Si votre contrat comporte un engagement de durée, notez la date d'échéance et le délai de préavis. Résilier hors des clous peut vous exposer à devoir payer les mensualités restantes, ce qui pèse dans la négociation.",
+          ],
+          en: [
+            "This is the step most often skipped, and the one that changes the outcome most. Look for three things: what you actually bought, the commitment term and its notice period, and whether a rights assignment clause exists.",
+            "Under French law, paying for development does not automatically transfer copyright: the assignment must be expressly set out in writing. A provider refusing to hand over source code is not necessarily acting in bad faith — they may be within their rights if the contract is silent.",
+            "If your contract has a fixed term, note the expiry date and notice period before you act.",
+          ],
+        },
+      },
+      {
+        id: "demande-ecrite",
+        title: {
+          fr: "Étape 3 — Formuler la demande par écrit, et précisément",
+          en: "Step 3 — Make the request in writing, and precisely",
+        },
+        paragraphs: {
+          fr: [
+            "Une demande vague obtient une réponse vague. Écrivez un courriel — ou un courrier recommandé si la relation est déjà tendue — qui énumère point par point ce que vous demandez, avec une date de réponse souhaitée. Restez factuel et courtois : la plupart des transferts se règlent en quelques jours quand la demande est claire et que la relation ne s'est pas envenimée.",
+            "Conservez une trace écrite de tout, y compris des échanges qui se passent bien. Si la suite se complique, cette trace est ce qui vous permettra de démontrer votre bonne foi et la chronologie des faits.",
+          ],
+          en: [
+            "A vague request gets a vague answer. Write an email — or a registered letter if the relationship is already strained — listing point by point what you are asking for, with a requested response date.",
+            "Keep a written record of everything, including exchanges that go well.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Le code de transfert du nom de domaine, et le changement de titulaire si nécessaire",
+            "Une archive complète du site : code source, base de données, fichiers médias",
+            "Les identifiants d'administration et d'hébergement",
+            "Le transfert de propriété des comptes Analytics, Search Console et de la fiche d'établissement",
+            "Les fichiers sources du logo et des visuels, dans leur format d'origine",
+            "La confirmation écrite que vous pouvez exploiter et faire modifier le site",
+          ],
+          en: [
+            "The domain transfer code, and a change of registrant if needed",
+            "A full archive of the site: source code, database, media files",
+            "Administration and hosting credentials",
+            "Ownership transfer of Analytics, Search Console and the business profile",
+            "Source files for the logo and visuals, in their original format",
+            "Written confirmation that you may operate and modify the site",
+          ],
+        },
+      },
+      {
+        id: "blocage",
+        title: {
+          fr: "Étape 4 — Quand le prestataire ne répond plus",
+          en: "Step 4 — When the provider stops answering",
+        },
+        paragraphs: {
+          fr: [
+            "Le silence est le cas le plus fréquent, loin devant le refus explicite. Commencez par relancer une fois par écrit en fixant une échéance raisonnable, puis par lettre recommandée avec accusé de réception, qui donne une date certaine à votre demande.",
+            "Si le blocage porte sur le nom de domaine, sachez que les bureaux d'enregistrement et les organismes de gestion — l'AFNIC pour le .fr — disposent de procédures en cas de litige sur la titularité. Elles ne sont ni immédiates ni automatiques, mais elles existent, et elles constituent souvent un argument suffisant pour débloquer la discussion.",
+            "Si le litige porte sur des sommes ou sur l'exécution du contrat, la médiation de la consommation ou un conseil juridique sera plus efficace qu'un échange qui s'envenime. Sur les petits montants, la procédure judiciaire coûte souvent plus cher que ce qu'elle permet de récupérer : arbitrez froidement entre le temps que vous y passerez et le coût de la reconstruction.",
+            "Car c'est parfois la conclusion la plus rationnelle. Quand le code est irrécupérable, refaire un site propre coûte souvent moins cher, en argent comme en énergie, que d'arracher un code que vous ne pourrez de toute façon pas faire évoluer facilement. Ce qui se négocie en priorité, c'est le nom de domaine et les contenus : eux ne se reconstruisent pas.",
+          ],
+          en: [
+            "Silence is the most common case, well ahead of explicit refusal. Follow up once in writing with a reasonable deadline, then by registered letter, which gives your request a certain date.",
+            "If the blockage concerns the domain name, registrars and management bodies — AFNIC for .fr — have dispute procedures for contested ownership.",
+            "On small amounts, litigation often costs more than it recovers. Weigh the time against the cost of rebuilding.",
+            "Rebuilding is sometimes the rational conclusion. What must be negotiated first is the domain name and the content: those cannot be rebuilt.",
+          ],
+        },
+      },
+      {
+        id: "referencement",
+        title: {
+          fr: "Ce que vous risquez de perdre en référencement, et comment le limiter",
+          en: "What you risk losing in search rankings, and how to limit it",
+        },
+        paragraphs: {
+          fr: [
+            "Changer de site est un moment de fragilité pour le référencement, et c'est l'angle mort de la plupart des migrations. Le risque n'est pas de perdre son ancienneté de domaine — elle reste attachée au nom de domaine, que vous conservez — mais de casser les adresses que Google a mis des années à indexer.",
+            "Le point critique est la correspondance entre anciennes et nouvelles URL. Si votre page « /nos-services » devient « /prestations » sans redirection, Google met des semaines à comprendre, et pendant ce temps l'ancienne adresse renvoie une erreur aux visiteurs comme aux moteurs. La parade est simple et se prépare avant la bascule : relever la liste complète des adresses existantes, et poser une redirection permanente de chacune vers son équivalent sur le nouveau site.",
+            "Récupérez aussi la propriété de la Search Console avant de couper l'ancien site : c'est le seul endroit où figure la liste des pages réellement indexées et des requêtes qui vous amenaient du trafic. Sans elle, vous naviguez à l'aveugle, et vous ne saurez pas si une baisse après migration vient de la bascule ou d'autre chose.",
+            "Enfin, surveillez pendant quatre à six semaines. Une variation les premiers jours est normale ; une baisse qui persiste au-delà d'un mois signale généralement un problème de redirection ou de contenu perdu, et se corrige encore facilement à ce stade.",
+          ],
+          en: [
+            "Changing website is a fragile moment for search rankings. The risk is not losing domain age — that stays with the domain you keep — but breaking the addresses Google spent years indexing.",
+            "The critical point is the mapping between old and new URLs. Record every existing address before the switch, and set a permanent redirect from each to its equivalent.",
+            "Recover Search Console ownership before shutting down the old site: it is the only place listing the pages actually indexed and the queries bringing you traffic.",
+            "Monitor for four to six weeks. A drop persisting beyond a month usually signals a redirect problem, still easy to fix at that stage.",
+          ],
+        },
+      },
+      {
+        id: "apres",
+        title: {
+          fr: "Ce qu'il faut faire juste après la récupération",
+          en: "What to do right after recovery",
+        },
+        paragraphs: {
+          fr: [
+            "Une fois le transfert obtenu, quelques gestes évitent de se retrouver dans la même situation deux ans plus tard. Ils prennent une heure et valent bien davantage.",
+            "Le plus important est le dernier : la prochaine fois, faites écrire la cession dans le devis avant de signer. Une ligne suffit, et elle vous épargne l'intégralité de la procédure décrite dans cet article.",
+          ],
+          en: [
+            "Once the transfer is done, a few steps prevent ending up in the same place two years later.",
+            "The most important is the last one: next time, have the assignment written into the quote before signing.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Activez le renouvellement automatique du nom de domaine, et notez son échéance",
+            "Changez tous les mots de passe, y compris ceux qui semblent sans importance",
+            "Vérifiez que vous êtes bien propriétaire — et pas simple administrateur — des comptes Analytics et Search Console",
+            "Conservez une copie du code et de la base de données hors de l'hébergement",
+            "Exigez de votre prochain prestataire une clause écrite de cession et un dépôt à votre nom",
+          ],
+          en: [
+            "Enable auto-renewal on the domain, and note its expiry",
+            "Change every password, including those that seem unimportant",
+            "Check you are owner — not just administrator — of Analytics and Search Console",
+            "Keep a copy of the code and database outside the hosting",
+            "Require your next provider to put the assignment in writing",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Repartir sur un site qui vous appartient dès le premier jour",
+      en: "Start again with a website that is yours from day one",
+    },
+    ctaDescription: {
+      fr: "Chez Sitekept, le code est déposé sur un dépôt à votre nom et les accès vous sont remis à la livraison. Il n'y a pas d'abonnement à payer pour que le site reste en ligne, et rien à négocier le jour où vous voudrez partir.",
+      en: "At Sitekept the code sits in a repository under your name and the access is handed over at delivery. There is no subscription to keep the site online, and nothing to negotiate the day you want to leave.",
+    },
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
