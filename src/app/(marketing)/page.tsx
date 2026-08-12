@@ -24,12 +24,12 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "Sitekept | Site pro en 48h, sans abonnement et 100% à vous"
-        : "Sitekept | Professional website in 48h, no subscription, fully yours",
+        ? "Création de site internet dès 500€ | Sitekept"
+        : "Website design from €500 | Sitekept",
     description:
       locale === "fr"
-        ? "Sitekept livre des sites professionnels à partir de 500€, mis en ligne en 48h, sans abonnement imposé, avec déploiement inclus, domaine offert 1 an et optimisation SEO + GEO."
-        : "Sitekept delivers professional websites from €500, launched in 48 hours, with no forced subscription, deployment included, a free first-year domain and SEO + GEO optimization.",
+        ? "Agence web spécialisée PME et artisans : votre site professionnel livré en 48h, sans abonnement, 100 % à vous. Devis gratuit en 24h."
+        : "Web agency for small businesses and trades: your professional website delivered in 48h, no subscription, fully yours. Free quote within 24h.",
     path: "/",
   });
 }
