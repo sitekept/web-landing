@@ -26,7 +26,23 @@ Chaque étape suit le même format : **Pourquoi → Action → Vérification**. 
 | 10. Événement `generate_lead` | ✅ Code | Émis à l'envoi du formulaire |
 | 11. Marquer l'événement clé | ⏳ Bloqué | Nécessite un premier déclenchement réel |
 
-**Reste à faire :** `/balinjera`, l'étape 11, puis les blocs D et E.
+### Bloc D — terminé (commit `2660e38`)
+
+| Étape | État | Détail |
+|---|---|---|
+| 12. Titles & descriptions | ✅ | Metadata propre sur `/realization`, `/privacy`, `/terms`, `/mentions-legales` (elles héritaient de la home) ; home, `/templates`, `/blog`, `/seo-geo` réécrits sur des intentions de recherche ; 3 seoTitle d'articles ramenés sous 60 caractères |
+| 12b. Français | ✅ | Accents rétablis dans les metadata de `/blog` et `/templates` et dans tout l'article `site-optimise-seo-geo` ; « templates publiques » → « publics » |
+| 13. Structure Hn | ✅ | H1 de la home porteur de mot-clé ; `<h2>` de section ajouté sur `/templates` et `/realization` (sauts H1→H3 supprimés) |
+| 15. Dates & auteurs | ✅ | `publishedAt` / `updatedAt` / `author` sur les 8 articles, **dates dérivées de l'historique git**, affichées dans le template ; sitemap branché sur `updatedAt` |
+| 15b. Données structurées | ✅ | `BlogPosting` + `BreadcrumbList` sur les articles, `FAQPage` + `BreadcrumbList` sur `/tarifs` |
+| 16. Page tarifs | ✅ | `/tarifs` créée à partir des conditions réelles, FAQ de 6 questions, ajoutée au sitemap, à la navigation et au footer |
+
+**Non fait dans le bloc D, et pourquoi :**
+
+- **Étoffer les pages commerciales de 250 à 800-1 200 mots** (étape 14) et **produire 4-6 articles piliers de 1 500+ mots** (étape 15c) : ce sont des travaux de rédaction éditoriale, pas des correctifs techniques. Les plans et les mots-clés cibles sont dans [02-onpage-contenu.md § 8](02-onpage-contenu.md).
+- **Pages géolocalisées** : bloquées tant que les mentions légales portent « À COMPLÉTER » sur la raison sociale et l'adresse. Sans adresse réelle et vérifiable, créer des pages « agence web à [ville] » exposerait à une action manuelle.
+
+**Reste à faire :** `/balinjera`, l'étape 11, la rédaction éditoriale ci-dessus, puis le bloc E.
 
 > ### ⚠️ Point ouvert — `/balinjera`
 > Cette page expose `fantaprada25@gmail.com` et le numéro `+972 3 525 2527`
