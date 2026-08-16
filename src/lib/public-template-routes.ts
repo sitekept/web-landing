@@ -13,7 +13,7 @@ export const PUBLIC_TEMPLATE_SLUGS = sitekeptPublicTemplateSlugs;
  *
  * À réutiliser si une démo est de nouveau servie hors catalogue public.
  */
-const UNLISTED_DEMO_SLUGS: readonly string[] = [];
+const UNLISTED_DEMO_SLUGS: readonly string[] = ["je"];
 
 /**
  * Tous les slugs de démonstration servis par ce domaine, publics ou non.
