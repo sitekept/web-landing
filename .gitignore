@@ -24,6 +24,10 @@
 .DS_Store
 *.pem
 
+# doublons « … 2 » créés par les copies Finder / iCloud
+* 2/
+* 2.*
+
 # debug
 npm-debug.log*
 yarn-debug.log*

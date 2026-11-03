@@ -5,13 +5,12 @@ export const PUBLIC_TEMPLATE_SLUGS = sitekeptPublicTemplateSlugs;
 /**
  * Démos hébergées sur sitekept.com mais absentes du catalogue public.
  *
- * Vide aujourd'hui : `balinjera` en faisait partie, sa route a été retirée du
- * domaine. Il s'agissait de la reproduction du site d'une cliente réelle, qui
- * exposait publiquement son adresse e-mail personnelle. La cliente disposant
- * de son propre domaine, la copie était sans objet — la page réalisations
- * pointe désormais directement vers son site.
+ * Contient aujourd'hui `je`, projet servi par le groupe de routes `(projects)`
+ * et marqué `noindex` comme les démos.
  *
- * À réutiliser si une démo est de nouveau servie hors catalogue public.
+ * `balinjera` en faisait partie : sa route a été retirée du domaine, car elle
+ * reproduisait le site d'une cliente réelle et exposait son adresse e-mail
+ * personnelle. La page réalisations pointe désormais vers son propre site.
  */
 const UNLISTED_DEMO_SLUGS: readonly string[] = ["je"];
 

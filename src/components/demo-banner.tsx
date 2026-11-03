@@ -9,8 +9,8 @@ import { ArrowRight, Info } from "lucide-react";
  *    de leur nature de démonstration ;
  *  - elles étaient des culs-de-sac, sans lien de retour vers sitekept.com.
  *
- * Rendu par le layout racine quand le middleware a marqué la requête comme
- * démonstration, pour couvrir toutes les démos d'un seul endroit.
+ * Rendu par le layout du groupe de routes `(demos)`, pour couvrir toutes les
+ * démos d'un seul endroit et de façon statique, sans dépendre du middleware.
  */
 export function DemoBanner() {
   return (
