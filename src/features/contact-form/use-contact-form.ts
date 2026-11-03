@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useFormStatus } from "react-dom";
+import { useState, type FormEvent } from "react";
+import { isValidPhoneNumber } from "libphonenumber-js";
 import { submitContactForm } from "./contact-form.action";
 
 export function useContactForm() {
@@ -7,8 +7,23 @@ export function useContactForm() {
     "idle" | "success" | "error"
   >("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [phone, setPhone] = useState<string | undefined>();
+  const [phoneInvalid, setPhoneInvalid] = useState(false);
 
-  const { pending } = useFormStatus();
+  const handlePhoneChange = (value: string | undefined) => {
+    setPhone(value);
+    setPhoneInvalid(false);
+  };
+
+  // Bloqué ici et non dans l'action : React vide le formulaire à la fin d'une
+  // action, le visiteur perdrait son message pour un numéro mal saisi.
+  const validatePhone = (event: FormEvent<HTMLFormElement>) => {
+    if (phone && isValidPhoneNumber(phone)) return;
+
+    event.preventDefault();
+    setPhoneInvalid(true);
+    document.getElementById("phone")?.focus();
+  };
 
   const handleSubmit = async (formData: FormData) => {
     setSubmitStatus("idle");
@@ -32,6 +47,7 @@ export function useContactForm() {
       // Reset form by reloading the page or using a ref to reset
       const form = document.getElementById("contact-form") as HTMLFormElement;
       form?.reset();
+      setPhone(undefined);
     } else {
       setSubmitStatus("error");
       setErrorMessage(result.error || "Échec de l'envoi du message");
@@ -41,7 +57,10 @@ export function useContactForm() {
   return {
     submitStatus,
     errorMessage,
-    pending,
+    phone,
+    phoneInvalid,
+    handlePhoneChange,
+    validatePhone,
     handleSubmit,
   };
 }

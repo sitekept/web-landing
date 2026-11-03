@@ -57,6 +57,9 @@ export async function Contact() {
                 locale,
                 "contactForm.emailPlaceholder"
               ),
+              phone: getMessage(locale, "contactForm.phone"),
+              phoneHint: getMessage(locale, "contactForm.phoneHint"),
+              phoneInvalid: getMessage(locale, "contactForm.phoneInvalid"),
               project: getMessage(locale, "contactForm.project"),
               projectPlaceholder: getMessage(
                 locale,

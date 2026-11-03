@@ -1,11 +1,13 @@
 "use client";
 
+import { useFormStatus } from "react-dom";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, AlertCircle, Send } from "lucide-react";
+import { PhoneField } from "./phone-field";
 import { useContactForm } from "./use-contact-form";
 
 interface ContactFormMessages {
@@ -14,6 +16,9 @@ interface ContactFormMessages {
   namePlaceholder: string;
   email: string;
   emailPlaceholder: string;
+  phone: string;
+  phoneHint: string;
+  phoneInvalid: string;
   project: string;
   projectPlaceholder: string;
   required: string;
@@ -27,9 +32,41 @@ interface ContactFormProps {
   messages: ContactFormMessages;
 }
 
+// useFormStatus ne lit l'état que d'un <form> parent : le bouton doit être un
+// composant enfant du formulaire pour voir l'envoi en cours.
+function SubmitButton({
+  label,
+  pendingLabel,
+}: {
+  label: string;
+  pendingLabel: string;
+}) {
+  const { pending } = useFormStatus();
+
+  return (
+    <Button type="submit" disabled={pending} className="w-full" size="lg">
+      {pending ? (
+        pendingLabel
+      ) : (
+        <>
+          {label}
+          <Send className="ml-2 h-4 w-4" />
+        </>
+      )}
+    </Button>
+  );
+}
+
 export function ContactForm({ messages }: ContactFormProps) {
-  const { submitStatus, errorMessage, pending, handleSubmit } =
-    useContactForm();
+  const {
+    submitStatus,
+    errorMessage,
+    phone,
+    phoneInvalid,
+    handlePhoneChange,
+    validatePhone,
+    handleSubmit,
+  } = useContactForm();
 
   return (
     <Card>
@@ -37,7 +74,22 @@ export function ContactForm({ messages }: ContactFormProps) {
         <CardTitle>{messages.title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <form id="contact-form" action={handleSubmit} className="space-y-6">
+        <form
+          id="contact-form"
+          action={handleSubmit}
+          onSubmit={validatePhone}
+          className="space-y-6"
+        >
+          {/* Piège à robots : invisible pour un visiteur, voir l'action serveur. */}
+          <input
+            type="text"
+            name="site_url"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="absolute -left-[9999px] h-px w-px opacity-0"
+          />
+
           <div>
             <Label htmlFor="name">
               {messages.name} {messages.required}
@@ -64,6 +116,30 @@ export function ContactForm({ messages }: ContactFormProps) {
               className="mt-1"
               placeholder={messages.emailPlaceholder}
             />
+          </div>
+
+          <div>
+            <Label htmlFor="phone">
+              {messages.phone} {messages.required}
+            </Label>
+            <PhoneField
+              id="phone"
+              name="phone"
+              value={phone}
+              onChange={handlePhoneChange}
+              invalid={phoneInvalid}
+              describedBy="phone-help"
+            />
+            <p
+              id="phone-help"
+              className={
+                phoneInvalid
+                  ? "mt-1 text-sm text-red-700"
+                  : "mt-1 text-sm text-slate-500"
+              }
+            >
+              {phoneInvalid ? messages.phoneInvalid : messages.phoneHint}
+            </p>
           </div>
 
           <div>
@@ -95,16 +171,10 @@ export function ContactForm({ messages }: ContactFormProps) {
             </div>
           )}
 
-          <Button type="submit" disabled={pending} className="w-full" size="lg">
-            {pending ? (
-              messages.submitting
-            ) : (
-              <>
-                {messages.submit}
-                <Send className="ml-2 h-4 w-4" />
-              </>
-            )}
-          </Button>
+          <SubmitButton
+            label={messages.submit}
+            pendingLabel={messages.submitting}
+          />
         </form>
       </CardContent>
     </Card>
