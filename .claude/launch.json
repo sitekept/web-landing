@@ -5,6 +5,7 @@
       "name": "sitekept-dev",
       "runtimeExecutable": "pnpm",
       "runtimeArgs": ["dev"],
+      "env": { "NODE_OPTIONS": "--no-experimental-webstorage" },
       "port": 3000
     }
   ]
