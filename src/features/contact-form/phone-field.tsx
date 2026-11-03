@@ -39,7 +39,7 @@ interface PhoneFieldProps {
   value: string | undefined;
   onChange: (value: string | undefined) => void;
   invalid: boolean;
-  describedBy: string;
+  describedBy?: string;
 }
 
 export function PhoneField({

@@ -164,14 +164,13 @@
     "email": "Email",
     "emailPlaceholder": "your@email.com",
     "phone": "Phone",
-    "phoneHint": "With your country code, so we can also reply on WhatsApp.",
     "phoneInvalid": "Invalid number. Pick your country and check the number, including the country code.",
     "project": "Describe your project",
     "projectPlaceholder": "Tell us about your business, your goal, your industry and the style of website you need...",
     "required": "*",
     "submitting": "Sending...",
     "submit": "Request a quote",
-    "successMessage": "Thanks. We will come back quickly with a clear frame for your project.",
+    "successMessage": "Thanks, your request is in! Check your inbox: we have prepared something for you. Remember to check your spam folder.",
     "errorMessage": "Technical error. Contact us directly by email or try again."
   },
   "footer": {

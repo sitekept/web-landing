@@ -17,7 +17,6 @@ interface ContactFormMessages {
   email: string;
   emailPlaceholder: string;
   phone: string;
-  phoneHint: string;
   phoneInvalid: string;
   project: string;
   projectPlaceholder: string;
@@ -98,7 +97,6 @@ export function ContactForm({ messages }: ContactFormProps) {
               id="name"
               name="name"
               required
-              minLength={2}
               className="mt-1"
               placeholder={messages.namePlaceholder}
             />
@@ -128,18 +126,13 @@ export function ContactForm({ messages }: ContactFormProps) {
               value={phone}
               onChange={handlePhoneChange}
               invalid={phoneInvalid}
-              describedBy="phone-help"
+              describedBy={phoneInvalid ? "phone-help" : undefined}
             />
-            <p
-              id="phone-help"
-              className={
-                phoneInvalid
-                  ? "mt-1 text-sm text-red-700"
-                  : "mt-1 text-sm text-slate-500"
-              }
-            >
-              {phoneInvalid ? messages.phoneInvalid : messages.phoneHint}
-            </p>
+            {phoneInvalid && (
+              <p id="phone-help" className="mt-1 text-sm text-red-700">
+                {messages.phoneInvalid}
+              </p>
+            )}
           </div>
 
           <div>
@@ -150,7 +143,6 @@ export function ContactForm({ messages }: ContactFormProps) {
               id="message"
               name="message"
               required
-              minLength={10}
               className="mt-1"
               rows={5}
               placeholder={messages.projectPlaceholder}
@@ -158,15 +150,15 @@ export function ContactForm({ messages }: ContactFormProps) {
           </div>
 
           {submitStatus === "success" && (
-            <div className="flex items-center rounded-md bg-green-50 p-4 text-green-800">
-              <CheckCircle className="mr-2 h-5 w-5" />
+            <div className="flex items-start rounded-md bg-green-50 p-4 text-green-800">
+              <CheckCircle className="mr-2 h-5 w-5 shrink-0" />
               <span className="text-sm">{messages.successMessage}</span>
             </div>
           )}
 
           {submitStatus === "error" && (
-            <div className="flex items-center rounded-md bg-red-50 p-4 text-red-800">
-              <AlertCircle className="mr-2 h-5 w-5" />
+            <div className="flex items-start rounded-md bg-red-50 p-4 text-red-800">
+              <AlertCircle className="mr-2 h-5 w-5 shrink-0" />
               <span className="text-sm">{errorMessage || messages.errorMessage}</span>
             </div>
           )}

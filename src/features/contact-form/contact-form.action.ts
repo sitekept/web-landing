@@ -11,7 +11,7 @@ const PHONE_ERROR =
   "Veuillez entrer un numéro de téléphone valide avec l'indicatif du pays";
 
 const contactSchema = z.object({
-  name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
+  name: z.string().trim().min(1, "Veuillez indiquer votre nom"),
   email: z.string().email("Veuillez entrer une adresse email valide"),
   // Sans « + » et indicatif, isValidPhoneNumber refuse le numéro : on ne stocke
   // que du format international (E.164), directement utilisable sur WhatsApp.
@@ -19,9 +19,7 @@ const contactSchema = z.object({
     .string({ required_error: PHONE_ERROR, invalid_type_error: PHONE_ERROR })
     .refine((value) => isValidPhoneNumber(value), { message: PHONE_ERROR })
     .transform((value) => parsePhoneNumberFromString(value)!.number),
-  message: z
-    .string()
-    .min(10, "Le message doit contenir au moins 10 caractères"),
+  message: z.string().trim().min(1, "Veuillez décrire votre projet"),
 });
 
 const CONFIRMATION_WINDOW_MS = 60 * 60 * 1000;

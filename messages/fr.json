@@ -164,14 +164,13 @@
     "email": "Email",
     "emailPlaceholder": "votre@email.com",
     "phone": "Téléphone",
-    "phoneHint": "Avec l'indicatif du pays, pour pouvoir vous répondre aussi sur WhatsApp.",
     "phoneInvalid": "Numéro invalide. Choisissez votre pays et vérifiez le numéro, indicatif compris.",
     "project": "Décrivez votre projet",
     "projectPlaceholder": "Parlez-nous de votre activité, de votre objectif, de votre secteur et du style de site recherché...",
     "required": "*",
     "submitting": "Envoi en cours...",
     "submit": "Demander un devis",
-    "successMessage": "Merci. Nous revenons vers vous rapidement avec un cadre clair pour votre projet.",
+    "successMessage": "Merci, votre demande est bien arrivée ! Jetez un œil à votre boîte mail : nous vous y avons préparé quelque chose. Pensez à vérifier vos spams.",
     "errorMessage": "Erreur technique. Contactez-nous directement par email ou réessayez."
   },
   "footer": {
