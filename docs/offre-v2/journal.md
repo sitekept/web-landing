@@ -4,6 +4,7 @@ Branche : `feat/offre-v2` (créée depuis `dev` @ `b4d84c3`, 3 novembre 2026). R
 
 | Tâche | Périmètre | Tours | Verdict final | Bloquants rencontrés |
 |---|---|---|---|---|
+| 0.0 Inventaire de la DA | `docs/design/da-inventaire.md`, `docs/design/reference/*.png` | 3 | **FAIL — arrêt, en attente de Joseph** | T1 : dropdown-menu non signalé comme code mort, largeurs incomplètes. T2 : `transparent` et `phone-field.tsx` absents. T3 : valeurs internes des primitives shadcn (card, button, label) absentes de la règle 12 ; `@import` de globals.css absents de la règle 11 ; bouton `outline` non surchargé de /[metier] non couvert. 704/704 citations exactes, captures conformes. |
 | 0.1 État des lieux des données | `docs/seo/00-donnees.md` | 2 | PASS | T1 : citation `robots.ts:9` inexacte (`allow` est en l. 8) ; phrase fausse sur la branche/commit lus. Corrigés au T2. |
 | 0.2 Analyse des données et des résultats de recherche | `docs/seo/01-analyse.md` | 3 | PASS | T1 : prix ComeUp qualifié « HT » à tort ; engagement 12 mois omis (lucasfonseque) et conclusion « même modèle » fausse. T2 : « même prix, même délai » contredit par la page ComeUp 520287 ; cellules de tableau > 25 mots. Corrigés au T3. |
 
