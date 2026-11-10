@@ -19,3 +19,20 @@ Branche : `feat/offre-v2` (créée depuis `dev` @ `b4d84c3`, 3 novembre 2026). R
 - `generate_lead` a été ajouté le 11 août 2026 (`06b31f0`), le lendemain du relevé Search Console/GA4 : le relevé ne pouvait pas le montrer.
 - 5 nov. : Joseph accepte l'inventaire de la DA en l'état. Limites connues : trois phrases non qualifiées (`da-inventaire.md` l. 3, l. 911 `font-mono`, l. 927 couleurs des e-mails) contredisent la clause 0 bis. **Les clauses 0 et 0 bis prévalent** : chaque prompt de vérificateur le rappellera. Valeurs vivantes encore omises (page d'admin, `opengraph-image.tsx`, quelques utilitaires de structure) : couvertes par la clause 0 bis, à ajouter au fil de l'eau.
 - 5 nov. : décision de Joseph sur le consentement — poser le bandeau de consentement dès la tâche 0.4 (Consent Mode par défaut « refusé », GA4 et `generate_lead` seulement après accord), construit avec les composants existants ; captures du bandeau soumises à Joseph avant validation.
+
+## Choix du modèle et de l'effort des sous-agents (demande de Joseph, 10 nov. 2026)
+
+Chaque sous-agent reçoit un modèle et un effort adaptés à sa tâche, au lieu d'Opus en effort élevé par défaut. Une reprise (SendMessage) garde le modèle de l'agent repris.
+
+| Type de tâche | Modèle | Effort |
+|---|---|---|
+| Corrections rédactionnelles ciblées, mise à jour de liens ou de chiffres déjà fournis | Haiku | bas |
+| Relevés mécaniques : crawl, captures, grep, inventaires, contrôles de longueur | Sonnet | moyen |
+| Rédaction SEO (descriptions, articles, pages), analyse des résultats de recherche | Sonnet | élevé |
+| Code d'interface sous contrainte de DA, données structurées | Sonnet | élevé |
+| Architecture ou code à risque (tunnel de formulaire, consentement, mesure) | Opus | élevé |
+| Vérificateur d'une tâche documentaire ou mécanique | Sonnet | moyen |
+| Vérificateur d'une tâche de code ou de rédaction publiée | Sonnet | élevé |
+| Vérificateur de fin de phase | Opus | élevé |
+
+La tâche 0.4b (bandeau de consentement) avait déjà démarré sur Opus avant cette règle ; elle relève de toute façon de la ligne « code à risque ».
