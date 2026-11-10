@@ -50,6 +50,14 @@ export async function Footer({ locale }: FooterProps) {
               <Phone className="h-4 w-4" />
               <span>+33 6 51 17 99 25</span>
             </a>
+            <a
+              href="https://www.linkedin.com/company/sitekept/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 transition-colors hover:text-blue-200"
+            >
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
 

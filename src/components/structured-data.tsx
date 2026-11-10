@@ -22,10 +22,9 @@ const LINKEDIN_COMPANY_URL = "https://www.linkedin.com/company/sitekept/";
  * marketing (`@id` = `${SITE_URL}/#organization`). Les autres blocs la
  * désignent par cet `@id` (provider, publisher) et ne la redéclarent pas.
  *
- * `sameAs` : la page LinkedIn de l'entreprise, fournie par Joseph. La
- * condition « profil relié depuis le site » est remplie par la micro-tâche
- * qui ajoute un lien texte visible vers cette page dans le footer, livrée
- * juste après le bandeau de consentement. Aucun autre profil n'est déclaré.
+ * `sameAs` : la page LinkedIn de l'entreprise, fournie par Joseph. Le lien
+ * texte visible vers cette page existe désormais dans le footer
+ * (src/components/footer.tsx). Aucun autre profil n'est déclaré.
  *
  * Volontairement ABSENTS, faute de donnée disponible aujourd'hui :
  *  - `address` : la raison sociale, la forme juridique, le SIREN et l'adresse
