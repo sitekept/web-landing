@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "Politique de confidentialité | Sitekept",
   description:
-    "Comment Sitekept collecte, utilise et protège vos données personnelles conformément au RGPD, et comment exercer vos droits.",
+    "Politique de confidentialité de Sitekept : comment nous collectons, utilisons et protégeons vos données personnelles (RGPD), et comment exercer vos droits.",
   path: "/privacy",
 });
 

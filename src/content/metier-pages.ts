@@ -54,7 +54,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo plombier chauffagiste",
     seoTitle: "Site internet pour plombier : ce qu'il vous faut | Sitekept",
     seoDescription:
-      "Créer un site internet de plombier chauffagiste : ce que cherchent vos clients en urgence, ce que le site doit afficher, et notre offre à 500€ livrée en 48h.",
+      "Site internet pour plombier chauffagiste : ce que cherchent vos clients en urgence, ce que le site doit afficher sur mobile, et notre offre à 500 €.",
     h1: "Site internet pour plombier chauffagiste",
     intro:
       "La plomberie est l'un des rares métiers où le visiteur ne compare pas. Il a une fuite, il cherche un numéro, il appelle le premier qui inspire confiance et qui couvre sa commune. Un site de plombier ne se juge donc pas sur son esthétique, mais sur le temps qu'il faut pour trouver le numéro et comprendre que vous intervenez chez lui.",
@@ -117,7 +117,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo cabinet dentaire",
     seoTitle: "Site internet pour dentiste et cabinet dentaire | Sitekept",
     seoDescription:
-      "Créer le site d'un cabinet dentaire : rassurer avant la première visite, structurer les soins, faciliter la prise de rendez-vous. Site livré en 48h dès 500€.",
+      "Site internet dentiste : rassurer vos patients avant la première visite, structurer les soins, faciliter la prise de rendez-vous. Site à 500 €.",
     h1: "Site internet pour cabinet dentaire",
     intro:
       "Le site d'un cabinet dentaire ne vend pas : il rassure. Une partie de vos futurs patients arrive avec une appréhension réelle, parfois ancienne. Ce qu'ils cherchent en ligne avant de décrocher leur téléphone, c'est de savoir à quoi ressemble le cabinet, qui les recevra, et comment se passe une première visite.",

@@ -84,7 +84,7 @@ export function Navigation({ locale }: NavigationProps) {
             <div className="flex h-8 w-8 items-center justify-center">
               <Image
                 src="/logo.png"
-                alt="Sitekept logo"
+                alt=""
                 width={32}
                 height={32}
                 className="rounded-md"

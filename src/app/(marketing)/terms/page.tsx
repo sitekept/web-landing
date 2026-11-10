@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "Conditions générales d'utilisation | Sitekept",
   description:
-    "Conditions d'utilisation des services Sitekept : prestations, tarifs, propriété intellectuelle, délais de livraison et garanties.",
+    "Conditions générales d'utilisation (CGU) de Sitekept : services, obligations du client, propriété intellectuelle, tarifs, délais de livraison, garanties.",
   path: "/terms",
 });
 

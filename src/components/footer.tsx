@@ -17,7 +17,7 @@ export async function Footer({ locale }: FooterProps) {
             <div className="flex h-9 w-9 items-center justify-center">
               <Image
                 src="/logo.png"
-                alt="Sitekept logo"
+                alt=""
                 width={36}
                 height={36}
                 className="rounded-md"
@@ -147,7 +147,7 @@ export async function Footer({ locale }: FooterProps) {
           <div className="animate-walk-across h-12 w-12">
             <Image
               src="/majin-vegeta/walk.gif"
-              alt="Majin Vegeta walking"
+              alt=""
               width={48}
               height={48}
               className="h-full w-full object-contain"

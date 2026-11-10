@@ -1092,7 +1092,7 @@ export const blogPosts: BlogPost[] = [
       en: "Own your website without a subscription | Sitekept",
     },
     seoDescription: {
-      fr: "Pourquoi la propriété complète du site et l'absence d'abonnement imposée sont des avantages commerciaux, budgétaires et opérationnels.",
+      fr: "Site internet sans abonnement imposé : pourquoi la propriété complète du site est un avantage commercial, budgétaire et opérationnel face au prestataire.",
       en: "Why full website ownership and the absence of forced subscriptions are commercial, budgetary and operational advantages.",
     },
     intro: {
@@ -1197,7 +1197,7 @@ export const blogPosts: BlogPost[] = [
       en: "SEO and GEO optimized website | Sitekept",
     },
     seoDescription: {
-      fr: "Comment penser un site visible à la fois pour Google et pour les interfaces IA : structure, vitesse, clarté et signaux de confiance.",
+      fr: "Optimisation SEO et GEO : comment penser un site visible sur Google et dans les interfaces IA. Structure, vitesse, clarté et signaux de confiance.",
       en: "How to design a website that stays visible for both Google and AI interfaces: structure, speed, clarity and trust signals.",
     },
     intro: {
@@ -1393,7 +1393,7 @@ export const blogPosts: BlogPost[] = [
       en: "Why a website without search visibility can become useless | Sitekept",
     },
     seoDescription: {
-      fr: "Pourquoi un site qui n’est pas trouvé sur Google ou dans les réponses IA peut échouer commercialement, même s’il est bien présenté.",
+      fr: "Mon site n’apparaît pas sur Google : pourquoi un site introuvable sur Google ou dans les réponses IA peut échouer, même s’il est bien présenté.",
       en: "Why a website that cannot be found on Google or in AI answers can fail commercially, even when it looks good.",
     },
     intro: {
@@ -1484,7 +1484,7 @@ export const blogPosts: BlogPost[] = [
       en: "Why organic search optimization matters | Sitekept",
     },
     seoDescription: {
-      fr: "Visibilité, trafic qualifié, crédibilité, présence durable: voici ce que le référencement naturel apporte réellement à un site web.",
+      fr: "Pourquoi le référencement d’un site est important : visibilité, trafic qualifié, crédibilité, présence durable. Ce qu’il apporte réellement au site.",
       en: "Visibility, qualified traffic, credibility and durable discoverability: here is what organic search optimization really brings to a website.",
     },
     intro: {
@@ -1575,7 +1575,7 @@ export const blogPosts: BlogPost[] = [
       en: "Why full website ownership changes everything | Sitekept",
     },
     seoDescription: {
-      fr: "Abonnements, autonomie, changement de prestataire, accès et contrôle du code: pourquoi la propriété complète du site change la donne.",
+      fr: "Avoir son propre site internet : abonnements, autonomie, changement de prestataire, accès et contrôle du code. Pourquoi la propriété change tout.",
       en: "Subscriptions, autonomy, provider changes, access and code control: why full website ownership changes the game.",
     },
     intro: {
@@ -1666,7 +1666,7 @@ export const blogPosts: BlogPost[] = [
       en: "Website delivery: our process | Sitekept",
     },
     seoDescription: {
-      fr: "Développement en interne, dépôt GitHub à votre nom, déploiement Vercel et domaine offert la première année. Voici comment Sitekept livre.",
+      fr: "Mise en ligne d’un site internet chez Sitekept : développement en interne, dépôt GitHub à votre nom, déploiement Vercel, domaine offert la 1re année.",
       en: "In-house development, client GitHub repository, Vercel deployment, first-year domain purchase and a clear structure: here is how Sitekept delivers a website.",
     },
     intro: {

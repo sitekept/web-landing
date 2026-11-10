@@ -4,7 +4,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 export const metadata = buildPageMetadata({
   title: "Mentions légales | Sitekept",
   description:
-    "Mentions légales du site sitekept.com : éditeur, directeur de la publication, hébergeur et coordonnées de contact.",
+    "Mentions légales de Sitekept et du site sitekept.com : éditeur, directeur de la publication, hébergeur, propriété intellectuelle et coordonnées de contact.",
   path: "/mentions-legales",
 });
 

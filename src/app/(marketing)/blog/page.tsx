@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
         : "Sitekept Blog | Speed, ownership, SEO and GEO",
     description:
       locale === "fr"
-        ? "Nos guides pour créer, posséder et référencer votre site web : prix, propriété du code, SEO et visibilité dans les réponses IA."
+        ? "Guide création site internet : nos articles pour créer, posséder et référencer votre site web. Prix, propriété du code, SEO et visibilité dans l'IA."
         : "The Sitekept editorial hub explains the offer through useful pages on fast launch, full website ownership and SEO + GEO visibility.",
     path: "/blog",
   });

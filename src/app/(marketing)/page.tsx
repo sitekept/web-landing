@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
         : "Website design from €500 | Sitekept",
     description:
       locale === "fr"
-        ? "Agence web spécialisée PME et artisans : votre site professionnel livré en 48h, sans abonnement, 100 % à vous. Devis gratuit en 24h."
+        ? "Création de site internet professionnel pour PME et artisans : livré en 48h après réception de vos éléments, sans abonnement imposé et 100 % à vous."
         : "Web agency for small businesses and trades: your professional website delivered in 48h, no subscription, fully yours. Free quote within 24h.",
     path: "/",
   });
