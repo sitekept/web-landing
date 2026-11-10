@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { SiteLocale } from "@/content/site-content";
+import { CookieSettingsButton } from "@/components/cookie-consent";
+import { ENV } from "@/lib/env";
 import { getMessage } from "@/lib/site-messages";
 
 interface FooterProps {
@@ -138,6 +140,11 @@ export async function Footer({ locale }: FooterProps) {
                 {getMessage(locale, "footer.quote")}
               </Link>
             </li>
+            {ENV.NEXT_PUBLIC_GA_ID ? (
+              <li>
+                <CookieSettingsButton className="transition-colors hover:text-blue-200" />
+              </li>
+            ) : null}
           </ul>
         </div>
       </div>

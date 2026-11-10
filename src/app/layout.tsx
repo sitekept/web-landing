@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { CookieConsent } from "@/components/cookie-consent";
 import { ENV } from "@/lib/env";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
 import { SITE_URL } from "@/lib/site-url";
@@ -87,13 +87,15 @@ export default async function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className={inter.className}>
+        {/* Bulle de consentement en tête du DOM : premier élément atteint au
+            clavier. GA ne se charge qu'après accord (docs/seo/03b-consentement.md). */}
+        {ENV.NEXT_PUBLIC_GA_ID ? (
+          <CookieConsent gaId={ENV.NEXT_PUBLIC_GA_ID} />
+        ) : null}
         {children}
         <SpeedInsights />
         <Analytics />
       </body>
-      {ENV.NEXT_PUBLIC_GA_ID ? (
-        <GoogleAnalytics gaId={ENV.NEXT_PUBLIC_GA_ID} />
-      ) : null}
     </html>
   );
 }
