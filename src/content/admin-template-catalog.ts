@@ -38,6 +38,7 @@ const adminOnlySlugs = [
   "double-espresso",
   "balinjera",
   "alex-spa-massage",
+  "colchis",
 ] as const;
 const labSlugs = [
   "annecyelec",
@@ -197,6 +198,13 @@ export const adminTemplateCatalog: AdminTemplateCatalogEntry[] = [
     vercelUrl: "https://sitekept-templates.vercel.app/alex-spa-massage",
     notes:
       "URL Vercel publique pour Alex Spa Massage, conservée hors catalogue public sitekept.com.",
+  }),
+  withLinks({
+    slug: "colchis",
+    name: "Colchis",
+    sector: "Immobilier international (Géorgie)",
+    notes:
+      "Site immobilier statique en 4 langues (hébreu RTL, russe, anglais, géorgien), servi sur Vercel uniquement, non affiché sur sitekept.com.",
   }),
   withLinks({
     slug: "annecyelec",
