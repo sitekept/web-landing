@@ -100,12 +100,12 @@ export const metierPages: MetierPage[] = [
       {
         question: "Un plombier a-t-il vraiment besoin d'un site internet ?",
         answer:
-          "Le bouche-à-oreille reste le premier canal du métier, mais il s'accompagne presque toujours d'une vérification en ligne. Sans site, cette vérification tombe sur une fiche d'annuaire que vous ne contrôlez pas, ou sur rien. Le site sert autant à convertir un contact déjà chaud qu'à en générer de nouveaux.",
+          "Oui : le bouche-à-oreille reste le premier canal du métier, mais il s'accompagne presque toujours d'une vérification en ligne. Sans site, celle-ci tombe sur une fiche d'annuaire que vous ne contrôlez pas, ou sur rien. Le site sert autant à convertir un contact déjà chaud qu'à en générer de nouveaux.",
       },
       {
         question: "Faut-il afficher ses tarifs sur un site de plomberie ?",
         answer:
-          "Rarement au détail, car chaque chantier diffère. En revanche, afficher un tarif de déplacement, une fourchette pour les interventions courantes ou la gratuité du devis rassure et filtre les demandes hors budget avant l'appel.",
+          "Pas au détail, car chaque chantier diffère. Mieux vaut afficher ce qui est stable : un tarif de déplacement, une fourchette pour les interventions courantes ou la gratuité du devis. Cela rassure les visiteurs et filtre les demandes hors budget avant l'appel.",
       },
     ],
   },
@@ -164,12 +164,12 @@ export const metierPages: MetierPage[] = [
         question:
           "Que peut-on écrire sur le site d'un cabinet dentaire ?",
         answer:
-          "La communication des chirurgiens-dentistes est encadrée par le code de déontologie et le code de la santé publique. L'information au public est autorisée, la publicité comparative ou promettant un résultat ne l'est pas. Nous construisons le site sur des informations factuelles — soins, équipe, accès, déroulé des consultations — et il vous revient de faire valider les contenus au regard de vos obligations ordinales.",
+          "Des informations factuelles (soins, équipe, accès, consultations), dans le cadre du code de déontologie et du code de la santé publique. L'information au public est autorisée, la publicité comparative ou promettant un résultat ne l'est pas. Il vous revient de faire valider les contenus au regard de vos obligations ordinales.",
       },
       {
         question: "Faut-il un module de prise de rendez-vous en ligne ?",
         answer:
-          "Si vous utilisez déjà une plateforme de réservation, le site doit y renvoyer clairement depuis chaque page : c'est inclus dans le site vitrine. Développer un système de réservation propre au cabinet est en revanche une fonctionnalité sur mesure, chiffrée séparément.",
+          "Pas nécessairement. Si vous utilisez déjà une plateforme de réservation, le site doit y renvoyer clairement depuis chaque page : c'est inclus dans le site vitrine. Développer un système de réservation propre au cabinet est une fonctionnalité sur mesure, chiffrée séparément.",
       },
     ],
   },
@@ -227,12 +227,12 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il mettre la carte en PDF sur le site ?",
         answer:
-          "C'est la solution la plus rapide et la moins efficace. Un PDF s'ouvre mal sur mobile, oblige à zoomer, et son contenu est difficilement exploitable par les moteurs de recherche : vos plats n'apparaîtront pas dans les résultats. Une carte en texte sur la page se lit partout et se met à jour en quelques minutes.",
+          "Non, c'est la solution la plus rapide mais la moins efficace. Un PDF s'ouvre mal sur mobile, oblige à zoomer et reste peu exploitable par les moteurs de recherche : vos plats n'apparaîtront pas dans les résultats. Une carte en texte sur la page se lit partout et se met à jour en quelques minutes.",
       },
       {
         question: "Un restaurant a-t-il besoin d'un site s'il est déjà sur les plateformes ?",
         answer:
-          "Les plateformes vous apportent de la visibilité, mais elles prennent une commission, imposent leur présentation et peuvent modifier leurs conditions du jour au lendemain. Un site vous donne un point de contact direct, sans intermédiaire ni commission sur les réservations. Les deux sont complémentaires ; n'avoir que le premier vous rend dépendant.",
+          "Oui, car les deux sont complémentaires. Les plateformes apportent de la visibilité, mais elles prennent une commission, imposent leur présentation et peuvent modifier leurs conditions du jour au lendemain. Un site offre un point de contact direct, sans intermédiaire ni commission sur les réservations ; n'avoir que les plateformes vous rend dépendant.",
       },
     ],
   },
@@ -353,7 +353,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Une boulangerie de quartier a-t-elle besoin d'un site ?",
         answer:
-          "Pour attirer de nouveaux clients, l'effet est limité : on choisit sa boulangerie en passant devant. Le site sert surtout à capter deux choses que la vitrine ne capte pas — les recherches d'horaires, très nombreuses, et les commandes pour événements, qui représentent des montants sans commune mesure avec une vente au comptoir.",
+          "Oui, mais surtout pour deux usages, car pour attirer de nouveaux clients l'effet est limité : on choisit sa boulangerie en passant devant. Le site capte d'abord les recherches d'horaires, très nombreuses, que la vitrine ne capte pas. Il capte aussi les commandes pour événements, aux montants sans commune mesure avec une vente au comptoir.",
       },
       {
         question: "Faut-il vendre en ligne quand on est boulanger ?",
@@ -416,7 +416,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il afficher ses prix de pâtisserie en ligne ?",
         answer:
-          "Au moins des ordres de grandeur par nombre de parts. C'est la question posée dans presque tous les premiers messages : y répondre en amont vous évite des échanges qui n'aboutiront pas, et rassure les clients qui craignent une facture imprévisible sur une commande sur mesure.",
+          "Au moins des ordres de grandeur par nombre de parts. C'est la question posée dans presque tous les premiers messages. Y répondre en amont vous évite des échanges sans suite et rassure les clients qui craignent une facture imprévisible sur une commande sur mesure.",
       },
       {
         question: "Puis-je vendre mes pâtisseries en ligne ?",
@@ -484,7 +484,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Comment se différencier des plateformes de livraison de fleurs ?",
         answer:
-          "Par ce qu'elles ne peuvent pas offrir : vos créations réelles plutôt que des visuels standardisés, une livraison locale le jour même, et un interlocuteur qui adapte le bouquet. Les plateformes prennent une commission importante sur chaque commande ; un site vous donne un canal direct, sans intermédiaire.",
+          "Par ce que les plateformes ne peuvent pas offrir : vos créations réelles, une livraison locale le jour même et un interlocuteur qui adapte le bouquet. Elles prennent une commission importante sur chaque commande. Un site vous donne un canal direct, sans intermédiaire.",
       },
     ],
   },
@@ -547,7 +547,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Comment rassurer sur la confidentialité des données ?",
         answer:
-          "En l'écrivant noir sur blanc : ce à quoi vous accédez, ce que vous ne consultez jamais, si vous effectuez une sauvegarde avant intervention, et ce que vous faites des données à la restitution. Une page courte et factuelle vaut mieux qu'un long texte juridique que personne ne lira.",
+          "En l'écrivant noir sur blanc, sur une page courte et factuelle. Indiquez ce à quoi vous accédez, ce que vous ne consultez jamais, la sauvegarde avant intervention et le sort des données à la restitution. Cela vaut mieux qu'un long texte juridique que personne ne lira.",
       },
     ],
   },
@@ -605,7 +605,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il parler du crédit d'impôt sur son site ?",
         answer:
-          "Si vous êtes déclaré ou agréé au titre des services à la personne, c'est un argument décisif pour les particuliers, puisqu'il divise sensiblement le coût réel. Mentionnez le dispositif et vos conditions d'éligibilité, en renvoyant vers la source officielle plutôt qu'en promettant un montant : les règles évoluent et l'éligibilité dépend de la situation de chaque client.",
+          "Oui, si vous êtes déclaré ou agréé au titre des services à la personne. C'est un argument décisif pour les particuliers, car il divise sensiblement le coût réel. Mentionnez le dispositif et vos conditions d'éligibilité, en renvoyant vers la source officielle plutôt qu'en promettant un montant, car les règles évoluent.",
       },
       {
         question: "Faut-il afficher un tarif horaire ?",
@@ -668,7 +668,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il afficher ses honoraires d'architecte d'intérieur ?",
         answer:
-          "Pas nécessairement un montant, mais toujours le mode de calcul. Expliquer que vous facturez au pourcentage des travaux, au forfait ou à la vacation, et donner un ordre de grandeur, filtre les demandes hors budget et attire celles qui ne le sont pas. Le silence total sur ce point est le premier motif d'abandon sur les sites du métier.",
+          "Pas nécessairement un montant, mais toujours le mode de calcul. Expliquez si vous facturez au pourcentage des travaux, au forfait ou à la vacation, avec un ordre de grandeur qui filtre les demandes hors budget. Le silence total sur ce point est le premier motif d'abandon sur les sites du métier.",
       },
       {
         question: "Puis-je publier les photos des projets de mes clients ?",
@@ -736,12 +736,12 @@ export const metierPages: MetierPage[] = [
       {
         question: "Un avocat a-t-il le droit d'avoir un site internet ?",
         answer:
-          "Oui. La publicité et la sollicitation personnalisée sont autorisées pour les avocats depuis 2014, mais elles restent encadrées : l'information doit être sincère, respecter la dignité de la profession, la confraternité et le secret professionnel, et ne peut comporter ni élément comparatif ni promesse de résultat. Nous construisons le site sur des informations factuelles, et il vous revient de faire valider les contenus au regard des règles de votre barreau.",
+          "Oui, la publicité et la sollicitation personnalisée sont autorisées pour les avocats depuis 2014, mais encadrées. L'information doit être sincère, respecter la dignité de la profession, la confraternité et le secret professionnel, sans comparaison ni promesse de résultat. Il vous revient de la faire valider au regard des règles de votre barreau.",
       },
       {
         question: "Peut-on publier ses résultats ou ses affaires gagnées ?",
         answer:
-          "C'est le point le plus délicat. Le secret professionnel s'oppose à la divulgation d'éléments identifiants, et la publicité comparative ou laissant espérer un résultat est prohibée. Beaucoup de cabinets présentent à la place des cas types anonymisés et généralisés, qui expliquent une démarche sans se référer à un dossier réel — une approche à valider avec votre ordre.",
+          "Pas sous une forme identifiable, et c'est le point le plus délicat. Le secret professionnel s'oppose à la divulgation d'éléments identifiants, et la publicité comparative ou laissant espérer un résultat est prohibée. Beaucoup de cabinets présentent à la place des cas types anonymisés et généralisés, une approche à valider avec votre ordre.",
       },
     ],
   },
@@ -799,7 +799,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il un site quand on diffuse déjà sur les portails ?",
         answer:
-          "Les portails vous apportent des acheteurs, pas des mandats — et ils vous facturent la diffusion tout en mettant vos annonces à côté de celles de vos concurrents. Le site sert l'autre moitié du métier : capter les vendeurs, par l'estimation, et démontrer votre ancrage local. Les deux sont complémentaires, mais un seul vous appartient.",
+          "Oui, car les portails apportent des acheteurs, pas des mandats. Ils facturent la diffusion et placent vos annonces à côté de celles de vos concurrents. Le site capte les vendeurs par l'estimation et démontre votre ancrage local : les deux sont complémentaires, mais un seul vous appartient.",
       },
       {
         question: "Faut-il un moteur de recherche de biens sur le site ?",

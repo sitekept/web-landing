@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const dateFormatter = new Intl.DateTimeFormat(
     locale === "fr" ? "fr-FR" : "en-GB",
-    { day: "numeric", month: "long", year: "numeric" }
+    { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }
   );
   const publishedLabel = dateFormatter.format(new Date(post.publishedAt));
   const updatedLabel = dateFormatter.format(new Date(post.updatedAt));
@@ -111,8 +111,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <span aria-hidden="true"> · </span>
                 <time dateTime={post.updatedAt}>
                   {locale === "fr"
-                    ? `mis à jour le ${updatedLabel}`
-                    : `updated on ${updatedLabel}`}
+                    ? `Mis à jour le ${updatedLabel}`
+                    : `Updated on ${updatedLabel}`}
                 </time>
               </>
             ) : null}

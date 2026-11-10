@@ -1,0 +1,35 @@
+# Sitekept
+
+> Sitekept crée des sites internet pour les professionnels et les petites entreprises. Le site est livré au client, avec le code et les accès.
+
+## L'offre
+
+- Création de sites internet.
+- Pas d'abonnement imposé pour que le site reste en ligne.
+- Le code et les accès techniques sont transmis au client.
+- Le nom de domaine est offert la première année.
+- Aucune position dans les résultats de recherche n'est promise : personne ne contrôle l'algorithme des moteurs.
+
+## Pages principales
+
+- [Accueil](https://www.sitekept.com): présentation de l'offre et formulaire de devis
+- [Tarifs](https://www.sitekept.com/tarifs): ce qui est inclus et ce qui est facturé à part
+- [Templates](https://www.sitekept.com/templates): exemples de sites par métier
+- [Réalisations](https://www.sitekept.com/realization): sites déjà livrés
+- [SEO et GEO](https://www.sitekept.com/seo-geo): comment un site devient visible sur Google et dans les réponses des IA
+- [Blog](https://www.sitekept.com/blog): guides sur la propriété du site, la livraison, le référencement
+
+## Pages par métier
+
+- [Plombier](https://www.sitekept.com/site-internet-plombier)
+- [Salon de coiffure](https://www.sitekept.com/site-internet-salon-de-coiffure)
+- [Boulangerie](https://www.sitekept.com/site-internet-boulangerie)
+- [Pâtisserie](https://www.sitekept.com/site-internet-patisserie)
+- [Fleuriste](https://www.sitekept.com/site-internet-fleuriste)
+- [Restaurant](https://www.sitekept.com/site-internet-restaurant)
+- [Entreprise de nettoyage](https://www.sitekept.com/site-internet-entreprise-nettoyage)
+- [Réparation informatique](https://www.sitekept.com/site-internet-reparation-informatique)
+- [Architecte d'intérieur](https://www.sitekept.com/site-internet-architecte-interieur)
+- [Agence immobilière](https://www.sitekept.com/site-internet-agence-immobiliere)
+- [Cabinet dentaire](https://www.sitekept.com/site-internet-dentiste)
+- [Cabinet d'avocat](https://www.sitekept.com/site-internet-avocat)

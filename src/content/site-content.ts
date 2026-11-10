@@ -157,6 +157,8 @@ export interface SeoGeoPageContent {
   primaryCta: LocalizedText;
   optimizationTitle: LocalizedText;
   optimizationParagraphs: Record<SiteLocale, string[]>;
+  /** Éléments d'un site optimisé, affichés en liste après le premier paragraphe. */
+  optimizationBullets: Record<SiteLocale, string[]>;
   secondaryCta: LocalizedText;
 }
 
@@ -923,20 +925,20 @@ export const seoGeoPageContent: SeoGeoPageContent = {
     en: "Understand organic search and what a website needs to stay visible.",
   },
   intro: {
-    fr: "Le référencement naturel reste une base essentielle dès qu’un site doit être trouvé au bon moment. Pour une PME, un indépendant ou une activité locale, un site n’a de valeur que s’il est compréhensible par Google, accessible à l’indexation et assez clair pour répondre à une intention de recherche réelle.",
-    en: "Organic search remains a core foundation whenever a website needs to be found at the right moment. For an SMB, solo founder or local business, a website only creates value if Google can understand it, index it and match it to a real search intent.",
+    fr: "Le référencement naturel, ou SEO (search engine optimization), regroupe ce qui aide un site à apparaître dans les résultats non payants d’un moteur de recherche. Le GEO (generative engine optimization) vise à être cité dans les réponses rédigées par une intelligence artificielle. Un site n’a de valeur que s’il peut être trouvé et compris.",
+    en: "Organic search, or SEO (search engine optimization), covers what helps a website appear in the unpaid results of a search engine. GEO (generative engine optimization) aims to get cited in answers written by an artificial intelligence. A website only creates value if it can be found and understood.",
   },
   importanceTitle: {
-    fr: "Pourquoi le référencement naturel reste décisif",
-    en: "Why organic search still matters",
+    fr: "Pourquoi le référencement naturel reste-t-il décisif ?",
+    en: "Why does organic search still matter?",
   },
   importanceParagraphs: {
     fr: [
-      "Un bon référencement naturel permet à votre activité d’apparaître quand un prospect formule déjà un besoin. Cette visibilité est précieuse parce qu’elle ne dépend pas uniquement d’une campagne payante ou d’une publication ponctuelle: elle s’appuie sur la structure du site, la qualité des pages et la clarté de l’information proposée.",
+      "Le référencement naturel reste décisif parce qu’il place votre activité devant des personnes qui formulent déjà un besoin. Cette visibilité ne dépend pas d’une campagne payante ni d’une publication ponctuelle. Elle s’appuie sur la structure du site, la qualité des pages et la clarté de l’information.",
       "Dans la pratique, cela signifie qu’un site bien pensé continue de travailler pour vous après sa mise en ligne. Il peut renforcer votre crédibilité, capter des recherches qualifiées et donner à Google des signaux cohérents sur votre activité, vos services et vos pages clés.",
     ],
     en: [
-      "Strong organic visibility helps your business appear when a prospect already expresses a need. That visibility matters because it does not rely only on paid campaigns or one-off posts: it depends on the website structure, page quality and clarity of the information you publish.",
+      "Organic search remains decisive because it puts your business in front of people who already express a need. That visibility does not depend on a paid campaign or a one-off post. It relies on the website structure, page quality and clarity of the information.",
       "In practice, that means a well-structured website keeps working after launch. It can strengthen credibility, capture qualified searches and give Google consistent signals about your business, services and key pages.",
     ],
   },
@@ -950,12 +952,30 @@ export const seoGeoPageContent: SeoGeoPageContent = {
   },
   optimizationParagraphs: {
     fr: [
-      "Un site réellement optimisé repose sur plusieurs éléments qui se renforcent entre eux: des pages utiles, une hiérarchie claire, des titres compréhensibles, des contenus rédigés pour répondre à de vraies questions, un maillage interne logique et une base technique propre. Une sitemap bien tenue et des pages indexables aident ensuite Google à explorer le site plus proprement.",
-      "Aujourd’hui, cette logique sert aussi les interfaces IA. Quand un contenu est clair, bien structuré, contextuel et appuyé par des signaux cohérents, il devient plus facile à reprendre dans des réponses générées, des aperçus enrichis ou des recommandations. C’est là que SEO et GEO se rejoignent concrètement.",
+      "Un site réellement optimisé réunit plusieurs éléments qui se renforcent entre eux, des pages utiles jusqu’à la base technique.",
+      "Aujourd’hui, cette logique sert aussi les interfaces IA. Un contenu clair, bien structuré et appuyé par des signaux cohérents est plus facile à reprendre dans une réponse générée, un aperçu ou une recommandation. C’est là que SEO et GEO se rejoignent concrètement.",
     ],
     en: [
-      "A truly optimized website combines several reinforcing elements: useful pages, clear hierarchy, understandable titles, content written to answer real questions, logical internal linking and a clean technical base. A maintained sitemap and indexable pages then help Google explore the site more reliably.",
-      "Today, the same logic also serves AI interfaces. When content is clear, well-structured, contextual and backed by consistent signals, it becomes easier to reuse in generated answers, enriched previews or recommendations. That is where SEO and GEO meet in practice.",
+      "A truly optimized website combines several reinforcing elements, from useful pages to a clean technical base.",
+      "Today, the same logic also serves AI interfaces. Clear, well-structured content backed by consistent signals is easier to reuse in a generated answer, a preview or a recommendation. That is where SEO and GEO meet in practice.",
+    ],
+  },
+  optimizationBullets: {
+    fr: [
+      "des pages utiles",
+      "une hiérarchie claire et des titres compréhensibles",
+      "des contenus rédigés pour répondre à de vraies questions",
+      "un maillage interne logique",
+      "une base technique propre",
+      "un sitemap bien tenu et des pages indexables, qui aident Google à explorer le site plus proprement",
+    ],
+    en: [
+      "useful pages",
+      "a clear hierarchy and understandable titles",
+      "content written to answer real questions",
+      "logical internal linking",
+      "a clean technical base",
+      "a maintained sitemap and indexable pages, which help Google explore the site more reliably",
     ],
   },
   secondaryCta: {
@@ -968,7 +988,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "site-web-rapide-pme-independant",
     publishedAt: "2026-04-03",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-10",
     author: "Équipe Sitekept",
     category: {
       fr: "Lancement rapide",
@@ -1050,13 +1070,27 @@ export const blogPosts: BlogPost[] = [
           en: "What you really buy with a fast launch",
         },
         paragraphs: {
-          fr: [
-            "Vous achetez du temps récupéré, une offre mieux présentée, un support de prospection plus propre et un meilleur contrôle de votre image.",
-            "Si le site est bien structuré dès le départ, il devient aussi une base solide pour le SEO, le GEO et les futures itérations commerciales.",
-          ],
+          fr: ["Si le site est bien structuré dès le départ, vous achetez vraiment six choses."],
           en: [
             "You buy recovered time, a better framed offer, a cleaner prospecting asset and stronger control over your brand image.",
             "If the website is structured well from day one, it also becomes a strong base for SEO, GEO and future commercial iterations.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "du temps récupéré",
+            "une offre mieux présentée",
+            "un support de prospection plus propre",
+            "un meilleur contrôle de votre image",
+            "une base solide pour le SEO (être trouvé sur Google) et le GEO (être cité dans les réponses des IA)",
+            "une base solide pour les futures évolutions commerciales",
+          ],
+          en: [
+            "recovered time",
+            "a better framed offer",
+            "a cleaner prospecting asset",
+            "stronger control over your brand image",
+            "a solid base for SEO (being found on Google), GEO (being cited in AI answers) and future commercial iterations, provided the website is well structured from the start",
           ],
         },
       },
@@ -1178,7 +1212,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "site-optimise-seo-geo",
     publishedAt: "2026-04-03",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-10",
     author: "Équipe Sitekept",
     category: {
       fr: "Visibilité",
@@ -1201,7 +1235,7 @@ export const blogPosts: BlogPost[] = [
       en: "How to design a website that stays visible for both Google and AI interfaces: structure, speed, clarity and trust signals.",
     },
     intro: {
-      fr: "Le SEO reste essentiel, mais il ne suffit plus à expliquer toute la visibilité. De plus en plus d'utilisateurs découvrent des entreprises via des réponses générées par IA, des aperçus enrichis ou des assistants qui reformulent l'information.",
+      fr: "Le SEO (search engine optimization) reste essentiel, mais il ne suffit plus à expliquer toute la visibilité. De plus en plus d'utilisateurs découvrent des entreprises via des réponses générées par IA, des aperçus enrichis ou des assistants. Le GEO (generative engine optimization) vise à être cité dans ces réponses.",
       en: "SEO remains essential, but it no longer explains visibility on its own. More and more users discover businesses through AI-generated answers, enriched summaries or assistants that reformulate information.",
     },
     sections: [
@@ -1215,6 +1249,7 @@ export const blogPosts: BlogPost[] = [
           fr: [
             "Pour Google comme pour les interfaces IA, un site doit annoncer clairement son offre, son public, sa promesse et ses preuves de confiance. C'est ce qui rend l'information exploitable et facile à citer.",
             "Une page rapide, bien hiérarchisée et sémantiquement propre aide autant le moteur classique que les systèmes qui résument vos contenus.",
+            "Google le confirme pour ses propres fonctions d'IA : les bonnes pratiques SEO restent valables, sans exigence technique supplémentaire. Source : Google Search Central, « Fonctionnalités d'IA et votre site Web » (developers.google.com).",
           ],
           en: [
             "For Google and AI interfaces alike, a website must clearly state its offer, audience, promise and trust proof. That is what makes the information reusable and easy to cite.",
@@ -1283,7 +1318,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "qu-est-ce-que-le-seo-et-le-geo",
     publishedAt: "2026-04-05",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-10",
     author: "Équipe Sitekept",
     category: {
       fr: "SEO + GEO",
@@ -1313,47 +1348,80 @@ export const blogPosts: BlogPost[] = [
       {
         id: "seo-definition",
         title: {
-          fr: "Le SEO: être bien compris par les moteurs de recherche",
+          fr: "Qu’est-ce que le SEO ?",
           en: "SEO: being well understood by search engines",
         },
         paragraphs: {
           fr: [
-            "Le SEO, ou référencement naturel, désigne tout ce qui aide un site à apparaître dans les résultats non payants des moteurs de recherche. Cela repose sur des pages utiles, une structure claire, des titres compréhensibles, un bon maillage interne, une indexation correcte et une base technique saine.",
-            "En pratique, le SEO permet à votre activité d’être trouvée quand un prospect exprime déjà un besoin. C’est ce qui transforme un site en outil commercial plutôt qu’en simple présence en ligne.",
+            "Le SEO (search engine optimization), ou référencement naturel, désigne ce qui aide un site à apparaître dans les résultats non payants des moteurs de recherche. En pratique, il permet à votre activité d’être trouvée quand un prospect exprime déjà un besoin.",
+            "C’est ce qui transforme un site en outil commercial plutôt qu’en simple présence en ligne. Il repose sur les éléments suivants.",
           ],
           en: [
             "SEO, or search engine optimization, covers everything that helps a website appear in unpaid search results. It relies on useful pages, clear structure, understandable titles, strong internal linking, proper indexing and a sound technical foundation.",
             "In practice, SEO helps your business be found when a prospect already expresses a need. That is what turns a website into a commercial tool rather than a simple online presence.",
           ],
         },
+        bullets: {
+          fr: [
+            "des pages utiles",
+            "une structure claire",
+            "des titres compréhensibles",
+            "un bon maillage interne",
+            "une indexation correcte",
+            "une base technique saine",
+          ],
+          en: [
+            "useful pages",
+            "a clear structure",
+            "understandable titles",
+            "strong internal linking",
+            "proper indexing",
+            "a sound technical base",
+          ],
+        },
       },
       {
         id: "geo-definition",
         title: {
-          fr: "Le GEO: rester exploitable dans les réponses générées par l’IA",
+          fr: "Qu’est-ce que le GEO ?",
           en: "GEO: staying reusable in AI-generated answers",
         },
         paragraphs: {
           fr: [
-            "Le terme GEO est souvent utilisé pour parler de la capacité d’un site à rester clair, fiable et réutilisable dans les réponses générées par l’IA. Ici, l’enjeu n’est pas seulement d’apparaître sur une page de résultats, mais aussi d’être suffisamment compréhensible pour qu’une interface IA puisse s’appuyer sur votre contenu ou recommander votre activité.",
-            "Cela suppose un contenu précis, des réponses naturelles aux questions fréquentes, des signaux de confiance visibles, ainsi qu’une structure qui aide les systèmes à identifier qui vous êtes, ce que vous proposez et pourquoi cela peut être utile à l’utilisateur.",
+            "Le GEO (generative engine optimization) désigne le plus souvent la capacité d’un site à rester clair, fiable et réutilisable dans les réponses générées par l’IA. L’enjeu n’est pas seulement d’apparaître sur une page de résultats. Il faut aussi être assez compréhensible pour qu’une IA s’appuie sur votre contenu ou recommande votre activité.",
+            "Pour cela, un site doit réunir quatre éléments.",
           ],
           en: [
             "The term GEO is often used to describe a website’s ability to stay clear, reliable and reusable in AI-generated answers. The goal is not only to appear on a search results page, but also to be understandable enough for an AI interface to rely on your content or recommend your business.",
             "That requires precise content, natural answers to frequent questions, visible trust signals and a structure that helps systems identify who you are, what you offer and why it may be useful to the user.",
           ],
         },
+        bullets: {
+          fr: [
+            "un contenu précis",
+            "des réponses naturelles aux questions fréquentes",
+            "des signaux de confiance visibles",
+            "une structure qui aide les systèmes à identifier qui vous êtes, ce que vous proposez et pourquoi cela peut être utile à l’utilisateur",
+          ],
+          en: [
+            "precise content",
+            "natural answers to frequent questions",
+            "visible trust signals",
+            "a structure that helps systems identify who you are, what you offer and why it may be useful to the user",
+          ],
+        },
       },
       {
         id: "how-they-work-together",
         title: {
-          fr: "Pourquoi ils se complètent au lieu de s’opposer",
+          fr: "Pourquoi le SEO et le GEO se complètent-ils ?",
           en: "Why they complement each other instead of competing",
         },
         paragraphs: {
           fr: [
-            "Le SEO et le GEO reposent sur une base commune: un site clair, utile, rapide et indexable. Un contenu bien structuré aide Google à classer vos pages, mais il aide aussi les interfaces IA à reformuler correctement votre offre.",
-            "Autrement dit, le GEO ne remplace pas le SEO. Il prolonge sa logique dans de nouveaux usages. Pour une entreprise, la bonne approche consiste donc à construire un site qui répond clairement à des questions humaines, tout en restant lisible pour les moteurs et les systèmes génératifs.",
+            "Ils se complètent parce qu’ils reposent sur la même base : un site clair, utile, rapide et indexable. Un contenu bien structuré aide Google à classer vos pages, mais il aide aussi les interfaces IA à reformuler correctement votre offre. Le GEO ne remplace donc pas le SEO.",
+            "Il prolonge la logique du SEO dans de nouveaux usages. La bonne approche consiste à construire un site qui répond clairement à des questions humaines. Il doit rester lisible pour les moteurs et pour les systèmes génératifs.",
+            "Google le confirme pour ses propres fonctions d’IA : les bonnes pratiques SEO restent valables, sans exigence technique supplémentaire. Source : Google Search Central, « Fonctionnalités d’IA et votre site Web » (developers.google.com).",
           ],
           en: [
             "SEO and GEO share the same foundation: a website that is clear, useful, fast and indexable. Well-structured content helps Google rank your pages, but it also helps AI interfaces restate your offer correctly.",
@@ -1374,7 +1442,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "site-sans-referencement-peut-devenir-inutile",
     publishedAt: "2026-04-05",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-10",
     author: "Équipe Sitekept",
     category: {
       fr: "Visibilité",
@@ -1411,6 +1479,7 @@ export const blogPosts: BlogPost[] = [
           fr: [
             "Beaucoup d’entreprises investissent d’abord dans l’apparence du site. C’est important, mais ce n’est pas suffisant. Si le site ne répond pas à des recherches précises, s’il n’est pas correctement indexé ou s’il ne donne pas des signaux clairs sur l’activité, il restera peu visible.",
             "Le problème n’est donc pas seulement esthétique. Il est fonctionnel. Un site n’est utile que s’il peut être découvert par les bonnes personnes au bon moment.",
+            "Google rappelle que l’exploration, l’indexation et l’affichage d’une page ne sont pas garantis, même si elle respecte toutes les exigences. Source : Google Search Central, « Essentiels de la recherche Google » (developers.google.com).",
           ],
           en: [
             "Many businesses first invest in how the website looks. That matters, but it is not enough. If the site does not answer precise searches, is not indexed correctly or does not provide clear business signals, it will remain hard to discover.",
@@ -1427,7 +1496,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: {
           fr: [
             "Prenons des cas simples: un avocat, un dentiste, un restaurant ou un artisan local. Les prospects ne cherchent pas seulement un nom de marque. Ils cherchent un service, un besoin, une spécialité ou une zone géographique. Si votre site ne se positionne pas sur ces demandes, il laisse toute la place à des concurrents pourtant parfois moins convaincants.",
-            "Dans ces contextes, le référencement naturel ne sert pas à “faire du trafic” au sens abstrait. Il sert à capter des personnes déjà proches d’une décision ou d’une prise de contact.",
+            "Le référencement naturel désigne ce qui aide un site à apparaître dans les résultats non payants. Dans ces contextes, il ne sert pas à “faire du trafic” au sens abstrait. Il sert à capter des personnes déjà proches d’une décision ou d’une prise de contact.",
           ],
           en: [
             "Take simple examples: a lawyer, a dentist, a restaurant or a local trades business. Prospects are not only searching for a brand name. They search for a service, a need, a specialty or an area. If your website does not show up for those requests, it leaves room to competitors who may be less convincing.",
@@ -1465,7 +1534,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "pourquoi-optimisation-referencement-naturel-importante",
     publishedAt: "2026-04-05",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-10",
     author: "Équipe Sitekept",
     category: {
       fr: "Référencement naturel",
@@ -1488,7 +1557,7 @@ export const blogPosts: BlogPost[] = [
       en: "Visibility, qualified traffic, credibility and durable discoverability: here is what organic search optimization really brings to a website.",
     },
     intro: {
-      fr: "Le référencement naturel est parfois résumé à une affaire de mots-clés. C’est une vision trop courte. En réalité, il s’agit surtout de rendre un site trouvable, compréhensible et crédible pour des prospects qui cherchent déjà une réponse. C’est cette capacité qui lui donne une vraie valeur commerciale dans le temps.",
+      fr: "Le référencement naturel (SEO) désigne ce qui aide un site à apparaître dans les résultats non payants des moteurs de recherche. Il est parfois résumé à une affaire de mots-clés, ce qui est une vision trop courte. Il s’agit surtout de rendre un site trouvable, compréhensible et crédible pour des prospects qui cherchent déjà une réponse.",
       en: "Organic search optimization is sometimes reduced to a keyword exercise. That view is too narrow. In reality, it is about making a website findable, understandable and credible for prospects who are already looking for an answer. That is what gives it long-term commercial value.",
     },
     sections: [
@@ -2140,7 +2209,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "checklist-seo-avant-mise-en-ligne",
     publishedAt: "2026-08-12",
-    updatedAt: "2026-08-12",
+    updatedAt: "2026-11-10",
     author: "Équipe Sitekept",
     category: {
       fr: "Référencement",
@@ -2163,7 +2232,7 @@ export const blogPosts: BlogPost[] = [
       en: "20 SEO checks to run before publishing a site: indexability, canonicals, titles, speed, structured data — and how to verify each.",
     },
     intro: {
-      fr: "La plupart des problèmes de référencement ne viennent pas d'un manque d'optimisation, mais d'une erreur de configuration passée inaperçue à la mise en ligne. Un noindex oublié, un canonical qui pointe ailleurs, un sitemap listant des adresses qui redirigent : chacune de ces erreurs suffit à rendre invisible un site par ailleurs bien construit. Cette liste est classée par gravité, et chaque point indique comment le vérifier soi-même.",
+      fr: "Le SEO, ou référencement naturel, regroupe ce qui aide un site à apparaître dans les résultats non payants des moteurs de recherche. La plupart des problèmes viennent d'une erreur de configuration inaperçue à la mise en ligne, comme un noindex oublié ou un canonical qui pointe ailleurs. Cette liste est classée par gravité ; chaque point indique comment le vérifier soi-même.",
       en: "Most search visibility problems come not from a lack of optimisation but from a configuration error that slipped through at launch. This list is ordered by severity, and each point says how to check it yourself.",
     },
     sections: [
@@ -2177,6 +2246,7 @@ export const blogPosts: BlogPost[] = [
           fr: [
             "Si l'un de ces cinq points est défaillant, tout le reste est sans effet. Ce sont eux qui expliquent l'écrasante majorité des sites qui « ne sortent pas sur Google » malgré un contenu correct.",
             "Le plus insidieux est le premier. Une balise noindex laissée en place après une phase de préproduction rend le site totalement invisible, sans qu'aucune alerte ne le signale. Vérifiez-le le jour de la mise en ligne, puis une semaine plus tard.",
+            "Pour approfondir, sur developers.google.com : « Bloquer l'indexation dans la recherche avec noindex » et « Présentation du fichier robots.txt et guide ». Voir aussi « Redirections et recherche Google » et « Spécifier une URL canonique avec rel=canonical ».",
           ],
           en: [
             "If any of these five fails, everything else is pointless. They explain the vast majority of sites that never appear on Google despite decent content.",
@@ -2245,6 +2315,7 @@ export const blogPosts: BlogPost[] = [
           fr: [
             "Ces points conditionnent la capacité de Google à découvrir vos pages et la vitesse à laquelle il le fera. Ils comptent particulièrement pour un site neuf, qui ne bénéficie d'aucun historique.",
             "Un point mérite une attention particulière : un sitemap n'est utile que s'il est exact. Un sitemap contenant des adresses qui redirigent ou renvoient une erreur est traité comme défaillant, et Google finit par cesser de le consulter.",
+            "Pour approfondir, sur developers.google.com : « Créer et envoyer un sitemap » et « Bonnes pratiques de SEO concernant les liens pour Google ». Voir aussi « Effet des codes d'état HTTP sur les robots d'exploration Google ».",
           ],
           en: [
             "These determine Google's ability to discover your pages and how fast it does so.",
@@ -2278,6 +2349,7 @@ export const blogPosts: BlogPost[] = [
           fr: [
             "La vitesse influence le classement, mais surtout le taux d'abandon : un visiteur qui attend trop repart avant d'avoir vu la page. Les données structurées, elles, n'améliorent pas directement la position, mais conditionnent l'affichage enrichi dans les résultats.",
             "Une précision utile : les Core Web Vitals se mesurent sur des visiteurs réels. Un site neuf n'en a pas encore, et n'apparaîtra donc dans aucun rapport terrain avant plusieurs semaines de trafic. Les outils de laboratoire donnent une indication, pas une mesure.",
+            "Pour approfondir, sur developers.google.com : « Comprendre les signaux Web essentiels et les résultats de recherche Google ». Voir aussi « Présentation du fonctionnement du balisage de données structurées » et « À propos de PageSpeed Insights ».",
           ],
           en: [
             "Speed affects ranking, but above all bounce rate. Structured data does not directly improve position but enables rich results.",
@@ -2312,6 +2384,7 @@ export const blogPosts: BlogPost[] = [
             "Le code source de la page, accessible d'un clic droit dans n'importe quel navigateur, permet de contrôler les balises title, description, canonical et les données structurées. C'est l'outil le plus simple et le plus sous-utilisé.",
             "Le test des résultats enrichis de Google valide les données structurées et signale les propriétés manquantes. Enfin, PageSpeed Insights donne une indication de performance, en gardant à l'esprit que ses scores de laboratoire ne sont pas des Core Web Vitals réels.",
             "Une dernière méthode, très efficace et souvent oubliée : consultez votre site dans une fenêtre de navigation privée, sur un téléphone, avec une connexion mobile. Beaucoup de problèmes visibles pour un visiteur ne le sont pas depuis un poste de développement.",
+            "Pour approfondir, sur support.google.com : « Outil d'inspection d'URL » (Aide de la Search Console).",
           ],
           en: [
             "None of these checks requires a paid tool. Four free ones cover the entire list.",

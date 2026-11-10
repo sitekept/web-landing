@@ -87,23 +87,79 @@ const SEO_GEO_FAQ = [
   {
     question: "Quelle est la différence entre le SEO et le GEO ?",
     answer:
-      "Le SEO vise à faire apparaître votre page dans une liste de résultats, où l'utilisateur choisit ensuite sur quoi cliquer. Le GEO — generative engine optimization — vise à être cité dans une réponse rédigée par une intelligence artificielle, qui ne propose que quelques sources. Les deux reposent largement sur les mêmes fondations techniques : un site explorable, rapide, clairement structuré. Le GEO y ajoute une exigence de formulation, parce qu'un passage doit pouvoir être extrait et compris hors de son contexte.",
+      "Le SEO vise à placer votre page dans une liste de résultats, où l'utilisateur choisit sur quoi cliquer. Le GEO (generative engine optimization) vise à faire citer votre contenu dans une réponse rédigée par une IA, qui ne propose que quelques sources. Les deux reposent sur un site explorable, rapide et clair.",
   },
   {
     question: "Faut-il bloquer les robots des IA dans son robots.txt ?",
     answer:
-      "C'est un arbitrage, pas une évidence. Les bloquer protège votre contenu d'être réutilisé pour entraîner des modèles, mais vous retire aussi des réponses que ces systèmes produisent — donc d'un canal d'acquisition. Pour une entreprise qui cherche des clients, l'ouverture est généralement le bon choix. Pour un éditeur dont le contenu est le produit, la réponse peut être inverse. Le site de Sitekept laisse ces robots accéder au contenu, et c'est un choix délibéré.",
+      "Pour une entreprise qui cherche des clients, il vaut généralement mieux laisser entrer les robots de recherche des IA. Les bloquer peut vous retirer de leurs réponses, alors que d'autres robots servent à entraîner les modèles. Sitekept laisse ces robots accéder à son contenu ; un éditeur dont le contenu est le produit peut choisir l'inverse.",
   },
   {
     question: "Le GEO remplace-t-il le référencement classique ?",
     answer:
-      "Non, et rien n'indique aujourd'hui que ce sera le cas. La recherche classique reste très majoritaire en volume, et les moteurs de réponse s'appuient eux-mêmes largement sur des index de recherche pour aller chercher leurs sources. Un site invisible pour Google a peu de chances d'être cité par une IA. Le GEO est une couche supplémentaire, pas un remplacement.",
+      "Non, et rien n'indique aujourd'hui que ce sera le cas. Les moteurs de réponse s'appuient largement sur des index de recherche pour trouver leurs sources. Un site invisible pour Google a peu de chances d'être cité par une IA : le GEO est une couche supplémentaire, pas un remplacement.",
   },
   {
     question: "Combien de temps avant de voir des résultats ?",
     answer:
-      "Les corrections techniques — indexation, vitesse, structure — produisent leurs effets en quelques semaines. Le positionnement sur des requêtes concurrentielles se compte en mois, et dépend surtout du contenu publié et de sa régularité. Méfiez-vous de tout prestataire qui promet une position ou un délai précis : personne ne contrôle l'algorithme, et personne ne peut garantir un classement.",
+      "Comptez quelques semaines avant de juger l'effet d'une correction technique : indexation, vitesse, structure. Le positionnement sur des requêtes concurrentielles se compte en mois et dépend du contenu publié, de sa régularité. Personne ne contrôle l'algorithme, donc personne ne peut garantir un classement ni un délai précis.",
   },
+];
+
+/**
+ * Sources officielles affichées sous chaque réponse de la FAQ. Elles ne font
+ * pas partie du balisage FAQPage : la réponse balisée reste identique au texte
+ * visible, la source la suit dans un paragraphe distinct.
+ */
+const SEO_GEO_FAQ_SOURCES: { href: string; label: string }[][] = [
+  [
+    {
+      href: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=fr",
+      label: "Google Search Central, Bien débuter en référencement naturel (SEO)",
+    },
+  ],
+  [
+    {
+      href: "https://developers.openai.com/api/docs/bots",
+      label: "OpenAI, Overview of OpenAI Crawlers",
+    },
+    {
+      href: "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler",
+      label: "Anthropic, robots d'exploration",
+    },
+    {
+      href: "https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers?hl=fr",
+      label: "Google, robots d'exploration communs",
+    },
+    {
+      href: "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      label: "Perplexity, Perplexity Crawlers",
+    },
+  ],
+  [
+    {
+      href: "https://developers.google.com/search/docs/appearance/ai-features?hl=fr",
+      label: "Google Search Central, Fonctionnalités d'IA et votre site Web",
+    },
+  ],
+  [
+    {
+      href: "https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=fr",
+      label: "Google Search Central, Bien débuter en référencement naturel (SEO)",
+    },
+    {
+      href: "https://developers.google.com/search/docs/fundamentals/do-i-need-seo?hl=fr",
+      label: "Google Search Central, Avez-vous besoin d'un référenceur ?",
+    },
+  ],
+];
+
+/** Phrase qui précise ce que la source confirme, sous chaque réponse. */
+const SEO_GEO_FAQ_SOURCE_NOTES = [
+  "Google définit le SEO ainsi : aider les moteurs de recherche à interpréter votre contenu et les internautes à trouver votre site.",
+  "Ces éditeurs distinguent leurs robots selon l'usage : recherche, requête d'un utilisateur ou entraînement des modèles.",
+  "Pour Google, une page doit être indexée et pouvoir s'afficher avec un extrait pour apparaître comme lien dans ses réponses IA.",
+  "Google conseille d'attendre quelques semaines pour évaluer un changement, et rappelle que personne ne peut garantir la première position.",
 ];
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -140,9 +196,7 @@ export default async function SeoGeoPage() {
       <ServiceJsonLd
         path="/seo-geo"
         name="Optimisation SEO et GEO"
-        description={
-          getLocalizedValue(seoGeoPageContent.optimizationParagraphs, locale)[0]
-        }
+        description={getLocalizedText(seoGeoPageContent.intro, locale)}
         serviceType="Optimisation SEO"
       />
       <FaqJsonLd items={SEO_GEO_FAQ} />
@@ -193,12 +247,45 @@ export default async function SeoGeoPage() {
               {getLocalizedText(seoGeoPageContent.optimizationTitle, locale)}
             </h2>
             <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
-              {getLocalizedValue(seoGeoPageContent.optimizationParagraphs, locale).map(
-                (paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+              <p>
+                {
+                  getLocalizedValue(
+                    seoGeoPageContent.optimizationParagraphs,
+                    locale
+                  )[0]
+                }
+              </p>
+            </div>
+            <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
+              {getLocalizedValue(seoGeoPageContent.optimizationBullets, locale).map(
+                (bullet) => (
+                  <li key={bullet} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+                    <span>{bullet}</span>
+                  </li>
                 )
               )}
+            </ul>
+            <div className="mt-6 space-y-4 text-base leading-8 text-slate-700">
+              {getLocalizedValue(seoGeoPageContent.optimizationParagraphs, locale)
+                .slice(1)
+                .map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
             </div>
+            <p className="mt-4 text-sm text-slate-600">
+              Source Google&nbsp;:{" "}
+              <a
+                href="https://developers.google.com/search/docs/appearance/ai-features?hl=fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-blue-700 underline underline-offset-4"
+              >
+                Fonctionnalités d&apos;IA et votre site Web
+              </a>
+              . Les bonnes pratiques SEO restent valables pour ces fonctions,
+              sans exigence technique supplémentaire.
+            </p>
             {visibilityArticle ? (
               <Button
                 asChild
@@ -218,10 +305,11 @@ export default async function SeoGeoPage() {
       <section className="bg-slate-50 px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            SEO et GEO&nbsp;: quelle différence, concrètement
+            Quelle différence, concrètement, entre le SEO et le GEO&nbsp;?
           </h2>
           <p className="mt-4 text-slate-600">
-            Le SEO consiste à apparaître dans une liste de résultats. Le GEO —
+            Le SEO consiste à apparaître dans une liste de résultats que
+            l&apos;utilisateur parcourt. Le GEO —
             <em> generative engine optimization</em> — consiste à être cité dans
             une réponse rédigée par une intelligence artificielle. La
             distinction paraît mince&nbsp;; elle change pourtant la façon
@@ -268,21 +356,19 @@ export default async function SeoGeoPage() {
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Comment un moteur de réponse choisit ce qu&apos;il cite
+            Comment un moteur de réponse choisit-il ce qu&apos;il cite&nbsp;?
           </h2>
           <p className="mt-4 text-slate-600">
-            Commençons par ce que personne ne sait&nbsp;: aucun de ces systèmes
-            ne publie ses critères de sélection des sources. Toute agence qui
-            prétend connaître l&apos;algorithme invente. En revanche, la
-            mécanique générale est observable, et elle suffit à travailler
-            sérieusement.
+            Pour une question d&apos;actualité ou locale, la plupart des moteurs
+            de réponse lancent d&apos;abord une recherche. Ils récupèrent
+            quelques pages, en extraient les passages utiles, puis rédigent une
+            synthèse en citant leurs sources. Aucun de ces systèmes ne publie
+            ses critères de sélection&nbsp;: toute agence qui prétend les
+            connaître invente.
           </p>
           <p className="mt-4 text-slate-600">
-            La plupart des moteurs de réponse ne puisent pas dans leur mémoire
-            d&apos;entraînement pour répondre à une question d&apos;actualité ou
-            locale. Ils lancent une recherche, récupèrent quelques pages, en
-            extraient les passages utiles, puis rédigent une synthèse en citant
-            leurs sources. Trois conditions découlent de ce fonctionnement.
+            La mécanique générale est observable, et elle suffit à travailler
+            sérieusement. Trois conditions en découlent.
           </p>
           <ol className="mt-8 space-y-5">
             <li className="border-l-2 border-blue-100 pl-5">
@@ -316,6 +402,32 @@ export default async function SeoGeoPage() {
               </span>
             </li>
           </ol>
+          <p className="mt-6 text-sm text-slate-600">
+            Source Google&nbsp;:{" "}
+            <a
+              href="https://developers.google.com/search/docs/appearance/ai-features?hl=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              Fonctionnalités d&apos;IA et votre site Web
+            </a>
+            . Une page doit être indexée et pouvoir s&apos;afficher avec un
+            extrait pour apparaître comme lien dans ses réponses IA.
+          </p>
+          <p className="mt-2 text-sm text-slate-600">
+            Source OpenAI&nbsp;:{" "}
+            <a
+              href="https://developers.openai.com/api/docs/bots"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              Overview of OpenAI Crawlers
+            </a>
+            . Le robot de recherche OAI-SearchBot et le robot d&apos;entraînement
+            GPTBot se gèrent séparément dans le fichier robots.txt.
+          </p>
         </div>
       </section>
 
@@ -340,6 +452,19 @@ export default async function SeoGeoPage() {
               </div>
             ))}
           </dl>
+          <p className="mt-8 text-sm text-slate-600">
+            Source Google&nbsp;:{" "}
+            <a
+              href="https://developers.google.com/search/docs/appearance/ai-features?hl=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              Fonctionnalités d&apos;IA et votre site Web
+            </a>
+            . Elle conseille de rendre le contenu important disponible sous
+            forme de texte.
+          </p>
         </div>
       </section>
 
@@ -353,14 +478,51 @@ export default async function SeoGeoPage() {
             fondamental. Elle les a plutôt rendus plus déterminants, parce
             qu&apos;un site mal construit est écarté plus tôt dans la chaîne.
           </p>
-          <p className="mt-4 text-slate-600">
-            Un site doit toujours être explorable et indexable, servir une seule
-            adresse canonique, se charger vite, être lisible sur mobile, et
-            présenter une hiérarchie de titres cohérente. Il doit toujours
-            déclarer ce qu&apos;il est au moyen de données structurées, et
-            toujours proposer un contenu qui répond réellement à une intention.
+          <p className="mt-4 text-slate-600">Un site doit toujours&nbsp;:</p>
+          <ul className="mt-8 space-y-5">
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              être explorable et indexable&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              servir une seule adresse canonique&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              se charger vite et être lisible sur mobile&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              présenter une hiérarchie de titres cohérente&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              déclarer ce qu&apos;il est au moyen de données structurées&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              proposer un contenu qui répond réellement à une intention.
+            </li>
+          </ul>
+          <p className="mt-8 text-slate-600">
             Ce socle sert la recherche classique&nbsp;; il conditionne aussi
             l&apos;accès aux réponses génératives.
+          </p>
+          <p className="mt-4 text-sm text-slate-600">
+            Sources Google&nbsp;:{" "}
+            <a
+              href="https://developers.google.com/search/docs/essentials?hl=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              Essentiels de la recherche Google
+            </a>{" "}
+            et{" "}
+            <a
+              href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?hl=fr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              Présentation du balisage de données structurées
+            </a>
+            .
           </p>
           <p className="mt-4 text-slate-600">
             Autrement dit&nbsp;: il n&apos;existe pas de raccourci GEO qui
@@ -377,12 +539,28 @@ export default async function SeoGeoPage() {
             Ce que nous faisons à la livraison, et ce que nous ne promettons pas
           </h2>
           <p className="mt-4 text-slate-600">
-            Chaque site livré part avec les fondations en place&nbsp;: une
-            structure de titres cohérente, des balises title et description
-            propres à chaque page, une adresse canonique unique, un sitemap et
-            un fichier robots.txt corrects, des données structurées décrivant
-            l&apos;activité, des images optimisées et un rendu rapide.
+            Chaque site livré part avec les fondations en place&nbsp;:
           </p>
+          <ul className="mt-8 space-y-5">
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              une structure de titres cohérente&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              des balises title et description propres à chaque page&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              une adresse canonique unique&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              un sitemap et un fichier robots.txt corrects&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              des données structurées décrivant l&apos;activité&nbsp;;
+            </li>
+            <li className="border-l-2 border-blue-100 pl-5 text-slate-700">
+              des images optimisées et un rendu rapide.
+            </li>
+          </ul>
           <p className="mt-4 text-slate-600">
             Ce que nous ne promettons pas, en revanche&nbsp;: une position dans
             les résultats, un délai pour l&apos;obtenir, ou une citation par tel
@@ -401,12 +579,29 @@ export default async function SeoGeoPage() {
             Questions fréquentes sur le SEO et le GEO
           </h2>
           <dl className="mt-10 space-y-8">
-            {SEO_GEO_FAQ.map((item) => (
+            {SEO_GEO_FAQ.map((item, index) => (
               <div key={item.question}>
                 <dt className="text-lg font-semibold text-slate-900">
                   {item.question}
                 </dt>
                 <dd className="mt-2 text-slate-600">{item.answer}</dd>
+                <dd className="mt-2 text-sm text-slate-600">
+                  {SEO_GEO_FAQ_SOURCE_NOTES[index]} Sources&nbsp;:{" "}
+                  {SEO_GEO_FAQ_SOURCES[index].map((source, sourceIndex) => (
+                    <span key={source.href}>
+                      {sourceIndex > 0 ? " ; " : null}
+                      <a
+                        href={source.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-blue-700 underline underline-offset-4"
+                      >
+                        {source.label}
+                      </a>
+                    </span>
+                  ))}
+                  .
+                </dd>
               </div>
             ))}
           </dl>
