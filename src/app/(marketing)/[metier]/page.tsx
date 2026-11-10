@@ -5,7 +5,11 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { metierPages, getMetierPageBySlug } from "@/content/metier-pages";
 import { buildPageMetadata } from "@/lib/page-metadata";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
+import {
+  BreadcrumbJsonLd,
+  FaqJsonLd,
+  ServiceJsonLd,
+} from "@/components/structured-data";
 
 interface MetierPageProps {
   params: Promise<{ metier: string }>;
@@ -47,9 +51,16 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
       <BreadcrumbJsonLd
         items={[
           { name: "Accueil", path: "/" },
-          { name: "Modèles de sites", path: "/templates" },
+          { name: "Templates", path: "/templates" },
           { name: page.h1, path: `/${page.slug}` },
         ]}
+      />
+      <ServiceJsonLd
+        path={`/${page.slug}`}
+        name={page.h1}
+        description={page.intro}
+        serviceType="Création de site internet"
+        audienceType={page.metier}
       />
       <FaqJsonLd items={page.faq} />
 

@@ -1,20 +1,47 @@
 import { SITE_URL } from "@/lib/site-url";
 
 /**
+ * Sérialise un bloc JSON-LD pour une balise <script>. Le « < » est échappé
+ * (\u003c, JSON valide) pour qu'aucune donnée ne puisse fermer la balise.
+ */
+function serializeJsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
+/** Page LinkedIn de l'entreprise, fournie par Joseph le 10 novembre 2026. */
+const LINKEDIN_COMPANY_URL = "https://www.linkedin.com/company/sitekept/";
+
+/**
  * Données structurées de l'entité éditrice.
  *
  * Règle appliquée ici : aucune donnée non vérifiable n'est déclarée. Les
  * coordonnées proviennent du footer et des pages légales
  * (src/components/footer.tsx, messages/fr.json).
  *
+ * Cette entité n'est déclarée qu'UNE fois par page, ici, depuis le layout
+ * marketing (`@id` = `${SITE_URL}/#organization`). Les autres blocs la
+ * désignent par cet `@id` (provider, publisher) et ne la redéclarent pas.
+ *
+ * `sameAs` : la page LinkedIn de l'entreprise, fournie par Joseph. La
+ * condition « profil relié depuis le site » est remplie par la micro-tâche
+ * qui ajoute un lien texte visible vers cette page dans le footer, livrée
+ * juste après le bandeau de consentement. Aucun autre profil n'est déclaré.
+ *
  * Volontairement ABSENTS, faute de donnée disponible aujourd'hui :
  *  - `address` : la raison sociale, la forme juridique, le SIREN et l'adresse
  *    sont encore « À COMPLÉTER » dans messages/fr.json. Déclarer une adresse
  *    inventée serait une fausse déclaration.
- *  - `sameAs` : aucun profil social n'est lié depuis le site. À ajouter dès
- *    qu'une page LinkedIn d'entreprise est reliée depuis le footer.
  *  - `aggregateRating` : à n'ajouter QUE si des avis réels et vérifiables
  *    existent. Un rating fabriqué expose à une action manuelle Google.
+ *
+ * `knowsLanguage` et `knowsAbout` remplacent `availableLanguage` et
+ * `serviceType` : ces deux propriétés ne s'appliquent pas à une Organization
+ * dans le vocabulaire schema.org (elles relèvent de ContactPoint et de
+ * Service). Les valeurs sont inchangées ; les services sont décrits par les
+ * blocs Service des pages concernées.
+ *
+ * À aligner en phase 1 : `priceRange` est écrit en dur. Il devra venir de la
+ * constante unique des prix (plan-v2 § 6 bis).
  */
 export function OrganizationJsonLd() {
   const data = {
@@ -32,6 +59,7 @@ export function OrganizationJsonLd() {
         image: `${SITE_URL}/opengraph-image`,
         description:
           "Sitekept conçoit et livre des sites professionnels en 48 h, sans abonnement imposé, avec déploiement inclus et optimisation SEO.",
+        sameAs: [LINKEDIN_COMPANY_URL],
         email: "sitekept@gmail.com",
         telephone: "+33651179925",
         priceRange: "À partir de 500 €",
@@ -39,8 +67,8 @@ export function OrganizationJsonLd() {
           "@type": "Country",
           name: "France",
         },
-        availableLanguage: ["fr", "en"],
-        serviceType: [
+        knowsLanguage: ["fr", "en"],
+        knowsAbout: [
           "Création de site internet",
           "Site vitrine",
           "Refonte de site web",
@@ -61,7 +89,7 @@ export function OrganizationJsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
     />
   );
 }
@@ -80,6 +108,11 @@ interface BlogPostingJsonLdProps {
  * Schéma d'article. `datePublished` et `author` sont obligatoires côté Google
  * pour l'éligibilité aux résultats enrichis d'article — ils n'existaient pas
  * dans le contenu avant l'ajout des champs correspondants à `BlogPost`.
+ *
+ * `author` reprend la signature affichée à l'écran (« Équipe Sitekept »),
+ * déclarée comme Organization sans `@id` : c'est une signature d'équipe, pas
+ * une seconde déclaration de l'entité éditrice. Aucune Person n'est inventée.
+ * Un auteur nommé et visible relève de la tâche 0.6.
  */
 export function BlogPostingJsonLd({
   slug,
@@ -111,7 +144,7 @@ export function BlogPostingJsonLd({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
     />
   );
 }
@@ -138,7 +171,7 @@ export function FaqJsonLd({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
     />
   );
 }
@@ -166,7 +199,57 @@ export function BreadcrumbJsonLd({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
+    />
+  );
+}
+
+interface ServiceJsonLdProps {
+  /** Chemin de la page qui présente le service, par exemple `/seo-geo`. */
+  path: string;
+  name: string;
+  description: string;
+  serviceType: string;
+  /** Public visé, uniquement si la page le nomme (page métier). */
+  audienceType?: string;
+}
+
+/**
+ * Service présenté par la page. Le prestataire est l'entité éditrice, citée
+ * par son `@id` : elle est déclarée une seule fois par le layout marketing.
+ *
+ * Volontairement ABSENTS : `offers`, prix et monnaie. Les prix viendront
+ * d'une constante unique, avec le balisage OfferCatalog (plan-v2 § 9,
+ * phase 4).
+ */
+export function ServiceJsonLd({
+  path,
+  name,
+  description,
+  serviceType,
+  audienceType,
+}: ServiceJsonLdProps) {
+  const url = `${SITE_URL}${path}`;
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    url,
+    name,
+    description,
+    serviceType,
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: { "@type": "Country", name: "France" },
+    ...(audienceType
+      ? { audience: { "@type": "Audience", audienceType } }
+      : {}),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
     />
   );
 }
