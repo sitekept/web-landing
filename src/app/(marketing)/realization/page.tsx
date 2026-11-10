@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata = buildPageMetadata({
   title: "Nos réalisations | Sites web livrés par Sitekept",
@@ -75,6 +76,16 @@ export default async function RealizationPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", path: "/" },
+          {
+            name: getMessage(locale, "realization.title"),
+            path: "/realization",
+          },
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
         <div className="container mx-auto px-4">

@@ -15,6 +15,7 @@ import {
 } from "@/content/site-content";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
+import { FaqJsonLd } from "@/components/structured-data";
 import { Contact } from "../_components/contact";
 import { PortfolioPreview } from "../_components/portfolio-preview";
 
@@ -43,6 +44,13 @@ export default async function Home() {
 
   return (
     <>
+      <FaqJsonLd
+        items={faqItems.map((item) => ({
+          question: getLocalizedText(item.question, locale),
+          answer: getLocalizedText(item.answer, locale),
+        }))}
+      />
+
       <section
         id="hero"
         className="relative overflow-hidden bg-black px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"

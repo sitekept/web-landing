@@ -10,7 +10,11 @@ import {
 } from "@/content/site-content";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
-import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
+import {
+  BreadcrumbJsonLd,
+  FaqJsonLd,
+  ServiceJsonLd,
+} from "@/components/structured-data";
 
 /**
  * Page pilier SEO/GEO.
@@ -132,6 +136,14 @@ export default async function SeoGeoPage() {
           { name: "Accueil", path: "/" },
           { name: "SEO et GEO", path: "/seo-geo" },
         ]}
+      />
+      <ServiceJsonLd
+        path="/seo-geo"
+        name="Optimisation SEO et GEO"
+        description={
+          getLocalizedValue(seoGeoPageContent.optimizationParagraphs, locale)[0]
+        }
+        serviceType="Optimisation SEO"
       />
       <FaqJsonLd items={SEO_GEO_FAQ} />
 

@@ -9,6 +9,7 @@ import {
 } from "@/content/site-content";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
+import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
@@ -31,6 +32,13 @@ export default async function BlogPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", path: "/" },
+          { name: "Blog", path: "/blog" },
+        ]}
+      />
+
       <section className="bg-[linear-gradient(180deg,#eef2ff_0%,#ffffff_100%)] px-6 pb-16 pt-28 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">

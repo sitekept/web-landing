@@ -1,5 +1,6 @@
 import { getMessage, getRawMessage, getSiteLocale } from "@/lib/site-messages";
 import { buildPageMetadata } from "@/lib/page-metadata";
+import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata = buildPageMetadata({
   title: "Conditions générales d'utilisation | Sitekept",
@@ -14,6 +15,13 @@ export default async function TermsPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", path: "/" },
+          { name: getMessage(locale, "terms.title"), path: "/terms" },
+        ]}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-6 py-24 sm:py-32 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
