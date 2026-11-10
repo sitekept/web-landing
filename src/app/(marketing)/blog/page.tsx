@@ -17,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "Blog Sitekept | Guides création de site et SEO"
+        ? "Guide de création de site internet et SEO | Blog Sitekept"
         : "Sitekept Blog | Speed, ownership, SEO and GEO",
     description:
       locale === "fr"
@@ -50,6 +50,18 @@ export default async function BlogPage() {
           <p className="mt-5 text-lg leading-8 text-slate-600">
             {getLocalizedText(blogPageCopy.description, locale)}
           </p>
+          {locale === "fr" ? (
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              Pour confier la création de votre site, découvrez{" "}
+              <Link
+                href="/"
+                className="font-medium text-blue-700 underline underline-offset-4"
+              >
+                l&apos;offre Sitekept
+              </Link>
+              .
+            </p>
+          ) : null}
         </div>
       </section>
 

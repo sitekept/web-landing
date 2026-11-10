@@ -117,6 +117,16 @@ export default async function TemplatesPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-8 text-slate-600">
+            Pour voir des sites déjà livrés, consultez{" "}
+            <Link
+              href="/realization"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              nos réalisations
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </>

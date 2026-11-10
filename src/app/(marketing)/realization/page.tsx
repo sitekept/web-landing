@@ -7,7 +7,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 import { BreadcrumbJsonLd } from "@/components/structured-data";
 
 export const metadata = buildPageMetadata({
-  title: "Nos réalisations | Sites web livrés par Sitekept",
+  title: "Exemples de sites internet professionnels | Sitekept",
   description:
     "Découvrez les sites livrés par Sitekept pour des PME, indépendants et commerces : design, structure SEO et mise en ligne. Demandez un devis gratuit.",
   path: "/realization",
@@ -91,7 +91,9 @@ export default async function RealizationPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
             <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
-              {getMessage(locale, "realization.title")}
+              {locale === "fr"
+                ? "Nos réalisations : exemples de sites internet professionnels"
+                : getMessage(locale, "realization.title")}
             </h1>
             <p className="mb-8 text-xl text-gray-600">
               {getMessage(locale, "realization.description")}
@@ -134,6 +136,18 @@ export default async function RealizationPage() {
                 ? "Chaque projet a été développé, déployé et remis à son propriétaire, code compris."
                 : "Every project was built, deployed and handed over to its owner, source code included."}
             </p>
+            {locale === "fr" ? (
+              <p className="mt-4 text-lg leading-8 text-slate-600">
+                Vous cherchez un point de départ par métier ? Parcourez nos{" "}
+                <Link
+                  href="/templates"
+                  className="font-medium text-blue-700 underline underline-offset-4"
+                >
+                  templates
+                </Link>
+                .
+              </p>
+            ) : null}
           </div>
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -23,6 +24,41 @@ interface BlogPostPageProps {
 }
 
 export const dynamicParams = false;
+
+/**
+ * Lien interne dans un paragraphe : la syntaxe `[libellé](/chemin)` est
+ * rendue avec le style de lien du site. Seuls les chemins internes (commençant
+ * par « / ») sont reconnus ; tout autre texte reste affiché tel quel.
+ */
+const INLINE_LINK = /\[([^\]]+)\]\((\/(?![\/\\])[^)\s]*)\)/g;
+
+function renderParagraph(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  let last = 0;
+
+  for (const match of text.matchAll(INLINE_LINK)) {
+    const index = match.index ?? 0;
+    if (index > last) {
+      parts.push(text.slice(last, index));
+    }
+    parts.push(
+      <Link
+        key={index}
+        href={match[2]}
+        className="font-medium text-blue-700 underline underline-offset-4"
+      >
+        {match[1]}
+      </Link>
+    );
+    last = index + match[0].length;
+  }
+
+  if (last < text.length) {
+    parts.push(text.slice(last));
+  }
+
+  return parts;
+}
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -139,15 +175,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     {getLocalizedText(section.title, locale)}
                   </h2>
                   <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
-                    {paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
+                    {paragraphs.map((paragraph, index) => (
+                      <p key={`${section.id}-${index}`}>
+                        {renderParagraph(paragraph)}
+                      </p>
                     ))}
                   </div>
                   {bullets?.length ? (
                     <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
                       {bullets.map((bullet) => (
                         <li key={bullet} className="flex gap-3">
-                          <span className="mt-2 h-2 w-2 rounded-full bg-blue-600" />
+                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
                           <span>{bullet}</span>
                         </li>
                       ))}
@@ -156,6 +194,34 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </section>
               );
             })}
+
+            {post.sources?.length ? (
+              <section className="rounded-md border border-blue-100 bg-slate-50 p-8">
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                  Sources
+                </h2>
+                <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
+                  {post.sources.map((source) => (
+                    <li key={source.url} className="flex gap-3">
+                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+                      <span>
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-blue-700 underline underline-offset-4"
+                        >
+                          {source.title}
+                        </a>{" "}
+                        <span className="text-slate-500">
+                          ({new URL(source.url).hostname})
+                        </span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
           </article>
 
           <aside className="space-y-6">

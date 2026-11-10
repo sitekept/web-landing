@@ -168,7 +168,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "SEO et GEO : rendre votre site visible | Sitekept"
+        ? "Référencement SEO et GEO : rendre un site visible | Sitekept"
         : "SEO and GEO: making your website visible | Sitekept",
     description:
       locale === "fr"
@@ -350,6 +350,15 @@ export default async function SeoGeoPage() {
             citées. La concurrence pour y figurer est donc plus dure, et le
             format du contenu compte davantage que sa longueur.
           </p>
+          <p className="mt-4 text-slate-600">
+            Pour les bases, lisez notre article{" "}
+            <Link
+              href="/blog/qu-est-ce-que-le-seo-et-le-geo"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              SEO et GEO, c&apos;est quoi&nbsp;?
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -502,6 +511,16 @@ export default async function SeoGeoPage() {
           <p className="mt-8 text-slate-600">
             Ce socle sert la recherche classique&nbsp;; il conditionne aussi
             l&apos;accès aux réponses génératives.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Pour vérifier ces points avant une mise en ligne, suivez la{" "}
+            <Link
+              href="/blog/checklist-seo-avant-mise-en-ligne"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              checklist SEO
+            </Link>
+            .
           </p>
           <p className="mt-4 text-sm text-slate-600">
             Sources Google&nbsp;:{" "}

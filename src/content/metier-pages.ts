@@ -24,6 +24,20 @@ export interface MetierPage {
   metier: string;
   /** Utilisé dans le H1 et les titres, au singulier, avec son article. */
   label: string;
+  /**
+   * Public visé, au pluriel (ex. « plombiers », « entreprises de nettoyage »).
+   * Alimente `audience.audienceType` du JSON-LD Service : un public, pas une
+   * activité. Invisible à l'écran.
+   */
+  audienceType: string;
+  /**
+   * Ajoute un lien vers /seo-geo. Réservé à la première vague : les pages
+   * dentiste et avocat n'y renvoient pas tant que les règles de communication
+   * de ces professions ne sont pas vérifiées (carte des mots-clés § 3.3, C).
+   */
+  linksToSeoGeo?: boolean;
+  /** Lien vers une page métier voisine (carte des mots-clés § 3.3, E). */
+  relatedMetier?: { slug: string; intro: string; label: string };
   demoSlug: string;
   demoName: string;
   /**
@@ -50,6 +64,8 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-plombier",
     metier: "plombier",
     label: "un plombier chauffagiste",
+    audienceType: "plombiers",
+    linksToSeoGeo: true,
     demoSlug: "plombier-chauffagiste",
     demoName: "Démo plombier chauffagiste",
     seoTitle: "Site internet pour plombier : ce qu'il vous faut | Sitekept",
@@ -57,7 +73,7 @@ export const metierPages: MetierPage[] = [
       "Site internet pour plombier chauffagiste : ce que cherchent vos clients en urgence, ce que le site doit afficher sur mobile, et notre offre à 500 €.",
     h1: "Site internet pour plombier chauffagiste",
     intro:
-      "La plomberie est l'un des rares métiers où le visiteur ne compare pas. Il a une fuite, il cherche un numéro, il appelle le premier qui inspire confiance et qui couvre sa commune. Un site de plombier ne se juge donc pas sur son esthétique, mais sur le temps qu'il faut pour trouver le numéro et comprendre que vous intervenez chez lui.",
+      "La plomberie est l'un des rares métiers où le visiteur ne compare pas. Il a une fuite, il cherche un numéro, il appelle le premier qui inspire confiance et qui couvre sa commune. Un site internet de plombier se juge sur le temps nécessaire pour trouver le numéro et comprendre que vous intervenez chez lui.",
     searchIntent: [
       "Une urgence en cours : fuite, chaudière en panne, canalisation bouchée. Le visiteur est pressé, souvent sur mobile, parfois debout dans une salle de bain inondée.",
       "Un devis à prévoir : remplacement de chaudière, rénovation de salle de bain. Là, il compare, et il regarde vos réalisations et vos certifications.",
@@ -113,14 +129,15 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-dentiste",
     metier: "dentiste",
     label: "un cabinet dentaire",
+    audienceType: "dentistes",
     demoSlug: "dentiste",
     demoName: "Démo cabinet dentaire",
     seoTitle: "Site internet pour dentiste et cabinet dentaire | Sitekept",
     seoDescription:
       "Site internet dentiste : rassurer vos patients avant la première visite, structurer les soins, faciliter la prise de rendez-vous. Site à 500 €.",
-    h1: "Site internet pour cabinet dentaire",
+    h1: "Site internet pour dentiste et cabinet dentaire",
     intro:
-      "Le site d'un cabinet dentaire ne vend pas : il rassure. Une partie de vos futurs patients arrive avec une appréhension réelle, parfois ancienne. Ce qu'ils cherchent en ligne avant de décrocher leur téléphone, c'est de savoir à quoi ressemble le cabinet, qui les recevra, et comment se passe une première visite.",
+      "Le site internet d'un dentiste ne vend pas : il rassure. Une partie de vos futurs patients arrive avec une appréhension réelle, parfois ancienne. En ligne, ils cherchent à savoir à quoi ressemble le cabinet, qui les recevra et comment se passe une première visite.",
     searchIntent: [
       "Une douleur : le visiteur cherche un rendez-vous rapide et regarde d'abord vos disponibilités et votre adresse.",
       "Un changement de praticien : déménagement, départ à la retraite du précédent. Il compare les cabinets sur l'accueil, l'équipe et les horaires.",
@@ -177,6 +194,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-restaurant",
     metier: "restaurant",
     label: "un restaurant",
+    audienceType: "restaurateurs",
     demoSlug: "restaurant-bistrot",
     demoName: "Démo restaurant bistrot",
     seoTitle: "Site internet pour restaurant : l'essentiel | Sitekept",
@@ -184,7 +202,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'un restaurant : carte à jour, réservation, horaires et accès. Ce que vos clients cherchent vraiment, et notre offre livrée en 48h dès 500€.",
     h1: "Site internet pour restaurant",
     intro:
-      "Un site de restaurant a trois missions, et une seule vraie difficulté. Les missions : montrer la carte, permettre de réserver, indiquer où et quand vous êtes ouverts. La difficulté : rester à jour. Une carte périmée ou des horaires faux coûtent plus cher qu'une absence de site, parce qu'ils font venir des gens pour rien.",
+      "Un site internet de restaurant a trois missions, et une seule vraie difficulté. Les missions : montrer la carte, permettre de réserver, indiquer où et quand vous êtes ouverts ; la difficulté : rester à jour. Une carte périmée ou des horaires faux coûtent plus cher qu'une absence de site, parce qu'ils font venir des gens pour rien.",
     searchIntent: [
       "Un choix immédiat : le visiteur cherche où dîner ce soir, souvent sur mobile, à proximité. Il regarde la carte, les prix et s'il reste de la place.",
       "Une occasion à organiser : anniversaire, repas d'équipe, groupe. Il cherche la capacité, la possibilité de privatiser et un contact direct.",
@@ -240,6 +258,8 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-salon-de-coiffure",
     metier: "salon de coiffure",
     label: "un salon de coiffure",
+    audienceType: "salons de coiffure",
+    linksToSeoGeo: true,
     demoSlug: "salon-coiffure",
     demoName: "Démo salon de coiffure",
     seoTitle: "Site internet pour salon de coiffure | Sitekept",
@@ -247,7 +267,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'un salon de coiffure : prestations et tarifs, réservation, portfolio de réalisations. Site professionnel livré en 48h à partir de 500€.",
     h1: "Site internet pour salon de coiffure",
     intro:
-      "Dans la coiffure, le site joue un rôle que peu de métiers connaissent : il sert de portfolio autant que de vitrine. On ne choisit pas un salon sur son adresse, on le choisit sur ce qu'on y voit faire. C'est aussi un métier où la réservation en ligne a changé les habitudes plus vite qu'ailleurs.",
+      "Le site internet d'un salon de coiffure joue un rôle que peu de métiers connaissent : il sert de portfolio autant que de vitrine. On ne choisit pas un salon sur son adresse, on le choisit sur ce qu'on y voit faire. C'est aussi un métier où la réservation en ligne a changé les habitudes plus vite qu'ailleurs.",
     searchIntent: [
       "Un rendez-vous à prendre : le visiteur cherche les disponibilités et les tarifs, souvent le soir ou le week-end, hors de vos heures d'ouverture.",
       "Un changement de salon : il compare les réalisations et cherche un ou une coiffeuse dont le style lui parle.",
@@ -303,6 +323,13 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-boulangerie",
     metier: "boulangerie",
     label: "une boulangerie",
+    audienceType: "boulangers",
+    linksToSeoGeo: true,
+    relatedMetier: {
+      slug: "site-internet-patisserie",
+      intro: "Votre boulangerie propose aussi des pâtisseries ?",
+      label: "site internet pour pâtisserie",
+    },
     demoSlug: "boulangerie",
     demoName: "Démo boulangerie",
     seoTitle: "Site internet pour boulangerie | Sitekept",
@@ -310,7 +337,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'une boulangerie : horaires et jour de fermeture, gamme, commandes spéciales. Ce que cherchent vos clients, site livré en 48h dès 500€.",
     h1: "Site internet pour boulangerie",
     intro:
-      "Une boulangerie vit de proximité et d'habitude, pas de prospection. Le site n'a donc pas à convaincre : il doit répondre vite à trois questions très concrètes — êtes-vous ouverts maintenant, faites-vous ce que je cherche, et puis-je commander. Le reste est du confort.",
+      "Le site internet d'une boulangerie n'a pas à convaincre : une boulangerie vit de proximité et d'habitude, pas de prospection. Il doit répondre vite à trois questions très concrètes : êtes-vous ouverts maintenant, faites-vous ce que je cherche, et puis-je commander ? Le reste est du confort.",
     searchIntent: [
       "Une envie immédiate : « boulangerie ouverte près de moi », souvent tôt le matin ou un dimanche. Le visiteur veut vos horaires du jour, pas votre histoire.",
       "Une commande à passer : galette, bûche, pain pour un buffet, sandwichs pour un chantier. Il cherche vos conditions et votre délai de commande.",
@@ -366,6 +393,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-patisserie",
     metier: "pâtisserie",
     label: "une pâtisserie",
+    audienceType: "pâtissiers",
     demoSlug: "pattiserie",
     demoName: "Démo pâtisserie",
     seoTitle: "Site internet pour pâtisserie | Sitekept",
@@ -373,7 +401,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'une pâtisserie : portfolio de créations, délais et tarifs de commande, gâteaux personnalisés. Site professionnel livré en 48h dès 500€.",
     h1: "Site internet pour pâtisserie",
     intro:
-      "La pâtisserie ne se vend pas comme le pain. On ne passe pas par hasard commander une pièce montée : on cherche, on compare des photos, on se projette. Le site d'une pâtisserie est donc d'abord un portfolio, et son enjeu principal est de transformer une envie visuelle en commande — avec les délais et les prix affichés avant que la question ne se pose.",
+      "La pâtisserie ne se vend pas comme le pain : on ne commande pas une pièce montée par hasard. On cherche, on compare des photos, on se projette. Le site internet d'une pâtisserie est donc un portfolio qui transforme une envie en commande, avec délais et prix affichés d'avance.",
     searchIntent: [
       "Un événement à préparer : anniversaire, mariage, baptême. Le visiteur cherche des photos, un ordre de prix et un délai de commande, souvent plusieurs semaines à l'avance.",
       "Une envie du moment : il cherche une pâtisserie de qualité à proximité, et regarde la vitrine en ligne avant de se déplacer.",
@@ -429,6 +457,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-fleuriste",
     metier: "fleuriste",
     label: "un fleuriste",
+    audienceType: "fleuristes",
     demoSlug: "fleuriste",
     demoName: "Démo fleuriste",
     seoTitle: "Site internet pour fleuriste | Sitekept",
@@ -436,7 +465,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'un fleuriste : livraison, compositions par occasion, commandes de deuil et de mariage. Site professionnel livré en 48h à partir de 500€.",
     h1: "Site internet pour fleuriste",
     intro:
-      "Le métier de fleuriste a une particularité que peu partagent : on vient rarement chez vous pour vous, on vient pour une occasion. Naissance, anniversaire, mariage, deuil. Le site doit donc s'organiser autour de ces moments plutôt qu'autour de votre catalogue — et traiter le plus délicat d'entre eux avec la sobriété qu'il exige.",
+      "Le métier de fleuriste a une particularité que peu partagent : on vient rarement chez vous pour vous, on vient pour une occasion. Naissance, anniversaire, mariage, deuil. Le site internet d'un fleuriste doit donc s'organiser autour de ces moments plutôt que de votre catalogue, et traiter le plus délicat avec sobriété.",
     searchIntent: [
       "Une urgence affective : un deuil, un oubli d'anniversaire. Le visiteur cherche une livraison rapide et veut être rassuré en trois lignes, pas séduit.",
       "Un événement préparé : mariage, entreprise, décoration. Parcours long, budget plus élevé, il compare les réalisations et cherche un rendez-vous.",
@@ -492,6 +521,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-reparation-informatique",
     metier: "réparation informatique",
     label: "un réparateur informatique",
+    audienceType: "réparateurs informatiques",
     demoSlug: "ordinateur",
     demoName: "Démo réparation informatique",
     seoTitle: "Site internet pour réparateur informatique | Sitekept",
@@ -499,7 +529,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'un réparateur informatique : pannes traitées, tarifs, délais et confidentialité des données. Site professionnel livré en 48h dès 500€.",
     h1: "Site internet pour réparateur informatique",
     intro:
-      "Confier son ordinateur, c'est confier ses photos, ses documents et ses mots de passe. Le site d'un réparateur informatique a donc un travail que les autres métiers n'ont pas : lever une inquiétude sur la confidentialité, en même temps qu'il rassure sur la compétence et sur le prix. C'est un métier où l'opacité tarifaire est la norme, et où l'afficher suffit à se démarquer.",
+      "Confier son ordinateur, c'est confier ses photos, ses documents et ses mots de passe. Le site internet d'un réparateur informatique doit lever une inquiétude sur la confidentialité, et rassurer sur la compétence et sur le prix. C'est un métier où l'opacité tarifaire est la norme, et où l'afficher suffit à se démarquer.",
     searchIntent: [
       "Une panne bloquante : écran noir, ordinateur qui ne démarre plus, virus. Le visiteur est inquiet, pressé, et cherche quelqu'un de joignable aujourd'hui.",
       "Une perte de données : disque dur en panne, fichiers effacés. Intention très forte, budget élevé, et une angoisse réelle à traiter avec des mots simples.",
@@ -555,6 +585,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-entreprise-nettoyage",
     metier: "entreprise de nettoyage",
     label: "une entreprise de nettoyage",
+    audienceType: "entreprises de nettoyage",
     demoSlug: "menage-nettoyage",
     demoName: "Démo ménage et nettoyage",
     seoTitle: "Site internet pour entreprise de nettoyage | Sitekept",
@@ -562,7 +593,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'une entreprise de nettoyage : prestations particuliers et professionnels, zone d'intervention, devis. Site livré en 48h à partir de 500€.",
     h1: "Site internet pour entreprise de nettoyage",
     intro:
-      "Le nettoyage est l'un des rares métiers qui s'adresse à deux publics n'ayant presque rien en commun. Un particulier cherche quelqu'un de confiance à qui remettre ses clés ; une entreprise cherche un prestataire capable de tenir un cahier des charges et de facturer proprement. Un site qui mélange les deux perd les deux.",
+      "Le nettoyage est l'un des rares métiers qui s'adresse à deux publics n'ayant presque rien en commun. Un particulier cherche quelqu'un de confiance à qui remettre ses clés ; une entreprise veut un prestataire qui tient un cahier des charges et facture proprement. Un site internet d'entreprise de nettoyage qui mélange les deux perd les deux.",
     searchIntent: [
       "Un particulier : ménage régulier, repassage, aide après une hospitalisation. Il cherche la confiance, le tarif horaire et l'éligibilité au crédit d'impôt.",
       "Une entreprise : bureaux, commerce, copropriété. Elle cherche une zone d'intervention, des références et un devis, souvent après un prestataire décevant.",
@@ -618,6 +649,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-architecte-interieur",
     metier: "architecte d'intérieur",
     label: "un architecte d'intérieur",
+    audienceType: "architectes d'intérieur",
     demoSlug: "architecte-interieur",
     demoName: "Démo architecte d'intérieur",
     seoTitle: "Site internet pour architecte d'intérieur | Sitekept",
@@ -625,7 +657,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'un architecte d'intérieur : portfolio de projets, mode d'honoraires, déroulé d'une mission. Site professionnel livré en 48h dès 500€.",
     h1: "Site internet pour architecte d'intérieur",
     intro:
-      "Un projet d'architecture d'intérieur se décide lentement et se paie cher. Le visiteur qui arrive sur votre site n'achète rien aujourd'hui : il constitue une liste courte, qu'il consultera plusieurs fois avant de prendre contact. Votre site doit donc supporter ces allers-retours, et répondre à la question que presque aucun confrère n'ose traiter en ligne — combien ça coûte, et comment.",
+      "Un projet d'architecture d'intérieur se décide lentement et se paie cher. Le visiteur n'achète rien aujourd'hui : il constitue une liste courte, qu'il consultera plusieurs fois avant de prendre contact. Le site internet d'un architecte d'intérieur doit donc supporter ces allers-retours, et répondre à une question que peu osent traiter : combien ça coûte, et comment.",
     searchIntent: [
       "Un projet qui se précise : rénovation d'appartement, extension, réaménagement. Le visiteur cherche des réalisations comparables à la sienne, en surface et en style.",
       "Une question de budget : « tarif architecte d'intérieur », « prix rénovation au m² ». Requête très fréquente, très rarement traitée par les sites du métier.",
@@ -681,6 +713,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-avocat",
     metier: "avocat",
     label: "un cabinet d'avocat",
+    audienceType: "avocats",
     demoSlug: "cabinet-avocat",
     demoName: "Démo cabinet d'avocat",
     secondaryDemo: {
@@ -691,9 +724,9 @@ export const metierPages: MetierPage[] = [
     seoTitle: "Site internet pour avocat et cabinet | Sitekept",
     seoDescription:
       "Créer le site d'un cabinet d'avocat : domaines d'intervention, honoraires, première consultation. Cadre déontologique respecté. Site livré en 48h dès 500€.",
-    h1: "Site internet pour cabinet d'avocat",
+    h1: "Site internet pour avocat et cabinet",
     intro:
-      "Le site d'un avocat n'a pas à vendre, et ne le peut d'ailleurs pas librement : la communication de la profession est encadrée. Ce qu'il doit faire, c'est permettre à quelqu'un qui traverse une difficulté de comprendre si vous traitez son problème, ce que coûtera un premier rendez-vous, et à qui il aura affaire. C'est très différent d'une plaquette institutionnelle.",
+      "Le site internet d'un avocat n'a pas à vendre, et ne le peut d'ailleurs pas librement : la communication de la profession est encadrée. Il doit permettre à une personne en difficulté de comprendre si vous traitez son problème, ce que coûte un premier rendez-vous et qui elle rencontrera. C'est très différent d'une plaquette institutionnelle.",
     searchIntent: [
       "Un problème urgent : licenciement, litige, convocation. Le visiteur cherche un avocat du bon domaine, disponible rapidement, et souvent dans sa ville.",
       "Une question de coût : « honoraires avocat », « première consultation prix ». Frein majeur à la prise de contact, très peu traité en ligne.",
@@ -749,6 +782,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-agence-immobiliere",
     metier: "agence immobilière",
     label: "une agence immobilière",
+    audienceType: "agents immobiliers",
     demoSlug: "agence-immobiliere",
     demoName: "Démo agence immobilière",
     seoTitle: "Site internet pour agence immobilière | Sitekept",
@@ -756,7 +790,7 @@ export const metierPages: MetierPage[] = [
       "Créer le site d'une agence immobilière : estimation en ligne, biens à jour, honoraires affichés, secteurs couverts. Site livré en 48h à partir de 500€.",
     h1: "Site internet pour agence immobilière",
     intro:
-      "Une erreur structure la plupart des sites d'agence : ils sont construits pour les acheteurs, alors que le client à conquérir est le vendeur. Les acheteurs viennent de toute façon par les portails d'annonces. Ce que votre site doit capter, c'est le propriétaire qui se demande ce que vaut son bien — et il commence toujours par une estimation.",
+      "Une erreur structure la plupart des sites internet d'agence immobilière : ils sont construits pour les acheteurs, alors que le client à conquérir est le vendeur. Les acheteurs viennent de toute façon par les portails d'annonces. Ce que votre site doit capter, c'est le propriétaire qui se demande ce que vaut son bien — et il commence toujours par une estimation.",
     searchIntent: [
       "Un vendeur qui s'interroge : « estimation maison », « prix au m² » dans sa commune. Intention commerciale maximale, et c'est le client qui vous rapporte un mandat.",
       "Un acheteur ou un locataire : il cherche des biens, souvent après les avoir vus sur un portail. Il vient vérifier qui vous êtes.",

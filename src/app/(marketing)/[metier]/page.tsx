@@ -60,7 +60,7 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
         name={page.h1}
         description={page.intro}
         serviceType="Création de site internet"
-        audienceType={page.metier}
+        audienceType={page.audienceType}
       />
       <FaqJsonLd items={page.faq} />
 
@@ -199,6 +199,18 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
               {page.secondaryDemo.note}
             </p>
           ) : null}
+          {page.relatedMetier ? (
+            <p className="mt-4 text-sm text-slate-600">
+              {page.relatedMetier.intro} Voir le{" "}
+              <Link
+                href={`/${page.relatedMetier.slug}`}
+                className="font-medium text-blue-700 underline underline-offset-4"
+              >
+                {page.relatedMetier.label}
+              </Link>
+              .
+            </p>
+          ) : null}
           <p className="mt-6 text-sm text-slate-500">
             Voir aussi{" "}
             <Link
@@ -206,13 +218,31 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
               className="font-medium text-blue-700 underline underline-offset-4"
             >
               tous les modèles par métier
-            </Link>{" "}
-            et{" "}
+            </Link>
+            ,{" "}
             <Link
               href="/realization"
               className="font-medium text-blue-700 underline underline-offset-4"
             >
               nos réalisations
+            </Link>
+            {page.linksToSeoGeo ? (
+              <>
+                ,{" "}
+                <Link
+                  href="/seo-geo"
+                  className="font-medium text-blue-700 underline underline-offset-4"
+                >
+                  le référencement SEO et GEO
+                </Link>
+              </>
+            ) : null}{" "}
+            et{" "}
+            <Link
+              href="/"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              l&apos;offre de création de site Sitekept
             </Link>
             .
           </p>
