@@ -44,3 +44,8 @@ La tâche 0.4b (bandeau de consentement) avait déjà démarré sur Opus avant c
 - Non bloquants de 0.4b à reprendre plus tard : anneau de focus de la primitive peu contrasté sur la bulle ; bouton « Gérer les cookies » sans curseur main ; la bulle recouvre la barre d'appel fixe de la démo plombier sur mobile tant qu'aucun choix n'est fait ; § 5 de 03b contient une citation de 42 mots.
 - 10 nov. : décision de Joseph — les articles restent signés « Équipe Sitekept » (aucun nom personnel publié), y compris les articles pilotes de 0.8b.
 - 10 nov. : décisions à soumettre à Joseph (plan éditorial) — article 8 « combien coûte un site internet par mois » face à la règle « prix → /tarifs » ; article 6 (mentions légales) publiable seulement après finalisation de /mentions-legales ; l'offre inclut-elle la rédaction des mentions légales et de la politique de confidentialité des clients ?
+- 10 nov. : décisions de Joseph —
+  - article 8 du plan (« combien coûte un site internet par mois ») conservé : exception à la règle « prix → /tarifs » (coût récurrent ≠ prix d'achat), l'article renvoie vers /tarifs ; à reporter dans la carte des mots-clés ;
+  - l'offre à 500 € INCLUT la rédaction des mentions légales et de la politique de confidentialité du site du client (à refléter dans l'article 6, /offres en phase 2, et à soumettre au registre) ;
+  - JSON-LD : garder `areaServed` France et `knowsLanguage` fr/en ;
+  - pages métier : corriger `audience.audienceType` pour qu'il désigne un public (ex. « réparateurs informatiques », « agents immobiliers », « entreprises de nettoyage ») — à faire dans la tâche 0.7.
