@@ -17,6 +17,7 @@ Branche : `feat/offre-v2` (créée depuis `dev` @ `b4d84c3`, 3 novembre 2026). R
 | 0.7 Optimisation des pages existantes | 9 fichiers `src`/`messages`, `docs/seo/02-keyword-map.md`, `docs/seo/07-optimisation.md` | 2 | PASS | T1 : regex des liens internes acceptait `//` et `/\` ; paragraphe de 07 à 4 phrases. Corrigés au T2. 22 pages conformes à la carte, 1 010 liens internes sans erreur, bloc Sources (14 liens), puces réparées, audienceType = public. |
 | 0.8a Plan éditorial du blog | `docs/seo/04-blog-plan.md` | 2 | PASS | T1 : longueur cible de l'article 7 (900–1 100 mots) au-delà de 1 000 sans justification. Corrigé au T2. 12 sources officielles rouvertes et conformes. Pilotes : articles 1 (fiche Google Entreprise) et 2 (salon de coiffure sans site). |
 | 0.8b 2 articles pilotes | `site-content.ts` (+2 articles), `02-keyword-map.md`, `04-blog-plan.md`, `08-articles-pilotes.md` | 3 | **Accepté en l'état par Joseph (11 nov.)** après FAIL au T3 | T1 : source 3 périmée (page Google modifiée le 11 nov.), « Business Profile » sans source. T2 : chiffres de 08 tirés d'un brouillon. T3 : une phrase de 32 mots dans 08 (note interne). Articles validés : 930 et 716 mots, 45 extraits sur 45, 0 erreur JSON-LD, 0 régression. |
+| 0.9 Rapport de phase 0 | `docs/seo/05-rapport.md` | 2 | PASS | T1 : action GA4 mélangeant durée des cookies (13 mois) et conservation des données (2 ou 14 mois). Corrigé au T2. |
 
 ## Constats de démarrage (à signaler à Joseph)
 
