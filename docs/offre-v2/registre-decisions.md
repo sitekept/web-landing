@@ -1,4 +1,4 @@
-# Registre des décisions Sitekept (mis à jour le 3 novembre 2026)
+# Registre des décisions Sitekept (mis à jour le 11 novembre 2026)
 
 Ce registre est la référence unique. **En cas de contradiction avec les crochets `[À DÉCIDER]` ou `[PROPOSITION]` des autres documents** (plan v2, CGV/CGU, kit opérationnel), c'est lui qui prévaut. Statuts : **Validé** (dit par Joseph), **Proposé** (suggestion de Claude, pas encore confirmée), **Ouvert** (à décider).
 
@@ -14,6 +14,9 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Formule annuelle | Pas de remboursement au prorata en cas de résiliation en cours d'année | Validé |
 | Campagnes | À partir de 300 €/mois + budget média ; audit gratuit ; préavis 30 jours, minimum de 3 mois conseillé | Validé |
 | Modifications hors forfait | Sur devis | Validé |
+| Rédaction des mentions légales et de la politique de confidentialité du client | L'offre à 500 € inclut la rédaction des mentions légales et de la politique de confidentialité du site du client (décision du 10 nov. 2026) | Validé |
+| Nom de domaine | Offert la première année dans l'offre à 500 € ; conservé (décision du 11 nov. 2026) | Validé |
+| Affichage du prix du site | « 500 € », sans « à partir de » ; les fonctionnalités avancées restent sur devis, à part (décision du 11 nov. 2026) | Validé |
 | Encaissement du suivi | Lien de paiement Stripe en abonnement | Validé |
 | **Régime de TVA** | **Franchise en base au démarrage : aucune TVA facturée** (Joseph : « il n'y aura pas de TVA au début, c'est sûr »). Affichage sans « TTC / HT », mention « TVA non applicable, art. 293 B du CGI ». Remplace la réponse précédente « régime normal ». | Validé |
 
@@ -26,6 +29,8 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | **Métiers de la première vague** | **Plombier, salon de coiffure, boulangerie** | **Validé** |
 | Professions réglementées | Dentiste, avocat en seconde vague, après vérification des règles de communication | Proposé |
 | Robots d'IA dans `robots.txt` | Autorisés (robots de recherche des moteurs d'IA) | Validé |
+| Signature des articles du blog | « Équipe Sitekept », aucun nom personnel publié, articles pilotes compris (décision du 10 nov. 2026) | Validé |
+| JSON-LD : `areaServed` et `knowsLanguage` | `areaServed` « France » et `knowsLanguage` fr/en conservés (décision du 10 nov. 2026) | Validé |
 
 ## Site, navigation et formulaire
 
@@ -35,8 +40,9 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Tunnel de formulaire | 3 étapes, modale ouverte au clic, étape 1 dans le hero, téléphone facultatif avec choix du canal de rappel | Validé |
 | Sélection des offres dans le formulaire | Multi-sélection parmi Site, Suivi, Campagnes, Autre ; « Autre » ouvre le champ de texte, obligatoire dans ce cas. Tunnel et formulaire de secours | Validé |
 | Ligne « Ajouter le suivi : premier mois offert » sous les cartes quand Site est coché | Suggestion de vente croisée | Proposé |
-| Constante unique des prix et du régime fiscal | Un seul fichier de configuration, pour basculer le jour où la TVA s'appliquera | Proposé |
+| Constante unique des prix et du régime fiscal | Un seul fichier de configuration, pour basculer le jour où la TVA s'appliquera. Mini-plan de phase 1 accepté par Joseph le 11 nov. ; en place dans `src/content/pricing.ts` (commit `e3f8df9`) | Validé |
 | Direction artistique | Rester dans la DA actuelle du site, aucun nouvel élément visuel | Validé |
+| Boutons du hero de la home | Les deux boutons restent en phase 1 ; les cartes du tunnel seront montrées en phase 3 (décision du 11 nov. 2026) | Validé |
 
 ## Règles de projet (CGV, devis, kit)
 

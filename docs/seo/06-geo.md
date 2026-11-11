@@ -193,6 +193,8 @@ Statut : **fait**, `public/llms.txt`, servi en 200 `text/plain` sur le build.
 - À ajouter au même moment : le délai de 48 h après réception des éléments, le sur-mesure et la cible.
 - Bénéfice non démontré : Google écrit qu'aucun fichier machine ni texte « IA » n'est nécessaire pour apparaître dans ses fonctions d'IA. Aucun autre éditeur consulté ne dit lire ce fichier pour la recherche. Le fichier ne coûte rien et peut être supprimé sans effet.
 
+Mise à jour du 11 nov. 2026 (phase 1, tâche 1.7) : `public/llms.txt` est remplacé par la route statique `src/app/llms.txt/route.ts`. Le prix et la mention de TVA y viennent de `src/content/pricing.ts` ; le délai précisé y est ajouté. La liste des articles et des pages métier est générée depuis les contenus du site.
+
 ## 9. Vérifications
 
 | Contrôle | Résultat |

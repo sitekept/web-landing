@@ -1,6 +1,6 @@
 # 0.9 — Rapport de phase 0
 
-État au 11 novembre 2026. Branche `feat/offre-v2` (worktree `sitekept-weblaunding-offre-v2`), HEAD `03f78b6` avant ce document. Rien n'est en production.
+État au 11 novembre 2026. Branche `feat/offre-v2` (worktree `sitekept-weblaunding-offre-v2`), HEAD `03f78b6` avant ce document. Ce rapport a ensuite été commité en `7cfe7d1`. Rien n'est en production.
 
 Chaque chiffre renvoie à un document du dépôt ou à un commit. Les renvois utilisent ces abréviations.
 
@@ -59,7 +59,7 @@ Chaque chiffre renvoie à un document du dépôt ou à un commit. Les renvois ut
 | 0.7 | 22 pages alignées, bloc Sources, `audienceType`, `07-optimisation.md` | `9ce0a07` | 2 | PASS | Textes de prix et de délai non touchés. « Audience non visible » sur 11 pages métier. |
 | 0.8a | `04-blog-plan.md` : plan de 8 articles | `c76ee93` | 2 | PASS | Les articles 6, 7 et 8 attendent d'autres chantiers ([E] § 6). |
 | 0.8b | Deux articles pilotes, `08-articles-pilotes.md` | `f2e3d5a` | 3 | Accepté en l'état par Joseph (11 novembre) après FAIL au tour 3 | Une phrase de 32 mots dans la note interne de 08. Dates fixées au 10 novembre ([L] § 1.1). |
-| 0.9 | Ce rapport | Non commité | 1 | Non validé : à vérifier | Aucune mesure nouvelle. Les chiffres sont repris des documents. |
+| 0.9 | Ce rapport | `7cfe7d1` | 2 | PASS | Bloquant du tour 1 : une action GA4 mélangeait la durée des cookies et la conservation des données. Corrigé au tour 2 [J]. |
 
 Les commits `a61925a`, `cd3489e`, `873092f`, `7fcbb45`, `1e366b2`, `a9b133b`, `70830ae` et `03f78b6` ne modifient que le journal. Ils ne portent pas de livrable.
 
@@ -88,7 +88,16 @@ Lecture :
 - FCP médian : 1 205 ms en local et 1 117 ms en production ([B] § 2.1, § 2.2).
 - En production, la passe 2 est aberrante (Perf. 74, LCP 4 838 ms). La médiane l'écarte ([B] § 2.2).
 - Local et production ne se comparent pas : serveur, protocole et CDN diffèrent ([B] § 1.3).
-- La production n'a pas été mesurée après les modifications. Aucun Lighthouse n'a été relancé après 0.4b.
+- La production n'a pas été mesurée après les modifications.
+- Le tableau s'arrête à 0.4b. Les mesures de fin de phase 0 sont en § 3.1 bis.
+
+### 3.1 bis Mesures de fin de phase 0 (11 novembre 2026)
+
+La vérification globale de fin de phase 0 a rendu un PASS, sans bloquant [J, « Fin de phase 0 »]. Ses mesures sont reprises ici telles que le journal les donne.
+- Lighthouse mobile, page d'accueil, bulle visible : Perf. 95 (médiane), Access. 100, SEO 100, CLS 0,000014 [J].
+- Données structurées : 0 erreur JSON-LD sur 34 pages, hors « audience non visible », décision de Joseph [J].
+- Sitemap : 34 URL répondent en 200 [J].
+- Page /tarifs : Accessibilité 96, à cause du contraste du « 600 € » barré, déjà présent avant [J].
 
 ### 3.2 Autres mesures
 
@@ -147,6 +156,8 @@ Aucun volume de recherche n'existe dans les sources. Aucun n'est donné ici ([D]
 ### (a) Phase 1 : prix, délais et discours
 
 La phase 1 aligne le discours et les prix sur le registre ([P] § 12). Elle s'arrête sur une relecture de Joseph.
+
+Mise à jour : les points de cette partie (a) sont traités en phase 1 [J, « Phase 1 »].
 
 | N° | Chantier | Ce qu'il faut faire | Source |
 |---|---|---|---|
@@ -380,5 +391,5 @@ Le modèle se termine sur cette ligne.
 - Rien n'est en production. Les prérequis de [P] § 2 ne sont pas levés.
 - Branche `feat/offre-v2`, worktree `sitekept-weblaunding-offre-v2`, HEAD `03f78b6` avant ce document.
 - La mise en production n'arrive qu'en phase 5 ([P] § 0, point 5 ; § 12).
-- Ce document n'est pas commité. La tâche 0.9 attend un vérificateur.
-- Lighthouse n'a pas été relancé depuis 0.4b, et la production n'a pas été remesurée.
+- Ce document est commité en `7cfe7d1`. La tâche 0.9 a reçu un PASS au tour 2 [J].
+- Lighthouse a été relancé en fin de phase 0 (§ 3.1 bis). La production n'a pas été remesurée.

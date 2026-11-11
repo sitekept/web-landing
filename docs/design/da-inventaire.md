@@ -1036,3 +1036,31 @@ Ces classes **ne servent pas de précédent** pour du code hors primitive. **Tou
     - Dans les primitives : régies par la clause 0, qui fait foi. À titre indicatif : `src/components/ui/button.tsx:8` `focus-visible:ring-[3px]`, `src/components/ui/input.tsx:11` `transition-[color,box-shadow]` et `src/components/ui/card.tsx:23` `grid-rows-[auto_auto]`, ainsi que les sélecteurs cités dans la clause 0.
 
       Toute autre valeur arbitraire **ajoutée** hors primitives est un nouvel élément visuel.
+
+## Ajouts postérieurs (clause 0 bis) — 11 nov. 2026
+
+Ces valeurs existent dans le code vivant au HEAD `c4e0911` (lu par `git rev-parse --short HEAD`). Elles viennent de la bulle de consentement (tâche 0.4b), ajoutée après le HEAD de référence `cd3489e`. Elles sont ajoutées à l'inventaire en application de la clause 0 bis, et leur validation par Joseph figure au journal.
+
+Bulle de consentement :
+- Conteneur de la bulle : `src/components/cookie-consent.tsx:117` `fixed inset-x-3 bottom-3 z-50 flex flex-col gap-2 rounded-md border border-slate-200 bg-white/80 p-3 shadow-xl shadow-slate-950/20 backdrop-blur-md sm:right-auto sm:w-full sm:max-w-sm sm:gap-3 sm:p-4`.
+- Valeur nouvelle, décidée par Joseph : `bg-white/80` (verre clair, texte foncé). Elle n'était pas dans la liste des blancs transparents du § 2.2.
+- Variantes `sm:` nouvelles sur cette ligne : `sm:right-auto`, `sm:w-full`, `sm:max-w-sm`, `sm:gap-3` et `sm:p-4`.
+- Utilitaires de position nouveaux : `inset-x-3` et `bottom-3`. `sm:max-w-sm` introduit une largeur `max-w-sm`, jusqu'ici non observée (§ 4) : elle s'applique à cette bulle seule.
+- Les autres classes de la ligne (`fixed`, `z-50`, `flex-col`, `gap-2`, `rounded-md`, `border-slate-200`, `p-3`, `shadow-xl`, `shadow-slate-950/20`, `backdrop-blur-md`) figurent déjà à l'inventaire.
+
+Texte de la bulle :
+- Paragraphe : `src/components/cookie-consent.tsx:119` `text-sm text-slate-700 sm:leading-6`. La variante `sm:leading-6` est nouvelle.
+- Libellé court, mobile : `src/components/cookie-consent.tsx:120` `sm:hidden`. La variante `sm:hidden` est nouvelle.
+- Libellé complet, à partir de 640 px : `src/components/cookie-consent.tsx:121` `hidden sm:inline`. La variante `sm:inline` est nouvelle.
+- Lien « En savoir plus » : `src/components/cookie-consent.tsx:124` `font-medium text-slate-900 underline underline-offset-4`.
+
+Boutons de la bulle :
+- Rangée : `src/components/cookie-consent.tsx:129` `flex gap-2`.
+- Bouton « Tout refuser » : `src/components/cookie-consent.tsx:134` `flex-1 border-blue-200 bg-white text-slate-900 hover:bg-blue-50`.
+- Bouton « Tout accepter » : `src/components/cookie-consent.tsx:143` `flex-1 border-blue-200 bg-white text-slate-900 hover:bg-blue-50`.
+- Les deux boutons utilisent la primitive `Button` en `variant="outline"` et `size="sm"` (lignes 132-133 et 141-142).
+
+Constat sur la phase 1 (`git diff 9829886 HEAD -- src`) :
+- Les classes Tailwind ajoutées sont des combinaisons de valeurs déjà listées. Chaque classe ajoutée a été retrouvée dans cet inventaire.
+- Seule exception : `src/app/opengraph-image.tsx`, qui porte des styles en ligne (`fontSize: 36`, `color: "#94a3b8"`, `marginTop: 28`). Le fichier est hors du périmètre de l'inventaire.
+- Le même `fontSize: 36` et la même couleur existaient déjà à 9829886 (`opengraph-image.tsx:51-52`). La phase 1 les réutilise dans un nouveau bloc et n'ajoute aucune valeur nouvelle.
