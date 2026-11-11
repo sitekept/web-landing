@@ -59,7 +59,7 @@ export interface MetierPage {
   searchIntent: string[];
   /** Ce que le site doit faire, propre au métier. */
   siteMustDo: { title: string; detail: string }[];
-  /** Ce que le professionnel doit préparer pour tenir le délai de 48h. */
+  /** Ce que le professionnel doit préparer : le site est en ligne 48 h après réception de ses éléments. */
   toPrepare: string[];
   faq: MetierFaq[];
 }
@@ -75,7 +75,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo plombier chauffagiste",
     seoTitle: "Site internet pour plombier : ce qu'il vous faut | Sitekept",
     seoDescription:
-      `Site internet pour plombier chauffagiste : ce que cherchent vos clients en urgence, ce que le site doit afficher sur mobile, et notre offre à ${SITE_PRICE}.`,
+      `Site internet plombier chauffagiste : ce que cherchent vos clients, ce que le site doit afficher. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour plombier chauffagiste",
     intro:
       "La plomberie est l'un des rares métiers où le visiteur ne compare pas. Il a une fuite, il cherche un numéro, il appelle le premier qui inspire confiance et qui couvre sa commune. Un site internet de plombier se juge sur le temps nécessaire pour trouver le numéro et comprendre que vous intervenez chez lui.",
@@ -139,7 +139,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo cabinet dentaire",
     seoTitle: "Site internet pour dentiste et cabinet dentaire | Sitekept",
     seoDescription:
-      `Site internet dentiste : rassurer vos patients avant la première visite, structurer les soins, faciliter la prise de rendez-vous. Site à ${SITE_PRICE}.`,
+      `Site internet dentiste : soins, équipe, accès et prise de rendez-vous présentés clairement. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour dentiste et cabinet dentaire",
     intro:
       "Le site internet d'un dentiste ne vend pas : il rassure. Une partie de vos futurs patients arrive avec une appréhension réelle, parfois ancienne. En ligne, ils cherchent à savoir à quoi ressemble le cabinet, qui les recevra et comment se passe une première visite.",
@@ -162,12 +162,12 @@ export const metierPages: MetierPage[] = [
       {
         title: "La page « première visite »",
         detail:
-          "Durée, déroulé, ce qu'il faut apporter, comment se passe le règlement. C'est la page qui lève le plus d'anxiété, et presque aucun cabinet ne la propose.",
+          "Durée, déroulé, ce qu'il faut apporter, comment se passe le règlement. Ces informations répondent aux questions que se posent les nouveaux patients.",
       },
       {
         title: "L'équipe, avec des visages",
         detail:
-          "Savoir qui vous recevra change le rapport à la consultation. Des photos réelles, pas des portraits de banque d'images.",
+          "Présentez les personnes qui recevront les patients. Des photos réelles, pas des portraits de banque d'images.",
       },
       {
         title: "L'accès et le stationnement",
@@ -191,7 +191,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il un module de prise de rendez-vous en ligne ?",
         answer:
-          "Pas nécessairement. Si vous utilisez déjà une plateforme de réservation, le site doit y renvoyer clairement depuis chaque page : c'est inclus dans le site vitrine. Développer un système de réservation propre au cabinet est une fonctionnalité sur mesure, chiffrée séparément.",
+          "Pas nécessairement. Si vous utilisez déjà une plateforme de réservation, le site doit y renvoyer clairement depuis chaque page : c'est inclus dans votre site. Développer un système de réservation propre au cabinet est une fonctionnalité avancée, sur devis.",
       },
     ],
   },
@@ -204,7 +204,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo restaurant bistrot",
     seoTitle: "Site internet pour restaurant : l'essentiel | Sitekept",
     seoDescription:
-      `Créer le site d'un restaurant : carte à jour, réservation, horaires, accès. Ce que vos clients cherchent vraiment, et notre offre livrée en 48h dès ${SITE_PRICE}.`,
+      `Site internet restaurant : carte, réservation, horaires et accès, ce que cherchent vos clients. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour restaurant",
     intro:
       "Un site internet de restaurant a trois missions, et une seule vraie difficulté. Les missions : montrer la carte, permettre de réserver, indiquer où et quand vous êtes ouverts ; la difficulté : rester à jour. Une carte périmée ou des horaires faux coûtent plus cher qu'une absence de site, parce qu'ils font venir des gens pour rien.",
@@ -269,7 +269,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo salon de coiffure",
     seoTitle: "Site internet pour salon de coiffure | Sitekept",
     seoDescription:
-      `Créer le site d'un salon de coiffure : prestations et tarifs, réservation, portfolio de réalisations. Site professionnel livré en 48h à partir de ${SITE_PRICE}.`,
+      `Site internet salon de coiffure : prestations, tarifs, réservation et portfolio de réalisations. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour salon de coiffure",
     intro:
       "Le site internet d'un salon de coiffure joue un rôle que peu de métiers connaissent : il sert de portfolio autant que de vitrine. On ne choisit pas un salon sur son adresse, on le choisit sur ce qu'on y voit faire. C'est aussi un métier où la réservation en ligne a changé les habitudes plus vite qu'ailleurs.",
@@ -339,7 +339,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo boulangerie",
     seoTitle: "Site internet pour boulangerie | Sitekept",
     seoDescription:
-      `Créer le site d'une boulangerie : horaires et jour de fermeture, gamme, commandes spéciales. Ce que cherchent vos clients, site livré en 48h dès ${SITE_PRICE}.`,
+      `Site internet boulangerie : horaires, jour de fermeture, gamme de produits et commandes spéciales. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour boulangerie",
     intro:
       "Le site internet d'une boulangerie n'a pas à convaincre : une boulangerie vit de proximité et d'habitude, pas de prospection. Il doit répondre vite à trois questions très concrètes : êtes-vous ouverts maintenant, faites-vous ce que je cherche, et puis-je commander ? Le reste est du confort.",
@@ -390,7 +390,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il vendre en ligne quand on est boulanger ?",
         answer:
-          "Rarement utile pour la vente quotidienne : le client vient de toute façon. Un simple formulaire de commande avec retrait en boutique couvre l'essentiel du besoin et n'implique ni paiement en ligne ni logistique. Une vraie boutique en ligne est une fonctionnalité sur mesure, chiffrée séparément.",
+          "Rarement utile pour la vente quotidienne : le client vient de toute façon. Un simple formulaire de commande avec retrait en boutique couvre l'essentiel du besoin et n'implique ni paiement en ligne ni logistique. Une vraie boutique en ligne est une fonctionnalité avancée, sur devis.",
       },
     ],
   },
@@ -403,7 +403,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo pâtisserie",
     seoTitle: "Site internet pour pâtisserie | Sitekept",
     seoDescription:
-      `Créer le site d'une pâtisserie : portfolio de créations, délais et tarifs de commande, gâteaux personnalisés. Site professionnel livré en 48h dès ${SITE_PRICE}.`,
+      `Site internet pâtisserie : portfolio, délais et tarifs de commande, gâteaux personnalisés. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour pâtisserie",
     intro:
       "La pâtisserie ne se vend pas comme le pain : on ne commande pas une pièce montée par hasard. On cherche, on compare des photos, on se projette. Le site internet d'une pâtisserie est donc un portfolio qui transforme une envie en commande, avec délais et prix affichés d'avance.",
@@ -454,7 +454,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Puis-je vendre mes pâtisseries en ligne ?",
         answer:
-          "Techniquement oui, mais la vente à distance de produits frais implique une logistique, une chaîne du froid et des responsabilités qui dépassent largement le site. Un formulaire de commande avec retrait en boutique couvre l'essentiel du besoin sans ces contraintes. Une boutique en ligne complète relève du devis sur mesure.",
+          "Techniquement oui, mais la vente à distance de produits frais implique une logistique, une chaîne du froid et des responsabilités qui dépassent largement le site. Un formulaire de commande avec retrait en boutique couvre l'essentiel du besoin sans ces contraintes. Une boutique en ligne complète est une fonctionnalité avancée, sur devis.",
       },
     ],
   },
@@ -467,7 +467,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo fleuriste",
     seoTitle: "Site internet pour fleuriste | Sitekept",
     seoDescription:
-      `Créer le site d'un fleuriste : livraison, compositions par occasion, commandes de deuil et de mariage. Site professionnel livré en 48h à partir de ${SITE_PRICE}.`,
+      `Site internet fleuriste : livraison, compositions par occasion, commandes de deuil et de mariage. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour fleuriste",
     intro:
       "Le métier de fleuriste a une particularité que peu partagent : on vient rarement chez vous pour vous, on vient pour une occasion. Naissance, anniversaire, mariage, deuil. Le site internet d'un fleuriste doit donc s'organiser autour de ces moments plutôt que de votre catalogue, et traiter le plus délicat avec sobriété.",
@@ -531,7 +531,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo réparation informatique",
     seoTitle: "Site internet pour réparateur informatique | Sitekept",
     seoDescription:
-      `Créer le site d'un réparateur informatique : pannes traitées, tarifs, délais et confidentialité des données. Site professionnel livré en 48h dès ${SITE_PRICE}.`,
+      `Site internet réparateur informatique : pannes traitées, tarifs, délais et confidentialité. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour réparateur informatique",
     intro:
       "Confier son ordinateur, c'est confier ses photos, ses documents et ses mots de passe. Le site internet d'un réparateur informatique doit lever une inquiétude sur la confidentialité, et rassurer sur la compétence et sur le prix. C'est un métier où l'opacité tarifaire est la norme, et où l'afficher suffit à se démarquer.",
@@ -595,7 +595,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo ménage et nettoyage",
     seoTitle: "Site internet pour entreprise de nettoyage | Sitekept",
     seoDescription:
-      `Créer le site d'une entreprise de nettoyage : prestations particuliers et professionnels, zone d'intervention, devis. Site livré en 48h à partir de ${SITE_PRICE}.`,
+      `Site internet entreprise de nettoyage : particuliers et professionnels, zone d'intervention, devis. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour entreprise de nettoyage",
     intro:
       "Le nettoyage est l'un des rares métiers qui s'adresse à deux publics n'ayant presque rien en commun. Un particulier cherche quelqu'un de confiance à qui remettre ses clés ; une entreprise veut un prestataire qui tient un cahier des charges et facture proprement. Un site internet d'entreprise de nettoyage qui mélange les deux perd les deux.",
@@ -659,7 +659,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo architecte d'intérieur",
     seoTitle: "Site internet pour architecte d'intérieur | Sitekept",
     seoDescription:
-      `Créer le site d'un architecte d'intérieur : portfolio de projets, mode d'honoraires, déroulé d'une mission. Site professionnel livré en 48h dès ${SITE_PRICE}.`,
+      `Site internet architecte d'intérieur : portfolio, mode d'honoraires et déroulé d'une mission. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour architecte d'intérieur",
     intro:
       "Un projet d'architecture d'intérieur se décide lentement et se paie cher. Le visiteur n'achète rien aujourd'hui : il constitue une liste courte, qu'il consultera plusieurs fois avant de prendre contact. Le site internet d'un architecte d'intérieur doit donc supporter ces allers-retours, et répondre à une question que peu osent traiter : combien ça coûte, et comment.",
@@ -724,17 +724,17 @@ export const metierPages: MetierPage[] = [
     secondaryDemo: {
       slug: "avocate-tel-aviv",
       name: "Démo avocate à Tel-Aviv",
-      note: "Une seconde base, pensée pour un cabinet exerçant à l'international auprès d'une clientèle francophone.",
+      note: "Une seconde démo, pensée pour un cabinet exerçant à l'international auprès d'une clientèle francophone.",
     },
     seoTitle: "Site internet pour avocat et cabinet | Sitekept",
     seoDescription:
-      `Créer le site d'un cabinet d'avocat : domaines d'intervention, honoraires, première consultation. Cadre déontologique respecté. Livré en 48h dès ${SITE_PRICE}.`,
+      `Site internet avocat : domaines d'intervention, honoraires et première consultation expliqués. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour avocat et cabinet",
     intro:
       "Le site internet d'un avocat n'a pas à vendre, et ne le peut d'ailleurs pas librement : la communication de la profession est encadrée. Il doit permettre à une personne en difficulté de comprendre si vous traitez son problème, ce que coûte un premier rendez-vous et qui elle rencontrera. C'est très différent d'une plaquette institutionnelle.",
     searchIntent: [
       "Un problème urgent : licenciement, litige, convocation. Le visiteur cherche un avocat du bon domaine, disponible rapidement, et souvent dans sa ville.",
-      "Une question de coût : « honoraires avocat », « première consultation prix ». Frein majeur à la prise de contact, très peu traité en ligne.",
+      "Une question de coût : « honoraires avocat », « première consultation prix ». Le visiteur veut savoir à quoi s'attendre avant de prendre contact.",
       "Une vérification : il a votre nom par une recommandation et veut confirmer votre barreau, votre parcours et vos domaines avant d'appeler.",
     ],
     siteMustDo: [
@@ -746,12 +746,12 @@ export const metierPages: MetierPage[] = [
       {
         title: "Les honoraires et la première consultation",
         detail:
-          "Le principe de la convention d'honoraires, votre mode de facturation, et le coût d'un premier rendez-vous. C'est le premier frein à la prise de contact, et l'information la plus recherchée après le domaine.",
+          "Le principe de la convention d'honoraires, votre mode de facturation, et le coût d'un premier rendez-vous. Ces informations aident le justiciable à savoir à quoi s'attendre.",
       },
       {
         title: "Qui vous êtes, précisément",
         detail:
-          "Barreau d'inscription, année de prestation de serment, formations, langues pratiquées. Ce sont des éléments vérifiables, et c'est exactement ce qui construit la confiance dans une profession réglementée.",
+          "Barreau d'inscription, année de prestation de serment, formations, langues pratiquées. Ce sont des éléments vérifiables, utiles à quiconque veut s'assurer de votre parcours dans une profession réglementée.",
       },
       {
         title: "Ce qui se passe au premier rendez-vous",
@@ -761,7 +761,7 @@ export const metierPages: MetierPage[] = [
       {
         title: "L'accès et les modalités de rendez-vous",
         detail:
-          "Adresse, accessibilité, possibilité de consultation à distance. La visioconférence a élargi la zone de recrutement de nombreux cabinets, encore faut-il l'annoncer.",
+          "Adresse, accessibilité, possibilité de consultation à distance. Indiquez clairement comment le justiciable peut vous rencontrer.",
       },
     ],
     toPrepare: [
@@ -792,7 +792,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo agence immobilière",
     seoTitle: "Site internet pour agence immobilière | Sitekept",
     seoDescription:
-      `Créer le site d'une agence immobilière : estimation en ligne, biens à jour, honoraires affichés, secteurs couverts. Site livré en 48h à partir de ${SITE_PRICE}.`,
+      `Site internet agence immobilière : estimation en ligne, biens à jour, honoraires, secteurs. ${SITE_PRICE}, en ligne 48 h après réception de vos éléments.`,
     h1: "Site internet pour agence immobilière",
     intro:
       "Une erreur structure la plupart des sites internet d'agence immobilière : ils sont construits pour les acheteurs, alors que le client à conquérir est le vendeur. Les acheteurs viennent de toute façon par les portails d'annonces. Ce que votre site doit capter, c'est le propriétaire qui se demande ce que vaut son bien — et il commence toujours par une estimation.",
@@ -843,7 +843,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Faut-il un moteur de recherche de biens sur le site ?",
         answer:
-          "Pas nécessairement au démarrage. Un portefeuille de quelques biens bien présentés, mis à jour à la main, sert mieux qu'un moteur alimenté par un flux mal synchronisé. La connexion automatique à un logiciel de transaction est une fonctionnalité sur mesure, qui se chiffre séparément une fois le besoin avéré.",
+          "Pas nécessairement au démarrage. Un portefeuille de quelques biens bien présentés, mis à jour à la main, sert mieux qu'un moteur alimenté par un flux mal synchronisé. La connexion automatique à un logiciel de transaction est une fonctionnalité avancée, sur devis une fois le besoin avéré.",
       },
     ],
   },

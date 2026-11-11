@@ -4,13 +4,22 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { metierPages, getMetierPageBySlug } from "@/content/metier-pages";
-import { PRICING, formatPrice } from "@/content/pricing";
+import { PRICING, formatPriceWithTax } from "@/content/pricing";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import {
   BreadcrumbJsonLd,
   FaqJsonLd,
   ServiceJsonLd,
 } from "@/components/structured-data";
+
+/** Prix : tout vient de la constante unique (src/content/pricing.ts). */
+const SITE_PRICE = formatPriceWithTax(PRICING.site.amount);
+const FOLLOW_UP_MONTHLY = formatPriceWithTax(PRICING.followUp.monthly, {
+  period: "month",
+});
+const FOLLOW_UP_ANNUAL = formatPriceWithTax(PRICING.followUp.annual, {
+  period: "year",
+});
 
 interface MetierPageProps {
   params: Promise<{ metier: string }>;
@@ -133,13 +142,13 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Ce qu&apos;il faut préparer pour tenir les 48h
+            À préparer&nbsp;: en ligne 48 h après réception de vos éléments
           </h2>
           <p className="mt-4 text-slate-600">
-            Le délai court à partir de la réception de l&apos;acompte et de vos
-            contenus. C&apos;est presque toujours la préparation des éléments
-            ci-dessous, et non le développement, qui détermine la date de mise
-            en ligne.
+            Votre site est en ligne 48 h après réception de vos éléments
+            complets. Sans textes sous la main, un questionnaire de 10 minutes
+            suffit&nbsp;: nous rédigeons pour vous. C&apos;est presque toujours
+            la préparation des éléments ci-dessous qui fixe la date.
           </p>
           <ul className="mt-8 space-y-3">
             {page.toPrepare.map((item) => (
@@ -153,9 +162,9 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             ))}
           </ul>
           <p className="mt-8 text-slate-600">
-            La rédaction complète des textes et les photographies ne sont pas
-            comprises dans le tarif de base&nbsp;; le détail de ce qui est
-            inclus figure sur la{" "}
+            La rédaction de vos textes est incluse, dans la limite des pages
+            prévues au devis et de deux séries de retours. Les séances photo ne
+            sont pas comprises&nbsp;; le détail figure sur la{" "}
             <Link
               href="/tarifs"
               className="font-medium text-blue-700 underline underline-offset-4"
@@ -170,14 +179,13 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
       <section className="bg-slate-50 px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Un modèle déjà pensé pour {page.label}
+            Une démo pensée pour {page.label}
           </h2>
           <p className="mt-4 text-slate-600">
-            Plutôt que de repartir d&apos;une page blanche, nous adaptons une
-            base construite autour des besoins réels du métier. C&apos;est ce
-            qui rend le tarif et le délai possibles. Vous pouvez la parcourir
-            avant de décider&nbsp;: c&apos;est une démonstration publique, avec
-            des coordonnées fictives.
+            Pour vous projeter, parcourez notre démonstration publique&nbsp;:
+            ses coordonnées sont fictives. Votre site est créé sur mesure pour
+            vous. Cette démo n&apos;est qu&apos;un exemple, pas le résultat
+            final.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild variant="outline">
@@ -256,21 +264,31 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             Combien coûte un site pour {page.label}&nbsp;?
           </h2>
           <p className="mt-4 text-slate-600">
-            Le site vitrine essentiel est à {formatPrice(PRICING.site.amount)} en
-            tarif de lancement. C&apos;est un paiement unique&nbsp;: il n&apos;y
-            a pas d&apos;abonnement à régler pour que le site reste en ligne, et
-            le nom de domaine est offert la première année.
+            Votre site coûte {SITE_PRICE}, payé une seule fois. Il est créé sur
+            mesure pour vous et reste le vôtre. Le nom de domaine est offert la
+            première année, et la rédaction de vos textes est incluse, dans la
+            limite des pages prévues au devis.
           </p>
           <p className="mt-4 text-slate-600">
-            Ce tarif couvre la conception, le développement, la mise en ligne et
-            une structure optimisée pour le référencement. Il ne couvre pas la
-            rédaction complète de vos textes, les photographies, ni les
-            fonctionnalités sur mesure — boutique, réservation propre, espace
-            client — qui font l&apos;objet d&apos;un devis séparé.
+            Ce prix couvre la conception, la mise en ligne, ainsi que la
+            rédaction des mentions légales et de la politique de
+            confidentialité. Une page de plus, une fonctionnalité avancée
+            (boutique, réservation, espace client) ou une refonte se chiffrent
+            sur devis.
           </p>
           <p className="mt-4 text-slate-600">
-            Le détail de ce qui est inclus, les modalités de paiement et la
-            comparaison entre paiement unique et abonnement figurent sur la{" "}
+            Un site s&apos;achète une fois&nbsp;: aucun abonnement n&apos;est
+            nécessaire pour qu&apos;il reste en ligne. Louer sa présence,
+            c&apos;est payer chaque mois pour qu&apos;il existe.
+          </p>
+          <p className="mt-4 text-slate-600">
+            En option, un accompagnement facultatif (modifications et suivi)
+            coûte {FOLLOW_UP_MONTHLY} sans engagement, ou {FOLLOW_UP_ANNUAL}. Si
+            vous l&apos;arrêtez, votre site reste en ligne et à vous.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Le détail, les modalités de paiement et la comparaison entre acheter
+            son site et louer sa présence figurent sur la{" "}
             <Link
               href="/tarifs"
               className="font-medium text-blue-700 underline underline-offset-4"
