@@ -57,3 +57,15 @@ La tâche 0.4b (bandeau de consentement) avait déjà démarré sur Opus avant c
 - 10 nov. : Joseph accepte la tâche 0.6 en l'état (3 passages de 06-geo.md à 4 phrases, note interne). Il garde la date « Mis à jour le 10 novembre 2026 » sur les 6 articles retouchés (lastmod du sitemap inclus). Reste à faire en 0.7 : titre Google abrégé dans la checklist (`site-content.ts` ~l. 2249), bloc « Sources » cliquable dans le gabarit des articles, puces bleues écrasées sur mobile (`blog/[slug]/page.tsx` ~l. 150, `shrink-0`).
 - 0.7 : le validateur JSON-LD de 0.5 signale « audience non visible » sur 11 pages métier : conséquence assumée de la décision de Joseph (public déclaré sans être affiché). À reconsidérer si Joseph veut l'afficher dans le texte.
 - 11 nov. : Joseph accepte la tâche 0.8b en l'état (une phrase de 32 mots dans la note interne 08). Restent pour plus tard : renvoi vers l'article « fiche Google Entreprise » dans le corps de /seo-geo et de site-optimise-seo-geo ; ajout des 2 articles à llms.txt ; règle « comment créer » du bloc C de la carte à borner (« comment créer un site internet » → /blog) ; page d'aide Google « Valider votre établissement » à envisager pour une mise à jour de l'article 1.
+
+## Fin de phase 0 (11 nov. 2026)
+
+Vérification globale (Opus, effort élevé) : **PASS, aucun bloquant**. Build, lint, type-check OK ; aucune page ne passe en dynamique ; Lighthouse mobile home avec bulle : Perf 95 (médiane), Access. 100, SEO 100, CLS 0,000014 ; JSON-LD 0 erreur sur 34 pages (hors « audience non visible », décision de Joseph) ; 34 URL du sitemap en 200, 0 lien cassé ; consentement conforme ; échantillon de 6 pages et 7 sources externes conformes ; DA cohérente (seules nouveautés : variantes `sm:` de la bulle, à ajouter à l'inventaire, et `bg-white/80` décidé par Joseph).
+
+Non bloquants à reprendre en début de phase 1 :
+- `docs/seo/05-rapport.md` : ligne 0.9 et partie 7 périmées (rapport commité en 7cfe7d1, PASS au T2) ; ajouter les mesures Lighthouse de fin de phase.
+- /tarifs : Accessibilité 96 (contraste du « 600 € » barré, déjà présent avant) — disparaît avec la suppression du prix barré en phase 1.
+- Inventaire DA : ajouter les variantes `sm:` de la bulle (clause 0 bis).
+- Gabarit des articles : « Mis à jour » avec majuscule sur tous les articles.
+- llms.txt : « domaine offert la première année » à revoir en phase 1.
+- Branche `dev` : le commit 224c5ac (« tokens tpl-* ») touche `globals.css` et n'est pas dans feat/offre-v2 — risque de conflit à la fusion.
