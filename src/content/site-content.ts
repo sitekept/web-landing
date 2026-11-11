@@ -1,6 +1,14 @@
+import { PRICING, formatPrice } from "@/content/pricing";
+
 export type SiteLocale = "fr" | "en";
 
 export type LocalizedText = Record<SiteLocale, string>;
+
+/** Prix du site, formaté une fois par langue à partir de la constante unique. */
+const SITE_PRICE: LocalizedText = {
+  fr: formatPrice(PRICING.site.amount),
+  en: formatPrice(PRICING.site.amount, { locale: "en" }),
+};
 
 export interface FeaturedTemplate {
   id: string;
@@ -206,13 +214,13 @@ export const homeContent: HomeContent = {
     },
     proofPoints: {
       fr: [
-        "À partir de 500€",
+        `À partir de ${SITE_PRICE.fr}`,
         "Aucun abonnement imposé",
         "100% propriétaire du site",
         "Domaine offert 1 an",
       ],
       en: [
-        "From €500",
+        `From ${SITE_PRICE.en}`,
         "No forced subscription",
         "100% website ownership",
         "Free domain for 1 year",
@@ -221,13 +229,13 @@ export const homeContent: HomeContent = {
   },
   trustStrip: {
     fr: [
-      "À partir de 500€",
+      `À partir de ${SITE_PRICE.fr}`,
       "Mise en ligne en 48h",
       "100% à vous",
       "Déploiement inclus",
     ],
     en: [
-      "From €500",
+      `From ${SITE_PRICE.en}`,
       "Launch in 48 hours",
       "100% yours",
       "Deployment included",
@@ -345,12 +353,12 @@ export const offerHighlights: OfferHighlight[] = [
     icon: "badgeEuro",
     copy: {
       fr: {
-        title: "À partir de 500€",
+        title: `À partir de ${SITE_PRICE.fr}`,
         description:
           "Un prix d'entrée public, lisible et sans abonnement à ajouter pour exister en ligne.",
       },
       en: {
-        title: "From €500",
+        title: `From ${SITE_PRICE.en}`,
         description:
           "A public entry price that stays readable and does not require a subscription just to exist online.",
       },
@@ -2080,8 +2088,8 @@ export const blogPosts: BlogPost[] = [
       en: "What a website subscription costs over five years, the three dependencies it creates, and when it is still the right choice.",
     },
     intro: {
-      fr: "Comparer un site à 500 € payés une fois et un site à 29 € par mois semble simple : on multiplie, on compare, on conclut. Ce calcul est juste, mais il passe à côté de l'essentiel. Ce qui distingue vraiment les deux modèles, ce n'est pas le total au bout de cinq ans — c'est ce qu'il vous reste le jour où vous arrêtez de payer.",
-      en: "Comparing a €500 one-off website with a €29-a-month one looks simple: multiply, compare, conclude. The maths is right, but it misses the point. What really separates the two models is not the five-year total — it is what you are left with the day you stop paying.",
+      fr: `Comparer un site à ${SITE_PRICE.fr} payés une fois et un site à 29 € par mois semble simple : on multiplie, on compare, on conclut. Ce calcul est juste, mais il passe à côté de l'essentiel. Ce qui distingue vraiment les deux modèles, ce n'est pas le total au bout de cinq ans — c'est ce qu'il vous reste le jour où vous arrêtez de payer.`,
+      en: `Comparing a ${SITE_PRICE.en} one-off website with a €29-a-month one looks simple: multiply, compare, conclude. The maths is right, but it misses the point. What really separates the two models is not the five-year total — it is what you are left with the day you stop paying.`,
     },
     sections: [
       {

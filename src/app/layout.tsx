@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { CookieConsent } from "@/components/cookie-consent";
+import { PRICING, formatPrice } from "@/content/pricing";
 import { ENV } from "@/lib/env";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
 import { SITE_URL } from "@/lib/site-url";
@@ -12,11 +13,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
+  // Les chaînes de messages/*.json qui citent un prix contiennent {price} :
+  // la valeur vient de la constante unique (src/content/pricing.ts).
+  const price = { price: formatPrice(PRICING.site.amount, { locale }) };
 
   return {
     metadataBase: new URL(SITE_URL),
-    title: getMessage(locale, "metadata.title"),
-    description: getMessage(locale, "metadata.description"),
+    title: getMessage(locale, "metadata.title", price),
+    description: getMessage(locale, "metadata.description", price),
     keywords: getMessage(locale, "metadata.keywords"),
     authors: [{ name: getMessage(locale, "metadata.authors") }],
     creator: getMessage(locale, "metadata.creator"),
@@ -38,8 +42,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     manifest: "/my-favicon/site.webmanifest",
     openGraph: {
-      title: getMessage(locale, "metadata.openGraph.title"),
-      description: getMessage(locale, "metadata.openGraph.description"),
+      title: getMessage(locale, "metadata.openGraph.title", price),
+      description: getMessage(locale, "metadata.openGraph.description", price),
       url: SITE_URL,
       siteName: getMessage(locale, "metadata.openGraph.siteName"),
       type: "website",
@@ -47,7 +51,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title: getMessage(locale, "metadata.twitter.title"),
+      title: getMessage(locale, "metadata.twitter.title", price),
       description: getMessage(locale, "metadata.twitter.description"),
       creator: getMessage(locale, "metadata.twitter.creator"),
       images: ["/opengraph-image"],

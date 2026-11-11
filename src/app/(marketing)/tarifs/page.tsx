@@ -3,11 +3,15 @@ import { ArrowRight, Check, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
+import { PRICING, fiscalLabel, formatPrice } from "@/content/pricing";
+
+/** Prix et libellé fiscal : tout vient de la constante unique (src/content/pricing.ts). */
+const SITE_PRICE = formatPrice(PRICING.site.amount);
+const SITE_TAX_LABEL = fiscalLabel(PRICING.site.amount);
 
 export const metadata = buildPageMetadata({
   title: "Prix d'un site internet en 2026 | Sitekept",
-  description:
-    "Combien coûte un site internet ? Notre offre à partir de 500€ sans abonnement, ce qui est inclus, et les modalités de paiement. Tarifs détaillés.",
+  description: `Combien coûte un site internet ? Notre offre à partir de ${SITE_PRICE} sans abonnement, ce qui est inclus, et les modalités de paiement. Tarifs détaillés.`,
   path: "/tarifs",
 });
 
@@ -38,7 +42,7 @@ const FAQ = [
   {
     question: "Combien coûte un site internet chez Sitekept ?",
     answer:
-      "Le site vitrine essentiel est à 500€ en tarif de lancement, au lieu de 600€. Ce prix est public et ne comporte aucun abonnement obligatoire. Les projets nécessitant des fonctionnalités spécifiques font l'objet d'un devis personnalisé, établi selon la complexité technique.",
+      `Le site vitrine essentiel est à ${SITE_PRICE} en tarif de lancement. Ce prix est public et ne comporte aucun abonnement obligatoire. Les projets nécessitant des fonctionnalités spécifiques font l'objet d'un devis personnalisé, établi selon la complexité technique.`,
   },
   {
     question: "Y a-t-il un abonnement à payer chaque mois ?",
@@ -48,7 +52,7 @@ const FAQ = [
   {
     question: "Quelles sont les modalités de paiement ?",
     answer:
-      "Un acompte de 30 % est demandé pour démarrer le projet, le solde est dû à la livraison du site. Les tarifs sont indiqués en euros toutes taxes comprises. Le paiement s'effectue par virement bancaire ou par carte bancaire.",
+      `Un acompte de 30 % est demandé pour démarrer le projet, le solde est dû à la livraison du site. Les tarifs sont indiqués en euros${SITE_TAX_LABEL ? ` ${SITE_TAX_LABEL}` : ""}. Le paiement s'effectue par virement bancaire ou par carte bancaire.`,
   },
   {
     question: "Le site m'appartient-il vraiment ?",
@@ -66,7 +70,7 @@ const FAQ = [
       "Les besoins spécifiques — boutique en ligne, système de réservation, espace client, intégrations métier — sortent du cadre du site vitrine essentiel et font l'objet d'un devis sur mesure, chiffré selon la complexité technique réelle.",
   },
   {
-    question: "Un site à 500 € est-il de moins bonne qualité ?",
+    question: `Un site à ${SITE_PRICE} est-il de moins bonne qualité ?`,
     answer:
       "Le prix vient de la méthode, pas d'un travail bâclé. Nous partons de bases éprouvées et adaptées à chaque métier plutôt que de redessiner chaque écran depuis une page blanche, et nous ne facturons pas de temps commercial ni de gestion de projet sur un site vitrine. Ce qui est réellement moins couvert qu'en agence, nous le disons : la production éditoriale, les photos et les fonctionnalités sur mesure ne sont pas comprises dans ce tarif.",
   },
@@ -196,7 +200,7 @@ export default function TarifsPage() {
             Combien coûte un site internet professionnel&nbsp;?
           </h1>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Un site vitrine complet à partir de 500&nbsp;€, sans abonnement
+            Un site vitrine complet à partir de {SITE_PRICE}, sans abonnement
             imposé, livré en 48h et transféré à votre nom. Cette page détaille
             ce que le prix couvre, ce qu&apos;il ne couvre pas, et comment se
             déroule le paiement.
@@ -223,13 +227,15 @@ export default function TarifsPage() {
                 récurrent.
               </p>
               <p className="mt-6 flex items-baseline gap-3">
-                <span className="text-4xl font-bold text-slate-950">500 €</span>
-                <span className="text-lg text-slate-400 line-through">
-                  600 €
+                <span className="text-4xl font-bold text-slate-950">
+                  {SITE_PRICE}
                 </span>
               </p>
               <p className="mt-1 text-sm text-slate-500">
-                TTC, paiement unique. Domaine offert 1 an.
+                {SITE_TAX_LABEL
+                  ? `${SITE_TAX_LABEL}, paiement unique.`
+                  : "Paiement unique."}{" "}
+                Domaine offert 1 an.
               </p>
               <Button asChild className="mt-8 w-full bg-blue-600 hover:bg-blue-700">
                 <Link href="/#contact">
@@ -412,7 +418,7 @@ export default function TarifsPage() {
             parfois, le nom de domaine.
           </p>
           <p className="mt-4 text-slate-600">
-            Un paiement unique de 500&nbsp;€ reste 500&nbsp;€ la cinquième
+            Un paiement unique de {SITE_PRICE} reste {SITE_PRICE} la cinquième
             année. Le seul coût récurrent est le renouvellement du nom de
             domaine à partir de la deuxième année, payé directement au
             registrar, à son tarif public — de l&apos;ordre de quelques dizaines

@@ -193,19 +193,19 @@
     "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne"
   },
   "metadata": {
-    "title": "Création de site internet dès 500€ | Sitekept",
+    "title": "Création de site internet dès {price} | Sitekept",
     "description": "Agence web spécialisée PME et artisans : votre site professionnel livré en 48h, sans abonnement, 100 % à vous. Devis gratuit en 24h.",
     "keywords": "site professionnel 48h, creation site rapide, site sans abonnement, site 100% propriétaire, déploiement inclus, SEO GEO, site vitrine PME, site indépendant",
     "authors": "Équipe SiteKept",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "Création de site internet dès 500€ | Sitekept",
-      "description": "Un site pro à partir de 500€, livré vite, déployé par Sitekept, optimisé SEO + GEO et entièrement détenu par le client.",
+      "title": "Création de site internet dès {price} | Sitekept",
+      "description": "Un site pro à partir de {price}, livré vite, déployé par Sitekept, optimisé SEO + GEO et entièrement détenu par le client.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "Création de site internet dès 500€ | Sitekept",
+      "title": "Création de site internet dès {price} | Sitekept",
       "description": "Site professionnel rapide à lancer, transparent à acheter et conçu pour la visibilité.",
       "creator": "@sitekept"
     },

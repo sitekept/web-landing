@@ -1,3 +1,4 @@
+import { PRICING, formatPrice } from "@/content/pricing";
 import { SITE_URL } from "@/lib/site-url";
 
 /**
@@ -39,8 +40,10 @@ const LINKEDIN_COMPANY_URL = "https://www.linkedin.com/company/sitekept/";
  * Service). Les valeurs sont inchangées ; les services sont décrits par les
  * blocs Service des pages concernées.
  *
- * À aligner en phase 1 : `priceRange` est écrit en dur. Il devra venir de la
- * constante unique des prix (plan-v2 § 6 bis).
+ * `priceRange` est construit à partir de la constante unique des prix
+ * (src/content/pricing.ts, plan-v2 § 6 bis). `valueAddedTaxIncluded` n'est
+ * pas déclaré : tant que la franchise en base s'applique, aucune TVA n'est
+ * facturée.
  */
 export function OrganizationJsonLd() {
   const data = {
@@ -61,7 +64,7 @@ export function OrganizationJsonLd() {
         sameAs: [LINKEDIN_COMPANY_URL],
         email: "sitekept@gmail.com",
         telephone: "+33651179925",
-        priceRange: "À partir de 500 €",
+        priceRange: `À partir de ${formatPrice(PRICING.site.amount)}`,
         areaServed: {
           "@type": "Country",
           name: "France",

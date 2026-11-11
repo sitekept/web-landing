@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { PRICING, formatPrice } from "@/content/pricing";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -53,7 +54,7 @@ export default function OpengraphImage() {
             fontWeight: 400,
           }}
         >
-          Sans abonnement imposé · 100 % à vous · à partir de 500 €
+          {`Sans abonnement imposé · 100 % à vous · à partir de ${formatPrice(PRICING.site.amount)}`}
         </div>
       </div>
     ),

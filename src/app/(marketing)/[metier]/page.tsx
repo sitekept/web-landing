@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { metierPages, getMetierPageBySlug } from "@/content/metier-pages";
+import { PRICING, formatPrice } from "@/content/pricing";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import {
   BreadcrumbJsonLd,
@@ -255,8 +256,8 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             Combien coûte un site pour {page.label}&nbsp;?
           </h2>
           <p className="mt-4 text-slate-600">
-            Le site vitrine essentiel est à 500&nbsp;€ en tarif de lancement, au
-            lieu de 600&nbsp;€. C&apos;est un paiement unique&nbsp;: il n&apos;y
+            Le site vitrine essentiel est à {formatPrice(PRICING.site.amount)} en
+            tarif de lancement. C&apos;est un paiement unique&nbsp;: il n&apos;y
             a pas d&apos;abonnement à régler pour que le site reste en ligne, et
             le nom de domaine est offert la première année.
           </p>

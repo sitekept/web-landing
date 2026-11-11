@@ -69,3 +69,16 @@ Non bloquants à reprendre en début de phase 1 :
 - Gabarit des articles : « Mis à jour » avec majuscule sur tous les articles.
 - llms.txt : « domaine offert la première année » à revoir en phase 1.
 - Branche `dev` : le commit 224c5ac (« tokens tpl-* ») touche `globals.css` et n'est pas dans feat/offre-v2 — risque de conflit à la fusion.
+
+## Phase 1 — discours et prix (démarrée le 11 nov. 2026)
+
+Mini-plan validé par Joseph le 11 nov. (« Oui, lance ») : 1.1 constante unique, 1.2 /tarifs, 1.3 home, 1.4 cinq articles, 1.5 /templates, 1.6 pages métier, 1.7 llms.txt, 1.8 non-bloquants documentaires, puis vérification de fin de phase (Opus élevé). Une tâche à la fois (deux `pnpm build` simultanés cassent `.next`).
+
+Décisions de Joseph (11 nov.), choix par défaut acceptés :
+- le nom de domaine reste offert la première année dans l'offre à 500 € ;
+- hero de la home : les deux boutons restent en phase 1 ; les cartes du tunnel seront montrées en phase 3, quand le tunnel existera ;
+- prix du site affiché « 500 € » (et non « à partir de 500 € »), les fonctionnalités avancées restant « sur devis » à part.
+
+| Tâche | Périmètre | Tours | Verdict final | Bloquants rencontrés |
+|---|---|---|---|---|
+| 1.1 Constante unique des prix et de la TVA | `src/content/pricing.ts` (nouveau), home, `/tarifs`, `[metier]`, `metier-pages.ts`, `site-content.ts`, `structured-data.tsx`, `opengraph-image.tsx`, `layout.tsx`, `messages/{fr,en}.json` (espace `metadata`, `{price}`) | 1 (vérificateur interrompu par la limite d'usage puis repris) | PASS | Aucun. Non bloquants : prix de l'aside de la home sans `locale` (à traiter en 1.3) ; doublons macOS dans `.next/types` qui faisaient échouer `type-check` (cache supprimé) ; espace insécable dans title, meta et `priceRange`. Restent volontairement pour 1.2 : question FAQ « TTC » de /tarifs, mention 293 B à afficher. Code mort non touché : espaces `hero`, `services`, `cta`, `valueProposition` de `messages/*.json`. |

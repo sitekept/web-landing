@@ -194,14 +194,14 @@
   },
   "metadata": {
     "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-    "description": "Sitekept delivers professional websites from €500, launched in 48 hours, with no forced subscription, deployment included, a free first-year domain and SEO + GEO optimization.",
+    "description": "Sitekept delivers professional websites from {price}, launched in 48 hours, with no forced subscription, deployment included, a free first-year domain and SEO + GEO optimization.",
     "keywords": "professional website 48h, fast website creation, website without subscription, fully owned website, deployment included, SEO GEO website, SMB website, solo founder website",
     "authors": "SiteKept Team",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
       "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-      "description": "A professional website from €500, launched fast, deployed by Sitekept, optimized for SEO + GEO and fully owned by the client.",
+      "description": "A professional website from {price}, launched fast, deployed by Sitekept, optimized for SEO + GEO and fully owned by the client.",
       "siteName": "SiteKept"
     },
     "twitter": {

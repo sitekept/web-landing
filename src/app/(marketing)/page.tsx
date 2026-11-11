@@ -13,6 +13,7 @@ import {
   processSteps,
   whySitekeptItems,
 } from "@/content/site-content";
+import { PRICING, formatPrice } from "@/content/pricing";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
 import { FaqJsonLd } from "@/components/structured-data";
@@ -25,8 +26,8 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "Création de site internet dès 500€ | Sitekept"
-        : "Website design from €500 | Sitekept",
+        ? `Création de site internet dès ${formatPrice(PRICING.site.amount)} | Sitekept`
+        : `Website design from ${formatPrice(PRICING.site.amount, { locale: "en" })} | Sitekept`,
     description:
       locale === "fr"
         ? "Création de site internet professionnel pour PME et artisans : livré en 48h après réception de vos éléments, sans abonnement imposé et 100 % à vous."
@@ -118,7 +119,9 @@ export default async function Home() {
                   : "For local SMBs, solo founders and teams that want to move fast without lock-in."}
               </p>
               <div className="mt-5 flex items-end gap-3">
-                <span className="text-5xl font-semibold text-white">500€</span>
+                <span className="text-5xl font-semibold text-white">
+                  {formatPrice(PRICING.site.amount)}
+                </span>
                 <span className="pb-1 text-sm text-slate-400">
                   {locale === "fr" ? "à partir de" : "starting from"}
                 </span>
