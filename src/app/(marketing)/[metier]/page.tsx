@@ -142,10 +142,10 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            À préparer&nbsp;: en ligne 48 h après réception de vos éléments
+            À préparer&nbsp;: en ligne 48&nbsp;h après réception de vos éléments
           </h2>
           <p className="mt-4 text-slate-600">
-            Votre site est en ligne 48 h après réception de vos éléments
+            Votre site est en ligne 48&nbsp;h après réception de vos éléments
             complets. Sans textes sous la main, un questionnaire de 10 minutes
             suffit&nbsp;: nous rédigeons pour vous. C&apos;est presque toujours
             la préparation des éléments ci-dessous qui fixe la date.
