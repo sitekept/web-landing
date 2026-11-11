@@ -110,7 +110,7 @@
       "externalIntegrations": "Intégrations Externes",
       "externalIntegrationsDesc": "Connexion avec vos outils existants"
     },
-    "trustSignals": "✅ Consultation gratuite • ✅ Devis sous 24h • ✅ Satisfaction garantie"
+    "trustSignals": "✅ Consultation gratuite • ✅ Deux séries de retours incluses • ✅ Satisfaction garantie"
   },
   "portfolio": {
     "title": "Découvrez notre travail",
@@ -151,7 +151,7 @@
     "formTitle": "Parlons de votre projet",
     "commitmentTitle": "Notre engagement",
     "commitments": [
-      "Réponse rapide pendant les heures ouvrables",
+      "Deux séries de retours incluses",
       "Cadre clair sur le prix et la mise en ligne",
       "Mise en ligne prise en charge par Sitekept",
       "Aucun abonnement imposé : l'accompagnement reste facultatif"
@@ -446,7 +446,7 @@
         "content": "Engagement de livraison :",
         "items": [
           "Livraison garantie en 48h pour les sites vitrines standards",
-          "Les délais courent à partir de la réception de l'acompte et des contenus",
+          "Les délais courent à partir de la réception des éléments complets",
           "Les projets complexes font l'objet d'un planning spécifique",
           "Les retards dus au client ne sont pas imputables à SiteKept",
           "En cas de retard de notre part, une remise de 5% par jour est appliquée"
@@ -507,7 +507,7 @@
       "items": [
         "Le nom de domaine est enregistré au nom du client",
         "SiteKept gère l'enregistrement initial et le renouvellement la première année",
-        "Après la première année, le client est responsable du renouvellement",
+        "Dès la deuxième année, le client renouvelle le domaine et le règle à l'organisme qui l'enregistre, à son prix public",
         "Les frais de renouvellement sont à la charge du client",
         "Le transfert vers un autre registrar est possible à tout moment"
       ]

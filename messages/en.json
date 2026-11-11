@@ -110,7 +110,7 @@
       "externalIntegrations": "External Integrations",
       "externalIntegrationsDesc": "Connection with your existing tools"
     },
-    "trustSignals": "✅ Free consultation • ✅ Quote within 24h • ✅ Satisfaction guaranteed"
+    "trustSignals": "✅ Free consultation • ✅ Two rounds of revisions included • ✅ Satisfaction guaranteed"
   },
   "portfolio": {
     "title": "Discover our work",
@@ -151,7 +151,7 @@
     "formTitle": "Let's talk about your project",
     "commitmentTitle": "Our commitment",
     "commitments": [
-      "Fast reply during business hours",
+      "Two rounds of revisions included",
       "Clear framing on the price and the launch",
       "Launch handled by Sitekept",
       "No forced subscription: ongoing support stays optional"
@@ -446,7 +446,7 @@
         "content": "Delivery commitment:",
         "items": [
           "Guaranteed delivery in 48h for standard showcase sites",
-          "Deadlines start from receipt of deposit and content",
+          "Deadlines start from receipt of your complete materials",
           "Complex projects have specific timelines",
           "Delays caused by the client are not attributable to SiteKept",
           "In case of delay on our part, a 5% discount per day is applied"
@@ -507,7 +507,7 @@
       "items": [
         "The domain name is registered in the client's name",
         "SiteKept manages initial registration and renewal for the first year",
-        "After the first year, the client is responsible for renewal",
+        "From the second year, the client renews the domain and pays the registrar directly, at its public price",
         "Renewal fees are the client's responsibility",
         "Transfer to another registrar is possible at any time"
       ]

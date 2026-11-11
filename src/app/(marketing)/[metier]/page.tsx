@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { metierPages, getMetierPageBySlug } from "@/content/metier-pages";
-import { PRICING, formatPriceWithTax } from "@/content/pricing";
+import { PRICING, SITE_SCOPE, formatPriceWithTax } from "@/content/pricing";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import {
   BreadcrumbJsonLd,
@@ -14,6 +14,9 @@ import {
 
 /** Prix : tout vient de la constante unique (src/content/pricing.ts). */
 const SITE_PRICE = formatPriceWithTax(PRICING.site.amount);
+const MAX_PAGES = SITE_SCOPE.maxPages;
+const CAMPAIGN_PAGES = SITE_SCOPE.campaignLandingPages;
+const SCOPE_TITLE = `Votre site\u00a0: jusqu'à ${MAX_PAGES} pages, contact et WhatsApp inclus`;
 const FOLLOW_UP_MONTHLY = formatPriceWithTax(PRICING.followUp.monthly, {
   period: "month",
 });
@@ -270,11 +273,16 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             limite des pages prévues au devis.
           </p>
           <p className="mt-4 text-slate-600">
-            Ce prix couvre la conception, la mise en ligne, ainsi que la
-            rédaction des mentions légales et de la politique de
-            confidentialité. Une page de plus, une fonctionnalité avancée
-            (boutique, réservation, espace client) ou une refonte se chiffrent
-            sur devis.
+            Ce prix couvre la conception, la mise en ligne et la rédaction des
+            mentions légales et de la politique de confidentialité. Il comprend
+            jusqu&apos;à {MAX_PAGES} pages, un formulaire de contact, des
+            boutons WhatsApp et {CAMPAIGN_PAGES} page produit pour vos
+            campagnes payantes.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Les pages au-delà de {MAX_PAGES}, les pages produit supplémentaires,
+            une fonctionnalité avancée (boutique, réservation, espace client)
+            ou une refonte se chiffrent sur devis.
           </p>
           <p className="mt-4 text-slate-600">
             Un site s&apos;achète une fois&nbsp;: aucun abonnement n&apos;est
@@ -321,12 +329,13 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
       <section className="bg-slate-900 px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-white">
-            Un devis clair, sous 24h
+            {SCOPE_TITLE}
           </h2>
           <p className="mt-4 text-lg text-slate-300">
-            Décrivez votre activité et ce que vous attendez du site. Nous
-            revenons vers vous avec un cadre précis&nbsp;: ce qui est inclus, le
-            délai, et le prix.
+            Votre site coûte {SITE_PRICE}, payé une seule fois, avec{" "}
+            {CAMPAIGN_PAGES} page produit pour vos campagnes payantes. Il est
+            en ligne 48 h après réception de vos éléments complets. Décrivez
+            votre activité pour démarrer.
           </p>
           <div className="mt-8">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">

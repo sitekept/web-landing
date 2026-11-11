@@ -17,6 +17,9 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Rédaction des mentions légales et de la politique de confidentialité du client | L'offre à 500 € inclut la rédaction des mentions légales et de la politique de confidentialité du site du client (décision du 10 nov. 2026) | Validé |
 | Nom de domaine | Offert la première année dans l'offre à 500 € ; conservé (décision du 11 nov. 2026) | Validé |
 | Affichage du prix du site | « 500 € », sans « à partir de » ; les fonctionnalités avancées restent sur devis, à part (décision du 11 nov. 2026) | Validé |
+| Contenu du site de base à 500 € | Jusqu'à 12 pages, un formulaire de contact, des boutons de contact WhatsApp et 1 page produit pour des campagnes payantes (page d'atterrissage). Au-delà (page supplémentaire, page produit supplémentaire) : sur devis. Valeurs dans `SITE_SCOPE` (`src/content/pricing.ts`) (décision du 11 nov. 2026) | Validé |
+| Promesse « devis sous 24h » | Retirée du site et remplacée par la formule du site de base (prix, page produit pour campagnes, délai précisé) (décision du 11 nov. 2026) | Validé |
+| Renouvellement du nom de domaine | À la charge du client dès la 2e année, réglé directement à l'organisme qui enregistre le domaine, à son prix public ; le domaine reste au nom du client (décision du 11 nov. 2026) | Validé |
 | Encaissement du suivi | Lien de paiement Stripe en abonnement | Validé |
 | **Régime de TVA** | **Franchise en base au démarrage : aucune TVA facturée** (Joseph : « il n'y aura pas de TVA au début, c'est sûr »). Affichage sans « TTC / HT », mention « TVA non applicable, art. 293 B du CGI ». Remplace la réponse précédente « régime normal ». | Validé |
 
@@ -28,7 +31,7 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Textes du site | Au choix du client : il les fournit, ou Sitekept les rédige à partir d'un questionnaire de 10 minutes. **Rédaction incluse dans les 500 €, plafonnée au nombre de pages prévu au devis, dans les 2 séries de retours** | Validé |
 | **Métiers de la première vague** | **Plombier, salon de coiffure, boulangerie** | **Validé** |
 | Professions réglementées | Dentiste, avocat en seconde vague, après vérification des règles de communication | Proposé |
-| Robots d'IA dans `robots.txt` | Autorisés (robots de recherche des moteurs d'IA) | Validé |
+| Robots d'IA dans `robots.txt` | Autorisés (robots de recherche des moteurs d'IA) ; robots d'IA d'entraînement également autorisés (décision du 11 nov. 2026) | Validé |
 | Signature des articles du blog | « Équipe Sitekept », aucun nom personnel publié, articles pilotes compris (décision du 10 nov. 2026) | Validé |
 | JSON-LD : `areaServed` et `knowsLanguage` | `areaServed` « France » et `knowsLanguage` fr/en conservés (décision du 10 nov. 2026) | Validé |
 
@@ -49,6 +52,7 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Sujet | Valeur | Statut |
 |---|---|---|
 | Délai de mise en ligne | 48 h après réception des éléments complets | Validé |
+| Point de départ du délai | La réception des éléments complets, pas le versement de l'acompte (décision du 11 nov. 2026) | Validé |
 | Retours inclus avant livraison | 2 séries | Validé |
 | Pause du projet sans réponse du client | 15 jours | Validé |
 | Modifications du suivi | 2 par mois, non cumulables | Validé |

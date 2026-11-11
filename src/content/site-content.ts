@@ -640,8 +640,8 @@ export const faqItems: FaqItem[] = [
       en: "Is the domain included?",
     },
     answer: {
-      fr: "Oui, le nom de domaine est offert la première année avec votre site. Ensuite, nous voyons ensemble son renouvellement et sa gestion.",
-      en: "Yes, the domain name is free for the first year with your website. After that, we look at its renewal and management together.",
+      fr: "Oui, le nom de domaine est offert la première année avec votre site. Dès la deuxième année, son renouvellement se règle directement à l'organisme qui l'enregistre, à son prix public. Le domaine reste à votre nom.",
+      en: "Yes, the domain name is free for the first year with your website. From the second year, you renew it directly with the registrar, at its public price. The domain stays in your name.",
     },
   },
   {

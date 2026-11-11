@@ -28,7 +28,7 @@ export async function Footer({ locale }: FooterProps) {
             <div>
               <p className="text-lg font-semibold tracking-tight">Sitekept</p>
               <p className="text-[10px] uppercase tracking-[0.24em] text-blue-200">
-                SEO, GEO, lancement rapide
+                Sites internet sur mesure
               </p>
             </div>
           </div>

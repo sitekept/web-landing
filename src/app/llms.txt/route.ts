@@ -2,6 +2,7 @@ import { blogPosts } from "@/content/site-content";
 import { metierPages } from "@/content/metier-pages";
 import {
   PRICING,
+  SITE_SCOPE,
   formatPrice,
   vatLegalNotice,
 } from "@/content/pricing";
@@ -46,6 +47,14 @@ function buildLlmsTxt(): string {
   const followUpAnnual = price(PRICING.followUp.annual, "year");
   const vatNotice = vatLegalNotice();
 
+  const scopeItems = [
+    `jusqu'à ${SITE_SCOPE.maxPages} pages`,
+    ...(SITE_SCOPE.contactForm ? ["un formulaire de contact"] : []),
+    ...(SITE_SCOPE.whatsappButtons ? ["des boutons de contact WhatsApp"] : []),
+    `${SITE_SCOPE.campaignLandingPages} page produit pour des campagnes payantes (page d'atterrissage)`,
+  ];
+  const scopeLine = `- Contenu du site : ${scopeItems.slice(0, -1).join(", ")} et ${scopeItems[scopeItems.length - 1]}.`;
+
   const priceLine = vatNotice
     ? `- Prix du site : ${sitePrice}, payé une seule fois. ${vatNotice}.`
     : `- Prix du site : ${sitePrice}, payé une seule fois.`;
@@ -61,6 +70,8 @@ function buildLlmsTxt(): string {
     "- Chaque site est créé sur mesure. Les modèles présentés sur le site sont des exemples pour se projeter.",
     priceLine,
     "- Délai : le site est en ligne 48 h après réception des éléments complets.",
+    scopeLine,
+    "- Au-delà (page supplémentaire, page produit supplémentaire), le travail se chiffre sur devis.",
     "- La rédaction des textes est incluse, avec un questionnaire de 10 minutes, dans la limite des pages prévues au devis.",
     "- Les mentions légales et la politique de confidentialité du site sont rédigées pour le client.",
     "- Le nom de domaine est offert la première année.",

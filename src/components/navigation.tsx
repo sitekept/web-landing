@@ -30,7 +30,7 @@ const navigationLabels = {
     start: "Demander un devis",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
-    brandMeta: "SEO, GEO, lancement rapide",
+    brandMeta: "Sites internet sur mesure",
   },
   en: {
     templates: "Templates",
@@ -43,7 +43,7 @@ const navigationLabels = {
     start: "Request a quote",
     openMenu: "Open menu",
     closeMenu: "Close menu",
-    brandMeta: "SEO, GEO, fast launch",
+    brandMeta: "Custom websites",
   },
 } as const;
 

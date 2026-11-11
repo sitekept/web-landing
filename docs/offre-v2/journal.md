@@ -112,3 +112,11 @@ Non bloquants et points à soumettre à Joseph :
 - code mort à nettoyer : 4 composants de `src/app/_components/` et espaces `hero`, `services`, `cta`, `valueProposition`, `seo` de `messages/*.json` ; `/terms` dit encore « toutes taxes comprises » (phase 5) ;
 - articles « louer » et « récupérer » : paragraphes existants hors règles, non réécrits ; titre de l'article livraison « notre process » ; route `/faq` en 404 (phase 4) ;
 - branche `dev` : le commit `224c5ac` (« tokens tpl-* ») touche `globals.css`, absent de `feat/offre-v2` : risque de conflit à la fusion finale.
+
+## Retours de Joseph sur la phase 1 (11-12 nov. 2026)
+
+Décisions de Joseph : délai compté depuis la réception des éléments complets (pas l'acompte) ; site de base à 500 € = jusqu'à 12 pages, formulaire de contact, boutons WhatsApp, 1 page produit pour campagnes payantes (au-delà sur devis), à la place de « Un devis clair, sous 24h » ; renouvellement du domaine à la charge du client dès la 2e année, réglé à l'organisme qui l'enregistre ; H1 de /tarifs et slogan, contact laissés à l'orchestrateur ; cible inchangée ; robots d'IA d'entraînement autorisés ; H1 de l'article « posséder » accepté. La phase 2 est confiée à une autre session (offre-v2-phase2).
+
+| Tâche | Périmètre | Tours | Verdict final | Bloquants rencontrés |
+|---|---|---|---|---|
+| Retours de Joseph | `pricing.ts` (`SITE_SCOPE`), `tarifs/page.tsx`, `[metier]/page.tsx`, `llms.txt/route.ts`, `site-content.ts` (FAQ domaine), `messages/{fr,en}.json` (contact, clés non rendues), `navigation.tsx`, `footer.tsx` (slogan « Sites internet sur mesure »), registre | 1 | PASS | Aucun. Non bloquants : « rédaction dans la limite des pages prévues au devis » à côté de « jusqu'à 12 pages » (ligne « Textes du site » du registre à aligner si Joseph le souhaite) ; pluriel de « page produit » non géré ; « 48 h » coupé à 390 px dans le nouveau bandeau ; /terms ne rend pas `deliveryTimes` ni `domainPolicy` (phase 5). |

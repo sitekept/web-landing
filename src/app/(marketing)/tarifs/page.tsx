@@ -5,6 +5,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
 import {
   PRICING,
+  SITE_SCOPE,
   fiscalLabel,
   formatPrice,
   formatPriceWithTax,
@@ -21,6 +22,9 @@ const FOLLOW_UP_ANNUAL = formatPriceWithTax(PRICING.followUp.annual, {
   period: "year",
 });
 const VAT_NOTICE = vatLegalNotice();
+const MAX_PAGES = SITE_SCOPE.maxPages;
+const CAMPAIGN_PAGES = SITE_SCOPE.campaignLandingPages;
+const SCOPE_TITLE = `Votre site\u00a0: jusqu'à ${MAX_PAGES} pages, contact et WhatsApp inclus`;
 
 export const metadata = buildPageMetadata({
   title: "Prix d'un site internet en 2026 | Sitekept",
@@ -38,8 +42,12 @@ export const metadata = buildPageMetadata({
 
 const INCLUDED = [
   "Conception et développement de votre site, sur mesure",
-  "Mise en ligne 48 h après réception de vos éléments complets et de l'acompte",
-  "Rédaction de vos textes à partir d'un questionnaire de 10 minutes, si vous le souhaitez",
+  `Jusqu'à ${MAX_PAGES} pages`,
+  ...(SITE_SCOPE.contactForm ? ["Un formulaire de contact"] : []),
+  ...(SITE_SCOPE.whatsappButtons ? ["Des boutons de contact WhatsApp"] : []),
+  `${CAMPAIGN_PAGES} page produit pour vos campagnes payantes (page d'atterrissage)`,
+  "Mise en ligne 48 h après réception de vos éléments complets",
+  "Rédaction de vos textes à partir d'un questionnaire de 10 minutes, si vous le souhaitez, dans la limite des pages prévues au devis",
   "Rédaction des mentions légales et de la politique de confidentialité",
   "Nom de domaine offert la première année",
   "Mise en ligne et hébergement mis en place",
@@ -48,7 +56,8 @@ const INCLUDED = [
 ];
 
 const NOT_INCLUDED = [
-  "Une page de plus que celles prévues au devis",
+  `Les pages au-delà de ${MAX_PAGES}, sur devis`,
+  "Les pages produit supplémentaires, sur devis",
   "Une nouvelle fonctionnalité (boutique, réservation, espace client)",
   "Une refonte du site",
   "Les séances photo",
@@ -78,7 +87,7 @@ const FAQ = [
   {
     question: "Le délai de 48 h après réception de mes éléments est-il réaliste ?",
     answer:
-      "Oui, pour les projets simples. Les 48 h courent dès la réception de vos éléments complets et de l'acompte, pas du premier contact. Plus vos textes et images sont prêts, plus le délai est facile à tenir.",
+      "Oui, pour les projets simples. Les 48 h courent dès la réception de vos éléments complets, pas du premier contact. Plus vos textes et images sont prêts, plus le délai est facile à tenir.",
   },
   {
     question: "Que se passe-t-il si mon besoin est plus complexe ?",
@@ -88,7 +97,7 @@ const FAQ = [
   {
     question: `Un site à ${SITE_PRICE} est-il de moins bonne qualité ?`,
     answer:
-      "Le prix vient de notre méthode, pas d'un travail bâclé. Votre site est créé sur mesure pour vous, et nous ne facturons ni temps commercial ni gestion de projet. Ce qui n'est pas inclus, nous le disons : les séances photo, les fonctionnalités avancées, les pages au-delà du devis et les refontes.",
+      `Le prix vient de notre méthode, pas d'un travail bâclé. Votre site est créé sur mesure pour vous, et nous ne facturons ni temps commercial ni gestion de projet. Ce qui n'est pas inclus, nous le disons : les séances photo, les fonctionnalités avancées, les pages au-delà de ${MAX_PAGES} et les refontes.`,
   },
   {
     question: "Faut-il payer l'hébergement en plus ?",
@@ -213,12 +222,12 @@ export default function TarifsPage() {
             Tarifs
           </p>
           <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-            Combien coûte un site internet professionnel&nbsp;?
+            Prix d&apos;un site internet professionnel&nbsp;: combien ça coûte&nbsp;?
           </h1>
           <p className="mt-6 text-lg leading-8 text-slate-600">
             Le prix d&apos;un site internet vitrine chez Sitekept est de{" "}
             {SITE_PRICE}, payé une seule fois, sans abonnement imposé. Votre
-            site est en ligne 48 h après réception de vos éléments, et
+            site est en ligne 48 h après réception de vos éléments complets, et
             transféré à votre nom. Cette page détaille ce que ce prix couvre,
             ce qu&apos;il ne couvre pas, et comment se déroule le paiement.
           </p>
@@ -228,7 +237,7 @@ export default function TarifsPage() {
       <section className="bg-white px-6 pb-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Nos deux formules
+            Le site, puis l&apos;accompagnement en option
           </h2>
 
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
@@ -604,12 +613,13 @@ export default function TarifsPage() {
       <section className="bg-slate-900 px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl font-semibold tracking-tight text-white">
-            Un devis clair, sous 24h
+            {SCOPE_TITLE}
           </h2>
           <p className="mt-4 text-lg leading-8 text-slate-300">
-            Décrivez votre activité et votre objectif. Nous revenons vers vous
-            avec un cadre simple&nbsp;: ce qui est faisable, à quel prix, et
-            dans quel délai.
+            Votre site coûte {SITE_PRICE}, payé une seule fois, avec{" "}
+            {CAMPAIGN_PAGES} page produit pour vos campagnes payantes. Il est
+            en ligne 48 h après réception de vos éléments complets. Décrivez
+            votre activité pour démarrer.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">

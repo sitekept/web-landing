@@ -58,6 +58,20 @@ export const PRICING = {
 } as const;
 
 /**
+ * Contenu du site à 500 € (décision du 11 nov. 2026). Source unique du
+ * périmètre : /tarifs, pages métier et llms.txt lisent ces valeurs, aucun
+ * nombre de pages n'est écrit en dur ailleurs. Au-delà (page supplémentaire,
+ * page produit supplémentaire), le travail se chiffre sur devis.
+ * `campaignLandingPages` : pages produit d'atterrissage pour campagnes payantes.
+ */
+export const SITE_SCOPE = {
+  maxPages: 12,
+  contactForm: true,
+  whatsappButtons: true,
+  campaignLandingPages: 1,
+} as const;
+
+/**
  * Liens de paiement Stripe du suivi. Facultatifs : `undefined` tant que les
  * variables d'environnement ne sont pas renseignées. Non affichés à l'écran
  * pour l'instant.
