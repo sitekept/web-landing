@@ -19,11 +19,11 @@ export async function generateMetadata(): Promise<Metadata> {
     title:
       locale === "fr"
         ? "Modèles de sites internet par métier | Sitekept"
-        : "Sitekept Templates | Fast website bases to customize",
+        : "Website templates by trade | Sitekept",
     description:
       locale === "fr"
-        ? "13 modèles de sites prêts à personnaliser : boulangerie, dentiste, plombier, restaurant, avocat, immobilier. Adaptés à votre activité en 48h."
-        : "Explore Sitekept public templates for bakeries, florists, dentists, plumbers, hair salons, cleaning services, restaurants, architects, law firms, real estate and more, with customization and launch included.",
+        ? "Modèles de site internet par métier : boulangerie, plombier, coiffeur, restaurant. Des exemples pour vous projeter. Votre site est créé sur mesure."
+        : "Browse website templates by trade: bakery, plumber, hair salon, restaurant. They are examples to help you picture your site. Yours is custom-made for you.",
     path: "/templates",
   });
 }
@@ -50,6 +50,11 @@ export default async function TemplatesPage() {
           </h1>
           <p className="mt-5 text-lg leading-8 text-slate-600">
             {getLocalizedText(templatesPageCopy.description, locale)}
+          </p>
+          <p className="mt-4 text-lg font-semibold leading-8 text-slate-950">
+            {templatesPageCopy.notice
+              ? getLocalizedText(templatesPageCopy.notice, locale)
+              : null}
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
@@ -83,8 +88,8 @@ export default async function TemplatesPage() {
         }
         description={
           locale === "fr"
-            ? "Chaque modèle est adapté aux besoins réels d’un métier : parcours de réservation, présentation des prestations, zone d’intervention ou prise de contact. Nous le personnalisons à votre activité et le mettons en ligne en 48h."
-            : "Each template matches the real needs of a trade: booking flow, service presentation, coverage area or contact capture. We tailor it to your business and put it online in 48 hours."
+            ? "Chaque modèle montre ce qu’un site peut faire pour un métier : parcours de réservation, présentation des prestations, zone d’intervention ou prise de contact. Votre site est créé sur mesure, puis mis en ligne 48 h après réception de vos éléments."
+            : "Each template shows what a website can do for a trade: booking flow, service presentation, coverage area or contact capture. Your website is custom-made, then put online 48 hours after we receive your materials."
         }
         ctaText={locale === "fr" ? "Demander un devis" : "Request a quote"}
       />

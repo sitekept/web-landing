@@ -166,6 +166,8 @@ export interface ListingPageCopy {
   eyebrow: LocalizedText;
   title: LocalizedText;
   description: LocalizedText;
+  /** Mention courte, visible sous l'introduction (facultative). */
+  notice?: LocalizedText;
 }
 
 export interface SeoGeoPageContent {
@@ -677,12 +679,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Boulangerie",
         description:
-          "Une base chaleureuse et commerçante pour vendre une presence locale claire, des horaires, une vitrine de produits et une commande simple.",
+          "Exemple pour une boulangerie : une présence locale claire, les horaires, une vitrine de produits et une commande simple.",
       },
       en: {
         name: "Bakery Template",
         description:
-          "A warm, commerce-first base to sell a clear local presence, opening hours, product highlights and a simple ordering flow.",
+          "Example for a bakery: a clear local presence, opening hours, a product showcase and simple ordering.",
       },
     },
   },
@@ -696,12 +698,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Fleuriste",
         description:
-          "Une direction plus editoriale et premium pour mettre en avant un style, des compositions et un univers visuel fort.",
+          "Exemple pour un fleuriste : un style soigné qui met en avant les compositions et un univers visuel fort.",
       },
       en: {
         name: "Florist Template",
         description:
-          "A more editorial, premium direction to highlight style, compositions and a strong visual universe.",
+          "Example for a florist: a refined style that highlights the arrangements and a strong visual universe.",
       },
     },
   },
@@ -715,12 +717,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Réparation Ordinateur",
         description:
-          "Une vitrine directe et rassurante pour présenter vos services, vos garanties et vos prises de contact sans friction.",
+          "Exemple pour un réparateur d'ordinateurs : services, garanties et prise de contact présentés de façon directe et rassurante.",
       },
       en: {
         name: "Computer Repair Template",
         description:
-          "A direct and reassuring showcase to present services, guarantees and easy contact paths without friction.",
+          "Example for a computer repair shop: services, guarantees and contact options presented in a direct, reassuring way.",
       },
     },
   },
@@ -734,12 +736,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Pâtisserie",
         description:
-          "Une base plus haut de gamme pour valoriser des créations, des événements et une promesse de maison premium.",
+          "Exemple pour une pâtisserie : des créations et des événements mis en valeur dans une ambiance haut de gamme.",
       },
       en: {
         name: "Pastry Template",
         description:
-          "A more premium foundation to showcase creations, events and a refined maison-level positioning.",
+          "Example for a pastry shop: creations and events showcased in an upscale atmosphere.",
       },
     },
   },
@@ -753,12 +755,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Dentiste",
         description:
-          "Une base clinique premium pour structurer l'information, rassurer dès le hero et pousser la prise de rendez-vous sans friction.",
+          "Exemple pour un cabinet dentaire : une information bien organisée, qui rassure dès l'arrivée sur la page et mène à la prise de rendez-vous.",
       },
       en: {
         name: "Dentist Template",
         description:
-          "A premium clinical base designed to structure information, reassure from the hero and drive appointment booking without friction.",
+          "Example for a dental practice: well-organised information that reassures from the first screen and leads to booking an appointment.",
       },
     },
   },
@@ -772,12 +774,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Plombier Chauffagiste",
         description:
-          "Une landing d'urgence locale pensée pour les appels rapides, les zones d'intervention et une conversion immédiate.",
+          "Exemple pour un plombier chauffagiste : les appels rapides en cas d'urgence et les zones d'intervention mis en avant.",
       },
       en: {
         name: "Plumber & Heating Template",
         description:
-          "A local emergency landing page built for rapid calls, service areas and immediate lead conversion.",
+          "Example for a plumber and heating engineer: quick calls in an emergency and service areas put forward.",
       },
     },
   },
@@ -791,12 +793,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Salon de coiffure",
         description:
-          "Une direction lifestyle et booking-first avec lookbook, prestations, équipe et réservations dans un cadre plus éditorial.",
+          "Exemple pour un salon de coiffure : galerie de coiffures, prestations, équipe et réservation, dans un style soigné.",
       },
       en: {
         name: "Hair Salon Template",
         description:
-          "A lifestyle, booking-first direction with lookbook, services, team and reservations in a more editorial frame.",
+          "Example for a hair salon: a gallery of hairstyles, services, team and booking, in a refined style.",
       },
     },
   },
@@ -810,12 +812,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Ménage & Nettoyage",
         description:
-          "Une page claire et rassurante pour vendre des formules, des zones couvertes et une promesse de simplicité immédiate.",
+          "Exemple pour une entreprise de ménage : formules, zones couvertes et un message simple et rassurant dès le premier écran.",
       },
       en: {
         name: "Cleaning Services Template",
         description:
-          "A clear and reassuring page to sell service plans, covered areas and a simple promise from the first screen.",
+          "Example for a cleaning company: service plans, covered areas and a simple, reassuring message from the first screen.",
       },
     },
   },
@@ -829,12 +831,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Restaurant Bistrot",
         description:
-          "Un univers d'hospitalité plus immersif pour mettre en avant ambiance, carte, réservation et privatisation.",
+          "Exemple pour un restaurant : l'ambiance, la carte, la réservation et la privatisation mises en avant.",
       },
       en: {
         name: "Bistro Restaurant Template",
         description:
-          "A more immersive hospitality direction built to highlight atmosphere, menu, bookings and private events.",
+          "Example for a restaurant: atmosphere, menu, booking and private events put forward.",
       },
     },
   },
@@ -848,12 +850,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Architecte d'intérieur",
         description:
-          "Une base narrative et premium pour vendre une direction artistique, des projets et une méthode en format portfolio.",
+          "Exemple pour un architecte d'intérieur : une direction artistique, des projets et une méthode présentés comme un portfolio.",
       },
       en: {
         name: "Interior Architect Template",
         description:
-          "A premium narrative base to sell an artistic direction, featured projects and process in a portfolio format.",
+          "Example for an interior architect: an artistic direction, projects and a method presented as a portfolio.",
       },
     },
   },
@@ -867,12 +869,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Cabinet d'avocat",
         description:
-          "Une landing sobre et autoritaire pour convertir sur la consultation initiale avec preuve d'expertise et structure documentaire.",
+          "Exemple pour un cabinet d'avocat : un site sobre qui met l'expertise en avant et mène à la première consultation.",
       },
       en: {
         name: "Law Firm Template",
         description:
-          "A sober, authoritative landing page built to convert on the first consultation with expertise proof and documentary structure.",
+          "Example for a law firm: a sober site that highlights expertise and leads to the first consultation.",
       },
     },
   },
@@ -886,12 +888,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Avocate Tel Aviv",
         description:
-          "Un site chic et sobre pour une avocate spécialisée en immobilier et successions France-Israël, avec blog et contact front-only.",
+          "Exemple pour une avocate en immobilier et successions France-Israël : un site sobre avec un blog et une page de contact.",
       },
       en: {
         name: "Tel Aviv Lawyer Template",
         description:
-          "A chic, restrained site for a lawyer focused on real estate and France-Israel inheritance matters, with blog and front-only contact.",
+          "Example for a lawyer in real estate and France-Israel inheritance: a sober site with a blog and a contact page.",
       },
     },
   },
@@ -905,12 +907,12 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Agence immobilière",
         description:
-          "Un modèle orienté recherche et estimation pour présenter les biens, les quartiers, les agents et les leads vendeurs.",
+          "Exemple pour une agence immobilière : recherche de biens et estimation, avec les quartiers, les agents et les demandes de vendeurs.",
       },
       en: {
         name: "Real Estate Agency Template",
         description:
-          "A search- and valuation-oriented model designed for listings, neighborhoods, agents and seller lead capture.",
+          "Example for a real estate agency: property search and valuation, with neighborhoods, agents and seller requests.",
       },
     },
   },
@@ -922,12 +924,16 @@ export const templatesPageCopy: ListingPageCopy = {
     en: "Public gallery",
   },
   title: {
-    fr: "Modèles de site internet prêts à adapter à votre activité.",
-    en: "Templates ready to adapt to your business.",
+    fr: "Modèles de site internet : des exemples pour vous projeter",
+    en: "Website templates: examples to help you picture your site",
   },
   description: {
-    fr: "Cette sélection publique de modèles de site internet vous donne plusieurs points de départ. Vous choisissez un style, nous adaptons les contenus, les sections, le ton et les détails commerciaux à votre activité.",
-    en: "This public selection gives you multiple starting points. You choose a style and we adapt the content, sections, tone and commercial details to your business.",
+    fr: "Voici des modèles de site internet pour plusieurs métiers. Chacun montre un style, des sections et une façon de présenter une activité.",
+    en: "These are website templates for several trades. Each one shows a style, a set of sections and a way to present a business.",
+  },
+  notice: {
+    fr: "Ces exemples vous aident à vous projeter. Votre site est créé sur mesure pour vous.",
+    en: "These examples help you picture your site. Your website is custom-made for you.",
   },
 };
 
@@ -1132,8 +1138,8 @@ export const blogPosts: BlogPost[] = [
       en: "Want a fast website without commercial gray zones?",
     },
     ctaDescription: {
-      fr: "Parlez-nous de votre activité. Nous vous dirons vite si votre projet entre dans le cadre de l'offre 48h.",
-      en: "Tell us about your business and we will quickly tell you whether your project fits the 48-hour offer.",
+      fr: "Parlez-nous de votre activité. Nous vous dirons vite si votre projet peut être en ligne 48 h après réception de vos éléments.",
+      en: "Tell us about your business and we will quickly tell you whether your project can be online 48 hours after we receive your materials.",
     },
   },
   {
@@ -1241,13 +1247,13 @@ export const blogPosts: BlogPost[] = [
           fr: [
             `Non, votre site est payé une fois et vous appartient : aucun abonnement n'est nécessaire pour qu'il existe. En option, l'accompagnement « Suivi & Visibilité » coûte ${FOLLOW_UP_MONTHLY.fr} sans engagement, ou ${FOLLOW_UP_ANNUAL.fr}. Il comprend deux modifications par mois, non cumulables, et un suivi de votre visibilité.`,
             "Acheter un site, c'est le payer une fois et le garder. Louer sa présence, c'est payer pour qu'il continue d'exister : c'est cela qui coûte cher, pas un service mensuel. L'accompagnement est un service : si vous l'arrêtez, la dépense s'arrête et le site reste à vous.",
-            "Le premier mois est offert à la livraison, pour la formule mensuelle seulement. La formule annuelle n'est pas remboursée en cours d'année, et nous ne promettons aucun classement. Le détail est sur [la page des tarifs](/tarifs).",
+            "Le premier mois est offert à la livraison, pour la formule mensuelle seulement. La formule annuelle n'est pas remboursée au prorata si vous l'arrêtez en cours d'année, et nous ne promettons aucun classement. Le détail est sur [la page des tarifs](/tarifs).",
             "Pour comparer les deux modèles, lisez [louer ou posséder son site internet](/blog/louer-ou-posseder-son-site-internet). Pour changer de prestataire, lisez [récupérer son site web chez un prestataire](/blog/recuperer-son-site-web-chez-un-prestataire).",
           ],
           en: [
             `No, your website is paid for once and belongs to you: no subscription is needed for it to exist. Optionally, the "Suivi & Visibilité" support plan costs ${FOLLOW_UP_MONTHLY.en} with no commitment, or ${FOLLOW_UP_ANNUAL.en}. It includes two edits a month, which do not roll over, and visibility monitoring.`,
             "Buying a website means paying for it once and keeping it. Renting your presence means paying for it to keep existing: that is what costs a lot, not a monthly service. The support plan is a service: if you stop it, the spending stops and the website stays yours.",
-            "The first month is free at delivery, for the monthly plan only. The annual plan is not refunded mid-year, and we promise no ranking. Details are on [the pricing page](/tarifs).",
+            "The first month is free at delivery, for the monthly plan only. The annual plan is not refunded pro rata if you stop it mid-year, and we promise no ranking. Details are on [the pricing page](/tarifs).",
             "To compare the two models, read [renting or owning your website](/blog/louer-ou-posseder-son-site-internet). If you want to switch provider, read [getting your website back from a provider](/blog/recuperer-son-site-web-chez-un-prestataire).",
           ],
         },

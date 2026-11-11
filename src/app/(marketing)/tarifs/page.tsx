@@ -309,7 +309,7 @@ export default function TarifsPage() {
               Le premier mois est offert à la livraison, pour la formule
               mensuelle seulement. Si vous arrêtez, la dépense s&apos;arrête et
               le site reste en ligne, à vous. La formule annuelle n&apos;est pas
-              remboursée en cours d&apos;année.
+              remboursée au prorata si vous l&apos;arrêtez en cours d&apos;année.
             </p>
           </div>
         </div>
