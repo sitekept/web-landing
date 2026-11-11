@@ -2498,6 +2498,412 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "creer-une-fiche-google-entreprise",
+    publishedAt: "2026-11-10",
+    updatedAt: "2026-11-10",
+    author: "Équipe Sitekept",
+    category: {
+      fr: "Visibilité locale",
+      en: "Local visibility",
+    },
+    title: {
+      fr: "Comment créer une fiche Google Entreprise, pas à pas",
+      en: "How to create a Google Business Profile, step by step",
+    },
+    excerpt: {
+      fr: "Un guide pas à pas pour ajouter ou revendiquer votre fiche Google Entreprise, la valider et comprendre ce qui influence son affichage sur Maps.",
+      en: "A step-by-step guide to adding or claiming your Google Business Profile, validating it and understanding what shapes its display on Maps.",
+    },
+    seoTitle: {
+      fr: "Comment créer une fiche Google Entreprise | Sitekept",
+      en: "How to create a Google Business Profile | Sitekept",
+    },
+    seoDescription: {
+      fr: "Comment créer une fiche Google Entreprise : gratuité, ajout ou revendication, validation et critères d'affichage sur Maps. Un guide étape par étape.",
+      en: "How to create a Google Business Profile: cost, adding or claiming, validation and what influences display on Maps. A simple step-by-step guide.",
+    },
+    intro: {
+      fr: "Comment créer une fiche Google Entreprise sans être à l'aise avec le numérique ? Google précise que l'ajout se fait sans frais. Ce guide décrit les étapes, de la création à la validation, avec des exemples de commerces.",
+      en: "Comment créer une fiche Google Entreprise sans être à l'aise avec le numérique ? Google précise que l'ajout se fait sans frais. Ce guide décrit les étapes, de la création à la validation, avec des exemples de commerces.",
+    },
+    sections: [
+      {
+        id: "quest-ce-quune-fiche",
+        title: {
+          fr: "Qu'est-ce qu'une fiche Google Entreprise ?",
+          en: "Qu'est-ce qu'une fiche Google Entreprise ?",
+        },
+        paragraphs: {
+          fr: [
+            "C'est la page de votre commerce sur Google. Elle apparaît dans la Recherche et sur Google Maps, avec vos informations : adresse, horaires, photos, avis. Google l'appelle « fiche d'établissement » dans son aide, et vous contrôlez ce qu'elle affiche une fois qu'elle est ajoutée.",
+            "Chaque métier s'en sert à sa façon. Une boulangerie y précise ses horaires, un salon de coiffure y montre ses photos. Un plombier y décrit ce qu'il fait.",
+            "Google en tient compte quand un client cherche un établissement près de sa position. Les résultats de proximité s'affichent alors sur Maps et dans la recherche Google. C'est là que votre fiche peut apparaître.",
+          ],
+          en: [
+            "C'est la page de votre commerce sur Google. Elle apparaît dans la Recherche et sur Google Maps, avec vos informations : adresse, horaires, photos, avis. Google l'appelle « fiche d'établissement » dans son aide, et vous contrôlez ce qu'elle affiche une fois qu'elle est ajoutée.",
+            "Chaque métier s'en sert à sa façon. Une boulangerie y précise ses horaires, un salon de coiffure y montre ses photos. Un plombier y décrit ce qu'il fait.",
+            "Google en tient compte quand un client cherche un établissement près de sa position. Les résultats de proximité s'affichent alors sur Maps et dans la recherche Google. C'est là que votre fiche peut apparaître.",
+          ],
+        },
+      },
+      {
+        id: "gratuite-et-eligibilite",
+        title: {
+          fr: "La fiche est-elle gratuite, et qui peut en avoir une ?",
+          en: "La fiche est-elle gratuite, et qui peut en avoir une ?",
+        },
+        paragraphs: {
+          fr: [
+            "Oui, elle est gratuite : Google précise qu'on peut ajouter ou revendiquer son établissement sans frais. Il faut toutefois y être éligible, selon des règles et des consignes sur les adresses que Google publie. Lisez-les avant de commencer, puis préparez l'adresse exacte de votre commerce.",
+            "Google conseille d'indiquer l'adresse complète si votre établissement peut recevoir du public. Un salon de coiffure ou une boulangerie sont dans ce cas. Si vous vous déplacez chez vos clients, comme un plombier, relisez d'abord les règles d'éligibilité de Google.",
+            "Lors de l'ajout, Google demande que l'adresse saisie soit correcte et qu'elle respecte ses consignes.",
+          ],
+          en: [
+            "Oui, elle est gratuite : Google précise qu'on peut ajouter ou revendiquer son établissement sans frais. Il faut toutefois y être éligible, selon des règles et des consignes sur les adresses que Google publie. Lisez-les avant de commencer, puis préparez l'adresse exacte de votre commerce.",
+            "Google conseille d'indiquer l'adresse complète si votre établissement peut recevoir du public. Un salon de coiffure ou une boulangerie sont dans ce cas. Si vous vous déplacez chez vos clients, comme un plombier, relisez d'abord les règles d'éligibilité de Google.",
+            "Lors de l'ajout, Google demande que l'adresse saisie soit correcte et qu'elle respecte ses consignes.",
+          ],
+        },
+      },
+      {
+        id: "creer-ou-revendiquer",
+        title: {
+          fr: "Comment créer ou revendiquer sa fiche ?",
+          en: "Comment créer ou revendiquer sa fiche ?",
+        },
+        paragraphs: {
+          fr: [
+            "Il y a deux cas, selon que votre commerce a déjà une fiche ou non. Sans fiche, vous en ajoutez une depuis business.google.com/add ; si une fiche non validée existe déjà, vous la revendiquez depuis Google Maps. Dans les deux cas, vous choisissez ensuite une option de validation.",
+            "Avant de choisir, vérifiez si une fiche existe déjà : cherchez le nom et la ville de votre commerce sur Google Maps.",
+            "Pour revendiquer, ouvrez Google Maps sur ordinateur et cherchez le nom et la ville de votre établissement. Sélectionnez ensuite le bouton pour revendiquer l'établissement. Sur téléphone, passez par l'application Google Maps.",
+            "Si une fiche validée existe déjà et que vous êtes autorisé à gérer l'établissement, demandez au propriétaire actuel de vous en transférer la propriété. Si Google propose un autre établissement que le vôtre, une option permet d'en choisir un autre.",
+            "Avant de commencer, rassemblez ce que Google conseille de renseigner : l'adresse complète si vous recevez du public, vos horaires, votre type d'entreprise, des photos. Voici ensuite les étapes décrites par Google. Les libellés des boutons peuvent évoluer : fiez-vous à ce qui s'affiche à l'écran.",
+          ],
+          en: [
+            "Il y a deux cas, selon que votre commerce a déjà une fiche ou non. Sans fiche, vous en ajoutez une depuis business.google.com/add ; si une fiche non validée existe déjà, vous la revendiquez depuis Google Maps. Dans les deux cas, vous choisissez ensuite une option de validation.",
+            "Avant de choisir, vérifiez si une fiche existe déjà : cherchez le nom et la ville de votre commerce sur Google Maps.",
+            "Pour revendiquer, ouvrez Google Maps sur ordinateur et cherchez le nom et la ville de votre établissement. Sélectionnez ensuite le bouton pour revendiquer l'établissement. Sur téléphone, passez par l'application Google Maps.",
+            "Si une fiche validée existe déjà et que vous êtes autorisé à gérer l'établissement, demandez au propriétaire actuel de vous en transférer la propriété. Si Google propose un autre établissement que le vôtre, une option permet d'en choisir un autre.",
+            "Avant de commencer, rassemblez ce que Google conseille de renseigner : l'adresse complète si vous recevez du public, vos horaires, votre type d'entreprise, des photos. Voici ensuite les étapes décrites par Google. Les libellés des boutons peuvent évoluer : fiez-vous à ce qui s'affiche à l'écran.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Ouvrez la page business.google.com/add.",
+            "Sélectionnez le bouton pour ajouter votre établissement sur Google.",
+            "Renseignez les informations demandées, en suivant les instructions à l'écran.",
+            "Choisissez une option de validation, puis suivez les étapes proposées.",
+          ],
+          en: [
+            "Ouvrez la page business.google.com/add.",
+            "Sélectionnez le bouton pour ajouter votre établissement sur Google.",
+            "Renseignez les informations demandées, en suivant les instructions à l'écran.",
+            "Choisissez une option de validation, puis suivez les étapes proposées.",
+          ],
+        },
+      },
+      {
+        id: "valider-sa-fiche",
+        title: {
+          fr: "Pourquoi faut-il valider sa fiche ?",
+          en: "Pourquoi faut-il valider sa fiche ?",
+        },
+        paragraphs: {
+          fr: [
+            "La validation indique à Google que vous êtes autorisé à représenter l'établissement. Google précise que cela augmente ses chances d'apparaître dans les résultats de recherche. Il écrit aussi que, une fois la fiche ajoutée et validée, les clients peuvent vous trouver dans la Recherche et sur Maps.",
+            "Vous choisissez l'option de validation proposée à l'écran, puis vous suivez les étapes indiquées. Vérifiez l'adresse avant de choisir la validation : lors de l'ajout, Google demande qu'elle soit correcte et conforme à ses consignes.",
+            "Une fois la fiche ajoutée ou revendiquée, vous contrôlez ce qu'elle affiche : horaires, photos, catégorie d'activité. Google conseille aussi de répondre aux avis, pour montrer que vous accordez de l'importance aux commentaires de vos clients.",
+          ],
+          en: [
+            "La validation indique à Google que vous êtes autorisé à représenter l'établissement. Google précise que cela augmente ses chances d'apparaître dans les résultats de recherche. Il écrit aussi que, une fois la fiche ajoutée et validée, les clients peuvent vous trouver dans la Recherche et sur Maps.",
+            "Vous choisissez l'option de validation proposée à l'écran, puis vous suivez les étapes indiquées. Vérifiez l'adresse avant de choisir la validation : lors de l'ajout, Google demande qu'elle soit correcte et conforme à ses consignes.",
+            "Une fois la fiche ajoutée ou revendiquée, vous contrôlez ce qu'elle affiche : horaires, photos, catégorie d'activité. Google conseille aussi de répondre aux avis, pour montrer que vous accordez de l'importance aux commentaires de vos clients.",
+          ],
+        },
+      },
+      {
+        id: "affichage-sur-maps",
+        title: {
+          fr: "Qu'est-ce qui influence l'affichage sur Google Maps ?",
+          en: "Qu'est-ce qui influence l'affichage sur Google Maps ?",
+        },
+        paragraphs: {
+          fr: [
+            "Google indique que les résultats à proximité reposent surtout sur trois critères : la pertinence, la distance et la popularité de l'établissement. Il précise qu'il n'existe aucun moyen d'obtenir une meilleure place sur demande ou contre rémunération. Il garde par ailleurs les détails de son algorithme confidentiels.",
+            "Vous ne maîtrisez pas la distance, mais vous maîtrisez vos informations. Google écrit que les établissements aux informations complètes et exactes ont plus de chances d'apparaître dans les résultats à proximité. Il conseille aussi d'ajouter des photos et des vidéos, pour montrer ce que vous proposez et raconter l'histoire de votre entreprise.",
+            "Pour être plus visible sur Google Maps, il reste donc à soigner vos informations. Voici ce que chaque critère signifie, d'après son aide.",
+          ],
+          en: [
+            "Google indique que les résultats à proximité reposent surtout sur trois critères : la pertinence, la distance et la popularité de l'établissement. Il précise qu'il n'existe aucun moyen d'obtenir une meilleure place sur demande ou contre rémunération. Il garde par ailleurs les détails de son algorithme confidentiels.",
+            "Vous ne maîtrisez pas la distance, mais vous maîtrisez vos informations. Google écrit que les établissements aux informations complètes et exactes ont plus de chances d'apparaître dans les résultats à proximité. Il conseille aussi d'ajouter des photos et des vidéos, pour montrer ce que vous proposez et raconter l'histoire de votre entreprise.",
+            "Pour être plus visible sur Google Maps, il reste donc à soigner vos informations. Voici ce que chaque critère signifie, d'après son aide.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "La pertinence : dans quelle mesure votre fiche correspond à la recherche. Des informations complètes et détaillées aident Google à mieux comprendre votre établissement.",
+            "La distance : l'éloignement entre votre établissement et la personne qui cherche. Si elle ne partage pas sa position, Google utilise les informations dont il dispose.",
+            "La proéminence, c'est-à-dire la notoriété : Google cite le nombre d'avis reçus et le nombre de sites Web qui renvoient vers votre établissement.",
+          ],
+          en: [
+            "La pertinence : dans quelle mesure votre fiche correspond à la recherche. Des informations complètes et détaillées aident Google à mieux comprendre votre établissement.",
+            "La distance : l'éloignement entre votre établissement et la personne qui cherche. Si elle ne partage pas sa position, Google utilise les informations dont il dispose.",
+            "La proéminence, c'est-à-dire la notoriété : Google cite le nombre d'avis reçus et le nombre de sites Web qui renvoient vers votre établissement.",
+          ],
+        },
+      },
+      {
+        id: "fiche-ou-site",
+        title: {
+          fr: "Une fiche suffit-elle, ou faut-il aussi un site ?",
+          en: "Une fiche suffit-elle, ou faut-il aussi un site ?",
+        },
+        paragraphs: {
+          fr: [
+            "Une fiche est un bon point de départ, mais elle ne remplace pas un site. Elle s'affiche dans le cadre défini par Google. Un site est une page à vous, où vous présentez votre activité, vos services et votre équipe comme vous le souhaitez.",
+            "Les deux se complètent. Un site vous sert aussi ailleurs que sur Google : sur une carte de visite, dans un message ou sur vos réseaux.",
+            "Pour voir à quoi peut ressembler un site, consultez nos pages pour un [salon de coiffure](/site-internet-salon-de-coiffure), un [plombier](/site-internet-plombier) ou une [boulangerie](/site-internet-boulangerie). Si vous tenez un salon, lisez aussi [salon de coiffure sans site internet](/blog/salon-de-coiffure-sans-site-internet).",
+            "Pour aller plus loin sur la visibilité en ligne, découvrez notre page sur le [référencement SEO et GEO](/seo-geo) et l'article sur l'[optimisation SEO et GEO](/blog/site-optimise-seo-geo). En résumé, voici l'ordre à suivre.",
+          ],
+          en: [
+            "Une fiche est un bon point de départ, mais elle ne remplace pas un site. Elle s'affiche dans le cadre défini par Google. Un site est une page à vous, où vous présentez votre activité, vos services et votre équipe comme vous le souhaitez.",
+            "Les deux se complètent. Un site vous sert aussi ailleurs que sur Google : sur une carte de visite, dans un message ou sur vos réseaux.",
+            "Pour voir à quoi peut ressembler un site, consultez nos pages pour un [salon de coiffure](/site-internet-salon-de-coiffure), un [plombier](/site-internet-plombier) ou une [boulangerie](/site-internet-boulangerie). Si vous tenez un salon, lisez aussi [salon de coiffure sans site internet](/blog/salon-de-coiffure-sans-site-internet).",
+            "Pour aller plus loin sur la visibilité en ligne, découvrez notre page sur le [référencement SEO et GEO](/seo-geo) et l'article sur l'[optimisation SEO et GEO](/blog/site-optimise-seo-geo). En résumé, voici l'ordre à suivre.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Créez ou revendiquez votre fiche, sans frais.",
+            "Validez-la, puis renseignez des informations complètes et exactes.",
+            "Répondez aux avis de vos clients.",
+            "Ajoutez un site quand vous voulez présenter votre activité plus en détail.",
+          ],
+          en: [
+            "Créez ou revendiquez votre fiche, sans frais.",
+            "Validez-la, puis renseignez des informations complètes et exactes.",
+            "Répondez aux avis de vos clients.",
+            "Ajoutez un site quand vous voulez présenter votre activité plus en détail.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Vous voulez un site qui complète votre fiche Google ?",
+      en: "Want a website that complements your Google profile?",
+    },
+    ctaDescription: {
+      fr: "Nous créons un site sur mesure pour votre activité. Il vous appartient, comme votre enseigne.",
+      en: "We build a website tailored to your business. It belongs to you, like your shop sign.",
+    },
+    sources: [
+      {
+        title: "Ajouter ou revendiquer votre fiche d'établissement",
+        url: "https://support.google.com/business/answer/2911778?hl=fr",
+      },
+      {
+        title: "Conseils pour améliorer votre classement local sur Google",
+        url: "https://support.google.com/business/answer/7091?hl=fr",
+      },
+    ],
+  },
+  {
+    slug: "salon-de-coiffure-sans-site-internet",
+    publishedAt: "2026-11-10",
+    updatedAt: "2026-11-10",
+    author: "Équipe Sitekept",
+    category: {
+      fr: "Salon de coiffure",
+      en: "Hair salon",
+    },
+    title: {
+      fr: "Salon de coiffure sans site internet : que faire concrètement ?",
+      en: "Hair salon without a website: what to do in practice",
+    },
+    excerpt: {
+      fr: "Peut-on tenir un salon de coiffure sans site internet ? Ce que la fiche Google couvre, le lien de rendez-vous, et le moment où un site devient utile.",
+      en: "Can you run a hair salon without a website? What a Google profile covers, the booking link, and when a website becomes useful.",
+    },
+    seoTitle: {
+      fr: "Salon de coiffure sans site internet : conseils | Sitekept",
+      en: "Hair salon without a website | Sitekept",
+    },
+    seoDescription: {
+      fr: "Salon de coiffure sans site internet : ce que couvre la fiche Google, les infos à rendre faciles à trouver, le lien de rendez-vous et quand un site aide.",
+      en: "Hair salon without a website: what a Google profile covers, which details to make easy to find, the booking link and when a website helps.",
+    },
+    intro: {
+      fr: "Un salon de coiffure sans site internet est-il un problème ? Pas forcément : on peut démarrer avec une fiche Google, à condition de savoir ce qu'elle couvre. Voici quoi renseigner, et quand un site devient utile.",
+      en: "Un salon de coiffure sans site internet est-il un problème ? Pas forcément : on peut démarrer avec une fiche Google, à condition de savoir ce qu'elle couvre. Voici quoi renseigner, et quand un site devient utile.",
+    },
+    sections: [
+      {
+        id: "tenir-un-salon-sans-site",
+        title: {
+          fr: "Peut-on tenir un salon de coiffure sans site internet ?",
+          en: "Peut-on tenir un salon de coiffure sans site internet ?",
+        },
+        paragraphs: {
+          fr: [
+            "Oui, vous pouvez démarrer sans site. Quand un client cherche un établissement près de lui, Google affiche des résultats à proximité sur Maps et dans la Recherche. Votre fiche Google Entreprise, gratuite, peut s'y afficher, mais elle ne remplace pas un site.",
+            "Tout dépend alors de ce que vos clients y trouvent : informations, photos, avis. Soignez-les.",
+            "Votre première priorité est donc la fiche. Google précise qu'elle s'ajoute sans frais, et qu'on peut revendiquer une fiche existante non validée. Nous détaillons les étapes dans l'article [comment créer une fiche Google Entreprise](/blog/creer-une-fiche-google-entreprise).",
+          ],
+          en: [
+            "Oui, vous pouvez démarrer sans site. Quand un client cherche un établissement près de lui, Google affiche des résultats à proximité sur Maps et dans la Recherche. Votre fiche Google Entreprise, gratuite, peut s'y afficher, mais elle ne remplace pas un site.",
+            "Tout dépend alors de ce que vos clients y trouvent : informations, photos, avis. Soignez-les.",
+            "Votre première priorité est donc la fiche. Google précise qu'elle s'ajoute sans frais, et qu'on peut revendiquer une fiche existante non validée. Nous détaillons les étapes dans l'article [comment créer une fiche Google Entreprise](/blog/creer-une-fiche-google-entreprise).",
+          ],
+        },
+      },
+      {
+        id: "informations-a-rendre-faciles-a-trouver",
+        title: {
+          fr: "Quelles informations rendre faciles à trouver ?",
+          en: "Quelles informations rendre faciles à trouver ?",
+        },
+        paragraphs: {
+          fr: [
+            "Un client veut savoir où vous êtes, quand vous ouvrez et à quoi ressemble votre salon. Google conseille de renseigner l'adresse complète, les horaires, le type d'entreprise, des photos et des détails pratiques. Les établissements aux informations complètes et exactes ont plus de chances d'apparaître dans les résultats à proximité.",
+            "Si ces informations changent, mettez-les à jour. Google écrit qu'une information inexacte peut empêcher l'affichage de la fiche. Pensez surtout à vos horaires de vacances.",
+            "Répondez aussi aux avis : Google le conseille, pour montrer que vous accordez de l'importance aux commentaires de vos clients.",
+          ],
+          en: [
+            "Un client veut savoir où vous êtes, quand vous ouvrez et à quoi ressemble votre salon. Google conseille de renseigner l'adresse complète, les horaires, le type d'entreprise, des photos et des détails pratiques. Les établissements aux informations complètes et exactes ont plus de chances d'apparaître dans les résultats à proximité.",
+            "Si ces informations changent, mettez-les à jour. Google écrit qu'une information inexacte peut empêcher l'affichage de la fiche. Pensez surtout à vos horaires de vacances.",
+            "Répondez aussi aux avis : Google le conseille, pour montrer que vous accordez de l'importance aux commentaires de vos clients.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "L'adresse complète, puisqu'un salon reçoit du public.",
+            "Les horaires d'ouverture, y compris les horaires exceptionnels.",
+            "Le type d'entreprise, c'est-à-dire votre catégorie d'activité.",
+            "Des photos et des vidéos, pour montrer ce que vous proposez.",
+            "Des détails pratiques, comme l'accès Wi-Fi ou le parking.",
+          ],
+          en: [
+            "L'adresse complète, puisqu'un salon reçoit du public.",
+            "Les horaires d'ouverture, y compris les horaires exceptionnels.",
+            "Le type d'entreprise, c'est-à-dire votre catégorie d'activité.",
+            "Des photos et des vidéos, pour montrer ce que vous proposez.",
+            "Des détails pratiques, comme l'accès Wi-Fi ou le parking.",
+          ],
+        },
+      },
+      {
+        id: "rendez-vous-sans-site",
+        title: {
+          fr: "Comment faire prendre rendez-vous sans site ?",
+          en: "Comment faire prendre rendez-vous sans site ?",
+        },
+        paragraphs: {
+          fr: [
+            "Google permet d'ajouter à votre fiche un lien de prise de rendez-vous, vers l'adresse web de votre choix. Vous pouvez en ajouter jusqu'à 10 pour cette catégorie, et en définir un comme lien préféré. Il suppose que vous ayez une page de réservation en ligne.",
+            "Si vous prenez les rendez-vous par téléphone, gardez simplement un numéro auquel vous répondez. Pour le lien en ligne, Google décrit ce chemin. Les libellés peuvent changer d'un écran à l'autre.",
+            "Vérifiez aussi ce que votre fiche affiche déjà. Des liens vers des services partenaires peuvent apparaître automatiquement. Google explique comment les faire retirer : pour une réservation, il faut passer par le prestataire.",
+          ],
+          en: [
+            "Google permet d'ajouter à votre fiche un lien de prise de rendez-vous, vers l'adresse web de votre choix. Vous pouvez en ajouter jusqu'à 10 pour cette catégorie, et en définir un comme lien préféré. Il suppose que vous ayez une page de réservation en ligne.",
+            "Si vous prenez les rendez-vous par téléphone, gardez simplement un numéro auquel vous répondez. Pour le lien en ligne, Google décrit ce chemin. Les libellés peuvent changer d'un écran à l'autre.",
+            "Vérifiez aussi ce que votre fiche affiche déjà. Des liens vers des services partenaires peuvent apparaître automatiquement. Google explique comment les faire retirer : pour une réservation, il faut passer par le prestataire.",
+          ],
+        },
+        bullets: {
+          fr: [
+            "Dans la Recherche Google, ouvrez votre fiche et sélectionnez le bouton de réservation.",
+            "Dans Google Maps, passez par l'option de modification du profil de l'établissement, puis choisissez le type de transaction.",
+            "Sélectionnez l'option pour ajouter un lien, saisissez l'adresse web et enregistrez.",
+          ],
+          en: [
+            "Dans la Recherche Google, ouvrez votre fiche et sélectionnez le bouton de réservation.",
+            "Dans Google Maps, passez par l'option de modification du profil de l'établissement, puis choisissez le type de transaction.",
+            "Sélectionnez l'option pour ajouter un lien, saisissez l'adresse web et enregistrez.",
+          ],
+        },
+      },
+      {
+        id: "ce-que-fait-la-fiche",
+        title: {
+          fr: "Que peut faire la fiche Google à elle seule ?",
+          en: "Que peut faire la fiche Google à elle seule ?",
+        },
+        paragraphs: {
+          fr: [
+            "Elle présente votre salon dans la Recherche et sur Maps, avec vos horaires, vos photos et vos avis. Elle peut aussi porter un lien de rendez-vous, et vous y répondez aux avis de vos clients. Elle reste toutefois présentée dans le cadre de Google : vous ne composez pas votre propre page.",
+            "Une fois la fiche ajoutée ou revendiquée, vous contrôlez la façon dont les informations de votre salon s'affichent sur Google.",
+            "Ne comptez pas sur elle pour tout. Google rappelle qu'aucune place ne s'obtient sur demande ou contre rémunération dans le classement local.",
+            "Les écrans de Google évoluent. Si un bouton n'a pas le nom indiqué ici, cherchez l'option équivalente.",
+          ],
+          en: [
+            "Elle présente votre salon dans la Recherche et sur Maps, avec vos horaires, vos photos et vos avis. Elle peut aussi porter un lien de rendez-vous, et vous y répondez aux avis de vos clients. Elle reste toutefois présentée dans le cadre de Google : vous ne composez pas votre propre page.",
+            "Une fois la fiche ajoutée ou revendiquée, vous contrôlez la façon dont les informations de votre salon s'affichent sur Google.",
+            "Ne comptez pas sur elle pour tout. Google rappelle qu'aucune place ne s'obtient sur demande ou contre rémunération dans le classement local.",
+            "Les écrans de Google évoluent. Si un bouton n'a pas le nom indiqué ici, cherchez l'option équivalente.",
+          ],
+        },
+      },
+      {
+        id: "quand-un-site-devient-utile",
+        title: {
+          fr: "Quand un site devient-il utile pour un salon ?",
+          en: "Quand un site devient-il utile pour un salon ?",
+        },
+        paragraphs: {
+          fr: [
+            "Un site devient utile quand vos clients veulent en savoir plus que ce que la fiche montre : vos prestations, votre équipe, votre façon de travailler. Il l'est aussi si vous voulez une adresse à vous, à partager sur vos cartes et vos réseaux. Vous décidez alors du contenu.",
+            "Un site n'est pas une obligation : c'est un outil de plus, qui vous appartient. Quand vous serez prêt, découvrez le [site internet pour salon de coiffure](/site-internet-salon-de-coiffure) créé sur mesure pour vous.",
+            "Les [templates](/templates) sont des démonstrations pour vous projeter, pas le site livré. Pour le coût, consultez notre page de [tarifs](/tarifs).",
+          ],
+          en: [
+            "Un site devient utile quand vos clients veulent en savoir plus que ce que la fiche montre : vos prestations, votre équipe, votre façon de travailler. Il l'est aussi si vous voulez une adresse à vous, à partager sur vos cartes et vos réseaux. Vous décidez alors du contenu.",
+            "Un site n'est pas une obligation : c'est un outil de plus, qui vous appartient. Quand vous serez prêt, découvrez le [site internet pour salon de coiffure](/site-internet-salon-de-coiffure) créé sur mesure pour vous.",
+            "Les [templates](/templates) sont des démonstrations pour vous projeter, pas le site livré. Pour le coût, consultez notre page de [tarifs](/tarifs).",
+          ],
+        },
+      },
+      {
+        id: "relier-site-et-reservation",
+        title: {
+          fr: "Comment relier un futur site à votre outil de réservation ?",
+          en: "Comment relier un futur site à votre outil de réservation ?",
+        },
+        paragraphs: {
+          fr: [
+            "Gardez un seul outil de réservation et un seul lien. Une fois votre site en ligne, ajoutez le même lien sur le site et sur la fiche Google. Google accepte l'adresse web de votre choix, ce qui permet au client d'arriver au même endroit, depuis Maps ou depuis votre site.",
+            "Le lien peut pointer vers l'outil de réservation que vous utilisez déjà. Notez son adresse web dès maintenant : elle servira pour la fiche, puis pour le site. Si vous changez un jour d'outil, pensez à mettre à jour la fiche et le site en même temps.",
+          ],
+          en: [
+            "Gardez un seul outil de réservation et un seul lien. Une fois votre site en ligne, ajoutez le même lien sur le site et sur la fiche Google. Google accepte l'adresse web de votre choix, ce qui permet au client d'arriver au même endroit, depuis Maps ou depuis votre site.",
+            "Le lien peut pointer vers l'outil de réservation que vous utilisez déjà. Notez son adresse web dès maintenant : elle servira pour la fiche, puis pour le site. Si vous changez un jour d'outil, pensez à mettre à jour la fiche et le site en même temps.",
+          ],
+        },
+      },
+    ],
+    ctaTitle: {
+      fr: "Vous voulez un site pour votre salon, le moment venu ?",
+      en: "Want a website for your salon, when the time comes?",
+    },
+    ctaDescription: {
+      fr: "Nous créons un site sur mesure pour votre salon, avec un lien de rendez-vous bien visible. Il vous appartient, comme votre enseigne.",
+      en: "We build a tailored website for your salon, with a clearly visible booking link. It belongs to you, like your shop sign.",
+    },
+    sources: [
+      {
+        title: "Gérer les liens de votre établissement local",
+        url: "https://support.google.com/business/answer/6218037?hl=fr",
+      },
+      {
+        title: "Conseils pour améliorer votre classement local sur Google",
+        url: "https://support.google.com/business/answer/7091?hl=fr",
+      },
+      {
+        title: "Ajouter ou revendiquer votre fiche d'établissement",
+        url: "https://support.google.com/business/answer/2911778?hl=fr",
+      },
+    ],
+  },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

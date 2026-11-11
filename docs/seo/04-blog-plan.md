@@ -131,7 +131,7 @@ Arbitrage :
 | Page commerciale | `/site-internet-salon-de-coiffure` ; `/offres` en phase 2 |
 | Liens internes | Article 1 ; article 5 ; `/templates` pour la démo salon |
 | Angle | Réponse honnête : oui, on peut démarrer sans site. Voici ce que la fiche couvre, et ce qu'un site ajoute |
-| Source de référence | Aide Google, « Liens proposés par les établissements locaux » (partie 8, n° 3) |
+| Source de référence | Aide Google, « Gérer les liens de votre établissement local » (partie 8, n° 3) |
 | Longueur cible | 700 à 900 mots |
 | Impact / effort | Haut / Bas |
 
@@ -450,7 +450,7 @@ Toutes les pages ont été rouvertes le 10 novembre 2026. Un contrôle HTTP a re
 |---|---|---|---|---|
 | 1 | 1 | https://support.google.com/business/answer/2911778?hl=fr | Ajouter ou revendiquer votre fiche d'établissement | Ajout sans frais. Choix d'une option de validation. Une fois validée, la fiche est visible dans la Recherche et sur Maps |
 | 2 | 1 | https://support.google.com/business/answer/7091?hl=fr | Conseils pour améliorer votre classement local sur Google | Trois facteurs : pertinence, distance, proéminence. Aucun moyen d'obtenir une meilleure place sur demande ou contre paiement |
-| 3 | 2 | https://support.google.com/business/answer/6218037?hl=fr | Liens proposés par les établissements locaux | Ajout d'un lien de rendez-vous : Réservation dans la Recherche, ou Modifier la fiche dans Maps, puis Ajouter un lien |
+| 3 | 2 | https://support.google.com/business/answer/6218037?hl=fr | Gérer les liens de votre établissement local | Ajout d'un lien de rendez-vous : Réservations dans la Recherche, ou Modifier le profil dans Maps, puis Ajouter un lien |
 | 4 | 3 | https://support.google.com/business/answer/9157481?hl=fr | Gérer vos zones desservies pour les établissements de services de proximité et les établissements mixtes | Sans accueil de clients : supprimer l'adresse et définir une zone par villes ou codes postaux. Jusqu'à 20 zones |
 | 5 | 4 | https://support.google.com/business/answer/10417060?hl=fr | Modifier vos horaires d'ouverture | Horaires spéciaux pour les vacances ou événements spéciaux. Cas d'une fermeture de six jours consécutifs au plus |
 | 6 | 4 | https://support.google.com/business/answer/6333474?hl=fr | Les jours fériés sur Google | Un avertissement peut s'afficher sur la fiche. Les horaires exceptionnels se définissent à l'avance |

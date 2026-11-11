@@ -83,7 +83,7 @@ Remarque sur `/templates` :
 - Les suggestions de « template site internet » mènent vers des modèles gratuits à télécharger (« template site internet gratuit », « template site web gratuit télécharger »).
 - Une partie des visiteurs peut donc chercher un fichier à récupérer, pas un prestataire. La page doit dire tôt que les templates sont des démonstrations, et que le site livré est sur mesure [R].
 
-### 2.2 Articles de blog (11 articles, tableau `blogPosts` en `src/content/site-content.ts:967-2356`)
+### 2.2 Articles de blog (13 articles, tableau `blogPosts` en `src/content/site-content.ts`)
 
 | URL | Statut | Mot-clé principal | Mots-clés secondaires | Intention | Origine du mot-clé principal | Volume |
 |---|---|---|---|---|---|---|
@@ -98,6 +98,10 @@ Remarque sur `/templates` :
 | `/blog/recuperer-son-site-web-chez-un-prestataire` | Existante ; à réécrire en phase 1 [P] § 5.3 | récupérer son site internet | résiliation contrat site internet ; lettre résiliation contrat site internet ; comment retrouver son site internet | Informationnelle | Suggest « récupérer son site » ; sujet proche de [02] § 8.2 n° 6 | non mesuré |
 | `/blog/louer-ou-posseder-son-site-internet` | Existante ; à réécrire en phase 1 [P] § 5.3 | location site internet | abonnement site internet ; site web abonnement mensuel ; site internet avec abonnement ; louer un site internet ; location site web | Commerciale | Suggest « location site internet » ; résultats observés [A] B.5. Le secondaire « louer un site internet » figure seulement dans sa propre liste ; la variante observée ailleurs est « location site internet ». | non mesuré |
 | `/blog/checklist-seo-avant-mise-en-ligne` | Existante | checklist seo | checklist seo on page ; checklist seo 2026 ; checklist seo refonte site | Informationnelle | Suggest « checklist seo » ; [02] § 8.2 n° 8 | non mesuré |
+| `/blog/creer-une-fiche-google-entreprise` | Publiée le 10 novembre 2026 (tâche 0.8b, article 1 du plan `docs/seo/04-blog-plan.md`) | comment créer une fiche google entreprise | créer une fiche google entreprise ; faire une fiche google entreprise ; fiche google business profile ; comment etre plus visible sur google maps | Informationnelle | Suggest « créer une fiche google entreprise » (le principal et « faire une fiche… ») et « fiche google entreprise » (« fiche google business profile ») ; « créer une fiche google entreprise » : écho seul | non mesuré |
+| `/blog/salon-de-coiffure-sans-site-internet` | Publiée le 10 novembre 2026 (tâche 0.8b, article 2 du plan `docs/seo/04-blog-plan.md`) | salon de coiffure sans site internet | salon de coiffure sans site web ; coiffeur sans site internet ; coiffeur sans site web ; salon de coiffure prise de rendez vous en ligne | Informationnelle | Suggest « coiffeur sans site internet » (le principal) et « salon de coiffure site web » (« sans site web ») ; « coiffeur sans site internet » : écho seul ; le dernier secondaire peut venir de clients | non mesuré |
+
+Mise à jour du 10 novembre 2026 (tâche 0.8b) : deux articles ajoutés, issus du plan éditorial. Aucun de leurs mots-clés n'est principal ou secondaire d'une autre page (contrôle par script, § 3.1). Les deux articles se citent.
 
 Mise à jour du 10 novembre 2026 (tâche 0.7) : les six articles hors plan v2 § 5.3 portent leur mot-clé principal dans le title, le H1 et le premier paragraphe. Les mots-clés ne changent pas. Preuves : `docs/seo/07-optimisation.md`. Les cinq articles du § 5.3 restent à traiter en phase 1.
 
@@ -139,7 +143,7 @@ Mot-clé de navigation de marque, construit à partir du nom de la page. Aucune 
 | `/privacy` | Existante | politique de confidentialité sitekept | sitekept données personnelles ; sitekept cookies ; sitekept rgpd | Navigationnelle | Mot-clé de navigation construit (marque + nom de page), non observé | non mesuré |
 | `/mentions-legales` | Existante ; à finaliser après création de l'entreprise [R] « Ouvert » ; [P] § 2 | mentions légales sitekept | sitekept éditeur du site ; sitekept hébergeur ; sitekept siret | Navigationnelle | Mot-clé de navigation construit (marque + nom de page), non observé | non mesuré |
 
-Total : 7 pages générales, 11 articles, 12 pages métier, 4 pages légales. Soit **34 lignes**, dont 2 pages prévues (`/offres`, `/cgv`).
+Total : 7 pages générales, 13 articles, 12 pages métier, 4 pages légales. Soit **36 lignes**, dont 2 pages prévues (`/offres`, `/cgv`).
 
 ---
 
@@ -153,7 +157,7 @@ Total : 7 pages générales, 11 articles, 12 pages métier, 4 pages légales. So
 - Contrôle 3 : aucun mot-clé, principal ou secondaire, n'est attribué à deux pages.
 - Résultat des trois contrôles : **aucun doublon**. Les recoupements de sens restants sont arbitrés en 3.3.
 
-### 3.2 Liste triée des 34 mots-clés principaux
+### 3.2 Liste triée des 36 mots-clés principaux
 
 | # | Mot-clé principal | Page |
 |---|---|---|
@@ -161,38 +165,40 @@ Total : 7 pages générales, 11 articles, 12 pages métier, 4 pages légales. So
 | 2 | cgu sitekept | `/terms` |
 | 3 | cgv sitekept | `/cgv` |
 | 4 | checklist seo | `/blog/checklist-seo-avant-mise-en-ligne` |
-| 5 | création site internet professionnel | `/` |
-| 6 | créer un site internet rapidement | `/blog/site-web-rapide-pme-independant` |
-| 7 | devis site internet | `/offres` |
-| 8 | exemple de site internet professionnel | `/realization` |
-| 9 | guide création site internet | `/blog` |
-| 10 | location site internet | `/blog/louer-ou-posseder-son-site-internet` |
-| 11 | mentions légales sitekept | `/mentions-legales` |
-| 12 | mise en ligne site internet | `/blog/comment-se-passe-la-livraison-d-un-site-web-chez-sitekept` |
-| 13 | modèle site internet | `/templates` |
-| 14 | mon site n'apparaît pas sur Google | `/blog/site-sans-referencement-peut-devenir-inutile` |
-| 15 | optimisation seo et geo | `/blog/site-optimise-seo-geo` |
-| 16 | politique de confidentialité sitekept | `/privacy` |
-| 17 | pourquoi le référencement d'un site est important | `/blog/pourquoi-optimisation-referencement-naturel-importante` |
-| 18 | prix site internet | `/tarifs` |
-| 19 | récupérer son site internet | `/blog/recuperer-son-site-web-chez-un-prestataire` |
-| 20 | référencement seo et geo | `/seo-geo` |
-| 21 | seo et geo c'est quoi | `/blog/qu-est-ce-que-le-seo-et-le-geo` |
-| 22 | site internet agence immobilière | `/site-internet-agence-immobiliere` |
-| 23 | site internet architecte d'intérieur | `/site-internet-architecte-interieur` |
-| 24 | site internet avocat | `/site-internet-avocat` |
-| 25 | site internet boulangerie | `/site-internet-boulangerie` |
-| 26 | site internet dentiste | `/site-internet-dentiste` |
-| 27 | site internet entreprise de nettoyage | `/site-internet-entreprise-nettoyage` |
-| 28 | site internet fleuriste | `/site-internet-fleuriste` |
-| 29 | site internet patisserie | `/site-internet-patisserie` |
-| 30 | site internet plombier | `/site-internet-plombier` |
-| 31 | site internet réparateur informatique | `/site-internet-reparation-informatique` |
-| 32 | site internet restaurant | `/site-internet-restaurant` |
-| 33 | site internet salon de coiffure | `/site-internet-salon-de-coiffure` |
-| 34 | site internet sans abonnement | `/blog/posseder-son-site-sans-abonnement` |
+| 5 | comment créer une fiche google entreprise | `/blog/creer-une-fiche-google-entreprise` |
+| 6 | création site internet professionnel | `/` |
+| 7 | créer un site internet rapidement | `/blog/site-web-rapide-pme-independant` |
+| 8 | devis site internet | `/offres` |
+| 9 | exemple de site internet professionnel | `/realization` |
+| 10 | guide création site internet | `/blog` |
+| 11 | location site internet | `/blog/louer-ou-posseder-son-site-internet` |
+| 12 | mentions légales sitekept | `/mentions-legales` |
+| 13 | mise en ligne site internet | `/blog/comment-se-passe-la-livraison-d-un-site-web-chez-sitekept` |
+| 14 | modèle site internet | `/templates` |
+| 15 | mon site n'apparaît pas sur Google | `/blog/site-sans-referencement-peut-devenir-inutile` |
+| 16 | optimisation seo et geo | `/blog/site-optimise-seo-geo` |
+| 17 | politique de confidentialité sitekept | `/privacy` |
+| 18 | pourquoi le référencement d'un site est important | `/blog/pourquoi-optimisation-referencement-naturel-importante` |
+| 19 | prix site internet | `/tarifs` |
+| 20 | récupérer son site internet | `/blog/recuperer-son-site-web-chez-un-prestataire` |
+| 21 | référencement seo et geo | `/seo-geo` |
+| 22 | salon de coiffure sans site internet | `/blog/salon-de-coiffure-sans-site-internet` |
+| 23 | seo et geo c'est quoi | `/blog/qu-est-ce-que-le-seo-et-le-geo` |
+| 24 | site internet agence immobilière | `/site-internet-agence-immobiliere` |
+| 25 | site internet architecte d'intérieur | `/site-internet-architecte-interieur` |
+| 26 | site internet avocat | `/site-internet-avocat` |
+| 27 | site internet boulangerie | `/site-internet-boulangerie` |
+| 28 | site internet dentiste | `/site-internet-dentiste` |
+| 29 | site internet entreprise de nettoyage | `/site-internet-entreprise-nettoyage` |
+| 30 | site internet fleuriste | `/site-internet-fleuriste` |
+| 31 | site internet patisserie | `/site-internet-patisserie` |
+| 32 | site internet plombier | `/site-internet-plombier` |
+| 33 | site internet réparateur informatique | `/site-internet-reparation-informatique` |
+| 34 | site internet restaurant | `/site-internet-restaurant` |
+| 35 | site internet salon de coiffure | `/site-internet-salon-de-coiffure` |
+| 36 | site internet sans abonnement | `/blog/posseder-son-site-sans-abonnement` |
 
-34 mots-clés principaux, 34 pages, aucune répétition.
+36 mots-clés principaux, 36 pages, aucune répétition.
 
 ### 3.3 Recoupements de sens arbitrés
 
@@ -245,7 +251,7 @@ Côté contenu : référencement, visible, être … sur Google, comment, pourqu
 | « référencement … » : « référencement seo ia », « référencement seo local », « référencement naturel site web » (`/seo-geo`) et « référencement seo définition », « référencement naturel définition » (article définition) | Règle limitée aux requêtes qui **commencent** par « référencement seo » ou « référencement naturel » : avec « définition » → article définition ; sinon → `/seo-geo` | L'article définition renvoie vers `/seo-geo` ; `/seo-geo` renvoie vers l'article pour les bases | L'article optimisé ne reçoit aucun mot-clé « référencement … ». « pourquoi le référencement… » et « référencé » relèvent des lignes suivantes. |
 | « pourquoi le référencement d'un site est important » (article pourquoi) et « référencement seo et geo » (`/seo-geo`) | Article pourquoi pour la justification ; `/seo-geo` pour la méthode | L'article pourquoi renvoie vers `/seo-geo` | « pourquoi le référencement » signale une question de fond, pas une demande de service. |
 | « être … sur Google » : « etre référencé sur google », « comment etre référencé sur google », « etre mieux référencé sur google » (article pourquoi) et « comment etre visible sur google », « etre present sur google », « etre vu sur google » (article optimisé) | Règle limitée aux formes « être … sur Google » : « être référencé » → article pourquoi ; « être visible », « être présent », « être vu » → article optimisé | Les deux articles se citent | Variantes proches ; à ne pas fusionner dans un même titre. |
-| « Google Maps » : « comment etre plus visible sur google maps » (article 1 du plan éditorial) et « comment etre visible sur google » (article optimisé) | Règle limitée aux requêtes qui contiennent « Maps » : article 1 (fiche Google Entreprise). L'article optimisé garde « comment etre visible sur google », sans « maps ». | Les deux articles se citent | « Maps » désigne un lieu précis et un geste précis : la fiche. Règle de `docs/seo/04-blog-plan.md` § 4.2, ajoutée au bloc C le 10 novembre 2026. L'article 1 n'est pas encore publié : le lien s'ajoute à sa publication. |
+| « Google Maps » : « comment etre plus visible sur google maps » (article 1 du plan éditorial) et « comment etre visible sur google » (article optimisé) | Règle limitée aux requêtes qui contiennent « Maps » : article 1 (fiche Google Entreprise). L'article optimisé garde « comment etre visible sur google », sans « maps ». | L'article 1 renvoie vers l'article optimisé. L'article optimisé ne renvoie pas encore vers l'article 1 dans le corps du texte : lien à ajouter en phase 1 (l'encadré « Autres pages utiles » le contient déjà) | « Maps » désigne un lieu précis et un geste précis : la fiche. Règle de `docs/seo/04-blog-plan.md` § 4.2, ajoutée au bloc C le 10 novembre 2026. L'article 1 est publié depuis le 10 novembre 2026 (tâche 0.8b) ; il renvoie vers l'article optimisé. L'article optimisé ne renvoie pas encore vers lui dans le corps du texte : lien à ajouter en phase 1. |
 | « comment … » et « pourquoi … » : tournures de question présentes sur six pages | Le verbe qui suit décide : « comment créer » → `/blog` ; « comment avoir » → article 100 % ; « comment retrouver » → article récupérer ; « comment être visible » → article optimisé ; « comment être référencé » et « pourquoi le référencement » → article pourquoi ; « pourquoi mon site n'apparaît pas » → article sans référencement | Liens déjà fixés dans les autres lignes | « comment » et « pourquoi » seuls ne désignent aucune page. |
 | « visible » : « site non visible sur google » (article sans référencement) et « comment etre visible sur google » (article optimisé) | Article sans référencement pour le constat d'un problème ; article optimisé pour la marche à suivre | L'article sans référencement renvoie vers l'article optimisé | Le premier répond à « pourquoi ça ne marche pas », le second à « comment faire ». |
 | Constat d'invisibilité : « mon site n'apparaît pas sur Google », « site non visible sur google », « site introuvable sur google » | Article sans référencement, seul | Les articles optimisé et pourquoi renvoient vers lui | Aucune autre page ne reçoit une formulation de problème. |
@@ -267,6 +273,7 @@ Côté contenu : référencement, visible, être … sur Google, comment, pourqu
 
 | Recoupement | Page cible | Page qui renvoie par lien | Raison |
 |---|---|---|---|
+| « salon de coiffure sans site internet » (article 2, tâche 0.8b) et « site internet salon de coiffure » (page métier) | Page métier pour la requête d'achat ; article 2 pour le constat de départ, sans le mot « création » | L'article 2 renvoie vers la page métier, vers `/templates` et vers l'article 1 ; la page métier pourra lui renvoyer en phase 4 | Règle « un métier → page métier » respectée : les deux chaînes diffèrent, aucun mot-clé partagé. Le mot « Maps » n'est pas ciblé par l'article 2 (il va à l'article 1). |
 | « template » et « modèle » génériques (`/templates`) et « template site web patisserie » (page pâtisserie) | `/templates` pour le terme générique ; page pâtisserie pour le métier | La page pâtisserie renvoie vers sa démo et vers `/templates` | Le terme métier reste sur la page métier. |
 | « exemple de site internet professionnel » (`/realization`) et « site internet professionnel » (`/`) | `/realization` pour « exemple » ; `/` pour le service | `/` renvoie vers `/realization` | Le mot « exemple » signale une envie de voir, pas d'acheter tout de suite. |
 | « exemple site vitrine » (`/templates`) et « exemple site vitrine entreprise » (`/realization`) | `/templates` pour les démonstrations ; `/realization` pour les sites livrés | Chacune renvoie à l'autre | Les templates sont des démonstrations, pas le livrable [R]. |
@@ -309,9 +316,6 @@ Repérés pendant la recherche, mais sans page aujourd'hui. Ils ne sont attribu�
 | Mot-clé | Thème | Origine | Règle du § 3.3 concernée (exception provisoire) |
 |---|---|---|---|
 | combien coûte un site internet par mois | Prix, abonnement | Suggest « combien coute un site internet » et « combien coûte un site » | « prix, coût, combien coûte » → `/tarifs` (bloc A) |
-| salon de coiffure sans site internet | Première vague, coiffure | Suggest « site internet salon de coiffure » | Mot d'un métier → page métier (blocs D et E) |
-| comment etre plus visible sur google maps | Visibilité locale | Suggest « etre visible sur google map » | « être visible » → article optimisé (bloc C) ; « local » (bloc A) |
-| fiche google entreprise | Visibilité locale | Suggest « fiche google entreprise » | Aucune règle ; « entreprise » (bloc E) ne vise que exemple, comment créer et métiers |
 | référencement local pour petites entreprises | Visibilité locale | Suggest « référencement local » | Hors de la règle « référencement seo / naturel » (bloc C), mais même thème que `/seo-geo` ; « local » (bloc A) |
 | aide financière création site internet | Prix, financement | Suggest « guide création site internet » et « aide création site internet » | « création site internet » précédé d'un mot absent de la liste du bloc D : aucune page désignée |
 | hébergement site internet prix | Maintenance, coûts récurrents | Suggest « hébergement site internet » et « location site internet » | « prix » → `/tarifs` (bloc A) ; proche de « maintenance site internet » (`/offres`) |
@@ -322,3 +326,5 @@ Avant d'en faire des pages, 0.8 devra vérifier qu'aucun ne recoupe un mot-clé 
 Décisions du 10 novembre 2026, reportées en 3.3 :
 - « combien coûte un site internet par mois » : retenu pour l'article 8, exception à la règle « prix » (bloc A) ;
 - « comment etre plus visible sur google maps » : retenu pour l'article 1, règle « Maps » (bloc C).
+
+Mise à jour du 10 novembre 2026 (tâche 0.8b) : « salon de coiffure sans site internet », « fiche google entreprise » (via « comment créer une fiche google entreprise ») et « comment etre plus visible sur google maps » sont attribués aux articles 2 et 1 (partie 2.2). Leurs lignes sont retirées du tableau ci-dessus.
