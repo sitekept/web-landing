@@ -113,16 +113,16 @@
     "trustSignals": "✅ Consultation gratuite • ✅ Devis sous 24h • ✅ Satisfaction garantie"
   },
   "portfolio": {
-    "title": "Découvrez Notre Travail",
-    "subtitle": "Explorez nos réalisations récentes et nos templates prêts à l'emploi",
+    "title": "Découvrez notre travail",
+    "subtitle": "Explorez nos réalisations récentes et nos modèles de démonstration.",
     "realizations": {
-      "title": "Nos Réalisations",
-      "description": "Découvrez nos projets récents : sites web, applications et solutions sur mesure qui ont transformé la présence digitale de nos clients.",
+      "title": "Nos réalisations",
+      "description": "Découvrez les sites que nous avons créés, des sites vitrines aux plateformes en ligne.",
       "cta": "Voir nos réalisations"
     },
     "templates": {
-      "title": "Templates Prêts",
-      "description": "Vous ne savez pas par où commencer ? Explorez nos templates professionnels conçus pour différents secteurs d'activité.",
+      "title": "Modèles de démonstration",
+      "description": "Ces exemples vous aident à vous projeter. Votre site est créé sur mesure, pour votre activité.",
       "cta": "Parcourir les templates"
     },
     "finalCta": "Prêt à concrétiser votre projet ? Parlons-en !",
@@ -147,14 +147,14 @@
   },
   "contact": {
     "title": "Contactez-nous pour concevoir votre site",
-    "subtitle": "Expliquez votre activité, votre objectif et le style souhaité. Nous revenons vers vous avec un cadre simple: prix, périmètre et mise en ligne.",
+    "subtitle": "Expliquez votre activité, votre objectif et le style souhaité. Nous revenons vers vous avec un cadre simple : le prix, ce qui est inclus et la mise en ligne.",
     "formTitle": "Parlons de votre projet",
-    "commitmentTitle": "Notre Engagement",
+    "commitmentTitle": "Notre engagement",
     "commitments": [
       "Réponse rapide pendant les heures ouvrables",
-      "Cadre clair sur le prix d'entrée et la mise en ligne",
-      "Déploiement et mise en ligne pris en charge par Sitekept",
-      "Aucun flou inutile, aucun abonnement imposé"
+      "Cadre clair sur le prix et la mise en ligne",
+      "Mise en ligne prise en charge par Sitekept",
+      "Aucun abonnement imposé : l'accompagnement reste facultatif"
     ]
   },
   "contactForm": {
@@ -193,20 +193,20 @@
     "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne"
   },
   "metadata": {
-    "title": "Création de site internet dès {price} | Sitekept",
-    "description": "Agence web spécialisée PME et artisans : votre site professionnel livré en 48h, sans abonnement, 100 % à vous. Devis gratuit en 24h.",
-    "keywords": "site professionnel 48h, creation site rapide, site sans abonnement, site 100% propriétaire, déploiement inclus, SEO GEO, site vitrine PME, site indépendant",
+    "title": "Création de site internet à {price} | Sitekept",
+    "description": "Sitekept crée votre site internet sur mesure pour {price}, payé une seule fois : il est en ligne 48 h après réception de vos éléments, 100 % à vous.",
+    "keywords": "création site internet professionnel, création site internet artisan, site internet pour artisan, agence web artisan, site vitrine PME, site 100% propriétaire, SEO GEO",
     "authors": "Équipe SiteKept",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "Création de site internet dès {price} | Sitekept",
-      "description": "Un site pro à partir de {price}, livré vite, déployé par Sitekept, optimisé SEO + GEO et entièrement détenu par le client.",
+      "title": "Création de site internet à {price} | Sitekept",
+      "description": "Un site professionnel sur mesure à {price}, en ligne 48 h après réception de vos éléments, nom de domaine offert la première année.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "Création de site internet dès {price} | Sitekept",
-      "description": "Site professionnel rapide à lancer, transparent à acheter et conçu pour la visibilité.",
+      "title": "Création de site internet à {price} | Sitekept",
+      "description": "Un site professionnel sur mesure, payé une seule fois, en ligne 48 h après réception de vos éléments.",
       "creator": "@sitekept"
     },
     "appleMobileWebAppTitle": "SiteKept"

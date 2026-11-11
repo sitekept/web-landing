@@ -10,6 +10,16 @@ const SITE_PRICE: LocalizedText = {
   en: formatPrice(PRICING.site.amount, { locale: "en" }),
 };
 
+/** Prix mensuel et annuel du suivi, formatés à partir de la constante unique. */
+const FOLLOW_UP_MONTHLY: LocalizedText = {
+  fr: formatPrice(PRICING.followUp.monthly, { period: "month" }),
+  en: formatPrice(PRICING.followUp.monthly, { locale: "en", period: "month" }),
+};
+const FOLLOW_UP_ANNUAL: LocalizedText = {
+  fr: formatPrice(PRICING.followUp.annual, { period: "year" }),
+  en: formatPrice(PRICING.followUp.annual, { locale: "en", period: "year" }),
+};
+
 export interface FeaturedTemplate {
   id: string;
   slug: string;
@@ -193,16 +203,16 @@ export function getLocalizedValue<T>(
 export const homeContent: HomeContent = {
   hero: {
     eyebrow: {
-      fr: "Le site web pour tous en 48 heures.",
-      en: "The website for everyone in 48 hours.",
+      fr: "Pour artisans et indépendants",
+      en: "For tradespeople and freelancers",
     },
     title: {
       fr: "Le site internet que vous gardez.",
       en: "The website you keep.",
     },
     description: {
-      fr: "Vous gardez la propriété complète, nous gérons le déploiement, le domaine est offert la première année.",
-      en: "You keep full ownership, we handle deployment, and the domain is included for the first year.",
+      fr: "Création de site internet professionnel, sur mesure pour votre activité. Votre site est en ligne 48 h après réception de vos éléments, nom de domaine offert la première année.",
+      en: "Professional website design, tailored to your business. Your site is live 48 hours after we receive your materials, with the domain name free for the first year.",
     },
     primaryCta: {
       fr: "Demander un devis",
@@ -214,13 +224,13 @@ export const homeContent: HomeContent = {
     },
     proofPoints: {
       fr: [
-        `À partir de ${SITE_PRICE.fr}`,
+        `${SITE_PRICE.fr}, payé une seule fois`,
         "Aucun abonnement imposé",
         "100% propriétaire du site",
         "Domaine offert 1 an",
       ],
       en: [
-        `From ${SITE_PRICE.en}`,
+        `${SITE_PRICE.en}, paid once`,
         "No forced subscription",
         "100% website ownership",
         "Free domain for 1 year",
@@ -229,16 +239,16 @@ export const homeContent: HomeContent = {
   },
   trustStrip: {
     fr: [
-      `À partir de ${SITE_PRICE.fr}`,
-      "Mise en ligne en 48h",
+      "Rédaction de vos textes incluse",
+      "En ligne 48 h après réception de vos éléments",
       "100% à vous",
-      "Déploiement inclus",
+      "Mise en ligne incluse",
     ],
     en: [
-      `From ${SITE_PRICE.en}`,
-      "Launch in 48 hours",
+      "Writing of your text included",
+      "Live 48 hours after we receive your materials",
       "100% yours",
-      "Deployment included",
+      "Launch included",
     ],
   },
   offerSection: {
@@ -247,12 +257,12 @@ export const homeContent: HomeContent = {
       en: "What you get",
     },
     title: {
-      fr: "Une offre simple à acheter, simple à comprendre et simple à posséder.",
-      en: "An offer that is easy to buy, easy to understand and easy to own.",
+      fr: "Une offre simple à acheter et à comprendre.",
+      en: "An offer that is easy to buy and easy to understand.",
     },
     description: {
-      fr: "Chaque projet est structuré pour retirer les zones grises commerciales : vous savez ce qui est inclus, ce que vous possédez et comment le site est mis en ligne.",
-      en: "Every project is structured to remove commercial ambiguity: you know what is included, what you own and how the website goes live.",
+      fr: "Vous savez ce qui est inclus, ce qui vous appartient et comment votre site est mis en ligne.",
+      en: "You know what is included, what you own and how your website goes live.",
     },
   },
   whySection: {
@@ -261,8 +271,8 @@ export const homeContent: HomeContent = {
       en: "Why Sitekept",
     },
     title: {
-      fr: "La rapidité compte, mais la clarté commerciale et la propriété comptent tout autant.",
-      en: "Speed matters, but commercial clarity and ownership matter just as much.",
+      fr: "Rapide, clair, et un site qui reste à vous.",
+      en: "Fast, clear, and a website that stays yours.",
     },
     description: {
       fr: "Le site doit rassurer vos clients, vous rendre visible et rester entre vos mains. C'est la combinaison que nous vendons.",
@@ -275,16 +285,16 @@ export const homeContent: HomeContent = {
       en: "SEO + GEO",
     },
     title: {
-      fr: "Un site pensé pour être compris, indexé et recommandé.",
-      en: "A website designed to be understood, indexed, and recommended.",
+      fr: "Un site pensé pour être trouvé et recommandé.",
+      en: "A website designed to be found and recommended.",
     },
     description: {
-      fr: "Chez Sitekept, l’optimisation ne s’arrête pas au design. Nous construisons le site avec un code lisible, des contenus structurés pour répondre naturellement aux recherches de l’IA, une sitemap claire pour guider l’exploration des pages, et une base propre pour favoriser l’indexation sur Google.",
-      en: "At Sitekept, optimization goes beyond design. We build the website with readable code, content structured to answer AI-style searches naturally, a clear sitemap that guides discovery, and a clean foundation that supports Google indexing.",
+      fr: "Chez Sitekept, la visibilité ne s'arrête pas au design. Nous construisons un site aux pages claires et rapides, avec des textes qui répondent aux questions de vos clients. Le but est d'aider Google et les IA à comprendre votre activité.",
+      en: "At Sitekept, visibility goes beyond design. We build a site with clear, fast pages and text that answers your customers' questions. The aim is to help Google and AI tools understand your business.",
     },
     explanation: {
-      fr: "Le SEO correspond au référencement naturel sur les moteurs comme Google. Le GEO désigne la façon dont un site reste exploitable dans les réponses générées par l’IA. Pour une entreprise, les deux se complètent: l’un améliore la visibilité dans les résultats, l’autre aide votre activité à apparaître dans les réponses et recommandations que les prospects consultent de plus en plus. Pour aller plus loin, notre blog détaille ces sujets simplement.",
-      en: "SEO is organic visibility in search engines such as Google. GEO refers to how well a website can be reused in AI-generated answers. For a business, both work together: one improves discoverability in search results, the other helps your company appear in answers and recommendations that prospects increasingly rely on. Our blog explains both in simple terms.",
+      fr: "Le SEO, c'est le référencement naturel : apparaître dans les résultats de Google. Le GEO, c'est être repris dans les réponses des assistants IA. Notre blog explique ces deux sujets simplement.",
+      en: "SEO is organic search visibility: appearing in Google results. GEO is being reused in the answers of AI assistants. Our blog explains both topics in simple terms.",
     },
     linkLabel: {
       fr: "En savoir plus",
@@ -297,16 +307,16 @@ export const homeContent: HomeContent = {
       en: "How it works",
     },
     title: {
-      fr: "Un process court pour des clients qui ne veulent pas gérer la technique.",
-      en: "A short process for clients who do not want to manage technical work.",
+      fr: "Un parcours court, sans souci technique pour vous.",
+      en: "A short path, with no technical worries for you.",
     },
     description: {
-      fr: "Vous choisissez une direction, nous nous occupons du cadre technique, du design final et de la mise en ligne.",
-      en: "You pick the direction, we handle the technical setup, the final polish and the launch.",
+      fr: "Vous nous donnez l'essentiel, nous nous occupons du design, de la technique et de la mise en ligne.",
+      en: "You give us the essentials, we take care of the design, the technical side and the launch.",
     },
     ownershipParagraph: {
-      fr: "Chaque site est développé en interne, puis livré dans un cadre qui vous laisse réellement la main. Nous créons un compte GitHub à votre nom pour y pousser le projet, un compte Vercel ou une plateforme similaire pour le déploiement, ainsi qu’un compte Hostinger ou équivalent pour l’achat du nom de domaine, pris en charge la première année. Toute la structure, du code au déploiement, reste claire pour qu’un futur développeur puisse reprendre le site facilement si vous changez de prestataire.",
-      en: "Each website is developed in-house and delivered in a setup that leaves you in control. We create a GitHub account in your name to push the project, a Vercel account or similar platform for deployment, and a Hostinger account or equivalent for the domain purchase, covered during the first year. The full structure, from code to deployment, stays clear so a future developer can take over easily if you ever change provider.",
+      fr: "Chaque site est créé par Sitekept, puis remis avec ses accès à votre nom : votre site vous appartient, comme votre enseigne. Le nom de domaine est pris en charge la première année. Un autre professionnel peut reprendre le site si vous changez de prestataire.",
+      en: "Each website is created by Sitekept, then handed over with its access in your name: your website belongs to you, like your shop sign. The domain name is covered for the first year. Another professional can take the site over if you ever change provider.",
     },
     linkLabel: {
       fr: "En lire plus sur notre blog",
@@ -315,16 +325,16 @@ export const homeContent: HomeContent = {
   },
   templatesSection: {
     eyebrow: {
-      fr: "Templates sélectionnés",
-      en: "Selected templates",
+      fr: "Modèles de démonstration",
+      en: "Demo templates",
     },
     title: {
-      fr: "Choisissez une base claire et nous l'adaptons à votre activité.",
-      en: "Choose a clear starting point and we adapt it to your business.",
+      fr: "Des modèles pour vous projeter, un site créé pour vous.",
+      en: "Templates to picture it, a website created for you.",
     },
     description: {
-      fr: "Chaque template est une base de lancement : structure, design, rythme de page et contenus de conversion déjà pensés.",
-      en: "Each template is a launch-ready base: structure, design, page rhythm and conversion content are already mapped out.",
+      fr: "Ces modèles sont des exemples pour vous aider à vous projeter. Votre site est créé sur mesure, pour votre activité.",
+      en: "These templates are examples to help you picture your site. Your website is created to measure, for your business.",
     },
     cta: {
       fr: "Voir tous les templates",
@@ -341,8 +351,8 @@ export const homeContent: HomeContent = {
       en: "The most common objections, answered without jargon.",
     },
     description: {
-      fr: "Vous devez comprendre l'offre avant de la comparer. Voici les points qui rassurent le plus souvent nos clients.",
-      en: "You should understand the offer before you compare it. These are the points that usually reassure our clients the most.",
+      fr: "Vous devez comprendre l'offre avant de la comparer. Voici les réponses aux questions essentielles.",
+      en: "You should understand the offer before you compare it. Here are the answers to the key questions.",
     },
   },
 };
@@ -353,14 +363,14 @@ export const offerHighlights: OfferHighlight[] = [
     icon: "badgeEuro",
     copy: {
       fr: {
-        title: `À partir de ${SITE_PRICE.fr}`,
+        title: SITE_PRICE.fr,
         description:
-          "Un prix d'entrée public, lisible et sans abonnement à ajouter pour exister en ligne.",
+          "Un prix public, payé une seule fois. Aucun abonnement n'est nécessaire pour que votre site existe.",
       },
       en: {
-        title: `From ${SITE_PRICE.en}`,
+        title: SITE_PRICE.en,
         description:
-          "A public entry price that stays readable and does not require a subscription just to exist online.",
+          "A public price, paid once. No subscription is needed for your website to exist.",
       },
     },
   },
@@ -369,14 +379,14 @@ export const offerHighlights: OfferHighlight[] = [
     icon: "clock3",
     copy: {
       fr: {
-        title: "Mise en ligne en 48h",
+        title: "En ligne 48 h après réception de vos éléments",
         description:
-          "Un cadre court pour les projets simples, avec une promesse de rapidité comprise dès le premier contact.",
+          "Le délai de 48 h court à partir de la réception de vos éléments complets : textes, logo, photos. Sans textes, un questionnaire de 10 minutes suffit.",
       },
       en: {
-        title: "Live in 48 hours",
+        title: "Live 48 hours after we receive your materials",
         description:
-          "A short delivery frame for straightforward projects, with a speed promise that is clear from the first call.",
+          "The 48 hours start once we have all your materials: text, logo, photos. If you have no text, a 10-minute questionnaire is enough.",
       },
     },
   },
@@ -387,12 +397,12 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "Vous possédez 100% du site",
         description:
-          "Le client garde le contrôle de son site, de ses contenus et de sa mise en ligne finale.",
+          "Votre site vous appartient, comme votre enseigne. Le site et ses accès sont à votre nom.",
       },
       en: {
         title: "You own 100% of the website",
         description:
-          "The client keeps control of the website, its content and the final production asset.",
+          "Your website belongs to you, like your shop sign. The site and its access are in your name.",
       },
     },
   },
@@ -403,12 +413,12 @@ export const offerHighlights: OfferHighlight[] = [
       fr: {
         title: "Aucun abonnement imposé",
         description:
-          "Vous achetez un site, pas une dépendance. Le modèle est simple et assumé.",
+          "Vous achetez un site, pas une dépendance. Un accompagnement existe, mais il reste facultatif : l'arrêter ne touche pas à votre site.",
       },
       en: {
         title: "No forced subscription",
         description:
-          "You buy a website, not a dependency. The commercial model stays simple and explicit.",
+          "You buy a website, not a dependency. Ongoing support exists, but it is optional: stopping it does not affect your site.",
       },
     },
   },
@@ -417,14 +427,14 @@ export const offerHighlights: OfferHighlight[] = [
     icon: "globe",
     copy: {
       fr: {
-        title: "Déploiement inclus",
+        title: "Mise en ligne incluse",
         description:
-          "Nous gérons la mise en ligne, le domaine, le SSL et le cadre technique sans vous laisser seul.",
+          "Nous gérons la mise en ligne et le nom de domaine, offert la première année. Vous n'êtes pas laissé seul face à la technique.",
       },
       en: {
-        title: "Deployment included",
+        title: "Launch included",
         description:
-          "We handle launch, domain setup, SSL and technical delivery without leaving you alone with the details.",
+          "We handle the launch and the domain name, free for the first year. You are not left alone with the technical side.",
       },
     },
   },
@@ -454,12 +464,12 @@ export const whySitekeptItems: WhySitekeptItem[] = [
       fr: {
         title: "Une offre qui s'explique vite",
         description:
-          "Le prix d'entrée, le délai, la propriété et l'absence d'abonnement sont clairs dès la première lecture.",
+          "Le prix, le délai, la propriété du site et l'accompagnement facultatif sont clairs dès la première lecture.",
       },
       en: {
         title: "An offer that explains itself quickly",
         description:
-          "The entry price, delivery time, ownership and lack of subscription are clear from the first read.",
+          "The price, the timing, the ownership of the site and the optional support are clear from the first read.",
       },
     },
   },
@@ -470,12 +480,12 @@ export const whySitekeptItems: WhySitekeptItem[] = [
       fr: {
         title: "La propriété n'est pas négociée",
         description:
-          "Le site vous appartient. Sitekept ne construit pas un tunnel pour vous garder captif après la livraison.",
+          "Votre site vous appartient, comme votre enseigne. Rien ne vous oblige à rester avec Sitekept après la livraison.",
       },
       en: {
         title: "Ownership is not negotiable",
         description:
-          "The website belongs to you. Sitekept does not build a tunnel designed to lock you in after delivery.",
+          "Your website belongs to you, like your shop sign. Nothing forces you to stay with Sitekept after delivery.",
       },
     },
   },
@@ -502,12 +512,12 @@ export const whySitekeptItems: WhySitekeptItem[] = [
       fr: {
         title: "Un discours non technique",
         description:
-          "Nous vendons une solution simple à acheter pour des PME et indépendants qui veulent un site utile, pas une stack.",
+          "Nous parlons simplement, pour des artisans, PME et indépendants qui veulent un site utile, pas du jargon technique.",
       },
       en: {
         title: "A non-technical sales language",
         description:
-          "We sell a solution that is easy to buy for SMBs and solo founders who want a useful website, not a stack lecture.",
+          "We keep it simple, for tradespeople, SMBs and solo founders who want a useful website, not technical jargon.",
       },
     },
   },
@@ -520,12 +530,12 @@ export const processSteps: ProcessStep[] = [
       fr: {
         title: "Vous nous donnez le cadre",
         description:
-          "Activité, objectif, style préféré, template ou direction sur mesure : on verrouille rapidement le bon point de départ.",
+          "Votre activité, votre objectif, le style qui vous plaît. Un modèle peut vous aider à vous projeter, mais votre site est créé sur mesure.",
       },
       en: {
         title: "You give us the frame",
         description:
-          "Business, goal, preferred style, template or custom direction: we lock the right starting point quickly.",
+          "Your business, your goal, the style you like. A template can help you picture it, but your website is created to measure.",
       },
     },
   },
@@ -533,14 +543,14 @@ export const processSteps: ProcessStep[] = [
     id: "build",
     copy: {
       fr: {
-        title: "Nous adaptons et produisons",
+        title: "Nous créons votre site",
         description:
-          "Sitekept prépare la structure, le design, les contenus essentiels et l'ensemble technique pour que le site soit prêt à être validé.",
+          "Vous nous envoyez vos textes, logo et photos. Sans textes, un questionnaire de 10 minutes nous suffit pour les rédiger. Nous créons ensuite le design et les pages.",
       },
       en: {
-        title: "We adapt and build",
+        title: "We create your site",
         description:
-          "Sitekept prepares the structure, design, essential content and technical setup so the website is ready for review.",
+          "You send us your text, logo and photos. With no text, a 10-minute questionnaire is enough for us to write it. We then create the design and the pages.",
       },
     },
   },
@@ -550,12 +560,12 @@ export const processSteps: ProcessStep[] = [
       fr: {
         title: "Vous validez, nous ajustons",
         description:
-          "Vous corrigez les derniers détails, nous appliquons les ajustements et nous verrouillons les points de conversion.",
+          "Vous relisez le site et indiquez vos corrections. Deux séries de retours sont incluses.",
       },
       en: {
         title: "You review, we adjust",
         description:
-          "You validate the last details, we apply the adjustments and tighten the conversion-critical parts.",
+          "You review the site and tell us what to correct. Two rounds of feedback are included.",
       },
     },
   },
@@ -565,12 +575,12 @@ export const processSteps: ProcessStep[] = [
       fr: {
         title: "Nous mettons en ligne",
         description:
-          "Déploiement, domaine, performance et remise du site : vous repartez avec une présence en ligne claire et exploitable.",
+          "Mise en ligne, nom de domaine et remise des accès : vous repartez avec un site à votre nom, prêt à servir.",
       },
       en: {
         title: "We launch it",
         description:
-          "Deployment, domain, performance checks and handoff: you leave with a clear online presence you fully control.",
+          "Launch, domain name and handover of the access: you leave with a site in your name, ready to use.",
       },
     },
   },
@@ -584,8 +594,19 @@ export const faqItems: FaqItem[] = [
       en: "Is there any mandatory subscription?",
     },
     answer: {
-      fr: "Non. L'offre est pensée pour vendre un site, pas une dépendance. Les frais incompressibles comme l'hébergement ou le domaine peuvent exister selon le contexte, mais Sitekept n'impose pas un abonnement mensuel pour conserver votre site.",
-      en: "No. The offer is built to sell a website, not a dependency. Unavoidable costs like hosting or domain renewal may exist depending on the setup, but Sitekept does not force a monthly subscription to keep your website alive.",
+      fr: `Non, aucun abonnement n'est nécessaire pour que votre site existe : vous le payez une fois et il reste à vous. Un accompagnement facultatif, « Suivi & Visibilité », coûte ${FOLLOW_UP_MONTHLY.fr} sans engagement, ou ${FOLLOW_UP_ANNUAL.fr}. L'arrêter ne touche pas à votre site.`,
+      en: `No, no subscription is needed for your website to exist: you pay once and it stays yours. An optional support plan, "Suivi & Visibilité", costs ${FOLLOW_UP_MONTHLY.en} with no commitment, or ${FOLLOW_UP_ANNUAL.en}. Stopping it does not affect your website.`,
+    },
+  },
+  {
+    id: "free-first-month",
+    question: {
+      fr: "Le premier mois de suivi est-il vraiment offert ?",
+      en: "Is the first month of support really free?",
+    },
+    answer: {
+      fr: `Oui, à deux conditions : vous choisissez la formule mensuelle et vous la souscrivez à la livraison de votre site. Le premier mois est alors offert, puis ${FOLLOW_UP_MONTHLY.fr}, sans engagement. La formule annuelle n'en bénéficie pas.`,
+      en: `Yes, on two conditions: you choose the monthly plan and you sign up when your website is delivered. The first month is then free, followed by ${FOLLOW_UP_MONTHLY.en}, with no commitment. The annual plan does not include it.`,
     },
   },
   {
@@ -595,8 +616,8 @@ export const faqItems: FaqItem[] = [
       en: "Do I really own the website?",
     },
     answer: {
-      fr: "Oui. Le site, sa structure et ses contenus vous appartiennent. Nous livrons un actif que vous pouvez garder, faire évoluer et reprendre sans blocage artificiel.",
-      en: "Yes. The website, its structure and its content belong to you. We deliver an asset you can keep, evolve and take over without artificial lock-in.",
+      fr: "Oui. Votre site vous appartient, comme votre enseigne : le site, ses contenus et ses accès sont à votre nom. Vous pouvez le garder, le faire évoluer ou le confier à un autre professionnel.",
+      en: "Yes. Your website belongs to you, like your shop sign: the site, its content and its access are in your name. You can keep it, update it or hand it to another professional.",
     },
   },
   {
@@ -606,8 +627,8 @@ export const faqItems: FaqItem[] = [
       en: "Who handles the launch?",
     },
     answer: {
-      fr: "Sitekept gère le déploiement, la configuration du domaine et la mise en ligne. Le but est que vous n'ayez pas à manipuler la partie technique.",
-      en: "Sitekept handles deployment, domain configuration and the production launch. The point is to keep the technical side off your plate.",
+      fr: "Sitekept s'occupe de la mise en ligne et du nom de domaine. Vous n'avez rien de technique à faire.",
+      en: "Sitekept takes care of the launch and the domain name. You have nothing technical to do.",
     },
   },
   {
@@ -617,8 +638,8 @@ export const faqItems: FaqItem[] = [
       en: "Is the domain included?",
     },
     answer: {
-      fr: "Oui, le nom de domaine est offert pendant la première année sur l'offre d'entrée. Nous cadrons ensuite avec vous le renouvellement et la gestion future.",
-      en: "Yes, the domain is included for the first year on the entry offer. We then clarify renewal and future management with you.",
+      fr: "Oui, le nom de domaine est offert la première année avec votre site. Ensuite, nous voyons ensemble son renouvellement et sa gestion.",
+      en: "Yes, the domain name is free for the first year with your website. After that, we look at its renewal and management together.",
     },
   },
   {
@@ -628,15 +649,15 @@ export const faqItems: FaqItem[] = [
       en: "How long does it take to go live?",
     },
     answer: {
-      fr: "Pour les projets qui entrent dans le cadre de l'offre, la promesse commerciale reste une mise en ligne en 48h. Si le besoin dépasse ce cadre, nous vous l'annonçons avant de démarrer.",
-      en: "For projects that fit the offer, the commercial promise remains a 48-hour launch. If the need goes beyond that frame, we say it before anything starts.",
+      fr: "Votre site est en ligne 48 h après réception de vos éléments complets : textes, logo et photos. Sans textes, un questionnaire de 10 minutes suffit. Si votre projet demande plus de temps, nous vous le disons avant de commencer.",
+      en: "Your website is live 48 hours after we receive all your materials: text, logo and photos. With no text, a 10-minute questionnaire is enough. If your project needs more time, we tell you before we start.",
     },
   },
   {
     id: "seo-geo",
     question: {
-      fr: "Le site est-il vraiment pensé pour la visibilité SEO et GEO ?",
-      en: "Is the website really designed for SEO and GEO visibility?",
+      fr: "Le site est-il pensé pour être trouvé en ligne ?",
+      en: "Is the website designed to be found online?",
     },
     answer: {
       fr: "Oui. Nous structurons les pages pour charger vite, être claires pour Google et rester faciles à citer dans les interfaces IA. Le SEO et le GEO sont des bénéfices intégrés à l'offre, pas une option ajoutée ensuite.",

@@ -17,7 +17,7 @@ export function PortfolioPreview({
   const cards = [
     {
       id: "templates",
-      eyebrow: locale === "fr" ? "Templates" : "Templates",
+      eyebrow: locale === "fr" ? "Modèles" : "Templates",
       title: getMessage(locale, "portfolio.templates.title"),
       description: getMessage(locale, "portfolio.templates.description"),
       cta: getMessage(locale, "portfolio.templates.cta"),
@@ -25,7 +25,7 @@ export function PortfolioPreview({
     },
     {
       id: "realizations",
-      eyebrow: locale === "fr" ? "Realisations" : "Our work",
+      eyebrow: locale === "fr" ? "Réalisations" : "Our work",
       title: getMessage(locale, "portfolio.realizations.title"),
       description: getMessage(locale, "portfolio.realizations.description"),
       cta: getMessage(locale, "portfolio.realizations.cta"),
@@ -38,7 +38,7 @@ export function PortfolioPreview({
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
-            {locale === "fr" ? "Templates et réalisations" : "Templates and work"}
+            {locale === "fr" ? "Modèles et réalisations" : "Templates and work"}
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             {getMessage(locale, "portfolio.title")}

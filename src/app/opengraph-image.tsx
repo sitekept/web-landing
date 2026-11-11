@@ -3,7 +3,7 @@ import { PRICING, formatPrice } from "@/content/pricing";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Sitekept — site professionnel livré en 48 h, sans abonnement";
+export const alt = `Sitekept : création de site internet professionnel, ${formatPrice(PRICING.site.amount)} payé une seule fois, en ligne 48 h après réception de vos éléments`;
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -42,7 +42,7 @@ export default function OpengraphImage() {
             color: "#ffffff",
           }}
         >
-          Site professionnel livré en 48 h
+          Création de site internet professionnel
         </div>
 
         <div
@@ -54,7 +54,19 @@ export default function OpengraphImage() {
             fontWeight: 400,
           }}
         >
-          {`Sans abonnement imposé · 100 % à vous · à partir de ${formatPrice(PRICING.site.amount)}`}
+          En ligne 48 h après réception de vos éléments
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            marginTop: 28,
+            fontSize: 36,
+            color: "#94a3b8",
+            fontWeight: 400,
+          }}
+        >
+          {`${formatPrice(PRICING.site.amount)} payé une seule fois · 100 % à vous`}
         </div>
       </div>
     ),

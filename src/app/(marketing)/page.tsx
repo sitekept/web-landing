@@ -23,15 +23,17 @@ import { PortfolioPreview } from "../_components/portfolio-preview";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
 
+  const sitePrice = formatPrice(PRICING.site.amount, { locale });
+
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? `Création de site internet dès ${formatPrice(PRICING.site.amount)} | Sitekept`
-        : `Website design from ${formatPrice(PRICING.site.amount, { locale: "en" })} | Sitekept`,
+        ? `Création de site internet professionnel à ${sitePrice} | Sitekept`
+        : `Professional website design for ${sitePrice} | Sitekept`,
     description:
       locale === "fr"
-        ? "Création de site internet professionnel pour PME et artisans : livré en 48h après réception de vos éléments, sans abonnement imposé et 100 % à vous."
-        : "Web agency for small businesses and trades: your professional website delivered in 48h, no subscription, fully yours. Free quote within 24h.",
+        ? `Création de site internet professionnel sur mesure, ${sitePrice} payé une fois : en ligne 48 h après réception de vos éléments, domaine offert la première année.`
+        : `Custom professional website design, ${sitePrice} paid once: live 48 hours after we receive your materials, domain free for the first year.`,
     path: "/",
   });
 }
@@ -120,12 +122,17 @@ export default async function Home() {
               </p>
               <div className="mt-5 flex items-end gap-3">
                 <span className="text-5xl font-semibold text-white">
-                  {formatPrice(PRICING.site.amount)}
+                  {formatPrice(PRICING.site.amount, { locale })}
                 </span>
                 <span className="pb-1 text-sm text-slate-400">
-                  {locale === "fr" ? "à partir de" : "starting from"}
+                  {locale === "fr" ? "payé une seule fois" : "paid once"}
                 </span>
               </div>
+              <p className="mt-3 text-sm text-slate-400">
+                {locale === "fr"
+                  ? `Suivi en option : ${formatPrice(PRICING.followUp.monthly, { locale, period: "month" })}, sans engagement`
+                  : `Optional follow-up: ${formatPrice(PRICING.followUp.monthly, { locale, period: "month" })}, no commitment`}
+              </p>
               <div className="mt-6 space-y-3">
                 {getLocalizedValue(homeContent.trustStrip, locale).map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
@@ -137,8 +144,8 @@ export default async function Home() {
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-300">
               {locale === "fr"
-                ? "Le cadre est simple: vous choisissez une direction, nous livrons le site, le domaine et la mise en ligne."
-                : "The frame stays simple: you choose the direction, we deliver the website, the domain and the launch."}
+                ? "Le cadre est simple : nous créons votre site sur mesure et nous le mettons en ligne, nom de domaine compris."
+                : "The frame stays simple: we create your website to measure and put it online, domain name included."}
             </p>
           </aside>
         </div>

@@ -60,11 +60,11 @@ export function OrganizationJsonLd() {
         },
         image: `${SITE_URL}/opengraph-image`,
         description:
-          "Sitekept conçoit et livre des sites professionnels en 48 h, sans abonnement imposé, avec déploiement inclus et optimisation SEO.",
+          "Sitekept crée des sites internet professionnels sur mesure pour artisans, commerces et indépendants, mis en ligne 48 h après réception des éléments du client.",
         sameAs: [LINKEDIN_COMPANY_URL],
         email: "sitekept@gmail.com",
         telephone: "+33651179925",
-        priceRange: `À partir de ${formatPrice(PRICING.site.amount)}`,
+        priceRange: formatPrice(PRICING.site.amount),
         areaServed: {
           "@type": "Country",
           name: "France",

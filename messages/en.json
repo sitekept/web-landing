@@ -113,16 +113,16 @@
     "trustSignals": "✅ Free consultation • ✅ Quote within 24h • ✅ Satisfaction guaranteed"
   },
   "portfolio": {
-    "title": "Discover Our Work",
-    "subtitle": "Explore our recent achievements and ready-to-use templates",
+    "title": "Discover our work",
+    "subtitle": "Explore our recent projects and our demo templates.",
     "realizations": {
       "title": "Our Achievements",
-      "description": "Discover our recent projects: websites, applications and custom solutions that have transformed our clients' digital presence.",
+      "description": "Discover the websites we have created, from showcase sites to online platforms.",
       "cta": "View our work"
     },
     "templates": {
-      "title": "Ready Templates",
-      "description": "Don't know where to start? Explore our professional templates designed for different business sectors.",
+      "title": "Demo templates",
+      "description": "These examples help you picture your site. Your website is created to measure, for your business.",
       "cta": "Browse templates"
     },
     "finalCta": "Ready to bring your project to life? Let's talk!",
@@ -147,14 +147,14 @@
   },
   "contact": {
     "title": "Contact us to build your website",
-    "subtitle": "Tell us about your business, your goal and the direction you want. We come back with a simple frame: price, scope and launch.",
+    "subtitle": "Tell us about your business, your goal and the direction you want. We come back with a simple frame: the price, what is included and the launch.",
     "formTitle": "Let's talk about your project",
-    "commitmentTitle": "Our Commitment",
+    "commitmentTitle": "Our commitment",
     "commitments": [
       "Fast reply during business hours",
-      "Clear framing on entry price and launch",
-      "Deployment and launch handled by Sitekept",
-      "No unnecessary friction and no forced subscription"
+      "Clear framing on the price and the launch",
+      "Launch handled by Sitekept",
+      "No forced subscription: ongoing support stays optional"
     ]
   },
   "contactForm": {
@@ -193,20 +193,20 @@
     "keywords": "website creation, fast web development, professional website, e-commerce, Next.js, web agency, showcase site, web application, SEO, modern design"
   },
   "metadata": {
-    "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-    "description": "Sitekept delivers professional websites from {price}, launched in 48 hours, with no forced subscription, deployment included, a free first-year domain and SEO + GEO optimization.",
-    "keywords": "professional website 48h, fast website creation, website without subscription, fully owned website, deployment included, SEO GEO website, SMB website, solo founder website",
+    "title": "Sitekept - Custom professional website for {price}, fully yours",
+    "description": "Sitekept creates your custom professional website for {price}, paid once: live 48 hours after we receive your materials, free domain for the first year, fully yours.",
+    "keywords": "professional website design, custom website for tradespeople, small business website, fully owned website, SEO GEO website, solo founder website",
     "authors": "SiteKept Team",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-      "description": "A professional website from {price}, launched fast, deployed by Sitekept, optimized for SEO + GEO and fully owned by the client.",
+      "title": "Sitekept - Custom professional website for {price}, fully yours",
+      "description": "A custom professional website for {price}, live 48 hours after we receive your materials, with the domain name free for the first year.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-      "description": "A fast-to-launch professional website that is transparent to buy and built for visibility.",
+      "title": "Sitekept - Custom professional website for {price}, fully yours",
+      "description": "A custom professional website, paid once, live 48 hours after we receive your materials.",
       "creator": "@sitekept"
     },
     "appleMobileWebAppTitle": "SiteKept"
