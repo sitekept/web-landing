@@ -138,14 +138,14 @@ export default async function RealizationPage() {
             </p>
             {locale === "fr" ? (
               <p className="mt-4 text-lg leading-8 text-slate-600">
-                Vous cherchez un point de départ par métier ? Parcourez nos{" "}
+                Vous voulez vous projeter dans votre métier ? Parcourez nos{" "}
                 <Link
                   href="/templates"
                   className="font-medium text-blue-700 underline underline-offset-4"
                 >
                   templates
                 </Link>
-                .
+                . Votre site est créé sur mesure.
               </p>
             ) : null}
           </div>

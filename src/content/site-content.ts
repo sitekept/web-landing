@@ -1025,7 +1025,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "site-web-rapide-pme-independant",
     publishedAt: "2026-04-03",
-    updatedAt: "2026-11-10",
+    updatedAt: "2026-11-11",
     author: "Équipe Sitekept",
     category: {
       fr: "Lancement rapide",
@@ -1077,24 +1077,24 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "La rapidité devient crédible quand le cadre est clair : une offre simple, des décisions réduites, une base de design préparée et un process de validation court.",
+            "La rapidité devient crédible quand le cadre est clair : une offre simple, peu de décisions, vos éléments demandés dès le départ, une validation courte.",
             "C'est exactement le sens d'une offre Sitekept : aller vite sur ce qui compte sans vous embarquer dans un projet lourd ou une refonte ouverte sans fin.",
             "Pour créer un site internet rapidement avec Sitekept, découvrez [notre offre de création de site](/). Les étapes de la livraison sont détaillées dans [comment se passe la livraison d'un site web chez Sitekept](/blog/comment-se-passe-la-livraison-d-un-site-web-chez-sitekept).",
           ],
           en: [
-            "Speed becomes credible when the frame is clear: a simple offer, fewer decisions, a prepared design base and a short review loop.",
+            "Speed becomes credible when the frame is clear: a simple offer, few decisions, your materials requested from the start, a short review.",
             "That is exactly what a Sitekept offer means: move fast on what matters without dragging you into a heavy project or an endless open-ended redesign.",
           ],
         },
         bullets: {
           fr: [
-            "un point de départ clair",
+            "un besoin cadré dès le premier échange",
             "des contenus essentiels identifiés",
             "un cadre technique déjà géré",
             "une validation concentrée sur l'utile",
           ],
           en: [
-            "a clear starting point",
+            "your needs pinned down from the first conversation",
             "essential content already identified",
             "technical setup already handled",
             "a review loop focused on what matters",
@@ -1852,11 +1852,11 @@ export const blogPosts: BlogPost[] = [
         paragraphs: {
           fr: [
             "Le projet est développé en interne par Sitekept, avec une structure pensée pour rester lisible. Les fichiers, les pages, les composants et l’organisation générale ne sont pas montés comme une boîte noire. Le but est qu’un autre développeur puisse comprendre le projet sans repartir de zéro.",
-            "Cette étape reprend l’esprit du process présenté sur la home: vous validez une direction, nous développons, nous ajustons, puis nous préparons une livraison exploitable et compréhensible.",
+            "Cette étape suit le parcours présenté sur la page d'accueil : nous créons le site, vous relisez et indiquez vos corrections, nous ajustons. Nous préparons ensuite une livraison exploitable et compréhensible.",
           ],
           en: [
             "The project is developed in-house by Sitekept with a structure designed to remain readable. Files, pages, components and the overall organization are not assembled like a black box. The goal is that another developer can understand the project without starting from zero.",
-            "This follows the same logic as the process shown on the homepage: you validate a direction, we build, we adjust and then we prepare a delivery that stays usable and understandable.",
+            "This step follows the path shown on the homepage: we create the site, you review it and tell us what to correct, we adjust. We then prepare a delivery that stays usable and understandable.",
           ],
         },
       },

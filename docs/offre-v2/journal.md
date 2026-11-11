@@ -89,3 +89,26 @@ Décisions de Joseph (11 nov.), choix par défaut acceptés :
 | 1.6 Pages métier : prix, délai, discours | `[metier]/page.tsx`, `metier-pages.ts` | 1 | PASS | Aucun. 12 descriptions « 500 €, en ligne 48 h après réception de vos éléments » (144–153 car., uniques) ; section prix : réponse directe de 45 mots, rédaction incluse, accompagnement facultatif, acheter / louer ; démo présentée comme un exemple ; délai sans l'acompte ; dentiste et avocat sans promesse (« structure optimisée pour le référencement » retirée du gabarit pour les 12 pages). Lighthouse plombier : Perf 96, A11y 100, SEO 100. Non bloquants : « 48 h » coupé en fin de ligne à 390 px (espace insécable à prévoir) ; section prix à 5 paragraphes de même poids. Pour Joseph : « Un devis clair, sous 24h » (CTA, laissé) ; /tarifs fait encore partir le délai de « l'acompte ». |
 | 1.8 Non-bloquants documentaires de phase 0 | `docs/seo/05-rapport.md`, `docs/design/da-inventaire.md`, `docs/offre-v2/registre-decisions.md`, `docs/seo/06-geo.md` (§ 8) | 2 | PASS | T1 : un paragraphe de 4 phrases dans les ajouts de l'inventaire DA. Corrigé au T2, avec une note datée sur llms.txt dans 06-geo.md § 8. Rapport 05 : ligne 0.9, partie 7 et mesures de fin de phase 0 (§ 3.1 bis). Inventaire : valeurs de la bulle (`bg-white/80`, variantes `sm:`), aucune valeur visuelle nouvelle en phase 1. Registre : 6 décisions des 10 et 11 nov. ; constante unique « Validé ». Point non reporté faute de trace au journal : robots d'IA d'entraînement autorisés (consigne de pilotage) — à confirmer par Joseph. |
 | 1.7 llms.txt depuis la constante | `public/llms.txt` supprimé, `src/app/llms.txt/route.ts` (statique), `[metier]/page.tsx` (« 48&nbsp;h ») | 1 | PASS | Aucun. `/llms.txt` en 200 `text/plain`, route ○ ; prix et mention 293 B via `pricing.ts` ; délai précisé, sur mesure, rédaction incluse, domaine offert, accompagnement facultatif ; 13 articles et 12 pages métier générés (31 liens en 200, identiques au sitemap) ; aucune campagne ni `/offres`. Chaque fait retrouvé sur une page visible. « 48 h » insécable sur les pages métier (0 coupure à 320–390 px). Non bloquants : « 48 h » et « 10 minutes » écrits dans la route (constante de délai à envisager) ; cible écrite « artisans, indépendants et PME locales » (« commerces de proximité » n'est affiché nulle part : question pour Joseph). |
+
+## Fin de phase 1 (11 nov. 2026)
+
+Vérification globale (Opus, effort élevé), 3 tours : **PASS au T3**.
+- T1 : FAIL sur 2 phrases présentant un modèle comme base du projet (article `site-web-rapide-pme-independant` : « une base de design préparée » ; `/realization` : « un point de départ par métier »). Tout le reste PASS : prix (aucun TTC/HT hors /terms, aucun prix barré ni « tarif de lancement »), constante unique, cohérence du discours, 48 h précisés, mention de /templates, 34 URL en 200, 47 liens internes en 200, JSON-LD sans erreur, routes statiques (seul Middleware en ƒ, `/llms.txt` en ○), aucune valeur visuelle nouvelle.
+- T2 : FAIL sur la puce « un point de départ clair » et une phrase de 27 mots dans le même article.
+- T3 : PASS. Correctifs : phrase de 24 mots, puce « un besoin cadré dès le premier échange », article livraison réaligné sur les étapes de la home (« page d'accueil »).
+
+Lighthouse mobile (médiane de 3) : home Perf 95, A11y 100, BP 96, SEO 100, CLS 0,000014, LCP 2,87 s (identique à la fin de phase 0) ; /tarifs Perf 97, A11y 96 → 100, SEO 100.
+
+Non bloquants et points à soumettre à Joseph :
+- bascule de TVA : changer `VAT_MODE` ne suffit pas encore à afficher « TTC (soit X € HT) » partout (une quinzaine d'appels `formatPrice` sans libellé fiscal : home, hero et calcul de /tarifs, descriptions métier, image OG, layout, llms.txt) — à traiter avant toute bascule, idéalement en phase 2 avec /offres ;
+- délai : « éléments complets et acompte » sur /tarifs (`tarifs/page.tsx:41`, `:81`) contre « éléments complets » ailleurs et au registre ;
+- « Un devis clair, sous 24h » (CTA de /tarifs et des 12 pages métier), absent du registre ;
+- renouvellement du domaine : « nous voyons ensemble » (FAQ home) contre « réglé directement à l'organisme » (/tarifs, article livraison) ;
+- H1 de /tarifs sans « prix » ; H2 « Nos deux formules » au-dessus de trois blocs ;
+- « Réponse rapide pendant les heures ouvrables » (contact) ; slogan du logo « SEO, GEO, lancement rapide » ;
+- cible écrite de trois façons ; « commerces de proximité » affiché nulle part ;
+- robots d'IA d'entraînement : `robots.txt` les autorise (`Allow: /` pour tous), le registre ne parle que des robots de recherche ;
+- rythme : FAQ de la home à 7 cartes sur 2 colonnes, pastille « Domaine offert 1 an » seule sur sa ligne, « vous. » orphelin dans un H2, section prix des pages métier à 5 paragraphes ;
+- code mort à nettoyer : 4 composants de `src/app/_components/` et espaces `hero`, `services`, `cta`, `valueProposition`, `seo` de `messages/*.json` ; `/terms` dit encore « toutes taxes comprises » (phase 5) ;
+- articles « louer » et « récupérer » : paragraphes existants hors règles, non réécrits ; titre de l'article livraison « notre process » ; route `/faq` en 404 (phase 4) ;
+- branche `dev` : le commit `224c5ac` (« tokens tpl-* ») touche `globals.css`, absent de `feat/offre-v2` : risque de conflit à la fusion finale.
