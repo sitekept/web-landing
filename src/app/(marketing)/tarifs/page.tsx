@@ -3,15 +3,28 @@ import { ArrowRight, Check, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
-import { PRICING, fiscalLabel, formatPrice } from "@/content/pricing";
+import {
+  PRICING,
+  fiscalLabel,
+  formatPrice,
+  formatPriceWithTax,
+  vatLegalNotice,
+} from "@/content/pricing";
 
 /** Prix et libellé fiscal : tout vient de la constante unique (src/content/pricing.ts). */
 const SITE_PRICE = formatPrice(PRICING.site.amount);
 const SITE_TAX_LABEL = fiscalLabel(PRICING.site.amount);
+const FOLLOW_UP_MONTHLY = formatPriceWithTax(PRICING.followUp.monthly, {
+  period: "month",
+});
+const FOLLOW_UP_ANNUAL = formatPriceWithTax(PRICING.followUp.annual, {
+  period: "year",
+});
+const VAT_NOTICE = vatLegalNotice();
 
 export const metadata = buildPageMetadata({
   title: "Prix d'un site internet en 2026 | Sitekept",
-  description: `Combien coûte un site internet ? Notre offre à partir de ${SITE_PRICE} sans abonnement, ce qui est inclus, et les modalités de paiement. Tarifs détaillés.`,
+  description: `Prix d'un site internet : ${SITE_PRICE} payé une fois, sans abonnement imposé. Ce qui est inclus, les modalités de paiement et l'accompagnement en option.`,
   path: "/tarifs",
 });
 
@@ -24,30 +37,33 @@ export const metadata = buildPageMetadata({
  */
 
 const INCLUDED = [
-  "Conception et développement du site",
-  "Mise en ligne en 48h après réception de l'acompte et des contenus",
+  "Conception et développement de votre site, sur mesure",
+  "Mise en ligne 48 h après réception de vos éléments complets et de l'acompte",
+  "Rédaction de vos textes à partir d'un questionnaire de 10 minutes, si vous le souhaitez",
+  "Rédaction des mentions légales et de la politique de confidentialité",
   "Nom de domaine offert la première année",
-  "Déploiement et hébergement mis en place",
+  "Mise en ligne et hébergement mis en place",
   "Structure optimisée pour le référencement dès la livraison",
-  "Dépôt de code transféré à votre nom",
+  "Le site et ses accès sont à votre nom",
 ];
 
 const NOT_INCLUDED = [
-  "Rédaction complète des contenus éditoriaux",
-  "Photographies et séances photo",
-  "Fonctionnalités sur mesure (boutique, réservation, espace client)",
+  "Une page de plus que celles prévues au devis",
+  "Une nouvelle fonctionnalité (boutique, réservation, espace client)",
+  "Une refonte du site",
+  "Les séances photo",
 ];
 
 const FAQ = [
   {
     question: "Combien coûte un site internet chez Sitekept ?",
     answer:
-      `Le site vitrine essentiel est à ${SITE_PRICE} en tarif de lancement. Ce prix est public et ne comporte aucun abonnement obligatoire. Les projets nécessitant des fonctionnalités spécifiques font l'objet d'un devis personnalisé, établi selon la complexité technique.`,
+      `Le site vitrine essentiel coûte ${SITE_PRICE}, payé une seule fois. Ce prix est public, et aucun abonnement n'est nécessaire pour que le site existe. Les projets avec des fonctionnalités spécifiques font l'objet d'un devis personnalisé, établi selon la complexité technique.`,
   },
   {
     question: "Y a-t-il un abonnement à payer chaque mois ?",
     answer:
-      "Non. Le prix couvre la réalisation et la mise en ligne du site. Il n'y a pas d'abonnement imposé pour que le site continue d'exister. Le nom de domaine est offert la première année ; son renouvellement les années suivantes reste à votre charge, directement auprès du registrar, à son tarif public.",
+      `Non, aucun abonnement n'est nécessaire pour que votre site existe : vous le payez une fois. En option, l'accompagnement « Suivi & Visibilité » assure des modifications et un suivi de votre visibilité, à ${FOLLOW_UP_MONTHLY} sans engagement ou ${FOLLOW_UP_ANNUAL}. Si vous l'arrêtez, le site reste en ligne et à vous, code compris.`,
   },
   {
     question: "Quelles sont les modalités de paiement ?",
@@ -57,27 +73,27 @@ const FAQ = [
   {
     question: "Le site m'appartient-il vraiment ?",
     answer:
-      "Oui. Le code est développé puis déposé sur un dépôt à votre nom, et les accès vous sont remis. Vous pouvez faire évoluer le site, changer de prestataire ou l'héberger ailleurs sans avoir à repartir de zéro.",
+      "Oui. Votre site vous appartient, comme votre enseigne : le site et ses accès sont à votre nom. Vous pouvez le faire évoluer, changer de prestataire ou l'héberger ailleurs sans repartir de zéro.",
   },
   {
-    question: "Le délai de 48h est-il réaliste ?",
+    question: "Le délai de 48 h après réception de mes éléments est-il réaliste ?",
     answer:
-      "Il s'applique aux projets simples et court à partir de la réception de l'acompte et de vos contenus. C'est le délai de mise en ligne, pas le délai depuis le premier contact : plus vos textes et images sont prêts, plus il est tenu facilement.",
+      "Oui, pour les projets simples. Les 48 h courent dès la réception de vos éléments complets et de l'acompte, pas du premier contact. Plus vos textes et images sont prêts, plus le délai est facile à tenir.",
   },
   {
     question: "Que se passe-t-il si mon besoin est plus complexe ?",
     answer:
-      "Les besoins spécifiques — boutique en ligne, système de réservation, espace client, intégrations métier — sortent du cadre du site vitrine essentiel et font l'objet d'un devis sur mesure, chiffré selon la complexité technique réelle.",
+      "Les besoins spécifiques sortent du cadre du site vitrine essentiel : boutique en ligne, système de réservation, espace client, intégrations métier. Ils font l'objet d'un devis sur mesure, chiffré selon la complexité technique réelle.",
   },
   {
     question: `Un site à ${SITE_PRICE} est-il de moins bonne qualité ?`,
     answer:
-      "Le prix vient de la méthode, pas d'un travail bâclé. Nous partons de bases éprouvées et adaptées à chaque métier plutôt que de redessiner chaque écran depuis une page blanche, et nous ne facturons pas de temps commercial ni de gestion de projet sur un site vitrine. Ce qui est réellement moins couvert qu'en agence, nous le disons : la production éditoriale, les photos et les fonctionnalités sur mesure ne sont pas comprises dans ce tarif.",
+      "Le prix vient de notre méthode, pas d'un travail bâclé. Votre site est créé sur mesure pour vous, et nous ne facturons ni temps commercial ni gestion de projet. Ce qui n'est pas inclus, nous le disons : les séances photo, les fonctionnalités avancées, les pages au-delà du devis et les refontes.",
   },
   {
     question: "Faut-il payer l'hébergement en plus ?",
     answer:
-      "La mise en ligne et l'hébergement sont mis en place dans le cadre du projet, et les modalités précises figurent sur le devis. Le seul coût récurrent prévu est le renouvellement du nom de domaine à partir de la deuxième année : il est offert la première, puis payé directement au registrar à son tarif public, sans marge de notre part.",
+      "La mise en ligne et l'hébergement sont mis en place dans le cadre du projet, selon les modalités du devis. Le seul coût récurrent obligatoire est le renouvellement du nom de domaine, dès la deuxième année. Il est offert la première année, puis réglé directement à l'organisme qui l'enregistre, à son prix public, sans marge de notre part.",
   },
 ];
 
@@ -92,24 +108,24 @@ const PRICE_FACTORS = [
       "Un site de cinq pages ne demande pas le même travail qu'un site de quarante. C'est le facteur le plus simple à estimer, et souvent le seul que l'on vous demande au départ.",
   },
   {
-    factor: "Sur-mesure ou base existante",
+    factor: "La méthode de travail",
     detail:
-      "Partir d'une base éprouvée et l'adapter à votre activité coûte nettement moins cher que dessiner chaque écran depuis une page blanche. C'est le principal levier d'écart de prix, et celui dont on parle le moins.",
+      "Un site sur mesure peut coûter plus ou moins cher selon la méthode de travail de celui qui le crée. Une méthode rodée évite de tout reprendre à zéro : c'est un levier d'écart de prix important, dont on parle peu.",
   },
   {
     factor: "Les fonctionnalités",
     detail:
-      "Un site vitrine présente une activité. Dès qu'il faut vendre en ligne, gérer des réservations, ouvrir un espace client ou se connecter à un logiciel métier, le travail change de nature et le prix aussi.",
+      "Un site vitrine présente une activité. Dès qu'il faut vendre en ligne, gérer des réservations ou ouvrir un espace client, le travail change de nature, et le prix aussi.",
   },
   {
     factor: "Qui produit les contenus",
     detail:
-      "Textes, photos, mentions légales : si le prestataire les rédige et les produit, cela s'ajoute au devis. Si vous les fournissez, le projet avance plus vite et coûte moins cher.",
+      "Textes, photos, mentions légales : chez certains prestataires, leur production s'ajoute au devis. Chez nous, la rédaction des textes est incluse dans la limite des pages prévues au devis, avec les mentions légales et la politique de confidentialité. Si vous fournissez vos textes, le projet avance plus vite.",
   },
   {
     factor: "Ce qui se passe après la livraison",
     detail:
-      "Hébergement, maintenance, corrections, évolutions. Un prix affiché bas s'accompagne parfois d'un engagement mensuel qui, lui, ne s'arrête jamais. C'est là que les additions divergent le plus.",
+      "Hébergement, maintenance, corrections, évolutions. Un prix affiché bas cache parfois un abonnement dont l'arrêt fait disparaître le site. C'est là que les additions divergent le plus.",
   },
 ];
 
@@ -128,9 +144,9 @@ const APPROACHES = [
   },
   {
     name: "Éditeur en ligne par abonnement",
-    cost: "Abonnement mensuel, sans fin",
+    cost: "Abonnement mensuel pour que le site existe",
     reality:
-      "Mise en route rapide, mais vous louez votre présence. Au bout de quelques années, le cumul dépasse souvent le prix d'un site développé, et vous ne possédez toujours rien.",
+      "Mise en route rapide, mais vous louez votre présence : si l'abonnement s'arrête, le site disparaît. Au bout de quelques années, le cumul dépasse souvent le prix d'un site développé, et vous ne possédez toujours rien.",
   },
   {
     name: "Freelance",
@@ -151,24 +167,24 @@ const APPROACHES = [
  * nous compris. C'est ce qui la rend utile — et citable.
  */
 const QUESTIONS_TO_ASK = [
-  "Le code source m'est-il remis, et sur un dépôt à mon nom ?",
+  "Le site et son code m'appartiennent-ils, avec tous les accès à mon nom ?",
   "Le nom de domaine est-il déposé à mon nom ou à celui du prestataire ?",
   "Que se passe-t-il si j'arrête de payer, dans six mois ou dans cinq ans ?",
   "Puis-je confier les évolutions à quelqu'un d'autre sans tout reconstruire ?",
   "Qu'est-ce qui est exclu du devis : textes, photos, mentions légales ?",
-  "Le prix affiché est-il TTC, et l'acompte est-il remboursable ?",
+  "La TVA s'ajoute-t-elle au prix annoncé, et l'acompte est-il remboursable ?",
 ];
 
 const MODELS = [
   {
     model: "Sitekept",
-    payment: "Paiement unique",
+    payment: "Paiement unique pour le site, accompagnement en option",
     ownership: "Code et domaine à votre nom",
-    leaving: "Vous partez avec le site",
+    leaving: "Vous partez avec le site, même pendant l'accompagnement",
   },
   {
     model: "Créateur de site en ligne",
-    payment: "Abonnement mensuel permanent",
+    payment: "Abonnement mensuel pour que le site existe",
     ownership: "Site hébergé sur la plateforme",
     leaving: "Le site cesse d'être en ligne à l'arrêt de l'abonnement",
   },
@@ -200,10 +216,11 @@ export default function TarifsPage() {
             Combien coûte un site internet professionnel&nbsp;?
           </h1>
           <p className="mt-6 text-lg leading-8 text-slate-600">
-            Un site vitrine complet à partir de {SITE_PRICE}, sans abonnement
-            imposé, livré en 48h et transféré à votre nom. Cette page détaille
-            ce que le prix couvre, ce qu&apos;il ne couvre pas, et comment se
-            déroule le paiement.
+            Le prix d&apos;un site internet vitrine chez Sitekept est de{" "}
+            {SITE_PRICE}, payé une seule fois, sans abonnement imposé. Votre
+            site est en ligne 48 h après réception de vos éléments, et
+            transféré à votre nom. Cette page détaille ce que ce prix couvre,
+            ce qu&apos;il ne couvre pas, et comment se déroule le paiement.
           </p>
         </div>
       </section>
@@ -217,14 +234,14 @@ export default function TarifsPage() {
           <div className="mt-10 grid gap-8 lg:grid-cols-2">
             <div className="rounded-xl border-2 border-blue-200 bg-white p-8 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-widest text-blue-700">
-                Tarif de lancement
+                Offre de départ
               </p>
               <h3 className="mt-3 text-2xl font-bold text-slate-950">
                 Site vitrine essentiel
               </h3>
               <p className="mt-2 text-slate-600">
-                Pour démarrer une présence professionnelle sérieuse, sans coût
-                récurrent.
+                Pour démarrer une présence professionnelle sérieuse, payée une
+                seule fois.
               </p>
               <p className="mt-6 flex items-baseline gap-3">
                 <span className="text-4xl font-bold text-slate-950">
@@ -273,6 +290,28 @@ export default function TarifsPage() {
               </Button>
             </div>
           </div>
+
+          <div className="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-8">
+            <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+              Accompagnement optionnel
+            </p>
+            <h3 className="mt-3 text-2xl font-bold text-slate-950">
+              Et après la livraison&nbsp;?
+            </h3>
+            <p className="mt-2 text-slate-600">
+              Votre site est à vous dès la livraison et reste en ligne. En
+              option, l&apos;accompagnement «&nbsp;Suivi &amp; Visibilité&nbsp;»
+              comprend deux modifications par mois, non cumulables, et un suivi
+              de votre visibilité. Il coûte {FOLLOW_UP_MONTHLY} sans
+              engagement, ou {FOLLOW_UP_ANNUAL}.
+            </p>
+            <p className="mt-2 text-slate-600">
+              Le premier mois est offert à la livraison, pour la formule
+              mensuelle seulement. Si vous arrêtez, la dépense s&apos;arrête et
+              le site reste en ligne, à vous. La formule annuelle n&apos;est pas
+              remboursée en cours d&apos;année.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -312,8 +351,9 @@ export default function TarifsPage() {
                 ))}
               </ul>
               <p className="mt-6 text-sm text-slate-500">
-                Ces éléments peuvent être ajoutés au projet&nbsp;: ils sont
-                alors chiffrés séparément, avant démarrage.
+                Ces ajouts se font sur devis, chiffrés avant tout démarrage. La
+                rédaction est plafonnée au nombre de pages prévu au devis, dans
+                le cadre de deux séries de retours.
               </p>
             </div>
           </div>
@@ -323,8 +363,7 @@ export default function TarifsPage() {
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Pourquoi les prix vont de quelques euros par mois à plusieurs
-            milliers d&apos;euros
+            Pourquoi les prix d&apos;un site varient autant
           </h2>
           <p className="mt-4 max-w-3xl text-slate-600">
             Quand on cherche combien coûte un site internet, on tombe sur tout
@@ -349,10 +388,9 @@ export default function TarifsPage() {
           </dl>
 
           <p className="mt-8 max-w-3xl text-slate-600">
-            Pour un site vitrine de PME, d&apos;artisan ou d&apos;indépendant,
-            ces cinq facteurs se ramènent le plus souvent à une seule question
-            de fond&nbsp;: payez-vous une fois, ou payez-vous
-            indéfiniment&nbsp;?
+            Pour un site vitrine, ces facteurs se ramènent le plus souvent à une
+            question&nbsp;: achetez-vous un site, ou louez-vous votre
+            présence&nbsp;?
           </p>
         </div>
       </section>
@@ -389,8 +427,8 @@ export default function TarifsPage() {
 
           <p className="mt-8 max-w-3xl text-sm text-slate-500">
             Nous ne publions pas de fourchettes chiffrées pour les autres
-            approches&nbsp;: les tarifs varient trop d&apos;un prestataire à
-            l&apos;autre et d&apos;une année sur l&apos;autre pour qu&apos;une
+            approches. Les tarifs varient trop d&apos;un prestataire à
+            l&apos;autre, et d&apos;une année à l&apos;autre, pour qu&apos;une
             moyenne soit honnête. Demandez plutôt un devis à chacun, et
             comparez ce qui reste entre vos mains à la fin.
           </p>
@@ -404,33 +442,44 @@ export default function TarifsPage() {
           </h2>
           <p className="mt-4 text-slate-600">
             Un site n&apos;est pas un achat qu&apos;on refait tous les six mois.
-            La bonne unité de comparaison n&apos;est donc pas le prix
-            d&apos;entrée, mais le total sur la durée de vie réelle du site —
-            trois à cinq ans en général.
+            Il sert trois à cinq ans en général. La bonne comparaison est donc
+            le total sur toute cette durée, pas le prix d&apos;entrée.
           </p>
           <p className="mt-4 text-slate-600">
-            L&apos;arithmétique est simple, et vous pouvez la faire avec les
-            chiffres de n&apos;importe quelle offre. Un abonnement à 20&nbsp;€
-            par mois représente 1&nbsp;200&nbsp;€ sur cinq ans. À
-            30&nbsp;€&nbsp;: 1&nbsp;800&nbsp;€. À 50&nbsp;€&nbsp;:
-            3&nbsp;000&nbsp;€. Et à la fin de ces cinq ans, si vous arrêtez de
-            payer, il ne vous reste rien&nbsp;: ni le site, ni le code, ni,
-            parfois, le nom de domaine.
+            Ce qui coûte cher, ce n&apos;est pas de payer un service chaque
+            mois. C&apos;est de payer pour que le site continue d&apos;exister,
+            c&apos;est-à-dire de louer sa présence.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Prenons des exemples, qui ne sont pas nos tarifs. Un abonnement à
+            20&nbsp;€ par mois coûte 1&nbsp;200&nbsp;€ sur cinq ans. À
+            30&nbsp;€, cela fait 1&nbsp;800&nbsp;€&nbsp;; à 50&nbsp;€,
+            3&nbsp;000&nbsp;€.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Ces abonnements ne servent qu&apos;à garder votre site en ligne. Si
+            vous arrêtez de payer, il ne vous reste rien&nbsp;: ni le site, ni
+            le code, ni, parfois, le nom de domaine.
           </p>
           <p className="mt-4 text-slate-600">
             Un paiement unique de {SITE_PRICE} reste {SITE_PRICE} la cinquième
-            année. Le seul coût récurrent est le renouvellement du nom de
-            domaine à partir de la deuxième année, payé directement au
-            registrar, à son tarif public — de l&apos;ordre de quelques dizaines
-            d&apos;euros par an, sans marge de notre part.
+            année. Le seul coût récurrent obligatoire est le renouvellement du
+            nom de domaine, dès la deuxième année. Il se règle directement à
+            l&apos;organisme qui l&apos;enregistre, à son prix public, quelques
+            dizaines d&apos;euros par an, sans marge de notre part.
           </p>
           <p className="mt-4 text-slate-600">
             Ce raisonnement a une limite qu&apos;il faut dire&nbsp;: un site
             qu&apos;on ne touche jamais vieillit. Si votre activité change, il
-            faudra le faire évoluer, et cela représente un coût. La différence
-            est qu&apos;il s&apos;agit alors d&apos;une dépense que vous
-            décidez, quand vous le décidez, et que vous pouvez confier à qui
-            vous voulez — puisque le code est à vous.
+            faudra le faire évoluer, et cela a un coût. Mais vous décidez de
+            cette dépense, et vous pouvez la confier à qui vous voulez&nbsp;:
+            le site est à vous.
+          </p>
+          <p className="mt-4 text-slate-600">
+            Appliquons le même test à notre accompagnement optionnel. Si vous
+            l&apos;arrêtez, la dépense s&apos;arrête et le site reste en ligne,
+            à vous. Vous payez un service, pas le droit d&apos;exister sur
+            internet.
           </p>
         </div>
       </section>
@@ -438,7 +487,7 @@ export default function TarifsPage() {
       <section className="bg-slate-50 px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Paiement unique ou abonnement&nbsp;: ce qui change vraiment
+            Acheter son site ou louer sa présence
           </h2>
           <p className="mt-4 max-w-3xl text-slate-600">
             La différence de prix entre deux solutions se juge mal sur le
@@ -486,21 +535,29 @@ export default function TarifsPage() {
             prestataires varient trop pour qu&apos;une moyenne veuille dire
             quelque chose. La colonne qui compte est la dernière.
           </p>
+          <p className="mt-2 text-sm text-slate-500">
+            Pour approfondir, lisez notre guide{" "}
+            <Link
+              href="/blog/louer-ou-posseder-son-site-internet"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              louer ou posséder son site internet
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
       <section className="bg-white px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
-            Six questions à poser avant de signer, à n&apos;importe quel
-            prestataire
+            Six questions à poser à tout prestataire avant de signer
           </h2>
           <p className="mt-4 text-slate-600">
             Y compris à nous. Un devis se compare mal sur le seul montant&nbsp;:
-            deux propositions au même prix peuvent vous laisser dans des
-            situations radicalement différentes trois ans plus tard. Ces six
-            questions font apparaître l&apos;écart avant que vous ne vous
-            engagiez.
+            deux offres au même prix peuvent vous laisser dans des situations
+            très différentes. Ces six questions font apparaître l&apos;écart
+            avant la signature.
           </p>
 
           <ol className="mt-8 space-y-4">
@@ -570,6 +627,9 @@ export default function TarifsPage() {
               <Link href="/realization">Voir nos réalisations</Link>
             </Button>
           </div>
+          {VAT_NOTICE ? (
+            <p className="mt-6 text-sm text-slate-400">{VAT_NOTICE}</p>
+          ) : null}
         </div>
       </section>
     </>
