@@ -545,12 +545,12 @@ export const processSteps: ProcessStep[] = [
       fr: {
         title: "Nous créons votre site",
         description:
-          "Vous nous envoyez vos textes, logo et photos. Sans textes, un questionnaire de 10 minutes nous suffit pour les rédiger. Nous créons ensuite le design et les pages.",
+          "Vous nous envoyez vos textes, logo et photos. Sans textes, un questionnaire de 10 minutes suffit : nous les rédigeons, rédaction incluse, dans la limite des pages prévues au devis. Nous créons ensuite le design et les pages.",
       },
       en: {
         title: "We create your site",
         description:
-          "You send us your text, logo and photos. With no text, a 10-minute questionnaire is enough for us to write it. We then create the design and the pages.",
+          "You send us your text, logo and photos. With no text, a 10-minute questionnaire is enough: we write it for you, writing included, within the pages planned in the quote. We then create the design and the pages.",
       },
     },
   },
@@ -1139,14 +1139,14 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "posseder-son-site-sans-abonnement",
     publishedAt: "2026-04-03",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-11",
     author: "Équipe Sitekept",
     category: {
       fr: "Propriété du site",
       en: "Website ownership",
     },
     title: {
-      fr: "Pourquoi posséder 100% de son site sans abonnement change la relation avec son prestataire",
+      fr: "Posséder 100 % de son site sans abonnement : ce que ça change",
       en: "Why owning 100% of your website without a subscription changes the agency relationship",
     },
     excerpt: {
@@ -1222,19 +1222,40 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Nous assumons une logique simple: vous achetez un site, pas un verrou. L'absence d'abonnement imposé et la propriété frontale font partie de l'offre, pas d'une option premium.",
+            "Nous assumons une logique simple : vous achetez un site, pas un verrou. Aucun abonnement n'est nécessaire pour que votre site existe : vous le payez une fois, et il vous appartient, comme votre enseigne.",
             "C'est aussi ce qui rend l'offre plus facile à acheter pour des clients non techniques : ils comprennent ce qu'ils paient et ce qu'ils récupèrent.",
           ],
           en: [
-            "We keep it simple: you buy a website, not a lock. No forced subscription and explicit ownership are part of the offer, not a premium upsell.",
+            "We keep it simple: you buy a website, not a lock. No subscription is needed for your website to exist: you pay once, and it belongs to you, like your shop sign.",
             "That also makes the offer easier to buy for non-technical clients: they understand what they pay for and what they get back.",
+          ],
+        },
+      },
+      {
+        id: "suivi-optionnel",
+        title: {
+          fr: "Faut-il un abonnement pour garder son site ?",
+          en: "Do you need a subscription to keep your site?",
+        },
+        paragraphs: {
+          fr: [
+            `Non, votre site est payé une fois et vous appartient : aucun abonnement n'est nécessaire pour qu'il existe. En option, l'accompagnement « Suivi & Visibilité » coûte ${FOLLOW_UP_MONTHLY.fr} sans engagement, ou ${FOLLOW_UP_ANNUAL.fr}. Il comprend deux modifications par mois, non cumulables, et un suivi de votre visibilité.`,
+            "Acheter un site, c'est le payer une fois et le garder. Louer sa présence, c'est payer pour qu'il continue d'exister : c'est cela qui coûte cher, pas un service mensuel. L'accompagnement est un service : si vous l'arrêtez, la dépense s'arrête et le site reste à vous.",
+            "Le premier mois est offert à la livraison, pour la formule mensuelle seulement. La formule annuelle n'est pas remboursée en cours d'année, et nous ne promettons aucun classement. Le détail est sur [la page des tarifs](/tarifs).",
+            "Pour comparer les deux modèles, lisez [louer ou posséder son site internet](/blog/louer-ou-posseder-son-site-internet). Pour changer de prestataire, lisez [récupérer son site web chez un prestataire](/blog/recuperer-son-site-web-chez-un-prestataire).",
+          ],
+          en: [
+            `No, your website is paid for once and belongs to you: no subscription is needed for it to exist. Optionally, the "Suivi & Visibilité" support plan costs ${FOLLOW_UP_MONTHLY.en} with no commitment, or ${FOLLOW_UP_ANNUAL.en}. It includes two edits a month, which do not roll over, and visibility monitoring.`,
+            "Buying a website means paying for it once and keeping it. Renting your presence means paying for it to keep existing: that is what costs a lot, not a monthly service. The support plan is a service: if you stop it, the spending stops and the website stays yours.",
+            "The first month is free at delivery, for the monthly plan only. The annual plan is not refunded mid-year, and we promise no ranking. Details are on [the pricing page](/tarifs).",
+            "To compare the two models, read [renting or owning your website](/blog/louer-ou-posseder-son-site-internet). If you want to switch provider, read [getting your website back from a provider](/blog/recuperer-son-site-web-chez-un-prestataire).",
           ],
         },
       },
     ],
     ctaTitle: {
-      fr: "Vous voulez un site utile sans rester captif d'un abonnement ?",
-      en: "Want a useful website without staying trapped in a subscription?",
+      fr: "Vous voulez un site à vous, sans abonnement imposé ?",
+      en: "Want a website that stays yours, with no forced subscription?",
     },
     ctaDescription: {
       fr: "Nous pouvons cadrer une offre simple, rapide et livrée comme un vrai actif pour votre entreprise.",
@@ -1679,7 +1700,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "pourquoi-avoir-un-site-qui-nous-appartient-a-100-change-tout",
     publishedAt: "2026-04-05",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-11",
     author: "Équipe Sitekept",
     category: {
       fr: "Propriété du site",
@@ -1731,11 +1752,11 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Quand vous détenez le site à 100 %, vous gardez la main sur le code, le dépôt, les accès techniques et le déploiement. Vous pouvez faire évoluer le projet, faire intervenir un autre développeur ou reprendre vous-même certains sujets sans dépendre d’un verrou artificiel.",
+            "Quand vous détenez le site à 100 %, vous gardez la main sur le code, les accès techniques et la mise en ligne. Vous pouvez faire évoluer le projet, faire intervenir un autre développeur ou reprendre vous-même certains sujets sans dépendre d’un verrou artificiel.",
             "Cette autonomie n’oblige pas à devenir technique. Elle garantit simplement que la technique reste à votre service, et non l’inverse.",
           ],
           en: [
-            "When you own the website 100%, you keep control over the code, repository, technical access and deployment. You can evolve the project, involve another developer or take over some topics yourself without depending on artificial lock-in.",
+            "When you own the website 100%, you keep control over the code, technical access and publication. You can evolve the project, involve another developer or take over some topics yourself without depending on artificial lock-in.",
             "That autonomy does not force you to become technical. It simply ensures that technology stays in your service, not the other way around.",
           ],
         },
@@ -1757,6 +1778,25 @@ export const blogPosts: BlogPost[] = [
           ],
         },
       },
+      {
+        id: "accompagnement-propriete",
+        title: {
+          fr: "L’accompagnement change-t-il la propriété du site ?",
+          en: "Does the support plan change who owns the site?",
+        },
+        paragraphs: {
+          fr: [
+            `Non, votre site vous appartient, comme votre enseigne, que vous preniez l’accompagnement ou non. Cet accompagnement, « Suivi & Visibilité », est facultatif : ${FOLLOW_UP_MONTHLY.fr} sans engagement, ou ${FOLLOW_UP_ANNUAL.fr}. Si vous l’arrêtez, la dépense s’arrête et le site reste à vous, sans rien à récupérer.`,
+            "Acheter un site, c’est le payer une fois et le garder. Louer sa présence, c’est payer pour qu’il continue d’exister. La question à se poser : que vous reste-t-il le jour où vous arrêtez de payer ?",
+            "Pour comparer les deux modèles, lisez [louer ou posséder son site internet](/blog/louer-ou-posseder-son-site-internet). Voir aussi [posséder son site sans abonnement](/blog/posseder-son-site-sans-abonnement) et [la page des tarifs](/tarifs).",
+          ],
+          en: [
+            `No, your website belongs to you, like your shop sign, whether or not you take the support plan. The "Suivi & Visibilité" plan is optional: ${FOLLOW_UP_MONTHLY.en} with no commitment, or ${FOLLOW_UP_ANNUAL.en}. If you stop it, the spending stops and the site stays yours, with nothing to recover.`,
+            "Buying a website means paying once and keeping it. Renting your presence means paying for it to keep existing. The question to ask: what is left the day you stop paying?",
+            "To compare the two models, read [renting or owning your website](/blog/louer-ou-posseder-son-site-internet). See also [owning your website without a subscription](/blog/posseder-son-site-sans-abonnement) and [the pricing page](/tarifs).",
+          ],
+        },
+      },
     ],
     ctaTitle: {
       fr: "Vous voulez un site livré comme un actif durable, pas comme une dépendance ?",
@@ -1770,7 +1810,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "comment-se-passe-la-livraison-d-un-site-web-chez-sitekept",
     publishedAt: "2026-04-05",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-11",
     author: "Équipe Sitekept",
     category: {
       fr: "Livraison",
@@ -1781,20 +1821,20 @@ export const blogPosts: BlogPost[] = [
       en: "How does website delivery work at Sitekept?",
     },
     excerpt: {
-      fr: "La livraison ne s’arrête pas à la mise en ligne. Elle comprend le code, les accès, le dépôt GitHub, le déploiement et le domaine, pour que le client possède réellement son site.",
-      en: "Delivery does not stop at launch. It includes the code, access, GitHub repository, deployment and domain so the client truly owns the website.",
+      fr: "La livraison ne s’arrête pas à la mise en ligne. Elle comprend le code, les accès et le nom de domaine, tous à votre nom, pour que vous possédiez réellement votre site.",
+      en: "Delivery does not stop at launch. It includes the code, access and domain name, all in your name, so you truly own your website.",
     },
     seoTitle: {
       fr: "Livraison d’un site web : notre process | Sitekept",
       en: "Website delivery: our process | Sitekept",
     },
     seoDescription: {
-      fr: "Mise en ligne d’un site internet chez Sitekept : développement en interne, dépôt GitHub à votre nom, déploiement Vercel, domaine offert la 1re année.",
-      en: "In-house development, client GitHub repository, Vercel deployment, first-year domain purchase and a clear structure: here is how Sitekept delivers a website.",
+      fr: "Mise en ligne d’un site internet chez Sitekept : comptes et accès à votre nom, nom de domaine offert la première année, site qui vous appartient.",
+      en: "In-house development, accounts and access in your name, first-year domain purchase and a clear structure: here is how Sitekept delivers a website.",
     },
     intro: {
-      fr: "Pour Sitekept, livrer un site ne veut pas seulement dire publier une URL. La livraison doit aussi garantir que le client possède réellement le projet, ses accès et sa capacité à le faire évoluer plus tard. C’est cette logique qui guide la façon dont nous développons, déployons et remettons chaque site.",
-      en: "For Sitekept, delivering a website does not simply mean publishing a URL. Delivery must also guarantee that the client truly owns the project, its access and the ability to evolve it later. That is the logic that guides how we build, deploy and hand over each website.",
+      fr: "Pour Sitekept, livrer un site ne veut pas seulement dire publier une URL. La livraison doit aussi garantir que le client possède réellement le projet, ses accès et sa capacité à le faire évoluer plus tard. C’est cette logique qui guide la façon dont nous développons, mettons en ligne et remettons chaque site.",
+      en: "For Sitekept, delivering a website does not simply mean publishing a URL. Delivery must also guarantee that the client truly owns the project, its access and the ability to evolve it later. That is the logic that guides how we build, publish and hand over each website.",
     },
     sections: [
       {
@@ -1822,12 +1862,12 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Pour garantir la propriété à 100 %, nous créons un compte GitHub au client puis nous y poussons le projet. Le code n’est donc pas conservé dans un espace inaccessible: le dépôt appartient au client dès la livraison.",
-            "Nous créons ensuite un compte Vercel ou une plateforme similaire au nom du client pour y déployer le site. Enfin, nous créons un compte Hostinger ou une plateforme comparable afin d’acheter le nom de domaine, pris en charge la première année. Le déploiement et le domaine sont donc remis dans un environnement que le client contrôle.",
+            "Pour garantir la propriété à 100 %, nous ouvrons les comptes au nom du client, puis nous y plaçons le projet. Rien n’est conservé dans un espace inaccessible : votre site vous appartient, comme votre enseigne.",
+            "Le site est publié et le nom de domaine acheté depuis ces mêmes comptes. Le domaine est offert la première année ; ensuite, son renouvellement se règle directement à l’organisme qui l’enregistre. Nous utilisons par exemple GitHub pour le code, Vercel pour la mise en ligne et Hostinger pour le domaine, chacun à votre nom.",
           ],
           en: [
-            "To guarantee 100% ownership, we create a GitHub account for the client and push the project into it. The code is not kept in an inaccessible space: the repository belongs to the client from delivery onward.",
-            "We then create a Vercel account or similar platform in the client’s name to deploy the website. Finally, we create a Hostinger account or comparable platform to purchase the domain, covered during the first year. Deployment and domain are therefore handed over in an environment the client controls.",
+            "To guarantee 100% ownership, we open the accounts in the client’s name and then place the project there. Nothing is kept in an inaccessible space: your website belongs to you, like your shop sign.",
+            "The website is published and the domain name purchased from those same accounts. The domain is free the first year; after that, renewal is paid directly to the registrar. For example, we use GitHub for the code, Vercel for publishing and Hostinger for the domain, each in your name.",
           ],
         },
       },
@@ -1839,19 +1879,38 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "La livraison comprend une logique de reprise future. Toute la structure du projet, du code au déploiement, est pensée pour rester compréhensible. Cela ne veut pas dire que le client doit gérer la technique au quotidien, mais qu’il n’est jamais enfermé dans un système flou.",
-            "Si le client souhaite plus tard travailler avec un autre développeur ou une autre agence, le site peut être repris dans de bonnes conditions parce que le dépôt, les accès et le domaine sont déjà dans un cadre clair et propriétaire.",
+            "La livraison comprend une logique de reprise future. Toute la structure du projet, du code à la mise en ligne, est pensée pour rester compréhensible. Cela ne veut pas dire que le client doit gérer la technique au quotidien, mais qu’il n’est jamais enfermé dans un système flou.",
+            "Si le client souhaite plus tard travailler avec un autre développeur ou une autre agence, le site peut être repris facilement. Le code, les accès et le domaine sont déjà à son nom, dans un cadre clair.",
           ],
           en: [
-            "Delivery includes a future takeover logic. The full project structure, from code to deployment, is designed to remain understandable. That does not mean the client must handle the technical side every day, but it does mean they are never locked into a vague system.",
-            "If the client later wants to work with another developer or agency, the website can be taken over in good conditions because the repository, access and domain already live in a clear ownership framework.",
+            "Delivery includes a future takeover logic. The full project structure, from code to publication, is designed to remain understandable. That does not mean the client must handle the technical side every day, but it does mean they are never locked into a vague system.",
+            "If the client later wants to work with another developer or agency, the website can be taken over easily. The code, access and domain are already in the client’s name, in a clear framework.",
+          ],
+        },
+      },
+      {
+        id: "apres-livraison",
+        title: {
+          fr: "Que se passe-t-il après la livraison ?",
+          en: "What happens after delivery?",
+        },
+        paragraphs: {
+          fr: [
+            `Votre site est à vous dès la livraison, et aucun abonnement n’est nécessaire pour qu’il existe. Si vous le souhaitez, l’accompagnement « Suivi & Visibilité » prend le relais : ${FOLLOW_UP_MONTHLY.fr} sans engagement, ou ${FOLLOW_UP_ANNUAL.fr}, avec deux modifications par mois, non cumulables. Le premier mois est offert à la livraison, pour la formule mensuelle.`,
+            "Acheter un site, c’est le payer une fois et le garder. Louer sa présence, c’est payer pour qu’il continue d’exister. La livraison décrite ici relève du premier cas, et l’accompagnement ne change rien à la propriété.",
+            "Pour le délai, lisez [créer un site internet rapidement](/blog/site-web-rapide-pme-independant). Pour les conditions, voyez [la page des tarifs](/tarifs).",
+          ],
+          en: [
+            `Your website is yours from delivery, and no subscription is needed for it to exist. If you wish, the "Suivi & Visibilité" support plan takes over: ${FOLLOW_UP_MONTHLY.en} with no commitment, or ${FOLLOW_UP_ANNUAL.en}, with two edits a month that do not roll over. The first month is free at delivery, for the monthly plan.`,
+            "Buying a website means paying once and keeping it. Renting your presence means paying for it to keep existing. The delivery described here is the first case, and the support plan changes nothing about ownership.",
+            "For the timeline, read [creating a website quickly](/blog/site-web-rapide-pme-independant). For the conditions, see [the pricing page](/tarifs).",
           ],
         },
       },
     ],
     ctaTitle: {
-      fr: "Vous voulez un site livré proprement, avec vos accès et votre dépôt ?",
-      en: "Want a website delivered cleanly, with your own access and repository?",
+      fr: "Vous voulez un site livré proprement, avec tous vos accès ?",
+      en: "Want a website delivered cleanly, with all your own access?",
     },
     ctaDescription: {
       fr: "Nous pouvons vous montrer comment cadrer un site rapide sans sacrifier la propriété ni la reprise future.",
@@ -1862,7 +1921,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "recuperer-son-site-web-chez-un-prestataire",
     publishedAt: "2026-08-11",
-    updatedAt: "2026-08-11",
+    updatedAt: "2026-11-11",
     author: "Équipe Sitekept",
     category: {
       fr: "Propriété du site",
@@ -1908,7 +1967,7 @@ export const blogPosts: BlogPost[] = [
         bullets: {
           fr: [
             "Le nom de domaine : à quel nom est-il déposé, et chez quel bureau d'enregistrement ?",
-            "Le code source : existe-t-il un dépôt, et y avez-vous accès ?",
+            "Le code source : en existe-t-il une copie, et y avez-vous accès ?",
             "L'hébergement : le contrat est-il à votre nom ou à celui du prestataire ?",
             "Les contenus : textes, photos, logo — qui les a produits, et sous quelles conditions ?",
             "Les comptes de mesure : Search Console, Analytics, fiche d'établissement Google.",
@@ -1916,7 +1975,7 @@ export const blogPosts: BlogPost[] = [
           ],
           en: [
             "The domain name: in whose name is it registered, and with which registrar?",
-            "The source code: does a repository exist, and do you have access?",
+            "The source code: does a copy exist, and do you have access?",
             "Hosting: is the contract in your name or the provider's?",
             "Content: text, photos, logo — who produced them, and under what terms?",
             "Measurement accounts: Search Console, Analytics, Google Business Profile.",
@@ -2061,7 +2120,7 @@ export const blogPosts: BlogPost[] = [
             "Changez tous les mots de passe, y compris ceux qui semblent sans importance",
             "Vérifiez que vous êtes bien propriétaire — et pas simple administrateur — des comptes Analytics et Search Console",
             "Conservez une copie du code et de la base de données hors de l'hébergement",
-            "Exigez de votre prochain prestataire une clause écrite de cession et un dépôt à votre nom",
+            "Exigez de votre prochain prestataire une clause écrite de cession et des comptes ouverts à votre nom",
           ],
           en: [
             "Enable auto-renewal on the domain, and note its expiry",
@@ -2072,21 +2131,40 @@ export const blogPosts: BlogPost[] = [
           ],
         },
       },
+      {
+        id: "eviter-dependance",
+        title: {
+          fr: "Comment éviter de dépendre d'un prestataire ?",
+          en: "How do you avoid depending on a provider?",
+        },
+        paragraphs: {
+          fr: [
+            `Achetez votre site au lieu de louer votre présence. Chez Sitekept, le site est payé une fois et vous appartient, accès compris : aucun abonnement n'est nécessaire pour qu'il existe. L'accompagnement facultatif « Suivi & Visibilité » coûte ${FOLLOW_UP_MONTHLY.fr} sans engagement, ou ${FOLLOW_UP_ANNUAL.fr}, et l'arrêter ne touche pas au site.`,
+            "Ce n'est pas de payer un service chaque mois qui vous piège. C'est de payer pour que le site continue d'exister : si le paiement s'arrête, tout s'arrête. Posez cette question à tout prestataire avant de signer.",
+            "Les conditions sont sur [la page des tarifs](/tarifs). Pour comparer les deux modèles, lisez [louer ou posséder son site internet](/blog/louer-ou-posseder-son-site-internet).",
+          ],
+          en: [
+            `Buy your website instead of renting your presence. At Sitekept, the site is paid for once and belongs to you, access included: no subscription is needed for it to exist. The optional "Suivi & Visibilité" plan costs ${FOLLOW_UP_MONTHLY.en} with no commitment, or ${FOLLOW_UP_ANNUAL.en}, and stopping it does not affect the site.`,
+            "Paying for a service every month is not what traps you. Paying for the site to keep existing is: if the payment stops, everything stops. Ask every provider this question before signing.",
+            "The conditions are on [the pricing page](/tarifs). To compare the two models, read [renting or owning your website](/blog/louer-ou-posseder-son-site-internet).",
+          ],
+        },
+      },
     ],
     ctaTitle: {
       fr: "Repartir sur un site qui vous appartient dès le premier jour",
       en: "Start again with a website that is yours from day one",
     },
     ctaDescription: {
-      fr: "Chez Sitekept, le code est déposé sur un dépôt à votre nom et les accès vous sont remis à la livraison. Il n'y a pas d'abonnement à payer pour que le site reste en ligne, et rien à négocier le jour où vous voudrez partir.",
-      en: "At Sitekept the code sits in a repository under your name and the access is handed over at delivery. There is no subscription to keep the site online, and nothing to negotiate the day you want to leave.",
+      fr: "Chez Sitekept, votre site est payé une fois et vous appartient, accès compris, remis à la livraison. Aucun abonnement n'est nécessaire pour qu'il existe, et il n'y a rien à négocier le jour où vous voudrez partir.",
+      en: "At Sitekept your website is paid for once and belongs to you, access included, handed over at delivery. No subscription is needed for it to exist, and there is nothing to negotiate the day you want to leave.",
     },
   },
 
   {
     slug: "louer-ou-posseder-son-site-internet",
     publishedAt: "2026-08-12",
-    updatedAt: "2026-08-12",
+    updatedAt: "2026-11-11",
     author: "Équipe Sitekept",
     category: {
       fr: "Propriété du site",
@@ -2198,6 +2276,25 @@ export const blogPosts: BlogPost[] = [
         },
       },
       {
+        id: "accompagnement-sitekept",
+        title: {
+          fr: "Notre accompagnement est-il une location ?",
+          en: "Is our support plan a rental?",
+        },
+        paragraphs: {
+          fr: [
+            `Non, car votre site est payé une fois et vous appartient, avec ou sans accompagnement. L'accompagnement « Suivi & Visibilité » est facultatif : ${FOLLOW_UP_MONTHLY.fr} sans engagement, ou ${FOLLOW_UP_ANNUAL.fr}. Si vous l'arrêtez, la dépense s'arrête et le site reste à vous, ce qui n'est pas le cas d'une location.`,
+            "Retenez la différence : acheter un site, ou louer sa présence. Acheter, c'est payer une fois et garder le site. Louer, c'est payer pour qu'il continue d'exister, et c'est cela qui coûte cher.",
+            "Les conditions complètes, dont le premier mois offert à la livraison pour la formule mensuelle, sont sur [la page des tarifs](/tarifs). Nous ne promettons aucun classement. Pour la propriété du site, lisez [posséder son site sans abonnement](/blog/posseder-son-site-sans-abonnement).",
+          ],
+          en: [
+            `No, because your website is paid for once and belongs to you, with or without the support plan. The "Suivi & Visibilité" plan is optional: ${FOLLOW_UP_MONTHLY.en} with no commitment, or ${FOLLOW_UP_ANNUAL.en}. If you stop it, the spending stops and the website stays yours, which is not true of a rental.`,
+            "Keep the difference in mind: buying a website, or renting your presence. Buying means paying once and keeping the site. Renting means paying for it to keep existing, and that is what costs a lot.",
+            "The full conditions, including the first month free at delivery for the monthly plan, are on [the pricing page](/tarifs). We promise no ranking. For ownership, read [owning your website without a subscription](/blog/posseder-son-site-sans-abonnement).",
+          ],
+        },
+      },
+      {
         id: "sortir",
         title: {
           fr: "Comment sortir d'un abonnement sans tout perdre",
@@ -2255,8 +2352,8 @@ export const blogPosts: BlogPost[] = [
       en: "A website paid for once, that stays yours",
     },
     ctaDescription: {
-      fr: "Le détail de ce qui est inclus, les modalités de paiement et la comparaison des modèles figurent sur notre page tarifs. Le code est déposé à votre nom, et il n'y a aucun abonnement à régler pour que le site reste en ligne.",
-      en: "The details of what is included and how payment works are on our pricing page. The code sits in a repository under your name, with no subscription required to keep the site online.",
+      fr: "Le détail de ce qui est inclus, les modalités de paiement et la comparaison des modèles figurent sur notre page tarifs. Votre site vous appartient et aucun abonnement n'est nécessaire pour qu'il existe : l'accompagnement est facultatif.",
+      en: "The details of what is included and how payment works are on our pricing page. Your website belongs to you and no subscription is needed for it to exist: the support plan is optional.",
     },
   },
 

@@ -144,8 +144,8 @@ export default async function Home() {
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-300">
               {locale === "fr"
-                ? "Le cadre est simple : nous créons votre site sur mesure et nous le mettons en ligne, nom de domaine compris."
-                : "The frame stays simple: we create your website to measure and put it online, domain name included."}
+                ? "Le cadre est simple : nous créons votre site sur mesure et nous le mettons en ligne, nom de domaine offert la première année."
+                : "The frame stays simple: we create your website to measure and put it online, domain name free for the first year."}
             </p>
           </aside>
         </div>
