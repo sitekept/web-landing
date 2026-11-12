@@ -295,6 +295,17 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             vous l&apos;arrêtez, votre site reste en ligne et à vous.
           </p>
           <p className="mt-4 text-slate-600">
+            Le suivi est une suite possible, jamais une obligation. Pour voir
+            les options côte à côte, consultez{" "}
+            <Link
+              href="/offres"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              nos trois offres
+            </Link>
+            .
+          </p>
+          <p className="mt-4 text-slate-600">
             Le détail, les modalités de paiement et la comparaison entre acheter
             son site et louer sa présence figurent sur la{" "}
             <Link

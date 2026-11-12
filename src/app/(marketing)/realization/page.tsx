@@ -137,16 +137,28 @@ export default async function RealizationPage() {
                 : "Every project was built, deployed and handed over to its owner, source code included."}
             </p>
             {locale === "fr" ? (
-              <p className="mt-4 text-lg leading-8 text-slate-600">
-                Vous voulez vous projeter dans votre métier ? Parcourez nos{" "}
-                <Link
-                  href="/templates"
-                  className="font-medium text-blue-700 underline underline-offset-4"
-                >
-                  templates
-                </Link>
-                . Votre site est créé sur mesure.
-              </p>
+              <>
+                <p className="mt-4 text-lg leading-8 text-slate-600">
+                  Vous voulez vous projeter dans votre métier ? Parcourez nos{" "}
+                  <Link
+                    href="/templates"
+                    className="font-medium text-blue-700 underline underline-offset-4"
+                  >
+                    templates
+                  </Link>
+                  . Votre site est créé sur mesure.
+                </p>
+                <p className="mt-4 text-lg leading-8 text-slate-600">
+                  Pour un site vitrine comme ceux-ci, comparez{" "}
+                  <Link
+                    href="/offres"
+                    className="font-medium text-blue-700 underline underline-offset-4"
+                  >
+                    nos trois offres
+                  </Link>{" "}
+                  avant de demander votre devis.
+                </p>
+              </>
             ) : null}
           </div>
 

@@ -132,6 +132,16 @@ export default async function TemplatesPage() {
             </Link>
             .
           </p>
+          <p className="mt-4 text-slate-600">
+            Pour un site vitrine sur mesure, comparez{" "}
+            <Link
+              href="/offres"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              nos trois offres
+            </Link>{" "}
+            avant de demander votre devis.
+          </p>
         </div>
       </section>
     </>

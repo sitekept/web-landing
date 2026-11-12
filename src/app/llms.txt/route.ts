@@ -45,6 +45,7 @@ function buildLlmsTxt(): string {
   const sitePrice = price(PRICING.site.amount);
   const followUpMonthly = price(PRICING.followUp.monthly, "month");
   const followUpAnnual = price(PRICING.followUp.annual, "year");
+  const campaignMonthly = price(PRICING.campaigns.minimumMonthly, "month");
   const vatNotice = vatLegalNotice();
 
   const scopeItems = [
@@ -78,11 +79,17 @@ function buildLlmsTxt(): string {
     "- Le code et les accès techniques sont transmis au client.",
     "- Aucun abonnement n'est nécessaire pour que le site existe.",
     `- Accompagnement facultatif « Suivi & Visibilité » : ${followUpMonthly} sans engagement, ou ${followUpAnnual}. Le premier mois est offert à la livraison pour la formule mensuelle. L'arrêter ne touche pas au site.`,
+    `- Gestion de campagnes publicitaires facultative : à partir de ${campaignMonthly}, hors budget média payé aux plateformes. Aucun résultat n'est promis.`,
     "- Aucune position dans les résultats de recherche n'est promise : personne ne contrôle l'algorithme des moteurs.",
     "",
     "## Pages principales",
     "",
     link("Accueil", "", "présentation de l'offre et formulaire de devis"),
+    link(
+      "Offres",
+      "/offres",
+      "le site, le suivi facultatif et les campagnes publicitaires, comparés"
+    ),
     link("Tarifs", "/tarifs", "ce qui est inclus et ce qui est facturé à part"),
     link("Templates", "/templates", "exemples de sites par métier"),
     link("Réalisations", "/realization", "sites déjà livrés"),

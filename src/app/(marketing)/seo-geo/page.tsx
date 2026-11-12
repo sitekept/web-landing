@@ -641,6 +641,18 @@ export default async function SeoGeoPage() {
             </Link>{" "}
             précise ce qui est inclus dans un site livré.
           </p>
+          <p className="mt-4 text-slate-600">
+            Le SEO et le GEO travaillent la visibilité naturelle de votre site.
+            La publicité payante locale est un autre levier&nbsp;: des campagnes
+            que vous financez, sans résultat garanti. Voir{" "}
+            <Link
+              href="/offres"
+              className="font-medium text-blue-700 underline underline-offset-4"
+            >
+              nos campagnes publicitaires locales
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </>

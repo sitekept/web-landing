@@ -21,6 +21,9 @@ const FOLLOW_UP_MONTHLY = formatPriceWithTax(PRICING.followUp.monthly, {
 const FOLLOW_UP_ANNUAL = formatPriceWithTax(PRICING.followUp.annual, {
   period: "year",
 });
+const CAMPAIGN_MONTHLY = formatPriceWithTax(PRICING.campaigns.minimumMonthly, {
+  period: "month",
+});
 const VAT_NOTICE = vatLegalNotice();
 const MAX_PAGES = SITE_SCOPE.maxPages;
 const CAMPAIGN_PAGES = SITE_SCOPE.campaignLandingPages;
@@ -63,7 +66,7 @@ const NOT_INCLUDED = [
   "Les séances photo",
 ];
 
-const FAQ = [
+const FAQ: { question: string; answer: string; link?: { label: string; href: string } }[] = [
   {
     question: "Combien coûte un site internet chez Sitekept ?",
     answer:
@@ -73,6 +76,7 @@ const FAQ = [
     question: "Y a-t-il un abonnement à payer chaque mois ?",
     answer:
       `Non, aucun abonnement n'est nécessaire pour que votre site existe : vous le payez une fois. En option, l'accompagnement « Suivi & Visibilité » assure des modifications et un suivi de votre visibilité, à ${FOLLOW_UP_MONTHLY} sans engagement ou ${FOLLOW_UP_ANNUAL}. Si vous l'arrêtez, le site reste en ligne et à vous, code compris.`,
+    link: { label: "Voir nos trois offres", href: "/offres" },
   },
   {
     question: "Quelles sont les modalités de paiement ?",
@@ -214,7 +218,12 @@ export default function TarifsPage() {
           { name: "Tarifs", path: "/tarifs" },
         ]}
       />
-      <FaqJsonLd items={FAQ} />
+      <FaqJsonLd
+        items={FAQ.map((item) => ({
+          question: item.question,
+          answer: item.link ? `${item.answer} ${item.link.label}.` : item.answer,
+        }))}
+      />
 
       <section className="bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] px-6 pb-16 pt-28 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
@@ -320,6 +329,21 @@ export default function TarifsPage() {
               le site reste en ligne, à vous. La formule annuelle n&apos;est pas
               remboursée au prorata si vous l&apos;arrêtez en cours d&apos;année.
             </p>
+            <p className="mt-2 text-slate-600">
+              Si vous voulez aussi des campagnes publicitaires, la gestion
+              démarre à {CAMPAIGN_MONTHLY}, hors budget média. Nous ne
+              promettons aucun résultat.
+            </p>
+            <Button
+              asChild
+              variant="outline"
+              className="mt-6 border-slate-300"
+            >
+              <Link href="/offres">
+                Voir nos trois offres
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -603,7 +627,21 @@ export default function TarifsPage() {
                 <dt className="text-lg font-semibold text-slate-900">
                   {item.question}
                 </dt>
-                <dd className="mt-2 leading-7 text-slate-600">{item.answer}</dd>
+                <dd className="mt-2 leading-7 text-slate-600">
+                  {item.answer}
+                  {item.link ? (
+                    <>
+                      {" "}
+                      <Link
+                        href={item.link.href}
+                        className="font-medium text-blue-700 underline underline-offset-4"
+                      >
+                        {item.link.label}
+                      </Link>
+                      .
+                    </>
+                  ) : null}
+                </dd>
               </div>
             ))}
           </dl>
