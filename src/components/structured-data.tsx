@@ -1,4 +1,4 @@
-import { PRICING, formatPrice } from "@/content/pricing";
+import { PRICING, formatPrice, schemaPrice } from "@/content/pricing";
 import { SITE_URL } from "@/lib/site-url";
 
 /**
@@ -246,6 +246,91 @@ export function ServiceJsonLd({
     ...(audienceType
       ? { audience: { "@type": "Audience", audienceType } }
       : {}),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(data) }}
+    />
+  );
+}
+
+/**
+ * Catalogue des trois offres de /offres : un Service rattaché à l'entité
+ * éditrice (`@id` = `${SITE_URL}/#organization`) qui porte trois Offer.
+ *
+ * Règle du fichier : ne déclarer que ce que la page affiche. Les montants
+ * viennent de la constante unique (src/content/pricing.ts, plan-v2 § 6 bis) :
+ *  - site : prix unique (500 EUR au démarrage) ;
+ *  - suivi : prix mensuel et prix annuel, deux UnitPriceSpecification ;
+ *  - campagnes : `minPrice` seulement, car la page affiche « à partir de » et
+ *    que le budget média est en sus.
+ * `schemaPrice` n'ajoute `valueAddedTaxIncluded` que lorsque la TVA s'applique :
+ * en franchise (art. 293 B du CGI), la propriété est omise. Aucun
+ * `aggregateRating`, aucune adresse.
+ */
+export function OfferCatalogJsonLd() {
+  const url = `${SITE_URL}/offres`;
+  const { price: campaignMinPrice, ...campaignMinTax } = schemaPrice(
+    PRICING.campaigns.minimumMonthly
+  );
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    url,
+    name: "Site internet, suivi et campagnes publicitaires",
+    description:
+      "Trois offres : un site vitrine sur mesure payé une seule fois, un suivi mensuel ou annuel sans engagement, et des campagnes publicitaires Google, Meta et TikTok.",
+    serviceType: "Création de site internet",
+    provider: { "@id": `${SITE_URL}/#organization` },
+    areaServed: { "@type": "Country", name: "France" },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Offres Sitekept",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          name: "Site vitrine",
+          description:
+            "Site vitrine sur mesure, payé une seule fois, mis en ligne 48 h après réception des éléments complets.",
+          ...schemaPrice(PRICING.site.amount),
+        },
+        {
+          "@type": "Offer",
+          name: "Suivi & Visibilité",
+          description:
+            "Deux modifications par mois, non cumulables, et un suivi de la visibilité du site. Mensuel sans engagement, ou annuel.",
+          priceSpecification: [
+            {
+              "@type": "UnitPriceSpecification",
+              ...schemaPrice(PRICING.followUp.monthly),
+              unitCode: "MON",
+              billingDuration: 1,
+            },
+            {
+              "@type": "UnitPriceSpecification",
+              ...schemaPrice(PRICING.followUp.annual),
+              unitCode: "ANN",
+              billingDuration: 1,
+            },
+          ],
+        },
+        {
+          "@type": "Offer",
+          name: "Campagnes publicitaires",
+          description:
+            "Gestion de campagnes Google Ads, Meta et TikTok, à partir du montant indiqué par mois, budget média en sus. Audit gratuit.",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: campaignMinPrice,
+            ...campaignMinTax,
+          },
+        },
+      ],
+    },
   };
 
   return (

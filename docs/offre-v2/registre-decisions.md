@@ -56,6 +56,7 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Retours inclus avant livraison | 2 séries | Validé |
 | Pause du projet sans réponse du client | 15 jours | Validé |
 | Modifications du suivi | 2 par mois, non cumulables | Validé |
+| Contenu du suivi SEO/GEO | Search Console surveillée, une optimisation de page par mois, un compte rendu mensuel de la place du site dans les résultats, veille de présence dans les réponses des moteurs d'IA ; aucun classement garanti (liste du plan initial § 1.5, reprise sur /offres avec l'accord de Joseph du 12 nov. 2026, à confirmer) | Proposé |
 | Délai de traitement d'une modification | 5 jours ouvrés | Validé |
 | Correction gratuite des anomalies | 30 jours après mise en ligne | Validé |
 | Réception tacite | 7 jours après mise en ligne | Validé |
