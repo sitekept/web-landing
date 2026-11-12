@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Check, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TubesCursor from "@/components/ui/tubes-cursor";
 import {
@@ -10,10 +10,11 @@ import {
   getLocalizedValue,
   homeContent,
   offerHighlights,
+  plans,
   processSteps,
   whySitekeptItems,
 } from "@/content/site-content";
-import { PRICING, formatPrice } from "@/content/pricing";
+import { PRICING, formatPrice, vatLegalNotice } from "@/content/pricing";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
 import { FaqJsonLd } from "@/components/structured-data";
@@ -41,6 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Home() {
   const locale = await getSiteLocale();
   const hero = homeContent.hero;
+  const vatNotice = vatLegalNotice();
   const deliveryArticle = blogPosts.find(
     (post) => post.slug === "comment-se-passe-la-livraison-d-un-site-web-chez-sitekept"
   );
@@ -133,6 +135,14 @@ export default async function Home() {
                   ? `Suivi en option : ${formatPrice(PRICING.followUp.monthly, { locale, period: "month" })}, sans engagement`
                   : `Optional follow-up: ${formatPrice(PRICING.followUp.monthly, { locale, period: "month" })}, no commitment`}
               </p>
+              <p className="mt-2 text-sm">
+                <Link
+                  href="/offres"
+                  className="inline-flex py-1 font-medium text-blue-300 underline underline-offset-4 transition-colors hover:text-blue-200"
+                >
+                  {locale === "fr" ? "Voir nos offres" : "See our plans"}
+                </Link>
+              </p>
               <div className="mt-6 space-y-3">
                 {getLocalizedValue(homeContent.trustStrip, locale).map((item) => (
                   <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
@@ -197,6 +207,78 @@ export default async function Home() {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-blue-100 bg-slate-50 px-6 py-20 sm:py-24 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
+              {getLocalizedText(homeContent.plansSection.eyebrow, locale)}
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+              {getLocalizedText(homeContent.plansSection.title, locale)}
+            </h2>
+            <p className="mt-4 text-lg leading-8 text-slate-600">
+              {getLocalizedText(homeContent.plansSection.description, locale)}
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {plans.map((plan) => (
+              <article
+                key={plan.id}
+                className="flex flex-col rounded-md border border-blue-100 bg-white p-6 shadow-sm"
+              >
+                <div className="h-0.5 w-12 bg-blue-600" />
+                <h3 className="mt-5 text-xl font-semibold text-slate-950">
+                  {getLocalizedText(plan.name, locale)}
+                </h3>
+                <p className="mt-5 text-sm text-slate-500">
+                  {getLocalizedText(plan.priceLabel, locale)}
+                </p>
+                <p className="mt-1 text-3xl font-semibold text-slate-950">
+                  {getLocalizedText(plan.price, locale)}
+                </p>
+                <p className="mt-1 text-sm text-slate-500">
+                  {getLocalizedText(plan.priceNote, locale)}
+                </p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  {getLocalizedText(plan.pitch, locale)}
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {getLocalizedValue(plan.features, locale).map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex gap-3 text-sm leading-6 text-slate-700"
+                    >
+                      <Check
+                        className="mt-1 h-4 w-4 shrink-0 text-blue-600"
+                        aria-hidden="true"
+                      />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            {vatNotice ? (
+              <p className="text-sm text-slate-500">{vatNotice}</p>
+            ) : null}
+            <Button
+              asChild
+              variant="outline"
+              className="mt-6 border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
+            >
+              <Link href="/offres">
+                {getLocalizedText(homeContent.plansSection.linkLabel, locale)}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

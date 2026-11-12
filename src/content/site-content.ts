@@ -53,6 +53,18 @@ export interface OfferHighlight {
   };
 }
 
+export interface PlanOffer {
+  id: "site" | "suivi" | "campagnes";
+  name: LocalizedText;
+  /** Courte mention au-dessus du prix (« Paiement unique », « À partir de »…). */
+  priceLabel: LocalizedText;
+  /** Prix formaté à partir de la constante unique (`pricing.ts`). */
+  price: LocalizedText;
+  priceNote: LocalizedText;
+  pitch: LocalizedText;
+  features: Record<SiteLocale, string[]>;
+}
+
 export interface WhySitekeptItem {
   id: string;
   icon: "rocket" | "shield" | "search" | "messagesSquare";
@@ -129,6 +141,12 @@ export interface HomeContent {
     eyebrow: LocalizedText;
     title: LocalizedText;
     description: LocalizedText;
+  };
+  plansSection: {
+    eyebrow: LocalizedText;
+    title: LocalizedText;
+    description: LocalizedText;
+    linkLabel: LocalizedText;
   };
   whySection: {
     eyebrow: LocalizedText;
@@ -265,6 +283,24 @@ export const homeContent: HomeContent = {
     description: {
       fr: "Vous savez ce qui est inclus, ce qui vous appartient et comment votre site est mis en ligne.",
       en: "You know what is included, what you own and how your website goes live.",
+    },
+  },
+  plansSection: {
+    eyebrow: {
+      fr: "Nos offres",
+      en: "Our plans",
+    },
+    title: {
+      fr: "Trois offres, à choisir selon vos besoins.",
+      en: "Three plans, to pick as you need.",
+    },
+    description: {
+      fr: "Vous choisissez ce dont vous avez besoin\u00a0: une offre, deux ou les trois.",
+      en: "You choose what you need: one plan, two or all three.",
+    },
+    linkLabel: {
+      fr: "Voir le détail des offres",
+      en: "See the plans in detail",
     },
   },
   whySection: {
@@ -454,6 +490,118 @@ export const offerHighlights: OfferHighlight[] = [
         description:
           "You validate the message and the look. We take care of the technical side from setup to launch.",
       },
+    },
+  },
+];
+
+/** Prix mensuel de départ des campagnes, formaté à partir de la constante unique. */
+const CAMPAIGN_MONTHLY: LocalizedText = {
+  fr: formatPrice(PRICING.campaigns.minimumMonthly, { period: "month" }),
+  en: formatPrice(PRICING.campaigns.minimumMonthly, {
+    locale: "en",
+    period: "month",
+  }),
+};
+
+/**
+ * Résumé des trois offres de la home. Les prix viennent de `pricing.ts` ;
+ * le détail et les conditions sont sur /offres.
+ */
+export const plans: PlanOffer[] = [
+  {
+    id: "site",
+    name: {
+      fr: "Site vitrine",
+      en: "Showcase website",
+    },
+    priceLabel: {
+      fr: "Paiement unique",
+      en: "Paid once",
+    },
+    price: SITE_PRICE,
+    priceNote: {
+      fr: "Aucun abonnement nécessaire.",
+      en: "No subscription needed.",
+    },
+    pitch: {
+      fr: "Votre site, créé sur mesure pour votre activité.",
+      en: "Your website, tailor-made for your business.",
+    },
+    features: {
+      fr: [
+        "En ligne 48\u00a0h après réception de vos éléments complets",
+        "Nom de domaine offert la première année",
+        "Un site à vous, comme votre enseigne",
+      ],
+      en: [
+        "Live 48\u00a0hours after we receive all your materials",
+        "Domain name free for the first year",
+        "A website that is yours, like your shop sign",
+      ],
+    },
+  },
+  {
+    id: "suivi",
+    name: {
+      fr: "Suivi & Visibilité",
+      en: "Follow-up & Visibility",
+    },
+    priceLabel: {
+      fr: "Sans engagement",
+      en: "No commitment",
+    },
+    price: FOLLOW_UP_MONTHLY,
+    priceNote: {
+      fr: `Ou ${FOLLOW_UP_ANNUAL.fr}.`,
+      en: `Or ${FOLLOW_UP_ANNUAL.en}.`,
+    },
+    pitch: {
+      fr: "Des modifications et un suivi de votre visibilité, chaque mois.",
+      en: "Edits and a monthly check on your visibility.",
+    },
+    features: {
+      fr: [
+        "Premier mois offert à la livraison de votre site (formule mensuelle)",
+        "2 modifications par mois, non cumulables",
+        "Si vous arrêtez, votre site reste à vous",
+      ],
+      en: [
+        "First month free when your site is delivered (monthly plan)",
+        "2 edits per month, not carried over",
+        "If you stop, your website stays yours",
+      ],
+    },
+  },
+  {
+    id: "campagnes",
+    name: {
+      fr: "Campagnes publicitaires",
+      en: "Ad campaigns",
+    },
+    priceLabel: {
+      fr: "À partir de",
+      en: "From",
+    },
+    price: CAMPAIGN_MONTHLY,
+    priceNote: {
+      fr: "+ budget média, payé aux plateformes.",
+      en: "+ media budget, paid to the platforms.",
+    },
+    pitch: {
+      fr: "La publicité en ligne gérée pour vous, sur vos comptes.",
+      en: "Online advertising managed for you, on your accounts.",
+    },
+    features: {
+      fr: [
+        "Audit gratuit avant tout engagement",
+        "Aucune promesse de résultat",
+        "Compte rendu chaque mois",
+      ],
+      en: [
+        "Free audit before any commitment",
+        "No promise of results",
+        "Monthly report",
+      ],
     },
   },
 ];
