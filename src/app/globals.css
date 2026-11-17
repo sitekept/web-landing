@@ -41,6 +41,97 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Tokens de template : vocabulaire fermé, valeurs dans [data-template]. */
+  --color-tpl-ink: var(--tpl-ink);
+  --color-tpl-ink-muted: var(--tpl-ink-muted);
+  --color-tpl-surface: var(--tpl-surface);
+  --color-tpl-raised: var(--tpl-raised);
+  --color-tpl-line: var(--tpl-line);
+  --color-tpl-accent: var(--tpl-accent);
+  --color-tpl-accent-ink: var(--tpl-accent-ink);
+  --color-tpl-inverse: var(--tpl-inverse);
+  --color-tpl-inverse-ink: var(--tpl-inverse-ink);
+  --radius-tpl: var(--tpl-radius);
+  --radius-tpl-pill: var(--tpl-radius-pill);
+  --font-tpl-display: var(--tpl-font-display, var(--font-inter));
+  --font-tpl-text: var(--tpl-font-text, var(--font-inter));
+  --shadow-tpl-sm: var(--tpl-shadow-sm);
+  --shadow-tpl-lg: var(--tpl-shadow-lg);
+  --spacing-tpl-section: var(--tpl-space-section);
+  --container-tpl-measure: var(--tpl-measure);
+  --leading-tpl-display: var(--tpl-leading-display);
+  --leading-tpl-body: var(--tpl-leading-body);
+  --tracking-tpl-eyebrow: var(--tpl-tracking-eyebrow);
+  /* xs à lg : texte courant (interlignage body) ; xl à 3xl : titres (display). */
+  --text-tpl-xs: var(--tpl-text-xs);
+  --text-tpl-xs--line-height: var(--tpl-leading-body);
+  --text-tpl-sm: var(--tpl-text-sm);
+  --text-tpl-sm--line-height: var(--tpl-leading-body);
+  --text-tpl-base: var(--tpl-text-base);
+  --text-tpl-base--line-height: var(--tpl-leading-body);
+  --text-tpl-lg: var(--tpl-text-lg);
+  --text-tpl-lg--line-height: var(--tpl-leading-body);
+  --text-tpl-xl: var(--tpl-text-xl);
+  --text-tpl-xl--line-height: var(--tpl-leading-display);
+  --text-tpl-2xl: var(--tpl-text-2xl);
+  --text-tpl-2xl--line-height: var(--tpl-leading-display);
+  --text-tpl-3xl: var(--tpl-text-3xl);
+  --text-tpl-3xl--line-height: var(--tpl-leading-display);
+}
+
+/*
+ * Contrat des templates : un template rebinde ces --tpl-* via `style` sur
+ * l'élément [data-template] (voir src/lib/template-theme.ts). Les valeurs
+ * ci-dessous sont des replis neutres. Un nouveau besoin visuel devient
+ * d'abord un token ici, jamais une valeur en dur dans un composant.
+ * En @layer base pour que les utilitaires et le `style` inline priment.
+ */
+@layer base {
+  [data-template] {
+    /* Palette */
+    --tpl-ink: oklch(0.22 0.01 260);
+    --tpl-ink-muted: color-mix(
+      in oklch,
+      var(--tpl-ink) 68%,
+      var(--tpl-surface)
+    );
+    --tpl-surface: oklch(0.985 0.003 260);
+    --tpl-raised: oklch(1 0 0);
+    --tpl-line: color-mix(in oklch, var(--tpl-ink) 14%, transparent);
+    --tpl-accent: oklch(0.3 0.02 260);
+    --tpl-accent-ink: oklch(0.985 0.003 260);
+    --tpl-inverse: oklch(0.2 0.01 260);
+    --tpl-inverse-ink: oklch(0.97 0.003 260);
+
+    /* Formes et profondeur (2 paliers) */
+    --tpl-radius: 0.75rem;
+    --tpl-radius-pill: 9999px;
+    --tpl-shadow-sm:
+      0 1px 2px color-mix(in oklch, var(--tpl-ink) 8%, transparent),
+      0 1px 1px color-mix(in oklch, var(--tpl-ink) 4%, transparent);
+    --tpl-shadow-lg:
+      0 24px 48px -16px color-mix(in oklch, var(--tpl-ink) 18%, transparent),
+      0 8px 16px -8px color-mix(in oklch, var(--tpl-ink) 8%, transparent);
+
+    /* Rythme et mesure */
+    --tpl-space-section: clamp(4rem, 2.5rem + 6vw, 8rem);
+    --tpl-measure: 68ch;
+
+    /* Typographie */
+    --tpl-font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    --tpl-font-text: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    --tpl-text-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+    --tpl-text-sm: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
+    --tpl-text-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --tpl-text-lg: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+    --tpl-text-xl: clamp(1.5rem, 1.3rem + 1vw, 2.125rem);
+    --tpl-text-2xl: clamp(2.125rem, 1.6rem + 2.6vw, 3.75rem);
+    --tpl-text-3xl: clamp(2.75rem, 1.5rem + 6vw, 6.75rem);
+    --tpl-leading-display: 1.04;
+    --tpl-leading-body: 1.65;
+    --tpl-tracking-eyebrow: 0.18em;
+  }
 }
 
 :root {

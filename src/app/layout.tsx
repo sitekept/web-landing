@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Instrument_Serif } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -9,7 +9,17 @@ import { ENV } from "@/lib/env";
 import { getMessage, getSiteLocale } from "@/lib/site-messages";
 import { SITE_URL } from "@/lib/site-url";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+
+// Police display des templates : exposée en variable, appliquée nulle part ici.
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  variable: "--font-display-serif",
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
@@ -83,7 +93,10 @@ export default async function RootLayout({
   const locale = await getSiteLocale();
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html
+      lang={locale}
+      className={`scroll-smooth ${inter.variable} ${instrumentSerif.variable}`}
+    >
       <head>
         <meta
           name="apple-mobile-web-app-title"
