@@ -145,3 +145,4 @@ Non bloquants et points pour Joseph :
 - FAQ abonnement de /tarifs à 4 phrases avec le libellé du lien ; « ? » sans espace insécable dans la FAQ de /offres ; « 65 € /mois » sur /offres contre « 65 €/mois » sur la home ; `billingDuration` du JSON-LD du suivi (`referenceQuantity` plus juste) ;
 - clés mortes de `messages/*.json` (« 600€ », « 48h chrono », « résultats garantis ») utilisées seulement par des composants inutilisés : à nettoyer ;
 - questions ouvertes de 2.1 : audit préalable d'un site fait ailleurs, gratuit ou payant ? ; textes repris du plan initial hors registre ; libellé « Site vitrine » ; ligne « Pour qui » du tableau.
+- 17 nov. : Joseph autorise la poussée. `feat/offre-v2` poussée (4b014b8..efb5e4a). Preview Vercel prête (protégée par login) : https://web-landing-78jhsps9g-jonathans-projects-8295665d.vercel.app — phase 3 en attente de la validation de Joseph.
