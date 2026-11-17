@@ -33,7 +33,7 @@ export const OFFER_CARDS: Record<
   site: {
     title: "Un site internet",
     description:
-      "Un site clair pour être trouvé et contacté, payé une seule fois.",
+      "Un site sur mesure pour présenter votre activité, payé une seule fois.",
   },
   suivi: {
     title: "Le suivi de votre site",
@@ -55,6 +55,38 @@ export const OTHER_MESSAGE_MIN_LENGTH = 10;
 
 export const OTHER_MESSAGE_ERROR =
   "Précisez votre besoin en quelques mots (10 caractères minimum).";
+
+export const NO_OFFER_ERROR = "Choisissez au moins une offre.";
+
+/**
+ * Textes du sélecteur d'offres (`offer-picker.tsx`), communs au tunnel et au
+ * formulaire de secours. Aucun prix ici.
+ */
+export const OFFER_PICKER_TEXT = {
+  legend: "Que souhaitez-vous ?",
+  otherLabel: "Précisez votre besoin",
+  /** Ligne « Proposé » au registre : affichée seulement si le parent l'active. */
+  followUpSuggestion: "Ajouter le suivi : premier mois offert à la livraison",
+};
+
+/**
+ * Erreurs de la sélection, avec les mêmes règles que le schéma serveur :
+ * au moins une offre côté interface, et « autre » impose un texte de
+ * `OTHER_MESSAGE_MIN_LENGTH` caractères (après trim). Champ valide : `undefined`.
+ */
+export function getOfferSelectionErrors(
+  offers: readonly OfferSlug[],
+  otherText: string
+): { offers?: string; other?: string } {
+  return {
+    offers: offers.length === 0 ? NO_OFFER_ERROR : undefined,
+    other:
+      offers.includes("autre") &&
+      otherText.trim().length < OTHER_MESSAGE_MIN_LENGTH
+        ? OTHER_MESSAGE_ERROR
+        : undefined,
+  };
+}
 
 export function isOfferSlug(value: string): value is OfferSlug {
   return (OFFER_SLUGS as readonly string[]).includes(value);
@@ -80,6 +112,14 @@ export function parseOfferParam(value: string | null): OfferSlug[] {
 
   return normalizeOffers(offers);
 }
+
+/**
+ * Origine d'une demande, paramètre `form_origin` de `generate_lead` :
+ * formulaire du bas de la home (« secours ») ou tunnel en modale.
+ */
+export const LEAD_FORM_ORIGINS = ["secours", "tunnel"] as const;
+
+export type LeadFormOrigin = (typeof LEAD_FORM_ORIGINS)[number];
 
 /** Format attendu par GA4 : `"site,suivi"`, dans l'ordre canonique. */
 export function formatOffersForAnalytics(offers: readonly OfferSlug[]): string {

@@ -56,7 +56,7 @@ export function buildLeadEmail(lead: ContactLead, sentAt: Date) {
   const requestLines = [
     `<p style="margin: 5px 0;"><strong>Offres souhaitées :</strong> ${escapeHtml(summary.offers)}</p>`,
     summary.other !== undefined
-      ? `<p style="margin: 5px 0;"><strong>Autre :</strong> ${escapeHtml(summary.other)}</p>`
+      ? `<p style="margin: 5px 0;"><strong>Autre :</strong> ${escapeHtml(summary.other).replace(/\n/g, "<br>")}</p>`
       : "",
     summary.activity
       ? `<p style="margin: 5px 0;"><strong>Métier :</strong> ${escapeHtml(summary.activity)}</p>`

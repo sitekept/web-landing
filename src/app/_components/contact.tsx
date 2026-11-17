@@ -51,7 +51,10 @@ export async function Contact() {
             messages={{
               title: getMessage(locale, "contactForm.title"),
               name: getMessage(locale, "contactForm.name"),
-              namePlaceholder: getMessage(locale, "contactForm.namePlaceholder"),
+              namePlaceholder: getMessage(
+                locale,
+                "contactForm.namePlaceholder"
+              ),
               email: getMessage(locale, "contactForm.email"),
               emailPlaceholder: getMessage(
                 locale,
@@ -59,18 +62,17 @@ export async function Contact() {
               ),
               phone: getMessage(locale, "contactForm.phone"),
               phoneInvalid: getMessage(locale, "contactForm.phoneInvalid"),
+              contactChannel: getMessage(locale, "contactForm.contactChannel"),
               project: getMessage(locale, "contactForm.project"),
               projectPlaceholder: getMessage(
                 locale,
                 "contactForm.projectPlaceholder"
               ),
               required: getMessage(locale, "contactForm.required"),
+              optional: getMessage(locale, "contactForm.optional"),
               submitting: getMessage(locale, "contactForm.submitting"),
               submit: getMessage(locale, "contactForm.submit"),
-              successMessage: getMessage(
-                locale,
-                "contactForm.successMessage"
-              ),
+              successMessage: getMessage(locale, "contactForm.successMessage"),
               errorMessage: getMessage(locale, "contactForm.errorMessage"),
             }}
           />
