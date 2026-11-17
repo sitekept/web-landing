@@ -1,4 +1,4 @@
-# Registre des décisions Sitekept (mis à jour le 11 novembre 2026)
+# Registre des décisions Sitekept (mis à jour le 17 novembre 2026)
 
 Ce registre est la référence unique. **En cas de contradiction avec les crochets `[À DÉCIDER]` ou `[PROPOSITION]` des autres documents** (plan v2, CGV/CGU, kit opérationnel), c'est lui qui prévaut. Statuts : **Validé** (dit par Joseph), **Proposé** (suggestion de Claude, pas encore confirmée), **Ouvert** (à décider).
 
@@ -40,7 +40,8 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Sujet | Décision | Statut |
 |---|---|---|
 | Navigation | 5 entrées | Validé |
-| Tunnel de formulaire | 3 étapes, modale ouverte au clic, étape 1 dans le hero, téléphone facultatif avec choix du canal de rappel | Validé |
+| Tunnel de formulaire | 3 étapes, modale ouverte au clic, étape 1 dans le hero (variante à choisir sur captures en phase 3), choix du canal de rappel (e-mail, téléphone, WhatsApp) | Validé |
+| Téléphone dans les formulaires | **Obligatoire** dans le tunnel et le formulaire de secours, au format international (décision du 17 nov. 2026, remplace « téléphone facultatif ») | Validé |
 | Sélection des offres dans le formulaire | Multi-sélection parmi Site, Suivi, Campagnes, Autre ; « Autre » ouvre le champ de texte, obligatoire dans ce cas. Tunnel et formulaire de secours | Validé |
 | Ligne « Ajouter le suivi : premier mois offert » sous les cartes quand Site est coché | Suggestion de vente croisée | Proposé |
 | Constante unique des prix et du régime fiscal | Un seul fichier de configuration, pour basculer le jour où la TVA s'appliquera. Mini-plan de phase 1 accepté par Joseph le 11 nov. ; en place dans `src/content/pricing.ts` (commit `e3f8df9`) | Validé |

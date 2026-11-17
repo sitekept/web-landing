@@ -146,3 +146,10 @@ Non bloquants et points pour Joseph :
 - clés mortes de `messages/*.json` (« 600€ », « 48h chrono », « résultats garantis ») utilisées seulement par des composants inutilisés : à nettoyer ;
 - questions ouvertes de 2.1 : audit préalable d'un site fait ailleurs, gratuit ou payant ? ; textes repris du plan initial hors registre ; libellé « Site vitrine » ; ligne « Pour qui » du tableau.
 - 17 nov. : Joseph autorise la poussée. `feat/offre-v2` poussée (4b014b8..efb5e4a). Preview Vercel prête (protégée par login) : https://web-landing-78jhsps9g-jonathans-projects-8295665d.vercel.app — phase 3 en attente de la validation de Joseph.
+
+## Phase 3 — tunnel de formulaire et mesure (démarrée le 17 nov. 2026)
+
+Mini-plan accepté par Joseph le 17 nov. : 3.1 partie serveur (constantes partagées, schéma Zod, mail de lead), 3.2 sélection des offres partagée et formulaire de secours, 3.3 tunnel `<dialog>` (Provider, Trigger, CTA de `/offres` et de la home, mesure GA4 après consentement), 3.4 hero de la home (captures des deux variantes et de la ligne « premier mois offert » montrées à Joseph avant implémentation), 3.5 vérification de fin de phase (Opus élevé). **Décision de Joseph : le téléphone reste obligatoire** dans les formulaires (registre mis à jour) ; le canal de rappel est conservé ; l'e-mail de confirmation au prospect est conservé. Navigation, footer et pages métier : phase 4. Tous les tests d'envoi se font avec `RESEND_API_KEY` vide (aucun `.env.local` dans le worktree).
+
+| Tâche | Périmètre | Tours | Verdict final | Bloquants rencontrés |
+|---|---|---|---|---|
