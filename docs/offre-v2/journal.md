@@ -153,3 +153,4 @@ Mini-plan accepté par Joseph le 17 nov. : 3.1 partie serveur (constantes partag
 
 | Tâche | Périmètre | Tours | Verdict final | Bloquants rencontrés |
 |---|---|---|---|---|
+| 3.1 Partie serveur | `src/features/lead-funnel/lead-options.ts` (nouveau : offres, 12 métiers + autre, canaux, `parseOfferParam`/`parseMetierParam`), `contact-form/contact-schema.ts` (nouveau, schéma Zod), `contact-form/lead-email.ts` (nouveau, mail de lead), `contact-form.action.ts` | 1 | PASS | Aucun. 26 appels réels de l'action en mode dev (aucun e-mail envoyé) + 47 tests unitaires. Non bloquants : contrôle d'alignement des métiers seulement en log serveur ; sujet du mail « LEAD SITEKEPT · Site, Suivi » (prévenir Joseph s'il filtre sur le sujet exact) ; « Autre : » sans `<br>` ; carte « Un site clair pour être trouvé et contacté » proche d'une promesse ; nom 100 car. et message 5 000 car. sans `maxLength` côté client ; « email » / « e-mail ». |
