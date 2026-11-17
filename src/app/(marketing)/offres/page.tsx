@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import {
   BreadcrumbJsonLd,
@@ -488,10 +489,10 @@ export default function OffresPage() {
                 asChild
                 className="mt-8 w-full bg-blue-600 hover:bg-blue-700"
               >
-                <Link href="/#contact">
+                <LeadFunnelTrigger offers={["site"]}>
                   Demander un devis
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </LeadFunnelTrigger>
               </Button>
             </div>
 
@@ -526,10 +527,10 @@ export default function OffresPage() {
                 asChild
                 className="mt-8 w-full bg-blue-600 hover:bg-blue-700"
               >
-                <Link href="/#contact">
+                <LeadFunnelTrigger offers={["suivi"]}>
                   Demander l&apos;abonnement
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </LeadFunnelTrigger>
               </Button>
             </div>
 
@@ -564,10 +565,10 @@ export default function OffresPage() {
                 asChild
                 className="mt-8 w-full bg-blue-600 hover:bg-blue-700"
               >
-                <Link href="/#contact">
+                <LeadFunnelTrigger offers={["campagnes"]}>
                   Demander un audit gratuit
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </LeadFunnelTrigger>
               </Button>
             </div>
           </div>
@@ -586,12 +587,9 @@ export default function OffresPage() {
               démarrage.
             </p>
             <p className="mt-4">
-              <Link
-                href="/#contact"
-                className="font-medium text-blue-700 underline underline-offset-4"
-              >
+              <LeadFunnelTrigger className="font-medium text-blue-700 underline underline-offset-4">
                 Décrire mon projet
-              </Link>
+              </LeadFunnelTrigger>
             </p>
           </div>
         </div>
@@ -801,10 +799,10 @@ export default function OffresPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="/#contact">
+              <LeadFunnelTrigger>
                 Demander un devis
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </LeadFunnelTrigger>
             </Button>
             <Button
               asChild

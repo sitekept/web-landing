@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FocusEvent } from "react";
 import PhoneInput, {
   type Country,
   type FlagProps,
@@ -73,6 +73,24 @@ export function PhoneField({
     };
   }, []);
 
+  // Champ vide, le préfixe (« +33 ») est déjà écrit. À la tabulation, le
+  // navigateur sélectionne tout le texte : la première touche remplaçait le
+  // préfixe (« 612345678 » devenait « +61 … »). On place le curseur après
+  // lui, sans rien sélectionner. Un numéro déjà saisi garde le comportement
+  // normal du navigateur.
+  const placeCaretAfterPrefix = (event: FocusEvent<HTMLInputElement>) => {
+    if (value) return;
+    const input = event.currentTarget;
+    const moveCaret = () => {
+      if (document.activeElement !== input || value) return;
+      const end = input.value.length;
+      input.setSelectionRange(end, end);
+    };
+    moveCaret();
+    // Certains navigateurs posent leur sélection juste après l'événement.
+    requestAnimationFrame(moveCaret);
+  };
+
   return (
     <PhoneInput
       id={id}
@@ -86,6 +104,7 @@ export function PhoneField({
       inputComponent={Input}
       value={value}
       onChange={onChange}
+      onFocus={placeCaretAfterPrefix}
       autoComplete="tel"
       required
       aria-invalid={invalid}

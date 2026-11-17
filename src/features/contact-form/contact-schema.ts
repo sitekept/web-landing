@@ -5,70 +5,36 @@ import {
 import * as z from "zod";
 import {
   CONTACT_CHANNELS,
+  CURRENT_URL_ERROR,
+  EMAIL_MAX_LENGTH,
+  MESSAGE_MAX_LENGTH,
   METIER_SLUGS,
+  NAME_MAX_LENGTH,
   OFFER_SLUGS,
   OTHER_MESSAGE_ERROR,
   OTHER_MESSAGE_MIN_LENGTH,
+  normalizeCurrentUrl,
   normalizeOffers,
 } from "@/features/lead-funnel/lead-options";
 
 /**
  * Schéma de la demande de contact, hors fichier « use server » pour pouvoir
  * être testé et réutilisé. Entrée attendue : voir `readContactFormData`.
+ * Les limites de longueur et la lecture de l'adresse du site viennent de
+ * lead-options.ts, source unique partagée avec les formulaires.
  */
 
 const PHONE_ERROR =
   "Veuillez entrer un numéro de téléphone valide avec l'indicatif du pays";
 
-export const NAME_MAX_LENGTH = 100;
-export const EMAIL_MAX_LENGTH = 254;
-export const MESSAGE_MAX_LENGTH = 5000;
-export const CURRENT_URL_MAX_LENGTH = 300;
 /** Au-delà, l'envoi n'a pas pu venir de nos cases à cocher. */
 const OFFERS_MAX_VALUES = OFFER_SLUGS.length * 2;
-
-const CURRENT_URL_ERROR =
-  "L'adresse de votre site semble incorrecte. Exemple : monsite.fr";
 
 /** Champ texte facultatif : absent, `null` ou vide (après trim) = non fourni. */
 function emptyToUndefined(value: unknown) {
   if (value === null || value === undefined) return undefined;
   if (typeof value === "string" && value.trim() === "") return undefined;
   return value;
-}
-
-/**
- * Adresse du site actuel. Une saisie sans protocole (« monsite.fr ») est
- * complétée en « https://monsite.fr ». Tout autre schéma (javascript:, data:…)
- * est refusé : précédé de « https:// », il ne forme pas une adresse valide.
- * Renvoie l'adresse normalisée, ou `null` si elle est refusée.
- */
-export function normalizeCurrentUrl(input: string): string | null {
-  const trimmed = input.trim();
-  if (trimmed.length === 0 || trimmed.length > CURRENT_URL_MAX_LENGTH) {
-    return null;
-  }
-
-  const candidate = /^https?:\/\//i.test(trimmed)
-    ? trimmed
-    : `https://${trimmed}`;
-
-  let url: URL;
-  try {
-    url = new URL(candidate);
-  } catch {
-    return null;
-  }
-
-  if (url.protocol !== "http:" && url.protocol !== "https:") return null;
-  if (url.username || url.password) return null;
-  // Un vrai nom de domaine : au moins un point et une extension en lettres.
-  if (!/^[^.]+(\.[^.]+)*\.[a-z¡-￿-]{2,}$/i.test(url.hostname)) {
-    return null;
-  }
-  if (url.href.length > CURRENT_URL_MAX_LENGTH) return null;
-
-  return url.href;
 }
 
 const offersSchema = z

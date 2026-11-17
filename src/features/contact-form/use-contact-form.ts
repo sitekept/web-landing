@@ -1,5 +1,7 @@
 import { useEffect, useState, type FormEvent, type MouseEvent } from "react";
+import { flushSync } from "react-dom";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import { sendAnalyticsEvent } from "@/features/lead-funnel/analytics";
 import {
   formatOffersForAnalytics,
   getOfferSelectionErrors,
@@ -54,7 +56,9 @@ export function useContactForm() {
     const errors = getOfferSelectionErrors(offers, message);
     if (!errors.offers && !errors.other) return false;
 
-    setShowOfferErrors(true);
+    // Erreur rendue (avec aria-invalid et aria-describedby) avant le
+    // déplacement du focus : le lecteur d'écran l'annonce avec le champ.
+    flushSync(() => setShowOfferErrors(true));
     document
       .getElementById(
         errors.offers
@@ -80,7 +84,7 @@ export function useContactForm() {
     if (phone && isValidPhoneNumber(phone)) return;
 
     event.preventDefault();
-    setPhoneInvalid(true);
+    flushSync(() => setPhoneInvalid(true));
     document.getElementById("phone")?.focus();
   };
 
@@ -103,15 +107,14 @@ export function useContactForm() {
       // Conversion : c'est l'unique objectif du site. À marquer comme
       // « événement clé » dans GA4 (Administration → Événements) pour qu'elle
       // remonte dans les rapports d'acquisition. `window.gtag` n'existe
-      // qu'après l'accord du visiteur. Aucune donnée personnelle envoyée.
-      if (typeof window !== "undefined" && typeof window.gtag === "function") {
-        window.gtag("event", "generate_lead", {
-          event_category: "contact",
-          event_label: "formulaire_contact",
-          offers: formatOffersForAnalytics(sentOffers),
-          form_origin: FORM_ORIGIN,
-        });
-      }
+      // qu'après l'accord du visiteur (garde-fou dans sendAnalyticsEvent).
+      // Aucune donnée personnelle envoyée.
+      sendAnalyticsEvent("generate_lead", {
+        event_category: "contact",
+        event_label: "formulaire_contact",
+        offers: formatOffersForAnalytics(sentOffers),
+        form_origin: FORM_ORIGIN,
+      });
 
       const form = document.getElementById(
         CONTACT_FORM_ID

@@ -7,13 +7,11 @@ import {
   OFFER_CARDS,
   OFFER_PICKER_TEXT,
   OFFER_SLUGS,
+  MESSAGE_MAX_LENGTH,
   getOfferSelectionErrors,
   normalizeOffers,
   type OfferSlug,
 } from "./lead-options";
-
-/** Limite du champ `message` côté serveur (`MESSAGE_MAX_LENGTH`). */
-const OTHER_TEXT_MAX_LENGTH = 5000;
 
 /** Identifiant de la case d'une offre, pour y placer le focus. */
 export function getOfferCheckboxId(pickerId: string, slug: OfferSlug) {
@@ -117,7 +115,7 @@ export function OfferPicker({
                 value={slug}
                 checked={checked}
                 onChange={(event) => toggle(slug, event.target.checked)}
-                className="mt-1 h-4 w-4 shrink-0"
+                className="mt-1 h-4 w-4 shrink-0 accent-blue-600"
               />
               <span>
                 <span className="block text-sm leading-6 font-semibold text-slate-900">
@@ -152,7 +150,7 @@ export function OfferPicker({
             aria-required="true"
             aria-invalid={errors.other ? true : undefined}
             aria-describedby={errors.other ? otherErrorId : undefined}
-            maxLength={OTHER_TEXT_MAX_LENGTH}
+            maxLength={MESSAGE_MAX_LENGTH}
             rows={3}
             className="mt-1"
           />

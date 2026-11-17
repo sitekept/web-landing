@@ -46,6 +46,7 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Ligne « Ajouter le suivi : premier mois offert » sous les cartes quand Site est coché | Suggestion de vente croisée | Proposé |
 | Constante unique des prix et du régime fiscal | Un seul fichier de configuration, pour basculer le jour où la TVA s'appliquera. Mini-plan de phase 1 accepté par Joseph le 11 nov. ; en place dans `src/content/pricing.ts` (commit `e3f8df9`) | Validé |
 | Direction artistique | Rester dans la DA actuelle du site, aucun nouvel élément visuel | Validé |
+| Couleur des cases à cocher et boutons radio | Alignées sur le bleu du site (`accent-blue-600`), valeur nouvelle décidée par Joseph (17 nov. 2026) | Validé |
 | Boutons du hero de la home | Les deux boutons restent en phase 1 ; les cartes du tunnel seront montrées en phase 3 (décision du 11 nov. 2026) | Validé |
 
 ## Règles de projet (CGV, devis, kit)

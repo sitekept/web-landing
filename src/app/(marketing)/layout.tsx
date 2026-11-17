@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 import { getSiteLocale } from "@/lib/site-messages";
 import { OrganizationJsonLd } from "@/components/structured-data";
+import { LeadFunnelProvider } from "@/features/lead-funnel/lead-funnel-provider";
 
 export default async function MarketingLayout({
   children,
@@ -14,9 +15,12 @@ export default async function MarketingLayout({
   return (
     <main className="min-h-screen">
       <OrganizationJsonLd />
-      <Navigation locale={locale} />
-      {children}
-      <Footer locale={locale} />
+      {/* Tunnel de demande : les LeadFunnelTrigger des pages ouvrent sa modale. */}
+      <LeadFunnelProvider>
+        <Navigation locale={locale} />
+        {children}
+        <Footer locale={locale} />
+      </LeadFunnelProvider>
     </main>
   );
 }

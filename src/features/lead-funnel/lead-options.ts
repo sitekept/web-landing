@@ -59,6 +59,13 @@ export const OTHER_MESSAGE_ERROR =
 export const NO_OFFER_ERROR = "Choisissez au moins une offre.";
 
 /**
+ * Ligne « Ajouter le suivi : premier mois offert à la livraison » sous les
+ * cartes du tunnel quand Site est coché. Statut « Proposé » au registre :
+ * désactivée tant que Joseph ne l'a pas validée.
+ */
+export const FOLLOW_UP_SUGGESTION_ENABLED = false;
+
+/**
  * Textes du sélecteur d'offres (`offer-picker.tsx`), communs au tunnel et au
  * formulaire de secours. Aucun prix ici.
  */
@@ -113,6 +120,29 @@ export function parseOfferParam(value: string | null): OfferSlug[] {
   return normalizeOffers(offers);
 }
 
+/** Section du formulaire de secours, en bas de la home. */
+const CONTACT_SECTION_HASH = "#contact";
+
+/**
+ * Lien d'un déclencheur du tunnel. Sans JavaScript, il mène au formulaire de
+ * secours avec les mêmes offres et le même métier : `/?offre=site,suivi#contact`,
+ * ou `/#contact` sans pré-sélection. Les slugs ne contiennent que des lettres
+ * et des tirets : aucun encodage n'est nécessaire.
+ */
+export function buildLeadFunnelHref(
+  offers: readonly OfferSlug[] = [],
+  metier?: MetierSlug
+): string {
+  const params: string[] = [];
+  const normalized = normalizeOffers(offers);
+  if (normalized.length > 0) params.push(`offre=${normalized.join(",")}`);
+  if (metier) params.push(`metier=${metier}`);
+
+  return params.length > 0
+    ? `/?${params.join("&")}${CONTACT_SECTION_HASH}`
+    : `/${CONTACT_SECTION_HASH}`;
+}
+
 /**
  * Origine d'une demande, paramètre `form_origin` de `generate_lead` :
  * formulaire du bas de la home (« secours ») ou tunnel en modale.
@@ -124,6 +154,58 @@ export type LeadFormOrigin = (typeof LEAD_FORM_ORIGINS)[number];
 /** Format attendu par GA4 : `"site,suivi"`, dans l'ordre canonique. */
 export function formatOffersForAnalytics(offers: readonly OfferSlug[]): string {
   return normalizeOffers(offers).join(",");
+}
+
+// ---------------------------------------------------------------------------
+// Limites des champs
+// ---------------------------------------------------------------------------
+
+/**
+ * Longueurs maximales, communes au schéma serveur (`contact-schema.ts`), au
+ * formulaire de secours, au sélecteur d'offres et au tunnel. Ici plutôt que
+ * dans le schéma : ce module ne charge pas zod dans le navigateur.
+ */
+export const NAME_MAX_LENGTH = 100;
+export const EMAIL_MAX_LENGTH = 254;
+export const MESSAGE_MAX_LENGTH = 5000;
+export const CURRENT_URL_MAX_LENGTH = 300;
+
+export const CURRENT_URL_ERROR =
+  "L'adresse de votre site semble incorrecte. Exemple : monsite.fr";
+
+/**
+ * Adresse du site actuel. Une saisie sans protocole (« monsite.fr ») est
+ * complétée en « https://monsite.fr ». Tout autre schéma (javascript:, data:…)
+ * est refusé : précédé de « https:// », il ne forme pas une adresse valide.
+ * Renvoie l'adresse normalisée, ou `null` si elle est refusée. Utilisée par
+ * le schéma serveur et, avant l'envoi, par le tunnel.
+ */
+export function normalizeCurrentUrl(input: string): string | null {
+  const trimmed = input.trim();
+  if (trimmed.length === 0 || trimmed.length > CURRENT_URL_MAX_LENGTH) {
+    return null;
+  }
+
+  const candidate = /^https?:\/\//i.test(trimmed)
+    ? trimmed
+    : `https://${trimmed}`;
+
+  let url: URL;
+  try {
+    url = new URL(candidate);
+  } catch {
+    return null;
+  }
+
+  if (url.protocol !== "http:" && url.protocol !== "https:") return null;
+  if (url.username || url.password) return null;
+  // Un vrai nom de domaine : au moins un point et une extension en lettres.
+  if (!/^[^.]+(\.[^.]+)*\.[a-z\u00a1-\uffff-]{2,}$/i.test(url.hostname)) {
+    return null;
+  }
+  if (url.href.length > CURRENT_URL_MAX_LENGTH) return null;
+
+  return url.href;
 }
 
 // ---------------------------------------------------------------------------

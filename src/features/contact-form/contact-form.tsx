@@ -11,6 +11,9 @@ import { CheckCircle, AlertCircle, Send } from "lucide-react";
 import {
   CONTACT_CHANNELS,
   CONTACT_CHANNEL_LABELS,
+  EMAIL_MAX_LENGTH,
+  MESSAGE_MAX_LENGTH,
+  NAME_MAX_LENGTH,
 } from "@/features/lead-funnel/lead-options";
 import { OfferPicker } from "@/features/lead-funnel/offer-picker";
 import { PhoneField } from "./phone-field";
@@ -19,12 +22,6 @@ import {
   OFFER_PICKER_ID,
   useContactForm,
 } from "./use-contact-form";
-
-// Mêmes limites que contact-schema.ts (NAME_MAX_LENGTH, EMAIL_MAX_LENGTH,
-// MESSAGE_MAX_LENGTH), recopiées pour ne pas charger zod dans le navigateur.
-const NAME_MAX_LENGTH = 100;
-const EMAIL_MAX_LENGTH = 254;
-const MESSAGE_MAX_LENGTH = 5000;
 
 interface ContactFormMessages {
   title: string;
@@ -201,7 +198,7 @@ export function ContactForm({ messages }: ContactFormProps) {
                     type="radio"
                     name="contactChannel"
                     value={channel}
-                    className="h-4 w-4 shrink-0"
+                    className="h-4 w-4 shrink-0 accent-blue-600"
                   />
                   {CONTACT_CHANNEL_LABELS[channel]}
                 </Label>
@@ -228,7 +225,10 @@ export function ContactForm({ messages }: ContactFormProps) {
           )}
 
           {submitStatus === "success" && (
-            <div className="flex items-start rounded-md bg-green-50 p-4 text-green-800">
+            <div
+              role="status"
+              className="flex items-start rounded-md bg-green-50 p-4 text-green-800"
+            >
               <CheckCircle className="mr-2 h-5 w-5 shrink-0" />
               <span className="text-sm">{messages.successMessage}</span>
             </div>
