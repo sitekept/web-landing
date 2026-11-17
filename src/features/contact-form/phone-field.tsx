@@ -1,12 +1,18 @@
 "use client";
 
-import { useEffect, useState, type FocusEvent } from "react";
+import {
+  useEffect,
+  useState,
+  type ClipboardEvent,
+  type FocusEvent,
+  type KeyboardEvent,
+} from "react";
 import PhoneInput, {
   type Country,
   type FlagProps,
 } from "react-phone-number-input";
 import frLabels from "react-phone-number-input/locale/fr.json";
-import { isSupportedCountry } from "libphonenumber-js";
+import { AsYouType, isSupportedCountry } from "libphonenumber-js";
 import "react-phone-number-input/style.css";
 import { Input } from "@/components/ui/input";
 import { getVisitorCountry } from "./contact-form.action";
@@ -31,6 +37,14 @@ function CountryFlag({ country }: FlagProps) {
 function getBrowserCountry() {
   const region = navigator.language.split("-")[1]?.toUpperCase();
   return region && isSupportedCountry(region) ? region : undefined;
+}
+
+// Vrai pour « +33 0 » : le préfixe du pays suivi d'un seul « 0 ».
+function isPrefixFollowedByZero(text: string) {
+  const typed = text.replace(/\s/g, "");
+  const formatter = new AsYouType();
+  formatter.input(typed);
+  return typed === `+${formatter.getCallingCode()}0`;
 }
 
 interface PhoneFieldProps {
@@ -91,6 +105,43 @@ export function PhoneField({
     requestAnimationFrame(moveCaret);
   };
 
+  // Avec le curseur après le préfixe, un numéro international s'ajoutait
+  // derrière lui : « +33 » + « +33 6… » donnait « +33 » ou « +33 33… ».
+  // Un numéro collé qui commence par « + » ou « 00 » remplace donc tout le
+  // champ, et le pays suit. Un numéro national collé (« 06… ») s'écrit
+  // normalement après le préfixe.
+  const replaceWithPastedNumber = (
+    event: ClipboardEvent<HTMLInputElement>
+  ) => {
+    const pasted = event.clipboardData.getData("text").trim();
+    if (!/^(\+|00)/.test(pasted)) return;
+    const digits = pasted.replace(/^00/, "").replace(/\D/g, "");
+    if (!digits) return;
+    event.preventDefault();
+    onChange(`+${digits}`);
+  };
+
+  // Même chose à la frappe, quand le champ ne contient que le préfixe :
+  // « + » remplace le préfixe, et un second « 0 » (« 00 ») devient « + ».
+  const replacePrefixOnInternationalInput = (
+    event: KeyboardEvent<HTMLInputElement>
+  ) => {
+    const input = event.currentTarget;
+    if (event.key === "+" && !value) {
+      input.select();
+      return;
+    }
+    // On lit le texte affiché : à ce stade, la valeur remontée par la
+    // librairie ne permet pas de reconnaître « +33 0 ».
+    if (event.key === "0" && isPrefixFollowedByZero(input.value)) {
+      event.preventDefault();
+      input.select();
+      // Si le navigateur refuse, le champ reste sélectionné : le chiffre
+      // suivant remplace le tout et la librairie ajoute le « + » d'elle-même.
+      document.execCommand("insertText", false, "+");
+    }
+  };
+
   return (
     <PhoneInput
       id={id}
@@ -105,6 +156,8 @@ export function PhoneField({
       value={value}
       onChange={onChange}
       onFocus={placeCaretAfterPrefix}
+      onPaste={replaceWithPastedNumber}
+      onKeyDown={replacePrefixOnInternationalInput}
       autoComplete="tel"
       required
       aria-invalid={invalid}
