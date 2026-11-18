@@ -41,6 +41,20 @@ export interface MetierPage {
    * de ces professions ne sont pas vérifiées (carte des mots-clés § 3.3, C).
    */
   linksToSeoGeo?: boolean;
+  /**
+   * Profession réglementée (dentiste, avocat) : aucune mention de campagnes
+   * ou de page produit publicitaire sur la page, aucune promesse de
+   * visibilité tant que les règles de communication ne sont pas vérifiées
+   * (plan v2 § 8, décision C du 18 nov. 2026).
+   */
+  regulated?: boolean;
+  /**
+   * Présent sur les pages de la première vague seulement : affiche le bloc
+   * « Et après la mise en ligne ? » dans la section prix. `example` est une
+   * phrase courte propre au métier, qui illustre une modification du suivi
+   * sans rien promettre.
+   */
+  afterLaunch?: { example: string };
   /** Lien vers une page métier voisine (carte des mots-clés § 3.3, E). */
   relatedMetier?: { slug: string; intro: string; label: string };
   demoSlug: string;
@@ -70,6 +84,10 @@ export const metierPages: MetierPage[] = [
     metier: "plombier",
     label: "un plombier chauffagiste",
     audienceType: "plombiers",
+    afterLaunch: {
+      example:
+        "Par exemple, changer vos horaires d'urgence ou ajouter une commune desservie.",
+    },
     linksToSeoGeo: true,
     demoSlug: "plombier-chauffagiste",
     demoName: "Démo plombier chauffagiste",
@@ -135,6 +153,7 @@ export const metierPages: MetierPage[] = [
     metier: "dentiste",
     label: "un cabinet dentaire",
     audienceType: "dentistes",
+    regulated: true,
     demoSlug: "dentiste",
     demoName: "Démo cabinet dentaire",
     seoTitle: "Site internet pour dentiste et cabinet dentaire | Sitekept",
@@ -264,6 +283,10 @@ export const metierPages: MetierPage[] = [
     metier: "salon de coiffure",
     label: "un salon de coiffure",
     audienceType: "salons de coiffure",
+    afterLaunch: {
+      example:
+        "Par exemple, mettre à jour vos tarifs ou vos horaires.",
+    },
     linksToSeoGeo: true,
     demoSlug: "salon-coiffure",
     demoName: "Démo salon de coiffure",
@@ -329,6 +352,10 @@ export const metierPages: MetierPage[] = [
     metier: "boulangerie",
     label: "une boulangerie",
     audienceType: "boulangers",
+    afterLaunch: {
+      example:
+        "Par exemple, changer vos horaires de vacances ou vos produits du moment.",
+    },
     linksToSeoGeo: true,
     relatedMetier: {
       slug: "site-internet-patisserie",
@@ -719,6 +746,7 @@ export const metierPages: MetierPage[] = [
     metier: "avocat",
     label: "un cabinet d'avocat",
     audienceType: "avocats",
+    regulated: true,
     demoSlug: "cabinet-avocat",
     demoName: "Démo cabinet d'avocat",
     secondaryDemo: {

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
+import { parseMetierParam } from "@/features/lead-funnel/lead-options";
 import { metierPages, getMetierPageBySlug } from "@/content/metier-pages";
 import { PRICING, SITE_SCOPE, formatPriceWithTax } from "@/content/pricing";
 import { buildPageMetadata } from "@/lib/page-metadata";
@@ -59,6 +61,20 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
     notFound();
   }
 
+  /** Métier présélectionné dans le tunnel (slug de la page, sans « site-internet- »). */
+  const funnelMetier = parseMetierParam(page.slug);
+
+  /**
+   * Professions réglementées (dentiste, avocat) : aucune page produit pour
+   * des campagnes payantes n'est mentionnée (plan v2 § 8).
+   */
+  const closingPrice = page.regulated
+    ? `Votre site coûte ${SITE_PRICE}, payé une seule fois.`
+    : `Votre site coûte ${SITE_PRICE}, payé une seule fois, avec ${CAMPAIGN_PAGES} page produit pour vos campagnes payantes.`;
+  const includedScope = page.regulated
+    ? "un formulaire de contact et des boutons WhatsApp"
+    : `un formulaire de contact, des boutons WhatsApp et ${CAMPAIGN_PAGES} page produit pour vos campagnes payantes`;
+
   return (
     <>
       <BreadcrumbJsonLd
@@ -89,10 +105,10 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
 
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href="/#contact">
+              <LeadFunnelTrigger offers={["site"]} metier={funnelMetier}>
                 Demander un devis
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-              </Link>
+              </LeadFunnelTrigger>
             </Button>
             <Button asChild variant="outline">
               <Link href={`/${page.demoSlug}`}>Voir la démo</Link>
@@ -275,12 +291,11 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
           <p className="mt-4 text-slate-600">
             Ce prix couvre la conception, la mise en ligne et la rédaction des
             mentions légales et de la politique de confidentialité. Il comprend
-            jusqu&apos;à {MAX_PAGES} pages, un formulaire de contact, des
-            boutons WhatsApp et {CAMPAIGN_PAGES} page produit pour vos
-            campagnes payantes.
+            jusqu&apos;à {MAX_PAGES} pages, {includedScope}.
           </p>
           <p className="mt-4 text-slate-600">
-            Les pages au-delà de {MAX_PAGES}, les pages produit supplémentaires,
+            Les pages au-delà de {MAX_PAGES},{" "}
+            {page.regulated ? "" : "les pages produit supplémentaires, "}
             une fonctionnalité avancée (boutique, réservation, espace client)
             ou une refonte se chiffrent sur devis.
           </p>
@@ -289,22 +304,27 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             nécessaire pour qu&apos;il reste en ligne. Louer sa présence,
             c&apos;est payer chaque mois pour qu&apos;il existe.
           </p>
-          <p className="mt-4 text-slate-600">
-            En option, un accompagnement facultatif (modifications et suivi)
-            coûte {FOLLOW_UP_MONTHLY} sans engagement, ou {FOLLOW_UP_ANNUAL}. Si
-            vous l&apos;arrêtez, votre site reste en ligne et à vous.
-          </p>
-          <p className="mt-4 text-slate-600">
-            Le suivi est une suite possible, jamais une obligation. Pour voir
-            les options côte à côte, consultez{" "}
-            <Link
-              href="/offres"
-              className="font-medium text-blue-700 underline underline-offset-4"
-            >
-              nos trois offres
-            </Link>
-            .
-          </p>
+          {page.afterLaunch ? null : (
+            <>
+              <p className="mt-4 text-slate-600">
+                En option, un accompagnement facultatif (modifications et
+                suivi) coûte {FOLLOW_UP_MONTHLY} sans engagement, ou{" "}
+                {FOLLOW_UP_ANNUAL}. Si vous l&apos;arrêtez, votre site reste en
+                ligne et à vous.
+              </p>
+              <p className="mt-4 text-slate-600">
+                Le suivi est une suite possible, jamais une obligation. Pour
+                voir les options côte à côte, consultez{" "}
+                <Link
+                  href="/offres"
+                  className="font-medium text-blue-700 underline underline-offset-4"
+                >
+                  nos trois offres
+                </Link>
+                .
+              </p>
+            </>
+          )}
           <p className="mt-4 text-slate-600">
             Le détail, les modalités de paiement et la comparaison entre acheter
             son site et louer sa présence figurent sur la{" "}
@@ -316,6 +336,48 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             </Link>
             .
           </p>
+
+          {page.afterLaunch ? (
+            <div className="mt-8 rounded-xl border border-slate-200 bg-slate-50 p-8">
+              <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+                Accompagnement optionnel
+              </p>
+              <h3 className="mt-3 text-2xl font-bold text-slate-950">
+                Et après la mise en ligne&nbsp;?
+              </h3>
+              <p className="mt-2 text-slate-600">
+                Votre site est à vous dès la mise en ligne et reste en ligne,
+                sans abonnement. Le suivi est une suite possible, jamais une
+                obligation.
+              </p>
+              <p className="mt-2 text-slate-600">
+                Le suivi «&nbsp;Suivi &amp; Visibilité&nbsp;» comprend deux
+                modifications par mois, non cumulables, et un œil sur votre
+                visibilité. {page.afterLaunch.example} Nous ne promettons aucun
+                résultat ni aucun classement.
+              </p>
+              <p className="mt-2 text-slate-600">
+                Il coûte {FOLLOW_UP_MONTHLY} sans engagement, ou{" "}
+                {FOLLOW_UP_ANNUAL}. Le premier mois est offert à la livraison,
+                pour la formule mensuelle seulement. Si vous arrêtez, votre site
+                reste en ligne, à vous.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Button asChild className="bg-blue-600 hover:bg-blue-700">
+                  <LeadFunnelTrigger offers={["site"]} metier={funnelMetier}>
+                    Demander un devis
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </LeadFunnelTrigger>
+                </Button>
+                <Button asChild variant="outline" className="border-slate-300">
+                  <Link href="/offres">
+                    Voir nos trois offres
+                    <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -343,17 +405,15 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
             {SCOPE_TITLE}
           </h2>
           <p className="mt-4 text-lg text-slate-300">
-            Votre site coûte {SITE_PRICE}, payé une seule fois, avec{" "}
-            {CAMPAIGN_PAGES} page produit pour vos campagnes payantes. Il est
-            en ligne 48 h après réception de vos éléments complets. Décrivez
-            votre activité pour démarrer.
+            {closingPrice} Il est en ligne 48 h après réception de vos éléments
+            complets. Décrivez votre activité pour démarrer.
           </p>
           <div className="mt-8">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="/#contact">
+              <LeadFunnelTrigger offers={["site"]} metier={funnelMetier}>
                 Demander un devis
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
-              </Link>
+              </LeadFunnelTrigger>
             </Button>
           </div>
         </div>
