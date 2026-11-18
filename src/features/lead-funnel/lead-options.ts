@@ -59,8 +59,9 @@ export const OTHER_MESSAGE_ERROR =
 export const NO_OFFER_ERROR = "Choisissez au moins une offre.";
 
 /**
- * Ligne « Ajouter le suivi : premier mois offert à la livraison » sous les
- * cartes du tunnel quand Site est coché. Validée par Joseph le 18 nov. 2026.
+ * Ligne « Ajouter le suivi : premier mois offert à la livraison (formule
+ * mensuelle) » sous les cartes du tunnel quand Site est coché. Validée par
+ * Joseph le 18 nov. 2026.
  */
 export const FOLLOW_UP_SUGGESTION_ENABLED = true;
 
@@ -72,7 +73,8 @@ export const OFFER_PICKER_TEXT = {
   legend: "Que souhaitez-vous ?",
   otherLabel: "Précisez votre besoin",
   /** Affichée seulement si le parent l'active (tunnel : FOLLOW_UP_SUGGESTION_ENABLED). */
-  followUpSuggestion: "Ajouter le suivi : premier mois offert à la livraison",
+  followUpSuggestion:
+    "Ajouter le suivi : premier mois offert à la livraison (formule mensuelle)",
 };
 
 /**

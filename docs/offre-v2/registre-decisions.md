@@ -43,7 +43,7 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Tunnel de formulaire | 3 étapes, modale ouverte au clic, étape 1 dans le hero (variante à choisir sur captures en phase 3), choix du canal de rappel (e-mail, téléphone, WhatsApp) | Validé |
 | Téléphone dans les formulaires | **Obligatoire** dans le tunnel et le formulaire de secours, au format international (décision du 17 nov. 2026, remplace « téléphone facultatif ») | Validé |
 | Sélection des offres dans le formulaire | Multi-sélection parmi Site, Suivi, Campagnes, Autre ; « Autre » ouvre le champ de texte, obligatoire dans ce cas. Tunnel et formulaire de secours | Validé |
-| Ligne « Ajouter le suivi : premier mois offert » sous les cartes quand Site est coché | Suggestion de vente croisée, activée dans le tunnel seulement (pas dans le formulaire de secours) ; un clic coche Suivi (décision du 18 nov. 2026) | Validé |
+| Ligne « Ajouter le suivi : premier mois offert » sous les cartes quand Site est coché | Suggestion de vente croisée, activée dans le tunnel seulement (pas dans le formulaire de secours) ; un clic coche Suivi (décision du 18 nov. 2026) ; libellé précisé « (formule mensuelle) » (18 nov. 2026) | Validé |
 | Constante unique des prix et du régime fiscal | Un seul fichier de configuration, pour basculer le jour où la TVA s'appliquera. Mini-plan de phase 1 accepté par Joseph le 11 nov. ; en place dans `src/content/pricing.ts` (commit `e3f8df9`) | Validé |
 | Direction artistique | Rester dans la DA actuelle du site, aucun nouvel élément visuel | Validé |
 | Couleur des cases à cocher et boutons radio | Alignées sur le bleu du site (`accent-blue-600`), valeur nouvelle décidée par Joseph (17 nov. 2026) | Validé |
