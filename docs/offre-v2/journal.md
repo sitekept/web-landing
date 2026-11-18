@@ -188,3 +188,4 @@ Restent ouverts : ligne « premier mois offert » du tunnel (désactivée), vali
 
 | Tâche | Périmètre | Tours | Verdict final | Bloquants rencontrés |
 |---|---|---|---|---|
+- 18 nov. : **ligne « Ajouter le suivi : premier mois offert à la livraison » activée** à la demande de Joseph (`FOLLOW_UP_SUGGESTION_ENABLED = true`, registre « Validé »). Exécuteur Haiku bas, vérificateur Sonnet élevé : PASS au T1 (affichée seulement si Site est coché et Suivi ne l'est pas, clic souris et clavier qui coche Suivi, absente du formulaire de secours, `lead_funnel_step` 2 avec `site,suivi`, 0 erreur, 0 débordement à 390 et 1280 px). Non bloquant : le texte ne précise pas « formule mensuelle » (condition affichée dans la FAQ).

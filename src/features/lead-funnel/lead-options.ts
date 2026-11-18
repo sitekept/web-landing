@@ -60,10 +60,9 @@ export const NO_OFFER_ERROR = "Choisissez au moins une offre.";
 
 /**
  * Ligne « Ajouter le suivi : premier mois offert à la livraison » sous les
- * cartes du tunnel quand Site est coché. Statut « Proposé » au registre :
- * désactivée tant que Joseph ne l'a pas validée.
+ * cartes du tunnel quand Site est coché. Validée par Joseph le 18 nov. 2026.
  */
-export const FOLLOW_UP_SUGGESTION_ENABLED = false;
+export const FOLLOW_UP_SUGGESTION_ENABLED = true;
 
 /**
  * Textes du sélecteur d'offres (`offer-picker.tsx`), communs au tunnel et au
@@ -72,7 +71,7 @@ export const FOLLOW_UP_SUGGESTION_ENABLED = false;
 export const OFFER_PICKER_TEXT = {
   legend: "Que souhaitez-vous ?",
   otherLabel: "Précisez votre besoin",
-  /** Ligne « Proposé » au registre : affichée seulement si le parent l'active. */
+  /** Affichée seulement si le parent l'active (tunnel : FOLLOW_UP_SUGGESTION_ENABLED). */
   followUpSuggestion: "Ajouter le suivi : premier mois offert à la livraison",
 };
 
