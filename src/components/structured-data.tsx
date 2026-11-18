@@ -37,8 +37,13 @@ const LINKEDIN_COMPANY_URL = "https://www.linkedin.com/company/sitekept/";
  * `knowsLanguage` et `knowsAbout` remplacent `availableLanguage` et
  * `serviceType` : ces deux propriétés ne s'appliquent pas à une Organization
  * dans le vocabulaire schema.org (elles relèvent de ContactPoint et de
- * Service). Les valeurs sont inchangées ; les services sont décrits par les
- * blocs Service des pages concernées.
+ * Service). Les services sont décrits par les blocs Service des pages
+ * concernées.
+ *
+ * `knowsAbout` ne cite que des services affichés : le suivi et la publicité en
+ * ligne le sont dans le résumé des trois offres de la home (`plans`, texte
+ * « La publicité en ligne gérée pour vous » et « Suivi & Visibilité ») et sur
+ * /offres. Ces deux entrées ont été ajoutées le 18 novembre 2026.
  *
  * `priceRange` est construit à partir de la constante unique des prix
  * (src/content/pricing.ts, plan-v2 § 6 bis). `valueAddedTaxIncluded` n'est
@@ -75,6 +80,8 @@ export function OrganizationJsonLd() {
           "Site vitrine",
           "Refonte de site web",
           "Optimisation SEO",
+          "Suivi de site internet",
+          "Publicité en ligne",
         ],
       },
       {
@@ -220,9 +227,9 @@ interface ServiceJsonLdProps {
  * Service présenté par la page. Le prestataire est l'entité éditrice, citée
  * par son `@id` : elle est déclarée une seule fois par le layout marketing.
  *
- * Volontairement ABSENTS : `offers`, prix et monnaie. Les prix viendront
- * d'une constante unique, avec le balisage OfferCatalog (plan-v2 § 9,
- * phase 4).
+ * Volontairement ABSENTS : `offers`, prix et monnaie. Les offres et les prix
+ * ne sont déclarés que par OfferCatalogJsonLd (page /offres), à partir de la
+ * constante unique src/content/pricing.ts (plan-v2 § 9).
  */
 export function ServiceJsonLd({
   path,
@@ -262,12 +269,14 @@ export function ServiceJsonLd({
  *
  * Règle du fichier : ne déclarer que ce que la page affiche. Les montants
  * viennent de la constante unique (src/content/pricing.ts, plan-v2 § 6 bis) :
- *  - site : prix unique (500 EUR au démarrage) ;
- *  - suivi : prix mensuel et prix annuel, deux UnitPriceSpecification ;
+ *  - site : prix unique, `price` et `priceCurrency` sur l'Offer ;
+ *  - suivi : prix mensuel et prix annuel, deux UnitPriceSpecification dont la
+ *    période est donnée par `referenceQuantity` (voir plus bas) ;
  *  - campagnes : `minPrice` seulement, car la page affiche « à partir de » et
  *    que le budget média est en sus.
- * `schemaPrice` n'ajoute `valueAddedTaxIncluded` que lorsque la TVA s'applique :
- * en franchise (art. 293 B du CGI), la propriété est omise. Aucun
+ * Chaque `description` reprend un texte visible sur /offres. `schemaPrice`
+ * n'ajoute `valueAddedTaxIncluded` que lorsque la TVA s'applique : en
+ * franchise (art. 293 B du CGI), la propriété est omise. Aucun
  * `aggregateRating`, aucune adresse.
  */
 export function OfferCatalogJsonLd() {
@@ -276,6 +285,26 @@ export function OfferCatalogJsonLd() {
     PRICING.campaigns.minimumMonthly
   );
 
+  /*
+   * Période de facturation du suivi par `referenceQuantity`, pas par
+   * `billingDuration` : schema.org définit `referenceQuantity` comme « The
+   * reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh
+   * of electricity. » (65 EUR pour 1 mois, 600 EUR pour 1 an), alors que
+   * `billingDuration` est « Specifies for how long this price (or price
+   * component) will be billed. Can be used, for example, to model the
+   * contractual duration of a subscription or payment plan. », soit une durée
+   * de contrat que l'offre mensuelle sans engagement n'a pas.
+   */
+  const followUpPrice = (amount: number, unitCode: "MON" | "ANN") => ({
+    "@type": "UnitPriceSpecification",
+    ...schemaPrice(amount),
+    referenceQuantity: {
+      "@type": "QuantitativeValue",
+      value: 1,
+      unitCode,
+    },
+  });
+
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -283,7 +312,7 @@ export function OfferCatalogJsonLd() {
     url,
     name: "Site internet, suivi et campagnes publicitaires",
     description:
-      "Trois offres : un site vitrine sur mesure payé une seule fois, un suivi mensuel ou annuel sans engagement, et des campagnes publicitaires Google, Meta et TikTok.",
+      "Trois offres : un site vitrine sur mesure payé une fois, un suivi optionnel (mensuel sans engagement, ou annuel), des campagnes publicitaires Google, Meta et TikTok.",
     serviceType: "Création de site internet",
     provider: { "@id": `${SITE_URL}/#organization` },
     areaServed: { "@type": "Country", name: "France" },
@@ -302,27 +331,16 @@ export function OfferCatalogJsonLd() {
           "@type": "Offer",
           name: "Suivi & Visibilité",
           description:
-            "Deux modifications par mois, non cumulables, et un suivi de la visibilité du site. Mensuel sans engagement, ou annuel.",
+            "2 modifications par mois, non cumulables, et un suivi de la visibilité du site. Mensuel sans engagement, ou annuel.",
           priceSpecification: [
-            {
-              "@type": "UnitPriceSpecification",
-              ...schemaPrice(PRICING.followUp.monthly),
-              unitCode: "MON",
-              billingDuration: 1,
-            },
-            {
-              "@type": "UnitPriceSpecification",
-              ...schemaPrice(PRICING.followUp.annual),
-              unitCode: "ANN",
-              billingDuration: 1,
-            },
+            followUpPrice(PRICING.followUp.monthly, "MON"),
+            followUpPrice(PRICING.followUp.annual, "ANN"),
           ],
         },
         {
           "@type": "Offer",
           name: "Campagnes publicitaires",
-          description:
-            "Gestion de campagnes Google Ads, Meta et TikTok, à partir du montant indiqué par mois, budget média en sus. Audit gratuit.",
+          description: `Gestion de campagnes Google Ads, Meta et TikTok, à partir de ${formatPrice(PRICING.campaigns.minimumMonthly, { period: "month" })}, budget média en sus. Audit gratuit avant tout engagement.`,
           priceSpecification: {
             "@type": "PriceSpecification",
             minPrice: campaignMinPrice,
