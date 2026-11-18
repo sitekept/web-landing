@@ -73,7 +73,7 @@ export function TemplatesShowcase({
                 screenshot={template.screenshot}
                 category="template"
                 ctaText={ctaText}
-                ctaLink="/#contact"
+                ctaFunnel={{ offers: ["site"] }}
               />
             );
           })}

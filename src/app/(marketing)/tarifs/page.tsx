@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Check, Minus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
 import {
@@ -273,10 +274,10 @@ export default function TarifsPage() {
                 Domaine offert 1 an.
               </p>
               <Button asChild className="mt-8 w-full bg-blue-600 hover:bg-blue-700">
-                <Link href="/#contact">
+                <LeadFunnelTrigger offers={["site"]}>
                   Demander un devis
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </LeadFunnelTrigger>
               </Button>
             </div>
 
@@ -301,10 +302,10 @@ export default function TarifsPage() {
                 variant="outline"
                 className="mt-8 w-full border-slate-300"
               >
-                <Link href="/#contact">
+                <LeadFunnelTrigger offers={["site"]}>
                   Décrire mon projet
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
+                </LeadFunnelTrigger>
               </Button>
             </div>
           </div>
@@ -661,10 +662,10 @@ export default function TarifsPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="/#contact">
+              <LeadFunnelTrigger offers={["site"]}>
                 Demander un devis
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </LeadFunnelTrigger>
             </Button>
             <Button
               asChild

@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
+import type { MetierSlug, OfferSlug } from "@/features/lead-funnel/lead-options";
 
 interface ProjectCardProps {
   name: string;
@@ -16,6 +18,11 @@ interface ProjectCardProps {
   ctaText?: string;
   ctaAction?: () => void;
   ctaLink?: string;
+  /**
+   * Le bouton principal ouvre le tunnel de demande (lien de secours
+   * `/?offre=…#contact` sans JavaScript). Prime sur `ctaLink` et `ctaAction`.
+   */
+  ctaFunnel?: { offers?: readonly OfferSlug[]; metier?: MetierSlug };
 }
 
 export function ProjectCard({
@@ -27,6 +34,7 @@ export function ProjectCard({
   ctaText = "Voir le projet",
   ctaAction,
   ctaLink,
+  ctaFunnel,
 }: ProjectCardProps) {
   // Le lien doit être une vraie ancre : un window.open() dans un onClick est
   // invisible pour les moteurs de recherche, ce qui rendait les pages de
@@ -95,7 +103,21 @@ export function ProjectCard({
               </Button>
             ) : null}
 
-            {ctaLink ? (
+            {ctaFunnel ? (
+              <Button
+                asChild
+                size="sm"
+                className={cn(primaryButtonClassName)}
+              >
+                <LeadFunnelTrigger
+                  offers={ctaFunnel.offers}
+                  metier={ctaFunnel.metier}
+                >
+                  {ctaText}
+                  <ArrowRight size={isTemplateCard ? 14 : 16} />
+                </LeadFunnelTrigger>
+              </Button>
+            ) : ctaLink ? (
               <Button
                 asChild
                 size="sm"

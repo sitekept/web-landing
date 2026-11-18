@@ -132,7 +132,6 @@ export interface HomeContent {
     eyebrow: LocalizedText;
     title: LocalizedText;
     description: LocalizedText;
-    primaryCta: LocalizedText;
     secondaryCta: LocalizedText;
     proofPoints: Record<SiteLocale, string[]>;
   };
@@ -233,10 +232,6 @@ export const homeContent: HomeContent = {
     description: {
       fr: "Création de site internet professionnel, sur mesure pour votre activité. Votre site est en ligne 48 h après réception de vos éléments, nom de domaine offert la première année.",
       en: "Professional website design, tailored to your business. Your site is live 48 hours after we receive your materials, with the domain name free for the first year.",
-    },
-    primaryCta: {
-      fr: "Demander un devis",
-      en: "Request a quote",
     },
     secondaryCta: {
       fr: "Voir les templates",

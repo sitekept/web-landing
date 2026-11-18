@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
 import { TemplatesShowcase } from "@/components/templates-showcase";
 import {
   getLocalizedText,
@@ -58,10 +59,10 @@ export default async function TemplatesPage() {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button asChild size="lg" className="bg-blue-600 text-white hover:bg-blue-700">
-              <Link href="/#contact">
+              <LeadFunnelTrigger offers={["site"]}>
                 {locale === "fr" ? "Demander un devis" : "Request a quote"}
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              </LeadFunnelTrigger>
             </Button>
             <Button
               asChild

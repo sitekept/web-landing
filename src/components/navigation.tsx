@@ -96,8 +96,9 @@ function ResourcesTrigger({
   const buttonRef = useRef<HTMLButtonElement>(null);
   const loadRef = useRef<Promise<void> | null>(null);
   const hadFocusRef = useRef(false);
+  const openRequestedRef = useRef(false);
   const keyboardRef = useRef(false);
-  const [Menu, setMenu] = useState<ComponentType<ResourcesMenuProps> | null>(
+  const [LoadedMenu, setLoadedMenu] = useState<ComponentType<ResourcesMenuProps> | null>(
     null
   );
   const [openWhenReady, setOpenWhenReady] = useState(false);
@@ -122,9 +123,13 @@ function ResourcesTrigger({
     loadRef.current = import("@/components/navigation-resources-menu")
       .then((module) => {
         hadFocusRef.current = document.activeElement === buttonRef.current;
-        setMenu(() => module.ResourcesMenu);
+        setLoadedMenu(() => module.ResourcesMenu);
       })
-      .catch(() => setFailed(true));
+      .catch(() => {
+        setFailed(true);
+        // Une ouverture était demandée : on mène à la page, sans second clic.
+        if (openRequestedRef.current) router.push(items[0].href);
+      });
   };
 
   const requestOpen = () => {
@@ -132,6 +137,7 @@ function ResourcesTrigger({
       router.push(items[0].href);
       return;
     }
+    openRequestedRef.current = true;
     setOpenWhenReady(true);
     load();
   };
@@ -167,9 +173,9 @@ function ResourcesTrigger({
     }
   };
 
-  if (Menu && !pressed) {
+  if (LoadedMenu && !pressed) {
     return (
-      <Menu
+      <LoadedMenu
         label={label}
         items={items}
         className={className}

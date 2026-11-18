@@ -1,4 +1,5 @@
 import { ProjectCard } from "../../_components/project-card";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -100,10 +101,10 @@ export default async function RealizationPage() {
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="px-8 text-lg">
-                <Link href="/#contact">
+                <LeadFunnelTrigger offers={["site"]}>
                   {getMessage(locale, "realization.buttons.startProject")}
                   <ArrowRight className="ml-2" size={20} />
-                </Link>
+                </LeadFunnelTrigger>
               </Button>
               <Button
                 asChild
@@ -172,7 +173,7 @@ export default async function RealizationPage() {
                 screenshot={project.screenshot}
                 category="realisation"
                 ctaText={getMessage(locale, "realization.cta")}
-                ctaLink="/#contact"
+                ctaFunnel={{ offers: ["site"] }}
               />
             ))}
           </div>
