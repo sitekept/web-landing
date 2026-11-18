@@ -173,3 +173,4 @@ Non bloquants et points pour Joseph :
 - `homeContent.hero.primaryCta` n'est plus lu ; à 390×812 la 3ᵉ carte du hero passe sous la ligne de flottaison ;
 - rappel : fusion finale avec `dev` à refaire si l'autre session commite de nouveau (`globals.css` modifié non commité sur `dev`).
 - 18 nov. : Joseph autorise la poussée. `feat/offre-v2` poussée (efb5e4a..2328d6c). Déploiement de preview Vercel terminé avec succès (page du déploiement : https://vercel.com/jonathans-projects-8295665d/web-landing/7htXKuzDsKNghpBXNSbmBCP7bED5, preview protégée par login) — phase 4 en attente de la validation de Joseph.
+- 18 nov. : **phase 3 validée par Joseph.** Restent ouverts : la ligne « Ajouter le suivi : premier mois offert à la livraison » (désactivée) et la validation explicite des valeurs DA du tunnel (ligne 3.3). Phase 4 non démarrée.
