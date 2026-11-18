@@ -358,9 +358,13 @@ export default async function MetierLandingPage({ params }: MetierPageProps) {
               </p>
               <p className="mt-2 text-slate-600">
                 Il coûte {FOLLOW_UP_MONTHLY} sans engagement, ou{" "}
-                {FOLLOW_UP_ANNUAL}. Le premier mois est offert à la livraison,
-                pour la formule mensuelle seulement. Si vous arrêtez, votre site
-                reste en ligne, à vous.
+                {FOLLOW_UP_ANNUAL}. La formule annuelle n&apos;est pas remboursée
+                si vous l&apos;arrêtez en cours d&apos;année.
+              </p>
+              <p className="mt-2 text-slate-600">
+                Le premier mois est offert à la livraison, pour la formule
+                mensuelle seulement. Si vous arrêtez, votre site reste en ligne,
+                à vous.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild className="bg-blue-600 hover:bg-blue-700">
