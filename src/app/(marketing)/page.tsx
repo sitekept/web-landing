@@ -18,8 +18,17 @@ import { PRICING, formatPrice, vatLegalNotice } from "@/content/pricing";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { getSiteLocale } from "@/lib/site-messages";
 import { FaqJsonLd } from "@/components/structured-data";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
+import {
+  OFFER_CARDS,
+  OFFER_PICKER_TEXT,
+  OFFER_SLUGS,
+} from "@/features/lead-funnel/lead-options";
 import { Contact } from "../_components/contact";
 import { PortfolioPreview } from "../_components/portfolio-preview";
+
+// Offres proposées dans le hero : celles du tunnel, sans « autre ».
+const HERO_OFFERS = OFFER_SLUGS.filter((slug) => slug !== "autre");
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getSiteLocale();
@@ -77,27 +86,45 @@ export default async function Home() {
               {getLocalizedText(hero.description, locale)}
             </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                className="bg-blue-600 px-8 text-base font-semibold text-white hover:bg-blue-700"
+            <div className="mt-8">
+              <h2
+                id="hero-offers-title"
+                className="text-base font-semibold text-white"
               >
-                <Link href="/#contact">
-                  {getLocalizedText(hero.primaryCta, locale)}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/20 bg-white/5 px-8 text-base text-white hover:bg-white/10"
+                {OFFER_PICKER_TEXT.legend}
+              </h2>
+              <ul
+                aria-labelledby="hero-offers-title"
+                className="mt-3 grid grid-cols-1 gap-3 xl:grid-cols-3"
               >
-                <Link href="/templates">
+                {HERO_OFFERS.map((slug) => (
+                  <li key={slug}>
+                    <LeadFunnelTrigger
+                      offers={[slug]}
+                      className="block h-full rounded-md border border-white/15 bg-white/5 p-4 backdrop-blur transition-colors hover:bg-white/10"
+                    >
+                      <span className="flex items-center justify-between gap-3 text-base font-semibold text-white">
+                        {OFFER_CARDS[slug].title}
+                        <ArrowRight
+                          aria-hidden="true"
+                          className="h-4 w-4 flex-shrink-0 text-slate-200"
+                        />
+                      </span>
+                      <span className="mt-1 block text-sm leading-6 text-slate-300">
+                        {OFFER_CARDS[slug].description}
+                      </span>
+                    </LeadFunnelTrigger>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-sm">
+                <Link
+                  href="/templates"
+                  className="inline-flex py-1 font-medium text-blue-300 underline underline-offset-4 transition-colors hover:text-blue-200"
+                >
                   {getLocalizedText(hero.secondaryCta, locale)}
                 </Link>
-              </Button>
+              </p>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-3">
