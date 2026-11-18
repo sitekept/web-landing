@@ -1,5 +1,7 @@
 {
   "navigation": {
+    "offers": "Plans",
+    "realizations": "Our work",
     "home": "Home",
     "templates": "Templates",
     "visibility": "SEO / GEO",
@@ -180,6 +182,7 @@
     "navigation": "Navigation",
     "resources": "Resources",
     "blog": "Blog",
+    "pricingGuide": "Pricing guide",
     "faq": "FAQ",
     "visibility": "SEO / GEO",
     "quote": "Request a quote",

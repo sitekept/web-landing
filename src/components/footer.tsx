@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { SiteLocale } from "@/content/site-content";
 import { CookieSettingsButton } from "@/components/cookie-consent";
+import { LeadFunnelTrigger } from "@/features/lead-funnel/lead-funnel-trigger";
 import { ENV } from "@/lib/env";
 import { getMessage } from "@/lib/site-messages";
 
@@ -72,18 +73,18 @@ export async function Footer({ locale }: FooterProps) {
               </Link>
             </li>
             <li>
+              <Link href="/offres" className="transition-colors hover:text-blue-200">
+                {getMessage(locale, "navigation.offers")}
+              </Link>
+            </li>
+            <li>
               <Link href="/templates" className="transition-colors hover:text-blue-200">
                 {getMessage(locale, "navigation.templates")}
               </Link>
             </li>
             <li>
-              <Link href="/tarifs" className="transition-colors hover:text-blue-200">
-                {getMessage(locale, "navigation.pricing")}
-              </Link>
-            </li>
-            <li>
-              <Link href="/seo-geo" className="transition-colors hover:text-blue-200">
-                {getMessage(locale, "navigation.visibility")}
+              <Link href="/realization" className="transition-colors hover:text-blue-200">
+                {getMessage(locale, "navigation.realizations")}
               </Link>
             </li>
             <li>
@@ -102,6 +103,11 @@ export async function Footer({ locale }: FooterProps) {
             <li>
               <Link href="/blog" className="transition-colors hover:text-blue-200">
                 {getMessage(locale, "footer.blog")}
+              </Link>
+            </li>
+            <li>
+              <Link href="/tarifs" className="transition-colors hover:text-blue-200">
+                {getMessage(locale, "footer.pricingGuide")}
               </Link>
             </li>
             <li>
@@ -144,9 +150,9 @@ export async function Footer({ locale }: FooterProps) {
               </Link>
             </li>
             <li>
-              <Link href="/#contact" className="transition-colors hover:text-blue-200">
+              <LeadFunnelTrigger className="transition-colors hover:text-blue-200">
                 {getMessage(locale, "footer.quote")}
-              </Link>
+              </LeadFunnelTrigger>
             </li>
             {ENV.NEXT_PUBLIC_GA_ID ? (
               <li>
