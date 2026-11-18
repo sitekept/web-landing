@@ -213,3 +213,4 @@ Non bloquants et points pour Joseph :
 - menu Ressources : en cas d'échec de chargement, un clic mène à `/blog` et le bouton annonce toujours `aria-haspopup` ;
 - code mort : `ctaLink` et `ctaAction` de `ProjectCard`, clés `navigation.pricing` et `navigation.visibility` ;
 - restent ouverts : validation explicite des valeurs DA du tunnel (ligne 3.3) ; nouvelle fusion de `dev` si l'autre session commite (aucun nouveau commit sur `dev` à ce jour).
+- 18 nov. : Joseph autorise la poussée. `feat/offre-v2` poussée (2328d6c..9035db9). Déploiement de preview Vercel terminé avec succès (page du déploiement : https://vercel.com/jonathans-projects-8295665d/web-landing/emSWtPeW1kf2vn3NNcMF4WxjEK5t, preview protégée par login) — phase 5 en attente de la validation de Joseph.
