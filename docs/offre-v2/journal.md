@@ -174,3 +174,17 @@ Non bloquants et points pour Joseph :
 - rappel : fusion finale avec `dev` à refaire si l'autre session commite de nouveau (`globals.css` modifié non commité sur `dev`).
 - 18 nov. : Joseph autorise la poussée. `feat/offre-v2` poussée (efb5e4a..2328d6c). Déploiement de preview Vercel terminé avec succès (page du déploiement : https://vercel.com/jonathans-projects-8295665d/web-landing/7htXKuzDsKNghpBXNSbmBCP7bED5, preview protégée par login) — phase 4 en attente de la validation de Joseph.
 - 18 nov. : **phase 3 validée par Joseph.** Restent ouverts : la ligne « Ajouter le suivi : premier mois offert à la livraison » (désactivée) et la validation explicite des valeurs DA du tunnel (ligne 3.3). Phase 4 non démarrée.
+
+## Phase 4 — navigation, footer, JSON-LD, pages métier (démarrée le 18 nov. 2026)
+
+Mini-plan accepté par Joseph le 18 nov. (« Yes, go ahead ») : 4.1 navigation et footer (menu à 5 entrées, « Ressources » en menu déroulant via la primitive `ui/dropdown-menu.tsx` autorisée par l'inventaire DA, groupe dépliable sur mobile, « Demander un devis » ouvre le tunnel), 4.2 finitions du JSON-LD (déjà conforme au § 9 depuis 2.1) et doc 05, 4.3 pages métier, 4.4 autres liens « Demander un devis » vers le tunnel et nettoyage de `homeContent.hero.primaryCta`, 4.5 vérification de fin de phase (Opus élevé). Choix par défaut acceptés :
+- A. « Contact » (menu, footer) reste vers `/#contact` ; les boutons « Demander un devis » ouvrent le tunnel ;
+- B. libellés : Offres, Templates, Réalisations, Ressources (Blog, Guide des tarifs, SEO / GEO, FAQ), Contact ;
+- C. dentiste et avocat : mention « 1 page produit pour vos campagnes payantes » retirée, aucun bloc suivi ajouté ;
+- D. métier présélectionné sur les 12 pages métier (offre « site » cochée) ; bloc « Et après la mise en ligne ? » sur plombier, salon de coiffure et boulangerie ;
+- E. FAQ = `/#faq`, aucune page `/faq` ;
+- F. liens `/#contact` de type devis vers le tunnel, liens « Contact » inchangés.
+Restent ouverts : ligne « premier mois offert » du tunnel (désactivée), validation explicite des valeurs DA du tunnel, nouvelle fusion de `dev` si l'autre session commite.
+
+| Tâche | Périmètre | Tours | Verdict final | Bloquants rencontrés |
+|---|---|---|---|---|
