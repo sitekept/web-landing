@@ -374,7 +374,7 @@ export function Navigation({ locale }: NavigationProps) {
                 asChild
                 className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
               >
-                <LeadFunnelTrigger onClick={closePanel}>
+                <LeadFunnelTrigger>
                   {labels.start}
                 </LeadFunnelTrigger>
               </Button>

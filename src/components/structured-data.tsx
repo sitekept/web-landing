@@ -289,7 +289,7 @@ export function OfferCatalogJsonLd() {
    * Période de facturation du suivi par `referenceQuantity`, pas par
    * `billingDuration` : schema.org définit `referenceQuantity` comme « The
    * reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh
-   * of electricity. » (65 EUR pour 1 mois, 600 EUR pour 1 an), alors que
+   * of electricity. » (le prix mensuel pour 1 mois, le prix annuel pour 1 an), alors que
    * `billingDuration` est « Specifies for how long this price (or price
    * component) will be billed. Can be used, for example, to model the
    * contractual duration of a subscription or payment plan. », soit une durée
