@@ -4,7 +4,19 @@
     {
       "name": "sitekept-dev",
       "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["dev"],
+      "runtimeArgs": [
+        "dev"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "sitekept-dev-node25",
+      "runtimeExecutable": "env",
+      "runtimeArgs": [
+        "NODE_OPTIONS=--no-experimental-webstorage",
+        "pnpm",
+        "dev"
+      ],
       "port": 3000
     }
   ]

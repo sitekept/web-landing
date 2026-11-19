@@ -1,32 +1,42 @@
 import type { Metadata } from "next";
-import { SITE_URL } from "@/lib/site-url";
-
-const baseUrl = SITE_URL;
+import type { SiteLocale } from "@/content/site-content";
+import {
+  absoluteUrl,
+  getLanguageAlternates,
+  localizePath,
+} from "@/lib/localized-routes";
 
 interface PageMetadataInput {
   title: string;
   description: string;
+  /** Chemin français de la page : l'équivalent anglais en est déduit. */
   path: string;
+  locale: SiteLocale;
 }
 
 export function buildPageMetadata({
   title,
   description,
   path,
+  locale,
 }: PageMetadataInput): Metadata {
-  const url = path === "/" ? baseUrl : `${baseUrl}${path}`;
+  const url = absoluteUrl(localizePath(path, locale));
 
   return {
     title,
     description,
     alternates: {
       canonical: url,
+      // hreflang : chaque version déclare l'autre, et le français sert de
+      // version par défaut.
+      languages: getLanguageAlternates(path),
     },
     openGraph: {
       title,
       description,
       url,
       siteName: "Sitekept",
+      locale: locale === "fr" ? "fr_FR" : "en_US",
       type: "website",
       // Déclarée explicitement : une page qui définit `openGraph` remplace
       // celui du layout, et l'image du fichier src/app/opengraph-image.tsx

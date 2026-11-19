@@ -5,22 +5,48 @@ import { Resend } from "resend";
 import { isValidPhoneNumber, parsePhoneNumberFromString } from "libphonenumber-js";
 import * as z from "zod";
 import { ENV } from "@/lib/env";
+import type { SiteLocale } from "@/content/site-content";
 import { buildConfirmationEmail } from "./confirmation-email";
 
-const PHONE_ERROR =
-  "Veuillez entrer un numéro de téléphone valide avec l'indicatif du pays";
+const ERRORS = {
+  fr: {
+    name: "Veuillez indiquer votre nom",
+    email: "Veuillez entrer une adresse email valide",
+    phone: "Veuillez entrer un numéro de téléphone valide avec l'indicatif du pays",
+    message: "Veuillez décrire votre projet",
+    invalid: "Données de formulaire invalides",
+    emailConfig:
+      "Erreur de configuration email. Veuillez nous contacter directement à sitekept@gmail.com",
+    sendFailed: "Échec de l'envoi de l'email",
+  },
+  en: {
+    name: "Please enter your name",
+    email: "Please enter a valid email address",
+    phone: "Please enter a valid phone number, including the country code",
+    message: "Please describe your project",
+    invalid: "Invalid form data",
+    emailConfig:
+      "Email configuration error. Please contact us directly at sitekept@gmail.com",
+    sendFailed: "The email could not be sent",
+  },
+} as const satisfies Record<SiteLocale, Record<string, string>>;
 
-const contactSchema = z.object({
-  name: z.string().trim().min(1, "Veuillez indiquer votre nom"),
-  email: z.string().email("Veuillez entrer une adresse email valide"),
-  // Sans « + » et indicatif, isValidPhoneNumber refuse le numéro : on ne stocke
-  // que du format international (E.164), directement utilisable sur WhatsApp.
-  phone: z
-    .string({ required_error: PHONE_ERROR, invalid_type_error: PHONE_ERROR })
-    .refine((value) => isValidPhoneNumber(value), { message: PHONE_ERROR })
-    .transform((value) => parsePhoneNumberFromString(value)!.number),
-  message: z.string().trim().min(1, "Veuillez décrire votre projet"),
-});
+function getContactSchema(locale: SiteLocale) {
+  const errors = ERRORS[locale];
+
+  return z.object({
+    name: z.string().trim().min(1, errors.name),
+    email: z.string().email(errors.email),
+    // Sans « + » et indicatif, isValidPhoneNumber refuse le numéro : on ne
+    // stocke que du format international (E.164), directement utilisable sur
+    // WhatsApp.
+    phone: z
+      .string({ required_error: errors.phone, invalid_type_error: errors.phone })
+      .refine((value) => isValidPhoneNumber(value), { message: errors.phone })
+      .transform((value) => parsePhoneNumberFromString(value)!.number),
+    message: z.string().trim().min(1, errors.message),
+  });
+}
 
 const CONFIRMATION_WINDOW_MS = 60 * 60 * 1000;
 const CONFIRMATION_MAX_PER_IP = 3;
@@ -62,7 +88,8 @@ function isConfirmationAllowed(ip: string, email: string) {
 async function sendConfirmationEmail(
   resend: Resend,
   email: string,
-  replyTo: string
+  replyTo: string,
+  locale: SiteLocale
 ) {
   const from = ENV.CONFIRMATION_FROM_EMAIL;
   if (!from) return;
@@ -77,7 +104,7 @@ async function sendConfirmationEmail(
       return;
     }
 
-    const { subject, html, text } = buildConfirmationEmail(replyTo);
+    const { subject, html, text } = buildConfirmationEmail(replyTo, locale);
     const { error } = await resend.emails.send({
       from,
       to: [email],
@@ -108,6 +135,9 @@ export async function getVisitorCountry() {
 }
 
 export async function submitContactForm(formData: FormData) {
+  const locale: SiteLocale = formData.get("locale") === "en" ? "en" : "fr";
+  const errors = ERRORS[locale];
+
   try {
     // Champ invisible rempli : un robot. On simule un succès sans rien envoyer.
     if (formData.get("site_url")) {
@@ -123,7 +153,7 @@ export async function submitContactForm(formData: FormData) {
     };
 
     // Validate the form data
-    const validatedData = contactSchema.parse(data);
+    const validatedData = getContactSchema(locale).parse(data);
 
     // Check if API key is available
     const apiKey = ENV.RESEND_API_KEY;
@@ -173,6 +203,7 @@ export async function submitContactForm(formData: FormData) {
             <p style="margin: 5px 0;"><strong>Nom :</strong> ${safeName}</p>
             <p style="margin: 5px 0;"><strong>Email :</strong> ${safeEmail}</p>
             <p style="margin: 5px 0;"><strong>Téléphone :</strong> <a href="tel:${validatedData.phone}">${validatedData.phone}</a> · <a href="${whatsappUrl}">WhatsApp</a></p>
+            <p style="margin: 5px 0;"><strong>Langue du site :</strong> ${locale === "en" ? "anglais" : "français"}</p>
           </div>
           
           <div style="margin: 20px 0;">
@@ -195,6 +226,7 @@ export async function submitContactForm(formData: FormData) {
         Email: ${validatedData.email}
         Téléphone: ${validatedData.phone}
         WhatsApp: ${whatsappUrl}
+        Langue du site: ${locale === "en" ? "anglais" : "français"}
         
         Message:
         ${validatedData.message}
@@ -212,16 +244,15 @@ export async function submitContactForm(formData: FormData) {
       if (error.message && error.message.includes("domain is not verified")) {
         return {
           success: false,
-          error:
-            "Erreur de configuration email. Veuillez nous contacter directement à sitekept@gmail.com",
+          error: errors.emailConfig,
         };
       }
 
-      return { success: false, error: "Échec de l'envoi de l'email" };
+      return { success: false, error: errors.sendFailed };
     }
 
     console.log("Email envoyé avec succès:", emailData);
-    await sendConfirmationEmail(resend, validatedData.email, toEmail);
+    await sendConfirmationEmail(resend, validatedData.email, toEmail, locale);
     return { success: true, message: "Email envoyé avec succès" };
   } catch (error) {
     console.error("Erreur formulaire de contact:", error);
@@ -229,11 +260,11 @@ export async function submitContactForm(formData: FormData) {
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        error: error.errors[0]?.message ?? "Données de formulaire invalides",
+        error: error.errors[0]?.message ?? errors.invalid,
         details: error.errors,
       };
     }
 
-    return { success: false, error: "Échec de l'envoi de l'email" };
+    return { success: false, error: errors.sendFailed };
   }
 }

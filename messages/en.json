@@ -5,7 +5,7 @@
     "visibility": "SEO / GEO",
     "faq": "FAQ",
     "services": "Services",
-    "ourWork": "Our Work",
+    "ourWork": "Our work",
     "contact": "Contact",
     "start": "Request a quote",
     "openMenu": "Open menu",
@@ -113,17 +113,17 @@
     "trustSignals": "✅ Free consultation • ✅ Quote within 24h • ✅ Satisfaction guaranteed"
   },
   "portfolio": {
-    "title": "Discover Our Work",
-    "subtitle": "Explore our recent achievements and ready-to-use templates",
+    "title": "Discover our work",
+    "subtitle": "Explore our recent projects and our ready-to-use templates",
     "realizations": {
-      "title": "Our Achievements",
-      "description": "Discover our recent projects: websites, applications and custom solutions that have transformed our clients' digital presence.",
-      "cta": "View our work"
+      "title": "Our work",
+      "description": "Discover our recent projects: websites, applications and custom solutions that have transformed our clients' online presence.",
+      "cta": "See our work"
     },
     "templates": {
-      "title": "Ready Templates",
-      "description": "Don't know where to start? Explore our professional templates designed for different business sectors.",
-      "cta": "Browse templates"
+      "title": "Ready-made templates",
+      "description": "Not sure where to start? Explore our professional templates designed for different industries.",
+      "cta": "Browse the templates"
     },
     "finalCta": "Ready to bring your project to life? Let's talk!",
     "startNow": "Start now"
@@ -146,15 +146,15 @@
     "guarantees": "No commitment • Free deployment • Free domain for the 1st year • Complete website ownership"
   },
   "contact": {
-    "title": "Contact us to build your website",
-    "subtitle": "Tell us about your business, your goal and the direction you want. We come back with a simple frame: price, scope and launch.",
+    "title": "Contact us to design your website",
+    "subtitle": "Tell us about your business, your goal and the style you have in mind. We'll get back to you with a simple outline: price, scope and launch.",
     "formTitle": "Let's talk about your project",
-    "commitmentTitle": "Our Commitment",
+    "commitmentTitle": "Our commitment",
     "commitments": [
-      "Fast reply during business hours",
-      "Clear framing on entry price and launch",
+      "Quick replies during business hours",
+      "Clear terms on the starting price and the launch",
       "Deployment and launch handled by Sitekept",
-      "No unnecessary friction and no forced subscription"
+      "No unnecessary vagueness and no mandatory subscription"
     ]
   },
   "contactForm": {
@@ -164,17 +164,18 @@
     "email": "Email",
     "emailPlaceholder": "your@email.com",
     "phone": "Phone",
-    "phoneInvalid": "Invalid number. Pick your country and check the number, including the country code.",
+    "phoneInvalid": "Invalid number. Select your country and check the number, including the country code.",
     "project": "Describe your project",
-    "projectPlaceholder": "Tell us about your business, your goal, your industry and the style of website you need...",
+    "projectPlaceholder": "Tell us about your business, your goal, your industry and the style of website you are looking for...",
     "required": "*",
     "submitting": "Sending...",
     "submit": "Request a quote",
-    "successMessage": "Thanks, your request is in! Check your inbox: we have prepared something for you. Remember to check your spam folder.",
-    "errorMessage": "Technical error. Contact us directly by email or try again."
+    "successMessage": "Thank you, your request has arrived! Check your inbox: we've prepared something for you. Be sure to check your spam folder too.",
+    "errorMessage": "Technical error. Please try again or contact us directly by email."
   },
   "footer": {
-    "description": "Professional websites that launch fast, stay transparent to buy and remain fully owned by the client.",
+    "description": "Professional websites that are quick to launch, transparent to buy and fully owned by the client.",
+    "brandMeta": "SEO, GEO, fast launch",
     "navigation": "Navigation",
     "resources": "Resources",
     "blog": "Blog",
@@ -182,9 +183,9 @@
     "visibility": "SEO / GEO",
     "quote": "Request a quote",
     "legal": "Legal",
-    "terms": "Terms of Use",
+    "terms": "Terms of use",
     "privacy": "Privacy",
-    "legalNotice": "Legal Notice",
+    "legalNotice": "Legal notice",
     "copyright": "© 2026 Sitekept. All rights reserved."
   },
   "seo": {
@@ -193,76 +194,76 @@
     "keywords": "website creation, fast web development, professional website, e-commerce, Next.js, web agency, showcase site, web application, SEO, modern design"
   },
   "metadata": {
-    "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-    "description": "Sitekept delivers professional websites from €500, launched in 48 hours, with no forced subscription, deployment included, a free first-year domain and SEO + GEO optimization.",
-    "keywords": "professional website 48h, fast website creation, website without subscription, fully owned website, deployment included, SEO GEO website, SMB website, solo founder website",
-    "authors": "SiteKept Team",
+    "title": "Website design from €500 | Sitekept",
+    "description": "Web agency for small businesses and tradespeople: your professional website delivered in 48 hours, with no subscription and 100% yours. Free quote within 24 hours.",
+    "keywords": "professional website in 48 hours, fast website creation, website without subscription, 100% owned website, deployment included, SEO GEO, small business website, freelancer website",
+    "authors": "SiteKept team",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-      "description": "A professional website from €500, launched fast, deployed by Sitekept, optimized for SEO + GEO and fully owned by the client.",
+      "title": "Website design from €500 | Sitekept",
+      "description": "A professional website from €500, delivered fast, deployed by Sitekept, optimized for SEO + GEO and fully owned by the client.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "Sitekept - Professional website in 48h, no subscription, fully yours",
-      "description": "A fast-to-launch professional website that is transparent to buy and built for visibility.",
+      "title": "Website design from €500 | Sitekept",
+      "description": "A professional website that is quick to launch, transparent to buy and designed for visibility.",
       "creator": "@sitekept"
     },
     "appleMobileWebAppTitle": "SiteKept"
   },
   "realization": {
-    "title": "Our Realizations",
-    "description": "Discover our recent projects that have transformed our clients' digital presence. Each realization reflects our commitment to excellence and technical expertise.",
+    "title": "Our work",
+    "description": "Discover our recent projects that have transformed our clients' online presence. Each one reflects our commitment to excellence and our technical expertise.",
     "buttons": {
       "startProject": "Start your project",
-      "viewTemplates": "View our templates"
+      "viewTemplates": "See our templates"
     },
     "cta": "Discuss a similar project",
     "projects": {
       "iaformaplus": {
         "name": "IAFormaPlus",
-        "description": "Artificial intelligence training platform with course management system, progress tracking and automated certification. Modern interface and optimal user experience."
+        "description": "Artificial intelligence training platform with a course management system, progress tracking and automated certification. A modern interface and an optimal user experience."
       },
       "orhakerem": {
         "name": "Orhakerem",
-        "description": "Elegant showcase website for law firm, highlighting legal expertise with professional design and intuitive navigation for potential clients."
+        "description": "Elegant business website for a law firm, showcasing its legal expertise with a professional design and intuitive navigation for prospective clients."
       },
       "balinjera": {
         "name": "Balinjera",
-        "description": "Bilingual showcase site for a kosher Ethiopian restaurant in Tel Aviv, with distinctive brand visuals, RTL/LTR navigation and dedicated events and blog pages."
+        "description": "Bilingual business website for a kosher Ethiopian restaurant in Tel Aviv, with a distinctive visual identity, RTL/LTR navigation and dedicated pages for events and the blog."
       },
       "pinckit": {
         "name": "PinckIt",
-        "description": "Collaborative management web application allowing teams to plan, track and optimize their projects with innovative visual tools and personalized dashboards."
+        "description": "Collaborative management web application that lets teams plan, track and optimize their projects with innovative visual tools and customized dashboards."
       },
       "flowcycleaccounting": {
         "name": "FlowCycleAccounting",
-        "description": "Modern accounting and management platform for property owners and managers, offering streamlined financial tracking."
+        "description": "Modern accounting and management platform for property owners and managers, with simplified financial tracking."
       },
       "mathintegral": {
         "name": "MathIntegral",
-        "description": "Educational marketplace for handwritten math exercises and solutions, featuring AI integration to convert handwriting into text."
+        "description": "Educational marketplace dedicated to handwritten math exercises and solutions, with AI integration to transcribe handwriting into text."
       },
       "etsruni": {
         "name": "ETS RUNI",
-        "description": "Multilingual showcase website for a spirits importer and distributor in Morocco, with polished branding and a category-based catalog experience."
+        "description": "Multilingual business website for a spirits importer and distributor in Morocco, with polished branding and a catalog organized by category."
       },
       "legitbrainrot": {
         "name": "LegitBrainrot",
-        "description": "Access platform for professionally moderated private Roblox servers, offering a secure gaming experience and a simple purchase flow."
+        "description": "Platform providing access to private Roblox servers with professional moderation, offering a secure gaming experience and a simple purchase process."
       },
       "comizglobal": {
         "name": "ComizGlobal",
-        "description": "International sourcing platform connecting businesses with verified manufacturers, tracking the supply chain from factory verification to final delivery."
+        "description": "International sourcing platform connecting businesses with verified manufacturers, with supply chain tracking from factory verification to final delivery."
       },
       "bismuthcpa": {
         "name": "BismuthCPA",
-        "description": "Showcase website for an accounting firm, presenting bookkeeping, financial advisory and tax preparation services for small businesses and property managers."
+        "description": "Business website for an accounting firm, presenting bookkeeping, financial advisory and tax preparation services for small businesses and property managers."
       },
       "lesassureursexperts": {
         "name": "Les assureurs experts",
-        "description": "Showcase website for an insurance and health coverage broker, with a clear presentation of offers and a simplified inquiry flow."
+        "description": "Business website for a health and general insurance broker, with a clear presentation of the offers and a simplified way to get in touch."
       }
     }
   },
@@ -294,7 +295,7 @@
     }
   },
   "privacy": {
-    "title": "Privacy Policy",
+    "title": "Privacy policy",
     "lastUpdate": "Last updated: {date}",
     "sections": {
       "introduction": {
@@ -302,7 +303,7 @@
         "content": "SiteKept is committed to protecting the privacy and security of your personal data. This privacy policy explains how we collect, use, store, and protect your information when you use our website and services."
       },
       "dataCollected": {
-        "title": "Data Collected",
+        "title": "Data collected",
         "content": "We may collect and process the following data:",
         "items": [
           "Identification information: first name, last name, email address",
@@ -313,7 +314,7 @@
         ]
       },
       "purposeOfProcessing": {
-        "title": "Purpose of Processing",
+        "title": "Purposes of processing",
         "content": "Your personal data is used to:",
         "items": [
           "Provide and improve our services",
@@ -325,17 +326,17 @@
         ]
       },
       "legalBasis": {
-        "title": "Legal Basis",
+        "title": "Legal basis",
         "content": "The processing of your data is based on:",
         "items": [
           "Your explicit consent",
-          "Contract execution",
+          "The performance of a contract",
           "Compliance with legal obligations",
           "Our legitimate interests"
         ]
       },
       "dataSharing": {
-        "title": "Data Sharing",
+        "title": "Data sharing",
         "content": "We never sell your personal data. We may share your information only with:",
         "items": [
           "Our technical service providers",
@@ -344,16 +345,16 @@
         ]
       },
       "dataRetention": {
-        "title": "Data Retention",
+        "title": "Data retention",
         "content": "We retain your personal data only for as long as necessary for the purposes for which it was collected, in accordance with applicable legislation."
       },
       "dataSecurity": {
-        "title": "Data Security",
+        "title": "Data security",
         "content": "We implement appropriate technical and organizational measures to protect your data against unauthorized access, loss, destruction, or alteration."
       },
       "yourRights": {
-        "title": "Your Rights",
-        "content": "In accordance with GDPR, you have the following rights:",
+        "title": "Your rights",
+        "content": "In accordance with the GDPR, you have the following rights:",
         "items": [
           "Right to access your personal data",
           "Right to rectify inaccurate data",
@@ -366,11 +367,11 @@
       },
       "cookies": {
         "title": "Cookies",
-        "content": "Our site uses cookies to improve your experience. You can manage your cookie preferences at any time through your browser settings."
+        "content": "Our website uses cookies to improve your experience. You can manage your cookie preferences at any time in your browser settings."
       },
       "internationalTransfers": {
-        "title": "International Transfers",
-        "content": "If we transfer your data outside the European Economic Area, we ensure that appropriate safeguards are in place to protect your data."
+        "title": "International transfers",
+        "content": "If we transfer your data outside the European Economic Area, we ensure that appropriate safeguards are in place to protect it."
       },
       "modifications": {
         "title": "Modifications",
@@ -384,23 +385,23 @@
       },
       "complaints": {
         "title": "Complaints",
-        "content": "If you believe your rights have not been respected, you can file a complaint with your local data protection authority."
+        "content": "If you believe your rights have not been respected, you can file a complaint with the CNIL (Commission Nationale de l'Informatique et des Libertés), the French data protection authority."
       }
     }
   },
   "terms": {
-    "title": "Terms of Use",
+    "title": "Terms of use",
     "lastUpdate": "Last updated: {date}",
     "sections": {
       "acceptance": {
-        "title": "Acceptance of Terms",
+        "title": "Acceptance of the terms",
         "content": "By accessing and using SiteKept's services, you agree to be bound by these terms of use. If you do not accept these terms, please do not use our services."
       },
       "serviceDescription": {
-        "title": "Service Description",
+        "title": "Description of services",
         "content": "SiteKept offers professional website creation services, including:",
         "items": [
-          "Design and development of showcase websites",
+          "Design and development of business websites",
           "SEO and performance optimization",
           "Hosting and technical maintenance",
           "Customer support and updates",
@@ -408,44 +409,44 @@
         ]
       },
       "clientObligations": {
-        "title": "Client Obligations",
+        "title": "Client obligations",
         "content": "As a client, you agree to:",
         "items": [
           "Provide accurate and complete information",
-          "Meet content delivery deadlines",
+          "Meet the deadlines for providing content",
           "Not use our services for illegal purposes",
           "Respect intellectual property rights",
           "Make payments according to agreed terms",
-          "Collaborate in good faith in project completion"
+          "Cooperate in good faith to complete the project"
         ]
       },
       "intellectualProperty": {
-        "title": "Intellectual Property",
+        "title": "Intellectual property",
         "content": "Website ownership:",
         "items": [
           "Once full payment is made, you become the owner of your website",
           "The source code is fully transferred to you",
-          "Content (text, images) you provide remains your property",
+          "The content (text, images) you provide remains your property",
           "SiteKept retains the right to use the project in its portfolio",
           "Third-party technologies remain subject to their respective licenses"
         ]
       },
       "pricing": {
-        "title": "Pricing and Payments",
+        "title": "Pricing and payment",
         "content": "Payment terms:",
         "items": [
           "Prices are quoted in euros, all taxes included",
           "A 30% deposit is required to start the project",
-          "The balance is due upon site delivery",
-          "Payments are made by bank transfer or credit card",
-          "Late payments incur penalties of 10% per month"
+          "The balance is due upon delivery of the website",
+          "Payments can be made by bank transfer or card",
+          "Any late payment incurs penalties of 10% per month"
         ]
       },
       "deliveryTimes": {
-        "title": "Delivery Times",
+        "title": "Delivery times",
         "content": "Delivery commitment:",
         "items": [
-          "Guaranteed delivery in 48h for standard showcase sites",
+          "Guaranteed delivery within 48 hours for standard business websites",
           "Deadlines start from receipt of deposit and content",
           "Complex projects have specific timelines",
           "Delays caused by the client are not attributable to SiteKept",
@@ -453,18 +454,18 @@
         ]
       },
       "warranties": {
-        "title": "Warranties and Support",
+        "title": "Warranties and support",
         "content": "Our guarantees:",
         "items": [
-          "6-month warranty on proper functioning",
+          "6-month warranty for proper operation",
           "Free bug fixes during the warranty period",
-          "Email technical support included for 3 months",
-          "Site usage training included",
+          "Technical support by email included for 3 months",
+          "Training on how to use the website included",
           "Critical security updates for 1 year"
         ]
       },
       "liability": {
-        "title": "Limitation of Liability",
+        "title": "Limitation of liability",
         "content": "Limits of our liability:",
         "items": [
           "SiteKept is not liable for indirect or consequential losses",
@@ -478,16 +479,16 @@
         "title": "Termination",
         "content": "Termination conditions:",
         "items": [
-          "Client may cancel within 7 days of signing",
-          "Beyond that, the deposit remains with SiteKept",
+          "The client may cancel within 7 days of signing",
+          "After that, SiteKept keeps the deposit",
           "In case of serious breach, either party may terminate with notice",
           "Work completed remains due even in case of termination",
           "Termination does not affect acquired rights"
         ]
       },
       "applicableLaw": {
-        "title": "Applicable Law",
-        "content": "These terms are governed by French law. Any dispute will be submitted to the competent courts of Paris. The parties agree to attempt an amicable resolution before any legal action."
+        "title": "Applicable law",
+        "content": "These terms are governed by French law. Any dispute will be submitted to the competent courts of Paris. The parties undertake to seek an amicable settlement before taking any legal action."
       },
       "modifications": {
         "title": "Modifications",
@@ -502,7 +503,7 @@
       }
     },
     "domainPolicy": {
-      "title": "Domain Name Policy",
+      "title": "Domain name policy",
       "content": "Regarding the domain name offered for the first year:",
       "items": [
         "The domain name is registered in the client's name",
@@ -514,42 +515,42 @@
     }
   },
   "legalNotice": {
-    "title": "Legal Notice",
+    "title": "Legal notice",
     "lastUpdate": "Last updated: {date}",
     "sections": {
       "editor": {
-        "title": "Site Publisher",
-        "content": "The site sitekept.com is published by:",
+        "title": "Website publisher",
+        "content": "The website sitekept.com is published by:",
         "companyName": "Company name: TO BE COMPLETED",
         "legalForm": "Legal form: TO BE COMPLETED",
-        "siren": "Company registration number: TO BE COMPLETED",
-        "vat": "VAT number: TO BE COMPLETED",
-        "address": "Registered address: TO BE COMPLETED",
+        "siren": "SIREN / SIRET number: TO BE COMPLETED",
+        "vat": "EU VAT number: TO BE COMPLETED",
+        "address": "Registered office: TO BE COMPLETED",
         "email": "Email: sitekept@gmail.com",
         "phone": "Phone: +33 6 51 17 99 25",
         "publicationDirector": "Publication director: TO BE COMPLETED"
       },
       "hosting": {
         "title": "Hosting",
-        "content": "The site is hosted by:",
-        "hostName": "Host: Vercel Inc.",
-        "hostAddress": "Host address: 440 N Barranca Avenue #4133, Covina, CA 91723, United States — vercel.com"
+        "content": "The website is hosted by:",
+        "hostName": "Hosting provider: Vercel Inc.",
+        "hostAddress": "Hosting provider's address: 440 N Barranca Avenue #4133, Covina, CA 91723, United States — vercel.com"
       },
       "intellectualProperty": {
-        "title": "Intellectual Property",
-        "content": "All content on this site (text, images, logos, layout) is protected by intellectual property law. Any reproduction, representation or distribution, in whole or in part, without prior authorization from SiteKept is prohibited."
+        "title": "Intellectual property",
+        "content": "All content on this website (text, images, logos, layout) is protected by intellectual property law. Any reproduction, representation or distribution, in whole or in part, without the prior authorization of SiteKept is prohibited."
       },
       "liability": {
         "title": "Liability",
-        "content": "SiteKept strives to ensure the accuracy of the information published on this site but cannot guarantee that it is free of errors, omissions or inaccuracies. Users acknowledge using this information at their own responsibility."
+        "content": "SiteKept strives to ensure that the information published on this website is accurate, but cannot guarantee that it is free of errors, omissions or inaccuracies. Users acknowledge that they use this information at their own risk."
       },
       "personalData": {
-        "title": "Personal Data",
-        "content": "The processing of personal data collected on this site is detailed in our privacy policy, accessible from the site footer."
+        "title": "Personal data",
+        "content": "The processing of personal data collected on this website is described in our privacy policy, accessible from the website footer."
       },
       "contact": {
         "title": "Contact",
-        "content": "For any question regarding this legal notice, contact us:",
+        "content": "For any questions about this legal notice, please contact us:",
         "email": "Email: sitekept@gmail.com",
         "phone": "Phone: +33 6 51 17 99 25"
       }

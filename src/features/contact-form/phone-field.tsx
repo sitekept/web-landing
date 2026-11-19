@@ -5,10 +5,12 @@ import PhoneInput, {
   type Country,
   type FlagProps,
 } from "react-phone-number-input";
+import enLabels from "react-phone-number-input/locale/en.json";
 import frLabels from "react-phone-number-input/locale/fr.json";
 import { isSupportedCountry } from "libphonenumber-js";
 import "react-phone-number-input/style.css";
 import { Input } from "@/components/ui/input";
+import type { SiteLocale } from "@/content/site-content";
 import { getVisitorCountry } from "./contact-form.action";
 
 const FALLBACK_COUNTRY: Country = "FR";
@@ -34,6 +36,7 @@ function getBrowserCountry() {
 }
 
 interface PhoneFieldProps {
+  locale: SiteLocale;
   id: string;
   name: string;
   value: string | undefined;
@@ -43,6 +46,7 @@ interface PhoneFieldProps {
 }
 
 export function PhoneField({
+  locale,
   id,
   name,
   value,
@@ -81,7 +85,7 @@ export function PhoneField({
       addInternationalOption={false}
       defaultCountry={country}
       countryOptionsOrder={[...PRIORITY_COUNTRIES, "|", "..."]}
-      labels={frLabels}
+      labels={locale === "fr" ? frLabels : enLabels}
       flagComponent={CountryFlag}
       inputComponent={Input}
       value={value}

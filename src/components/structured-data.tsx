@@ -1,4 +1,33 @@
+import type { SiteLocale } from "@/content/site-content";
+import { absoluteUrl, localizePath } from "@/lib/localized-routes";
 import { SITE_URL } from "@/lib/site-url";
+
+const ORGANIZATION_COPY = {
+  fr: {
+    description:
+      "Sitekept conçoit et livre des sites professionnels en 48 h, sans abonnement imposé, avec déploiement inclus et optimisation SEO.",
+    priceRange: "À partir de 500 €",
+    serviceType: [
+      "Création de site internet",
+      "Site vitrine",
+      "Refonte de site web",
+      "Optimisation SEO",
+    ],
+    inLanguage: "fr-FR",
+  },
+  en: {
+    description:
+      "Sitekept designs and delivers professional websites in 48 hours, with no mandatory subscription, deployment included and SEO built in.",
+    priceRange: "From €500",
+    serviceType: [
+      "Website design",
+      "Business website",
+      "Website redesign",
+      "SEO optimization",
+    ],
+    inLanguage: "en-US",
+  },
+} as const;
 
 /**
  * Données structurées de l'entité éditrice.
@@ -16,7 +45,10 @@ import { SITE_URL } from "@/lib/site-url";
  *  - `aggregateRating` : à n'ajouter QUE si des avis réels et vérifiables
  *    existent. Un rating fabriqué expose à une action manuelle Google.
  */
-export function OrganizationJsonLd() {
+export function OrganizationJsonLd({ locale }: { locale: SiteLocale }) {
+  const copy = ORGANIZATION_COPY[locale];
+  const websiteUrl = absoluteUrl(localizePath("/", locale));
+
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -30,29 +62,23 @@ export function OrganizationJsonLd() {
           url: `${SITE_URL}/logo-sitekept-rond.webp`,
         },
         image: `${SITE_URL}/opengraph-image`,
-        description:
-          "Sitekept conçoit et livre des sites professionnels en 48 h, sans abonnement imposé, avec déploiement inclus et optimisation SEO.",
+        description: copy.description,
         email: "sitekept@gmail.com",
         telephone: "+33651179925",
-        priceRange: "À partir de 500 €",
+        priceRange: copy.priceRange,
         areaServed: {
           "@type": "Country",
           name: "France",
         },
         availableLanguage: ["fr", "en"],
-        serviceType: [
-          "Création de site internet",
-          "Site vitrine",
-          "Refonte de site web",
-          "Optimisation SEO",
-        ],
+        serviceType: copy.serviceType,
       },
       {
         "@type": "WebSite",
-        "@id": `${SITE_URL}/#website`,
-        url: SITE_URL,
+        "@id": `${websiteUrl}#website`,
+        url: websiteUrl,
         name: "Sitekept",
-        inLanguage: "fr-FR",
+        inLanguage: copy.inLanguage,
         publisher: { "@id": `${SITE_URL}/#organization` },
       },
     ],
@@ -67,7 +93,8 @@ export function OrganizationJsonLd() {
 }
 
 interface BlogPostingJsonLdProps {
-  slug: string;
+  /** Chemin de l'article dans la langue de la page. */
+  path: string;
   headline: string;
   description: string;
   publishedAt: string;
@@ -82,7 +109,7 @@ interface BlogPostingJsonLdProps {
  * dans le contenu avant l'ajout des champs correspondants à `BlogPost`.
  */
 export function BlogPostingJsonLd({
-  slug,
+  path,
   headline,
   description,
   publishedAt,
@@ -90,7 +117,7 @@ export function BlogPostingJsonLd({
   author,
   locale,
 }: BlogPostingJsonLdProps) {
-  const url = `${SITE_URL}/blog/${slug}`;
+  const url = absoluteUrl(path);
 
   const data = {
     "@context": "https://schema.org",
@@ -102,7 +129,7 @@ export function BlogPostingJsonLd({
     description,
     datePublished: publishedAt,
     dateModified: updatedAt,
-    inLanguage: locale === "fr" ? "fr-FR" : "en",
+    inLanguage: locale === "fr" ? "fr-FR" : "en-US",
     author: { "@type": "Organization", name: author, url: SITE_URL },
     publisher: { "@id": `${SITE_URL}/#organization` },
     image: `${SITE_URL}/opengraph-image`,
@@ -159,7 +186,7 @@ export function BreadcrumbJsonLd({
       "@type": "ListItem",
       position: index + 1,
       name: item.name,
-      item: `${SITE_URL}${item.path === "/" ? "" : item.path}`,
+      item: absoluteUrl(item.path),
     })),
   };
 

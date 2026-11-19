@@ -12,7 +12,13 @@
  *
  * `demoSlug` pointe vers la démo correspondante. Ces démos sont en `noindex`
  * (voir src/middleware.ts) : le lien sert le visiteur, pas le référencement.
+ *
+ * La version anglaise de chaque page vit dans src/content/metier-pages-en.ts,
+ * indexée par le slug français.
  */
+
+import { metierPagesEn } from "@/content/metier-pages-en";
+import type { SiteLocale } from "@/content/site-content";
 
 export interface MetierFaq {
   question: string;
@@ -812,4 +818,58 @@ export const metierPages: MetierPage[] = [
 
 export function getMetierPageBySlug(slug: string): MetierPage | undefined {
   return metierPages.find((page) => page.slug === slug);
+}
+
+/**
+ * Page métier dans la langue demandée, à partir de son slug français.
+ * `slug` reste le slug français : c'est lui qui sert de clé aux liens.
+ */
+export function getMetierPage(frenchSlug: string, locale: SiteLocale): MetierPage {
+  const page = metierPages.find((candidate) => candidate.slug === frenchSlug);
+
+  if (!page) {
+    throw new Error(`Unknown metier page: ${frenchSlug}`);
+  }
+
+  if (locale === "fr") {
+    return page;
+  }
+
+  const english = metierPagesEn[frenchSlug];
+  const secondaryDemo = english.secondaryDemo;
+
+  return {
+    ...page,
+    label: english.label,
+    demoName: english.demoName,
+    seoTitle: english.seoTitle,
+    seoDescription: english.seoDescription,
+    h1: english.h1,
+    intro: english.intro,
+    searchIntent: english.searchIntent,
+    siteMustDo: english.siteMustDo,
+    toPrepare: english.toPrepare,
+    faq: english.faq,
+    secondaryDemo:
+      page.secondaryDemo && secondaryDemo
+        ? { slug: page.secondaryDemo.slug, ...secondaryDemo }
+        : page.secondaryDemo,
+  };
+}
+
+/** Slug d'URL d'une page métier dans une langue donnée. */
+export function getMetierSlug(frenchSlug: string, locale: SiteLocale): string {
+  return locale === "fr" ? frenchSlug : metierPagesEn[frenchSlug].slug;
+}
+
+/** Retrouve une page métier à partir du slug de son URL, dans une langue. */
+export function findMetierPageBySlug(
+  urlSlug: string,
+  locale: SiteLocale
+): MetierPage | undefined {
+  const page = metierPages.find(
+    (candidate) => getMetierSlug(candidate.slug, locale) === urlSlug
+  );
+
+  return page ? getMetierPage(page.slug, locale) : undefined;
 }

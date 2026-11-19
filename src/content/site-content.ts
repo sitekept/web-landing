@@ -78,7 +78,10 @@ export interface BlogSection {
 }
 
 export interface BlogPost {
+  /** Slug français, servi sous /blog/{slug}. Sert aussi de clé aux liens. */
   slug: string;
+  /** Slug anglais, servi sous /en/blog/{enSlug}. */
+  enSlug: string;
   /** Date de première publication, au format ISO (AAAA-MM-JJ). */
   publishedAt: string;
   /** Date de dernière modification de fond. Alimente <lastmod> et dateModified. */
@@ -186,11 +189,11 @@ export const homeContent: HomeContent = {
     },
     title: {
       fr: "Création de site internet pour PME et artisans, livré en 48h et 100 % à vous.",
-      en: "Website design for small businesses and trades, delivered in 48h and 100% yours.",
+      en: "Website design for small businesses and tradespeople, delivered in 48 hours and 100% yours.",
     },
     description: {
       fr: "Vous gardez la propriété complète, nous gérons le déploiement, le domaine est offert la première année.",
-      en: "You keep full ownership, we handle deployment, and the domain is included for the first year.",
+      en: "You keep full ownership, we handle deployment, and the domain name is free for the first year.",
     },
     primaryCta: {
       fr: "Demander un devis",
@@ -209,9 +212,9 @@ export const homeContent: HomeContent = {
       ],
       en: [
         "From €500",
-        "No forced subscription",
-        "100% website ownership",
-        "Free domain for 1 year",
+        "No mandatory subscription",
+        "You own 100% of your website",
+        "Domain name free for 1 year",
       ],
     },
   },
@@ -240,7 +243,7 @@ export const homeContent: HomeContent = {
     },
     description: {
       fr: "Chaque projet est structuré pour retirer les zones grises commerciales : vous savez ce qui est inclus, ce que vous possédez et comment le site est mis en ligne.",
-      en: "Every project is structured to remove commercial ambiguity: you know what is included, what you own and how the website goes live.",
+      en: "Every project is structured to remove commercial gray areas: you know what is included, what you own and how the website goes live.",
     },
   },
   whySection: {
@@ -268,11 +271,11 @@ export const homeContent: HomeContent = {
     },
     description: {
       fr: "Chez Sitekept, l’optimisation ne s’arrête pas au design. Nous construisons le site avec un code lisible, des contenus structurés pour répondre naturellement aux recherches de l’IA, une sitemap claire pour guider l’exploration des pages, et une base propre pour favoriser l’indexation sur Google.",
-      en: "At Sitekept, optimization goes beyond design. We build the website with readable code, content structured to answer AI-style searches naturally, a clear sitemap that guides discovery, and a clean foundation that supports Google indexing.",
+      en: "At Sitekept, optimization goes beyond design. We build the website with readable code, content structured to answer AI searches naturally, a clear sitemap that guides the crawling of your pages, and a clean foundation that supports Google indexing.",
     },
     explanation: {
       fr: "Le SEO correspond au référencement naturel sur les moteurs comme Google. Le GEO désigne la façon dont un site reste exploitable dans les réponses générées par l’IA. Pour une entreprise, les deux se complètent: l’un améliore la visibilité dans les résultats, l’autre aide votre activité à apparaître dans les réponses et recommandations que les prospects consultent de plus en plus. Pour aller plus loin, notre blog détaille ces sujets simplement.",
-      en: "SEO is organic visibility in search engines such as Google. GEO refers to how well a website can be reused in AI-generated answers. For a business, both work together: one improves discoverability in search results, the other helps your company appear in answers and recommendations that prospects increasingly rely on. Our blog explains both in simple terms.",
+      en: "SEO is organic search visibility on engines like Google. GEO is how well a website stays usable in AI-generated answers. For a business, the two complement each other: one improves visibility in search results, the other helps your business appear in the answers and recommendations that prospects increasingly turn to. To go further, our blog covers both topics in plain terms.",
     },
     linkLabel: {
       fr: "En savoir plus",
@@ -286,15 +289,15 @@ export const homeContent: HomeContent = {
     },
     title: {
       fr: "Un process court pour des clients qui ne veulent pas gérer la technique.",
-      en: "A short process for clients who do not want to manage technical work.",
+      en: "A short process for clients who don't want to deal with the technical side.",
     },
     description: {
       fr: "Vous choisissez une direction, nous nous occupons du cadre technique, du design final et de la mise en ligne.",
-      en: "You pick the direction, we handle the technical setup, the final polish and the launch.",
+      en: "You pick a direction; we handle the technical setup, the final design and the launch.",
     },
     ownershipParagraph: {
       fr: "Chaque site est développé en interne, puis livré dans un cadre qui vous laisse réellement la main. Nous créons un compte GitHub à votre nom pour y pousser le projet, un compte Vercel ou une plateforme similaire pour le déploiement, ainsi qu’un compte Hostinger ou équivalent pour l’achat du nom de domaine, pris en charge la première année. Toute la structure, du code au déploiement, reste claire pour qu’un futur développeur puisse reprendre le site facilement si vous changez de prestataire.",
-      en: "Each website is developed in-house and delivered in a setup that leaves you in control. We create a GitHub account in your name to push the project, a Vercel account or similar platform for deployment, and a Hostinger account or equivalent for the domain purchase, covered during the first year. The full structure, from code to deployment, stays clear so a future developer can take over easily if you ever change provider.",
+      en: "Each website is built in-house, then delivered in a setup that genuinely leaves you in control. We create a GitHub account in your name to hold the project, a Vercel account or similar platform for deployment, and a Hostinger account or equivalent to purchase the domain name, which we cover for the first year. The whole structure, from code to deployment, stays clear so that a future developer can easily take over the website if you switch providers.",
     },
     linkLabel: {
       fr: "En lire plus sur notre blog",
@@ -312,7 +315,7 @@ export const homeContent: HomeContent = {
     },
     description: {
       fr: "Chaque template est une base de lancement : structure, design, rythme de page et contenus de conversion déjà pensés.",
-      en: "Each template is a launch-ready base: structure, design, page rhythm and conversion content are already mapped out.",
+      en: "Each template is a launch pad: structure, design, page rhythm and conversion-focused content are already worked out.",
     },
     cta: {
       fr: "Voir tous les templates",
@@ -330,7 +333,7 @@ export const homeContent: HomeContent = {
     },
     description: {
       fr: "Vous devez comprendre l'offre avant de la comparer. Voici les points qui rassurent le plus souvent nos clients.",
-      en: "You should understand the offer before you compare it. These are the points that usually reassure our clients the most.",
+      en: "You should understand the offer before you compare it. These are the points that most often reassure our clients.",
     },
   },
 };
@@ -348,7 +351,7 @@ export const offerHighlights: OfferHighlight[] = [
       en: {
         title: "From €500",
         description:
-          "A public entry price that stays readable and does not require a subscription just to exist online.",
+          "A public, clear entry price, with no subscription to add on just to exist online.",
       },
     },
   },
@@ -362,9 +365,9 @@ export const offerHighlights: OfferHighlight[] = [
           "Un cadre court pour les projets simples, avec une promesse de rapidité comprise dès le premier contact.",
       },
       en: {
-        title: "Live in 48 hours",
+        title: "Launch in 48 hours",
         description:
-          "A short delivery frame for straightforward projects, with a speed promise that is clear from the first call.",
+          "A short timeframe for simple projects, with a promise of speed that is understood from the first contact.",
       },
     },
   },
@@ -380,7 +383,7 @@ export const offerHighlights: OfferHighlight[] = [
       en: {
         title: "You own 100% of the website",
         description:
-          "The client keeps control of the website, its content and the final production asset.",
+          "The client keeps control of their website, its content and its final launch.",
       },
     },
   },
@@ -396,7 +399,7 @@ export const offerHighlights: OfferHighlight[] = [
       en: {
         title: "No forced subscription",
         description:
-          "You buy a website, not a dependency. The commercial model stays simple and explicit.",
+          "You buy a website, not a dependency. The model is simple and openly stated.",
       },
     },
   },
@@ -412,7 +415,7 @@ export const offerHighlights: OfferHighlight[] = [
       en: {
         title: "Deployment included",
         description:
-          "We handle launch, domain setup, SSL and technical delivery without leaving you alone with the details.",
+          "We handle the launch, the domain name, SSL and the technical setup, so you are never left on your own.",
       },
     },
   },
@@ -426,9 +429,9 @@ export const offerHighlights: OfferHighlight[] = [
           "Vous validez le fond et l'image. Nous prenons en charge la partie technique du début à la mise en ligne.",
       },
       en: {
-        title: "No technical admin on your side",
+        title: "No technical work to manage",
         description:
-          "You validate the message and the look. We take care of the technical side from setup to launch.",
+          "You approve the content and the look. We take care of the technical side from start to launch.",
       },
     },
   },
@@ -447,7 +450,7 @@ export const whySitekeptItems: WhySitekeptItem[] = [
       en: {
         title: "An offer that explains itself quickly",
         description:
-          "The entry price, delivery time, ownership and lack of subscription are clear from the first read.",
+          "The entry price, the timeline, ownership and the absence of a subscription are clear from the first read.",
       },
     },
   },
@@ -461,9 +464,9 @@ export const whySitekeptItems: WhySitekeptItem[] = [
           "Le site vous appartient. Sitekept ne construit pas un tunnel pour vous garder captif après la livraison.",
       },
       en: {
-        title: "Ownership is not negotiable",
+        title: "Ownership is not up for negotiation",
         description:
-          "The website belongs to you. Sitekept does not build a tunnel designed to lock you in after delivery.",
+          "The website belongs to you. Sitekept doesn't build a funnel designed to keep you captive after delivery.",
       },
     },
   },
@@ -477,9 +480,9 @@ export const whySitekeptItems: WhySitekeptItem[] = [
           "Le SEO et le GEO sont intégrés dans la structure de page, le message et la vitesse, pas ajoutés à la fin.",
       },
       en: {
-        title: "Visibility designed from day one",
+        title: "Visibility built in from the start",
         description:
-          "SEO and GEO are built into the page structure, message and speed, not bolted on at the end.",
+          "SEO and GEO are built into the page structure, the message and the speed, not added at the end.",
       },
     },
   },
@@ -493,9 +496,9 @@ export const whySitekeptItems: WhySitekeptItem[] = [
           "Nous vendons une solution simple à acheter pour des PME et indépendants qui veulent un site utile, pas une stack.",
       },
       en: {
-        title: "A non-technical sales language",
+        title: "Plain, non-technical language",
         description:
-          "We sell a solution that is easy to buy for SMBs and solo founders who want a useful website, not a stack lecture.",
+          "We sell a solution that is simple to buy, for small businesses and freelancers who want a useful website, not a tech stack.",
       },
     },
   },
@@ -511,9 +514,9 @@ export const processSteps: ProcessStep[] = [
           "Activité, objectif, style préféré, template ou direction sur mesure : on verrouille rapidement le bon point de départ.",
       },
       en: {
-        title: "You give us the frame",
+        title: "You give us the brief",
         description:
-          "Business, goal, preferred style, template or custom direction: we lock the right starting point quickly.",
+          "Business, goal, preferred style, template or custom direction: we quickly lock in the right starting point.",
       },
     },
   },
@@ -528,7 +531,7 @@ export const processSteps: ProcessStep[] = [
       en: {
         title: "We adapt and build",
         description:
-          "Sitekept prepares the structure, design, essential content and technical setup so the website is ready for review.",
+          "Sitekept prepares the structure, design, essential content and the whole technical setup so the website is ready for your approval.",
       },
     },
   },
@@ -543,7 +546,7 @@ export const processSteps: ProcessStep[] = [
       en: {
         title: "You review, we adjust",
         description:
-          "You validate the last details, we apply the adjustments and tighten the conversion-critical parts.",
+          "You flag the final details, we apply the adjustments and we lock down the conversion points.",
       },
     },
   },
@@ -558,7 +561,7 @@ export const processSteps: ProcessStep[] = [
       en: {
         title: "We launch it",
         description:
-          "Deployment, domain, performance checks and handoff: you leave with a clear online presence you fully control.",
+          "Deployment, domain name, performance and handover: you leave with a clear, usable online presence.",
       },
     },
   },
@@ -569,11 +572,11 @@ export const faqItems: FaqItem[] = [
     id: "subscription",
     question: {
       fr: "Est-ce qu'il y a un abonnement obligatoire ?",
-      en: "Is there any mandatory subscription?",
+      en: "Is a subscription mandatory?",
     },
     answer: {
       fr: "Non. L'offre est pensée pour vendre un site, pas une dépendance. Les frais incompressibles comme l'hébergement ou le domaine peuvent exister selon le contexte, mais Sitekept n'impose pas un abonnement mensuel pour conserver votre site.",
-      en: "No. The offer is built to sell a website, not a dependency. Unavoidable costs like hosting or domain renewal may exist depending on the setup, but Sitekept does not force a monthly subscription to keep your website alive.",
+      en: "No. The offer is designed to sell a website, not a dependency. Unavoidable costs such as hosting or the domain name may apply depending on the context, but Sitekept doesn't require a monthly subscription to keep your website.",
     },
   },
   {
@@ -584,7 +587,7 @@ export const faqItems: FaqItem[] = [
     },
     answer: {
       fr: "Oui. Le site, sa structure et ses contenus vous appartiennent. Nous livrons un actif que vous pouvez garder, faire évoluer et reprendre sans blocage artificiel.",
-      en: "Yes. The website, its structure and its content belong to you. We deliver an asset you can keep, evolve and take over without artificial lock-in.",
+      en: "Yes. The website, its structure and its content belong to you. We deliver an asset you can keep, develop further and take over without any artificial roadblocks.",
     },
   },
   {
@@ -595,7 +598,7 @@ export const faqItems: FaqItem[] = [
     },
     answer: {
       fr: "Sitekept gère le déploiement, la configuration du domaine et la mise en ligne. Le but est que vous n'ayez pas à manipuler la partie technique.",
-      en: "Sitekept handles deployment, domain configuration and the production launch. The point is to keep the technical side off your plate.",
+      en: "Sitekept handles deployment, domain name configuration and the launch. The goal is that you never have to deal with the technical side.",
     },
   },
   {
@@ -606,7 +609,7 @@ export const faqItems: FaqItem[] = [
     },
     answer: {
       fr: "Oui, le nom de domaine est offert pendant la première année sur l'offre d'entrée. Nous cadrons ensuite avec vous le renouvellement et la gestion future.",
-      en: "Yes, the domain is included for the first year on the entry offer. We then clarify renewal and future management with you.",
+      en: "Yes, the domain name is free for the first year with the entry offer. We then work out renewal and future management with you.",
     },
   },
   {
@@ -617,7 +620,7 @@ export const faqItems: FaqItem[] = [
     },
     answer: {
       fr: "Pour les projets qui entrent dans le cadre de l'offre, la promesse commerciale reste une mise en ligne en 48h. Si le besoin dépasse ce cadre, nous vous l'annonçons avant de démarrer.",
-      en: "For projects that fit the offer, the commercial promise remains a 48-hour launch. If the need goes beyond that frame, we say it before anything starts.",
+      en: "For projects that fit within the offer, the commercial promise remains a 48-hour launch. If your needs go beyond that scope, we tell you before we start.",
     },
   },
   {
@@ -628,7 +631,7 @@ export const faqItems: FaqItem[] = [
     },
     answer: {
       fr: "Oui. Nous structurons les pages pour charger vite, être claires pour Google et rester faciles à citer dans les interfaces IA. Le SEO et le GEO sont des bénéfices intégrés à l'offre, pas une option ajoutée ensuite.",
-      en: "Yes. We structure the pages to load fast, stay clear for Google and remain easy to cite in AI interfaces. SEO and GEO are integrated benefits of the offer, not an afterthought.",
+      en: "Yes. We structure pages to load fast, be clear to Google and stay easy to cite in AI interfaces. SEO and GEO are benefits built into the offer, not an option added afterward.",
     },
   },
 ];
@@ -647,9 +650,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une base chaleureuse et commerçante pour vendre une presence locale claire, des horaires, une vitrine de produits et une commande simple.",
       },
       en: {
-        name: "Bakery Template",
+        name: "Bakery template",
         description:
-          "A warm, commerce-first base to sell a clear local presence, opening hours, product highlights and a simple ordering flow.",
+          "A warm, shop-friendly base for a clear local presence, opening hours, a product showcase and simple ordering.",
       },
     },
   },
@@ -666,9 +669,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une direction plus editoriale et premium pour mettre en avant un style, des compositions et un univers visuel fort.",
       },
       en: {
-        name: "Florist Template",
+        name: "Florist template",
         description:
-          "A more editorial, premium direction to highlight style, compositions and a strong visual universe.",
+          "A more editorial, premium direction to showcase a style, compositions and a strong visual world.",
       },
     },
   },
@@ -685,9 +688,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une vitrine directe et rassurante pour présenter vos services, vos garanties et vos prises de contact sans friction.",
       },
       en: {
-        name: "Computer Repair Template",
+        name: "Computer repair template",
         description:
-          "A direct and reassuring showcase to present services, guarantees and easy contact paths without friction.",
+          "A direct and reassuring site to present your services, your guarantees and your contact options without friction.",
       },
     },
   },
@@ -704,9 +707,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une base plus haut de gamme pour valoriser des créations, des événements et une promesse de maison premium.",
       },
       en: {
-        name: "Pastry Template",
+        name: "Pastry shop template",
         description:
-          "A more premium foundation to showcase creations, events and a refined maison-level positioning.",
+          "A more upscale base to showcase your creations, events and the promise of a premium pâtisserie.",
       },
     },
   },
@@ -723,9 +726,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une base clinique premium pour structurer l'information, rassurer dès le hero et pousser la prise de rendez-vous sans friction.",
       },
       en: {
-        name: "Dentist Template",
+        name: "Dentist template",
         description:
-          "A premium clinical base designed to structure information, reassure from the hero and drive appointment booking without friction.",
+          "A premium clinical base to structure information, reassure from the hero section and drive appointment booking without friction.",
       },
     },
   },
@@ -742,9 +745,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une landing d'urgence locale pensée pour les appels rapides, les zones d'intervention et une conversion immédiate.",
       },
       en: {
-        name: "Plumber & Heating Template",
+        name: "Plumber & heating template",
         description:
-          "A local emergency landing page built for rapid calls, service areas and immediate lead conversion.",
+          "A local emergency landing page designed for quick calls, service areas and immediate conversion.",
       },
     },
   },
@@ -761,9 +764,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une direction lifestyle et booking-first avec lookbook, prestations, équipe et réservations dans un cadre plus éditorial.",
       },
       en: {
-        name: "Hair Salon Template",
+        name: "Hair salon template",
         description:
-          "A lifestyle, booking-first direction with lookbook, services, team and reservations in a more editorial frame.",
+          "A lifestyle, booking-first direction with a lookbook, services, team and reservations in a more editorial setting.",
       },
     },
   },
@@ -780,9 +783,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une page claire et rassurante pour vendre des formules, des zones couvertes et une promesse de simplicité immédiate.",
       },
       en: {
-        name: "Cleaning Services Template",
+        name: "Housekeeping & cleaning template",
         description:
-          "A clear and reassuring page to sell service plans, covered areas and a simple promise from the first screen.",
+          "A clear, reassuring page to sell service packages, areas covered and a promise of instant simplicity.",
       },
     },
   },
@@ -799,9 +802,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Un univers d'hospitalité plus immersif pour mettre en avant ambiance, carte, réservation et privatisation.",
       },
       en: {
-        name: "Bistro Restaurant Template",
+        name: "Bistro restaurant template",
         description:
-          "A more immersive hospitality direction built to highlight atmosphere, menu, bookings and private events.",
+          "A more immersive hospitality universe to highlight the atmosphere, the menu, reservations and private-event bookings.",
       },
     },
   },
@@ -818,9 +821,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une base narrative et premium pour vendre une direction artistique, des projets et une méthode en format portfolio.",
       },
       en: {
-        name: "Interior Architect Template",
+        name: "Interior architect template",
         description:
-          "A premium narrative base to sell an artistic direction, featured projects and process in a portfolio format.",
+          "A narrative, premium base to sell an artistic direction, projects and a method in a portfolio format.",
       },
     },
   },
@@ -837,9 +840,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Une landing sobre et autoritaire pour convertir sur la consultation initiale avec preuve d'expertise et structure documentaire.",
       },
       en: {
-        name: "Law Firm Template",
+        name: "Law firm template",
         description:
-          "A sober, authoritative landing page built to convert on the first consultation with expertise proof and documentary structure.",
+          "A sober, authoritative landing page to convert on the initial consultation, with proof of expertise and a document-style structure.",
       },
     },
   },
@@ -856,9 +859,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Un site chic et sobre pour une avocate spécialisée en immobilier et successions France-Israël, avec blog et contact front-only.",
       },
       en: {
-        name: "Tel Aviv Lawyer Template",
+        name: "Tel Aviv lawyer template",
         description:
-          "A chic, restrained site for a lawyer focused on real estate and France-Israel inheritance matters, with blog and front-only contact.",
+          "A chic, understated site for a lawyer specializing in real estate and France-Israel inheritance law, with a blog and a front-end-only contact form.",
       },
     },
   },
@@ -875,9 +878,9 @@ export const featuredTemplates: FeaturedTemplate[] = [
           "Un modèle orienté recherche et estimation pour présenter les biens, les quartiers, les agents et les leads vendeurs.",
       },
       en: {
-        name: "Real Estate Agency Template",
+        name: "Real estate agency template",
         description:
-          "A search- and valuation-oriented model designed for listings, neighborhoods, agents and seller lead capture.",
+          "A search- and valuation-oriented model to present properties, neighborhoods, agents and seller leads.",
       },
     },
   },
@@ -894,7 +897,7 @@ export const templatesPageCopy: ListingPageCopy = {
   },
   description: {
     fr: "Cette sélection publique vous donne plusieurs points de départ. Vous choisissez un style, nous adaptons les contenus, les sections, le ton et les détails commerciaux à votre activité.",
-    en: "This public selection gives you multiple starting points. You choose a style and we adapt the content, sections, tone and commercial details to your business.",
+    en: "This public selection gives you several starting points. You choose a style, and we adapt the content, sections, tone and commercial details to your business.",
   },
 };
 
@@ -909,7 +912,7 @@ export const blogPageCopy: ListingPageCopy = {
   },
   description: {
     fr: "Le blog Sitekept sert d'abord à expliquer notre positionnement : rapidité, clarté commerciale, propriété du site et visibilité SEO/GEO.",
-    en: "The Sitekept blog is primarily here to explain our positioning: speed, commercial clarity, website ownership and SEO/GEO visibility.",
+    en: "The Sitekept blog is first and foremost here to explain our positioning: speed, commercial clarity, website ownership and SEO/GEO visibility.",
   },
 };
 
@@ -920,15 +923,15 @@ export const seoGeoPageContent: SeoGeoPageContent = {
   },
   title: {
     fr: "Comprendre le référencement naturel et ce qu’un site doit faire pour rester visible.",
-    en: "Understand organic search and what a website needs to stay visible.",
+    en: "Understand SEO and what a website must do to stay visible.",
   },
   intro: {
     fr: "Le référencement naturel reste une base essentielle dès qu’un site doit être trouvé au bon moment. Pour une PME, un indépendant ou une activité locale, un site n’a de valeur que s’il est compréhensible par Google, accessible à l’indexation et assez clair pour répondre à une intention de recherche réelle.",
-    en: "Organic search remains a core foundation whenever a website needs to be found at the right moment. For an SMB, solo founder or local business, a website only creates value if Google can understand it, index it and match it to a real search intent.",
+    en: "SEO remains an essential foundation whenever a website needs to be found at the right moment. For a small business, a freelancer or a local business, a website is only worth something if Google can understand it, index it and match it to a real search intent.",
   },
   importanceTitle: {
     fr: "Pourquoi le référencement naturel reste décisif",
-    en: "Why organic search still matters",
+    en: "Why SEO is still decisive",
   },
   importanceParagraphs: {
     fr: [
@@ -936,8 +939,8 @@ export const seoGeoPageContent: SeoGeoPageContent = {
       "Dans la pratique, cela signifie qu’un site bien pensé continue de travailler pour vous après sa mise en ligne. Il peut renforcer votre crédibilité, capter des recherches qualifiées et donner à Google des signaux cohérents sur votre activité, vos services et vos pages clés.",
     ],
     en: [
-      "Strong organic visibility helps your business appear when a prospect already expresses a need. That visibility matters because it does not rely only on paid campaigns or one-off posts: it depends on the website structure, page quality and clarity of the information you publish.",
-      "In practice, that means a well-structured website keeps working after launch. It can strengthen credibility, capture qualified searches and give Google consistent signals about your business, services and key pages.",
+      "Good SEO lets your business show up when a prospect is already voicing a need. This visibility is valuable because it doesn't depend solely on a paid campaign or a one-off post: it rests on the structure of the website, the quality of its pages and the clarity of the information you provide.",
+      "In practice, this means a well-designed website keeps working for you after launch. It can strengthen your credibility, capture qualified searches and give Google consistent signals about your business, your services and your key pages.",
     ],
   },
   primaryCta: {
@@ -954,8 +957,8 @@ export const seoGeoPageContent: SeoGeoPageContent = {
       "Aujourd’hui, cette logique sert aussi les interfaces IA. Quand un contenu est clair, bien structuré, contextuel et appuyé par des signaux cohérents, il devient plus facile à reprendre dans des réponses générées, des aperçus enrichis ou des recommandations. C’est là que SEO et GEO se rejoignent concrètement.",
     ],
     en: [
-      "A truly optimized website combines several reinforcing elements: useful pages, clear hierarchy, understandable titles, content written to answer real questions, logical internal linking and a clean technical base. A maintained sitemap and indexable pages then help Google explore the site more reliably.",
-      "Today, the same logic also serves AI interfaces. When content is clear, well-structured, contextual and backed by consistent signals, it becomes easier to reuse in generated answers, enriched previews or recommendations. That is where SEO and GEO meet in practice.",
+      "A truly optimized website rests on several elements that reinforce each other: useful pages, a clear hierarchy, understandable headings, content written to answer real questions, logical internal linking and a clean technical foundation. A well-maintained sitemap and indexable pages then help Google crawl the website more cleanly.",
+      "Today, this same logic also serves AI interfaces. When content is clear, well structured, contextual and backed by consistent signals, it becomes easier to pick up in generated answers, rich previews or recommendations. That is where SEO and GEO concretely meet.",
     ],
   },
   secondaryCta: {
@@ -967,6 +970,7 @@ export const seoGeoPageContent: SeoGeoPageContent = {
 export const blogPosts: BlogPost[] = [
   {
     slug: "site-web-rapide-pme-independant",
+    enSlug: "fast-website-for-small-businesses",
     publishedAt: "2026-04-03",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -976,30 +980,30 @@ export const blogPosts: BlogPost[] = [
     },
     title: {
       fr: "Pourquoi un site rapide à lancer compte autant pour une PME ou un indépendant",
-      en: "Why a fast launch website matters so much for an SMB or solo founder",
+      en: "Why a website that launches fast matters so much for a small business or freelancer",
     },
     excerpt: {
       fr: "Un bon site n'est pas seulement beau. Il doit être en ligne vite, cadrer votre offre et commencer à travailler commercialement sans délais inutiles.",
-      en: "A good website is not only beautiful. It should go live fast, frame your offer and start working commercially without useless delays.",
+      en: "A good website isn't just good-looking. It has to go live quickly, frame your offer and start working commercially without needless delay.",
     },
     seoTitle: {
       fr: "Site web rapide à lancer pour PME et indépendant | Sitekept",
-      en: "Fast launch website for SMBs and solo founders | Sitekept",
+      en: "Fast-launch website for small businesses and freelancers | Sitekept",
     },
     seoDescription: {
       fr: "Pourquoi la rapidité de mise en ligne change la rentabilité d'un site pour une PME ou un indépendant, et comment Sitekept structure cette promesse.",
-      en: "Why fast launch changes the ROI of a website for SMBs and solo founders, and how Sitekept structures that promise.",
+      en: "Why speed to launch changes how profitable a website is for a small business or freelancer, and how Sitekept structures that promise.",
     },
     intro: {
       fr: "Quand une PME ou un indépendant achète un site, le vrai coût ne se limite pas à la facture. Il y a aussi le temps perdu quand le projet traîne, les ventes qui n'arrivent pas et l'image qui reste floue trop longtemps.",
-      en: "When an SMB or solo founder buys a website, the real cost is not limited to the invoice. There is also the time lost when the project drags on, the sales that do not happen and the unclear brand image that lasts too long.",
+      en: "When a small business or freelancer buys a website, the real cost isn't limited to the invoice. There is also the time lost when the project drags on, the sales that don't come in and the brand image that stays blurry for too long.",
     },
     sections: [
       {
         id: "speed-is-commercial",
         title: {
           fr: "La vitesse est d'abord un argument commercial",
-          en: "Speed is first a commercial argument",
+          en: "Speed is first and foremost a sales argument",
         },
         paragraphs: {
           fr: [
@@ -1007,8 +1011,8 @@ export const blogPosts: BlogPost[] = [
             "Pour beaucoup de petites structures, attendre plusieurs semaines revient surtout à continuer sans support de vente clair. La rapidité crée un levier commercial immédiat.",
           ],
           en: [
-            "A website that launches quickly helps clarify the offer, support campaigns, send a strong link after meetings and stop improvising your online presence.",
-            "For many small businesses, waiting several weeks mostly means staying without a clean sales asset. Speed creates immediate commercial leverage.",
+            "A website that goes live quickly lets you clarify an offer, launch campaigns, send a clean link after a meeting and stop patching together your online presence.",
+            "For many small businesses, waiting several weeks mostly means carrying on without a clear sales tool. Speed creates immediate commercial leverage.",
           ],
         },
       },
@@ -1024,8 +1028,8 @@ export const blogPosts: BlogPost[] = [
             "C'est exactement le sens d'une offre Sitekept : aller vite sur ce qui compte sans vous embarquer dans un projet lourd ou une refonte ouverte sans fin.",
           ],
           en: [
-            "Speed becomes credible when the frame is clear: a simple offer, fewer decisions, a prepared design base and a short review loop.",
-            "That is exactly what a Sitekept offer means: move fast on what matters without dragging you into a heavy project or an endless open-ended redesign.",
+            "Speed becomes credible when the framework is clear: a simple offer, fewer decisions, a prepared design base and a short approval process.",
+            "That is exactly what a Sitekept offer is about: moving fast on what matters without dragging you into a heavy project or an endless redesign.",
           ],
         },
         bullets: {
@@ -1037,9 +1041,9 @@ export const blogPosts: BlogPost[] = [
           ],
           en: [
             "a clear starting point",
-            "essential content already identified",
+            "essential content identified",
             "technical setup already handled",
-            "a review loop focused on what matters",
+            "approval focused on what matters",
           ],
         },
       },
@@ -1055,8 +1059,8 @@ export const blogPosts: BlogPost[] = [
             "Si le site est bien structuré dès le départ, il devient aussi une base solide pour le SEO, le GEO et les futures itérations commerciales.",
           ],
           en: [
-            "You buy recovered time, a better framed offer, a cleaner prospecting asset and stronger control over your brand image.",
-            "If the website is structured well from day one, it also becomes a strong base for SEO, GEO and future commercial iterations.",
+            "You buy back time, a better-presented offer, a cleaner prospecting tool and better control over your image.",
+            "If the website is well structured from the start, it also becomes a solid foundation for SEO, GEO and future commercial iterations.",
           ],
         },
       },
@@ -1067,11 +1071,12 @@ export const blogPosts: BlogPost[] = [
     },
     ctaDescription: {
       fr: "Parlez-nous de votre activité. Nous vous dirons vite si votre projet entre dans le cadre de l'offre 48h.",
-      en: "Tell us about your business and we will quickly tell you whether your project fits the 48-hour offer.",
+      en: "Tell us about your business. We'll quickly tell you whether your project fits within the 48-hour offer.",
     },
   },
   {
     slug: "posseder-son-site-sans-abonnement",
+    enSlug: "own-your-website-without-a-subscription",
     publishedAt: "2026-04-03",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -1081,11 +1086,11 @@ export const blogPosts: BlogPost[] = [
     },
     title: {
       fr: "Pourquoi posséder 100% de son site sans abonnement change la relation avec son prestataire",
-      en: "Why owning 100% of your website without a subscription changes the agency relationship",
+      en: "Why owning 100% of your website with no subscription changes your relationship with your provider",
     },
     excerpt: {
       fr: "Un site peut être un actif ou une dépendance. La différence se joue souvent dans le contrat, la livraison et le niveau de contrôle que garde le client.",
-      en: "A website can be an asset or a dependency. The difference is often hidden in the contract, delivery model and the level of control the client keeps.",
+      en: "A website can be an asset or a dependency. The difference often comes down to the contract, the delivery and how much control the client keeps.",
     },
     seoTitle: {
       fr: "Posséder son site sans abonnement | Sitekept",
@@ -1093,11 +1098,11 @@ export const blogPosts: BlogPost[] = [
     },
     seoDescription: {
       fr: "Pourquoi la propriété complète du site et l'absence d'abonnement imposée sont des avantages commerciaux, budgétaires et opérationnels.",
-      en: "Why full website ownership and the absence of forced subscriptions are commercial, budgetary and operational advantages.",
+      en: "Why full website ownership and no mandatory subscription are commercial, budgetary and operational advantages.",
     },
     intro: {
       fr: "Beaucoup d'entreprises pensent acheter un site alors qu'elles achètent en réalité un accès conditionnel à un site. Quand la propriété reste floue, la relation avec le prestataire devient plus fragile et plus coûteuse.",
-      en: "Many businesses think they are buying a website while they are really buying conditional access to one. When ownership stays unclear, the agency relationship becomes more fragile and more expensive.",
+      en: "Many businesses think they are buying a website when they are really buying conditional access to one. When ownership stays unclear, the relationship with the provider becomes more fragile and more expensive.",
     },
     sections: [
       {
@@ -1112,8 +1117,8 @@ export const blogPosts: BlogPost[] = [
             "À l'inverse, un modèle où tout passe par un abonnement opaque crée de la friction à chaque changement, même minime.",
           ],
           en: [
-            "When you truly own your website, you keep the freedom to evolve the project, change providers or take over later.",
-            "By contrast, a model where everything depends on an opaque subscription creates friction every time you need to change anything.",
+            "When you truly own your website, you keep the freedom to develop the project further, switch providers or take it back into your own hands later.",
+            "Conversely, a model where everything goes through an opaque subscription creates friction with every change, however small.",
           ],
         },
       },
@@ -1129,8 +1134,8 @@ export const blogPosts: BlogPost[] = [
             "Un client qui possède son site peut investir dans l'acquisition, le contenu ou l'évolution produit sans craindre de repartir de zéro pour des raisons contractuelles.",
           ],
           en: [
-            "Ownership is not only a principle. It changes your budget, your negotiation leverage and your long-term peace of mind.",
-            "A client who owns the website can invest in acquisition, content or product evolution without fearing a full reset for contractual reasons.",
+            "Ownership isn't just a matter of principle. It changes your budget, your negotiating power and your long-term peace of mind.",
+            "A client who owns their website can invest in acquisition, content or product development without fearing a full restart for contractual reasons.",
           ],
         },
         bullets: {
@@ -1144,7 +1149,7 @@ export const blogPosts: BlogPost[] = [
             "less commercial dependency",
             "fewer budget surprises",
             "more room to change or evolve",
-            "better long-term asset value",
+            "a higher lasting value for the website as an asset",
           ],
         },
       },
@@ -1152,7 +1157,7 @@ export const blogPosts: BlogPost[] = [
         id: "sitekept-position",
         title: {
           fr: "La position Sitekept sur ce point",
-          en: "The Sitekept position on this issue",
+          en: "Sitekept's position on this",
         },
         paragraphs: {
           fr: [
@@ -1160,7 +1165,7 @@ export const blogPosts: BlogPost[] = [
             "C'est aussi ce qui rend l'offre plus facile à acheter pour des clients non techniques : ils comprennent ce qu'ils paient et ce qu'ils récupèrent.",
           ],
           en: [
-            "We keep it simple: you buy a website, not a lock. No forced subscription and explicit ownership are part of the offer, not a premium upsell.",
+            "We keep it simple: you buy a website, not a lock. No mandatory subscription and outright ownership are part of the offer, not a premium option.",
             "That also makes the offer easier to buy for non-technical clients: they understand what they pay for and what they get back.",
           ],
         },
@@ -1168,15 +1173,16 @@ export const blogPosts: BlogPost[] = [
     ],
     ctaTitle: {
       fr: "Vous voulez un site utile sans rester captif d'un abonnement ?",
-      en: "Want a useful website without staying trapped in a subscription?",
+      en: "Want a useful website without being stuck with a subscription?",
     },
     ctaDescription: {
       fr: "Nous pouvons cadrer une offre simple, rapide et livrée comme un vrai actif pour votre entreprise.",
-      en: "We can frame a simple, fast offer delivered as a real business asset.",
+      en: "We can set up a simple, fast offer, delivered as a real asset for your business.",
     },
   },
   {
     slug: "site-optimise-seo-geo",
+    enSlug: "seo-geo-optimized-website",
     publishedAt: "2026-04-03",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -1186,30 +1192,30 @@ export const blogPosts: BlogPost[] = [
     },
     title: {
       fr: "Ce qu'un site optimisé SEO et GEO doit faire pour rester visible sur Google et dans les interfaces IA",
-      en: "What an SEO and GEO optimized website needs to do to stay visible on Google and in AI interfaces",
+      en: "What an SEO- and GEO-optimized website needs to do to stay visible on Google and in AI interfaces",
     },
     excerpt: {
       fr: "La visibilité moderne ne se limite plus au SEO classique. Les interfaces IA reprennent, résument et recommandent des contenus. Le site doit être lisible pour les deux mondes.",
-      en: "Modern visibility is not limited to classic SEO anymore. AI interfaces reuse, summarize and recommend content. A website must stay legible to both worlds.",
+      en: "Modern visibility is no longer limited to classic SEO. AI interfaces pick up, summarize and recommend content. A website needs to be readable for both worlds.",
     },
     seoTitle: {
       fr: "Site optimisé SEO et GEO : le guide | Sitekept",
-      en: "SEO and GEO optimized website | Sitekept",
+      en: "SEO- and GEO-optimized website: the guide | Sitekept",
     },
     seoDescription: {
       fr: "Comment penser un site visible à la fois pour Google et pour les interfaces IA : structure, vitesse, clarté et signaux de confiance.",
-      en: "How to design a website that stays visible for both Google and AI interfaces: structure, speed, clarity and trust signals.",
+      en: "How to design a website that is visible to both Google and AI interfaces: structure, speed, clarity and trust signals.",
     },
     intro: {
       fr: "Le SEO reste essentiel, mais il ne suffit plus à expliquer toute la visibilité. De plus en plus d'utilisateurs découvrent des entreprises via des réponses générées par IA, des aperçus enrichis ou des assistants qui reformulent l'information.",
-      en: "SEO remains essential, but it no longer explains visibility on its own. More and more users discover businesses through AI-generated answers, enriched summaries or assistants that reformulate information.",
+      en: "SEO remains essential, but it no longer explains all of visibility. More and more users discover businesses through AI-generated answers, rich previews or assistants that rephrase information.",
     },
     sections: [
       {
         id: "structure-first",
         title: {
           fr: "Une structure claire reste la base commune",
-          en: "A clear structure remains the shared foundation",
+          en: "A clear structure remains the common foundation",
         },
         paragraphs: {
           fr: [
@@ -1217,8 +1223,8 @@ export const blogPosts: BlogPost[] = [
             "Une page rapide, bien hiérarchisée et sémantiquement propre aide autant le moteur classique que les systèmes qui résument vos contenus.",
           ],
           en: [
-            "For Google and AI interfaces alike, a website must clearly state its offer, audience, promise and trust proof. That is what makes the information reusable and easy to cite.",
-            "A fast page with strong hierarchy and clean semantics helps both classic search engines and systems that summarize your content.",
+            "For Google and AI interfaces alike, a website must clearly state its offer, its audience, its promise and its proof of trust. That is what makes the information usable and easy to cite.",
+            "A fast, well-structured, semantically clean page helps traditional search engines as much as the systems that summarize your content.",
           ],
         },
       },
@@ -1234,8 +1240,8 @@ export const blogPosts: BlogPost[] = [
             "Plus l'offre est claire, plus elle peut être reformulée sans perdre son sens. C'est un vrai avantage GEO.",
           ],
           en: [
-            "A visible website should not only talk about technology. It must clearly say what is being sold, for whom, at which entry point and with which guarantees. That also makes AI interfaces more likely to reuse a reliable answer.",
-            "The clearer the offer, the easier it is to reformulate without losing meaning. That is a real GEO advantage.",
+            "A visible website shouldn't only talk about technology. It needs to say clearly what is being sold, to whom, at what entry point and with what guarantees. That is also what lets AI interfaces pick up a reliable answer.",
+            "The clearer the offer, the more easily it can be rephrased without losing its meaning. That is a real GEO advantage.",
           ],
         },
         bullets: {
@@ -1249,7 +1255,7 @@ export const blogPosts: BlogPost[] = [
             "a simple promise",
             "visible guarantees",
             "consistent CTAs",
-            "content that is easy to quote",
+            "content that is easy to cite",
           ],
         },
       },
@@ -1265,7 +1271,7 @@ export const blogPosts: BlogPost[] = [
             "Le SEO et le GEO ne remplacent pas la promesse commerciale. Ils l'amplifient quand le site est déjà clair, rapide et crédible.",
           ],
           en: [
-            "We integrate visibility into the website structure from the start: speed, clear sections, concise copy, trust signals and pages that support acquisition.",
+            "We build visibility into the website's structure from the start: speed, clear sections, concise copy, trust signals and pages that support acquisition.",
             "SEO and GEO do not replace the commercial promise. They amplify it when the website is already clear, fast and credible.",
           ],
         },
@@ -1277,11 +1283,12 @@ export const blogPosts: BlogPost[] = [
     },
     ctaDescription: {
       fr: "Nous pouvons cadrer une home et des pages piliers qui parlent a la fois aux humains, a Google et aux interfaces IA.",
-      en: "We can structure a home page and pillar pages that speak to people, Google and AI interfaces at the same time.",
+      en: "We can structure a home page and cornerstone pages that speak to people, to Google and to AI interfaces all at once.",
     },
   },
   {
     slug: "qu-est-ce-que-le-seo-et-le-geo",
+    enSlug: "what-are-seo-and-geo",
     publishedAt: "2026-04-05",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -1295,7 +1302,7 @@ export const blogPosts: BlogPost[] = [
     },
     excerpt: {
       fr: "SEO et GEO poursuivent le même objectif: rendre un site plus facile à trouver et à comprendre, que la recherche passe par Google ou par une interface IA.",
-      en: "SEO and GEO pursue the same goal: making a website easier to find and understand, whether discovery happens through Google or an AI interface.",
+      en: "SEO and GEO pursue the same goal: making a website easier to find and understand, whether search goes through Google or an AI interface.",
     },
     seoTitle: {
       fr: "Qu’est-ce que le SEO et le GEO ? | Sitekept",
@@ -1307,7 +1314,7 @@ export const blogPosts: BlogPost[] = [
     },
     intro: {
       fr: "Quand on parle de visibilité en ligne, beaucoup d’entreprises pensent d’abord à Google. C’est logique. Mais les usages évoluent: une partie des recherches passe désormais par des aperçus générés, des assistants conversationnels ou des interfaces IA qui reformulent les résultats. Pour rester visible dans ce contexte, il faut comprendre deux notions complémentaires: le SEO et le GEO.",
-      en: "When people talk about online visibility, most businesses first think about Google. That makes sense. But search behavior is evolving: part of discovery now happens through generated overviews, conversational assistants and AI interfaces that reformulate results. To stay visible in that context, two complementary ideas matter: SEO and GEO.",
+      en: "When people talk about online visibility, many businesses think of Google first. That makes sense. But habits are changing: some searches now go through generated overviews, conversational assistants or AI interfaces that rephrase results. To stay visible in this context, you need to understand two complementary concepts: SEO and GEO.",
     },
     sections: [
       {
@@ -1322,8 +1329,8 @@ export const blogPosts: BlogPost[] = [
             "En pratique, le SEO permet à votre activité d’être trouvée quand un prospect exprime déjà un besoin. C’est ce qui transforme un site en outil commercial plutôt qu’en simple présence en ligne.",
           ],
           en: [
-            "SEO, or search engine optimization, covers everything that helps a website appear in unpaid search results. It relies on useful pages, clear structure, understandable titles, strong internal linking, proper indexing and a sound technical foundation.",
-            "In practice, SEO helps your business be found when a prospect already expresses a need. That is what turns a website into a commercial tool rather than a simple online presence.",
+            "SEO, short for search engine optimization, covers everything that helps a website appear in the unpaid results of search engines. It relies on useful pages, a clear structure, understandable titles, good internal linking, proper indexing and a sound technical foundation.",
+            "In practice, SEO lets your business be found when a prospect is already voicing a need. That is what turns a website into a sales tool rather than a mere online presence.",
           ],
         },
       },
@@ -1331,7 +1338,7 @@ export const blogPosts: BlogPost[] = [
         id: "geo-definition",
         title: {
           fr: "Le GEO: rester exploitable dans les réponses générées par l’IA",
-          en: "GEO: staying reusable in AI-generated answers",
+          en: "GEO: staying usable in AI-generated answers",
         },
         paragraphs: {
           fr: [
@@ -1339,8 +1346,8 @@ export const blogPosts: BlogPost[] = [
             "Cela suppose un contenu précis, des réponses naturelles aux questions fréquentes, des signaux de confiance visibles, ainsi qu’une structure qui aide les systèmes à identifier qui vous êtes, ce que vous proposez et pourquoi cela peut être utile à l’utilisateur.",
           ],
           en: [
-            "The term GEO is often used to describe a website’s ability to stay clear, reliable and reusable in AI-generated answers. The goal is not only to appear on a search results page, but also to be understandable enough for an AI interface to rely on your content or recommend your business.",
-            "That requires precise content, natural answers to frequent questions, visible trust signals and a structure that helps systems identify who you are, what you offer and why it may be useful to the user.",
+            "The term GEO is often used to describe a website's ability to stay clear, reliable and reusable in AI-generated answers. Here the aim isn't just to appear on a results page, but also to be understandable enough for an AI interface to draw on your content or recommend your business.",
+            "That requires precise content, natural answers to common questions, visible trust signals and a structure that helps systems identify who you are, what you offer and why it can be useful to the user.",
           ],
         },
       },
@@ -1348,7 +1355,7 @@ export const blogPosts: BlogPost[] = [
         id: "how-they-work-together",
         title: {
           fr: "Pourquoi ils se complètent au lieu de s’opposer",
-          en: "Why they complement each other instead of competing",
+          en: "Why they complement rather than compete with each other",
         },
         paragraphs: {
           fr: [
@@ -1356,23 +1363,24 @@ export const blogPosts: BlogPost[] = [
             "Autrement dit, le GEO ne remplace pas le SEO. Il prolonge sa logique dans de nouveaux usages. Pour une entreprise, la bonne approche consiste donc à construire un site qui répond clairement à des questions humaines, tout en restant lisible pour les moteurs et les systèmes génératifs.",
           ],
           en: [
-            "SEO and GEO share the same foundation: a website that is clear, useful, fast and indexable. Well-structured content helps Google rank your pages, but it also helps AI interfaces restate your offer correctly.",
-            "In other words, GEO does not replace SEO. It extends the same logic into new usage patterns. For a business, the right approach is to build a website that answers human questions clearly while staying readable to search engines and generative systems.",
+            "SEO and GEO rest on a shared foundation: a website that is clear, useful, fast and indexable. Well-structured content helps Google rank your pages, but it also helps AI interfaces restate your offer accurately.",
+            "In other words, GEO doesn't replace SEO. It extends its logic into new ways of searching. For a business, the right approach is therefore to build a website that clearly answers human questions while staying readable for search engines and generative systems.",
           ],
         },
       },
     ],
     ctaTitle: {
       fr: "Vous voulez un site pensé pour Google et pour les interfaces IA ?",
-      en: "Want a website designed for Google and AI interfaces?",
+      en: "Want a website built for Google and for AI interfaces?",
     },
     ctaDescription: {
       fr: "Nous pouvons structurer vos pages pour qu’elles restent utiles à la fois pour la recherche classique et pour les réponses générées.",
-      en: "We can structure your pages so they stay useful for both classic search and generated answers.",
+      en: "We can structure your pages so they stay useful for both traditional search and generated answers.",
     },
   },
   {
     slug: "site-sans-referencement-peut-devenir-inutile",
+    enSlug: "website-without-seo-can-become-useless",
     publishedAt: "2026-04-05",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -1382,30 +1390,30 @@ export const blogPosts: BlogPost[] = [
     },
     title: {
       fr: "Un site sans référencement peut s’avérer inutile : une vitrine que personne ne voit, c’est comme si elle n’existait pas",
-      en: "A website without search visibility can become useless: if nobody sees the storefront, it may as well not exist",
+      en: "A website with no SEO can prove useless: a storefront nobody sees might as well not exist",
     },
     excerpt: {
       fr: "Un site peut être propre et bien conçu, mais s’il n’est jamais trouvé, il ne joue pas son rôle commercial. La visibilité fait partie de son utilité réelle.",
-      en: "A website can be clean and well designed, but if nobody finds it, it does not fulfill its commercial role. Visibility is part of its real usefulness.",
+      en: "A website can be clean and well designed, but if it is never found, it isn't doing its commercial job. Visibility is part of what makes it truly useful.",
     },
     seoTitle: {
       fr: "Site sans référencement : pourquoi il devient inutile",
-      en: "Why a website without search visibility can become useless | Sitekept",
+      en: "Website with no SEO: why it becomes useless",
     },
     seoDescription: {
       fr: "Pourquoi un site qui n’est pas trouvé sur Google ou dans les réponses IA peut échouer commercialement, même s’il est bien présenté.",
-      en: "Why a website that cannot be found on Google or in AI answers can fail commercially, even when it looks good.",
+      en: "Why a website that can't be found on Google or in AI answers can fail commercially, even if it is well presented.",
     },
     intro: {
       fr: "Un site web n’est pas seulement un objet de présentation. Il doit aider à être trouvé, rassurer au bon moment et faciliter la prise de contact. Quand il manque de visibilité, il perd une partie essentielle de sa valeur. Une vitrine invisible ne soutient ni les ventes, ni la notoriété, ni la crédibilité d’une entreprise.",
-      en: "A website is not just something to present. It should help a business be found, reassure people at the right moment and make contact easier. When visibility is missing, the website loses a key part of its value. An invisible storefront does not support sales, awareness or credibility.",
+      en: "A website isn't just a showcase item. It should help people find you, reassure them at the right moment and make it easy to get in touch. When it lacks visibility, it loses an essential part of its value. An invisible storefront supports neither sales, nor awareness, nor a business's credibility.",
     },
     sections: [
       {
         id: "beautiful-is-not-enough",
         title: {
           fr: "Un beau site ne suffit pas à créer de la demande",
-          en: "A beautiful website is not enough to create demand",
+          en: "A beautiful website isn't enough to create demand",
         },
         paragraphs: {
           fr: [
@@ -1413,8 +1421,8 @@ export const blogPosts: BlogPost[] = [
             "Le problème n’est donc pas seulement esthétique. Il est fonctionnel. Un site n’est utile que s’il peut être découvert par les bonnes personnes au bon moment.",
           ],
           en: [
-            "Many businesses first invest in how the website looks. That matters, but it is not enough. If the site does not answer precise searches, is not indexed correctly or does not provide clear business signals, it will remain hard to discover.",
-            "The problem is not only aesthetic. It is functional. A website is only useful if the right people can find it at the right moment.",
+            "Many businesses invest first in how the website looks. That is important, but it isn't enough. If the website doesn't answer specific searches, isn't properly indexed or doesn't send clear signals about the business, it will remain barely visible.",
+            "So the problem isn't just aesthetic. It is functional. A website is only useful if the right people can discover it at the right moment.",
           ],
         },
       },
@@ -1422,7 +1430,7 @@ export const blogPosts: BlogPost[] = [
         id: "local-business-cases",
         title: {
           fr: "Pour une activité locale, la visibilité est souvent la vraie différence",
-          en: "For a local business, visibility is often the real difference-maker",
+          en: "For a local business, visibility is often what makes the real difference",
         },
         paragraphs: {
           fr: [
@@ -1430,8 +1438,8 @@ export const blogPosts: BlogPost[] = [
             "Dans ces contextes, le référencement naturel ne sert pas à “faire du trafic” au sens abstrait. Il sert à capter des personnes déjà proches d’une décision ou d’une prise de contact.",
           ],
           en: [
-            "Take simple examples: a lawyer, a dentist, a restaurant or a local trades business. Prospects are not only searching for a brand name. They search for a service, a need, a specialty or an area. If your website does not show up for those requests, it leaves room to competitors who may be less convincing.",
-            "In those cases, organic search is not about generating traffic in the abstract. It is about capturing people who are already close to making a decision or getting in touch.",
+            "Take simple cases: a lawyer, a dentist, a restaurant or a local tradesperson. Prospects aren't only looking for a brand name. They are looking for a service, a need, a specialty or an area. If your website doesn't show up for those searches, it leaves the field open to competitors who are sometimes less convincing.",
+            "In these contexts, SEO isn't about “generating traffic” in the abstract. It is about reaching people who are already close to making a decision or getting in touch.",
           ],
         },
       },
@@ -1439,7 +1447,7 @@ export const blogPosts: BlogPost[] = [
         id: "visibility-is-utility",
         title: {
           fr: "La visibilité fait partie de l’utilité du site",
-          en: "Visibility is part of the website’s usefulness",
+          en: "Visibility is part of a website's usefulness",
         },
         paragraphs: {
           fr: [
@@ -1447,49 +1455,50 @@ export const blogPosts: BlogPost[] = [
             "C’est pour cette raison que Sitekept traite la visibilité comme une composante du site lui-même, pas comme une couche optionnelle à ajouter plus tard. Un site qui n’est pas vu reste incomplet, même s’il est bien dessiné.",
           ],
           en: [
-            "When assessing a website, you need to look beyond the visual result. Is it clear to Google? Does it answer natural searches? Is it readable enough to be reused in AI answers? Does it actually help a prospect understand the offer and take action?",
-            "That is why Sitekept treats visibility as part of the website itself, not as an optional layer added later. A website that is not seen stays incomplete, even if it is well designed.",
+            "When evaluating a website, you therefore need to look beyond how it looks. Is it clear to Google? Does it answer natural searches? Is it readable enough to be picked up in AI answers? Does it really help a prospect understand the offer and take action?",
+            "That is why Sitekept treats visibility as a component of the website itself, not an optional layer to add later. A website nobody sees stays incomplete, even if it is well designed.",
           ],
         },
       },
     ],
     ctaTitle: {
       fr: "Vous voulez un site qui ne reste pas invisible après sa mise en ligne ?",
-      en: "Want a website that does not stay invisible after launch?",
+      en: "Want a website that doesn't stay invisible after launch?",
     },
     ctaDescription: {
       fr: "Nous pouvons cadrer un site clair, utile et pensé pour être trouvé par les bonnes recherches.",
-      en: "We can frame a website that is clear, useful and designed to be found through the right searches.",
+      en: "We can set up a website that is clear, useful and built to be found through the right searches.",
     },
   },
   {
     slug: "pourquoi-optimisation-referencement-naturel-importante",
+    enSlug: "why-seo-optimization-matters",
     publishedAt: "2026-04-05",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
     category: {
       fr: "Référencement naturel",
-      en: "Organic search",
+      en: "Organic SEO",
     },
     title: {
       fr: "Pourquoi l’optimisation au référencement naturel est importante et ce qu’elle apporte réellement",
-      en: "Why organic search optimization matters and what it really brings",
+      en: "Why optimizing your website for SEO matters and what it really delivers",
     },
     excerpt: {
       fr: "Le référencement naturel n’est pas un supplément technique. C’est ce qui permet à un site d’attirer une audience qualifiée, de rester crédible et de continuer à être trouvé dans le temps.",
-      en: "Organic search optimization is not a technical add-on. It is what helps a website attract qualified traffic, stay credible and keep being discovered over time.",
+      en: "SEO isn't a technical extra. It is what lets a website attract a qualified audience, stay credible and keep being found over time.",
     },
     seoTitle: {
       fr: "Pourquoi le référencement naturel est important | Sitekept",
-      en: "Why organic search optimization matters | Sitekept",
+      en: "Why SEO matters | Sitekept",
     },
     seoDescription: {
       fr: "Visibilité, trafic qualifié, crédibilité, présence durable: voici ce que le référencement naturel apporte réellement à un site web.",
-      en: "Visibility, qualified traffic, credibility and durable discoverability: here is what organic search optimization really brings to a website.",
+      en: "Visibility, qualified traffic, credibility, lasting presence: here is what SEO really brings to a website.",
     },
     intro: {
       fr: "Le référencement naturel est parfois résumé à une affaire de mots-clés. C’est une vision trop courte. En réalité, il s’agit surtout de rendre un site trouvable, compréhensible et crédible pour des prospects qui cherchent déjà une réponse. C’est cette capacité qui lui donne une vraie valeur commerciale dans le temps.",
-      en: "Organic search optimization is sometimes reduced to a keyword exercise. That view is too narrow. In reality, it is about making a website findable, understandable and credible for prospects who are already looking for an answer. That is what gives it long-term commercial value.",
+      en: "SEO is sometimes boiled down to a matter of keywords. That is too narrow a view. In reality, it is mostly about making a website findable, understandable and credible to prospects who are already looking for an answer. That ability is what gives it real commercial value over time.",
     },
     sections: [
       {
@@ -1504,8 +1513,8 @@ export const blogPosts: BlogPost[] = [
             "Pour une PME ou un indépendant, cela change beaucoup de choses: les visites ont plus de sens, les prises de contact sont mieux alignées avec l’offre et le site devient un vrai support commercial.",
           ],
           en: [
-            "Organic search helps your website appear in front of people who already express a need. This is not vague or distracted traffic, but visitors who are potentially much more relevant for your business.",
-            "For an SMB or solo founder, that changes a lot: visits make more sense, contact requests are better aligned with the offer and the website becomes a true commercial asset.",
+            "SEO helps your website show up in front of people who are already voicing a need. We are not talking about a vague or distracted audience, but about visitors who are potentially more relevant to your business.",
+            "For a small business or freelancer, that changes a lot: visits are more meaningful, contact requests line up better with the offer and the website becomes a real sales tool.",
           ],
         },
       },
@@ -1521,8 +1530,8 @@ export const blogPosts: BlogPost[] = [
             "Cette crédibilité est essentielle, en particulier pour les services où la décision se prend avec un niveau élevé de confiance: santé, droit, immobilier, artisanat spécialisé ou services B2B.",
           ],
           en: [
-            "A well-optimized website is not only more visible. It also feels more credible because it aligns better with search expectations, structures information clearly and offers useful pages about services, expertise and frequent questions.",
-            "That credibility matters especially in services where decisions require a high level of trust: health, law, real estate, specialized trades or B2B services.",
+            "A well-ranked website isn't just more exposed. It also looks more credible, because it better meets search expectations, structures its information clearly and shows useful pages about its services, expertise or answers to common questions.",
+            "This credibility is essential, particularly for services where the decision is made with a high level of trust: healthcare, law, real estate, specialized trades or B2B services.",
           ],
         },
       },
@@ -1530,7 +1539,7 @@ export const blogPosts: BlogPost[] = [
         id: "long-term-discoverability",
         title: {
           fr: "Le troisième bénéfice: une présence qui continue dans le temps",
-          en: "The third benefit: discoverability that lasts over time",
+          en: "The third benefit: a presence that lasts over time",
         },
         paragraphs: {
           fr: [
@@ -1538,23 +1547,24 @@ export const blogPosts: BlogPost[] = [
             "C’est aussi ce qui rend le SEO particulièrement intéressant pour un site livré comme un actif durable: vous investissez dans une structure qui peut continuer à progresser, au lieu de repartir de zéro à chaque changement.",
           ],
           en: [
-            "Serious organic optimization creates a durable base. Unlike one-off actions, it strengthens the website’s ability to remain visible, be recrawled, be better understood and support future pages or campaigns.",
-            "That is also what makes SEO especially valuable for a website delivered as a durable asset: you invest in a structure that can keep progressing instead of restarting from scratch each time things change.",
+            "Serious SEO work creates a lasting foundation. Unlike a one-off action, it strengthens the website's ability to stay visible, be recrawled, be better understood and support future pages or campaigns.",
+            "That is also what makes SEO particularly worthwhile for a website delivered as a lasting asset: you invest in a structure that can keep improving, instead of starting from zero with every change.",
           ],
         },
       },
     ],
     ctaTitle: {
       fr: "Vous voulez un site qui attire une visibilité utile, pas seulement du passage ?",
-      en: "Want a website that attracts useful visibility, not just visits?",
+      en: "Want a website that attracts useful visibility, not just passing traffic?",
     },
     ctaDescription: {
       fr: "Nous pouvons construire une base claire, indexable et durable pour votre acquisition organique.",
-      en: "We can build a clear, indexable and durable base for your organic acquisition.",
+      en: "We can build a clear, indexable and lasting foundation for your organic traffic.",
     },
   },
   {
     slug: "pourquoi-avoir-un-site-qui-nous-appartient-a-100-change-tout",
+    enSlug: "why-owning-your-website-changes-everything",
     publishedAt: "2026-04-05",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -1564,30 +1574,30 @@ export const blogPosts: BlogPost[] = [
     },
     title: {
       fr: "Pourquoi avoir un site qui nous appartient à 100 % change tout",
-      en: "Why having a website that belongs to you 100% changes everything",
+      en: "Why having a website that is 100% yours changes everything",
     },
     excerpt: {
       fr: "Un site entièrement détenu par le client change le budget, la liberté de mouvement, la reprise du projet et la qualité de la relation avec le prestataire.",
-      en: "A website fully owned by the client changes the budget, the room to move, the ability to take over the project and the quality of the agency relationship.",
+      en: "A website fully owned by the client changes the budget, the freedom to move, the ability to take the project over and the quality of the relationship with the provider.",
     },
     seoTitle: {
       fr: "Posséder son site à 100 % : pourquoi ça change tout",
-      en: "Why full website ownership changes everything | Sitekept",
+      en: "Owning your website 100%: why it changes everything",
     },
     seoDescription: {
       fr: "Abonnements, autonomie, changement de prestataire, accès et contrôle du code: pourquoi la propriété complète du site change la donne.",
-      en: "Subscriptions, autonomy, provider changes, access and code control: why full website ownership changes the game.",
+      en: "Subscriptions, autonomy, switching providers, access and code control: why full website ownership changes the game.",
     },
     intro: {
       fr: "La question de la propriété du site paraît parfois abstraite jusqu’au jour où l’on veut modifier un outil, récupérer des accès ou changer de prestataire. À ce moment-là, tout devient très concret. Un site qui vous appartient vraiment vous laisse de la marge. Un site verrouillé vous rend dépendant.",
-      en: "Website ownership can seem abstract until the day you want to change a tool, recover access or switch providers. At that point, everything becomes very concrete. A website you truly own gives you room to move. A locked website keeps you dependent.",
+      en: "The question of website ownership sometimes seems abstract until the day you want to change a tool, recover access or switch providers. At that point, everything becomes very concrete. A website you truly own gives you room to maneuver. A locked-down website makes you dependent.",
     },
     sections: [
       {
         id: "subscription-dependency",
         title: {
           fr: "La dépendance aux abonnements change le rapport de force",
-          en: "Subscription dependency changes the balance of power",
+          en: "Subscription dependency shifts the balance of power",
         },
         paragraphs: {
           fr: [
@@ -1595,8 +1605,8 @@ export const blogPosts: BlogPost[] = [
             "Cette dépendance crée un coût mental et budgétaire. Elle freine les décisions, complique les arbitrages et affaiblit la liberté de changer de cap ou de partenaire.",
           ],
           en: [
-            "When a website depends on an opaque subscription, every change can become a blocker. The client does not always know what they are paying for, what they truly own or what they will be able to recover later.",
-            "That dependency creates both mental and budget cost. It slows decisions, complicates trade-offs and reduces the freedom to change direction or switch partner.",
+            "When a website relies on an opaque subscription, every change can become a sticking point. The client doesn't always know what they are paying for, what they really own or what they will be able to recover later.",
+            "This dependency carries both a mental and a budget cost. It slows decisions, complicates trade-offs and weakens the freedom to change course or partner.",
           ],
         },
       },
@@ -1612,8 +1622,8 @@ export const blogPosts: BlogPost[] = [
             "Cette autonomie n’oblige pas à devenir technique. Elle garantit simplement que la technique reste à votre service, et non l’inverse.",
           ],
           en: [
-            "When you own the website 100%, you keep control over the code, repository, technical access and deployment. You can evolve the project, involve another developer or take over some topics yourself without depending on artificial lock-in.",
-            "That autonomy does not force you to become technical. It simply ensures that technology stays in your service, not the other way around.",
+            "When you own 100% of the website, you keep control of the code, the repository, the technical access and the deployment. You can develop the project further, bring in another developer or take some tasks over yourself without depending on an artificial lock.",
+            "This autonomy doesn't require you to become technical. It simply ensures that the technology stays at your service, not the other way around.",
           ],
         },
       },
@@ -1629,23 +1639,24 @@ export const blogPosts: BlogPost[] = [
             "C’est aussi la logique Sitekept: livrer un site que vous pouvez conserver, comprendre et transmettre plus tard à un autre prestataire si vous le souhaitez.",
           ],
           en: [
-            "A well-delivered website keeps value over time. It can be taken over, enriched, reworked or migrated without a full reset. That is what turns it into a durable business asset.",
-            "That is also the Sitekept logic: deliver a website you can keep, understand and hand over to another provider later if you want to.",
+            "A well-delivered website keeps its value over time. It can be taken over, expanded, reworked or migrated without starting from scratch. That is what turns it into a lasting asset for the business.",
+            "That is also the Sitekept philosophy: delivering a website you can keep, understand and later hand to another provider if you wish.",
           ],
         },
       },
     ],
     ctaTitle: {
       fr: "Vous voulez un site livré comme un actif durable, pas comme une dépendance ?",
-      en: "Want a website delivered as a durable asset, not a dependency?",
+      en: "Want a website delivered as a lasting asset, not a dependency?",
     },
     ctaDescription: {
       fr: "Nous pouvons cadrer un site clair dans sa propriété, ses accès et sa reprise future.",
-      en: "We can frame a website with clear ownership, access and future handoff.",
+      en: "We can set up a website with clear ownership, access and future handover.",
     },
   },
   {
     slug: "comment-se-passe-la-livraison-d-un-site-web-chez-sitekept",
+    enSlug: "how-website-delivery-works-at-sitekept",
     publishedAt: "2026-04-05",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -1659,7 +1670,7 @@ export const blogPosts: BlogPost[] = [
     },
     excerpt: {
       fr: "La livraison ne s’arrête pas à la mise en ligne. Elle comprend le code, les accès, le dépôt GitHub, le déploiement et le domaine, pour que le client possède réellement son site.",
-      en: "Delivery does not stop at launch. It includes the code, access, GitHub repository, deployment and domain so the client truly owns the website.",
+      en: "Delivery doesn't stop at launch. It includes the code, the access credentials, the GitHub repository, deployment and the domain name, so the client truly owns the website.",
     },
     seoTitle: {
       fr: "Livraison d’un site web : notre process | Sitekept",
@@ -1667,18 +1678,18 @@ export const blogPosts: BlogPost[] = [
     },
     seoDescription: {
       fr: "Développement en interne, dépôt GitHub à votre nom, déploiement Vercel et domaine offert la première année. Voici comment Sitekept livre.",
-      en: "In-house development, client GitHub repository, Vercel deployment, first-year domain purchase and a clear structure: here is how Sitekept delivers a website.",
+      en: "In-house development, a GitHub repository in your name, Vercel deployment and a free domain name for the first year. Here is how Sitekept delivers.",
     },
     intro: {
       fr: "Pour Sitekept, livrer un site ne veut pas seulement dire publier une URL. La livraison doit aussi garantir que le client possède réellement le projet, ses accès et sa capacité à le faire évoluer plus tard. C’est cette logique qui guide la façon dont nous développons, déployons et remettons chaque site.",
-      en: "For Sitekept, delivering a website does not simply mean publishing a URL. Delivery must also guarantee that the client truly owns the project, its access and the ability to evolve it later. That is the logic that guides how we build, deploy and hand over each website.",
+      en: "For Sitekept, delivering a website doesn't just mean publishing a URL. Delivery must also guarantee that the client truly owns the project, its access and the ability to develop it further later. That logic guides how we build, deploy and hand over every website.",
     },
     sections: [
       {
         id: "developed-in-house",
         title: {
           fr: "Le site est développé en interne dans un cadre clair",
-          en: "The website is developed in-house within a clear framework",
+          en: "The website is built in-house within a clear framework",
         },
         paragraphs: {
           fr: [
@@ -1686,8 +1697,8 @@ export const blogPosts: BlogPost[] = [
             "Cette étape reprend l’esprit du process présenté sur la home: vous validez une direction, nous développons, nous ajustons, puis nous préparons une livraison exploitable et compréhensible.",
           ],
           en: [
-            "The project is developed in-house by Sitekept with a structure designed to remain readable. Files, pages, components and the overall organization are not assembled like a black box. The goal is that another developer can understand the project without starting from zero.",
-            "This follows the same logic as the process shown on the homepage: you validate a direction, we build, we adjust and then we prepare a delivery that stays usable and understandable.",
+            "The project is built in-house by Sitekept, with a structure designed to stay readable. The files, pages, components and overall organization are not assembled as a black box. The goal is that another developer can understand the project without starting from scratch.",
+            "This step follows the spirit of the process shown on the homepage: you approve a direction, we build, we adjust, then we prepare a delivery that is usable and understandable.",
           ],
         },
       },
@@ -1695,7 +1706,7 @@ export const blogPosts: BlogPost[] = [
         id: "accounts-and-deployment",
         title: {
           fr: "Les comptes sont créés au nom du client, puis le projet y est livré",
-          en: "Accounts are created in the client’s name and the project is delivered there",
+          en: "Accounts are created in the client's name, then the project is delivered there",
         },
         paragraphs: {
           fr: [
@@ -1703,8 +1714,8 @@ export const blogPosts: BlogPost[] = [
             "Nous créons ensuite un compte Vercel ou une plateforme similaire au nom du client pour y déployer le site. Enfin, nous créons un compte Hostinger ou une plateforme comparable afin d’acheter le nom de domaine, pris en charge la première année. Le déploiement et le domaine sont donc remis dans un environnement que le client contrôle.",
           ],
           en: [
-            "To guarantee 100% ownership, we create a GitHub account for the client and push the project into it. The code is not kept in an inaccessible space: the repository belongs to the client from delivery onward.",
-            "We then create a Vercel account or similar platform in the client’s name to deploy the website. Finally, we create a Hostinger account or comparable platform to purchase the domain, covered during the first year. Deployment and domain are therefore handed over in an environment the client controls.",
+            "To guarantee 100% ownership, we create a GitHub account for the client and push the project to it. The code isn't kept in an inaccessible space: the repository belongs to the client from delivery.",
+            "We then create a Vercel account, or a similar platform, in the client's name to deploy the website. Finally, we create a Hostinger account or a comparable platform to buy the domain name, which we cover for the first year. The deployment and the domain name are therefore handed over in an environment the client controls.",
           ],
         },
       },
@@ -1712,7 +1723,7 @@ export const blogPosts: BlogPost[] = [
         id: "handoff-and-takeover",
         title: {
           fr: "La reprise du site reste possible si le client change de prestataire",
-          en: "The website remains easy to take over if the client changes provider",
+          en: "The website can still be taken over if the client changes providers",
         },
         paragraphs: {
           fr: [
@@ -1720,8 +1731,8 @@ export const blogPosts: BlogPost[] = [
             "Si le client souhaite plus tard travailler avec un autre développeur ou une autre agence, le site peut être repris dans de bonnes conditions parce que le dépôt, les accès et le domaine sont déjà dans un cadre clair et propriétaire.",
           ],
           en: [
-            "Delivery includes a future takeover logic. The full project structure, from code to deployment, is designed to remain understandable. That does not mean the client must handle the technical side every day, but it does mean they are never locked into a vague system.",
-            "If the client later wants to work with another developer or agency, the website can be taken over in good conditions because the repository, access and domain already live in a clear ownership framework.",
+            "Delivery includes a view to future takeover. The whole project structure, from code to deployment, is designed to stay understandable. That doesn't mean the client has to handle the technical side day to day, but that they are never locked into a murky system.",
+            "If the client later wants to work with another developer or agency, the website can be taken over under good conditions because the repository, access and domain name are already in a clear framework that the client owns.",
           ],
         },
       },
@@ -1732,12 +1743,13 @@ export const blogPosts: BlogPost[] = [
     },
     ctaDescription: {
       fr: "Nous pouvons vous montrer comment cadrer un site rapide sans sacrifier la propriété ni la reprise future.",
-      en: "We can show you how to frame a fast website without sacrificing ownership or future handoff.",
+      en: "We can show you how to set up a fast website without sacrificing ownership or future takeover.",
     },
   },
 
   {
     slug: "recuperer-son-site-web-chez-un-prestataire",
+    enSlug: "get-your-website-back-from-a-provider",
     publishedAt: "2026-08-11",
     updatedAt: "2026-08-11",
     author: "Équipe Sitekept",
@@ -1751,7 +1763,7 @@ export const blogPosts: BlogPost[] = [
     },
     excerpt: {
       fr: "Nom de domaine, code source, contenus, accès : ce qu'il faut réclamer, dans quel ordre, et quoi faire quand le prestataire ne répond plus.",
-      en: "Domain name, source code, content, access: what to reclaim, in what order, and what to do when the provider stops answering.",
+      en: "Domain name, source code, content, access: what to ask for, in what order, and what to do when the provider stops responding.",
     },
     seoTitle: {
       fr: "Récupérer son site web chez un prestataire | Sitekept",
@@ -1759,18 +1771,18 @@ export const blogPosts: BlogPost[] = [
     },
     seoDescription: {
       fr: "Changer de prestataire web : la procédure pour récupérer votre nom de domaine, votre code source, vos contenus et vos accès, étape par étape.",
-      en: "Changing web provider: the step-by-step procedure to recover your domain, source code, content and access.",
+      en: "Switching web providers: how to recover your domain name, source code, content and access credentials, step by step.",
     },
     intro: {
       fr: "Vouloir changer de prestataire est une décision banale. La rendre possible l'est beaucoup moins. Beaucoup d'entreprises découvrent à ce moment précis qu'elles ne possèdent presque rien de leur propre site : ni le nom de domaine, ni le code, parfois pas même les textes. Ce guide décrit ce qu'il faut réclamer, dans quel ordre, et ce que vous pouvez faire quand le dialogue se bloque.",
-      en: "Wanting to change provider is an ordinary decision. Making it possible is much less so. Many companies discover at that exact moment that they own almost nothing of their own website. This guide covers what to reclaim, in what order, and what to do when the conversation stalls.",
+      en: "Wanting to switch providers is an ordinary decision. Making it possible is far less so. Many businesses discover at that very moment that they own almost nothing of their own website: not the domain name, not the code, sometimes not even the text. This guide explains what to ask for, in what order, and what you can do when talks break down.",
     },
     sections: [
       {
         id: "inventaire",
         title: {
           fr: "Étape 1 — Faire l'inventaire de ce que vous ne contrôlez pas",
-          en: "Step 1 — Take stock of what you do not control",
+          en: "Step 1 — Take stock of what you don't control",
         },
         paragraphs: {
           fr: [
@@ -1778,8 +1790,8 @@ export const blogPosts: BlogPost[] = [
             "Le plus simple est de commencer par le nom de domaine, parce que c'est le seul élément dont la titularité est publique et vérifiable en quelques secondes, sans rien demander à personne.",
           ],
           en: [
-            "Before announcing anything, list what makes up your online presence and, for each item, who actually holds the keys. This inventory determines your room for manoeuvre.",
-            "Start with the domain name: it is the only item whose ownership is public and verifiable in seconds, without asking anyone.",
+            "Before announcing anything, list everything that makes up your online presence and, for each item, who actually holds the keys. This inventory determines your room for maneuver: it is better done before you open the discussion than after.",
+            "The easiest place to start is the domain name, because it is the only item whose ownership is public and can be checked in seconds, without asking anyone.",
           ],
         },
         bullets: {
@@ -1793,11 +1805,11 @@ export const blogPosts: BlogPost[] = [
           ],
           en: [
             "The domain name: in whose name is it registered, and with which registrar?",
-            "The source code: does a repository exist, and do you have access?",
-            "Hosting: is the contract in your name or the provider's?",
-            "Content: text, photos, logo — who produced them, and under what terms?",
-            "Measurement accounts: Search Console, Analytics, Google Business Profile.",
-            "Email boxes attached to the domain, often forgotten until the day they stop working.",
+            "The source code: is there a repository, and do you have access to it?",
+            "Hosting: is the contract in your name or in the provider's?",
+            "Content: text, photos, logo — who produced them, and on what terms?",
+            "Analytics accounts: Search Console, Analytics, Google Business Profile.",
+            "Email accounts tied to the domain, often forgotten until the day they are cut off.",
           ],
         },
       },
@@ -1805,7 +1817,7 @@ export const blogPosts: BlogPost[] = [
         id: "nom-de-domaine",
         title: {
           fr: "Le nom de domaine : l'élément à sécuriser en premier",
-          en: "The domain name: secure this one first",
+          en: "The domain name: the first thing to secure",
         },
         paragraphs: {
           fr: [
@@ -1814,9 +1826,9 @@ export const blogPosts: BlogPost[] = [
             "Un point mérite d'être connu : un nom de domaine se renouvelle. S'il expire pendant un conflit, il peut être racheté par un tiers, et vous n'aurez aucun recours simple. Vérifiez la date d'expiration dès l'inventaire, et considérez-la comme votre échéance réelle.",
           ],
           en: [
-            "The domain is your address. Without it, a brand-new website is useless: your customers and your search rankings point to an address you do not control.",
-            "Check the registrant with a public WHOIS lookup, or with AFNIC for a .fr domain. Three situations arise: registered in your name, in the provider's name, or in the name of a former employee — the last being the trickiest.",
-            "One point worth knowing: domains expire. If yours lapses during a dispute, a third party can buy it and you will have little simple recourse. Check the expiry date during the inventory.",
+            "The domain name is your address. Without it, a brand-new website is useless: your customers, your business cards and your search listings all point to an address you don't control. It is therefore the first thing to deal with, even before discussing the website itself.",
+            "Check whose name it is registered in with a public WHOIS lookup, or directly with AFNIC for a .fr domain. There are three possible situations. If it is in your name, you are the owner: you simply need to request the transfer code to move it to another registrar. If it is in the provider's name, you will have to negotiate a change of registrant. If it is registered in the name of an employee who has since left, the situation is often trickier than with the provider itself.",
+            "One thing is worth knowing: a domain name has to be renewed. If it expires during a dispute, a third party can buy it, and you will have no simple recourse. Check the expiry date as part of your inventory, and treat it as your real deadline.",
           ],
         },
       },
@@ -1824,7 +1836,7 @@ export const blogPosts: BlogPost[] = [
         id: "contrat",
         title: {
           fr: "Étape 2 — Relire le contrat avant d'annoncer votre départ",
-          en: "Step 2 — Reread the contract before announcing your departure",
+          en: "Step 2 — Reread the contract before announcing that you are leaving",
         },
         paragraphs: {
           fr: [
@@ -1833,9 +1845,9 @@ export const blogPosts: BlogPost[] = [
             "Si votre contrat comporte un engagement de durée, notez la date d'échéance et le délai de préavis. Résilier hors des clous peut vous exposer à devoir payer les mensualités restantes, ce qui pèse dans la négociation.",
           ],
           en: [
-            "This is the step most often skipped, and the one that changes the outcome most. Look for three things: what you actually bought, the commitment term and its notice period, and whether a rights assignment clause exists.",
-            "Under French law, paying for development does not automatically transfer copyright: the assignment must be expressly set out in writing. A provider refusing to hand over source code is not necessarily acting in bad faith — they may be within their rights if the contract is silent.",
-            "If your contract has a fixed term, note the expiry date and notice period before you act.",
+            "This is the step people skip most often, and the one that most changes the outcome. Go back over the signed quote, the terms and conditions and any amendments. You are looking for three things: exactly what you bought, the length of the commitment and its notice period, and whether or not there is a clause assigning the rights to you.",
+            "That last point surprises many business owners. Under French law, paying for a website to be developed does not automatically transfer the copyright to you: the assignment must be expressly provided for in writing, with a defined scope. In other words, a provider who refuses to hand over the source code is not necessarily acting in bad faith — they may be within their rights if the contract says nothing on the matter. That is one more reason to settle this point when you buy, rather than when you leave.",
+            "If your contract includes a minimum term, note the end date and the notice period. Terminating outside those terms may leave you liable for the remaining monthly payments, which weighs on the negotiation.",
           ],
         },
       },
@@ -1843,7 +1855,7 @@ export const blogPosts: BlogPost[] = [
         id: "demande-ecrite",
         title: {
           fr: "Étape 3 — Formuler la demande par écrit, et précisément",
-          en: "Step 3 — Make the request in writing, and precisely",
+          en: "Step 3 — Put your request in writing, and be precise",
         },
         paragraphs: {
           fr: [
@@ -1851,8 +1863,8 @@ export const blogPosts: BlogPost[] = [
             "Conservez une trace écrite de tout, y compris des échanges qui se passent bien. Si la suite se complique, cette trace est ce qui vous permettra de démontrer votre bonne foi et la chronologie des faits.",
           ],
           en: [
-            "A vague request gets a vague answer. Write an email — or a registered letter if the relationship is already strained — listing point by point what you are asking for, with a requested response date.",
-            "Keep a written record of everything, including exchanges that go well.",
+            "A vague request gets a vague answer. Write an email — or a registered letter if the relationship is already strained — that lists, point by point, what you are asking for, along with the date by which you would like a reply. Stay factual and courteous: most transfers are settled within a few days when the request is clear and the relationship hasn't soured.",
+            "Keep a written record of everything, including the exchanges that go well. If things get complicated later, that record is what will allow you to show your good faith and the sequence of events.",
           ],
         },
         bullets: {
@@ -1865,12 +1877,12 @@ export const blogPosts: BlogPost[] = [
             "La confirmation écrite que vous pouvez exploiter et faire modifier le site",
           ],
           en: [
-            "The domain transfer code, and a change of registrant if needed",
-            "A full archive of the site: source code, database, media files",
-            "Administration and hosting credentials",
-            "Ownership transfer of Analytics, Search Console and the business profile",
-            "Source files for the logo and visuals, in their original format",
-            "Written confirmation that you may operate and modify the site",
+            "The domain name transfer code, and a change of registrant if needed",
+            "A complete archive of the website: source code, database, media files",
+            "The administration and hosting credentials",
+            "Transfer of ownership of the Analytics and Search Console accounts and of the business profile",
+            "The source files of the logo and visuals, in their original format",
+            "Written confirmation that you may use the website and have it modified",
           ],
         },
       },
@@ -1878,7 +1890,7 @@ export const blogPosts: BlogPost[] = [
         id: "blocage",
         title: {
           fr: "Étape 4 — Quand le prestataire ne répond plus",
-          en: "Step 4 — When the provider stops answering",
+          en: "Step 4 — When the provider stops responding",
         },
         paragraphs: {
           fr: [
@@ -1888,10 +1900,10 @@ export const blogPosts: BlogPost[] = [
             "Car c'est parfois la conclusion la plus rationnelle. Quand le code est irrécupérable, refaire un site propre coûte souvent moins cher, en argent comme en énergie, que d'arracher un code que vous ne pourrez de toute façon pas faire évoluer facilement. Ce qui se négocie en priorité, c'est le nom de domaine et les contenus : eux ne se reconstruisent pas.",
           ],
           en: [
-            "Silence is the most common case, well ahead of explicit refusal. Follow up once in writing with a reasonable deadline, then by registered letter, which gives your request a certain date.",
-            "If the blockage concerns the domain name, registrars and management bodies — AFNIC for .fr — have dispute procedures for contested ownership.",
-            "On small amounts, litigation often costs more than it recovers. Weigh the time against the cost of rebuilding.",
-            "Rebuilding is sometimes the rational conclusion. What must be negotiated first is the domain name and the content: those cannot be rebuilt.",
+            "Silence is by far the most common case, well ahead of an explicit refusal. Start by following up once in writing with a reasonable deadline, then by registered letter with proof of delivery, which gives your request a legally certain date.",
+            "If the blockage concerns the domain name, be aware that registrars and registry operators — AFNIC for .fr — have procedures for disputes over ownership. They are neither immediate nor automatic, but they exist, and they are often enough of an argument to get the discussion moving again.",
+            "If the dispute is about money or how the contract was carried out, consumer mediation or legal advice will be more effective than an exchange that turns sour. For small amounts, going to court often costs more than it allows you to recover: weigh up coolly the time you will spend on it against the cost of rebuilding.",
+            "Because that is sometimes the most rational conclusion. When the code cannot be recovered, rebuilding a clean website often costs less, in money as in energy, than wresting back code you would not be able to update easily anyway. What you should negotiate first is the domain name and the content: those cannot be rebuilt.",
           ],
         },
       },
@@ -1899,7 +1911,7 @@ export const blogPosts: BlogPost[] = [
         id: "referencement",
         title: {
           fr: "Ce que vous risquez de perdre en référencement, et comment le limiter",
-          en: "What you risk losing in search rankings, and how to limit it",
+          en: "What you could lose in search rankings, and how to limit it",
         },
         paragraphs: {
           fr: [
@@ -1909,10 +1921,10 @@ export const blogPosts: BlogPost[] = [
             "Enfin, surveillez pendant quatre à six semaines. Une variation les premiers jours est normale ; une baisse qui persiste au-delà d'un mois signale généralement un problème de redirection ou de contenu perdu, et se corrige encore facilement à ce stade.",
           ],
           en: [
-            "Changing website is a fragile moment for search rankings. The risk is not losing domain age — that stays with the domain you keep — but breaking the addresses Google spent years indexing.",
-            "The critical point is the mapping between old and new URLs. Record every existing address before the switch, and set a permanent redirect from each to its equivalent.",
-            "Recover Search Console ownership before shutting down the old site: it is the only place listing the pages actually indexed and the queries bringing you traffic.",
-            "Monitor for four to six weeks. A drop persisting beyond a month usually signals a redirect problem, still easy to fix at that stage.",
+            "Changing websites is a vulnerable moment for search rankings, and it is the blind spot of most migrations. The risk is not losing your domain's age — that stays with the domain name, which you keep — but breaking the addresses that Google has spent years indexing.",
+            "The critical point is mapping old URLs to new ones. If your “/our-services” page becomes “/services” without a redirect, Google takes weeks to catch on, and in the meantime the old address returns an error to visitors and search engines alike. The fix is simple and is prepared before the switch: record the complete list of existing addresses, and set up a permanent redirect from each one to its equivalent on the new website.",
+            "Also take back ownership of Search Console before shutting down the old website: it is the only place that lists the pages actually indexed and the queries that brought you traffic. Without it, you are flying blind, and you won't know whether a drop after the migration comes from the switch or from something else.",
+            "Finally, keep an eye on things for four to six weeks. Some fluctuation in the first few days is normal; a drop that persists beyond a month usually points to a redirect problem or lost content, and can still be fixed easily at that stage.",
           ],
         },
       },
@@ -1920,7 +1932,7 @@ export const blogPosts: BlogPost[] = [
         id: "apres",
         title: {
           fr: "Ce qu'il faut faire juste après la récupération",
-          en: "What to do right after recovery",
+          en: "What to do right after getting your website back",
         },
         paragraphs: {
           fr: [
@@ -1928,8 +1940,8 @@ export const blogPosts: BlogPost[] = [
             "Le plus important est le dernier : la prochaine fois, faites écrire la cession dans le devis avant de signer. Une ligne suffit, et elle vous épargne l'intégralité de la procédure décrite dans cet article.",
           ],
           en: [
-            "Once the transfer is done, a few steps prevent ending up in the same place two years later.",
-            "The most important is the last one: next time, have the assignment written into the quote before signing.",
+            "Once the transfer is done, a few simple steps will keep you from ending up in the same situation two years later. They take an hour and are worth far more.",
+            "The most important one is the last: next time, have the assignment of rights written into the quote before you sign. One line is enough, and it spares you the entire procedure described in this article.",
           ],
         },
         bullets: {
@@ -1941,27 +1953,28 @@ export const blogPosts: BlogPost[] = [
             "Exigez de votre prochain prestataire une clause écrite de cession et un dépôt à votre nom",
           ],
           en: [
-            "Enable auto-renewal on the domain, and note its expiry",
+            "Turn on automatic renewal for the domain name, and note its expiry date",
             "Change every password, including those that seem unimportant",
-            "Check you are owner — not just administrator — of Analytics and Search Console",
-            "Keep a copy of the code and database outside the hosting",
-            "Require your next provider to put the assignment in writing",
+            "Check that you are the owner — not just an administrator — of the Analytics and Search Console accounts",
+            "Keep a copy of the code and the database outside the hosting environment",
+            "Require your next provider to include a written assignment-of-rights clause and a repository in your name",
           ],
         },
       },
     ],
     ctaTitle: {
       fr: "Repartir sur un site qui vous appartient dès le premier jour",
-      en: "Start again with a website that is yours from day one",
+      en: "Start over with a website that is yours from day one",
     },
     ctaDescription: {
       fr: "Chez Sitekept, le code est déposé sur un dépôt à votre nom et les accès vous sont remis à la livraison. Il n'y a pas d'abonnement à payer pour que le site reste en ligne, et rien à négocier le jour où vous voudrez partir.",
-      en: "At Sitekept the code sits in a repository under your name and the access is handed over at delivery. There is no subscription to keep the site online, and nothing to negotiate the day you want to leave.",
+      en: "At Sitekept, the code is placed in a repository in your name and the access credentials are handed over to you at delivery. There is no subscription to pay to keep the website online, and nothing to negotiate the day you decide to leave.",
     },
   },
 
   {
     slug: "louer-ou-posseder-son-site-internet",
+    enSlug: "rent-or-own-your-website",
     publishedAt: "2026-08-12",
     updatedAt: "2026-08-12",
     author: "Équipe Sitekept",
@@ -1975,26 +1988,26 @@ export const blogPosts: BlogPost[] = [
     },
     excerpt: {
       fr: "Au-delà du montant mensuel, un abonnement crée trois dépendances qui se paient le jour où vous voulez partir. Et les cas, réels, où il reste le bon choix.",
-      en: "Beyond the monthly fee, a subscription creates three dependencies you pay for the day you want to leave. And the real cases where it remains the right choice.",
+      en: "Beyond the monthly fee, a subscription creates three dependencies that you pay for the day you want to leave. And the real cases where it is still the right choice.",
     },
     seoTitle: {
       fr: "Abonnement site internet : le vrai coût | Sitekept",
-      en: "Website subscriptions: what they really cost | Sitekept",
+      en: "Website subscriptions: the real cost | Sitekept",
     },
     seoDescription: {
       fr: "Ce qu'un abonnement site internet coûte sur cinq ans, les trois dépendances qu'il crée, et les situations où il reste malgré tout le bon choix.",
-      en: "What a website subscription costs over five years, the three dependencies it creates, and when it is still the right choice.",
+      en: "What a website subscription costs over five years, the three dependencies it creates, and the situations where it is still the right choice.",
     },
     intro: {
       fr: "Comparer un site à 500 € payés une fois et un site à 29 € par mois semble simple : on multiplie, on compare, on conclut. Ce calcul est juste, mais il passe à côté de l'essentiel. Ce qui distingue vraiment les deux modèles, ce n'est pas le total au bout de cinq ans — c'est ce qu'il vous reste le jour où vous arrêtez de payer.",
-      en: "Comparing a €500 one-off website with a €29-a-month one looks simple: multiply, compare, conclude. The maths is right, but it misses the point. What really separates the two models is not the five-year total — it is what you are left with the day you stop paying.",
+      en: "Comparing a €500 website paid for once with a €29-a-month website seems simple: you multiply, compare and conclude. The calculation is correct, but it misses the point. What really sets the two models apart is not the total after five years — it is what you are left with the day you stop paying.",
     },
     sections: [
       {
         id: "ce-que-vous-payez",
         title: {
           fr: "Ce que vous payez vraiment dans un abonnement",
-          en: "What you actually pay for in a subscription",
+          en: "What you are really paying for with a subscription",
         },
         paragraphs: {
           fr: [
@@ -2003,9 +2016,9 @@ export const blogPosts: BlogPost[] = [
             "Ce n'est ni scandaleux ni caché — c'est le modèle économique du logiciel en ligne, et il finance un produit réellement pratique. Mais il faut le nommer pour décider en connaissance de cause.",
           ],
           en: [
-            "A subscription bundles several things into a single invoice line, which is exactly what makes comparison hard: hosting, use of an editor, platform maintenance, sometimes support.",
-            "Taken separately, these have very different costs. Hosting a brochure site costs a few euros a month, sometimes nothing. What you mostly pay for is not a service but a right of use, which stops when the payment does.",
-            "This is neither scandalous nor hidden — it is the business model of online software. But it needs naming to decide knowingly.",
+            "A subscription bundles several things into a single line on the invoice, and that is precisely what makes it hard to compare. It usually includes hosting, the use of a website builder, technical maintenance of the platform and sometimes support.",
+            "Taken separately, these services have very different prices. Hosting a business website costs a few euros a month, sometimes nothing. Maintaining a platform shared by hundreds of thousands of customers comes to a fraction of a cent per website. So what you are mainly paying for is not a service: it is a right of use, which ends the moment you stop paying.",
+            "This is neither outrageous nor hidden — it is the business model of online software, and it funds a genuinely convenient product. But it needs to be called what it is so that you can make an informed decision.",
           ],
         },
       },
@@ -2020,7 +2033,7 @@ export const blogPosts: BlogPost[] = [
             "Le coût financier est le plus visible, et paradoxalement le moins problématique. Les trois dépendances suivantes coûtent souvent bien davantage, et elles ne se manifestent qu'au moment du départ.",
           ],
           en: [
-            "The financial cost is the most visible and, paradoxically, the least problematic. The three dependencies below often cost more, and only show up when you leave.",
+            "The financial cost is the most visible and, paradoxically, the least problematic. The following three dependencies often cost far more, and they only become apparent when you leave.",
           ],
         },
         bullets: {
@@ -2030,9 +2043,9 @@ export const blogPosts: BlogPost[] = [
             "La dépendance tarifaire : le prix du premier mois n'engage pas la plateforme. Les tarifs évoluent, les fonctionnalités migrent vers des formules supérieures, et votre marge de négociation est nulle une fois le site en production.",
           ],
           en: [
-            "Technical dependency: the site is built with the platform's tools and does not exist outside it. There is nothing to take away.",
-            "Content dependency: your text, photos and often your reviews live in the platform's database. Recovering them is possible; reinstalling them elsewhere is manual work nobody plans for.",
-            "Pricing dependency: the first month's price does not bind the platform. Rates change, features migrate to higher tiers, and your negotiating power is nil once the site is live.",
+            "Technical dependency: the website is built with the platform's tools and does not exist outside it. There is nothing to “take with you” — the export, when there is one, produces HTML that cannot be used to rebuild the website elsewhere.",
+            "Content dependency: your text, your photos and often your customer reviews live in the platform's database. Getting them back is possible; setting them up again elsewhere takes manual work that nobody anticipates.",
+            "Pricing dependency: the first month's price does not commit the platform to anything. Prices change, features move to higher-tier plans, and you have no bargaining power once the website is live.",
           ],
         },
       },
@@ -2049,9 +2062,9 @@ export const blogPosts: BlogPost[] = [
             "Une manière plus honnête de poser la question : combien vous coûterait, aujourd'hui, de tout reconstruire ailleurs ? Si la réponse est « le prix d'un site neuf », alors les mensualités versées n'ont rien capitalisé.",
           ],
           en: [
-            "The maths is simple: €20 a month is €1,200 over five years; €30 is €1,800; €50 is €3,000. Run it with the figures of the offer in front of you.",
-            "But it leaves out two things: it assumes a stable price for five years, and it compares amounts when the two situations are not comparable.",
-            "A more honest question: what would it cost you today to rebuild everything elsewhere? If the answer is 'the price of a new site', the monthly payments capitalised nothing.",
+            "The arithmetic is within everyone's reach: a €20-a-month subscription adds up to €1,200 over five years, at €30 it comes to €1,800, and at €50 it reaches €3,000. Do the math with the figures of the offer you are considering, not with a market average.",
+            "But this calculation leaves out two things. First, it assumes the price stays the same for five years, which is rarely the case. Second, and above all, it compares amounts when the two situations are not comparable: after five years, in one case you own a website that you can update or host elsewhere; in the other, you have paid for a right of use that has come to an end.",
+            "A more honest way to put the question: how much would it cost you, today, to rebuild everything elsewhere? If the answer is “the price of a new website,” then the monthly payments have built up nothing.",
           ],
         },
       },
@@ -2068,9 +2081,9 @@ export const blogPosts: BlogPost[] = [
             "Le raisonnement bascule lorsque le site devient durable et central. À partir du moment où il représente votre présence commerciale principale et qu'il est destiné à durer plusieurs années, la location devient le modèle le plus cher, et le seul qui ne laisse rien derrière lui.",
           ],
           en: [
-            "This needs saying, because it is true: in several situations a subscription is the rational choice.",
-            "If you are testing an idea, if you need to edit pages yourself every week, or if your business relies on a feature the platform provides out of the box, subscriptions are excellent.",
-            "The reasoning flips once the site becomes durable and central to your business.",
+            "It needs to be said, because it is true and ignoring it would undermine everything above: in several situations, a subscription is the rational choice.",
+            "If you are testing an idea and the website may only live for six months, paying €150 in total makes more sense than investing in a website you will throw away. If you need to edit your pages yourself every week without ever calling on anyone, online website builders excel at this, and a custom-built website won't do it as well. If your business relies on a feature the platform provides out of the box — a catalog of several thousand products, a complex booking system — rebuilding that from scratch would cost far more.",
+            "The reasoning flips when the website becomes long-term and central. From the moment it is your main commercial presence and is meant to last several years, renting becomes the most expensive model, and the only one that leaves nothing behind.",
           ],
         },
       },
@@ -2088,10 +2101,10 @@ export const blogPosts: BlogPost[] = [
             "Ne résiliez qu'une fois ces trois étapes terminées, et laissez si possible l'ancien site en ligne le temps que le nouveau soit publié et que les redirections fonctionnent. Payer un mois d'abonnement de plus coûte moins cher qu'une coupure de présence en ligne.",
           ],
           en: [
-            "If you are already committed, the order of operations matters more than speed.",
-            "Always start with the domain name, before announcing your intention.",
-            "Then recover your content, and record the full list of your page addresses so you can set redirects.",
-            "Only cancel once those steps are done, and keep the old site online until the new one is live.",
+            "If you are already committed and want to get out, the order of operations matters more than speed. Canceling before you have secured everything else leaves you a few days to recover it all, often less.",
+            "Always start with the domain name, even before announcing your intention. If it is registered in your name, request the transfer code and move it to an independent registrar: it is then out of reach, whatever happens next. If it belongs to the platform or the provider, it is the point to negotiate first, because it is the only truly irreplaceable item.",
+            "Next, recover your content: text, full-resolution photos and customer reviews if the platform lets you export them. Also take screenshots of every page, which will serve as a reference for the rebuild. Finally, write down the complete list of your page addresses: it will let you set up redirects to the new website and avoid losing the search rankings you have built.",
+            "Only cancel once these three steps are complete, and if possible leave the old website online until the new one is published and the redirects are working. Paying for one more month of subscription costs less than a gap in your online presence.",
           ],
         },
       },
@@ -2106,7 +2119,7 @@ export const blogPosts: BlogPost[] = [
             "Quel que soit le modèle retenu, ces questions vous éviteront les mauvaises surprises. Posez-les par écrit et conservez les réponses.",
           ],
           en: [
-            "Whatever model you choose, these questions prevent bad surprises. Ask them in writing and keep the answers.",
+            "Whichever model you choose, these questions will spare you unpleasant surprises. Ask them in writing and keep the answers.",
           ],
         },
         bullets: {
@@ -2118,11 +2131,11 @@ export const blogPosts: BlogPost[] = [
             "Quelles fonctionnalités que j'utilise aujourd'hui peuvent basculer dans une formule supérieure ?",
           ],
           en: [
-            "Is the domain registered in my name, and can I transfer it freely?",
-            "What exactly happens if I stop paying, and how quickly?",
-            "Can I export my content, in what format, and is that export reusable elsewhere?",
+            "Is the domain name registered in my name, and can I transfer it freely?",
+            "What exactly happens if I stop paying: does the website disappear, and how quickly?",
+            "Can I export my content, in what format, and can that export be reused elsewhere?",
             "Is the price guaranteed, and for how long?",
-            "Which features I use today could move to a higher tier?",
+            "Which of the features I use today could move to a higher-tier plan?",
           ],
         },
       },
@@ -2133,18 +2146,19 @@ export const blogPosts: BlogPost[] = [
     },
     ctaDescription: {
       fr: "Le détail de ce qui est inclus, les modalités de paiement et la comparaison des modèles figurent sur notre page tarifs. Le code est déposé à votre nom, et il n'y a aucun abonnement à régler pour que le site reste en ligne.",
-      en: "The details of what is included and how payment works are on our pricing page. The code sits in a repository under your name, with no subscription required to keep the site online.",
+      en: "The details of what is included, the payment terms and a comparison of the models are on our pricing page. The code is placed in a repository in your name, and there is no subscription to pay to keep the website online.",
     },
   },
 
   {
     slug: "checklist-seo-avant-mise-en-ligne",
+    enSlug: "pre-launch-seo-checklist",
     publishedAt: "2026-08-12",
     updatedAt: "2026-08-12",
     author: "Équipe Sitekept",
     category: {
       fr: "Référencement",
-      en: "Search visibility",
+      en: "SEO",
     },
     title: {
       fr: "Checklist SEO : 20 points à vérifier avant de mettre un site en ligne",
@@ -2152,7 +2166,7 @@ export const blogPosts: BlogPost[] = [
     },
     excerpt: {
       fr: "Les vérifications à faire avant la mise en ligne, classées par gravité, avec la commande ou l'outil qui permet de contrôler chacune d'elles.",
-      en: "The checks to run before launch, ordered by severity, each with the command or tool that verifies it.",
+      en: "The checks to run before launch, ranked by severity, with the command or tool you can use to verify each one.",
     },
     seoTitle: {
       fr: "Checklist SEO avant mise en ligne : 20 points | Sitekept",
@@ -2160,18 +2174,18 @@ export const blogPosts: BlogPost[] = [
     },
     seoDescription: {
       fr: "20 vérifications SEO à faire avant de publier un site : indexabilité, canonical, titles, vitesse, données structurées. Avec comment vérifier chacune.",
-      en: "20 SEO checks to run before publishing a site: indexability, canonicals, titles, speed, structured data — and how to verify each.",
+      en: "20 SEO checks to run before publishing a website: indexability, canonical tags, titles, speed, structured data. With how to verify each one.",
     },
     intro: {
       fr: "La plupart des problèmes de référencement ne viennent pas d'un manque d'optimisation, mais d'une erreur de configuration passée inaperçue à la mise en ligne. Un noindex oublié, un canonical qui pointe ailleurs, un sitemap listant des adresses qui redirigent : chacune de ces erreurs suffit à rendre invisible un site par ailleurs bien construit. Cette liste est classée par gravité, et chaque point indique comment le vérifier soi-même.",
-      en: "Most search visibility problems come not from a lack of optimisation but from a configuration error that slipped through at launch. This list is ordered by severity, and each point says how to check it yourself.",
+      en: "Most SEO problems don't come from a lack of optimization, but from a configuration error that went unnoticed at launch. A forgotten noindex, a canonical tag pointing elsewhere, a sitemap listing addresses that redirect: any one of these errors is enough to make an otherwise well-built website invisible. This list is ranked by severity, and each point explains how to check it yourself.",
     },
     sections: [
       {
         id: "bloquants",
         title: {
           fr: "Les cinq points bloquants — à vérifier en premier",
-          en: "The five blockers — check these first",
+          en: "The five blocking issues — check these first",
         },
         paragraphs: {
           fr: [
@@ -2179,8 +2193,8 @@ export const blogPosts: BlogPost[] = [
             "Le plus insidieux est le premier. Une balise noindex laissée en place après une phase de préproduction rend le site totalement invisible, sans qu'aucune alerte ne le signale. Vérifiez-le le jour de la mise en ligne, puis une semaine plus tard.",
           ],
           en: [
-            "If any of these five fails, everything else is pointless. They explain the vast majority of sites that never appear on Google despite decent content.",
-            "The most insidious is the first: a noindex tag left in place after staging makes the site entirely invisible, with no warning.",
+            "If any one of these five points fails, nothing else has any effect. They account for the overwhelming majority of websites that “don't show up on Google” despite decent content.",
+            "The most insidious is the first. A noindex tag left in place after a staging phase makes the website completely invisible, without any alert to flag it. Check it on launch day, then again a week later.",
           ],
         },
         bullets: {
@@ -2192,11 +2206,11 @@ export const blogPosts: BlogPost[] = [
             "Le site est accessible en HTTPS avec un certificat valide, et aucune ressource n'est chargée en HTTP.",
           ],
           en: [
-            "No leftover noindex tag. Check the source of several pages and the X-Robots-Tag HTTP header.",
-            "robots.txt blocks nothing essential.",
-            "Only one version of the domain answers; the others redirect permanently.",
-            "Canonical tags point to the URL actually served.",
-            "The site is served over HTTPS with a valid certificate.",
+            "No leftover noindex tag. Check the source code of several pages and the X-Robots-Tag HTTP header, which does not appear in the HTML.",
+            "The robots.txt file doesn't block anything essential. Open yourdomain.com/robots.txt: a forgotten Disallow: / blocks the entire website.",
+            "Only one version of the domain responds. Test with and without www, over http and https: three of the four must redirect to the fourth with a permanent 301 or 308, never a 302 or 307.",
+            "Canonical tags point to the address actually served. A canonical tag that designates a URL that redirects sends Google a contradictory signal.",
+            "The website is served over HTTPS with a valid certificate, and no resource is loaded over HTTP.",
           ],
         },
       },
@@ -2212,8 +2226,8 @@ export const blogPosts: BlogPost[] = [
             "L'unicité est le fil conducteur : deux pages qui partagent le même title sont deux pages que Google traitera comme des doublons, et il en choisira une seule.",
           ],
           en: [
-            "Once the site is reachable, these determine how it is understood and displayed. Check page by page, starting with the commercially important ones.",
-            "Uniqueness is the common thread.",
+            "Once the website is accessible, these checks determine how it will be understood and presented in the results. They are checked page by page, starting with the pages that matter commercially.",
+            "Uniqueness is the common thread: two pages that share the same title are two pages that Google will treat as duplicates, and it will pick only one of them.",
           ],
         },
         bullets: {
@@ -2226,12 +2240,12 @@ export const blogPosts: BlogPost[] = [
             "Aucune information essentielle — tarifs, carte, horaires — n'est enfermée dans une image ou un PDF.",
           ],
           en: [
-            "Each page has a unique title under 60 characters.",
-            "Each page has a unique meta description under 155 characters.",
-            "One h1 per page, describing the actual content.",
-            "Heading levels do not skip.",
-            "Every image has a descriptive alt, or an empty alt if decorative.",
-            "No essential information locked inside an image or PDF.",
+            "Every page has a unique title, under 60 characters, containing the term it aims to be found for.",
+            "Every page has a unique meta description, under 155 characters. It doesn't influence rankings, but it determines the click-through rate.",
+            "Only one h1 tag per page, describing the actual content rather than the brand name.",
+            "The heading hierarchy doesn't skip levels: no h3 directly under an h1.",
+            "Every image has a descriptive alt attribute, or an empty alt if it is purely decorative.",
+            "No essential information — prices, menu, opening hours — is locked inside an image or a PDF.",
           ],
         },
       },
@@ -2239,7 +2253,7 @@ export const blogPosts: BlogPost[] = [
         id: "technique",
         title: {
           fr: "Technique et exploration — cinq points",
-          en: "Technical and crawling — five points",
+          en: "Technical setup and crawling — five points",
         },
         paragraphs: {
           fr: [
@@ -2247,8 +2261,8 @@ export const blogPosts: BlogPost[] = [
             "Un point mérite une attention particulière : un sitemap n'est utile que s'il est exact. Un sitemap contenant des adresses qui redirigent ou renvoient une erreur est traité comme défaillant, et Google finit par cesser de le consulter.",
           ],
           en: [
-            "These determine Google's ability to discover your pages and how fast it does so.",
-            "A sitemap is only useful if it is accurate. One containing redirecting or erroring URLs is treated as faulty.",
+            "These points determine Google's ability to discover your pages and how quickly it will do so. They matter especially for a new website, which has no history to rely on.",
+            "One point deserves special attention: a sitemap is only useful if it is accurate. A sitemap containing addresses that redirect or return an error is treated as unreliable, and Google eventually stops checking it.",
           ],
         },
         bullets: {
@@ -2260,11 +2274,11 @@ export const blogPosts: BlogPost[] = [
             "Les pages inexistantes renvoient un vrai code 404, et non une page d'accueil déguisée en erreur.",
           ],
           en: [
-            "sitemap.xml exists, contains only URLs returning 200, all on the canonical domain.",
-            "The sitemap is declared in robots.txt and submitted in Search Console.",
-            "Every indexable page has at least one internal link.",
-            "Internal links are real <a href> tags.",
-            "Missing pages return a genuine 404.",
+            "The sitemap.xml file exists, contains only addresses that return a 200, and all of them on the canonical version of the domain.",
+            "The sitemap is declared in the robots.txt file and submitted in Search Console.",
+            "Every indexable page receives at least one link from another page on the website. A page that is in the sitemap but has no incoming links is an orphan page.",
+            "Internal links are genuine <a href> tags. A button that navigates with JavaScript is invisible to search engines.",
+            "Pages that don't exist return a real 404 code, not a home page disguised as an error.",
           ],
         },
       },
@@ -2280,8 +2294,8 @@ export const blogPosts: BlogPost[] = [
             "Une précision utile : les Core Web Vitals se mesurent sur des visiteurs réels. Un site neuf n'en a pas encore, et n'apparaîtra donc dans aucun rapport terrain avant plusieurs semaines de trafic. Les outils de laboratoire donnent une indication, pas une mesure.",
           ],
           en: [
-            "Speed affects ranking, but above all bounce rate. Structured data does not directly improve position but enables rich results.",
-            "Core Web Vitals are measured on real visitors. A new site has none yet.",
+            "Speed affects rankings, but above all it affects bounce rate: a visitor who waits too long leaves before seeing the page. Structured data doesn't directly improve your position, but it determines whether you get rich results in search.",
+            "A useful clarification: Core Web Vitals are measured on real visitors. A new website doesn't have any yet, so it won't appear in any field report until it has had several weeks of traffic. Lab tools give an indication, not a measurement.",
           ],
         },
         bullets: {
@@ -2292,10 +2306,10 @@ export const blogPosts: BlogPost[] = [
             "Une image de partage social est définie, et les balises Open Graph pointent vers des URL absolues.",
           ],
           en: [
-            "Images use a modern format, are sized, and the first-displayed one is prioritised.",
-            "Pages are cached where content allows.",
-            "Structured data describes the organisation; articles carry a publication date and author.",
-            "A social sharing image is defined with absolute URLs.",
+            "Images are served in a modern format, properly sized, and the one displayed first is loaded with priority.",
+            "Pages are cached whenever their content allows it. A no-store directive on a static page forces the server to rebuild it on every visit.",
+            "Structured data markup describes the organization, and articles carry a publication date and an author.",
+            "A social sharing image is defined, and the Open Graph tags point to absolute URLs.",
           ],
         },
       },
@@ -2303,7 +2317,7 @@ export const blogPosts: BlogPost[] = [
         id: "outils",
         title: {
           fr: "Les outils pour vérifier, tous gratuits",
-          en: "The tools to check with, all free",
+          en: "The tools for checking, all free",
         },
         paragraphs: {
           fr: [
@@ -2314,11 +2328,11 @@ export const blogPosts: BlogPost[] = [
             "Une dernière méthode, très efficace et souvent oubliée : consultez votre site dans une fenêtre de navigation privée, sur un téléphone, avec une connexion mobile. Beaucoup de problèmes visibles pour un visiteur ne le sont pas depuis un poste de développement.",
           ],
           en: [
-            "None of these checks requires a paid tool. Four free ones cover the entire list.",
-            "Google Search Console is the source of truth on indexing.",
-            "The page source, one right-click away, lets you check title, description, canonical and structured data.",
-            "The Rich Results Test validates structured data; PageSpeed Insights gives a performance indication.",
-            "One last method, often forgotten: view your site in a private window, on a phone, on mobile data.",
+            "None of these checks requires a subscription to a paid tool. The following four are enough to cover the whole list, and they are the ones professionals use for most of their day-to-day work.",
+            "Google Search Console is the source of truth on indexing: it alone tells you which pages are actually indexed and why the others are not. Its URL Inspection tool lets you see a page exactly as Google receives it, which no other tool can do.",
+            "The page source, one right-click away in any browser, lets you check the title, description and canonical tags and the structured data. It is the simplest tool and the most underused.",
+            "Google's Rich Results Test validates structured data and flags missing properties. Finally, PageSpeed Insights gives an indication of performance, bearing in mind that its lab scores are not real Core Web Vitals.",
+            "One last method, very effective and often forgotten: look at your website in a private browsing window, on a phone, over a mobile connection. Many problems a visitor can see are not visible from a developer's workstation.",
           ],
         },
       },
@@ -2336,25 +2350,35 @@ export const blogPosts: BlogPost[] = [
             "Enfin, s'il s'agit d'une refonte et non d'un site neuf, vérifiez une dernière fois que chaque ancienne adresse redirige vers son équivalent. C'est la première cause de chute de trafic après une migration, et la plus simple à éviter.",
           ],
           en: [
-            "The checklist does not end at publication.",
-            "Open a Search Console account and submit the sitemap the same day.",
-            "Define what counts as a conversion and measure it from day one. Analytics tools do not apply conversions retroactively.",
-            "If this is a redesign, check one last time that every old URL redirects to its equivalent.",
+            "The checklist doesn't stop at publication. Two steps determine whether you will be able to tell if the website is working, and fix it quickly if it isn't.",
+            "The first is to open a Search Console account and submit the sitemap the same day. It is the only place where you will see what Google has actually indexed, and why it has left certain pages out.",
+            "The second is to define what counts as a conversion — a form submission, a phone call — and to measure it from day one. Analytics tools don't apply conversions retroactively: every week without tracking is a week of data lost for good.",
+            "Finally, if this is a redesign rather than a new website, check one last time that every old address redirects to its equivalent. It is the leading cause of traffic drops after a migration, and the easiest to avoid.",
           ],
         },
       },
     ],
     ctaTitle: {
       fr: "Un site livré avec ces points déjà en place",
-      en: "A website delivered with these already in place",
+      en: "A website delivered with these points already in place",
     },
     ctaDescription: {
       fr: "Chaque site que nous livrons part avec ces vérifications faites : structure, canonical, sitemap, données structurées et performance. Ce que nous ne promettons pas, c'est une position — personne ne la contrôle.",
-      en: "Every site we deliver ships with these checks done. What we do not promise is a ranking position — nobody controls that.",
+      en: "Every website we deliver comes with these checks done: structure, canonical tags, sitemap, structured data and performance. What we don't promise is a ranking position — no one controls that.",
     },
   },
 ];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+/** Retrouve un article à partir du slug de son URL, dans une langue donnée. */
+export function getBlogPost(
+  urlSlug: string,
+  locale: SiteLocale
+): BlogPost | undefined {
+  return blogPosts.find(
+    (post) => (locale === "fr" ? post.slug : post.enSlug) === urlSlug
+  );
 }

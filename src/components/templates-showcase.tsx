@@ -8,6 +8,7 @@ import {
   getLocalizedValue,
   type SiteLocale,
 } from "@/content/site-content";
+import { linkLocalizer } from "@/lib/localized-routes";
 
 interface TemplatesShowcaseProps {
   locale: SiteLocale;
@@ -32,6 +33,7 @@ export function TemplatesShowcase({
   showViewAll = false,
   viewAllLabel,
 }: TemplatesShowcaseProps) {
+  const href = linkLocalizer(locale);
   const templates = featuredTemplates
     .filter((template) => isSitekeptPublicTemplate(template.slug))
     .slice(0, limit ?? featuredTemplates.length);
@@ -66,6 +68,7 @@ export function TemplatesShowcase({
 
             return (
               <ProjectCard
+                locale={locale}
                 key={template.id}
                 name={copy.name}
                 url={template.externalUrl ?? `/${template.slug}`}
@@ -73,7 +76,7 @@ export function TemplatesShowcase({
                 screenshot={template.screenshot}
                 category="template"
                 ctaText={ctaText}
-                ctaLink="/#contact"
+                ctaLink={href("/#contact")}
               />
             );
           })}
@@ -86,7 +89,7 @@ export function TemplatesShowcase({
               variant="outline"
               className="border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
             >
-              <Link href="/templates">
+              <Link href={href("/templates")}>
                 {viewAllLabel}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>

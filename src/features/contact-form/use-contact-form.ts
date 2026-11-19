@@ -2,7 +2,7 @@ import { useState, type FormEvent } from "react";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import { submitContactForm } from "./contact-form.action";
 
-export function useContactForm() {
+export function useContactForm(fallbackErrorMessage: string) {
   const [submitStatus, setSubmitStatus] = useState<
     "idle" | "success" | "error"
   >("idle");
@@ -50,7 +50,7 @@ export function useContactForm() {
       setPhone(undefined);
     } else {
       setSubmitStatus("error");
-      setErrorMessage(result.error || "Échec de l'envoi du message");
+      setErrorMessage(result.error || fallbackErrorMessage);
     }
   };
 

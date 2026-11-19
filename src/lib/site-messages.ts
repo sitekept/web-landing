@@ -1,7 +1,6 @@
 import enMessages from "../../messages/en.json";
 import frMessages from "../../messages/fr.json";
-import { getUserLocale } from "@/lib/locale";
-import { toSiteLocale, type SiteLocale } from "@/content/site-content";
+import type { SiteLocale } from "@/content/site-content";
 
 type MessageValue =
   | string
@@ -42,10 +41,6 @@ function formatMessage(
   return Object.entries(values).reduce((message, [key, value]) => {
     return message.replaceAll(`{${key}}`, String(value));
   }, template);
-}
-
-export async function getSiteLocale(): Promise<SiteLocale> {
-  return toSiteLocale(await getUserLocale());
 }
 
 export function getMessage(

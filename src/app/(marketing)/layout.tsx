@@ -1,22 +1,11 @@
 import type { ReactNode } from "react";
-import { Footer } from "@/components/footer";
-import { Navigation } from "@/components/navigation";
-import { getSiteLocale } from "@/lib/site-messages";
-import { OrganizationJsonLd } from "@/components/structured-data";
+import { buildRootMetadata, rootViewport } from "@/components/root-document";
+import { SiteShell } from "@/components/site-shell";
 
-export default async function MarketingLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
-  const locale = await getSiteLocale();
+/** Layout racine du site commercial en français, servi sans préfixe. */
+export const metadata = buildRootMetadata("fr");
+export const viewport = rootViewport;
 
-  return (
-    <main className="min-h-screen">
-      <OrganizationJsonLd />
-      <Navigation locale={locale} />
-      {children}
-      <Footer locale={locale} />
-    </main>
-  );
+export default function MarketingLayout({ children }: { children: ReactNode }) {
+  return <SiteShell locale="fr">{children}</SiteShell>;
 }

@@ -1,12 +1,24 @@
 import type { Metadata, Viewport } from "next";
+import type { ReactNode } from "react";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
-import "./globals.css";
+import "@/app/globals.css";
+import type { SiteLocale } from "@/content/site-content";
 import { ENV } from "@/lib/env";
-import { getMessage, getSiteLocale } from "@/lib/site-messages";
+import { getMessage } from "@/lib/site-messages";
 import { SITE_URL } from "@/lib/site-url";
+import { absoluteUrl, localizePath } from "@/lib/localized-routes";
+
+/**
+ * Document HTML commun à toutes les racines du site.
+ *
+ * Le site a plusieurs layouts racines — un par groupe de routes, plus
+ * `src/app/en/` — pour que `<html lang>` soit fixé statiquement selon la
+ * langue servie. Lire la langue depuis l'URL dans un layout racine unique
+ * imposerait `headers()`, donc un rendu dynamique de tout le site.
+ */
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -20,9 +32,12 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-display-serif",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getSiteLocale();
+export const rootViewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
+export function buildRootMetadata(locale: SiteLocale): Metadata {
   return {
     metadataBase: new URL(SITE_URL),
     title: getMessage(locale, "metadata.title"),
@@ -47,11 +62,15 @@ export async function generateMetadata(): Promise<Metadata> {
       ],
     },
     manifest: "/my-favicon/site.webmanifest",
+    appleWebApp: {
+      title: getMessage(locale, "metadata.appleMobileWebAppTitle"),
+    },
     openGraph: {
       title: getMessage(locale, "metadata.openGraph.title"),
       description: getMessage(locale, "metadata.openGraph.description"),
-      url: SITE_URL,
+      url: absoluteUrl(localizePath("/", locale)),
       siteName: getMessage(locale, "metadata.openGraph.siteName"),
+      locale: locale === "fr" ? "fr_FR" : "en_US",
       type: "website",
       images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
     },
@@ -76,29 +95,17 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-};
+interface RootDocumentProps {
+  locale: SiteLocale;
+  children: ReactNode;
+}
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const locale = await getSiteLocale();
-
+export function RootDocument({ locale, children }: RootDocumentProps) {
   return (
     <html
       lang={locale}
       className={`scroll-smooth ${inter.variable} ${instrumentSerif.variable}`}
     >
-      <head>
-        <meta
-          name="apple-mobile-web-app-title"
-          content={getMessage(locale, "metadata.appleMobileWebAppTitle")}
-        />
-      </head>
       <body suppressHydrationWarning className={inter.className}>
         {children}
         <SpeedInsights />

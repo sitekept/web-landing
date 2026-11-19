@@ -1,7 +1,11 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "@/content/site-content";
 import { metierPages } from "@/content/metier-pages";
-import { SITE_URL } from "@/lib/site-url";
+import {
+  absoluteUrl,
+  getLanguageAlternates,
+  localizePath,
+} from "@/lib/localized-routes";
 
 /**
  * Sitemap des pages commerciales uniquement.
@@ -15,68 +19,53 @@ import { SITE_URL } from "@/lib/site-url";
  * articles portent désormais `updatedAt`. Il reste omis sur les pages
  * statiques, faute de date de modification fiable — un `lastmod` égal à la
  * date de build est un signal de fraîcheur faux, que Google apprend à ignorer.
+ *
+ * Chaque page est déclarée dans ses deux langues, chacune portant ses
+ * alternatives hreflang : l'anglais est servi sous /en avec des slugs propres.
  */
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = SITE_URL;
+type SitemapEntry = MetadataRoute.Sitemap[number];
 
-  return [
-    {
-      url: baseUrl,
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/templates`,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/tarifs`,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    // Pages métier : cible « site internet {métier} », longue traîne à forte
-    // intention commerciale.
-    ...metierPages.map((page) => ({
-      url: `${baseUrl}/${page.slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.85,
-    })),
-    {
-      url: `${baseUrl}/blog`,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/seo-geo`,
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    ...blogPosts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.updatedAt),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    })),
-    {
-      url: `${baseUrl}/realization`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${baseUrl}/mentions-legales`,
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-  ];
+interface PageEntry {
+  /** Chemin français de la page. */
+  path: string;
+  changeFrequency: NonNullable<SitemapEntry["changeFrequency"]>;
+  priority: number;
+  lastModified?: Date;
+}
+
+const pages: PageEntry[] = [
+  { path: "/", changeFrequency: "weekly", priority: 1 },
+  { path: "/templates", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/tarifs", changeFrequency: "monthly", priority: 0.9 },
+  // Pages métier : cible « site internet {métier} », longue traîne à forte
+  // intention commerciale.
+  ...metierPages.map((page) => ({
+    path: `/${page.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  })),
+  { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/seo-geo", changeFrequency: "monthly", priority: 0.75 },
+  ...blogPosts.map((post) => ({
+    path: `/blog/${post.slug}`,
+    lastModified: new Date(post.updatedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
+  { path: "/realization", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/privacy", changeFrequency: "yearly", priority: 0.2 },
+  { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
+  { path: "/mentions-legales", changeFrequency: "yearly", priority: 0.2 },
+];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return pages.flatMap(({ path, ...entry }) => {
+    const alternates = { languages: getLanguageAlternates(path) };
+
+    return (["fr", "en"] as const).map((locale) => ({
+      url: absoluteUrl(localizePath(path, locale)),
+      ...entry,
+      alternates,
+    }));
+  });
 }

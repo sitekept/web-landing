@@ -1,9 +1,9 @@
 import { Mail } from "lucide-react";
 import { ContactForm } from "@/features/contact-form";
-import { getMessage, getRawMessage, getSiteLocale } from "@/lib/site-messages";
+import type { SiteLocale } from "@/content/site-content";
+import { getMessage, getRawMessage } from "@/lib/site-messages";
 
-export async function Contact() {
-  const locale = await getSiteLocale();
+export function Contact({ locale }: { locale: SiteLocale }) {
   const commitments = getRawMessage(locale, "contact.commitments") as string[];
 
   return (
@@ -48,6 +48,7 @@ export async function Contact() {
             </div>
           </div>
           <ContactForm
+            locale={locale}
             messages={{
               title: getMessage(locale, "contactForm.title"),
               name: getMessage(locale, "contactForm.name"),

@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, AlertCircle, Send } from "lucide-react";
+import type { SiteLocale } from "@/content/site-content";
 import { PhoneField } from "./phone-field";
 import { useContactForm } from "./use-contact-form";
 
@@ -28,6 +29,7 @@ interface ContactFormMessages {
 }
 
 interface ContactFormProps {
+  locale: SiteLocale;
   messages: ContactFormMessages;
 }
 
@@ -56,7 +58,7 @@ function SubmitButton({
   );
 }
 
-export function ContactForm({ messages }: ContactFormProps) {
+export function ContactForm({ locale, messages }: ContactFormProps) {
   const {
     submitStatus,
     errorMessage,
@@ -65,7 +67,7 @@ export function ContactForm({ messages }: ContactFormProps) {
     handlePhoneChange,
     validatePhone,
     handleSubmit,
-  } = useContactForm();
+  } = useContactForm(messages.errorMessage);
 
   return (
     <Card>
@@ -88,6 +90,9 @@ export function ContactForm({ messages }: ContactFormProps) {
             aria-hidden="true"
             className="absolute -left-[9999px] h-px w-px opacity-0"
           />
+          {/* Langue de la page : choisit la langue des erreurs et de l'email
+              de confirmation envoyé au prospect. */}
+          <input type="hidden" name="locale" value={locale} />
 
           <div>
             <Label htmlFor="name">
@@ -121,6 +126,7 @@ export function ContactForm({ messages }: ContactFormProps) {
               {messages.phone} {messages.required}
             </Label>
             <PhoneField
+              locale={locale}
               id="phone"
               name="phone"
               value={phone}

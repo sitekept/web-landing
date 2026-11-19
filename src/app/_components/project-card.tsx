@@ -6,8 +6,27 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import type { SiteLocale } from "@/content/site-content";
+
+const LABELS = {
+  fr: {
+    preview: (name: string) => `Aperçu de ${name}`,
+    realization: "Réalisation",
+    template: "Template",
+    visit: "Visiter",
+    viewProject: "Voir le projet",
+  },
+  en: {
+    preview: (name: string) => `Preview of ${name}`,
+    realization: "Client project",
+    template: "Template",
+    visit: "Visit",
+    viewProject: "View the project",
+  },
+} as const;
 
 interface ProjectCardProps {
+  locale: SiteLocale;
   name: string;
   url?: string;
   description: string;
@@ -19,18 +38,20 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({
+  locale,
   name,
   url,
   description,
   screenshot,
   category,
-  ctaText = "Voir le projet",
+  ctaText,
   ctaAction,
   ctaLink,
 }: ProjectCardProps) {
   // Le lien doit être une vraie ancre : un window.open() dans un onClick est
   // invisible pour les moteurs de recherche, ce qui rendait les pages de
   // démonstration inatteignables par exploration.
+  const labels = LABELS[locale];
   const isExternalUrl = Boolean(url && /^https?:\/\//i.test(url));
 
   const isTemplateCard = category === "template";
@@ -50,7 +71,7 @@ export function ProjectCard({
         <div className="relative h-48 overflow-hidden bg-slate-100">
           <Image
             src={screenshot}
-            alt={`Aperçu de ${name}`}
+            alt={labels.preview(name)}
             fill
             className="object-cover transition-transform duration-300 hover:scale-105"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -67,7 +88,7 @@ export function ProjectCard({
                   : "bg-blue-100 text-blue-800"
               }`}
             >
-              {category === "realisation" ? "Réalisation" : "Template"}
+              {category === "realisation" ? labels.realization : labels.template}
             </span>
           </div>
 
@@ -90,7 +111,7 @@ export function ProjectCard({
                   rel={isExternalUrl ? "noopener noreferrer" : "noopener"}
                 >
                   <ExternalLink size={isTemplateCard ? 14 : 16} />
-                  Visiter
+                  {labels.visit}
                 </a>
               </Button>
             ) : null}
@@ -102,7 +123,7 @@ export function ProjectCard({
                 className={cn(primaryButtonClassName)}
               >
                 <Link href={ctaLink}>
-                  {ctaText}
+                  {ctaText ?? labels.viewProject}
                   <ArrowRight size={isTemplateCard ? 14 : 16} />
                 </Link>
               </Button>
@@ -112,7 +133,7 @@ export function ProjectCard({
                 size="sm"
                 className={cn(primaryButtonClassName)}
               >
-                {ctaText}
+                {ctaText ?? labels.viewProject}
                 <ArrowRight size={isTemplateCard ? 14 : 16} />
               </Button>
             )}
