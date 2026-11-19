@@ -49,32 +49,12 @@ export default async function LegalNoticePage() {
               {getMessage(locale, "legalNotice.sections.editor.content")}
             </p>
             <div className="mb-6 rounded-lg bg-slate-50 p-6">
-              <p className="mb-2 text-slate-600">
-                {getMessage(locale, "legalNotice.sections.editor.companyName")}
-              </p>
-              <p className="mb-2 text-slate-600">
-                {getMessage(locale, "legalNotice.sections.editor.legalForm")}
-              </p>
-              <p className="mb-2 text-slate-600">
-                {getMessage(locale, "legalNotice.sections.editor.siren")}
-              </p>
-              <p className="mb-2 text-slate-600">
-                {getMessage(locale, "legalNotice.sections.editor.vat")}
-              </p>
-              <p className="mb-2 text-slate-600">
-                {getMessage(locale, "legalNotice.sections.editor.address")}
-              </p>
+              {/* Raison sociale, forme juridique, SIREN/SIRET, TVA, siège social et directeur de la publication : à remettre quand l'entreprise sera créée (clés legalNotice.sections.editor.* de messages/*.json). */}
               <p className="mb-2 text-slate-600">
                 {getMessage(locale, "legalNotice.sections.editor.email")}
               </p>
-              <p className="mb-2 text-slate-600">
-                {getMessage(locale, "legalNotice.sections.editor.phone")}
-              </p>
               <p className="text-slate-600">
-                {getMessage(
-                  locale,
-                  "legalNotice.sections.editor.publicationDirector"
-                )}
+                {getMessage(locale, "legalNotice.sections.editor.phone")}
               </p>
             </div>
 
