@@ -127,10 +127,33 @@
     --tpl-text-lg: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
     --tpl-text-xl: clamp(1.5rem, 1.3rem + 1vw, 2.125rem);
     --tpl-text-2xl: clamp(2.125rem, 1.6rem + 2.6vw, 3.75rem);
-    --tpl-text-3xl: clamp(2.75rem, 1.5rem + 6vw, 6.75rem);
+    --tpl-text-3xl: clamp(2.25rem, 1rem + 6vw, 6.75rem);
     --tpl-leading-display: 1.04;
     --tpl-leading-body: 1.65;
     --tpl-tracking-eyebrow: 0.18em;
+  }
+
+  /*
+   * Section inverse (TemplateSection tone="inverse") : l'encre et la surface
+   * basculent sur la paire inverse. `--tpl-ink-muted` et `--tpl-line` étant
+   * hérités déjà calculés depuis [data-template], on les redérive ici, ainsi
+   * que `--tpl-raised` pour les cartes posées sur ce fond.
+   */
+  [data-tone="inverse"] {
+    --tpl-ink: var(--tpl-inverse-ink);
+    --tpl-surface: var(--tpl-inverse);
+    /* `inverse` en premier : c'est lui que garde le repli sans color-mix. */
+    --tpl-raised: color-mix(
+      in oklch,
+      var(--tpl-inverse) 93%,
+      var(--tpl-inverse-ink)
+    );
+    --tpl-ink-muted: color-mix(
+      in oklch,
+      var(--tpl-ink) 68%,
+      var(--tpl-surface)
+    );
+    --tpl-line: color-mix(in oklch, var(--tpl-ink) 14%, transparent);
   }
 }
 
