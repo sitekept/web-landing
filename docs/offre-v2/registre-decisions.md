@@ -1,4 +1,4 @@
-# Registre des décisions Sitekept (mis à jour le 17 novembre 2026)
+# Registre des décisions Sitekept (mis à jour le 19 novembre 2026)
 
 Ce registre est la référence unique. **En cas de contradiction avec les crochets `[À DÉCIDER]` ou `[PROPOSITION]` des autres documents** (plan v2, CGV/CGU, kit opérationnel), c'est lui qui prévaut. Statuts : **Validé** (dit par Joseph), **Proposé** (suggestion de Claude, pas encore confirmée), **Ouvert** (à décider).
 
@@ -47,6 +47,7 @@ Ce registre est la référence unique. **En cas de contradiction avec les croche
 | Constante unique des prix et du régime fiscal | Un seul fichier de configuration, pour basculer le jour où la TVA s'appliquera. Mini-plan de phase 1 accepté par Joseph le 11 nov. ; en place dans `src/content/pricing.ts` (commit `e3f8df9`) | Validé |
 | Direction artistique | Rester dans la DA actuelle du site, aucun nouvel élément visuel | Validé |
 | Couleur des cases à cocher et boutons radio | Alignées sur le bleu du site (`accent-blue-600`), valeur nouvelle décidée par Joseph (17 nov. 2026) | Validé |
+| Valeurs visuelles propres au tunnel | Validées par Joseph (19 nov. 2026) : classes de la modale (`m-auto`, `backdrop:bg-slate-950/60`, `max-sm:h-dvh`, `max-sm:max-h-none`, `sm:rounded-md`, `sticky`, `top-0` / `bottom-0`, `min-h-full`, `max-w-2xl` en largeur de panneau, `shadow-xl shadow-slate-950/20`), `<select>` natif reprenant les classes de `Input` hors primitive, `bg-blue-100` pour la piste de progression | Validé |
 | Boutons du hero de la home | **Variante A** : les trois cartes Site, Suivi, Campagnes remplacent les deux boutons dans le hero, avec le lien « Voir les templates » ; chaque carte ouvre le tunnel avec son offre cochée (décision du 18 nov. 2026, sur captures mobile et desktop ; remplace la décision du 11 nov.) | Validé |
 
 ## Règles de projet (CGV, devis, kit)

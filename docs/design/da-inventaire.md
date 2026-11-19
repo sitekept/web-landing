@@ -1064,3 +1064,36 @@ Constat sur la phase 1 (`git diff 9829886 HEAD -- src`) :
 - Les classes Tailwind ajoutées sont des combinaisons de valeurs déjà listées. Chaque classe ajoutée a été retrouvée dans cet inventaire.
 - Seule exception : `src/app/opengraph-image.tsx`, qui porte des styles en ligne (`fontSize: 36`, `color: "#94a3b8"`, `marginTop: 28`). Le fichier est hors du périmètre de l'inventaire.
 - Le même `fontSize: 36` et la même couleur existaient déjà à 9829886 (`opengraph-image.tsx:51-52`). La phase 1 les réutilise dans un nouveau bloc et n'ajoute aucune valeur nouvelle.
+
+## Ajouts postérieurs (clause 0 bis) — 19 nov. 2026
+
+Ces valeurs existent dans le code vivant au HEAD `cf5d0ff` (lu par `git rev-parse --short HEAD`). Elles viennent du tunnel de demande (tâches 3.3 et 3.4). Joseph les a validées au registre (17 et 19 nov. 2026) ; elles sont ajoutées en application de la clause 0 bis.
+
+Modale du tunnel :
+- Élément `<dialog>` : `src/features/lead-funnel/lead-funnel-dialog.tsx:398` `m-auto w-full max-w-2xl bg-white text-slate-900 shadow-xl shadow-slate-950/20 backdrop:bg-slate-950/60 max-sm:h-dvh max-sm:max-h-none sm:rounded-md`.
+- Valeurs nouvelles sur cette ligne, validées par Joseph : `m-auto`, `backdrop:bg-slate-950/60`, `max-sm:h-dvh`, `max-sm:max-h-none` et `sm:rounded-md`.
+  - `backdrop:` est une variante jamais observée.
+  - `max-sm:` est une variante jamais observée, et `dvh` une unité jamais observée.
+  - `sm:rounded-md` est une combinaison nouvelle : `rounded-md` et la variante `sm:` existaient séparément.
+- `max-w-2xl` existait déjà (§ 4, chapô du hero), mais seulement comme largeur de texte. Il sert ici de largeur de panneau : cet emploi est validé par Joseph.
+- `shadow-xl shadow-slate-950/20` existait déjà (aside du hero et bulle de consentement, ci-dessus). La modale en est la troisième couche flottante : cet emploi est validé par Joseph.
+- Formulaire : `src/features/lead-funnel/lead-funnel-dialog.tsx:403` `flex min-h-full flex-col`. `min-h-full` est nouvelle, validée par Joseph.
+- En-tête collant : `src/features/lead-funnel/lead-funnel-dialog.tsx:405` `sticky top-0 z-10 border-b border-slate-200 bg-white px-6 py-4`. `sticky` est nouvelle, validée par Joseph. `top-0` existait déjà (`src/components/navigation.tsx:249` `fixed top-0 z-50 w-full transition-all duration-300`).
+- Pied collant : `src/features/lead-funnel/lead-funnel-dialog.tsx:712` `sticky bottom-0 z-10 flex gap-3 border-t border-slate-200 bg-white px-6 py-4`. `bottom-0` est nouvelle, validée par Joseph.
+- Piste de progression : `src/features/lead-funnel/lead-funnel-dialog.tsx:426` `item <= step ? "bg-blue-600" : "bg-blue-100"`. `bg-blue-100` existait déjà (badge « Template », `src/app/_components/project-card.tsx:75` `bg-blue-100 text-blue-800`). Son emploi comme piste de progression est validé par Joseph.
+
+Champs du tunnel :
+- `<select>` natif : `src/features/lead-funnel/lead-funnel-dialog.tsx:126` (constante `SELECT_CLASS_NAME`, déclarée ligne 125, utilisée ligne 503 avec `mt-1`) `flex h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20`.
+- Ces classes reprennent celles de `Input` (`src/components/ui/input.tsx:11` à `:13`), hors de la primitive. Aucune valeur nouvelle : Joseph a validé cet emploi hors primitive, la clause 0 ne l'autorisant qu'à l'intérieur de `input.tsx`. Les classes `selection:`, `file:`, `placeholder:` et `dark:` de `Input` ne sont pas reprises.
+- Cases et boutons radio : `src/features/lead-funnel/lead-funnel-dialog.tsx:651` `h-4 w-4 shrink-0 accent-blue-600`, `src/features/lead-funnel/offer-picker.tsx:118` `mt-1 h-4 w-4 shrink-0 accent-blue-600` et `src/features/contact-form/contact-form.tsx:201` `h-4 w-4 shrink-0 accent-blue-600`.
+- `accent-blue-600` est une valeur nouvelle, décidée par Joseph le 17 nov. 2026 (registre).
+
+Icône du hero de la home (tâche 3.4) :
+- `src/app/(marketing)/page.tsx:110` `h-4 w-4 flex-shrink-0 text-slate-200` (icône `ArrowRight` des cartes d'offre).
+- `text-slate-200` figurait déjà à l'inventaire (pastilles du hero, § 2.2) et dans la navigation transparente (`src/components/navigation.tsx:234` `text-slate-200`). Aucune valeur nouvelle.
+
+Constat sur la phase 4 (`git diff dbc57f0 HEAD -- src`) :
+- Les classes ajoutées dans `src/components` et `src/app` ont toutes été retrouvées dans le code de `dbc57f0`. Aucune classe nouvelle hors primitives.
+- La primitive `src/components/ui/dropdown-menu.tsx` est désormais importée, par `src/components/navigation-resources-menu.tsx:11` `} from "@/components/ui/dropdown-menu";`. Ce fichier est le seul importeur.
+- Elle n'est plus du code mort. Ses valeurs (`shadow-md`, animations tw-animate-css `animate-in`, `fade-in-0`, `zoom-in-95`, etc.) deviennent vivantes, dans le cadre fixé par les règles 4 et 5.
+- Les mentions de `dropdown-menu.tsx` comme non importé ou code mort (l. 14-17, 482, 715, 903, 950, 968, 985) sont caduques depuis la phase 4. `form.tsx` reste non importé. Les règles 4 et 5 restent applicables à la primitive, désormais importée.
