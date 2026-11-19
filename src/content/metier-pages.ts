@@ -205,7 +205,7 @@ export const metierPages: MetierPage[] = [
         question:
           "Que peut-on écrire sur le site d'un cabinet dentaire ?",
         answer:
-          "Des informations factuelles (soins, équipe, accès, consultations), dans le cadre du code de déontologie et du code de la santé publique. L'information au public est autorisée, la publicité comparative ou promettant un résultat ne l'est pas. Il vous revient de faire valider les contenus au regard de vos obligations ordinales.",
+          "Vous pouvez présenter vos soins, votre équipe, vos horaires et votre accès, de façon loyale et honnête. Votre site doit aussi indiquer vos honoraires et les modes de paiement acceptés. Sont interdits : les comparaisons avec d'autres dentistes, les témoignages de patients et les propos trompeurs. Les offres du type « 3 implants pour le prix de 2 » le sont aussi. L'Ordre considère que les photos avant/après risquent d'induire en erreur. En cas de doute, demandez conseil à votre conseil départemental de l'Ordre.",
       },
       {
         question: "Faut-il un module de prise de rendez-vous en ligne ?",
@@ -802,12 +802,12 @@ export const metierPages: MetierPage[] = [
       {
         question: "Un avocat a-t-il le droit d'avoir un site internet ?",
         answer:
-          "Oui, la publicité et la sollicitation personnalisée sont autorisées pour les avocats depuis 2014, mais encadrées. L'information doit être sincère, respecter la dignité de la profession, la confraternité et le secret professionnel, sans comparaison ni promesse de résultat. Il vous revient de la faire valider au regard des règles de votre barreau.",
+          "Oui. Un avocat peut présenter ses services sur un site, dans le cadre du règlement intérieur national de la profession. L'information doit être sincère et respecter la dignité, la confraternité et le secret professionnel. Toute publicité trompeuse et toute mention comparative ou dénigrante sont interdites. Vous devez informer votre conseil de l'Ordre de l'ouverture du site et de toute modification importante.",
       },
       {
         question: "Peut-on publier ses résultats ou ses affaires gagnées ?",
         answer:
-          "Pas sous une forme identifiable, et c'est le point le plus délicat. Le secret professionnel s'oppose à la divulgation d'éléments identifiants, et la publicité comparative ou laissant espérer un résultat est prohibée. Beaucoup de cabinets présentent à la place des cas types anonymisés et généralisés, une approche à valider avec votre ordre.",
+          "Pas les noms de vos clients : le secret professionnel est absolu, et leur accord n'y change rien sur un site. Évitez aussi tout détail qui permettrait de reconnaître une affaire. Votre communication doit rester sincère, sans comparaison ni dénigrement. Si vous envisagez des cas pratiques anonymisés, soumettez-les à votre bâtonnier avant publication.",
       },
     ],
   },
