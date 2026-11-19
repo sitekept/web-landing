@@ -1,9 +1,10 @@
 /**
  * Kit partagé des micro-sites de démonstration (`src/app/(demos)/<slug>/`).
  *
- * Composants serveur, sans JavaScript client, stylés uniquement par les tokens
- * `--tpl-*` (voir `src/lib/template-theme.ts`). À rendre sous un élément
- * `[data-template]`.
+ * Composants serveur, stylés uniquement par les tokens `--tpl-*` (voir
+ * `src/lib/template-theme.ts`), à rendre sous un élément `[data-template]` (ce
+ * que fait `TemplateShell`). Les seules parties client sont la navigation et
+ * le sélecteur de langue du shell, et `TemplateDemoForm`.
  *
  * Règle du kit : un nouveau besoin visuel devient d'abord un token. Il ne
  * devient un enum (prop) que s'il change le DOM ou la structure, et jamais un
@@ -38,3 +39,38 @@ export type {
   TemplatePanelProps,
   TemplatePanelTone,
 } from "./card";
+
+export { TemplateShell } from "./shell";
+export type {
+  TemplateNavItem,
+  TemplateShellBrand,
+  TemplateShellCta,
+  TemplateShellProps,
+} from "./shell";
+
+export { TemplateLocaleSwitch } from "./locale-switch";
+export type { TemplateLocaleSwitchProps } from "./locale-switch";
+
+export { TemplateMedia } from "./media";
+export type {
+  TemplateMediaProps,
+  TemplateMediaRatio,
+  TemplateMediaRounded,
+} from "./media";
+
+export { TemplateDemoForm } from "./demo-form";
+export type {
+  TemplateDemoFormProps,
+  TemplateFormField,
+  TemplateFormFieldType,
+  TemplateFormOption,
+} from "./demo-form";
+
+export {
+  switchTemplateLocale,
+  templateHref,
+  templateLocaleFromPathname,
+} from "./href";
+
+export { TEMPLATE_LOCALES } from "@/content/templates/types";
+export type { TemplateLocale } from "@/content/templates/types";
