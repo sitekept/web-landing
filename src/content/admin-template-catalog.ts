@@ -30,7 +30,7 @@ const sitekeptPublicSlugs = [
   "restaurant-bistrot",
   "architecte-interieur",
   "cabinet-avocat",
-  "avocate-tel-aviv",
+  "avocate",
   "agence-immobiliere",
 ] as const;
 
@@ -165,8 +165,8 @@ export const adminTemplateCatalog: AdminTemplateCatalogEntry[] = [
     notes: "Visible dans le catalogue public SiteKept.",
   }),
   withLinks({
-    slug: "avocate-tel-aviv",
-    name: "Template Avocate Tel Aviv",
+    slug: "avocate",
+    name: "Template Avocate",
     sector: "Juridique",
     notes:
       "Route publique SiteKept disponible, maintenant contrôlée par statut.",

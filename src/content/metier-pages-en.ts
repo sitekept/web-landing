@@ -644,8 +644,8 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
     label: "a law firm",
     demoName: "Law firm demo (in French)",
     secondaryDemo: {
-      name: "Tel Aviv lawyer demo (in French)",
-      note: "A second template, designed for a firm practicing internationally for French-speaking clients.",
+      name: "Lawyer demo (in French)",
+      note: "A second, more editorial template, for a lawyer practicing under their own name.",
     },
     seoTitle: "Website for lawyers and law firms | Sitekept",
     seoDescription:

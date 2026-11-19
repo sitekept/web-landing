@@ -847,21 +847,21 @@ export const featuredTemplates: FeaturedTemplate[] = [
     },
   },
   {
-    id: "avocate-tel-aviv",
-    slug: "avocate-tel-aviv",
-    externalUrl: "/avocate-tel-aviv",
-    screenshot: "/template/avocate-tel-aviv.png",
+    id: "avocate",
+    slug: "avocate",
+    externalUrl: "/avocate",
+    screenshot: "/template/avocate.png",
     featured: false,
     copy: {
       fr: {
-        name: "Template Avocate Tel Aviv",
+        name: "Template Avocate",
         description:
-          "Un site chic et sobre pour une avocate spécialisée en immobilier et successions France-Israël, avec blog et contact front-only.",
+          "Un site chic et sobre pour une avocate spécialisée en droit immobilier, successions et droit de la famille, avec blog et contact front-only.",
       },
       en: {
-        name: "Tel Aviv lawyer template",
+        name: "Lawyer template",
         description:
-          "A chic, understated site for a lawyer specializing in real estate and France-Israel inheritance law, with a blog and a front-end-only contact form.",
+          "A chic, understated site for a lawyer specializing in real estate, inheritance and family law, with a blog and a front-end-only contact form.",
       },
     },
   },

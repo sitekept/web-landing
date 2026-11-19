@@ -11,8 +11,12 @@ export const PUBLIC_TEMPLATE_SLUGS = sitekeptPublicTemplateSlugs;
  * `balinjera` en faisait partie : sa route a été retirée du domaine, car elle
  * reproduisait le site d'une cliente réelle et exposait son adresse e-mail
  * personnelle. La page réalisations pointe désormais vers son propre site.
+ *
+ * `avocate-tel-aviv` n'existe plus que comme redirection permanente vers
+ * `/avocate` : l'ancienne URL portait l'identité d'une cliente réelle, et ses
+ * redirections doivent rester `noindex` comme les démos.
  */
-const UNLISTED_DEMO_SLUGS: readonly string[] = ["je"];
+const UNLISTED_DEMO_SLUGS: readonly string[] = ["je", "avocate-tel-aviv"];
 
 /**
  * Tous les slugs de démonstration servis par ce domaine, publics ou non.

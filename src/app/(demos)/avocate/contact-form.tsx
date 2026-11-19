@@ -7,8 +7,8 @@ const fieldClass =
 
 const subjects = [
   "Immobilier",
-  "Succession France-Israël",
-  "Question transfrontalière",
+  "Successions",
+  "Droit de la famille",
   "Premier échange",
 ];
 
@@ -130,7 +130,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         />
         <span>
           J’accepte d’être recontacté concernant ma demande. Ce formulaire est
-          une interface alpha, sans envoi API pour le moment.
+          une interface de démonstration, sans envoi API pour le moment.
         </span>
       </label>
 

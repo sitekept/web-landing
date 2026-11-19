@@ -690,9 +690,9 @@ export const metierPages: MetierPage[] = [
     demoSlug: "cabinet-avocat",
     demoName: "Démo cabinet d'avocat",
     secondaryDemo: {
-      slug: "avocate-tel-aviv",
-      name: "Démo avocate à Tel-Aviv",
-      note: "Une seconde base, pensée pour un cabinet exerçant à l'international auprès d'une clientèle francophone.",
+      slug: "avocate",
+      name: "Démo avocate",
+      note: "Une seconde base, plus éditoriale, pour une avocate qui exerce en nom propre.",
     },
     seoTitle: "Site internet pour avocat et cabinet | Sitekept",
     seoDescription:
