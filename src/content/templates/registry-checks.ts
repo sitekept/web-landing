@@ -13,6 +13,7 @@
  */
 import type { dentiste } from "@/content/templates/dentiste";
 import type { electricien } from "@/content/templates/electricien";
+import type { osteopathe } from "@/content/templates/osteopathe";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -22,6 +23,7 @@ import type {
 type Definitions = {
   dentiste: typeof dentiste;
   electricien: typeof electricien;
+  osteopathe: typeof osteopathe;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;

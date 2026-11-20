@@ -34,6 +34,10 @@ demo	/electricien
 demo	/electricien/contact
 demo	/electricien/prestations
 demo	/electricien/realisations
+demo	/osteopathe
+demo	/osteopathe/approche
+demo	/osteopathe/consultations
+demo	/osteopathe/rendez-vous
 demo	/fleuriste
 demo	/menage-nettoyage
 demo	/menage-nettoyage/entreprises
@@ -71,3 +75,7 @@ demo-en	/en/electricien
 demo-en	/en/electricien/contact
 demo-en	/en/electricien/prestations
 demo-en	/en/electricien/realisations
+demo-en	/en/osteopathe
+demo-en	/en/osteopathe/approche
+demo-en	/en/osteopathe/consultations
+demo-en	/en/osteopathe/rendez-vous
