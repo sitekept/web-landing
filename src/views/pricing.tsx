@@ -30,7 +30,7 @@ const COPY = {
   fr: {
     metaTitle: "Prix d'un site internet en 2026 | Sitekept",
     metaDescription:
-      "Combien coûte un site internet ? Notre offre à partir de 500€ sans abonnement, ce qui est inclus, et les modalités de paiement. Tarifs détaillés.",
+      "Combien coûte un site internet ? Notre offre à partir de 500\u00a0€ sans abonnement, ce qui est inclus, et les modalités de paiement. Tarifs détaillés.",
     breadcrumbHome: "Accueil",
     breadcrumbPage: "Tarifs",
     eyebrow: "Tarifs",
@@ -186,7 +186,7 @@ const COPY = {
       {
         question: "Combien coûte un site internet chez Sitekept ?",
         answer:
-          "Le site vitrine essentiel est à 500€ en tarif de lancement, au lieu de 600€. Ce prix est public et ne comporte aucun abonnement obligatoire. Les projets nécessitant des fonctionnalités spécifiques font l'objet d'un devis personnalisé, établi selon la complexité technique.",
+          "Le site vitrine essentiel est à 500\u00a0€ en tarif de lancement, au lieu de 600\u00a0€. Ce prix est public et ne comporte aucun abonnement obligatoire. Les projets nécessitant des fonctionnalités spécifiques font l'objet d'un devis personnalisé, établi selon la complexité technique.",
       },
       {
         question: "Y a-t-il un abonnement à payer chaque mois ?",

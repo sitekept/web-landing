@@ -134,7 +134,7 @@ const COPY = {
       {
         title: "Être trouvable.",
         detail:
-          "Si votre page n'est pas indexée, ou si vos robots.txt interdisent l'accès aux explorateurs concernés, la question est réglée avant même de se poser.",
+          "Si votre page n'est pas indexée, ou si votre fichier robots.txt interdit l'accès aux explorateurs concernés, la question est réglée avant même de se poser.",
       },
       {
         title: "Être compréhensible sans contexte.",

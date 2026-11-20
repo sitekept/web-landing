@@ -60,7 +60,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo plombier chauffagiste",
     seoTitle: "Site internet pour plombier : ce qu'il vous faut | Sitekept",
     seoDescription:
-      "Créer un site internet de plombier chauffagiste : ce que cherchent vos clients en urgence, ce que le site doit afficher, et notre offre à 500€ livrée en 48h.",
+      "Créer un site internet de plombier chauffagiste : ce que cherchent vos clients en urgence, ce que le site doit afficher, et notre offre à 500\u00a0€ livrée en 48h.",
     h1: "Site internet pour plombier chauffagiste",
     intro:
       "La plomberie est l'un des rares métiers où le visiteur ne compare pas. Il a une fuite, il cherche un numéro, il appelle le premier qui inspire confiance et qui couvre sa commune. Un site de plombier ne se juge donc pas sur son esthétique, mais sur le temps qu'il faut pour trouver le numéro et comprendre que vous intervenez chez lui.",
@@ -123,7 +123,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo cabinet dentaire",
     seoTitle: "Site internet pour dentiste et cabinet dentaire | Sitekept",
     seoDescription:
-      "Créer le site d'un cabinet dentaire : rassurer avant la première visite, structurer les soins, faciliter la prise de rendez-vous. Site livré en 48h dès 500€.",
+      "Créer le site d'un cabinet dentaire : rassurer avant la première visite, structurer les soins, faciliter la prise de rendez-vous. Site livré en 48h dès 500\u00a0€.",
     h1: "Site internet pour cabinet dentaire",
     intro:
       "Le site d'un cabinet dentaire ne vend pas : il rassure. Une partie de vos futurs patients arrive avec une appréhension réelle, parfois ancienne. Ce qu'ils cherchent en ligne avant de décrocher leur téléphone, c'est de savoir à quoi ressemble le cabinet, qui les recevra, et comment se passe une première visite.",
@@ -187,7 +187,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo restaurant bistrot",
     seoTitle: "Site internet pour restaurant : l'essentiel | Sitekept",
     seoDescription:
-      "Créer le site d'un restaurant : carte à jour, réservation, horaires et accès. Ce que vos clients cherchent vraiment, et notre offre livrée en 48h dès 500€.",
+      "Créer le site d'un restaurant : carte à jour, réservation, horaires et accès. Ce que vos clients cherchent vraiment, et notre offre livrée en 48h dès 500\u00a0€.",
     h1: "Site internet pour restaurant",
     intro:
       "Un site de restaurant a trois missions, et une seule vraie difficulté. Les missions : montrer la carte, permettre de réserver, indiquer où et quand vous êtes ouverts. La difficulté : rester à jour. Une carte périmée ou des horaires faux coûtent plus cher qu'une absence de site, parce qu'ils font venir des gens pour rien.",
@@ -238,7 +238,7 @@ export const metierPages: MetierPage[] = [
       {
         question: "Un restaurant a-t-il besoin d'un site s'il est déjà sur les plateformes ?",
         answer:
-          "Les plateformes vous apportent de la visibilité, mais elles prennent une commission, imposent leur présentation et peuvent modifier leurs conditions du jour au lendemain. Un site vous donne un point de contact direct, sans intermédiaire ni commission sur les réservations. Les deux sont complémentaires ; n'avoir que le premier vous rend dépendant.",
+          "Les plateformes vous apportent de la visibilité, mais elles prennent une commission, imposent leur présentation et peuvent modifier leurs conditions du jour au lendemain. Un site vous donne un point de contact direct, sans intermédiaire ni commission sur les réservations. Les deux sont complémentaires ; se reposer uniquement sur les plateformes vous rend dépendant.",
       },
     ],
   },
@@ -250,7 +250,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo salon de coiffure",
     seoTitle: "Site internet pour salon de coiffure | Sitekept",
     seoDescription:
-      "Créer le site d'un salon de coiffure : prestations et tarifs, réservation, portfolio de réalisations. Site professionnel livré en 48h à partir de 500€.",
+      "Créer le site d'un salon de coiffure : prestations et tarifs, réservation, portfolio de réalisations. Site professionnel livré en 48h à partir de 500\u00a0€.",
     h1: "Site internet pour salon de coiffure",
     intro:
       "Dans la coiffure, le site joue un rôle que peu de métiers connaissent : il sert de portfolio autant que de vitrine. On ne choisit pas un salon sur son adresse, on le choisit sur ce qu'on y voit faire. C'est aussi un métier où la réservation en ligne a changé les habitudes plus vite qu'ailleurs.",
@@ -313,7 +313,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo boulangerie",
     seoTitle: "Site internet pour boulangerie | Sitekept",
     seoDescription:
-      "Créer le site d'une boulangerie : horaires et jour de fermeture, gamme, commandes spéciales. Ce que cherchent vos clients, site livré en 48h dès 500€.",
+      "Créer le site d'une boulangerie : horaires et jour de fermeture, gamme, commandes spéciales. Ce que cherchent vos clients, site livré en 48h dès 500\u00a0€.",
     h1: "Site internet pour boulangerie",
     intro:
       "Une boulangerie vit de proximité et d'habitude, pas de prospection. Le site n'a donc pas à convaincre : il doit répondre vite à trois questions très concrètes — êtes-vous ouverts maintenant, faites-vous ce que je cherche, et puis-je commander. Le reste est du confort.",
@@ -376,7 +376,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo pâtisserie",
     seoTitle: "Site internet pour pâtisserie | Sitekept",
     seoDescription:
-      "Créer le site d'une pâtisserie : portfolio de créations, délais et tarifs de commande, gâteaux personnalisés. Site professionnel livré en 48h dès 500€.",
+      "Créer le site d'une pâtisserie : portfolio de créations, délais et tarifs de commande, gâteaux personnalisés. Site professionnel livré en 48h dès 500\u00a0€.",
     h1: "Site internet pour pâtisserie",
     intro:
       "La pâtisserie ne se vend pas comme le pain. On ne passe pas par hasard commander une pièce montée : on cherche, on compare des photos, on se projette. Le site d'une pâtisserie est donc d'abord un portfolio, et son enjeu principal est de transformer une envie visuelle en commande — avec les délais et les prix affichés avant que la question ne se pose.",
@@ -439,7 +439,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo fleuriste",
     seoTitle: "Site internet pour fleuriste | Sitekept",
     seoDescription:
-      "Créer le site d'un fleuriste : livraison, compositions par occasion, commandes de deuil et de mariage. Site professionnel livré en 48h à partir de 500€.",
+      "Créer le site d'un fleuriste : livraison, compositions par occasion, commandes de deuil et de mariage. Site professionnel livré en 48h à partir de 500\u00a0€.",
     h1: "Site internet pour fleuriste",
     intro:
       "Le métier de fleuriste a une particularité que peu partagent : on vient rarement chez vous pour vous, on vient pour une occasion. Naissance, anniversaire, mariage, deuil. Le site doit donc s'organiser autour de ces moments plutôt qu'autour de votre catalogue — et traiter le plus délicat d'entre eux avec la sobriété qu'il exige.",
@@ -502,7 +502,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo réparation informatique",
     seoTitle: "Site internet pour réparateur informatique | Sitekept",
     seoDescription:
-      "Créer le site d'un réparateur informatique : pannes traitées, tarifs, délais et confidentialité des données. Site professionnel livré en 48h dès 500€.",
+      "Créer le site d'un réparateur informatique : pannes traitées, tarifs, délais et confidentialité des données. Site professionnel livré en 48h dès 500\u00a0€.",
     h1: "Site internet pour réparateur informatique",
     intro:
       "Confier son ordinateur, c'est confier ses photos, ses documents et ses mots de passe. Le site d'un réparateur informatique a donc un travail que les autres métiers n'ont pas : lever une inquiétude sur la confidentialité, en même temps qu'il rassure sur la compétence et sur le prix. C'est un métier où l'opacité tarifaire est la norme, et où l'afficher suffit à se démarquer.",
@@ -565,7 +565,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo ménage et nettoyage",
     seoTitle: "Site internet pour entreprise de nettoyage | Sitekept",
     seoDescription:
-      "Créer le site d'une entreprise de nettoyage : prestations particuliers et professionnels, zone d'intervention, devis. Site livré en 48h à partir de 500€.",
+      "Créer le site d'une entreprise de nettoyage : prestations particuliers et professionnels, zone d'intervention, devis. Site livré en 48h à partir de 500\u00a0€.",
     h1: "Site internet pour entreprise de nettoyage",
     intro:
       "Le nettoyage est l'un des rares métiers qui s'adresse à deux publics n'ayant presque rien en commun. Un particulier cherche quelqu'un de confiance à qui remettre ses clés ; une entreprise cherche un prestataire capable de tenir un cahier des charges et de facturer proprement. Un site qui mélange les deux perd les deux.",
@@ -628,7 +628,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo architecte d'intérieur",
     seoTitle: "Site internet pour architecte d'intérieur | Sitekept",
     seoDescription:
-      "Créer le site d'un architecte d'intérieur : portfolio de projets, mode d'honoraires, déroulé d'une mission. Site professionnel livré en 48h dès 500€.",
+      "Créer le site d'un architecte d'intérieur : portfolio de projets, mode d'honoraires, déroulé d'une mission. Site professionnel livré en 48h dès 500\u00a0€.",
     h1: "Site internet pour architecte d'intérieur",
     intro:
       "Un projet d'architecture d'intérieur se décide lentement et se paie cher. Le visiteur qui arrive sur votre site n'achète rien aujourd'hui : il constitue une liste courte, qu'il consultera plusieurs fois avant de prendre contact. Votre site doit donc supporter ces allers-retours, et répondre à la question que presque aucun confrère n'ose traiter en ligne — combien ça coûte, et comment.",
@@ -696,7 +696,7 @@ export const metierPages: MetierPage[] = [
     },
     seoTitle: "Site internet pour avocat et cabinet | Sitekept",
     seoDescription:
-      "Créer le site d'un cabinet d'avocat : domaines d'intervention, honoraires, première consultation. Cadre déontologique respecté. Site livré en 48h dès 500€.",
+      "Créer le site d'un cabinet d'avocat : domaines d'intervention, honoraires, première consultation. Cadre déontologique respecté. Site livré en 48h dès 500\u00a0€.",
     h1: "Site internet pour cabinet d'avocat",
     intro:
       "Le site d'un avocat n'a pas à vendre, et ne le peut d'ailleurs pas librement : la communication de la profession est encadrée. Ce qu'il doit faire, c'est permettre à quelqu'un qui traverse une difficulté de comprendre si vous traitez son problème, ce que coûtera un premier rendez-vous, et à qui il aura affaire. C'est très différent d'une plaquette institutionnelle.",
@@ -759,7 +759,7 @@ export const metierPages: MetierPage[] = [
     demoName: "Démo agence immobilière",
     seoTitle: "Site internet pour agence immobilière | Sitekept",
     seoDescription:
-      "Créer le site d'une agence immobilière : estimation en ligne, biens à jour, honoraires affichés, secteurs couverts. Site livré en 48h à partir de 500€.",
+      "Créer le site d'une agence immobilière : estimation en ligne, biens à jour, honoraires affichés, secteurs couverts. Site livré en 48h à partir de 500\u00a0€.",
     h1: "Site internet pour agence immobilière",
     intro:
       "Une erreur structure la plupart des sites d'agence : ils sont construits pour les acheteurs, alors que le client à conquérir est le vendeur. Les acheteurs viennent de toute façon par les portails d'annonces. Ce que votre site doit capter, c'est le propriétaire qui se demande ce que vaut son bien — et il commence toujours par une estimation.",

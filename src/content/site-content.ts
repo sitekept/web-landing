@@ -205,9 +205,9 @@ export const homeContent: HomeContent = {
     },
     proofPoints: {
       fr: [
-        "À partir de 500€",
+        "À partir de 500\u00a0€",
         "Aucun abonnement imposé",
-        "100% propriétaire du site",
+        "100\u00a0% propriétaire du site",
         "Domaine offert 1 an",
       ],
       en: [
@@ -220,9 +220,9 @@ export const homeContent: HomeContent = {
   },
   trustStrip: {
     fr: [
-      "À partir de 500€",
+      "À partir de 500\u00a0€",
       "Mise en ligne en 48h",
-      "100% à vous",
+      "100\u00a0% à vous",
       "Déploiement inclus",
     ],
     en: [
@@ -274,7 +274,7 @@ export const homeContent: HomeContent = {
       en: "At Sitekept, optimization goes beyond design. We build the website with readable code, content structured to answer AI searches naturally, a clear sitemap that guides the crawling of your pages, and a clean foundation that supports Google indexing.",
     },
     explanation: {
-      fr: "Le SEO correspond au référencement naturel sur les moteurs comme Google. Le GEO désigne la façon dont un site reste exploitable dans les réponses générées par l’IA. Pour une entreprise, les deux se complètent: l’un améliore la visibilité dans les résultats, l’autre aide votre activité à apparaître dans les réponses et recommandations que les prospects consultent de plus en plus. Pour aller plus loin, notre blog détaille ces sujets simplement.",
+      fr: "Le SEO correspond au référencement naturel sur les moteurs comme Google. Le GEO désigne la façon dont un site reste exploitable dans les réponses générées par l’IA. Pour une entreprise, les deux se complètent : l’un améliore la visibilité dans les résultats, l’autre aide votre activité à apparaître dans les réponses et recommandations que les prospects consultent de plus en plus. Pour aller plus loin, notre blog détaille ces sujets simplement.",
       en: "SEO is organic search visibility on engines like Google. GEO is how well a website stays usable in AI-generated answers. For a business, the two complement each other: one improves visibility in search results, the other helps your business appear in the answers and recommendations that prospects increasingly turn to. To go further, our blog covers both topics in plain terms.",
     },
     linkLabel: {
@@ -344,7 +344,7 @@ export const offerHighlights: OfferHighlight[] = [
     icon: "badgeEuro",
     copy: {
       fr: {
-        title: "À partir de 500€",
+        title: "À partir de 500\u00a0€",
         description:
           "Un prix d'entrée public, lisible et sans abonnement à ajouter pour exister en ligne.",
       },
@@ -376,7 +376,7 @@ export const offerHighlights: OfferHighlight[] = [
     icon: "shieldCheck",
     copy: {
       fr: {
-        title: "Vous possédez 100% du site",
+        title: "Vous possédez 100\u00a0% du site",
         description:
           "Le client garde le contrôle de son site, de ses contenus et de sa mise en ligne finale.",
       },
@@ -647,7 +647,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Boulangerie",
         description:
-          "Une base chaleureuse et commerçante pour vendre une presence locale claire, des horaires, une vitrine de produits et une commande simple.",
+          "Une base chaleureuse et commerçante pour vendre une présence locale claire, des horaires, une vitrine de produits et une commande simple.",
       },
       en: {
         name: "Bakery template",
@@ -666,7 +666,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
       fr: {
         name: "Template Fleuriste",
         description:
-          "Une direction plus editoriale et premium pour mettre en avant un style, des compositions et un univers visuel fort.",
+          "Une direction plus éditoriale et premium pour mettre en avant un style, des compositions et un univers visuel fort.",
       },
       en: {
         name: "Florist template",
@@ -683,7 +683,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
     featured: true,
     copy: {
       fr: {
-        name: "Template Réparation Ordinateur",
+        name: "Template Réparation ordinateur",
         description:
           "Une vitrine directe et rassurante pour présenter vos services, vos garanties et vos prises de contact sans friction.",
       },
@@ -740,7 +740,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
     featured: true,
     copy: {
       fr: {
-        name: "Template Plombier Chauffagiste",
+        name: "Template Plombier chauffagiste",
         description:
           "Une landing d'urgence locale pensée pour les appels rapides, les zones d'intervention et une conversion immédiate.",
       },
@@ -778,7 +778,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
     featured: true,
     copy: {
       fr: {
-        name: "Template Ménage & Nettoyage",
+        name: "Template Ménage & nettoyage",
         description:
           "Une page claire et rassurante pour vendre des formules, des zones couvertes et une promesse de simplicité immédiate.",
       },
@@ -797,7 +797,7 @@ export const featuredTemplates: FeaturedTemplate[] = [
     featured: true,
     copy: {
       fr: {
-        name: "Template Restaurant Bistrot",
+        name: "Template Restaurant bistrot",
         description:
           "Un univers d'hospitalité plus immersif pour mettre en avant ambiance, carte, réservation et privatisation.",
       },
@@ -935,7 +935,7 @@ export const seoGeoPageContent: SeoGeoPageContent = {
   },
   importanceParagraphs: {
     fr: [
-      "Un bon référencement naturel permet à votre activité d’apparaître quand un prospect formule déjà un besoin. Cette visibilité est précieuse parce qu’elle ne dépend pas uniquement d’une campagne payante ou d’une publication ponctuelle: elle s’appuie sur la structure du site, la qualité des pages et la clarté de l’information proposée.",
+      "Un bon référencement naturel permet à votre activité d’apparaître quand un prospect formule déjà un besoin. Cette visibilité est précieuse parce qu’elle ne dépend pas uniquement d’une campagne payante ou d’une publication ponctuelle : elle s’appuie sur la structure du site, la qualité des pages et la clarté de l’information proposée.",
       "Dans la pratique, cela signifie qu’un site bien pensé continue de travailler pour vous après sa mise en ligne. Il peut renforcer votre crédibilité, capter des recherches qualifiées et donner à Google des signaux cohérents sur votre activité, vos services et vos pages clés.",
     ],
     en: [
@@ -953,7 +953,7 @@ export const seoGeoPageContent: SeoGeoPageContent = {
   },
   optimizationParagraphs: {
     fr: [
-      "Un site réellement optimisé repose sur plusieurs éléments qui se renforcent entre eux: des pages utiles, une hiérarchie claire, des titres compréhensibles, des contenus rédigés pour répondre à de vraies questions, un maillage interne logique et une base technique propre. Une sitemap bien tenue et des pages indexables aident ensuite Google à explorer le site plus proprement.",
+      "Un site réellement optimisé repose sur plusieurs éléments qui se renforcent entre eux : des pages utiles, une hiérarchie claire, des titres compréhensibles, des contenus rédigés pour répondre à de vraies questions, un maillage interne logique et une base technique propre. Une sitemap bien tenue et des pages indexables aident ensuite Google à explorer le site plus proprement.",
       "Aujourd’hui, cette logique sert aussi les interfaces IA. Quand un contenu est clair, bien structuré, contextuel et appuyé par des signaux cohérents, il devient plus facile à reprendre dans des réponses générées, des aperçus enrichis ou des recommandations. C’est là que SEO et GEO se rejoignent concrètement.",
     ],
     en: [
@@ -1085,7 +1085,7 @@ export const blogPosts: BlogPost[] = [
       en: "Website ownership",
     },
     title: {
-      fr: "Pourquoi posséder 100% de son site sans abonnement change la relation avec son prestataire",
+      fr: "Pourquoi posséder 100\u00a0% de son site sans abonnement change la relation avec son prestataire",
       en: "Why owning 100% of your website with no subscription changes your relationship with your provider",
     },
     excerpt: {
@@ -1161,7 +1161,7 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Nous assumons une logique simple: vous achetez un site, pas un verrou. L'absence d'abonnement imposé et la propriété frontale font partie de l'offre, pas d'une option premium.",
+            "Nous assumons une logique simple : vous achetez un site, pas un verrou. L'absence d'abonnement imposé et la pleine propriété font partie de l'offre, pas d'une option premium.",
             "C'est aussi ce qui rend l'offre plus facile à acheter pour des clients non techniques : ils comprennent ce qu'ils paient et ce qu'ils récupèrent.",
           ],
           en: [
@@ -1278,11 +1278,11 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     ctaTitle: {
-      fr: "Vous voulez un site plus facile a trouver et a recommander ?",
+      fr: "Vous voulez un site plus facile à trouver et à recommander ?",
       en: "Want a website that is easier to find and easier to recommend?",
     },
     ctaDescription: {
-      fr: "Nous pouvons cadrer une home et des pages piliers qui parlent a la fois aux humains, a Google et aux interfaces IA.",
+      fr: "Nous pouvons cadrer une home et des pages piliers qui parlent à la fois aux humains, à Google et aux interfaces IA.",
       en: "We can structure a home page and cornerstone pages that speak to people, to Google and to AI interfaces all at once.",
     },
   },
@@ -1301,7 +1301,7 @@ export const blogPosts: BlogPost[] = [
       en: "What are SEO and GEO?",
     },
     excerpt: {
-      fr: "SEO et GEO poursuivent le même objectif: rendre un site plus facile à trouver et à comprendre, que la recherche passe par Google ou par une interface IA.",
+      fr: "SEO et GEO poursuivent le même objectif : rendre un site plus facile à trouver et à comprendre, que la recherche passe par Google ou par une interface IA.",
       en: "SEO and GEO pursue the same goal: making a website easier to find and understand, whether search goes through Google or an AI interface.",
     },
     seoTitle: {
@@ -1313,14 +1313,14 @@ export const blogPosts: BlogPost[] = [
       en: "A simple explanation of SEO and GEO to understand how a website can stay visible on Google and in AI-generated answers.",
     },
     intro: {
-      fr: "Quand on parle de visibilité en ligne, beaucoup d’entreprises pensent d’abord à Google. C’est logique. Mais les usages évoluent: une partie des recherches passe désormais par des aperçus générés, des assistants conversationnels ou des interfaces IA qui reformulent les résultats. Pour rester visible dans ce contexte, il faut comprendre deux notions complémentaires: le SEO et le GEO.",
+      fr: "Quand on parle de visibilité en ligne, beaucoup d’entreprises pensent d’abord à Google. C’est logique. Mais les usages évoluent : une partie des recherches passe désormais par des aperçus générés, des assistants conversationnels ou des interfaces IA qui reformulent les résultats. Pour rester visible dans ce contexte, il faut comprendre deux notions complémentaires : le SEO et le GEO.",
       en: "When people talk about online visibility, many businesses think of Google first. That makes sense. But habits are changing: some searches now go through generated overviews, conversational assistants or AI interfaces that rephrase results. To stay visible in this context, you need to understand two complementary concepts: SEO and GEO.",
     },
     sections: [
       {
         id: "seo-definition",
         title: {
-          fr: "Le SEO: être bien compris par les moteurs de recherche",
+          fr: "Le SEO : être bien compris par les moteurs de recherche",
           en: "SEO: being well understood by search engines",
         },
         paragraphs: {
@@ -1337,7 +1337,7 @@ export const blogPosts: BlogPost[] = [
       {
         id: "geo-definition",
         title: {
-          fr: "Le GEO: rester exploitable dans les réponses générées par l’IA",
+          fr: "Le GEO : rester exploitable dans les réponses générées par l’IA",
           en: "GEO: staying usable in AI-generated answers",
         },
         paragraphs: {
@@ -1359,7 +1359,7 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Le SEO et le GEO reposent sur une base commune: un site clair, utile, rapide et indexable. Un contenu bien structuré aide Google à classer vos pages, mais il aide aussi les interfaces IA à reformuler correctement votre offre.",
+            "Le SEO et le GEO reposent sur une base commune : un site clair, utile, rapide et indexable. Un contenu bien structuré aide Google à classer vos pages, mais il aide aussi les interfaces IA à reformuler correctement votre offre.",
             "Autrement dit, le GEO ne remplace pas le SEO. Il prolonge sa logique dans de nouveaux usages. Pour une entreprise, la bonne approche consiste donc à construire un site qui répond clairement à des questions humaines, tout en restant lisible pour les moteurs et les systèmes génératifs.",
           ],
           en: [
@@ -1434,7 +1434,7 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Prenons des cas simples: un avocat, un dentiste, un restaurant ou un artisan local. Les prospects ne cherchent pas seulement un nom de marque. Ils cherchent un service, un besoin, une spécialité ou une zone géographique. Si votre site ne se positionne pas sur ces demandes, il laisse toute la place à des concurrents pourtant parfois moins convaincants.",
+            "Prenons des cas simples : un avocat, un dentiste, un restaurant ou un artisan local. Les prospects ne cherchent pas seulement un nom de marque. Ils cherchent un service, un besoin, une spécialité ou une zone géographique. Si votre site ne se positionne pas sur ces demandes, il laisse toute la place à des concurrents pourtant parfois moins convaincants.",
             "Dans ces contextes, le référencement naturel ne sert pas à “faire du trafic” au sens abstrait. Il sert à capter des personnes déjà proches d’une décision ou d’une prise de contact.",
           ],
           en: [
@@ -1493,7 +1493,7 @@ export const blogPosts: BlogPost[] = [
       en: "Why SEO matters | Sitekept",
     },
     seoDescription: {
-      fr: "Visibilité, trafic qualifié, crédibilité, présence durable: voici ce que le référencement naturel apporte réellement à un site web.",
+      fr: "Visibilité, trafic qualifié, crédibilité, présence durable : voici ce que le référencement naturel apporte réellement à un site web.",
       en: "Visibility, qualified traffic, credibility, lasting presence: here is what SEO really brings to a website.",
     },
     intro: {
@@ -1504,13 +1504,13 @@ export const blogPosts: BlogPost[] = [
       {
         id: "qualified-visibility",
         title: {
-          fr: "Le premier bénéfice: une visibilité plus qualifiée",
+          fr: "Le premier bénéfice : une visibilité plus qualifiée",
           en: "The first benefit: more qualified visibility",
         },
         paragraphs: {
           fr: [
             "Le référencement naturel aide votre site à apparaître face à des personnes qui formulent déjà un besoin. On ne parle donc pas d’une audience vague ou distraite, mais de visiteurs potentiellement plus pertinents pour votre activité.",
-            "Pour une PME ou un indépendant, cela change beaucoup de choses: les visites ont plus de sens, les prises de contact sont mieux alignées avec l’offre et le site devient un vrai support commercial.",
+            "Pour une PME ou un indépendant, cela change beaucoup de choses : les visites ont plus de sens, les prises de contact sont mieux alignées avec l’offre et le site devient un vrai support commercial.",
           ],
           en: [
             "SEO helps your website show up in front of people who are already voicing a need. We are not talking about a vague or distracted audience, but about visitors who are potentially more relevant to your business.",
@@ -1521,13 +1521,13 @@ export const blogPosts: BlogPost[] = [
       {
         id: "credibility-and-trust",
         title: {
-          fr: "Le deuxième bénéfice: de la crédibilité et de la confiance",
+          fr: "Le deuxième bénéfice : de la crédibilité et de la confiance",
           en: "The second benefit: credibility and trust",
         },
         paragraphs: {
           fr: [
             "Un site bien référencé n’est pas seulement mieux exposé. Il paraît aussi plus crédible, parce qu’il répond mieux aux attentes de recherche, structure clairement son information et montre des pages utiles sur ses services, ses expertises ou ses réponses aux questions fréquentes.",
-            "Cette crédibilité est essentielle, en particulier pour les services où la décision se prend avec un niveau élevé de confiance: santé, droit, immobilier, artisanat spécialisé ou services B2B.",
+            "Cette crédibilité est essentielle, en particulier pour les services où la décision se prend avec un niveau élevé de confiance : santé, droit, immobilier, artisanat spécialisé ou services B2B.",
           ],
           en: [
             "A well-ranked website isn't just more exposed. It also looks more credible, because it better meets search expectations, structures its information clearly and shows useful pages about its services, expertise or answers to common questions.",
@@ -1538,13 +1538,13 @@ export const blogPosts: BlogPost[] = [
       {
         id: "long-term-discoverability",
         title: {
-          fr: "Le troisième bénéfice: une présence qui continue dans le temps",
+          fr: "Le troisième bénéfice : une présence qui continue dans le temps",
           en: "The third benefit: a presence that lasts over time",
         },
         paragraphs: {
           fr: [
-            "Un travail sérieux sur le référencement naturel crée une base durable. Contrairement à une action ponctuelle, il renforce la capacité du site à rester visible, à être recrawlé, à être mieux compris et à soutenir de futures pages ou futures campagnes.",
-            "C’est aussi ce qui rend le SEO particulièrement intéressant pour un site livré comme un actif durable: vous investissez dans une structure qui peut continuer à progresser, au lieu de repartir de zéro à chaque changement.",
+            "Un travail sérieux sur le référencement naturel crée une base durable. Contrairement à une action ponctuelle, il renforce la capacité du site à rester visible, à être réexploré, à être mieux compris et à soutenir de futures pages ou futures campagnes.",
+            "C’est aussi ce qui rend le SEO particulièrement intéressant pour un site livré comme un actif durable : vous investissez dans une structure qui peut continuer à progresser, au lieu de repartir de zéro à chaque changement.",
           ],
           en: [
             "Serious SEO work creates a lasting foundation. Unlike a one-off action, it strengthens the website's ability to stay visible, be recrawled, be better understood and support future pages or campaigns.",
@@ -1585,7 +1585,7 @@ export const blogPosts: BlogPost[] = [
       en: "Owning your website 100%: why it changes everything",
     },
     seoDescription: {
-      fr: "Abonnements, autonomie, changement de prestataire, accès et contrôle du code: pourquoi la propriété complète du site change la donne.",
+      fr: "Abonnements, autonomie, changement de prestataire, accès et contrôle du code : pourquoi la propriété complète du site change la donne.",
       en: "Subscriptions, autonomy, switching providers, access and code control: why full website ownership changes the game.",
     },
     intro: {
@@ -1613,7 +1613,7 @@ export const blogPosts: BlogPost[] = [
       {
         id: "autonomy-and-access",
         title: {
-          fr: "Autonomie, accès et contrôle: ce qui change au quotidien",
+          fr: "Autonomie, accès et contrôle : ce qui change au quotidien",
           en: "Autonomy, access and control: what changes day to day",
         },
         paragraphs: {
@@ -1636,7 +1636,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: {
           fr: [
             "Un site bien livré garde de la valeur dans le temps. Il peut être repris, enrichi, retravaillé ou migré sans remise à zéro. C’est ce qui le transforme en actif durable pour l’entreprise.",
-            "C’est aussi la logique Sitekept: livrer un site que vous pouvez conserver, comprendre et transmettre plus tard à un autre prestataire si vous le souhaitez.",
+            "C’est aussi la logique Sitekept : livrer un site que vous pouvez conserver, comprendre et transmettre plus tard à un autre prestataire si vous le souhaitez.",
           ],
           en: [
             "A well-delivered website keeps its value over time. It can be taken over, expanded, reworked or migrated without starting from scratch. That is what turns it into a lasting asset for the business.",
@@ -1694,7 +1694,7 @@ export const blogPosts: BlogPost[] = [
         paragraphs: {
           fr: [
             "Le projet est développé en interne par Sitekept, avec une structure pensée pour rester lisible. Les fichiers, les pages, les composants et l’organisation générale ne sont pas montés comme une boîte noire. Le but est qu’un autre développeur puisse comprendre le projet sans repartir de zéro.",
-            "Cette étape reprend l’esprit du process présenté sur la home: vous validez une direction, nous développons, nous ajustons, puis nous préparons une livraison exploitable et compréhensible.",
+            "Cette étape reprend l’esprit du process présenté sur la home : vous validez une direction, nous développons, nous ajustons, puis nous préparons une livraison exploitable et compréhensible.",
           ],
           en: [
             "The project is built in-house by Sitekept, with a structure designed to stay readable. The files, pages, components and overall organization are not assembled as a black box. The goal is that another developer can understand the project without starting from scratch.",
@@ -1710,7 +1710,7 @@ export const blogPosts: BlogPost[] = [
         },
         paragraphs: {
           fr: [
-            "Pour garantir la propriété à 100 %, nous créons un compte GitHub au client puis nous y poussons le projet. Le code n’est donc pas conservé dans un espace inaccessible: le dépôt appartient au client dès la livraison.",
+            "Pour garantir la propriété à 100 %, nous créons un compte GitHub au client puis nous y poussons le projet. Le code n’est donc pas conservé dans un espace inaccessible : le dépôt appartient au client dès la livraison.",
             "Nous créons ensuite un compte Vercel ou une plateforme similaire au nom du client pour y déployer le site. Enfin, nous créons un compte Hostinger ou une plateforme comparable afin d’acheter le nom de domaine, pris en charge la première année. Le déploiement et le domaine sont donc remis dans un environnement que le client contrôle.",
           ],
           en: [

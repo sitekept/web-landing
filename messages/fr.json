@@ -113,15 +113,15 @@
     "trustSignals": "✅ Consultation gratuite • ✅ Devis sous 24h • ✅ Satisfaction garantie"
   },
   "portfolio": {
-    "title": "Découvrez Notre Travail",
+    "title": "Découvrez notre travail",
     "subtitle": "Explorez nos réalisations récentes et nos templates prêts à l'emploi",
     "realizations": {
-      "title": "Nos Réalisations",
+      "title": "Nos réalisations",
       "description": "Découvrez nos projets récents : sites web, applications et solutions sur mesure qui ont transformé la présence digitale de nos clients.",
       "cta": "Voir nos réalisations"
     },
     "templates": {
-      "title": "Templates Prêts",
+      "title": "Templates prêts à l'emploi",
       "description": "Vous ne savez pas par où commencer ? Explorez nos templates professionnels conçus pour différents secteurs d'activité.",
       "cta": "Parcourir les templates"
     },
@@ -147,9 +147,9 @@
   },
   "contact": {
     "title": "Contactez-nous pour concevoir votre site",
-    "subtitle": "Expliquez votre activité, votre objectif et le style souhaité. Nous revenons vers vous avec un cadre simple: prix, périmètre et mise en ligne.",
+    "subtitle": "Expliquez votre activité, votre objectif et le style souhaité. Nous revenons vers vous avec un cadre simple : prix, périmètre et mise en ligne.",
     "formTitle": "Parlons de votre projet",
-    "commitmentTitle": "Notre Engagement",
+    "commitmentTitle": "Notre engagement",
     "commitments": [
       "Réponse rapide pendant les heures ouvrables",
       "Cadre clair sur le prix d'entrée et la mise en ligne",
@@ -183,9 +183,9 @@
     "visibility": "SEO / GEO",
     "quote": "Demander un devis",
     "legal": "Légal",
-    "terms": "Conditions d'Utilisation",
+    "terms": "Conditions d'utilisation",
     "privacy": "Confidentialité",
-    "legalNotice": "Mentions Légales",
+    "legalNotice": "Mentions légales",
     "copyright": "© 2026 Sitekept. Tous droits réservés."
   },
   "seo": {
@@ -194,26 +194,26 @@
     "keywords": "création site web, développement web rapide, site internet professionnel, e-commerce, Next.js, agence web, site vitrine, application web, SEO, design moderne"
   },
   "metadata": {
-    "title": "Création de site internet dès 500€ | Sitekept",
+    "title": "Création de site internet dès 500 € | Sitekept",
     "description": "Agence web spécialisée PME et artisans : votre site professionnel livré en 48h, sans abonnement, 100 % à vous. Devis gratuit en 24h.",
-    "keywords": "site professionnel 48h, creation site rapide, site sans abonnement, site 100% propriétaire, déploiement inclus, SEO GEO, site vitrine PME, site indépendant",
+    "keywords": "site professionnel 48h, création site rapide, site sans abonnement, site 100 % propriétaire, déploiement inclus, SEO GEO, site vitrine PME, site indépendant",
     "authors": "Équipe SiteKept",
     "creator": "SiteKept",
     "publisher": "SiteKept",
     "openGraph": {
-      "title": "Création de site internet dès 500€ | Sitekept",
-      "description": "Un site pro à partir de 500€, livré vite, déployé par Sitekept, optimisé SEO + GEO et entièrement détenu par le client.",
+      "title": "Création de site internet dès 500 € | Sitekept",
+      "description": "Un site pro à partir de 500 €, livré vite, déployé par Sitekept, optimisé SEO + GEO et entièrement détenu par le client.",
       "siteName": "SiteKept"
     },
     "twitter": {
-      "title": "Création de site internet dès 500€ | Sitekept",
+      "title": "Création de site internet dès 500 € | Sitekept",
       "description": "Site professionnel rapide à lancer, transparent à acheter et conçu pour la visibilité.",
       "creator": "@sitekept"
     },
     "appleMobileWebAppTitle": "SiteKept"
   },
   "realization": {
-    "title": "Nos Réalisations",
+    "title": "Nos réalisations",
     "description": "Découvrez nos projets récents qui ont transformé la présence digitale de nos clients. Chaque réalisation reflète notre engagement pour l'excellence et notre expertise technique.",
     "buttons": {
       "startProject": "Démarrer votre projet",
@@ -295,7 +295,7 @@
     }
   },
   "privacy": {
-    "title": "Politique de Confidentialité",
+    "title": "Politique de confidentialité",
     "lastUpdate": "Dernière mise à jour : {date}",
     "sections": {
       "introduction": {
@@ -303,7 +303,7 @@
         "content": "SiteKept s'engage à protéger la confidentialité et la sécurité de vos données personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons, stockons et protégeons vos informations lorsque vous utilisez notre site web et nos services."
       },
       "dataCollected": {
-        "title": "Données Collectées",
+        "title": "Données collectées",
         "content": "Nous pouvons collecter et traiter les données suivantes :",
         "items": [
           "Informations d'identification : nom, prénom, adresse e-mail",
@@ -314,7 +314,7 @@
         ]
       },
       "purposeOfProcessing": {
-        "title": "Finalité du Traitement",
+        "title": "Finalités du traitement",
         "content": "Vos données personnelles sont utilisées pour :",
         "items": [
           "Fournir et améliorer nos services",
@@ -326,7 +326,7 @@
         ]
       },
       "legalBasis": {
-        "title": "Base Légale",
+        "title": "Base légale",
         "content": "Le traitement de vos données repose sur :",
         "items": [
           "Votre consentement explicite",
@@ -336,7 +336,7 @@
         ]
       },
       "dataSharing": {
-        "title": "Partage des Données",
+        "title": "Partage des données",
         "content": "Nous ne vendons jamais vos données personnelles. Nous pouvons partager vos informations uniquement avec :",
         "items": [
           "Nos prestataires de services techniques",
@@ -345,15 +345,15 @@
         ]
       },
       "dataRetention": {
-        "title": "Conservation des Données",
+        "title": "Conservation des données",
         "content": "Nous conservons vos données personnelles uniquement pendant la durée nécessaire aux finalités pour lesquelles elles ont été collectées, conformément à la législation applicable."
       },
       "dataSecurity": {
-        "title": "Sécurité des Données",
+        "title": "Sécurité des données",
         "content": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, destruction ou altération."
       },
       "yourRights": {
-        "title": "Vos Droits",
+        "title": "Vos droits",
         "content": "Conformément au RGPD, vous disposez des droits suivants :",
         "items": [
           "Droit d'accès à vos données personnelles",
@@ -370,8 +370,8 @@
         "content": "Notre site utilise des cookies pour améliorer votre expérience. Vous pouvez gérer vos préférences de cookies à tout moment via les paramètres de votre navigateur."
       },
       "internationalTransfers": {
-        "title": "Transferts Internationaux",
-        "content": "Si nous transférons vos données en dehors de l'Espace Économique Européen, nous nous assurons que des garanties appropriées sont en place pour protéger vos données."
+        "title": "Transferts internationaux",
+        "content": "Si nous transférons vos données en dehors de l'Espace économique européen, nous nous assurons que des garanties appropriées sont en place pour protéger vos données."
       },
       "modifications": {
         "title": "Modifications",
@@ -390,15 +390,15 @@
     }
   },
   "terms": {
-    "title": "Conditions d'Utilisation",
+    "title": "Conditions d'utilisation",
     "lastUpdate": "Dernière mise à jour : {date}",
     "sections": {
       "acceptance": {
-        "title": "Acceptation des Conditions",
+        "title": "Acceptation des conditions",
         "content": "En accédant et en utilisant les services de SiteKept, vous acceptez d'être lié par les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services."
       },
       "serviceDescription": {
-        "title": "Description des Services",
+        "title": "Description des services",
         "content": "SiteKept propose des services de création de sites web professionnels, incluant :",
         "items": [
           "Conception et développement de sites vitrines",
@@ -409,7 +409,7 @@
         ]
       },
       "clientObligations": {
-        "title": "Obligations du Client",
+        "title": "Obligations du client",
         "content": "En tant que client, vous vous engagez à :",
         "items": [
           "Fournir des informations exactes et complètes",
@@ -421,7 +421,7 @@
         ]
       },
       "intellectualProperty": {
-        "title": "Propriété Intellectuelle",
+        "title": "Propriété intellectuelle",
         "content": "Propriété du site web :",
         "items": [
           "Une fois le paiement intégral effectué, vous devenez propriétaire de votre site web",
@@ -432,29 +432,29 @@
         ]
       },
       "pricing": {
-        "title": "Tarifs et Paiements",
+        "title": "Tarifs et paiements",
         "content": "Modalités de paiement :",
         "items": [
           "Les tarifs sont indiqués en euros, toutes taxes comprises",
-          "Un acompte de 30% est requis pour démarrer le projet",
+          "Un acompte de 30 % est requis pour démarrer le projet",
           "Le solde est dû à la livraison du site",
           "Les paiements s'effectuent par virement bancaire ou carte bancaire",
-          "Tout retard de paiement entraîne des pénalités de 10% par mois"
+          "Tout retard de paiement entraîne des pénalités de 10 % par mois"
         ]
       },
       "deliveryTimes": {
-        "title": "Délais de Livraison",
+        "title": "Délais de livraison",
         "content": "Engagement de livraison :",
         "items": [
           "Livraison garantie en 48h pour les sites vitrines standards",
           "Les délais courent à partir de la réception de l'acompte et des contenus",
           "Les projets complexes font l'objet d'un planning spécifique",
           "Les retards dus au client ne sont pas imputables à SiteKept",
-          "En cas de retard de notre part, une remise de 5% par jour est appliquée"
+          "En cas de retard de notre part, une remise de 5 % par jour est appliquée"
         ]
       },
       "warranties": {
-        "title": "Garanties et Support",
+        "title": "Garanties et support",
         "content": "Nos garanties :",
         "items": [
           "Garantie de bon fonctionnement de 6 mois",
@@ -465,7 +465,7 @@
         ]
       },
       "liability": {
-        "title": "Limitation de Responsabilité",
+        "title": "Limitation de responsabilité",
         "content": "Limites de notre responsabilité :",
         "items": [
           "SiteKept n'est pas responsable des pertes indirectes ou conséquentielles",
@@ -487,7 +487,7 @@
         ]
       },
       "applicableLaw": {
-        "title": "Droit Applicable",
+        "title": "Droit applicable",
         "content": "Ces conditions sont régies par le droit français. Tout litige sera soumis aux tribunaux compétents de Paris. Les parties s'engagent à tenter une résolution amiable avant toute action judiciaire."
       },
       "modifications": {
@@ -503,7 +503,7 @@
       }
     },
     "domainPolicy": {
-      "title": "Politique des Noms de Domaine",
+      "title": "Politique des noms de domaine",
       "content": "Concernant le nom de domaine offert la première année :",
       "items": [
         "Le nom de domaine est enregistré au nom du client",
@@ -515,7 +515,7 @@
     }
   },
   "legalNotice": {
-    "title": "Mentions Légales",
+    "title": "Mentions légales",
     "lastUpdate": "Dernière mise à jour : {date}",
     "sections": {
       "editor": {

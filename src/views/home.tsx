@@ -23,7 +23,7 @@ export function homeMetadata(locale: SiteLocale): Metadata {
   return buildPageMetadata({
     title:
       locale === "fr"
-        ? "Création de site internet dès 500€ | Sitekept"
+        ? "Création de site internet dès 500\u00a0€ | Sitekept"
         : "Website design from €500 | Sitekept",
     description:
       locale === "fr"
@@ -109,13 +109,20 @@ export function HomeView({ locale }: { locale: SiteLocale }) {
                   ? "Pour PME locales, indépendants et équipes qui veulent aller vite sans s'enfermer."
                   : "For local small businesses, freelancers and teams who want to move fast without getting locked in."}
               </p>
+              {/* « À partir de » se lit avant le prix en français, « starting
+                  price » après le prix en anglais. */}
               <div className="mt-5 flex items-end gap-3">
+                {locale === "fr" ? (
+                  <span className="pb-1 text-sm text-slate-400">À partir de</span>
+                ) : null}
                 <span className="text-5xl font-semibold text-white">
-                  {locale === "fr" ? "500€" : "€500"}
+                  {locale === "fr" ? "500\u00a0€" : "€500"}
                 </span>
-                <span className="pb-1 text-sm text-slate-400">
-                  {locale === "fr" ? "à partir de" : "starting price"}
-                </span>
+                {locale === "en" ? (
+                  <span className="pb-1 text-sm text-slate-400">
+                    starting price
+                  </span>
+                ) : null}
               </div>
               <div className="mt-6 space-y-3">
                 {getLocalizedValue(homeContent.trustStrip, locale).map((item) => (
@@ -128,7 +135,7 @@ export function HomeView({ locale }: { locale: SiteLocale }) {
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-300">
               {locale === "fr"
-                ? "Le cadre est simple: vous choisissez une direction, nous livrons le site, le domaine et la mise en ligne."
+                ? "Le cadre est simple : vous choisissez une direction, nous livrons le site, le domaine et la mise en ligne."
                 : "Here's how it works: you choose a direction, and we deliver the website, the domain and the launch."}
             </p>
           </aside>
