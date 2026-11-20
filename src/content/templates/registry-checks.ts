@@ -14,6 +14,7 @@
 import type { dentiste } from "@/content/templates/dentiste";
 import type { electricien } from "@/content/templates/electricien";
 import type { osteopathe } from "@/content/templates/osteopathe";
+import type { createurCulinaire } from "@/content/templates/createur-culinaire";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -24,6 +25,7 @@ type Definitions = {
   dentiste: typeof dentiste;
   electricien: typeof electricien;
   osteopathe: typeof osteopathe;
+  "createur-culinaire": typeof createurCulinaire;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;
