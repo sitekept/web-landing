@@ -8,7 +8,8 @@
  * Quand un template est migré sur le kit, on ajoute sa définition à
  * `Definitions` : `locales` du registre doit alors correspondre aux langues de
  * sa copie. Un template déclaré `["fr", "en"]` dans le registre doit avoir sa
- * définition ici.
+ * définition ici : le contrôle couvre les templates publics bilingues comme les
+ * `lab` routés (`routed: true`, toujours `["fr", "en"]`).
  */
 import type { dentiste } from "@/content/templates/dentiste";
 import type {

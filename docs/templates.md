@@ -23,7 +23,8 @@ Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en 
 
 - `isDemoPathname` (`src/lib/public-template-routes.ts`) est vrai pour `/<slug>…` et `/en/<slug>…` quand `<slug>` est dans `DEMO_SLUGS`. `/en`, `/en/templates` et les pages métier anglaises restent indexables.
 - `src/middleware.ts` pose `X-Robots-Tag: noindex, follow` sur ces chemins.
-- `DEMO_SLUGS` se dérive du registre (`src/content/templates/registry.ts`) : `PUBLIC_TEMPLATE_SLUGS` (templates de statut `sitekept-public`) + `nonTemplateDemos` (`je`, `avocate-tel-aviv` : servis ici mais pas des templates). Un nouveau template déclaré dans le registre est donc `noindex` sans autre étape.
+- `DEMO_SLUGS` se dérive du registre (`src/content/templates/registry.ts`) : `routedTemplates` (templates servis sur ce domaine : `sitekept-public` et `lab` avec `routed: true`) + `nonTemplateDemos` (`je`, `avocate-tel-aviv` : servis ici mais pas des templates). Un nouveau template déclaré dans le registre est donc `noindex` sans autre étape, qu'il soit public ou `lab` routé.
+- `PUBLIC_TEMPLATE_SLUGS` ne liste que les templates `sitekept-public` : un `lab` routé est `noindex` mais n'y figure pas.
 
 ### Métadonnées
 
@@ -46,6 +47,8 @@ Le site anglais pointe vers `/en/<slug>` pour les templates qui ont leur version
 - **Galerie** (`TemplatesShowcase`) et **pages métier** (`src/views/metier.tsx`) passent le lien de démo par `linkLocalizer(locale)` : `/en/templates` et `/en/dentist-website` envoient vers `/en/dentiste`.
 - **Libellés des pages métier anglaises** : `metier-pages-en.ts` nomme la démo sans mention de langue. La vue ajoute « (in French) » au nom, à « View the demo » et à la phrase d'introduction du modèle seulement quand `publicTemplateServesLocale(slug, "en")` (registre) est faux.
 - **Admin** : `toAdminCatalogEntry` calcule `sitekeptUrl` (FR), `sitekeptUrlEn` (quand `locales` contient `"en"`) et `englishPendingLabel` (« EN : phase 5 », d'après le marqueur `englishPending`) ; la page n'a rien de codé en dur.
+
+**Les `lab` routés** (`status: "lab"`, `routed: true`) sont servis sur ce domaine (`/<slug>` et `/en/<slug>`) et `noindex`, mais hors galerie, hors pages métier et hors `PATH_MAP` : aucun lien du site public ne pointe vers eux (`publicTemplates` et `PublicTemplateSlug` ne les contiennent pas, donc le `demoSlug` d'une page métier ne peut pas les viser). L'admin les montre avec `routeStatus` « Lab on sitekept.com » et les liens FR et EN. Un `lab` sans `routed: true` reste un template hébergé sur Vercel.
 
 Quand un template passe en `["fr", "en"]` dans le registre (et perd `englishPending`), ses liens anglais, la mention « (in French) » et la page admin suivent sans autre modification.
 
@@ -176,7 +179,8 @@ Helpers de liens (purs, utilisables côté client et serveur), plus `TEMPLATE_LO
 - [ ] **Vues** : `src/templates/<slug>/<page>.tsx` pour chaque page, `shell.tsx` et la table d'icônes dans `parts.tsx`.
 - [ ] **Routes FR** : `src/app/(demos)/<slug>/layout.tsx` et chaque `page.tsx`, avec `buildTemplatePageMetadata(…, "fr", page)`.
 - [ ] **Routes EN** : `src/app/(demos-en)/en/<slug>/layout.tsx` et chaque `page.tsx`, avec `"en"`.
-- [ ] **Registre** : une entrée dans `TEMPLATES` (`src/content/templates/registry.ts`) : statut `sitekept-public`, nom et secteur admin, copie de la galerie (FR + EN), capture, `locales: ["fr", "en"]`. Elle alimente `DEMO_SLUGS` (noindex), la galerie `/templates` (lien `/en/<slug>` sur la galerie et les pages métier anglaises, via `PATH_MAP`), la page admin (liens FR et EN) et le type `PublicTemplateSlug` (`demoSlug` des pages métier). Ajouter la définition à `Definitions` dans `src/content/templates/registry-checks.ts` : `pnpm type-check` échoue si ses langues et celles du registre divergent.
+- [ ] **Registre, à la naissance** : une entrée dans `TEMPLATES` (`src/content/templates/registry.ts`) en `status: "lab"`, `routed: true`, `locales: ["fr", "en"]`, avec nom, secteur et note admin, et **sans bloc `gallery`** (ni capture, ni copie de galerie : le type l'interdit). Un nouveau template naît bilingue : pas de `englishPending`. L'entrée alimente `DEMO_SLUGS` (`noindex` sur `/<slug>` et `/en/<slug>`) et la page admin (liens FR et EN, « Lab on sitekept.com »). Elle n'entre ni dans la galerie, ni dans les pages métier, ni dans `PATH_MAP`. Ajouter la définition à `Definitions` dans `src/content/templates/registry-checks.ts` : `pnpm type-check` échoue si elle manque ou si ses langues et celles du registre divergent.
+- [ ] **Passage en public, après validation de Joseph seulement** : l'entrée passe en `status: "sitekept-public"` (on retire `routed`), avec le bloc `gallery` : capture sous `public/template/`, `featured`, copie de galerie FR + EN. Elle entre alors dans la galerie `/templates` (lien `/en/<slug>` sur la galerie et les pages métier anglaises, via `PATH_MAP`) et dans le type `PublicTemplateSlug` (`demoSlug` des pages métier).
 - [ ] **Contrôles**
   - [ ] `pnpm type-check` et `pnpm lint`.
   - [ ] `pnpm build` dans une copie isolée (voir section 7).

@@ -14,6 +14,16 @@ import type { TemplateLocale } from "@/content/templates/types";
  * définitions se vérifie à part, au `type-check`, dans `registry-checks.ts`
  * (`import type` seulement, aucun code exécuté).
  *
+ * Trois formes d'entrée, selon où le template est servi :
+ * - `sitekept-public` : servi sur ce domaine, listé en galerie et dans les
+ *   pages métier, `noindex` ;
+ * - `lab` avec `routed: true` : servi sur ce domaine (`/<slug>` et
+ *   `/en/<slug>`), `noindex` comme une démo, visible dans l'admin, mais absent
+ *   de la galerie, des pages métier et de `PATH_MAP`. C'est l'état de naissance
+ *   d'un nouveau template, avant validation ;
+ * - tout autre statut (ou `lab` sans `routed`) : hébergé ailleurs (Vercel), non
+ *   routé ici.
+ *
  * Pour ajouter un template : une entrée dans `TEMPLATES`, et rien d'autre côté
  * liste (voir `docs/templates.md`, section 4).
  */
@@ -26,7 +36,9 @@ export type TemplateAdminStatus =
   | "archived";
 
 /**
- * Langues servies par un template routé sur ce domaine (`sitekept-public`).
+ * Langues servies par un template public routé sur ce domaine
+ * (`sitekept-public`). Un template `lab` routé n'a pas cette souplesse : il est
+ * toujours `["fr", "en"]` (`LabRoutedTemplateEntry`).
  *
  * Le contrôle FR + EN tient dans cette union : un template routé doit être
  * `["fr", "en"]`, ou bien `["fr"]` avec le marqueur transitoire
@@ -65,6 +77,7 @@ type TemplateIdentity = {
 export type PublicTemplateEntry = TemplateIdentity &
   RoutedLocales & {
     readonly status: "sitekept-public";
+    readonly routed?: never;
     readonly gallery: {
       /** Capture sous `public/`. */
       readonly screenshot: string;
@@ -74,15 +87,43 @@ export type PublicTemplateEntry = TemplateIdentity &
   };
 
 /**
+ * Template `lab` servi sur ce domaine (`/<slug>` et `/en/<slug>`) : visible
+ * dans l'admin, `noindex` (il entre dans `DEMO_SLUGS`), mais hors galerie, hors
+ * pages métier et hors `PATH_MAP`.
+ *
+ * - `routed: true` est le discriminant explicite : sans lui, une entrée `lab`
+ *   reste un template Vercel (`UnroutedTemplateEntry`, qui interdit `routed`).
+ * - Un nouveau template naît bilingue : `locales` est `["fr", "en"]`, sans
+ *   `englishPending` possible.
+ * - Pas de bloc `gallery` : aucune capture ni copie de galerie tant que le
+ *   template n'est pas validé et passé en `sitekept-public`.
+ */
+export type LabRoutedTemplateEntry = TemplateIdentity & {
+  readonly status: "lab";
+  readonly routed: true;
+  readonly locales: readonly ["fr", "en"];
+  readonly englishPending?: never;
+  readonly gallery?: never;
+};
+
+/**
  * Template hébergé ailleurs (Vercel) : non routé ici, donc pas soumis au
- * contrôle de langues.
+ * contrôle de langues. `routed` est interdit : une entrée `lab` sans
+ * `routed: true` reste « Vercel ».
  */
 export type UnroutedTemplateEntry = TemplateIdentity & {
   readonly status: Exclude<TemplateAdminStatus, "sitekept-public">;
+  readonly routed?: never;
   readonly locales: readonly TemplateLocale[];
 };
 
-export type TemplateEntry = PublicTemplateEntry | UnroutedTemplateEntry;
+export type TemplateEntry =
+  | PublicTemplateEntry
+  | LabRoutedTemplateEntry
+  | UnroutedTemplateEntry;
+
+/** Template servi sur ce domaine : public, ou `lab` routé. */
+export type RoutedTemplateEntry = PublicTemplateEntry | LabRoutedTemplateEntry;
 
 /**
  * Ordre significatif : c'est celui de la galerie (entrées publiques) et de la
@@ -479,7 +520,11 @@ export type RegisteredTemplate = (typeof TEMPLATES)[number];
 
 export type TemplateSlug = RegisteredTemplate["slug"];
 
-/** Slug d'un template servi sur ce domaine et listé dans la galerie. */
+/**
+ * Slug d'un template servi sur ce domaine et listé dans la galerie. Exclut les
+ * templates `lab` routés : le `demoSlug` d'une page métier ne peut pas les
+ * viser.
+ */
 export type PublicTemplateSlug = Extract<
   RegisteredTemplate,
   { status: "sitekept-public" }
@@ -491,9 +536,27 @@ function isPublicTemplate(entry: TemplateEntry): entry is PublicTemplateEntry {
   return entry.status === "sitekept-public";
 }
 
-/** Templates servis sur ce domaine, dans l'ordre de la galerie. */
+function isLabRoutedTemplate(
+  entry: TemplateEntry
+): entry is LabRoutedTemplateEntry {
+  return entry.status === "lab" && entry.routed === true;
+}
+
+/** Templates publics, dans l'ordre de la galerie. */
 export const publicTemplates: readonly PublicTemplateEntry[] =
   templateEntries.filter(isPublicTemplate);
+
+/**
+ * Tous les templates servis sur ce domaine : publics, puis `lab` routés, dans
+ * l'ordre du registre. Sert à `DEMO_SLUGS` (`noindex`). Ne pas l'utiliser pour
+ * la galerie, les pages métier ni `PATH_MAP` : les `lab` n'y figurent pas
+ * (`publicTemplates`).
+ */
+export const routedTemplates: readonly RoutedTemplateEntry[] =
+  templateEntries.filter(
+    (entry): entry is RoutedTemplateEntry =>
+      isPublicTemplate(entry) || isLabRoutedTemplate(entry)
+  );
 
 /** Le template est-il servi dans cette langue (`/<slug>` ou `/en/<slug>`) ? */
 export function templateServesLocale(
@@ -552,16 +615,20 @@ export interface AdminTemplateCatalogEntry {
   sector: string;
   adminStatus: TemplateAdminStatus;
   vercelUrl: string;
-  /** Démo française sur sitekept.com, pour un template public. */
+  /** Démo française sur sitekept.com, pour un template public ou `lab` routé. */
   sitekeptUrl?: string;
-  /** Démo anglaise sur sitekept.com, quand `locales` contient `"en"`. */
+  /** Démo anglaise sur sitekept.com, quand `locales` contient `"en"` (toujours pour un `lab` routé). */
   sitekeptUrlEn?: string;
   /**
    * Mention affichée à la place du lien EN d'un template public qui n'a pas
    * encore sa version anglaise (dérivée du marqueur `englishPending`).
    */
   englishPendingLabel?: string;
-  routeStatus: "Live on sitekept.com" | "Vercel only" | "Lab only";
+  routeStatus:
+    | "Live on sitekept.com"
+    | "Lab on sitekept.com"
+    | "Vercel only"
+    | "Lab only";
   notes: string;
 }
 
@@ -577,11 +644,13 @@ export function toAdminCatalogEntry(
     routeStatus:
       entry.status === "sitekept-public"
         ? "Live on sitekept.com"
-        : entry.status === "lab"
-          ? "Lab only"
-          : "Vercel only",
+        : isLabRoutedTemplate(entry)
+          ? "Lab on sitekept.com"
+          : entry.status === "lab"
+            ? "Lab only"
+            : "Vercel only",
     vercelUrl: `${TEMPLATE_VERCEL_BASE_URL}/${entry.slug}`,
-    ...(entry.status === "sitekept-public"
+    ...(isPublicTemplate(entry) || isLabRoutedTemplate(entry)
       ? {
           sitekeptUrl: `${SITEKEPT_BASE_URL}/${entry.slug}`,
           ...(templateServesLocale(entry, "en")

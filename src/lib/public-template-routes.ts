@@ -1,21 +1,26 @@
 import {
   nonTemplateDemos,
   publicTemplates,
+  routedTemplates,
 } from "@/content/templates/registry";
 
-/** Slugs des templates servis sur ce domaine, dans l'ordre du registre. */
+/**
+ * Slugs des templates publics (statut `sitekept-public`), dans l'ordre du
+ * registre. Les templates `lab` routés n'y figurent pas : ils sont `noindex`
+ * (`DEMO_SLUGS`) mais hors galerie et hors pages métier.
+ */
 export const PUBLIC_TEMPLATE_SLUGS: readonly string[] = publicTemplates.map(
   (template) => template.slug
 );
 
 /**
  * Tous les slugs de démonstration servis par ce domaine : les templates
- * publics, plus les slugs qui n'en sont pas (`nonTemplateDemos` du registre :
- * `je`, `avocate-tel-aviv`). Utilisé par le middleware pour poser
- * `X-Robots-Tag: noindex, follow`.
+ * servis ici (publics et `lab` routés, `routedTemplates` du registre), plus les
+ * slugs qui n'en sont pas (`nonTemplateDemos` : `je`, `avocate-tel-aviv`).
+ * Utilisé par le middleware pour poser `X-Robots-Tag: noindex, follow`.
  */
 export const DEMO_SLUGS: readonly string[] = [
-  ...PUBLIC_TEMPLATE_SLUGS,
+  ...routedTemplates.map((template) => template.slug),
   ...nonTemplateDemos.map((demo) => demo.slug),
 ];
 
