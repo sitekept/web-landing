@@ -15,6 +15,8 @@ check /electricien yes; check /electricien/prestations yes
 check /en/electricien yes; check /en/electricien/prestations yes
 check /osteopathe yes; check /osteopathe/consultations yes
 check /en/osteopathe yes; check /en/osteopathe/consultations yes
+check /reparation-mobile yes; check /reparation-mobile/faq yes
+check /en/reparation-mobile yes; check /en/reparation-mobile/faq yes
 check /createur-culinaire yes; check /createur-culinaire/creations yes
 check /en/createur-culinaire yes; check /en/createur-culinaire/creations yes
 check /coffee-shop yes; check /coffee-shop/carte yes

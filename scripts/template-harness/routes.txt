@@ -38,6 +38,10 @@ demo	/osteopathe
 demo	/osteopathe/approche
 demo	/osteopathe/consultations
 demo	/osteopathe/rendez-vous
+demo	/reparation-mobile
+demo	/reparation-mobile/contact
+demo	/reparation-mobile/faq
+demo	/reparation-mobile/reparations
 demo	/fleuriste
 demo	/menage-nettoyage
 demo	/menage-nettoyage/entreprises
@@ -87,6 +91,10 @@ demo-en	/en/osteopathe
 demo-en	/en/osteopathe/approche
 demo-en	/en/osteopathe/consultations
 demo-en	/en/osteopathe/rendez-vous
+demo-en	/en/reparation-mobile
+demo-en	/en/reparation-mobile/contact
+demo-en	/en/reparation-mobile/faq
+demo-en	/en/reparation-mobile/reparations
 demo-en	/en/createur-culinaire
 demo-en	/en/createur-culinaire/commande
 demo-en	/en/createur-culinaire/creations

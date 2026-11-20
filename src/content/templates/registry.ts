@@ -534,6 +534,16 @@ const TEMPLATES = [
     locales: ["fr", "en"],
   },
   {
+    slug: "reparation-mobile",
+    status: "lab",
+    routed: true,
+    name: "Template Réparation mobile",
+    sector: "Réparation mobile",
+    notes:
+      "Template lab servi sur sitekept.com (noindex), en attente de validation.",
+    locales: ["fr", "en"],
+  },
+  {
     slug: "createur-culinaire",
     status: "lab",
     routed: true,

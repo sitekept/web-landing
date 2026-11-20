@@ -14,6 +14,7 @@
 import type { dentiste } from "@/content/templates/dentiste";
 import type { electricien } from "@/content/templates/electricien";
 import type { osteopathe } from "@/content/templates/osteopathe";
+import type { reparationMobile } from "@/content/templates/reparation-mobile";
 import type { createurCulinaire } from "@/content/templates/createur-culinaire";
 import type { coffeeShop } from "@/content/templates/coffee-shop";
 import type {
@@ -26,6 +27,7 @@ type Definitions = {
   dentiste: typeof dentiste;
   electricien: typeof electricien;
   osteopathe: typeof osteopathe;
+  "reparation-mobile": typeof reparationMobile;
   "createur-culinaire": typeof createurCulinaire;
   "coffee-shop": typeof coffeeShop;
 };
