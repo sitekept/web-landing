@@ -37,7 +37,7 @@ export function TemplateLocaleSwitch({
   return (
     <nav
       aria-label="Langue / Language"
-      className={cn("flex items-center gap-1", className)}
+      className={cn("flex shrink-0 items-center gap-1", className)}
     >
       {TEMPLATE_LOCALES.map((target) => {
         const isCurrent = target === locale;

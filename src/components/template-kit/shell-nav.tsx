@@ -104,16 +104,16 @@ export function TemplateShellNav({
     <>
       <nav
         aria-label={labels.nav}
-        className="hidden flex-1 justify-center lg:flex"
+        className="hidden min-w-0 flex-1 justify-center xl:flex"
       >
-        <ul className="flex flex-wrap items-center justify-center gap-x-1">
+        <ul className="flex flex-nowrap items-center justify-center gap-x-0.5 2xl:gap-x-1">
           {items.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 aria-current={isCurrent(item.href) ? "page" : undefined}
                 className={cn(
-                  "inline-flex min-h-11 items-center rounded-tpl px-3 text-tpl-sm font-medium text-tpl-ink-muted underline-offset-8 hover:text-tpl-ink aria-[current=page]:text-tpl-ink aria-[current=page]:underline",
+                  "inline-flex min-h-11 items-center rounded-tpl px-2 text-tpl-sm whitespace-nowrap 2xl:px-3 font-medium text-tpl-ink-muted underline-offset-8 hover:text-tpl-ink aria-[current=page]:text-tpl-ink aria-[current=page]:underline",
                   LINK_FOCUS
                 )}
               >
@@ -124,7 +124,7 @@ export function TemplateShellNav({
         </ul>
       </nav>
 
-      <div className="hidden items-center gap-3 lg:flex">
+      <div className="hidden shrink-0 items-center gap-3 whitespace-nowrap xl:flex">
         {cta}
         {showLocaleSwitch ? <TemplateLocaleSwitch locale={locale} /> : null}
       </div>
@@ -137,7 +137,7 @@ export function TemplateShellNav({
         aria-label={labels.menu}
         onClick={() => setOpen((value) => !value)}
         className={cn(
-          "inline-flex size-11 items-center justify-center rounded-tpl border border-tpl-line text-tpl-ink hover:bg-tpl-ink/5 lg:hidden",
+          "inline-flex size-11 items-center justify-center rounded-tpl border border-tpl-line text-tpl-ink hover:bg-tpl-ink/5 xl:hidden",
           LINK_FOCUS
         )}
       >
@@ -152,7 +152,7 @@ export function TemplateShellNav({
         id={panelId}
         hidden={!open}
         onClick={closeOnLinkClick}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-b border-tpl-line bg-tpl-surface px-4 pt-2 pb-6 shadow-tpl-lg sm:px-6 lg:hidden"
+        className="absolute inset-x-0 top-full max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-b border-tpl-line bg-tpl-surface px-4 pt-2 pb-6 shadow-tpl-lg sm:px-6 xl:hidden"
       >
         <nav aria-label={labels.nav}>
           <ul>

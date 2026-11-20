@@ -110,7 +110,7 @@ export function TemplateShell({
       </a>
 
       <header className="sticky top-0 z-40 border-b border-tpl-line bg-tpl-surface/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 xl:gap-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-3">
             {brand.mark ? <div className="shrink-0">{brand.mark}</div> : null}
             <div className="min-w-0">
@@ -121,7 +121,7 @@ export function TemplateShell({
                 {brand.name}
               </Link>
               {brand.tagline ? (
-                <p className="hidden truncate text-tpl-xs text-tpl-ink-muted sm:block">
+                <p className="hidden truncate text-tpl-xs text-tpl-ink-muted sm:block xl:hidden 2xl:block">
                   {brand.tagline}
                 </p>
               ) : null}
