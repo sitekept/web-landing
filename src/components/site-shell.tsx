@@ -8,7 +8,7 @@ import { PATH_MAP } from "@/lib/localized-routes";
 
 /**
  * Coquille des pages commerciales, partagée par le layout français
- * (src/app/(marketing)/layout.tsx) et le layout anglais (src/app/en/layout.tsx).
+ * (src/app/(marketing)/layout.tsx) et le layout anglais (src/app/(site-en)/en/layout.tsx).
  */
 export function SiteShell({
   locale,

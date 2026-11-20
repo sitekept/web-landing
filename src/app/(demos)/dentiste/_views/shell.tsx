@@ -21,7 +21,7 @@ export function DentisteShell({
   children,
 }: {
   locale: TemplateLocale;
-  /** `false` tant que la version anglaise n'existe pas (tâche 1e : `true`). */
+  /** Affiche le sélecteur FR / EN (`true` par défaut dans le kit). */
   localeSwitch?: boolean;
   children: ReactNode;
 }) {

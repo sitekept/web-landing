@@ -10,12 +10,9 @@ import type {
  * chaque page, `alt`, métadonnées. Les vues (`src/app/(demos)/dentiste/_views/`)
  * n'ont aucun texte en dur.
  *
- * Version anglaise (tâche 1e) :
- * 1. dans `dentiste` plus bas, retirer le troisième paramètre `"fr"` de
- *    `TemplateDefinition` ;
- * 2. ajouter `en: { … }` à `copy`, avec les mêmes clés et les mêmes longueurs de
- *    liste que `fr` (type `DentisteCopy`, dérivé de `fr` par `WidenLiterals`).
- *    Tant que `en` manque ou est incomplet, `pnpm type-check` échoue.
+ * Version anglaise : `en`, plus bas, est une traduction neutre typée
+ * `DentisteCopy` (dérivé de `fr` par `WidenLiterals`). Une clé manquante ou une
+ * liste de longueur différente fait échouer `pnpm type-check`.
  *
  * Les icônes sont associées par position dans les vues : une liste d'icônes
  * suit l'ordre des éléments de la copie.
@@ -392,10 +389,383 @@ const fr = {
 /** Type de la copie d'une langue, dérivé de la version française. */
 export type DentisteCopy = WidenLiterals<typeof fr>;
 
+/**
+ * Version anglaise : traduction neutre de la même entreprise fictive. La marque
+ * devient « Your business » et l'e-mail `contact@example.com` ; le numéro, lui,
+ * reste le même numéro manifestement factice. Mêmes clés et mêmes longueurs de
+ * liste que `fr` : le type `DentisteCopy` l'impose.
+ */
+const en: DentisteCopy = {
+  brand: {
+    name: "Your business",
+    initials: "YB",
+    tagline: "Aesthetic, family and implant dentistry",
+  },
+  phone: {
+    href: "tel:+33199000018",
+    label: "01 99 00 00 18",
+  },
+  nav: {
+    home: "Home",
+    soins: "Treatments",
+    technologies: "Technologies",
+    equipe: "Team",
+    premiereVisite: "First visit",
+    rendezVous: "Appointments",
+    contact: "Contact",
+  },
+  cta: {
+    book: "Book an appointment",
+    prepareFirstVisit: "Prepare my first visit",
+    seeTechnologies: "See the technologies",
+    visit: "Visit the practice",
+    bookFirstVisit: "Book my first visit",
+    callSecretary: "Call the front desk",
+    prepareVisit: "Prepare my visit",
+  },
+  rail: {
+    eyebrow: "Appointments",
+    title: "Consultation, pain, check-up or cosmetic quote.",
+    text: "A booking entry point visible on every page of the practice.",
+  },
+  footer: {
+    title: "A calm, clinical site structured around booking.",
+    text: "The visual language is deliberately strict: restrained radii, clean lines, ranked information and no “spa” staging.",
+    address: "15 avenue du Parc, Levallois-Perret",
+    hours: "Mon-Fri 8:30 am-7:00 pm, Sat 9:00 am-1:00 pm",
+    email: "contact@example.com",
+  },
+  meta: {
+    home: {
+      title: "Your business - Dental practice",
+      description:
+        "Dental practice template with a booking rail, dedicated clinical pages and a structured hierarchy of treatments.",
+    },
+    soins: {
+      title: "Dental treatments - Your business",
+      description:
+        "Prevention, restorative care, smile aesthetics and implants: treatments organized around the patient's logic.",
+    },
+    technologies: {
+      title: "Technologies - Your business",
+      description:
+        "Targeted imaging, digital protocol and clinical traceability: technology as a decision tool.",
+    },
+    equipe: {
+      title: "Team - Your business",
+      description:
+        "A continuous clinical chain: dental surgeons and care coordination, with roles described for the patient.",
+    },
+    premiereVisite: {
+      title: "First visit - Your business",
+      description:
+        "What to bring, how to get here and how the first consultation is run: before, during and after.",
+    },
+    rendezVous: {
+      title: "Appointments - Your business",
+      description:
+        "A clinical pre-screening to book: reasons, choice of slot and a clear confirmation before you come.",
+    },
+    contact: {
+      title: "Contact and directions - Your business",
+      description:
+        "Address, opening hours, transport and parking for the dental practice, on a short, practical page.",
+    },
+  },
+  home: {
+    hero: {
+      eyebrow: "Structured premium clinic",
+      title:
+        "A clinic that reassures through information, then converts through a clear journey.",
+      description:
+        "Here, the hero doesn't sell a mood. It builds trust: visible specialties, instant booking, a medical method and no friction at all when getting in touch.",
+      routesLabel: "Pathway",
+      routes: [
+        "Check-ups and prevention",
+        "Pain or minor emergency",
+        "Smile aesthetics",
+        "Implants and rehabilitation",
+      ],
+    },
+    booking: {
+      eyebrow: "First availability",
+      slot: "Tomorrow 10:40 am",
+      text: "Check-up consultation, mild pain, aesthetic quote or first visit.",
+      points: [
+        "Targeted X-ray if needed",
+        "Treatment plan explained before any procedure",
+        "Clear report sent after the visit",
+      ],
+    },
+    signal: {
+      eyebrow: "Clinical signal",
+      title:
+        "The site speaks like a precise practice, not like a beauty landing page.",
+      description:
+        "Medical information is ranked, booking stays dominant and proof is shown before promises.",
+      items: [
+        "6 care areas, clear from the home page.",
+        "48 hours for a standard first appointment.",
+        "4.9/5 for the quality of explanations and follow-up.",
+      ],
+    },
+    technologies: {
+      eyebrow: "Technologies",
+      title: "A home page built like a clinical roadmap.",
+      description:
+        "The second sequence doesn't repeat a generic card block: it immediately sets up the logic of diagnosis and support.",
+      cards: [
+        {
+          title: "Targeted imaging",
+          text: "The diagnosis is shown and explained to the patient before any decision is made.",
+        },
+        {
+          title: "Strict protocols",
+          text: "The structure of the site also puts hygiene front and center in its message.",
+        },
+        {
+          title: "A readable treatment plan",
+          text: "Every clinical proposal is sequenced, priced and explained.",
+        },
+      ],
+      decision: {
+        eyebrow: "Medical decision",
+        title:
+          "Patients see where they stand, what is being proposed, and why.",
+        items: [
+          "Imaging when it helps, never for show.",
+          "Treatment options made comparable.",
+          "Schedule and follow-up explained before sign-off.",
+        ],
+      },
+    },
+    journey: {
+      eyebrow: "Patient journey",
+      title: "A vertical timeline replaces the standard services grid.",
+      description:
+        "Visitors understand how a full visit unfolds before they even open the secondary pages.",
+      intro:
+        "The page rhythm is deliberately more sequenced than in the other templates: triage, diagnosis, plan, follow-up.",
+      steps: [
+        "Prepare the visit: reason, documents, health information.",
+        "Consultation: assessment, targeted X-rays if needed, direct explanations.",
+        "Plan what comes next: quote, stages, timelines and useful contacts.",
+      ],
+    },
+    cabinet: {
+      eyebrow: "The practice",
+      title:
+        "A final sequence that is more human, yet still held together by clinical logic.",
+      description:
+        "The site ends on the team, hygiene and directions, without falling back into a second hero.",
+      cards: [
+        {
+          title: "A coordinated team",
+          text: "The practice presents clear roles, without spreading the journey across several contacts.",
+        },
+        {
+          title: "Documented hygiene",
+          text: "Protocols and equipment are shown as proof of method, not as a vague marketing claim.",
+        },
+        {
+          title: "A smooth first visit",
+          text: "The dedicated page explains how to get here, what to bring and how the consultation will be run.",
+        },
+      ],
+    },
+  },
+  soins: {
+    intro: {
+      eyebrow: "Treatments",
+      title:
+        "Treatments are organized around the patient's logic, not the practice's internal organization.",
+      description:
+        "This page stays clinical and readable: benefit, level of commitment, follow-up.",
+      treatments: [
+        {
+          title: "Prevention & check-ups",
+          text: "Check-up consultation, scaling, targeted X-rays and a yearly follow-up routine.",
+        },
+        {
+          title: "Restorative care",
+          text: "Cavity treatment and restoration, with plain explanations and a visible decision.",
+        },
+        {
+          title: "Smile aesthetics",
+          text: "Whitening, veneers and smile harmonization, with a preview before sign-off.",
+        },
+        {
+          title: "Implants & rehabilitation",
+          text: "A longer journey presented as a series of clear, comparable steps.",
+        },
+      ],
+    },
+    principles: {
+      eyebrow: "Principles",
+      title: "Three safeguards keep trust intact.",
+      items: [
+        {
+          title: "Visible diagnosis",
+          text: "Patients understand what is observed before any solution is proposed.",
+        },
+        {
+          title: "Proportionate intervention",
+          text: "The site avoids a spectacular tone and clearly ranks how useful each treatment is.",
+        },
+        {
+          title: "Framed aesthetics",
+          text: "Premium treatments are shown without tipping into cosmetic-industry imagery.",
+        },
+      ],
+    },
+  },
+  technologies: {
+    eyebrow: "Technologies",
+    title:
+      "Technology is presented as a decision tool, not as premium decor.",
+    description:
+      "This page explains why each tool exists in the clinical journey, and what it concretely changes for the patient.",
+    items: [
+      {
+        title: "Targeted imaging",
+        text: "A one-off X-ray or guided imaging depending on the case, never shown off as a gadget.",
+      },
+      {
+        title: "Digital protocol",
+        text: "The practice structures its steps, quotes and follow-ups better thanks to coordination tools.",
+      },
+      {
+        title: "Clinical traceability",
+        text: "Photos, reports and recommendations stay attached to the patient's journey.",
+      },
+    ],
+  },
+  equipe: {
+    intro: {
+      eyebrow: "Team",
+      title:
+        "The practice presents itself as a continuous clinical chain, not as isolated profiles.",
+      description:
+        "Roles are described by what they change for the patient along their journey.",
+      members: [
+        {
+          name: "Dr. Inès Morvan",
+          role: "Dental surgeon, aesthetics and rehabilitation",
+        },
+        {
+          name: "Dr. Mehdi Karam",
+          role: "Implantology and guided surgery",
+        },
+        {
+          name: "Léna Puech",
+          role: "Care coordinator and patient relations",
+        },
+      ],
+    },
+    practice: {
+      eyebrow: "Practice",
+      title:
+        "The site shows competence through method, not through posturing.",
+      items: [
+        {
+          title: "Continuing education",
+          text: "The practice shows standards, not a pile of authority signals.",
+        },
+        {
+          title: "Targeted equipment",
+          text: "Technology is shown only when it genuinely raises the level of diagnosis.",
+        },
+        {
+          title: "Continuity of care",
+          text: "Patients know who takes over at each important stage of the journey.",
+        },
+      ],
+    },
+  },
+  premiereVisite: {
+    eyebrow: "First visit",
+    title:
+      "A dedicated page to reduce uncertainty before the first consultation.",
+    description:
+      "The practice explains what to bring, how to get here and how the consultation will be run.",
+    steps: [
+      {
+        title: "Before you come",
+        text: "Recent prescriptions, an X-ray if you have one, insurance details if relevant and a clear reason for the consultation.",
+      },
+      {
+        title: "During the appointment",
+        text: "A conversation, an assessment, targeted X-rays if needed, then a proposed treatment plan.",
+      },
+      {
+        title: "After the consultation",
+        text: "Report, instructions, next appointment or quote depending on the chosen path.",
+      },
+    ],
+  },
+  rendezVous: {
+    eyebrow: "Appointments",
+    title:
+      "The booking page works as a clinical pre-screening, not as a simple final button.",
+    description:
+      "It distinguishes reasons, timing and the level of preparation expected before coming to the practice.",
+    reasons: {
+      eyebrow: "Three main reasons",
+      label: "Reason",
+      items: [
+        "First consultation and full check-up",
+        "Mild pain or a need for a quick check-up",
+        "Aesthetic project or longer rehabilitation",
+      ],
+    },
+    steps: [
+      {
+        title: "First conversation",
+        text: "Reason, relevant history, any documents and level of urgency.",
+      },
+      {
+        title: "Choosing a slot",
+        text: "The site highlights realistic timeframes depending on the type of need.",
+      },
+      {
+        title: "Clear confirmation",
+        text: "Address, directions, preparation and estimated duration are sent without ambiguity.",
+      },
+    ],
+  },
+  contact: {
+    eyebrow: "Contact",
+    title:
+      "Address, directions and opening hours on a short, almost logistical page.",
+    description:
+      "A practice's contact page should answer practical questions rather than add storytelling.",
+    details: [
+      "15 avenue du Parc, 92300 Levallois-Perret",
+      "01 99 00 00 18",
+      "contact@example.com",
+      "Mon-Fri 8:30 am-7:00 pm, Sat 9:00 am-1:00 pm",
+    ],
+    access: [
+      {
+        title: "Easy access",
+        text: "The practice is 4 minutes from Clichy-Levallois station, with step-free access and an easy-to-spot front.",
+      },
+      {
+        title: "Public transport",
+        text: "Metro line 3, bus 274 and a Vélib' station right nearby.",
+      },
+      {
+        title: "Parking",
+        text: "An Indigo car park a few minutes away and a drop-off spot in front of the clinic.",
+      },
+    ],
+  },
+};
+
 /** Clé d'une page, pour `buildTemplatePageMetadata` et la table des chemins. */
 export type DentistePage = keyof DentisteCopy["meta"];
 
-export const dentiste: TemplateDefinition<"dentiste", DentisteCopy, "fr"> = {
+export const dentiste: TemplateDefinition<"dentiste", DentisteCopy> = {
   slug: "dentiste",
   /**
    * Palette reprise de la démo d'origine : fond menthe clair, encre bleu-vert
@@ -423,5 +793,5 @@ export const dentiste: TemplateDefinition<"dentiste", DentisteCopy, "fr"> = {
     rendezVous: "/dentiste/rendez-vous",
     contact: "/dentiste/contact",
   },
-  copy: { fr },
+  copy: { fr, en },
 };

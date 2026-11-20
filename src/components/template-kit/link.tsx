@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 
+import type { TemplateLocale } from "@/content/templates/types";
 import { cn } from "@/lib/utils";
 
 /**
@@ -56,6 +57,12 @@ const TEXT_SIZE: Record<TemplateLinkSize, string> = {
   md: "text-tpl-sm",
 };
 
+/** Texte lecteur d'écran des liens qui s'ouvrent dans un nouvel onglet. */
+const NEW_TAB_LABEL: Record<TemplateLocale, string> = {
+  fr: "(s’ouvre dans un nouvel onglet)",
+  en: "(opens in a new tab)",
+};
+
 export type TemplateLinkProps = {
   href: ComponentProps<typeof Link>["href"];
   children: ReactNode;
@@ -65,6 +72,8 @@ export type TemplateLinkProps = {
   icon?: ReactNode | false;
   /** Ouvre dans un nouvel onglet (`target="_blank"`, `rel` sûr). */
   external?: boolean;
+  /** Langue du texte lecteur d'écran des liens externes (`fr` par défaut). */
+  locale?: TemplateLocale;
   size?: TemplateLinkSize;
   className?: string;
 };
@@ -76,6 +85,7 @@ export function TemplateLink({
   shape = "radius",
   icon,
   external = false,
+  locale = "fr",
   size = "md",
   className,
 }: TemplateLinkProps) {
@@ -105,7 +115,7 @@ export function TemplateLink({
       {children}
       {renderedIcon}
       {external ? (
-        <span className="sr-only">(s’ouvre dans un nouvel onglet)</span>
+        <span className="sr-only">{NEW_TAB_LABEL[locale]}</span>
       ) : null}
     </Link>
   );

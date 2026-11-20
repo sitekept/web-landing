@@ -34,6 +34,9 @@ function matchesSlug(pathname: string, slugs: readonly string[]): boolean {
   });
 }
 
+/** Préfixe des versions anglaises des démos : `/en/<slug>`. */
+const ENGLISH_PREFIX = "/en";
+
 export function isPublicTemplatePathname(pathname: string | null): boolean {
   if (!pathname) {
     return false;
@@ -43,12 +46,25 @@ export function isPublicTemplatePathname(pathname: string | null): boolean {
 }
 
 /**
- * Vrai pour une page de démonstration et toutes ses sous-pages.
+ * Vrai pour une page de démonstration et toutes ses sous-pages, en français
+ * (`/dentiste`, `/dentiste/soins`) comme en anglais (`/en/dentiste`,
+ * `/en/dentiste/soins`).
+ *
+ * Seul `/en/<slug>` d'un slug de démo est reconnu : `/en`, `/en/templates` et
+ * les pages métier anglaises (`/en/<métier>`) restent des pages du site
+ * commercial, donc indexables.
  */
 export function isDemoPathname(pathname: string | null): boolean {
   if (!pathname) {
     return false;
   }
 
-  return matchesSlug(pathname, DEMO_SLUGS);
+  if (matchesSlug(pathname, DEMO_SLUGS)) {
+    return true;
+  }
+
+  return (
+    pathname.startsWith(`${ENGLISH_PREFIX}/`) &&
+    matchesSlug(pathname.slice(ENGLISH_PREFIX.length), DEMO_SLUGS)
+  );
 }

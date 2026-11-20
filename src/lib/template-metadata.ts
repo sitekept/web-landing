@@ -7,6 +7,8 @@ import type {
   TemplatePageKey,
 } from "@/content/templates/types";
 import { getTemplateCopy } from "@/content/templates/types";
+import { absoluteUrl } from "@/lib/localized-routes";
+import { templateHref } from "@/components/template-kit/href";
 
 /**
  * Métadonnées d'une page de template, dans la langue demandée.
@@ -18,10 +20,11 @@ import { getTemplateCopy } from "@/content/templates/types";
  *   la balise sur l'en-tête `X-Robots-Tag` posé par le middleware (le layout
  *   racine déclarait sinon `index, follow`, contradictoire).
  *
- * Tâche 1e (version anglaise) : c'est ici qu'on ajoutera
- * `alternates.languages` (hreflang `fr` ↔ `en`, plus `x-default`), calculé
- * avec `def.paths[page]` et `templateHref(locale, path)`. Rien n'est émis tant
- * qu'un template n'a pas sa version anglaise (`def.copy.en` absent).
+ * - `alternates.languages` : hreflang `fr` ↔ `en` plus `x-default` (le
+ *   français), en URL absolues comme `getLanguageAlternates` du site. Émis
+ *   seulement si le template a sa version anglaise (`def.copy.en`). Pas de
+ *   `canonical` : une page ne pointe jamais vers l'autre langue, et les démos
+ *   restent hors du sitemap.
  */
 export function buildTemplatePageMetadata<Copy extends TemplateCopyBase>(
   def: TemplateDefinitionLike<Copy>,
@@ -29,11 +32,24 @@ export function buildTemplatePageMetadata<Copy extends TemplateCopyBase>(
   page: TemplatePageKey<Copy>
 ): Metadata {
   const { title, description } = getTemplateCopy(def, locale).meta[page];
-
-  return {
+  const metadata: Metadata = {
     title,
     description,
     robots: { index: false, follow: true },
-    // alternates: { languages: { fr: …, en: … } } — à ajouter en 1e.
   };
+
+  if (def.copy.en) {
+    const frPath = def.paths[page];
+    const fr = absoluteUrl(templateHref("fr", frPath));
+
+    metadata.alternates = {
+      languages: {
+        fr,
+        en: absoluteUrl(templateHref("en", frPath)),
+        "x-default": fr,
+      },
+    };
+  }
+
+  return metadata;
 }

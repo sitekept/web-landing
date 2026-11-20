@@ -18,8 +18,8 @@ import {
  * `headers()` — et basculait donc **toutes** les routes du site en rendu
  * dynamique, y compris les pages commerciales.
  *
- * C'est aussi un layout racine : les démos n'existent qu'en français, d'où
- * `lang="fr"` fixé ici.
+ * C'est aussi un layout racine, en français : `lang="fr"` est fixé ici. Les
+ * versions anglaises (`/en/<slug>`) ont leur propre racine, `(demos-en)`.
  */
 export const metadata = buildRootMetadata("fr");
 export const viewport = rootViewport;

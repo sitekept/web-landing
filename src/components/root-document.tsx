@@ -14,9 +14,9 @@ import { absoluteUrl, localizePath } from "@/lib/localized-routes";
 /**
  * Document HTML commun à toutes les racines du site.
  *
- * Le site a plusieurs layouts racines — un par groupe de routes, plus
- * `src/app/en/` — pour que `<html lang>` soit fixé statiquement selon la
- * langue servie. Lire la langue depuis l'URL dans un layout racine unique
+ * Le site a plusieurs layouts racines — un par groupe de routes (`(marketing)`,
+ * `(demos)`, `(site-en)`, `(demos-en)`…) — pour que `<html lang>` soit fixé
+ * statiquement selon la langue servie. Lire la langue depuis l'URL dans un layout racine unique
  * imposerait `headers()`, donc un rendu dynamique de tout le site.
  */
 
