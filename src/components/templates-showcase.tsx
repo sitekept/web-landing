@@ -2,12 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProjectCard } from "@/app/_components/project-card";
-import { isSitekeptPublicTemplate } from "@/content/admin-template-catalog";
-import {
-  featuredTemplates,
-  getLocalizedValue,
-  type SiteLocale,
-} from "@/content/site-content";
+import { getLocalizedValue, type SiteLocale } from "@/content/site-content";
+import { publicTemplates } from "@/content/templates/registry";
 import { linkLocalizer } from "@/lib/localized-routes";
 
 interface TemplatesShowcaseProps {
@@ -34,9 +30,7 @@ export function TemplatesShowcase({
   viewAllLabel,
 }: TemplatesShowcaseProps) {
   const href = linkLocalizer(locale);
-  const templates = featuredTemplates
-    .filter((template) => isSitekeptPublicTemplate(template.slug))
-    .slice(0, limit ?? featuredTemplates.length);
+  const templates = publicTemplates.slice(0, limit ?? publicTemplates.length);
 
   return (
     <section
@@ -64,16 +58,16 @@ export function TemplatesShowcase({
 
         <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
           {templates.map((template) => {
-            const copy = getLocalizedValue(template.copy, locale);
+            const copy = getLocalizedValue(template.gallery.copy, locale);
 
             return (
               <ProjectCard
                 locale={locale}
-                key={template.id}
+                key={template.slug}
                 name={copy.name}
-                url={template.externalUrl ?? `/${template.slug}`}
+                url={`/${template.slug}`}
                 description={copy.description}
-                screenshot={template.screenshot}
+                screenshot={template.gallery.screenshot}
                 category="template"
                 ctaText={ctaText}
                 ctaLink={href("/#contact")}

@@ -1,0 +1,60 @@
+/**
+ * Contrôles de cohérence entre le registre et les définitions de templates.
+ *
+ * Ce fichier n'est importé par aucun code exécuté : il n'existe que pour
+ * `pnpm type-check`. Il lit les définitions avec `import type`, ce qui garde le
+ * registre (tiré par le middleware) libre de toute copie de template.
+ *
+ * Quand un template est migré sur le kit, on ajoute sa définition à
+ * `Definitions` : `locales` du registre doit alors correspondre aux langues de
+ * sa copie. Un template déclaré `["fr", "en"]` dans le registre doit avoir sa
+ * définition ici.
+ */
+import type { dentiste } from "@/content/templates/dentiste";
+import type {
+  RegisteredTemplate,
+  TemplateSlug,
+} from "@/content/templates/registry";
+
+/** Définitions typées existantes, par slug. */
+type Definitions = {
+  dentiste: typeof dentiste;
+};
+
+type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;
+type Assert<T extends true> = T;
+
+/** Langues d'un template d'après le registre. */
+type RegistryLocales<Slug extends TemplateSlug> = Extract<
+  RegisteredTemplate,
+  { slug: Slug }
+>["locales"][number];
+
+/** Langues de la copie d'une définition. */
+type DefinitionLocales<Slug extends keyof Definitions> =
+  keyof Definitions[Slug]["copy"];
+
+/** Slugs du registre déclarés en français et en anglais. */
+type BilingualSlugs = Extract<
+  RegisteredTemplate,
+  { locales: readonly ["fr", "en"] }
+>["slug"];
+
+export type RegistryChecks = [
+  // Chaque définition existante annonce les langues que déclare le registre.
+  Assert<
+    Equal<
+      {
+        [S in keyof Definitions & TemplateSlug]: Equal<
+          RegistryLocales<S>,
+          DefinitionLocales<S>
+        >;
+      }[keyof Definitions & TemplateSlug],
+      true
+    >
+  >,
+  // Chaque slug de `Definitions` existe dans le registre.
+  Assert<Equal<Exclude<keyof Definitions, TemplateSlug>, never>>,
+  // Un template déclaré `["fr", "en"]` a sa définition (et donc sa copie EN).
+  Assert<Equal<Exclude<BilingualSlugs, keyof Definitions>, never>>,
+];

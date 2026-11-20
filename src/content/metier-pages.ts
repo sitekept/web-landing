@@ -19,6 +19,7 @@
 
 import { metierPagesEn } from "@/content/metier-pages-en";
 import type { SiteLocale } from "@/content/site-content";
+import type { PublicTemplateSlug } from "@/content/templates/registry";
 
 export interface MetierFaq {
   question: string;
@@ -30,14 +31,15 @@ export interface MetierPage {
   metier: string;
   /** Utilisé dans le H1 et les titres, au singulier, avec son article. */
   label: string;
-  demoSlug: string;
+  /** Slug d'un template public du registre : une faute de frappe échoue au type-check. */
+  demoSlug: PublicTemplateSlug;
   demoName: string;
   /**
    * Seconde démo à montrer quand deux modèles servent le même métier. Évite
    * de créer une page par démo, ce qui ferait se concurrencer deux pages sur
    * la même requête.
    */
-  secondaryDemo?: { slug: string; name: string; note: string };
+  secondaryDemo?: { slug: PublicTemplateSlug; name: string; note: string };
   seoTitle: string;
   seoDescription: string;
   h1: string;

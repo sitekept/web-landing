@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import {
   adminTemplateCatalog,
   type TemplateAdminStatus,
-} from "@/content/admin-template-catalog";
+} from "@/content/templates/registry";
 
 export const metadata: Metadata = {
   title: "Catalogue admin templates | SiteKept",

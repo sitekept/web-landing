@@ -2,7 +2,7 @@
 
 Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en cas d'écart avec ce guide, c'est le guide qu'on corrige. Modèle de référence : `dentiste`.
 
-État : le kit, le socle anglais et `dentiste` (FR + EN) sont en place. Les 12 autres démos sont encore des micro-sites écrits à la main, migrés lot par lot. Le registre unique (phase 2) n'existe pas encore.
+État : le kit, le socle anglais et `dentiste` (FR + EN) sont en place. Les 12 autres démos sont encore des micro-sites écrits à la main, migrés lot par lot. Le registre unique (`src/content/templates/registry.ts`) liste tous les templates.
 
 ## 1. Architecture
 
@@ -23,7 +23,7 @@ Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en 
 
 - `isDemoPathname` (`src/lib/public-template-routes.ts`) est vrai pour `/<slug>…` et `/en/<slug>…` quand `<slug>` est dans `DEMO_SLUGS`. `/en`, `/en/templates` et les pages métier anglaises restent indexables.
 - `src/middleware.ts` pose `X-Robots-Tag: noindex, follow` sur ces chemins.
-- `DEMO_SLUGS` = `PUBLIC_TEMPLATE_SLUGS` (issus de `sitekeptPublicSlugs` dans `src/content/admin-template-catalog.ts`) + `UNLISTED_DEMO_SLUGS` (`je`, `avocate-tel-aviv`). Un nouveau template doit figurer dans l'une des deux listes, sinon il serait indexable.
+- `DEMO_SLUGS` se dérive du registre (`src/content/templates/registry.ts`) : `PUBLIC_TEMPLATE_SLUGS` (templates de statut `sitekept-public`) + `nonTemplateDemos` (`je`, `avocate-tel-aviv` : servis ici mais pas des templates). Un nouveau template déclaré dans le registre est donc `noindex` sans autre étape.
 
 ### Métadonnées
 
@@ -161,8 +161,7 @@ Helpers exportés par `href.ts` (purs, utilisables côté client et serveur), pl
 - [ ] **Vues** : `src/templates/<slug>/<page>.tsx` pour chaque page, `shell.tsx` et la table d'icônes dans `parts.tsx`.
 - [ ] **Routes FR** : `src/app/(demos)/<slug>/layout.tsx` et chaque `page.tsx`, avec `buildTemplatePageMetadata(…, "fr", page)`.
 - [ ] **Routes EN** : `src/app/(demos-en)/en/<slug>/layout.tsx` et chaque `page.tsx`, avec `"en"`.
-- [ ] **`DEMO_SLUGS`** : slug ajouté à `sitekeptPublicSlugs` (`src/content/admin-template-catalog.ts`) ou à `UNLISTED_DEMO_SLUGS` (`src/lib/public-template-routes.ts`).
-- [ ] **Registre** : à venir (phase 2). Chaque entrée portera `locales`, et un contrôle échouera si un template routé n'a pas `["fr", "en"]`. D'ici là, rien à faire.
+- [ ] **Registre** : une entrée dans `TEMPLATES` (`src/content/templates/registry.ts`) : statut `sitekept-public`, nom et secteur admin, copie de la galerie (FR + EN), capture, `locales: ["fr", "en"]`. Elle alimente `DEMO_SLUGS` (noindex), la galerie `/templates`, la page admin et le type `PublicTemplateSlug` (`demoSlug` des pages métier). Ajouter la définition à `Definitions` dans `src/content/templates/registry-checks.ts` : `pnpm type-check` échoue si ses langues et celles du registre divergent.
 - [ ] **Contrôles**
   - [ ] `pnpm type-check` et `pnpm lint`.
   - [ ] `pnpm build` dans une copie isolée (voir section 7).

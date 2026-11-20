@@ -1,30 +1,22 @@
-import { sitekeptPublicTemplateSlugs } from "@/content/admin-template-catalog";
+import {
+  nonTemplateDemos,
+  publicTemplates,
+} from "@/content/templates/registry";
 
-export const PUBLIC_TEMPLATE_SLUGS = sitekeptPublicTemplateSlugs;
-
-/**
- * Démos hébergées sur sitekept.com mais absentes du catalogue public.
- *
- * Contient aujourd'hui `je`, projet servi par le groupe de routes `(projects)`
- * et marqué `noindex` comme les démos.
- *
- * `balinjera` en faisait partie : sa route a été retirée du domaine, car elle
- * reproduisait le site d'une cliente réelle et exposait son adresse e-mail
- * personnelle. La page réalisations pointe désormais vers son propre site.
- *
- * `avocate-tel-aviv` n'existe plus que comme redirection permanente vers
- * `/avocate` : l'ancienne URL portait l'identité d'une cliente réelle, et ses
- * redirections doivent rester `noindex` comme les démos.
- */
-const UNLISTED_DEMO_SLUGS: readonly string[] = ["je", "avocate-tel-aviv"];
+/** Slugs des templates servis sur ce domaine, dans l'ordre du registre. */
+export const PUBLIC_TEMPLATE_SLUGS: readonly string[] = publicTemplates.map(
+  (template) => template.slug
+);
 
 /**
- * Tous les slugs de démonstration servis par ce domaine, publics ou non.
- * Utilisé par le middleware pour poser `X-Robots-Tag: noindex, follow`.
+ * Tous les slugs de démonstration servis par ce domaine : les templates
+ * publics, plus les slugs qui n'en sont pas (`nonTemplateDemos` du registre :
+ * `je`, `avocate-tel-aviv`). Utilisé par le middleware pour poser
+ * `X-Robots-Tag: noindex, follow`.
  */
 export const DEMO_SLUGS: readonly string[] = [
   ...PUBLIC_TEMPLATE_SLUGS,
-  ...UNLISTED_DEMO_SLUGS,
+  ...nonTemplateDemos.map((demo) => demo.slug),
 ];
 
 function matchesSlug(pathname: string, slugs: readonly string[]): boolean {
