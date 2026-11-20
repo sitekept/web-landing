@@ -199,9 +199,22 @@ Helpers de liens (purs, utilisables côté client et serveur), plus `TEMPLATE_LO
 
 1. **Chercher** un composant ou un template sur 21st.dev.
 2. **Valider** la licence et les dépendances. Seule dépendance runtime admise : `motion`. Toute autre dépendance : on ne retient pas le composant, ou on le réécrit sans elle.
-3. **Récupérer le code**, en comptant le quota : l'offre gratuite donne 2 récupérations de code par jour (décision en attente : offre payante, ou récupérations réservées aux sections clés).
+3. **Récupérer le code**, en comptant le quota : l'offre gratuite donne 2 récupérations de code par jour. Décision du 20/11 : on reste sur l'offre gratuite, les récupérations vont aux sections clés et réutilisables, le reste se construit sur le kit. La recherche (`search`) est gratuite ; les « templates de site » 21st.dev ne sont pas récupérables par l'outil, seuls les composants le sont.
 4. **Réécrire** sur le kit : classes `tpl-*` (aucun hex ni valeur de couleur en dur), textes dans la copie FR et EN, images via `TemplateMedia` (`next/image`, import par module), liens via `templateHref` et `TemplateLink`.
 5. **Vérifier** comme n'importe quel template (checklist, section 4).
+
+### Éléments 21st.dev déjà intégrés
+
+Ils vivent dans `src/components/template-kit/vendor/<nom>/` avec un `SOURCE.md` (URL, auteur, licence MIT conservée, date, id 21st, modifications), ne sont pas dans le barrel `index.ts` et s'importent par module.
+
+- **`testimonials-marquee`** (« Testimonials with Marquee », serafimcloud) : bande d'avis défilante, composant serveur, animation CSS (`--animate-tpl-marquee` dans `globals.css`).
+  - Import : `import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonials-marquee"`.
+  - Usage : dans une `TemplateSection` (titre et description viennent de la section), `<TestimonialsMarquee label=… items=… />` avec `items` de la forme `{ quote, name, detail?, rating?, ratingLabel? }`. Une note exige son `ratingLabel` (copie FR et EN). Pas d'avatar photo : des initiales.
+  - Réglages : `tone` (`surface`, `raised` ou `inverse`, à accorder au fond de la section), `durationSeconds` (40 par défaut, pour un tour complet : à augmenter avec le nombre d'avis). Prévoir 5 avis ou plus. Pause au survol et au focus. En mouvement réduit : pas d'animation, cartes à la ligne.
+- **`hover-expand-gallery`** (« Hover Expand Gallery », kedhareswer) : galerie à panneaux qui s'ouvrent au survol (rangée au-dessus de `lg`, accordéon en dessous), composant client (`clsx`).
+  - Import : `import { HoverExpandGallery } from "@/components/template-kit/vendor/hover-expand-gallery"`.
+  - Usage : `<HoverExpandGallery label=… sizes="(min-width: 1024px) 520px, 100vw" items=… />` avec `items` de la forme `{ title, meta?, image: { src, alt } }` (tous les textes viennent de la copie). Images via `next/image` ; `priority` pour l'image visible sans défilement.
+  - Réglages : `height` (`36rem` par défaut sur desktop). Les titres sont des boutons `aria-expanded`. Coût : environ 6 kB de JS client sur la page qui l'utilise.
 
 ## 7. Vérification
 

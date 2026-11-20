@@ -81,6 +81,30 @@
 }
 
 /*
+ * Bande d'avis défilante du kit (`vendor/testimonials-marquee`).
+ * `inline` : la durée `--tpl-marquee-duration` est lue sur la bande, pas sur
+ * :root. L'espace entre cartes (`--tpl-marquee-gap`) est posé par le composant.
+ * `--tpl-marquee-dir` vaut -1 en `dir="rtl"` : la piste part vers la droite.
+ * Sous `prefers-reduced-motion`, le composant applique `motion-reduce:animate-none`
+ * et masque la piste dupliquée.
+ */
+@theme inline {
+  --animate-tpl-marquee: tpl-marquee var(--tpl-marquee-duration, 40s) linear
+    infinite;
+
+  @keyframes tpl-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(
+        calc((-100% - var(--tpl-marquee-gap, 1rem)) * var(--tpl-marquee-dir, 1))
+      );
+    }
+  }
+}
+
+/*
  * Contrat des templates : un template rebinde ces --tpl-* via `style` sur
  * l'élément [data-template] (voir src/lib/template-theme.ts). Les valeurs
  * ci-dessous sont des replis neutres. Un nouveau besoin visuel devient
