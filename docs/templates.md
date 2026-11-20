@@ -30,7 +30,11 @@ Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en 
 `buildTemplatePageMetadata(def, locale, page)` (`src/lib/template-metadata.ts`) lit `copy[locale].meta[page]` et renvoie :
 - `title` et `description` dans la langue de la page ;
 - `robots: { index: false, follow: true }` (aligné sur l'en-tête du middleware) ;
+- `openGraph` : `title` et `description` de la page, `url` absolue dans sa langue, `locale` (`fr_FR` / `en_US`), `alternateLocale` (l'autre langue) dès que `def.copy.en` existe, `type: "website"`, `siteName` repris de la racine (`metadata.openGraph.siteName`), et l'image `/opengraph-image` déclarée explicitement ;
+- `twitter` : `card: "summary_large_image"`, `title`, `description`, plus `creator` et l'image de la racine ;
 - `alternates.languages` avec `fr`, `en` et `x-default` (le français), dès que `def.copy.en` existe. Pas de `canonical`.
+
+Une page qui définit `openGraph` ou `twitter` remplace celui du layout racine (fusion superficielle de Next) : sans ce bloc, le partage d'une démo reprendrait le titre et la description du site Sitekept, et sans l'image redéclarée la carte de partage serait vide.
 
 Les démos restent hors du sitemap (`src/app/sitemap.ts`).
 
@@ -151,7 +155,7 @@ Imports : le barrel `@/components/template-kit` (`index.ts`) exporte le shell, l
 | `TemplateMedia` (`…/media`) | Image `next/image` à ratio fixe (`fill`). | `src`, `alt` (obligatoire, `""` si décorative), `ratio` (`1/1`, `4/3`, `3/4`, `3/2`, `2/3`, `16/9`, `9/16`, `21/9`, `5/4`, `4/5`), `sizes` (obligatoire), `priority?`, `rounded?` (`radius`/`pill`/`none`) |
 | `TemplateDemoForm` (`…/demo-form`) | Formulaire de démonstration bilingue, aucune donnée envoyée. Bordure des champs à `/60` (contraste d'au moins 3:1). | `fields` (`name`, `label`, `type?`, `options?`, `required?`, `width?`…), `submitLabel`, `locale` |
 
-Helpers exportés par `href.ts` (purs, utilisables côté client et serveur), plus `TEMPLATE_LOCALES` et le type `TemplateLocale` :
+Helpers de liens (purs, utilisables côté client et serveur), plus `TEMPLATE_LOCALES` et le type `TemplateLocale`. Ils vivent dans `src/lib/template-href.ts` (`src/lib/template-metadata.ts` s'en sert, et une lib ne dépend pas de `components/`) ; `href.ts` du kit les réexporte, donc vues, sélecteur de langue et barrel `index.ts` continuent d'importer depuis le kit :
 - `templateHref(locale, path)` : `en` préfixe `/en` (`/dentiste#tarifs` devient `/en/dentiste#tarifs`) ; `fr`, URL absolues, ancres et chemins relatifs restent tels quels.
 - `switchTemplateLocale(pathname, target)` : équivalent d'une page dans l'autre langue.
 - `templateLocaleFromPathname(pathname)` : langue déduite du chemin.

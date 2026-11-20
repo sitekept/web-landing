@@ -8,7 +8,10 @@ import type {
 } from "@/content/templates/types";
 import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 import { absoluteUrl } from "@/lib/localized-routes";
-import { templateHref } from "@/components/template-kit/href";
+import { getMessage } from "@/lib/site-messages";
+import { templateHref } from "@/lib/template-href";
+
+const OPEN_GRAPH_LOCALE = { fr: "fr_FR", en: "en_US" } as const;
 
 /**
  * Métadonnées d'une page de template, dans la langue demandée.
@@ -20,6 +23,13 @@ import { templateHref } from "@/components/template-kit/href";
  *   la balise sur l'en-tête `X-Robots-Tag` posé par le middleware (le layout
  *   racine déclarait sinon `index, follow`, contradictoire).
  *
+ * - `openGraph` et `twitter` : titre et description de la page, `url` absolue
+ *   dans sa langue, `locale` (`fr_FR` / `en_US`) et `alternateLocale` quand la
+ *   définition a l'autre langue, `siteName` repris de la racine. Une page qui
+ *   définit `openGraph` ou `twitter` remplace celui du layout racine (sinon le
+ *   partage reprendrait le titre et la description du site) : l'image de
+ *   `src/app/opengraph-image.tsx` et le `creator` Twitter sont donc redéclarés,
+ *   comme dans `page-metadata.ts`.
  * - `alternates.languages` : hreflang `fr` ↔ `en` plus `x-default` (le
  *   français), en URL absolues comme `getLanguageAlternates` du site. Émis
  *   seulement si le template a sa version anglaise (`en` dans `def.copy`). Pas de
@@ -39,14 +49,36 @@ export function buildTemplatePageMetadata<
   page: TemplatePageKey<Copy>
 ): Metadata {
   const { title, description } = getTemplateCopy(def, locale).meta[page];
+  const frPath = def.paths[page];
+  const hasEnglish = hasTemplateLocale(def, "en");
   const metadata: Metadata = {
     title,
     description,
     robots: { index: false, follow: true },
+    openGraph: {
+      title,
+      description,
+      url: absoluteUrl(templateHref(locale, frPath)),
+      siteName: getMessage(locale, "metadata.openGraph.siteName"),
+      locale: OPEN_GRAPH_LOCALE[locale],
+      ...(hasEnglish && {
+        alternateLocale: OPEN_GRAPH_LOCALE[locale === "fr" ? "en" : "fr"],
+      }),
+      type: "website",
+      // Déclarée explicitement : sans elle, la carte `summary_large_image`
+      // perd l'image du layout racine (voir `page-metadata.ts`).
+      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      creator: getMessage(locale, "metadata.twitter.creator"),
+      images: ["/opengraph-image"],
+    },
   };
 
-  if (hasTemplateLocale(def, "en")) {
-    const frPath = def.paths[page];
+  if (hasEnglish) {
     const fr = absoluteUrl(templateHref("fr", frPath));
 
     metadata.alternates = {
