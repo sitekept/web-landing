@@ -37,8 +37,11 @@ src/
 │   └── page.tsx           # Main landing page
 ├── components/            # Reusable components
 │   ├── ui/                # shadcn/ui components
+│   ├── template-kit/      # Shared kit of the demo templates (tpl-* tokens)
 │   ├── navigation.tsx     # Main navigation
 │   └── footer.tsx         # Footer component
+├── content/
+│   └── templates/         # Template definitions (theme, paths, FR + EN copy)
 ├── features/              # Feature-based modules
 │   └── contact-form/      # Contact form functionality
 └── lib/                   # Utilities and configuration
@@ -100,9 +103,10 @@ src/
 
 ## Language & Localization
 
-- Primary language: French (fr)
-- Content is in French throughout the application
-- SEO metadata configured for French market
+- Primary language: French (fr); the marketing site is served in French at the root
+- The English site lives under `/en` (route group `src/app/(site-en)/en/`)
+- Demo templates are bilingual: French at `/<slug>`, English at `/en/<slug>` (route group `src/app/(demos-en)/`)
+- SEO metadata configured for the French market, with hreflang FR/EN between the two versions of a demo
 
 ## Recent Updates (Feature: Website Redesign and Enhancement)
 
@@ -119,7 +123,10 @@ src/
 - **Accessibility**: Proper ARIA labels and keyboard navigation
 
 ### Template System
-- **Variant-Based Design**: Configurable color schemes and content placeholders
-- **Brand Generalization**: Removal of business-specific references
-- **Template Interfaces**: TypeScript contracts for consistent component props
-- **French Content**: All template variations maintain French localization
+- **Kit**: `src/components/template-kit/` (shell, section, card, link, media, demo form, `templateHref`), styled only with `tpl-*` tokens; theme applied through `themeStyle()` (`src/lib/template-theme.ts`)
+- **Definitions**: `src/content/templates/<slug>.ts` holds the theme, the FR paths and the copy per locale (`fr` as const, `en` typed from it with `WidenLiterals`); shared types in `src/content/templates/types.ts`
+- **Views**: `src/app/(demos)/<slug>/_views/` (one view per page plus `shell.tsx`, `locale` prop, no hard-coded text); FR and EN routes are thin wrappers around them
+- **English versions**: `/en/<slug>` under `src/app/(demos-en)/en/<slug>/`, with its own root layout (`lang="en"`, `DemoBanner locale="en"`)
+- **SEO**: demos are `noindex, follow` (`isDemoPathname` in `src/lib/public-template-routes.ts`, applied by `src/middleware.ts`), metadata from `buildTemplatePageMetadata`, kept out of the sitemap
+- **Status**: `dentiste` is migrated (FR + EN); the other demos are still hand-written and move onto the kit one batch at a time
+- **Guide**: see `docs/templates.md` for the skeleton, the kit, the "add a FR + EN template" checklist, content rules and the 21st.dev intake protocol
