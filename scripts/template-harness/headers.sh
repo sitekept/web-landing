@@ -11,6 +11,8 @@ check() { # path expected(yes|no)
 }
 check /dentiste yes; check /dentiste/soins yes; check /pattiserie yes; check /avocate yes
 check /en/dentiste yes; check /en/dentiste/soins yes
+check /electricien yes; check /electricien/prestations yes
+check /en/electricien yes; check /en/electricien/prestations yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail

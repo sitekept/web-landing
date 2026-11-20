@@ -12,6 +12,7 @@
  * `lab` routés (`routed: true`, toujours `["fr", "en"]`).
  */
 import type { dentiste } from "@/content/templates/dentiste";
+import type { electricien } from "@/content/templates/electricien";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -20,6 +21,7 @@ import type {
 /** Définitions typées existantes, par slug. */
 type Definitions = {
   dentiste: typeof dentiste;
+  electricien: typeof electricien;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;

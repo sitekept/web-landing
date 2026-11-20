@@ -30,6 +30,10 @@ demo	/dentiste/premiere-visite
 demo	/dentiste/rendez-vous
 demo	/dentiste/soins
 demo	/dentiste/technologies
+demo	/electricien
+demo	/electricien/contact
+demo	/electricien/prestations
+demo	/electricien/realisations
 demo	/fleuriste
 demo	/menage-nettoyage
 demo	/menage-nettoyage/entreprises
@@ -63,3 +67,7 @@ demo-en	/en/dentiste/premiere-visite
 demo-en	/en/dentiste/rendez-vous
 demo-en	/en/dentiste/soins
 demo-en	/en/dentiste/technologies
+demo-en	/en/electricien
+demo-en	/en/electricien/contact
+demo-en	/en/electricien/prestations
+demo-en	/en/electricien/realisations

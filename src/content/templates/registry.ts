@@ -513,6 +513,16 @@ const TEMPLATES = [
     notes: "Variation lab accessible via Vercel uniquement.",
     locales: ["fr"],
   },
+  {
+    slug: "electricien",
+    status: "lab",
+    routed: true,
+    name: "Template Électricien",
+    sector: "Électricité",
+    notes:
+      "Template lab servi sur sitekept.com (noindex), en attente de validation.",
+    locales: ["fr", "en"],
+  },
 ] as const satisfies readonly TemplateEntry[];
 
 /** Entrée du registre, avec le littéral de chaque champ (contrôles de types). */
