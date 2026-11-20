@@ -1,5 +1,3 @@
-import { ShieldCheck, Sparkles, Syringe, type LucideIcon } from "lucide-react";
-
 import {
   TemplateCard,
   TemplateLink,
@@ -11,12 +9,6 @@ import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
 import { IconCard } from "./parts";
-
-const PRINCIPLE_ICONS: readonly LucideIcon[] = [
-  ShieldCheck,
-  Syringe,
-  Sparkles,
-];
 
 export function SoinsView({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(dentiste, locale);
@@ -51,10 +43,10 @@ export function SoinsView({ locale }: { locale: TemplateLocale }) {
         titleScale="subtitle"
       >
         <div className="grid gap-4 lg:grid-cols-3">
-          {principles.items.map((item, index) => (
+          {principles.items.map((item) => (
             <IconCard
               key={item.title}
-              icon={PRINCIPLE_ICONS[index]}
+              icon={item.icon}
               title={item.title}
               inverse
             >

@@ -6,6 +6,16 @@
  * que fait `TemplateShell`). Les seules parties client sont la navigation et
  * le sélecteur de langue du shell, et `TemplateDemoForm`.
  *
+ * `TemplateMedia` et `TemplateDemoForm` ne sont PAS dans ce barrel : un import
+ * depuis `@/components/template-kit` tire tout le barrel, et `TemplateDemoForm`
+ * (client) alourdirait le JS des pages qui n'ont pas de formulaire. On les
+ * importe par module :
+ *
+ * ```ts
+ * import { TemplateMedia } from "@/components/template-kit/media";
+ * import { TemplateDemoForm } from "@/components/template-kit/demo-form";
+ * ```
+ *
  * Règle du kit : un nouveau besoin visuel devient d'abord un token. Il ne
  * devient un enum (prop) que s'il change le DOM ou la structure, et jamais un
  * nom de template.
@@ -50,21 +60,6 @@ export type {
 
 export { TemplateLocaleSwitch } from "./locale-switch";
 export type { TemplateLocaleSwitchProps } from "./locale-switch";
-
-export { TemplateMedia } from "./media";
-export type {
-  TemplateMediaProps,
-  TemplateMediaRatio,
-  TemplateMediaRounded,
-} from "./media";
-
-export { TemplateDemoForm } from "./demo-form";
-export type {
-  TemplateDemoFormProps,
-  TemplateFormField,
-  TemplateFormFieldType,
-  TemplateFormOption,
-} from "./demo-form";
 
 export {
   switchTemplateLocale,

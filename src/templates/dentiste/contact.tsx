@@ -1,5 +1,3 @@
-import { MapPin, ParkingCircle, TrainFront, type LucideIcon } from "lucide-react";
-
 import {
   TemplatePanel,
   TemplateSection,
@@ -9,12 +7,6 @@ import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
 import { IconCard } from "./parts";
-
-const ACCESS_ICONS: readonly LucideIcon[] = [
-  MapPin,
-  TrainFront,
-  ParkingCircle,
-];
 
 export function ContactView({ locale }: { locale: TemplateLocale }) {
   const page = getTemplateCopy(dentiste, locale).contact;
@@ -44,10 +36,10 @@ export function ContactView({ locale }: { locale: TemplateLocale }) {
         </ul>
 
         <div className="grid gap-4">
-          {page.access.map((item, index) => (
+          {page.access.map((item) => (
             <IconCard
               key={item.title}
-              icon={ACCESS_ICONS[index]}
+              icon={item.icon}
               title={item.title}
               inverse
             >

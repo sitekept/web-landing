@@ -17,7 +17,9 @@
     "type-check": "tsc --noEmit",
     "clean": "rm -rf .next node_modules",
     "reinstall": "pnpm clean && pnpm install",
-    "update-deps": "pnpm update --interactive"
+    "update-deps": "pnpm update --interactive",
+    "harness:snapshot": "node scripts/template-harness/snapshot.mjs",
+    "harness:headers": "bash scripts/template-harness/headers.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",

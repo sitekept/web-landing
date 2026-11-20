@@ -1,7 +1,7 @@
 import { dentiste } from "@/content/templates/dentiste";
 import { buildTemplatePageMetadata } from "@/lib/template-metadata";
 
-import { SoinsView } from "../_views/soins";
+import { SoinsView } from "@/templates/dentiste/soins";
 
 export const metadata = buildTemplatePageMetadata(dentiste, "fr", "soins");
 

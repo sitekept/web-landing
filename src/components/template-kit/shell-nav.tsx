@@ -1,5 +1,6 @@
 "use client";
 
+import { clsx } from "clsx";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,14 +14,15 @@ import {
 } from "react";
 
 import type { TemplateLocale } from "@/content/templates/types";
-import { cn } from "@/lib/utils";
-
 import { TemplateLocaleSwitch } from "./locale-switch";
 
 /**
  * Partie interactive de l'en-tête de `TemplateShell` : navigation (page
  * courante marquée `aria-current`) et menu mobile. Seule partie client du
  * shell, pour que le reste reste rendu côté serveur.
+ *
+ * `clsx` et non `cn()` : aucune fusion de classes n'est nécessaire ici, et
+ * tailwind-merge pèserait dans le JS client de chaque page du template.
  */
 
 export type TemplateShellNavLabels = {
@@ -112,8 +114,8 @@ export function TemplateShellNav({
               <Link
                 href={item.href}
                 aria-current={isCurrent(item.href) ? "page" : undefined}
-                className={cn(
-                  "inline-flex min-h-11 items-center rounded-tpl px-2 text-tpl-sm whitespace-nowrap 2xl:px-3 font-medium text-tpl-ink-muted underline-offset-8 hover:text-tpl-ink aria-[current=page]:text-tpl-ink aria-[current=page]:underline",
+                className={clsx(
+                  "inline-flex min-h-11 items-center rounded-tpl px-2 text-tpl-sm font-medium whitespace-nowrap text-tpl-ink-muted underline-offset-8 hover:text-tpl-ink aria-[current=page]:text-tpl-ink aria-[current=page]:underline 2xl:px-3",
                   LINK_FOCUS
                 )}
               >
@@ -136,7 +138,7 @@ export function TemplateShellNav({
         aria-controls={panelId}
         aria-label={labels.menu}
         onClick={() => setOpen((value) => !value)}
-        className={cn(
+        className={clsx(
           "inline-flex size-11 items-center justify-center rounded-tpl border border-tpl-line text-tpl-ink hover:bg-tpl-ink/5 xl:hidden",
           LINK_FOCUS
         )}
@@ -161,7 +163,7 @@ export function TemplateShellNav({
                 <Link
                   href={item.href}
                   aria-current={isCurrent(item.href) ? "page" : undefined}
-                  className={cn(
+                  className={clsx(
                     "flex min-h-12 items-center text-tpl-base font-medium text-tpl-ink-muted aria-[current=page]:text-tpl-ink aria-[current=page]:underline aria-[current=page]:underline-offset-8",
                     LINK_FOCUS
                   )}

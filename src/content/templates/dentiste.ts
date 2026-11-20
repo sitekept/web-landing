@@ -1,5 +1,6 @@
 import type {
   TemplateDefinition,
+  TemplateIconKey,
   WidenLiterals,
 } from "@/content/templates/types";
 
@@ -7,15 +8,17 @@ import type {
  * Template « dentiste » (cabinet dentaire fictif « Clinique Nova Sourire »).
  *
  * Toute la copie visible vit ici : navigation, appels à l'action, textes de
- * chaque page, `alt`, métadonnées. Les vues (`src/app/(demos)/dentiste/_views/`)
- * n'ont aucun texte en dur.
+ * chaque page, `alt`, métadonnées. Les vues (`src/templates/dentiste/`) n'ont
+ * aucun texte en dur.
  *
  * Version anglaise : `en`, plus bas, est une traduction neutre typée
  * `DentisteCopy` (dérivé de `fr` par `WidenLiterals`). Une clé manquante ou une
  * liste de longueur différente fait échouer `pnpm type-check`.
  *
- * Les icônes sont associées par position dans les vues : une liste d'icônes
- * suit l'ordre des éléments de la copie.
+ * Icônes : chaque élément de liste qui en a une porte une clé `icon`
+ * (`icon: "cpu"`), identique en français et en anglais (c'est une donnée, pas un
+ * texte : `WidenLiterals` la laisse littérale). Les vues la résolvent avec une
+ * table `Record<DentisteIconKey, LucideIcon>` (`src/templates/dentiste/parts.tsx`).
  */
 
 const fr = {
@@ -140,22 +143,24 @@ const fr = {
         "La deuxième séquence ne duplique pas un bloc cartes générique: elle installe immédiatement la logique de diagnostic et d'accompagnement.",
       cards: [
         {
+          icon: "cpu",
           title: "Imagerie ciblée",
           text: "Le diagnostic est montré et commenté au patient avant toute décision.",
         },
         {
+          icon: "shield-check",
           title: "Protocoles stricts",
           text: "La structure du site met aussi l'hygiène au premier plan dans le discours.",
         },
         {
+          icon: "stethoscope",
           title: "Plan de traitement lisible",
           text: "Chaque proposition clinique est séquencée, chiffrée et expliquée.",
         },
       ],
       decision: {
         eyebrow: "Décision médicale",
-        title:
-          "Le patient voit où il en est, ce qu’on propose, et pourquoi.",
+        title: "Le patient voit où il en est, ce qu’on propose, et pourquoi.",
         items: [
           "Imagerie si utile, jamais décorative.",
           "Options de traitement rendues comparables.",
@@ -229,14 +234,17 @@ const fr = {
       title: "Trois garde-fous maintiennent la confiance.",
       items: [
         {
+          icon: "shield-check",
           title: "Diagnostic visible",
           text: "Le patient comprend ce qui est observé avant qu'une solution lui soit proposée.",
         },
         {
+          icon: "syringe",
           title: "Intervention proportionnée",
           text: "Le site évite le ton spectaculaire et hiérarchise clairement l'utilité du soin.",
         },
         {
+          icon: "sparkles",
           title: "Esthétique cadrée",
           text: "Les traitements premium sont montrés sans basculer dans un imaginaire cosmétique.",
         },
@@ -251,14 +259,17 @@ const fr = {
       "Cette page précise pourquoi chaque outil existe dans le parcours clinique, et ce qu'il change concrètement pour le patient.",
     items: [
       {
+        icon: "cpu",
         title: "Imagerie ciblée",
         text: "Radiographie ponctuelle ou imagerie guidée selon le cas, jamais affichée comme gadget.",
       },
       {
+        icon: "workflow",
         title: "Protocole numérique",
         text: "Le cabinet structure mieux ses étapes, ses devis et ses suivis grâce à des outils de coordination.",
       },
       {
+        icon: "shield",
         title: "Traçabilité clinique",
         text: "Photos, comptes rendus et recommandations restent rattachés au parcours du patient.",
       },
@@ -273,14 +284,17 @@ const fr = {
         "Les rôles sont décrits selon ce qu'ils changent pour le patient dans son parcours.",
       members: [
         {
+          icon: "user-round",
           name: "Dr Inès Morvan",
           role: "Chirurgien-dentiste, esthétique et réhabilitation",
         },
         {
+          icon: "user-round",
           name: "Dr Mehdi Karam",
           role: "Implantologie et chirurgie guidée",
         },
         {
+          icon: "user-round",
           name: "Léna Puech",
           role: "Coordinatrice de parcours et relation patient",
         },
@@ -292,14 +306,17 @@ const fr = {
         "Le site souligne la compétence par la méthode, pas par la posture.",
       items: [
         {
+          icon: "award",
           title: "Formation continue",
           text: "Le cabinet montre des standards, pas une accumulation d'effets d'autorité.",
         },
         {
+          icon: "microscope",
           title: "Équipement ciblé",
           text: "La technologie est montrée seulement lorsqu'elle change vraiment le niveau de diagnostic.",
         },
         {
+          icon: "user-round",
           title: "Continuité du suivi",
           text: "Le patient sait qui prend le relais à chaque étape importante du parcours.",
         },
@@ -314,14 +331,17 @@ const fr = {
       "Le cabinet explique quoi apporter, comment venir et comment la consultation sera conduite.",
     steps: [
       {
+        icon: "clipboard-check",
         title: "Avant la venue",
         text: "Ordonnances récentes, radio disponible, mutuelle si utile et motif de consultation déjà clarifié.",
       },
       {
+        icon: "file-text",
         title: "Pendant le rendez-vous",
         text: "Échange, bilan, radios ciblées si nécessaires puis proposition de plan de traitement.",
       },
       {
+        icon: "locate-fixed",
         title: "Après la consultation",
         text: "Compte rendu, consignes, prochain rendez-vous ou devis selon le parcours retenu.",
       },
@@ -344,14 +364,17 @@ const fr = {
     },
     steps: [
       {
+        icon: "clipboard-list",
         title: "Premier échange",
         text: "Motif, antécédents utiles, documents éventuels et niveau d'urgence.",
       },
       {
+        icon: "calendar-clock",
         title: "Choix du créneau",
         text: "Le site met en avant les temporalités réalistes selon le type de besoin.",
       },
       {
+        icon: "circle-check-big",
         title: "Confirmation claire",
         text: "Adresse, accès, préparation et durée estimée sont envoyés sans ambiguïté.",
       },
@@ -371,14 +394,17 @@ const fr = {
     ],
     access: [
       {
+        icon: "map-pin",
         title: "Accès immédiat",
         text: "Cabinet à 4 minutes de la gare Clichy-Levallois, accès PMR et façade lisible.",
       },
       {
+        icon: "train-front",
         title: "Transport",
         text: "Métro ligne 3, bus 274 et station Vélib' à proximité directe.",
       },
       {
+        icon: "parking-circle",
         title: "Stationnement",
         text: "Parking Indigo à quelques minutes et dépose minute devant la clinique.",
       },
@@ -388,6 +414,9 @@ const fr = {
 
 /** Type de la copie d'une langue, dérivé de la version française. */
 export type DentisteCopy = WidenLiterals<typeof fr>;
+
+/** Clés d'icône utilisées par la copie (valeurs des propriétés `icon`). */
+export type DentisteIconKey = TemplateIconKey<DentisteCopy>;
 
 /**
  * Version anglaise : traduction neutre de la même entreprise fictive. La marque
@@ -516,14 +545,17 @@ const en: DentisteCopy = {
         "The second sequence doesn't repeat a generic card block: it immediately sets up the logic of diagnosis and support.",
       cards: [
         {
+          icon: "cpu",
           title: "Targeted imaging",
           text: "The diagnosis is shown and explained to the patient before any decision is made.",
         },
         {
+          icon: "shield-check",
           title: "Strict protocols",
           text: "The structure of the site also puts hygiene front and center in its message.",
         },
         {
+          icon: "stethoscope",
           title: "A readable treatment plan",
           text: "Every clinical proposal is sequenced, priced and explained.",
         },
@@ -605,14 +637,17 @@ const en: DentisteCopy = {
       title: "Three safeguards keep trust intact.",
       items: [
         {
+          icon: "shield-check",
           title: "Visible diagnosis",
           text: "Patients understand what is observed before any solution is proposed.",
         },
         {
+          icon: "syringe",
           title: "Proportionate intervention",
           text: "The site avoids a spectacular tone and clearly ranks how useful each treatment is.",
         },
         {
+          icon: "sparkles",
           title: "Framed aesthetics",
           text: "Premium treatments are shown without tipping into cosmetic-industry imagery.",
         },
@@ -621,20 +656,22 @@ const en: DentisteCopy = {
   },
   technologies: {
     eyebrow: "Technologies",
-    title:
-      "Technology is presented as a decision tool, not as premium decor.",
+    title: "Technology is presented as a decision tool, not as premium decor.",
     description:
       "This page explains why each tool exists in the clinical journey, and what it concretely changes for the patient.",
     items: [
       {
+        icon: "cpu",
         title: "Targeted imaging",
         text: "A one-off X-ray or guided imaging depending on the case, never shown off as a gadget.",
       },
       {
+        icon: "workflow",
         title: "Digital protocol",
         text: "The practice structures its steps, quotes and follow-ups better thanks to coordination tools.",
       },
       {
+        icon: "shield",
         title: "Clinical traceability",
         text: "Photos, reports and recommendations stay attached to the patient's journey.",
       },
@@ -649,14 +686,17 @@ const en: DentisteCopy = {
         "Roles are described by what they change for the patient along their journey.",
       members: [
         {
+          icon: "user-round",
           name: "Dr. Inès Morvan",
           role: "Dental surgeon, aesthetics and rehabilitation",
         },
         {
+          icon: "user-round",
           name: "Dr. Mehdi Karam",
           role: "Implantology and guided surgery",
         },
         {
+          icon: "user-round",
           name: "Léna Puech",
           role: "Care coordinator and patient relations",
         },
@@ -664,18 +704,20 @@ const en: DentisteCopy = {
     },
     practice: {
       eyebrow: "Practice",
-      title:
-        "The site shows competence through method, not through posturing.",
+      title: "The site shows competence through method, not through posturing.",
       items: [
         {
+          icon: "award",
           title: "Continuing education",
           text: "The practice shows standards, not a pile of authority signals.",
         },
         {
+          icon: "microscope",
           title: "Targeted equipment",
           text: "Technology is shown only when it genuinely raises the level of diagnosis.",
         },
         {
+          icon: "user-round",
           title: "Continuity of care",
           text: "Patients know who takes over at each important stage of the journey.",
         },
@@ -690,14 +732,17 @@ const en: DentisteCopy = {
       "The practice explains what to bring, how to get here and how the consultation will be run.",
     steps: [
       {
+        icon: "clipboard-check",
         title: "Before you come",
         text: "Recent prescriptions, an X-ray if you have one, insurance details if relevant and a clear reason for the consultation.",
       },
       {
+        icon: "file-text",
         title: "During the appointment",
         text: "A conversation, an assessment, targeted X-rays if needed, then a proposed treatment plan.",
       },
       {
+        icon: "locate-fixed",
         title: "After the consultation",
         text: "Report, instructions, next appointment or quote depending on the chosen path.",
       },
@@ -720,14 +765,17 @@ const en: DentisteCopy = {
     },
     steps: [
       {
+        icon: "clipboard-list",
         title: "First conversation",
         text: "Reason, relevant history, any documents and level of urgency.",
       },
       {
+        icon: "calendar-clock",
         title: "Choosing a slot",
         text: "The site highlights realistic timeframes depending on the type of need.",
       },
       {
+        icon: "circle-check-big",
         title: "Clear confirmation",
         text: "Address, directions, preparation and estimated duration are sent without ambiguity.",
       },
@@ -747,14 +795,17 @@ const en: DentisteCopy = {
     ],
     access: [
       {
+        icon: "map-pin",
         title: "Easy access",
         text: "The practice is 4 minutes from Clichy-Levallois station, with step-free access and an easy-to-spot front.",
       },
       {
+        icon: "train-front",
         title: "Public transport",
         text: "Metro line 3, bus 274 and a Vélib' station right nearby.",
       },
       {
+        icon: "parking-circle",
         title: "Parking",
         text: "An Indigo car park a few minutes away and a drop-off spot in front of the clinic.",
       },

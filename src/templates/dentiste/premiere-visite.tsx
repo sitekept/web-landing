@@ -1,11 +1,4 @@
 import {
-  ClipboardCheck,
-  FileText,
-  LocateFixed,
-  type LucideIcon,
-} from "lucide-react";
-
-import {
   TemplateLink,
   TemplateSection,
   templateHref,
@@ -15,8 +8,6 @@ import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
 import { IconCard } from "./parts";
-
-const ICONS: readonly LucideIcon[] = [ClipboardCheck, FileText, LocateFixed];
 
 export function PremiereVisiteView({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(dentiste, locale);
@@ -32,8 +23,8 @@ export function PremiereVisiteView({ locale }: { locale: TemplateLocale }) {
       description={page.description}
     >
       <div className="grid gap-4 lg:grid-cols-3">
-        {page.steps.map((step, index) => (
-          <IconCard key={step.title} icon={ICONS[index]} title={step.title}>
+        {page.steps.map((step) => (
+          <IconCard key={step.title} icon={step.icon} title={step.title}>
             {step.text}
           </IconCard>
         ))}

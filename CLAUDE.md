@@ -123,10 +123,11 @@ src/
 - **Accessibility**: Proper ARIA labels and keyboard navigation
 
 ### Template System
-- **Kit**: `src/components/template-kit/` (shell, section, card, link, media, demo form, `templateHref`), styled only with `tpl-*` tokens; theme applied through `themeStyle()` (`src/lib/template-theme.ts`)
-- **Definitions**: `src/content/templates/<slug>.ts` holds the theme, the FR paths and the copy per locale (`fr` as const, `en` typed from it with `WidenLiterals`); shared types in `src/content/templates/types.ts`
-- **Views**: `src/app/(demos)/<slug>/_views/` (one view per page plus `shell.tsx`, `locale` prop, no hard-coded text); FR and EN routes are thin wrappers around them
+- **Kit**: `src/components/template-kit/` (shell, section, card, link, `templateHref`), styled only with `tpl-*` tokens; theme applied through `themeStyle()` (`src/lib/template-theme.ts`). `TemplateMedia` and `TemplateDemoForm` are not in the barrel `index.ts` and are imported per module (`@/components/template-kit/media`, `@/components/template-kit/demo-form`) to keep the page JS small; client components of the kit use `clsx`, not `cn`
+- **Definitions**: `src/content/templates/<slug>.ts` holds the theme, the FR paths and the copy per locale (`fr` as const, `en` typed from it with `WidenLiterals`); shared types in `src/content/templates/types.ts`. `getTemplateCopy` and `buildTemplatePageMetadata` only accept locales the definition declares (no silent FR fallback). List items with an icon carry an `icon` key in the copy (same key in FR and EN), resolved by a `Record<IconKey, LucideIcon>` table in the views
+- **Views**: `src/templates/<slug>/` (one view per page plus `shell.tsx`, `locale` prop, no hard-coded text), outside the FR route group; FR and EN routes are thin wrappers around them. The shell shows the FR/EN switch only when the definition has an `en` copy
 - **English versions**: `/en/<slug>` under `src/app/(demos-en)/en/<slug>/`, with its own root layout (`lang="en"`, `DemoBanner locale="en"`)
 - **SEO**: demos are `noindex, follow` (`isDemoPathname` in `src/lib/public-template-routes.ts`, applied by `src/middleware.ts`), metadata from `buildTemplatePageMetadata`, kept out of the sitemap
 - **Status**: `dentiste` is migrated (FR + EN); the other demos are still hand-written and move onto the kit one batch at a time
-- **Guide**: see `docs/templates.md` for the skeleton, the kit, the "add a FR + EN template" checklist, content rules and the 21st.dev intake protocol
+- **Harness**: `scripts/template-harness/` (route snapshots, `X-Robots-Tag` check; `pnpm harness:snapshot`, `pnpm harness:headers`), run against an isolated build, never in the repo
+- **Guide**: see `docs/templates.md` for the skeleton, the kit, the "add a FR + EN template" checklist, "migrate an existing template", content rules and the 21st.dev intake protocol

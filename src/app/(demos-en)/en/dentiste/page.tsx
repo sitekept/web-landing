@@ -1,4 +1,4 @@
-import { HomeView } from "@/app/(demos)/dentiste/_views/home";
+import { HomeView } from "@/templates/dentiste/home";
 import { dentiste } from "@/content/templates/dentiste";
 import { buildTemplatePageMetadata } from "@/lib/template-metadata";
 

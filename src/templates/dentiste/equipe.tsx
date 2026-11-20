@@ -1,5 +1,3 @@
-import { Award, Microscope, UserRound, type LucideIcon } from "lucide-react";
-
 import {
   TemplateLink,
   TemplateSection,
@@ -10,8 +8,6 @@ import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
 import { IconCard } from "./parts";
-
-const PRACTICE_ICONS: readonly LucideIcon[] = [Award, Microscope, UserRound];
 
 export function EquipeView({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(dentiste, locale);
@@ -29,7 +25,7 @@ export function EquipeView({ locale }: { locale: TemplateLocale }) {
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {intro.members.map((member) => (
-            <IconCard key={member.name} icon={UserRound} title={member.name}>
+            <IconCard key={member.name} icon={member.icon} title={member.name}>
               {member.role}
             </IconCard>
           ))}
@@ -44,10 +40,10 @@ export function EquipeView({ locale }: { locale: TemplateLocale }) {
         titleScale="subtitle"
       >
         <div className="grid gap-4 lg:grid-cols-3">
-          {practice.items.map((item, index) => (
+          {practice.items.map((item) => (
             <IconCard
               key={item.title}
-              icon={PRACTICE_ICONS[index]}
+              icon={item.icon}
               title={item.title}
               inverse
             >

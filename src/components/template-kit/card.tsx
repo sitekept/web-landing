@@ -72,14 +72,11 @@ export function TemplateCard({
           {title}
         </Title>
       ) : null}
-      {/* Pas de `cn()` ici : tailwind-merge confondrait `text-tpl-sm` et
-          `text-tpl-ink-muted` (même préfixe, échelle inconnue de lui). */}
       <div
-        className={
-          hasTitle
-            ? "mt-3 text-tpl-sm text-tpl-ink-muted"
-            : "text-tpl-sm text-tpl-ink-muted"
-        }
+        className={cn(
+          "text-tpl-sm text-tpl-ink-muted",
+          hasTitle ? "mt-3" : null
+        )}
       >
         {children}
       </div>

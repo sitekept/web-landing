@@ -1,4 +1,4 @@
-import { SoinsView } from "@/app/(demos)/dentiste/_views/soins";
+import { SoinsView } from "@/templates/dentiste/soins";
 import { dentiste } from "@/content/templates/dentiste";
 import { buildTemplatePageMetadata } from "@/lib/template-metadata";
 

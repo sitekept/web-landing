@@ -1,4 +1,4 @@
-import { ContactView } from "@/app/(demos)/dentiste/_views/contact";
+import { ContactView } from "@/templates/dentiste/contact";
 import { dentiste } from "@/content/templates/dentiste";
 import { buildTemplatePageMetadata } from "@/lib/template-metadata";
 

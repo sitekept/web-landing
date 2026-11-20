@@ -70,7 +70,10 @@ export type TemplateShellProps = {
   brand: TemplateShellBrand;
   nav: readonly TemplateNavItem[];
   cta?: TemplateShellCta;
-  /** Affiche le sélecteur FR / EN. `false` tant qu'une version n'existe pas. */
+  /**
+   * Affiche le sélecteur FR / EN (`false` par défaut). Un template l'active
+   * quand sa définition a une copie anglaise (`hasTemplateLocale`).
+   */
   localeSwitch?: boolean;
   /** Tokens du template (voir `themeStyle`) ; sans eux, les replis neutres. */
   theme?: TemplateThemeTokens;
@@ -84,7 +87,7 @@ export function TemplateShell({
   brand,
   nav,
   cta,
-  localeSwitch = true,
+  localeSwitch = false,
   theme,
   footer,
   className,
@@ -110,7 +113,7 @@ export function TemplateShell({
       </a>
 
       <header className="sticky top-0 z-40 border-b border-tpl-line bg-tpl-surface/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 xl:gap-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:gap-4">
           <div className="flex min-w-0 items-center gap-3">
             {brand.mark ? <div className="shrink-0">{brand.mark}</div> : null}
             <div className="min-w-0">

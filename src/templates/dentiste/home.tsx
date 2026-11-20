@@ -1,10 +1,4 @@
-import {
-  CalendarDays,
-  Cpu,
-  ShieldCheck,
-  Stethoscope,
-  type LucideIcon,
-} from "lucide-react";
+import { CalendarDays } from "lucide-react";
 
 import {
   TemplateCard,
@@ -18,11 +12,7 @@ import {
 import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
-const TECHNOLOGY_ICONS: readonly LucideIcon[] = [
-  Cpu,
-  ShieldCheck,
-  Stethoscope,
-];
+import { ICONS } from "./parts";
 
 export function HomeView({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(dentiste, locale);
@@ -140,8 +130,8 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
       >
         <div className="grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="grid gap-4">
-            {page.technologies.cards.map((card, index) => {
-              const Icon = TECHNOLOGY_ICONS[index];
+            {page.technologies.cards.map((card) => {
+              const Icon = ICONS[card.icon];
 
               return (
                 <TemplateCard key={card.title} title={card.title} titleAs="h3">
@@ -193,7 +183,9 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
             data-tone="inverse"
             className="rounded-tpl bg-tpl-inverse p-6 text-tpl-ink"
           >
-            <p className="text-tpl-sm text-tpl-ink-muted">{page.journey.intro}</p>
+            <p className="text-tpl-sm text-tpl-ink-muted">
+              {page.journey.intro}
+            </p>
           </div>
           <ol className="space-y-4 border-l border-tpl-line pl-6">
             {page.journey.steps.map((step, index) => (

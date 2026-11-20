@@ -32,11 +32,6 @@ const TITLE_SCALE: Record<TemplateTitleScale, string> = {
   subtitle: "text-tpl-xl",
 };
 
-/**
- * Tailles de texte, volontairement hors de `cn()` quand une couleur
- * `text-tpl-*` est présente : tailwind-merge ne connaît pas l'échelle
- * `text-tpl-*` et la confond avec les couleurs du même préfixe.
- */
 const DESCRIPTION_SCALE: Record<TemplateTitleScale, string> = {
   display: "text-tpl-lg",
   title: "text-tpl-lg",
@@ -114,10 +109,11 @@ export function TemplateHeading({
       </Title>
       {description ? (
         <p
-          className={`${cn(
+          className={cn(
             "mt-5 max-w-tpl-measure text-pretty text-tpl-ink-muted",
+            DESCRIPTION_SCALE[scale],
             DESCRIPTION_ALIGN[align]
-          )} ${DESCRIPTION_SCALE[scale]}`}
+          )}
         >
           {description}
         </p>

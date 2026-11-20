@@ -1,11 +1,4 @@
 import {
-  CalendarClock,
-  CircleCheckBig,
-  ClipboardList,
-  type LucideIcon,
-} from "lucide-react";
-
-import {
   TemplateLink,
   TemplateSection,
   templateHref,
@@ -15,12 +8,6 @@ import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
 import { IconCard } from "./parts";
-
-const STEP_ICONS: readonly LucideIcon[] = [
-  ClipboardList,
-  CalendarClock,
-  CircleCheckBig,
-];
 
 export function RendezVousView({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(dentiste, locale);
@@ -59,8 +46,8 @@ export function RendezVousView({ locale }: { locale: TemplateLocale }) {
         </div>
 
         <div className="grid gap-4">
-          {page.steps.map((step, index) => (
-            <IconCard key={step.title} icon={STEP_ICONS[index]} title={step.title}>
+          {page.steps.map((step) => (
+            <IconCard key={step.title} icon={step.icon} title={step.title}>
               {step.text}
             </IconCard>
           ))}

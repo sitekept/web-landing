@@ -1,4 +1,4 @@
-import { RendezVousView } from "@/app/(demos)/dentiste/_views/rendez-vous";
+import { RendezVousView } from "@/templates/dentiste/rendez-vous";
 import { dentiste } from "@/content/templates/dentiste";
 import { buildTemplatePageMetadata } from "@/lib/template-metadata";
 

@@ -1,5 +1,3 @@
-import { Cpu, Shield, Workflow, type LucideIcon } from "lucide-react";
-
 import {
   TemplateSection,
   type TemplateLocale,
@@ -8,8 +6,6 @@ import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
 import { IconCard } from "./parts";
-
-const ICONS: readonly LucideIcon[] = [Cpu, Workflow, Shield];
 
 export function TechnologiesView({ locale }: { locale: TemplateLocale }) {
   const page = getTemplateCopy(dentiste, locale).technologies;
@@ -25,10 +21,10 @@ export function TechnologiesView({ locale }: { locale: TemplateLocale }) {
       description={page.description}
     >
       <div className="grid gap-4 lg:grid-cols-3">
-        {page.items.map((item, index) => (
+        {page.items.map((item) => (
           <IconCard
             key={item.title}
-            icon={ICONS[index]}
+            icon={item.icon}
             title={item.title}
             className="bg-tpl-surface"
           >

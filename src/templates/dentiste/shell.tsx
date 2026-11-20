@@ -9,20 +9,20 @@ import {
   type TemplateLocale,
 } from "@/components/template-kit";
 import { dentiste } from "@/content/templates/dentiste";
-import { getTemplateCopy } from "@/content/templates/types";
+import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 
 /**
  * Shell du template dentiste : marque, navigation, CTA téléphone, rail de
  * réservation fixe et pied de page. Tous les textes viennent de la copie.
+ *
+ * Le sélecteur FR / EN est déduit de la définition : il s'affiche dès qu'elle
+ * a une copie anglaise (`en` dans `copy`), donc jamais de lien vers une 404.
  */
 export function DentisteShell({
   locale,
-  localeSwitch,
   children,
 }: {
   locale: TemplateLocale;
-  /** Affiche le sélecteur FR / EN (`true` par défaut dans le kit). */
-  localeSwitch?: boolean;
   children: ReactNode;
 }) {
   const copy = getTemplateCopy(dentiste, locale);
@@ -31,7 +31,7 @@ export function DentisteShell({
   return (
     <TemplateShell
       locale={locale}
-      localeSwitch={localeSwitch}
+      localeSwitch={hasTemplateLocale(dentiste, "en")}
       theme={dentiste.theme}
       brand={{
         href: paths.home,

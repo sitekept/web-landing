@@ -1,10 +1,9 @@
 "use client";
 
+import { clsx } from "clsx";
 import { useId, useState, type FormEvent } from "react";
 
 import type { TemplateLocale } from "@/content/templates/types";
-import { cn } from "@/lib/utils";
-
 /**
  * Formulaire de démonstration du kit de templates.
  *
@@ -15,6 +14,9 @@ import { cn } from "@/lib/utils";
  * bouton, ci-dessous.
  *
  * La validation native du navigateur (`required`, `type="email"`) s'applique.
+ *
+ * `clsx` et non `cn()` : aucune fusion de classes n'est nécessaire ici, et
+ * tailwind-merge pèserait dans le JS client de chaque page du formulaire.
  *
  * Règle du kit : un nouveau besoin visuel devient d'abord un token. Il ne
  * devient un enum (prop) que s'il change le DOM ou la structure, et jamais un
@@ -71,7 +73,7 @@ export type TemplateDemoFormProps = {
 };
 
 const CONTROL =
-  "min-h-11 w-full rounded-tpl border border-tpl-ink/50 bg-tpl-raised px-4 py-2.5 text-tpl-base text-tpl-ink placeholder:text-tpl-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink";
+  "min-h-11 w-full rounded-tpl border border-tpl-ink/60 bg-tpl-raised px-4 py-2.5 text-tpl-base text-tpl-ink placeholder:text-tpl-ink-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink";
 
 export function TemplateDemoForm({
   fields,
@@ -92,7 +94,7 @@ export function TemplateDemoForm({
   return (
     <form
       onSubmit={onSubmit}
-      className={cn("font-tpl-text text-tpl-ink", className)}
+      className={clsx("font-tpl-text text-tpl-ink", className)}
     >
       <div className="grid gap-5 sm:grid-cols-2">
         {fields.map((field) => {
@@ -102,7 +104,7 @@ export function TemplateDemoForm({
           return (
             <div
               key={field.name}
-              className={cn(
+              className={clsx(
                 "flex flex-col gap-2",
                 field.width === "half" ? null : "sm:col-span-2"
               )}
@@ -124,7 +126,7 @@ export function TemplateDemoForm({
                   required={field.required}
                   autoComplete={field.autoComplete}
                   placeholder={field.placeholder}
-                  className={cn(CONTROL, "resize-y")}
+                  className={clsx(CONTROL, "resize-y")}
                 />
               ) : type === "select" ? (
                 <select

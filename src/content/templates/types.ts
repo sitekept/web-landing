@@ -26,6 +26,11 @@ export const TEMPLATE_LOCALES = ["fr", "en"] as const;
  *
  * Toute traduction typée `Copy` doit donc avoir les mêmes clés et le même
  * nombre d'éléments par liste : une clé manquante échoue au `type-check`.
+ *
+ * Exception : une propriété nommée `icon` garde son littéral. C'est une clé
+ * d'icône (`icon: "cpu"`), donc une donnée et non un texte : la traduction doit
+ * porter la même clé que le français, et la vue la résout avec une table
+ * `Record<TemplateIconKey<Copy>, LucideIcon>`.
  */
 export type WidenLiterals<T> = T extends string
   ? string
@@ -34,8 +39,24 @@ export type WidenLiterals<T> = T extends string
     : T extends boolean
       ? boolean
       : T extends object
-        ? { [K in keyof T]: WidenLiterals<T[K]> }
+        ? { [K in keyof T]: K extends "icon" ? T[K] : WidenLiterals<T[K]> }
         : T;
+
+/**
+ * Union des clés d'icône (valeurs des propriétés `icon`) présentes dans une
+ * copie, à n'importe quelle profondeur. Sert à typer la table d'icônes d'une
+ * vue : `Record<TemplateIconKey<DentisteCopy>, LucideIcon>` exige une entrée
+ * par clé utilisée et refuse une clé inconnue, au `type-check`.
+ */
+export type TemplateIconKey<Copy> = Copy extends readonly (infer Item)[]
+  ? TemplateIconKey<Item>
+  : Copy extends object
+    ? {
+        [K in keyof Copy]: K extends "icon"
+          ? Extract<Copy[K], string>
+          : TemplateIconKey<Copy[K]>;
+      }[keyof Copy]
+    : never;
 
 /** Titre et description d'une page (balises `<title>` et meta description). */
 export type TemplatePageMeta = {
@@ -52,8 +73,8 @@ export type TemplateCopyBase = {
 };
 
 /** Clés de page d'une copie : celles de son bloc `meta`. */
-export type TemplatePageKey<Copy extends TemplateCopyBase> = keyof Copy["meta"] &
-  string;
+export type TemplatePageKey<Copy extends TemplateCopyBase> =
+  keyof Copy["meta"] & string;
 
 /**
  * Définition d'un template : identité, thème (tokens `--tpl-*`), chemins
@@ -84,23 +105,43 @@ export type TemplateDefinition<
 };
 
 /**
- * Forme que lisent `getTemplateCopy` et `buildTemplatePageMetadata` : le
- * français est obligatoire, les autres langues optionnelles. Une définition à
- * `Locales` partiel ou complet y est assignable telle quelle.
+ * Forme que lisent `getTemplateCopy` et `buildTemplatePageMetadata`.
+ *
+ * `Locales` est la liste des langues que la définition déclare : toute
+ * définition (`TemplateDefinition<…, Locales>`) y est assignable telle quelle,
+ * et les deux fonctions en déduisent les langues qu'elles acceptent.
  */
-export type TemplateDefinitionLike<Copy extends TemplateCopyBase> = {
+export type TemplateDefinitionLike<
+  Copy extends TemplateCopyBase,
+  Locales extends TemplateLocale = TemplateLocale,
+> = {
   slug: string;
   paths: Record<TemplatePageKey<Copy>, string>;
-  copy: { fr: Copy } & Partial<Record<TemplateLocale, Copy>>;
+  copy: Record<Locales, Copy>;
 };
 
 /**
- * Copie d'un template dans la langue demandée. Tant qu'une langue n'a pas sa
- * copie (aucun template migré n'a encore `en`), renvoie le français.
+ * Copie d'un template dans la langue demandée.
+ *
+ * `locale` est typée par les langues que la définition déclare : demander `en`
+ * à une définition `"fr"` seule échoue au `type-check`, il n'y a aucun repli
+ * silencieux sur le français. (`NoInfer` empêche `locale` d'élargir les
+ * langues déduites de la définition.)
  */
-export function getTemplateCopy<Copy extends TemplateCopyBase>(
-  def: TemplateDefinitionLike<Copy>,
+export function getTemplateCopy<
+  Copy extends TemplateCopyBase,
+  Locales extends TemplateLocale,
+>(def: TemplateDefinitionLike<Copy, Locales>, locale: NoInfer<Locales>): Copy {
+  return def.copy[locale];
+}
+
+/**
+ * Vrai si la définition a une copie dans cette langue. Sert à déduire des
+ * choix d'affichage de la définition elle-même : sélecteur FR / EN, hreflang.
+ */
+export function hasTemplateLocale(
+  def: { copy: Partial<Record<TemplateLocale, unknown>> },
   locale: TemplateLocale
-): Copy {
-  return def.copy[locale] ?? def.copy.fr;
+): boolean {
+  return locale in def.copy;
 }

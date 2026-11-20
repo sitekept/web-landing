@@ -47,11 +47,6 @@ const SIZE: Record<TemplateLinkSize, string> = {
   md: "min-h-11 gap-2 px-5 py-2.5",
 };
 
-/**
- * Taille de texte, volontairement hors de `cn()` : tailwind-merge ne connaît
- * pas l'échelle `text-tpl-*` et la confond avec les couleurs `text-tpl-*`
- * (`text-tpl-accent-ink text-tpl-sm` deviendrait `text-tpl-sm`).
- */
 const TEXT_SIZE: Record<TemplateLinkSize, string> = {
   sm: "text-tpl-xs",
   md: "text-tpl-sm",
@@ -99,8 +94,14 @@ export function TemplateLink({
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
-      className={`${cn(
-        "inline-flex items-center justify-center border font-tpl-text leading-snug font-semibold",
+      className={cn(
+        "inline-flex items-center justify-center border font-tpl-text font-semibold",
+        // Avant `leading-snug` : tailwind-merge retire un `leading-*` qui
+        // précède une taille de texte (la taille porte son propre interligne).
+        // Placé après, `leading-snug` reste, comme avant. Un `className` qui
+        // pose une autre taille remplace les deux, ce qui est voulu.
+        TEXT_SIZE[size],
+        "leading-snug",
         // v4 déplace via `translate`, pas `transform` : `transform-none` serait
         // sans effet, et `motion-reduce:hover:` garde la spécificité de `hover:`.
         "transition duration-200 ease-out hover:-translate-y-0.5",
@@ -110,7 +111,7 @@ export function TemplateLink({
         SHAPE[shape],
         SIZE[size],
         className
-      )} ${TEXT_SIZE[size]}`}
+      )}
     >
       {children}
       {renderedIcon}

@@ -6,7 +6,7 @@ import type {
   TemplateLocale,
   TemplatePageKey,
 } from "@/content/templates/types";
-import { getTemplateCopy } from "@/content/templates/types";
+import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 import { absoluteUrl } from "@/lib/localized-routes";
 import { templateHref } from "@/components/template-kit/href";
 
@@ -22,13 +22,20 @@ import { templateHref } from "@/components/template-kit/href";
  *
  * - `alternates.languages` : hreflang `fr` ↔ `en` plus `x-default` (le
  *   français), en URL absolues comme `getLanguageAlternates` du site. Émis
- *   seulement si le template a sa version anglaise (`def.copy.en`). Pas de
+ *   seulement si le template a sa version anglaise (`en` dans `def.copy`). Pas de
  *   `canonical` : une page ne pointe jamais vers l'autre langue, et les démos
  *   restent hors du sitemap.
+ *
+ * `locale` est typée par les langues que la définition déclare : une route
+ * anglaise sur une définition `"fr"` seule ne compile pas (pas de repli
+ * silencieux sur le français).
  */
-export function buildTemplatePageMetadata<Copy extends TemplateCopyBase>(
-  def: TemplateDefinitionLike<Copy>,
-  locale: TemplateLocale,
+export function buildTemplatePageMetadata<
+  Copy extends TemplateCopyBase,
+  Locales extends TemplateLocale,
+>(
+  def: TemplateDefinitionLike<Copy, Locales>,
+  locale: NoInfer<Locales>,
   page: TemplatePageKey<Copy>
 ): Metadata {
   const { title, description } = getTemplateCopy(def, locale).meta[page];
@@ -38,7 +45,7 @@ export function buildTemplatePageMetadata<Copy extends TemplateCopyBase>(
     robots: { index: false, follow: true },
   };
 
-  if (def.copy.en) {
+  if (hasTemplateLocale(def, "en")) {
     const frPath = def.paths[page];
     const fr = absoluteUrl(templateHref("fr", frPath));
 
