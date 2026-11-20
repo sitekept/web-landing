@@ -495,6 +495,29 @@ function isPublicTemplate(entry: TemplateEntry): entry is PublicTemplateEntry {
 export const publicTemplates: readonly PublicTemplateEntry[] =
   templateEntries.filter(isPublicTemplate);
 
+/** Le template est-il servi dans cette langue (`/<slug>` ou `/en/<slug>`) ? */
+export function templateServesLocale(
+  entry: TemplateEntry,
+  locale: TemplateLocale
+): boolean {
+  const locales: readonly TemplateLocale[] = entry.locales;
+  return locales.includes(locale);
+}
+
+/**
+ * Le template public `slug` est-il servi dans cette langue ?
+ *
+ * C'est ce que consultent les liens de démo du site (galerie, pages métier) :
+ * un site anglais ne pointe vers `/en/<slug>` que si le registre le déclare.
+ */
+export function publicTemplateServesLocale(
+  slug: PublicTemplateSlug,
+  locale: TemplateLocale
+): boolean {
+  const entry = publicTemplates.find((template) => template.slug === slug);
+  return entry !== undefined && templateServesLocale(entry, locale);
+}
+
 /**
  * Slugs servis sur ce domaine qui ne sont pas des templates : ils restent
  * `noindex` comme les démos (`DEMO_SLUGS`), mais n'ont ni capture, ni entrée en
@@ -529,7 +552,15 @@ export interface AdminTemplateCatalogEntry {
   sector: string;
   adminStatus: TemplateAdminStatus;
   vercelUrl: string;
+  /** Démo française sur sitekept.com, pour un template public. */
   sitekeptUrl?: string;
+  /** Démo anglaise sur sitekept.com, quand `locales` contient `"en"`. */
+  sitekeptUrlEn?: string;
+  /**
+   * Mention affichée à la place du lien EN d'un template public qui n'a pas
+   * encore sa version anglaise (dérivée du marqueur `englishPending`).
+   */
+  englishPendingLabel?: string;
   routeStatus: "Live on sitekept.com" | "Vercel only" | "Lab only";
   notes: string;
 }
@@ -551,7 +582,16 @@ export function toAdminCatalogEntry(
           : "Vercel only",
     vercelUrl: `${TEMPLATE_VERCEL_BASE_URL}/${entry.slug}`,
     ...(entry.status === "sitekept-public"
-      ? { sitekeptUrl: `${SITEKEPT_BASE_URL}/${entry.slug}` }
+      ? {
+          sitekeptUrl: `${SITEKEPT_BASE_URL}/${entry.slug}`,
+          ...(templateServesLocale(entry, "en")
+            ? { sitekeptUrlEn: `${SITEKEPT_BASE_URL}/en/${entry.slug}` }
+            : entry.englishPending
+              ? {
+                  englishPendingLabel: `EN : ${entry.englishPending.replace("-", " ")}`,
+                }
+              : {}),
+        }
       : {}),
     notes: entry.notes,
   };

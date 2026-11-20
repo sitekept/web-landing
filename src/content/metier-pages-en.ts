@@ -8,8 +8,11 @@ import type { MetierFaq } from "@/content/metier-pages";
  * références réglementaires françaises sont donc conservées, avec leur nom
  * d'origine entre parenthèses quand il aide à les retrouver.
  *
- * Les démos de templates n'existent qu'en français, ce que leur libellé
- * anglais précise.
+ * `demoName` et `secondaryDemo.name` nomment la démo sans mention de langue :
+ * la vue (`src/views/metier.tsx`) ajoute « (in French) » seulement quand le
+ * registre des templates ne déclare pas de version anglaise du template, et
+ * pointe alors vers la démo française. Pour un template bilingue, le lien va
+ * vers `/en/<slug>`.
  */
 export interface MetierPageEnglishCopy {
   /** Slug anglais, servi sous /en/{slug}. */
@@ -32,7 +35,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-plombier": {
     slug: "plumber-website",
     label: "a plumbing and heating business",
-    demoName: "Plumbing and heating demo (in French)",
+    demoName: "Plumbing and heating demo",
     seoTitle: "Website for plumbers: what you need | Sitekept",
     seoDescription:
       "A website for a plumbing and heating business: what customers look for in an emergency, what it must show, and our €500 offer delivered in 48 hours.",
@@ -93,7 +96,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-dentiste": {
     slug: "dentist-website",
     label: "a dental practice",
-    demoName: "Dental practice demo (in French)",
+    demoName: "Dental practice demo",
     seoTitle: "Website for dentists and dental practices | Sitekept",
     seoDescription:
       "A website for a dental practice: reassure patients before their first visit, organize treatments clearly, make booking easy. Delivered in 48 hours from €500.",
@@ -154,7 +157,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-restaurant": {
     slug: "restaurant-website",
     label: "a restaurant",
-    demoName: "Bistro restaurant demo (in French)",
+    demoName: "Bistro restaurant demo",
     seoTitle: "Website for restaurants: the essentials | Sitekept",
     seoDescription:
       "A restaurant website: an up-to-date menu, reservations, hours and directions. What customers really look for, and our offer delivered in 48 hours from €500.",
@@ -215,7 +218,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-salon-de-coiffure": {
     slug: "hair-salon-website",
     label: "a hair salon",
-    demoName: "Hair salon demo (in French)",
+    demoName: "Hair salon demo",
     seoTitle: "Website for hair salons | Sitekept",
     seoDescription:
       "Building a hair salon website: services and prices, online booking, a portfolio of your work. A professional website delivered in 48 hours from €500.",
@@ -276,7 +279,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-boulangerie": {
     slug: "bakery-website",
     label: "a bakery",
-    demoName: "Bakery demo (in French)",
+    demoName: "Bakery demo",
     seoTitle: "Website for bakeries | Sitekept",
     seoDescription:
       "Building a bakery website: hours and day closed, your products, special orders. What your customers look for, with a website delivered in 48 hours from €500.",
@@ -337,7 +340,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-patisserie": {
     slug: "pastry-shop-website",
     label: "a pastry shop",
-    demoName: "Pastry shop demo (in French)",
+    demoName: "Pastry shop demo",
     seoTitle: "Website for pastry shops | Sitekept",
     seoDescription:
       "A pastry shop website: a portfolio of your creations, order lead times and prices, custom cakes. A professional website delivered in 48 hours from €500.",
@@ -398,7 +401,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-fleuriste": {
     slug: "florist-website",
     label: "a florist",
-    demoName: "Florist demo (in French)",
+    demoName: "Florist demo",
     seoTitle: "Website for florists | Sitekept",
     seoDescription:
       "Building a florist website: delivery, arrangements by occasion, funeral and wedding orders. A professional website delivered in 48 hours from €500.",
@@ -459,7 +462,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-reparation-informatique": {
     slug: "computer-repair-website",
     label: "a computer repair business",
-    demoName: "Computer repair demo (in French)",
+    demoName: "Computer repair demo",
     seoTitle: "Website for computer repair shops | Sitekept",
     seoDescription:
       "A computer repair website: the problems you fix, prices, turnaround times and data confidentiality. A professional website delivered in 48 hours from €500.",
@@ -520,7 +523,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-entreprise-nettoyage": {
     slug: "cleaning-company-website",
     label: "a cleaning company",
-    demoName: "Home and office cleaning demo (in French)",
+    demoName: "Home and office cleaning demo",
     seoTitle: "Website for cleaning companies | Sitekept",
     seoDescription:
       "Building a cleaning company website: services for households and businesses, service area, quotes. A website delivered in 48 hours from €500.",
@@ -581,7 +584,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-architecte-interieur": {
     slug: "interior-designer-website",
     label: "an interior designer",
-    demoName: "Interior designer demo (in French)",
+    demoName: "Interior designer demo",
     seoTitle: "Website for interior designers | Sitekept",
     seoDescription:
       "A website for an interior designer: a project portfolio, how your fees work, how an engagement unfolds. A professional website delivered in 48 hours from €500.",
@@ -642,9 +645,9 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-avocat": {
     slug: "law-firm-website",
     label: "a law firm",
-    demoName: "Law firm demo (in French)",
+    demoName: "Law firm demo",
     secondaryDemo: {
-      name: "Lawyer demo (in French)",
+      name: "Lawyer demo",
       note: "A second, more editorial template, for a lawyer practicing under their own name.",
     },
     seoTitle: "Website for lawyers and law firms | Sitekept",
@@ -707,7 +710,7 @@ export const metierPagesEn: Record<string, MetierPageEnglishCopy> = {
   "site-internet-agence-immobiliere": {
     slug: "real-estate-agency-website",
     label: "a real estate agency",
-    demoName: "Real estate agency demo (in French)",
+    demoName: "Real estate agency demo",
     seoTitle: "Website for real estate agencies | Sitekept",
     seoDescription:
       "Building a real estate agency website: online valuation, up-to-date listings, published fees, areas covered. A website delivered in 48 hours from €500.",

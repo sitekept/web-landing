@@ -117,11 +117,12 @@ export default function AdminTemplatesPage() {
                   {template.routeStatus}
                 </p>
 
-                <div className="flex flex-wrap gap-2 text-sm font-medium">
+                <div className="flex flex-wrap items-center gap-2 text-sm font-medium">
                   <a
                     href={template.vercelUrl}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label={`Vercel : ${template.name}`}
                     className="rounded-full bg-slate-950 px-3 py-1.5 text-white transition hover:bg-slate-800"
                   >
                     Vercel
@@ -131,10 +132,27 @@ export default function AdminTemplatesPage() {
                       href={template.sitekeptUrl}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={`FR : ${template.name}, version française sur SiteKept`}
                       className="rounded-full border border-blue-200 px-3 py-1.5 text-blue-800 transition hover:border-blue-400"
                     >
-                      SiteKept
+                      FR
                     </a>
+                  ) : null}
+                  {template.sitekeptUrlEn ? (
+                    <a
+                      href={template.sitekeptUrlEn}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`EN : ${template.name}, version anglaise sur SiteKept`}
+                      className="rounded-full border border-blue-200 px-3 py-1.5 text-blue-800 transition hover:border-blue-400"
+                    >
+                      EN
+                    </a>
+                  ) : null}
+                  {template.englishPendingLabel ? (
+                    <span className="px-1 text-xs font-medium text-slate-500">
+                      {template.englishPendingLabel}
+                    </span>
                   ) : null}
                 </div>
 

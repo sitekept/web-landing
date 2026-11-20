@@ -10,11 +10,20 @@ import {
   metierPages,
 } from "@/content/metier-pages";
 import type { SiteLocale } from "@/content/site-content";
+import { publicTemplateServesLocale } from "@/content/templates/registry";
 import { buildPageMetadata } from "@/lib/page-metadata";
 import { linkLocalizer } from "@/lib/localized-routes";
 import { BreadcrumbJsonLd, FaqJsonLd } from "@/components/structured-data";
 
 type LinkFn = (frenchPath: string) => string;
+
+/**
+ * Langue des démos montrées sur la page, par rapport à celle du site :
+ * `"served"` quand toutes sont servies dans la langue de la page, `"mixed"`
+ * pour une partie seulement, `"none"` pour aucune (site anglais, démos
+ * françaises).
+ */
+type DemoAvailability = "served" | "mixed" | "none";
 
 const linkClassName = "font-medium text-blue-700 underline underline-offset-4";
 const NBSP = " ";
@@ -25,7 +34,8 @@ const COPY = {
     breadcrumbTemplates: "Modèles de sites",
     eyebrow: "Site internet par métier",
     quote: "Demander un devis",
-    seeDemo: "Voir la démo",
+    seeDemo: () => "Voir la démo",
+    demoName: (name: string) => name,
     intentTitle: "Ce que cherchent vos clients, et dans quel état d'esprit",
     intentIntro: (label: string) =>
       `Toutes les visites ne se valent pas. Un site efficace pour ${label} répond aux trois situations qui amènent réellement quelqu'un à vous chercher.`,
@@ -45,7 +55,8 @@ const COPY = {
       </>
     ),
     templateTitle: (label: string) => `Un modèle déjà pensé pour ${label}`,
-    templateIntro: `Plutôt que de repartir d'une page blanche, nous adaptons une base construite autour des besoins réels du métier. C'est ce qui rend le tarif et le délai possibles. Vous pouvez la parcourir avant de décider${NBSP}: c'est une démonstration publique, avec des coordonnées fictives.`,
+    templateIntro: () =>
+      `Plutôt que de repartir d'une page blanche, nous adaptons une base construite autour des besoins réels du métier. C'est ce qui rend le tarif et le délai possibles. Vous pouvez la parcourir avant de décider${NBSP}: c'est une démonstration publique, avec des coordonnées fictives.`,
     seeAlso: (href: LinkFn): ReactNode => (
       <>
         Voir aussi{" "}
@@ -84,7 +95,10 @@ const COPY = {
     breadcrumbTemplates: "Website templates",
     eyebrow: "Websites by trade",
     quote: "Request a quote",
-    seeDemo: "View the demo (in French)",
+    seeDemo: (servedInEnglish: boolean) =>
+      servedInEnglish ? "View the demo" : "View the demo (in French)",
+    demoName: (name: string, servedInEnglish: boolean) =>
+      servedInEnglish ? name : `${name} (in French)`,
     intentTitle: "What your customers are looking for, and the mindset they are in",
     intentIntro: (label: string) =>
       `Not all visits are equal. An effective website for ${label} covers the three situations that actually lead someone to look for you.`,
@@ -104,8 +118,14 @@ const COPY = {
     ),
     templateTitle: (label: string) =>
       `A template already designed for ${label}`,
-    templateIntro:
-      "Rather than starting from a blank page, we adapt a template built around the real needs of the trade. That is what makes the price and the turnaround possible. You can browse it before deciding: it is a public demo, in French, with fictitious contact details.",
+    templateIntro: (availability: DemoAvailability) => {
+      const demoKind =
+        availability === "none"
+          ? "a public demo, in French, with fictitious contact details"
+          : "a public demo, with fictitious contact details";
+
+      return `Rather than starting from a blank page, we adapt a template built around the real needs of the trade. That is what makes the price and the turnaround possible. You can browse it before deciding: it is ${demoKind}.`;
+    },
     seeAlso: (href: LinkFn): ReactNode => (
       <>
         See also{" "}
@@ -179,6 +199,16 @@ export function MetierView({
 
   const copy = COPY[locale];
   const href = linkLocalizer(locale);
+  const demoServed = publicTemplateServesLocale(page.demoSlug, locale);
+  const secondaryServed = page.secondaryDemo
+    ? publicTemplateServesLocale(page.secondaryDemo.slug, locale)
+    : demoServed;
+  const demoAvailability: DemoAvailability =
+    demoServed && secondaryServed
+      ? "served"
+      : demoServed || secondaryServed
+        ? "mixed"
+        : "none";
 
   return (
     <>
@@ -209,7 +239,9 @@ export function MetierView({
               </Link>
             </Button>
             <Button asChild variant="outline">
-              <Link href={`/${page.demoSlug}`}>{copy.seeDemo}</Link>
+              <Link href={href(`/${page.demoSlug}`)}>
+                {copy.seeDemo(demoServed)}
+              </Link>
             </Button>
           </div>
         </div>
@@ -278,18 +310,20 @@ export function MetierView({
           <h2 className="text-3xl font-semibold tracking-tight text-slate-950">
             {copy.templateTitle(page.label)}
           </h2>
-          <p className="mt-4 text-slate-600">{copy.templateIntro}</p>
+          <p className="mt-4 text-slate-600">
+            {copy.templateIntro(demoAvailability)}
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button asChild variant="outline">
-              <Link href={`/${page.demoSlug}`}>
-                {page.demoName}
+              <Link href={href(`/${page.demoSlug}`)}>
+                {copy.demoName(page.demoName, demoServed)}
                 <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
             {page.secondaryDemo ? (
               <Button asChild variant="outline">
-                <Link href={`/${page.secondaryDemo.slug}`}>
-                  {page.secondaryDemo.name}
+                <Link href={href(`/${page.secondaryDemo.slug}`)}>
+                  {copy.demoName(page.secondaryDemo.name, secondaryServed)}
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>

@@ -34,6 +34,17 @@ Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en 
 
 Les démos restent hors du sitemap (`src/app/sitemap.ts`).
 
+### Liens vers les démos
+
+Le site anglais pointe vers `/en/<slug>` pour les templates qui ont leur version anglaise, et vers `/<slug>` (le français) pour les autres. Tout se dérive du registre, jamais d'une liste de slugs écrite à la main :
+
+- **Table de chemins** : `PATH_MAP` (`src/lib/localized-routes.ts`) reçoit une entrée `/<slug>` → `/en/<slug>` pour chaque template public dont `locales` contient `"en"`. `localizeHref` (`src/lib/i18n-paths.ts`) reste sans dépendance de contenu ; la table complète lui est passée. `PATH_MAP` ne sert qu'aux liens et au sélecteur de langue : le sitemap et les hreflang du site parcourent leurs propres listes de pages, donc aucune démo n'y entre.
+- **Galerie** (`TemplatesShowcase`) et **pages métier** (`src/views/metier.tsx`) passent le lien de démo par `linkLocalizer(locale)` : `/en/templates` et `/en/dentist-website` envoient vers `/en/dentiste`.
+- **Libellés des pages métier anglaises** : `metier-pages-en.ts` nomme la démo sans mention de langue. La vue ajoute « (in French) » au nom, à « View the demo » et à la phrase d'introduction du modèle seulement quand `publicTemplateServesLocale(slug, "en")` (registre) est faux.
+- **Admin** : `toAdminCatalogEntry` calcule `sitekeptUrl` (FR), `sitekeptUrlEn` (quand `locales` contient `"en"`) et `englishPendingLabel` (« EN : phase 5 », d'après le marqueur `englishPending`) ; la page n'a rien de codé en dur.
+
+Quand un template passe en `["fr", "en"]` dans le registre (et perd `englishPending`), ses liens anglais, la mention « (in French) » et la page admin suivent sans autre modification.
+
 ## 2. Squelette d'un template
 
 ```
@@ -161,7 +172,7 @@ Helpers exportés par `href.ts` (purs, utilisables côté client et serveur), pl
 - [ ] **Vues** : `src/templates/<slug>/<page>.tsx` pour chaque page, `shell.tsx` et la table d'icônes dans `parts.tsx`.
 - [ ] **Routes FR** : `src/app/(demos)/<slug>/layout.tsx` et chaque `page.tsx`, avec `buildTemplatePageMetadata(…, "fr", page)`.
 - [ ] **Routes EN** : `src/app/(demos-en)/en/<slug>/layout.tsx` et chaque `page.tsx`, avec `"en"`.
-- [ ] **Registre** : une entrée dans `TEMPLATES` (`src/content/templates/registry.ts`) : statut `sitekept-public`, nom et secteur admin, copie de la galerie (FR + EN), capture, `locales: ["fr", "en"]`. Elle alimente `DEMO_SLUGS` (noindex), la galerie `/templates`, la page admin et le type `PublicTemplateSlug` (`demoSlug` des pages métier). Ajouter la définition à `Definitions` dans `src/content/templates/registry-checks.ts` : `pnpm type-check` échoue si ses langues et celles du registre divergent.
+- [ ] **Registre** : une entrée dans `TEMPLATES` (`src/content/templates/registry.ts`) : statut `sitekept-public`, nom et secteur admin, copie de la galerie (FR + EN), capture, `locales: ["fr", "en"]`. Elle alimente `DEMO_SLUGS` (noindex), la galerie `/templates` (lien `/en/<slug>` sur la galerie et les pages métier anglaises, via `PATH_MAP`), la page admin (liens FR et EN) et le type `PublicTemplateSlug` (`demoSlug` des pages métier). Ajouter la définition à `Definitions` dans `src/content/templates/registry-checks.ts` : `pnpm type-check` échoue si ses langues et celles du registre divergent.
 - [ ] **Contrôles**
   - [ ] `pnpm type-check` et `pnpm lint`.
   - [ ] `pnpm build` dans une copie isolée (voir section 7).
@@ -204,7 +215,8 @@ Pour passer une démo écrite à la main (hex en dur, `*-ui.tsx`, formulaire cli
 7. **Vues, routes FR, shell.** Vues dans `src/templates/<slug>/` (un seul `as="h1"` par vue, icônes par clé `icon`), `shell.tsx`, routes FR minces avec `buildTemplatePageMetadata(def, "fr", page)`.
 8. **Version anglaise.** Copie `en` typée par le type dérivé (même clés, mêmes longueurs, mêmes clés `icon`), routes EN sous `src/app/(demos-en)/en/<slug>/`, layout EN. Marque « Your business », e-mail `contact@example.com`.
 9. **`routes.txt`.** Une ligne `demo` par route FR et une ligne `demo-en` par route EN, y compris les pages de détail. Ajouter le slug à `headers.sh` (FR et EN).
-10. **Vérifier.** `pnpm type-check`, `pnpm lint`, build isolé, snapshot, `headers.sh`, relevé du First Load JS.
+10. **Registre.** Passer `locales` à `["fr", "en"]` et retirer `englishPending` : les liens anglais, la page admin et les libellés des pages métier suivent (section 1, « Liens vers les démos »). Ajouter la définition à `Definitions` (`registry-checks.ts`).
+11. **Vérifier.** `pnpm type-check`, `pnpm lint`, build isolé, snapshot, `headers.sh`, relevé du First Load JS.
 
 **Diff de snapshot attendue** (baseline FR contre snapshot après migration) :
 - Fichiers FR : vide, sauf ce qui est voulu et listé : un `<h1>` ajouté là où il manquait (`H1: 1`), un `<title>` ou une description propres à la page, `ROBOTS: noindex, follow` à la place d'un `index, follow` contradictoire, et, pour un template qui a sa version anglaise, le sélecteur de langue (`FR Français` / `EN English`, deux fois par page : en-tête et menu mobile). Toute autre ligne différente est une régression de texte.

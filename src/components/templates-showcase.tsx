@@ -65,7 +65,7 @@ export function TemplatesShowcase({
                 locale={locale}
                 key={template.slug}
                 name={copy.name}
-                url={`/${template.slug}`}
+                url={href(`/${template.slug}`)}
                 description={copy.description}
                 screenshot={template.gallery.screenshot}
                 category="template"

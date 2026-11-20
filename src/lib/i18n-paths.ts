@@ -29,8 +29,11 @@ export const STATIC_PATH_MAP: PathMap = {
 /**
  * Traduit un lien interne écrit avec son chemin français.
  *
- * Les chemins absents de la table — démos de templates, liens externes —
- * sont renvoyés tels quels : les démos n'existent qu'en français.
+ * Les chemins absents de la table — liens externes, démos de templates sans
+ * version anglaise — sont renvoyés tels quels. Les démos qui ont une version
+ * anglaise (`/dentiste` → `/en/dentiste`) y figurent : la table complète les
+ * tire du registre des templates (`src/lib/localized-routes.ts`), ce fichier
+ * restant libre de toute dépendance de contenu.
  */
 export function localizeHref(
   href: string,
