@@ -543,6 +543,16 @@ const TEMPLATES = [
       "Template lab servi sur sitekept.com (noindex), en attente de validation.",
     locales: ["fr", "en"],
   },
+  {
+    slug: "coffee-shop",
+    status: "lab",
+    routed: true,
+    name: "Template Coffee shop",
+    sector: "Coffee shop",
+    notes:
+      "Template lab servi sur sitekept.com (noindex), en attente de validation.",
+    locales: ["fr", "en"],
+  },
 ] as const satisfies readonly TemplateEntry[];
 
 /** Entrée du registre, avec le littéral de chaque champ (contrôles de types). */

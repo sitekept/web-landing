@@ -17,6 +17,8 @@ check /osteopathe yes; check /osteopathe/consultations yes
 check /en/osteopathe yes; check /en/osteopathe/consultations yes
 check /createur-culinaire yes; check /createur-culinaire/creations yes
 check /en/createur-culinaire yes; check /en/createur-culinaire/creations yes
+check /coffee-shop yes; check /coffee-shop/carte yes
+check /en/coffee-shop yes; check /en/coffee-shop/carte yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail

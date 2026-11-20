@@ -65,6 +65,10 @@ demo	/createur-culinaire
 demo	/createur-culinaire/commande
 demo	/createur-culinaire/creations
 demo	/createur-culinaire/evenements
+demo	/coffee-shop
+demo	/coffee-shop/a-propos
+demo	/coffee-shop/carte
+demo	/coffee-shop/infos
 marketing	/templates
 marketing	/en/templates
 internal	/admin-templates-7q4p9s2m
@@ -87,3 +91,7 @@ demo-en	/en/createur-culinaire
 demo-en	/en/createur-culinaire/commande
 demo-en	/en/createur-culinaire/creations
 demo-en	/en/createur-culinaire/evenements
+demo-en	/en/coffee-shop
+demo-en	/en/coffee-shop/a-propos
+demo-en	/en/coffee-shop/carte
+demo-en	/en/coffee-shop/infos
