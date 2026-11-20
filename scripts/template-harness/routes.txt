@@ -73,6 +73,10 @@ demo	/coffee-shop
 demo	/coffee-shop/a-propos
 demo	/coffee-shop/carte
 demo	/coffee-shop/infos
+demo	/spa-massage
+demo	/spa-massage/espace
+demo	/spa-massage/reservation
+demo	/spa-massage/soins
 marketing	/templates
 marketing	/en/templates
 internal	/admin-templates-7q4p9s2m
@@ -103,3 +107,7 @@ demo-en	/en/coffee-shop
 demo-en	/en/coffee-shop/a-propos
 demo-en	/en/coffee-shop/carte
 demo-en	/en/coffee-shop/infos
+demo-en	/en/spa-massage
+demo-en	/en/spa-massage/espace
+demo-en	/en/spa-massage/reservation
+demo-en	/en/spa-massage/soins

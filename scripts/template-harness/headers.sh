@@ -21,6 +21,8 @@ check /createur-culinaire yes; check /createur-culinaire/creations yes
 check /en/createur-culinaire yes; check /en/createur-culinaire/creations yes
 check /coffee-shop yes; check /coffee-shop/carte yes
 check /en/coffee-shop yes; check /en/coffee-shop/carte yes
+check /spa-massage yes; check /spa-massage/soins yes
+check /en/spa-massage yes; check /en/spa-massage/soins yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail
