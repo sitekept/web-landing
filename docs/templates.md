@@ -2,7 +2,7 @@
 
 Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en cas d'écart avec ce guide, c'est le guide qu'on corrige. Modèle de référence : `dentiste`.
 
-État : le kit, le socle anglais et `dentiste` (FR + EN) sont en place. Les 12 autres démos sont encore des micro-sites écrits à la main, migrés lot par lot. Le registre unique (`src/content/templates/registry.ts`) liste tous les templates.
+État : le kit, le socle anglais et `dentiste` (FR + EN) sont en place. Six templates sont nés bilingues sur le kit, au statut `lab` servi ici (`noindex`, hors galerie, en attente de validation) : `electricien`, `osteopathe`, `reparation-mobile`, `spa-massage`, `coffee-shop`, `createur-culinaire`. Les 12 autres démos publiques sont encore des micro-sites écrits à la main, migrés lot par lot. Le registre unique (`src/content/templates/registry.ts`) liste tous les templates.
 
 ## 1. Architecture
 
