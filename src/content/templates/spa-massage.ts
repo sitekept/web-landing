@@ -20,15 +20,16 @@ import type {
  * en français et en anglais. Les vues la résolvent avec une table
  * `Record<SpaMassageIconKey, LucideIcon>` (`src/templates/spa-massage/parts.tsx`).
  *
- * Images : sources libres de droits (Unsplash), dont une photo de soin du visage montrant un
- * visage presque de face, yeux fermés ; aucune enseigne lisible. Les `alt` sont dans la copie, traduits.
+ * Images : sources libres de droits (Unsplash). Le hero est une bougie allumée dans une coupelle
+ * de verre sur fond noir (aucun texte ni marque) ; la photo de soin du visage montre un visage
+ * presque de face, yeux fermés ; aucune enseigne ni marque lisible. Les `alt` sont dans la copie, traduits.
  */
 
 const unsplash = (id: string) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=80`;
 
 const IMG = {
-  hero: unsplash("1515377905703-c4788e51af15"),
+  hero: unsplash("1700650709284-6e438b9ae98b"),
   relax: unsplash("1519824145371-296894a0daa9"),
   stones: unsplash("1600334089648-b0d9d3028eb2"),
   facial: unsplash("1570172619644-dfd03ed5d881"),
@@ -116,7 +117,7 @@ const fr = {
       ],
       image: {
         src: IMG.hero,
-        alt: "Une praticienne verse quelques gouttes d’huile d’un petit flacon ambré dans le creux de sa main, dans la pénombre.",
+        alt: "Une bougie allumée dans une coupelle de verre, dont la flamme éclaire doucement la pénombre.",
       },
     },
     signature: {
@@ -699,7 +700,7 @@ const en: SpaMassageCopy = {
       ],
       image: {
         src: IMG.hero,
-        alt: "A therapist pours a few drops of oil from a small amber bottle into the palm of her hand, in the half-light.",
+        alt: "A lit candle in a glass dish, its flame softly lighting the darkness.",
       },
     },
     signature: {
