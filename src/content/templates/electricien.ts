@@ -361,11 +361,11 @@ const fr = {
       hint: "Survolez ou touchez un chantier pour l’ouvrir.",
       items: [
         {
-          title: "Tableau électrique remplacé",
+          title: "Boîte de dérivation refaite",
           meta: "Maison · une journée",
           image: {
-            src: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1600&q=80",
-            alt: "Tableau électrique ouvert avec ses disjoncteurs alignés et ses câbles repérés par couleur.",
+            src: "https://images.unsplash.com/photo-1767514536570-83d70c024247?auto=format&fit=crop&w=1600&q=80",
+            alt: "Boîte de dérivation ouverte dans un mur, avec des fils bleus, noirs, marron et jaune-vert raccordés sur une rangée de dominos jaunes.",
           },
         },
         {
@@ -857,11 +857,11 @@ const en: ElectricienCopy = {
       hint: "Hover over or tap a job to open it.",
       items: [
         {
-          title: "Electrical panel replaced",
+          title: "Junction box redone",
           meta: "House · one day",
           image: {
-            src: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&w=1600&q=80",
-            alt: "Open electrical panel with its breakers lined up and color-coded wires.",
+            src: "https://images.unsplash.com/photo-1767514536570-83d70c024247?auto=format&fit=crop&w=1600&q=80",
+            alt: "Open junction box in a wall, with blue, black, brown and yellow-green wires connected to a row of yellow terminal blocks.",
           },
         },
         {

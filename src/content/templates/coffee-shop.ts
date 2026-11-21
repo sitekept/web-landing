@@ -22,8 +22,9 @@ import type {
  * Prix : chaîne déjà formatée (`4,20 €` en français, `€4.20` en anglais), en
  * euros dans les deux langues. Les vues les alignent en chiffres tabulaires.
  *
- * Images : sources libres de droits (Unsplash), sans visage ni enseigne
- * lisible. Les `alt` sont dans la copie, traduits.
+ * Images : sources libres de droits (Unsplash), sans visage, sans enseigne ni
+ * texte lisible ; seules des mains apparaissent (latte art au comptoir). Les
+ * `alt` sont dans la copie, traduits.
  */
 
 const unsplash = (id: string) =>
@@ -34,15 +35,15 @@ const IMG = {
   latte: unsplash("1541167760496-1628856ab772"),
   roll: unsplash("1509365465985-25d11c17e812"),
   toast: unsplash("1525351484163-7529414344d8"),
-  room: unsplash("1534040385115-33dcb3acba5b"),
+  room: unsplash("1771830916703-9f1fc36550a7"),
   dose: unsplash("1497935586351-b67a49e012bf"),
   crema: unsplash("1514432324607-a09d9b4aefdd"),
   window: unsplash("1445116572660-236099ec97a0"),
-  counter: unsplash("1453614512568-c4024d13c247"),
+  counter: unsplash("1547240089-0b75465f8e80"),
   art: unsplash("1507133750040-4a8f57021571"),
   beans: unsplash("1447933601403-0c6688de566e"),
   pastries: unsplash("1555507036-ab1f4038808a"),
-  hall: unsplash("1521017432531-fbd92d768814"),
+  hall: unsplash("1579341560277-4dfaddaf6e98"),
 } as const;
 
 const fr = {
@@ -250,7 +251,7 @@ const fr = {
     },
     terrace: {
       eyebrow: "La salle",
-      title: "Un coin de soleil au coin de la rue.",
+      title: "Un coin calme au coin de la rue.",
       description:
         "Quelques tables dehors dès les premiers beaux jours, une grande salle claire quand il pleut. Les chiens sont les bienvenus, les ordinateurs aussi.",
       points: [
@@ -272,7 +273,7 @@ const fr = {
       ],
       image: {
         src: IMG.room,
-        alt: "Une table en bois baignée de soleil près d’une fenêtre, avec un café, un carnet et une plante.",
+        alt: "Une table en bois près d’une grande fenêtre ouverte, avec deux fauteuils et un arbre dehors.",
       },
     },
     menu: {
@@ -621,7 +622,7 @@ const fr = {
           meta: "7h30",
           image: {
             src: IMG.counter,
-            alt: "Un comptoir de café avec suspensions lumineuses, machine à espresso et ardoise au mur.",
+            alt: "Du lait vapeur versé dans une tasse blanche, un motif de latte art se dessine ; la tasse est tenue à la main sur le comptoir.",
           },
         },
         {
@@ -650,10 +651,10 @@ const fr = {
         },
         {
           title: "La salle",
-          meta: "Tables et canapés",
+          meta: "Tables et tabourets",
           image: {
             src: IMG.hall,
-            alt: "Une grande salle de café avec des tables en bois, des plantes et un comptoir au fond.",
+            alt: "Une salle de café vide sous un plafond en lattes de bois, avec des tables rondes, des tabourets, des plantes et un arbre sans feuilles décoré de boules.",
           },
         },
       ],
@@ -990,7 +991,7 @@ const en: CoffeeShopCopy = {
     },
     terrace: {
       eyebrow: "The room",
-      title: "A patch of sunshine around the corner.",
+      title: "A quiet spot around the corner.",
       description:
         "A few tables outside as soon as the weather turns nice, and a big bright room when it rains. Dogs are welcome, and so are laptops.",
       points: [
@@ -1012,7 +1013,7 @@ const en: CoffeeShopCopy = {
       ],
       image: {
         src: IMG.room,
-        alt: "A sunlit wooden table by a window, with a coffee, a notebook and a plant.",
+        alt: "A wooden table by a large open window, with two armchairs and a tree outside.",
       },
     },
     menu: {
@@ -1361,7 +1362,7 @@ const en: CoffeeShopCopy = {
           meta: "7:30 am",
           image: {
             src: IMG.counter,
-            alt: "A café counter with hanging lights, an espresso machine and a chalkboard on the wall.",
+            alt: "Steamed milk poured into a white cup as a latte art pattern takes shape, the cup held in one hand at the counter.",
           },
         },
         {
@@ -1390,10 +1391,10 @@ const en: CoffeeShopCopy = {
         },
         {
           title: "The room",
-          meta: "Tables and sofas",
+          meta: "Tables and stools",
           image: {
             src: IMG.hall,
-            alt: "A large café room with wooden tables, plants and a counter in the back.",
+            alt: "An empty café room under a wooden slat ceiling, with round tables, stools, potted plants and a bare tree hung with baubles.",
           },
         },
       ],

@@ -21,8 +21,9 @@ import type {
  * `Record<SpaMassageIconKey, LucideIcon>` (`src/templates/spa-massage/parts.tsx`).
  *
  * Images : sources libres de droits (Unsplash). Le hero est une bougie allumée dans une coupelle
- * de verre sur fond noir (aucun texte ni marque) ; la photo de soin du visage montre un visage
- * presque de face, yeux fermés ; aucune enseigne ni marque lisible. Les `alt` sont dans la copie, traduits.
+ * de verre sur fond noir (aucun texte ni marque). Deux photos montrent un visage, yeux fermés :
+ * la photo de soin du visage (visage presque de face) et celle de la salle duo
+ * (`photo-1544161515…`, visage d'une cliente) ; on les garde. Aucune enseigne ni marque lisible. Les `alt` sont dans la copie, traduits.
  */
 
 const unsplash = (id: string) =>

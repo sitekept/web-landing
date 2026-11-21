@@ -115,8 +115,8 @@ const fr = {
       description:
         "Écran cassé, batterie à plat, connecteur de charge hors service : décrivez la panne, recevez un devis clair avant toute intervention, puis récupérez votre appareil en atelier ou chez vous.",
       image: {
-        src: "https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=1600&q=80",
-        alt: "Les mains d'un technicien démontent un appareil électronique avec un tournevis, sur un établi sombre.",
+        src: "https://images.unsplash.com/photo-1746017354751-0102ae5a7c5a?auto=format&fit=crop&w=1600&q=80",
+        alt: "Un smartphone à l'écran brisé posé sur un tapis de réparation bleu, avant le remplacement de la vitre.",
       },
       badge: {
         label: "Remplacement d'écran",
@@ -656,8 +656,8 @@ const en: ReparationMobileCopy = {
       description:
         "Cracked screen, dead battery, charging port that no longer works: describe the problem, get a clear quote before any work, then pick up your device at the shop or have it repaired at home.",
       image: {
-        src: "https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=1600&q=80",
-        alt: "A technician's hands unscrew an electronic device with a screwdriver on a dark workbench.",
+        src: "https://images.unsplash.com/photo-1746017354751-0102ae5a7c5a?auto=format&fit=crop&w=1600&q=80",
+        alt: "A smartphone with a shattered screen lying on a blue repair mat, before its screen is replaced.",
       },
       badge: {
         label: "Screen replacement",
