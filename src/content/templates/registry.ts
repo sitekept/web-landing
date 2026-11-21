@@ -674,7 +674,8 @@ export interface AdminTemplateCatalogEntry {
   name: string;
   sector: string;
   adminStatus: TemplateAdminStatus;
-  vercelUrl: string;
+  /** Absent pour un `lab` routé : il n'existe pas sur le déploiement Vercel. */
+  vercelUrl?: string;
   /** Démo française sur sitekept.com, pour un template public ou `lab` routé. */
   sitekeptUrl?: string;
   /** Démo anglaise sur sitekept.com, quand `locales` contient `"en"` (toujours pour un `lab` routé). */
@@ -709,7 +710,9 @@ export function toAdminCatalogEntry(
           : entry.status === "lab"
             ? "Lab only"
             : "Vercel only",
-    vercelUrl: `${TEMPLATE_VERCEL_BASE_URL}/${entry.slug}`,
+    ...(isLabRoutedTemplate(entry)
+      ? {}
+      : { vercelUrl: `${TEMPLATE_VERCEL_BASE_URL}/${entry.slug}` }),
     ...(isPublicTemplate(entry) || isLabRoutedTemplate(entry)
       ? {
           sitekeptUrl: `${SITEKEPT_BASE_URL}/${entry.slug}`,

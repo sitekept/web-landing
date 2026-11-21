@@ -50,7 +50,7 @@ export default function AdminTemplatesPage() {
     <main className="min-h-screen bg-slate-950 px-6 py-10 text-white lg:px-10">
       <div className="mx-auto max-w-7xl">
         <section className="border-b border-white/10 pb-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-blue-200">
+          <p className="text-xs font-semibold tracking-[0.32em] text-blue-200 uppercase">
             Admin hidden catalog
           </p>
           <div className="mt-4 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -81,7 +81,7 @@ export default function AdminTemplatesPage() {
         </section>
 
         <section className="mt-8 overflow-hidden rounded-md border border-white/10 bg-white">
-          <div className="hidden grid-cols-[1.15fr_0.85fr_0.8fr_1.2fr_1.1fr] gap-4 border-b border-slate-200 bg-slate-50 px-5 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 lg:grid">
+          <div className="hidden grid-cols-[1.15fr_0.85fr_0.8fr_1.2fr_1.1fr] gap-4 border-b border-slate-200 bg-slate-50 px-5 py-4 text-xs font-semibold tracking-[0.2em] text-slate-500 uppercase lg:grid">
             <span>Template</span>
             <span>Statut</span>
             <span>Présence</span>
@@ -113,27 +113,31 @@ export default function AdminTemplatesPage() {
                   </span>
                 </div>
 
-                <p className="text-sm text-slate-600">
-                  {template.routeStatus}
-                </p>
+                <p className="text-sm text-slate-600">{template.routeStatus}</p>
 
                 <div className="flex flex-wrap items-center gap-2 text-sm font-medium">
-                  <a
-                    href={template.vercelUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Vercel : ${template.name}`}
-                    className="rounded-full bg-slate-950 px-3 py-1.5 text-white transition hover:bg-slate-800"
-                  >
-                    Vercel
-                  </a>
+                  {template.vercelUrl ? (
+                    <a
+                      href={template.vercelUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Vercel : ${template.name}`}
+                      className="rounded-full bg-slate-950 px-3 py-1.5 text-white transition hover:bg-slate-800"
+                    >
+                      Vercel
+                    </a>
+                  ) : null}
                   {template.sitekeptUrl ? (
                     <a
                       href={template.sitekeptUrl}
                       target="_blank"
                       rel="noreferrer"
                       aria-label={`FR : ${template.name}, version française sur SiteKept`}
-                      className="rounded-full border border-blue-200 px-3 py-1.5 text-blue-800 transition hover:border-blue-400"
+                      className={
+                        template.vercelUrl
+                          ? "rounded-full border border-blue-200 px-3 py-1.5 text-blue-800 transition hover:border-blue-400"
+                          : "rounded-full bg-slate-950 px-3 py-1.5 text-white transition hover:bg-slate-800"
+                      }
                     >
                       FR
                     </a>
