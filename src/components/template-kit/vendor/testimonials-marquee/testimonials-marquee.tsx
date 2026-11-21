@@ -1,3 +1,6 @@
+// Testimonials with Marquee - serafimcloud - https://21st.dev/@serafimcloud/components/testimonials-with-marquee
+// MIT, voir LICENSE.
+
 import { Star } from "lucide-react";
 import type { CSSProperties } from "react";
 

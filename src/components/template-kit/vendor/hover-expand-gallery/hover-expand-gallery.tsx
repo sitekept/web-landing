@@ -1,5 +1,8 @@
 "use client";
 
+// Hover Expand Gallery - kedhareswer - https://21st.dev/@kedhareswer/components/hover-expand-gallery
+// MIT, voir LICENSE.
+
 import { clsx } from "clsx";
 import Image, { type ImageProps } from "next/image";
 import { useId, useState, type CSSProperties } from "react";
@@ -152,13 +155,13 @@ export function HoverExpandGallery({
                     isActive ? "text-tpl-ink" : "text-tpl-ink-muted"
                   )}
                 >
-                  <span className="truncate lg:rotate-180 lg:overflow-hidden lg:whitespace-nowrap lg:[writing-mode:vertical-rl]">
+                  <span className="truncate lg:rotate-180 lg:overflow-hidden lg:whitespace-nowrap lg:[text-orientation:sideways] lg:[writing-mode:vertical-rl]">
                     {item.title}
                   </span>
                   {item.meta ? (
                     <span
                       className={clsx(
-                        "shrink-0 text-tpl-xs font-medium transition-opacity duration-(--hx-t) ease-out motion-reduce:transition-none lg:rotate-180 lg:whitespace-nowrap lg:[writing-mode:vertical-rl]",
+                        "shrink-0 text-tpl-xs font-medium transition-opacity duration-(--hx-t) ease-out motion-reduce:transition-none lg:rotate-180 lg:whitespace-nowrap lg:[text-orientation:sideways] lg:[writing-mode:vertical-rl]",
                         isActive ? "opacity-100" : "opacity-0"
                       )}
                     >

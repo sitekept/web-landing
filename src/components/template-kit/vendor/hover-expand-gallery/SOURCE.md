@@ -3,7 +3,7 @@
 - **Nom** : Hover Expand Gallery
 - **URL** : https://21st.dev/@kedhareswer/components/hover-expand-gallery
 - **Auteur** : kedhareswer
-- **Licence** : MIT (affichée « License: mit » sur la page 21st.dev). Conformément aux conditions de 21st.dev, la licence est conservée et l'auteur crédité ici et dans l'en-tête du composant.
+- **Licence** : MIT (affichée « License: mit » sur la page 21st.dev). Conformément aux conditions de 21st.dev, la licence est conservée : texte MIT complet dans `LICENSE` (copyright au nom de l'auteur, sans année), auteur et URL rappelés en tête du composant et ici.
 - **Date de récupération** : 2026-11-20
 - **Id 21st.dev** : 27010 (composant 13602)
 - **Installation d'origine** : `npx shadcn@latest add "https://21st.dev/r/kedhareswer/hover-expand-gallery"` (non utilisée : code recopié puis réécrit)
@@ -11,6 +11,7 @@
 ## Fichiers
 
 - `hover-expand-gallery.tsx` : composant (client : état du panneau ouvert).
+- `LICENSE` : licence MIT.
 - `index.ts` : exports. Ne pas ajouter au barrel `@/components/template-kit` ; import par module :
   `import { HoverExpandGallery } from "@/components/template-kit/vendor/hover-expand-gallery";`
 
@@ -26,3 +27,4 @@
 - Suppression de la prop `onChange` (une fonction n'est pas sérialisable depuis une vue serveur).
 - Conservés : mécanique (`flex-basis` animé au-dessus de `lg`, accordéon sous `lg`), `motion-reduce`, ouverture au survol souris, au focus et au clic, commentaires de l'auteur (traduits).
 - Aucun texte en dur ; aucune dépendance ajoutée.
+- Libellé vertical (`lg:[writing-mode:vertical-rl]`) : ajout de `lg:[text-orientation:sideways]` sur le titre et la meta, pour que l'apostrophe typographique reste couchée (sinon « d’appartement » s'affiche avec une apostrophe debout).

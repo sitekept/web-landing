@@ -205,7 +205,7 @@ Helpers de liens (purs, utilisables côté client et serveur), plus `TEMPLATE_LO
 
 ### Éléments 21st.dev déjà intégrés
 
-Ils vivent dans `src/components/template-kit/vendor/<nom>/` avec un `SOURCE.md` (URL, auteur, licence MIT conservée, date, id 21st, modifications), ne sont pas dans le barrel `index.ts` et s'importent par module.
+Ils vivent dans `src/components/template-kit/vendor/<nom>/` avec un `SOURCE.md` (URL, auteur, licence MIT conservée dans `LICENSE` et rappelée en tête du composant, date, id 21st, modifications), ne sont pas dans le barrel `index.ts` et s'importent par module.
 
 - **`testimonials-marquee`** (« Testimonials with Marquee », serafimcloud) : bande d'avis défilante, composant serveur, animation CSS (`--animate-tpl-marquee` dans `globals.css`).
   - Import : `import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonials-marquee"`.
