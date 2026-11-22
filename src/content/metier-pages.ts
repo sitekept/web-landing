@@ -374,7 +374,7 @@ export const metierPages: MetierPage[] = [
     slug: "site-internet-patisserie",
     metier: "pâtisserie",
     label: "une pâtisserie",
-    demoSlug: "pattiserie",
+    demoSlug: "patisserie",
     demoName: "Démo pâtisserie",
     seoTitle: "Site internet pour pâtisserie | Sitekept",
     seoDescription:

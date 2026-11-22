@@ -203,13 +203,12 @@ const TEMPLATES = [
     },
   },
   {
-    slug: "pattiserie",
+    slug: "patisserie",
     status: "sitekept-public",
     name: "Template Patisserie",
     sector: "Pâtisserie",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/patisserie.png",
       featured: true,
@@ -670,6 +669,8 @@ export function publicTemplateServesLocale(
  * - `avocate-tel-aviv` : simple redirection permanente vers `/avocate`.
  *   L'ancienne URL portait l'identité d'une cliente réelle, et ses redirections
  *   doivent rester `noindex` comme les démos.
+ * - `pattiserie` : ancienne adresse (faute de frappe) de `patisserie`, simple
+ *   redirection permanente ; elle reste `noindex` comme les démos.
  *
  * `balinjera` en faisait partie : sa route a été retirée du domaine, car elle
  * reproduisait le site d'une cliente réelle et exposait son adresse e-mail
@@ -678,6 +679,7 @@ export function publicTemplateServesLocale(
 export const nonTemplateDemos = [
   { slug: "je", kind: "project" },
   { slug: "avocate-tel-aviv", kind: "redirect" },
+  { slug: "pattiserie", kind: "redirect" },
 ] as const satisfies readonly {
   readonly slug: string;
   readonly kind: "project" | "redirect";

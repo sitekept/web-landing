@@ -51,6 +51,8 @@ check /fleuriste yes
 check /en/fleuriste yes
 check /ordinateur yes
 check /en/ordinateur yes
+check /patisserie yes
+check /en/patisserie yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail

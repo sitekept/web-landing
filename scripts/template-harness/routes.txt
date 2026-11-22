@@ -50,7 +50,7 @@ demo	/menage-nettoyage/faq
 demo	/menage-nettoyage/formules
 demo	/menage-nettoyage/zones
 demo	/ordinateur
-demo	/pattiserie
+demo	/patisserie
 demo	/plombier-chauffagiste
 demo	/plombier-chauffagiste/contact
 demo	/plombier-chauffagiste/depannages
@@ -190,3 +190,4 @@ demo-en	/en/avocate/expertises
 demo-en	/en/boulangerie
 demo-en	/en/fleuriste
 demo-en	/en/ordinateur
+demo-en	/en/patisserie
