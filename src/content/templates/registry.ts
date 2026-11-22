@@ -136,8 +136,7 @@ const TEMPLATES = [
     name: "Template Boulangerie",
     sector: "Boulangerie",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/boulangerie.png",
       featured: true,

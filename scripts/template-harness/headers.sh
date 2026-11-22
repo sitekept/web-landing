@@ -45,6 +45,8 @@ check /salon-coiffure yes; check /salon-coiffure/prestations yes
 check /en/salon-coiffure yes; check /en/salon-coiffure/prestations yes
 check /avocate yes; check /avocate/expertises yes
 check /en/avocate yes; check /en/avocate/expertises yes
+check /boulangerie yes
+check /en/boulangerie yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail
