@@ -27,6 +27,7 @@ export function HomeProof({ locale }: { locale: TemplateLocale }) {
             beforeLabel={proof.before.label}
             afterLabel={proof.after.label}
             handleLabel={proof.handle}
+            valueText={proof.handleValue}
             ratio="16/9"
             sizes="(min-width: 1024px) 560px, calc(100vw - 80px)"
             defaultPosition={58}

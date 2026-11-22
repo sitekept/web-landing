@@ -32,7 +32,12 @@ export function HomeServices({ locale }: { locale: TemplateLocale }) {
                 tone="tint"
                 elevation="flat"
                 title={item.title}
-                icon={<Icon aria-hidden="true" className="size-10 text-tpl-accent" />}
+                icon={
+                  <Icon
+                    aria-hidden="true"
+                    className="size-10 text-tpl-accent"
+                  />
+                }
                 className="h-full p-7"
               >
                 {item.text}

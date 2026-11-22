@@ -19,7 +19,10 @@ export function HomeOccasions({ locale }: { locale: TemplateLocale }) {
       titleScale="title"
     >
       <div className="grid gap-5 lg:grid-cols-[0.85fr_1.15fr]">
-        <TemplatePanel tone="surface" className="rounded-[2.25rem] p-8 shadow-tpl-sm">
+        <TemplatePanel
+          tone="surface"
+          className="rounded-[2.25rem] p-8 shadow-tpl-sm"
+        >
           <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-eyebrow uppercase">
             {page.panel.eyebrow}
           </p>

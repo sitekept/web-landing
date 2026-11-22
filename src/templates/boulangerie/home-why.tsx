@@ -62,7 +62,10 @@ export function HomeWhy({ locale }: { locale: TemplateLocale }) {
 
               return (
                 <li key={stat.label} className="rounded-tpl bg-tpl-ink/10 p-5">
-                  <Icon aria-hidden="true" className="size-8 text-tpl-eyebrow" />
+                  <Icon
+                    aria-hidden="true"
+                    className="size-8 text-tpl-eyebrow"
+                  />
                   <p className="mt-4 text-tpl-xl font-bold">{stat.value}</p>
                   <p className="mt-1 text-tpl-sm text-tpl-ink/90">
                     {stat.label}

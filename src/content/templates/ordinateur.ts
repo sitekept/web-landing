@@ -222,7 +222,8 @@ const fr = {
   },
   specials: {
     title: "Services spécialisés",
-    description: "Au-delà de la réparation, nous proposons des services complets",
+    description:
+      "Au-delà de la réparation, nous proposons des services complets",
     items: [
       {
         icon: "shield",
@@ -339,7 +340,8 @@ const en: OrdinateurCopy = {
           },
           {
             name: "Motherboard issue",
-            description: "Motherboard diagnosis and repair, electronic circuits",
+            description:
+              "Motherboard diagnosis and repair, electronic circuits",
             price: "€60-200",
             image: {
               src: IMG.motherboard,
@@ -348,7 +350,8 @@ const en: OrdinateurCopy = {
           },
           {
             name: "Data recovery",
-            description: "File recovery from failing hard drives and damaged SSDs",
+            description:
+              "File recovery from failing hard drives and damaged SSDs",
             price: "€90-300",
             image: {
               src: IMG.data,
@@ -372,7 +375,8 @@ const en: OrdinateurCopy = {
           },
           {
             name: "Failing battery",
-            description: "Battery replacement for iPhone, Samsung, Huawei, Xiaomi",
+            description:
+              "Battery replacement for iPhone, Samsung, Huawei, Xiaomi",
             price: "€40-80",
             image: {
               src: IMG.battery,
@@ -474,8 +478,7 @@ const en: OrdinateurCopy = {
       {
         icon: "shield",
         title: "On-site support",
-        description:
-          "We come to you to fix software and hardware problems",
+        description: "We come to you to fix software and hardware problems",
       },
       {
         icon: "wrench",

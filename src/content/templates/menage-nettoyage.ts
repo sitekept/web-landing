@@ -133,6 +133,7 @@ const fr = {
         alt: "Chambre lumineuse avec un grand lit, des coussins verts, des plantes et un rideau blanc devant la fenêtre",
       },
       handle: "Comparer avant et après",
+      handleValue: "{before} % avant, {after} % après",
       note: "Ici, la preuve n’est pas une galerie décorative. Le slider montre une remise au propre lisible, adaptée au langage très pratique de la template ménage.",
       points: [
         "Produits adaptés au lieu, pas promesse vague « écologique » sortie du contexte.",
@@ -380,6 +381,7 @@ const en: MenageNettoyageCopy = {
         alt: "Bright bedroom with a large bed, green cushions, plants and a white curtain by the window",
       },
       handle: "Compare before and after",
+      handleValue: "{before}% before, {after}% after",
       note: "Here, the proof is not a decorative gallery. The slider shows a clear, readable fresh start, in the very practical language of the housekeeping template.",
       points: [
         "Products suited to the place, not a vague “eco-friendly” claim taken out of context.",
@@ -442,7 +444,7 @@ const en: MenageNettoyageCopy = {
       "The site commits to a concrete network with matching time slots, which makes the promise more credible.",
     toursTitle: "Routes",
     tours: [
-      "Monday / Thursday: Paris right bank and north-east.",
+      "Monday / Thursday: Paris Right Bank and north-east.",
       "Tuesday / Friday: western Paris and Issy-Vanves-Boulogne.",
       "Wednesday / Saturday: Vincennes, Montreuil and one-off visits.",
     ],

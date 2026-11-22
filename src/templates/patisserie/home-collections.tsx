@@ -25,7 +25,10 @@ export function HomeCollections({ locale }: { locale: TemplateLocale }) {
       <ul className="space-y-10">
         {page.items.map((item, index) => (
           <li key={item.title}>
-            <TemplatePanel tone="surface" className="grid gap-6 rounded-[2.4rem] p-5 shadow-tpl-sm lg:grid-cols-[0.95fr_1.05fr] lg:p-7">
+            <TemplatePanel
+              tone="surface"
+              className="grid gap-6 rounded-[2.4rem] p-5 shadow-tpl-sm lg:grid-cols-[0.95fr_1.05fr] lg:p-7"
+            >
               <div
                 className={`relative min-h-[380px] overflow-hidden rounded-3xl ${
                   index % 2 === 1 ? "lg:order-2" : ""

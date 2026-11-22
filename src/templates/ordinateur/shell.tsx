@@ -40,9 +40,7 @@ export function OrdinateurShell({
       brand={{
         href: home,
         name: copy.brand.name,
-        mark: (
-          <Monitor aria-hidden="true" className="size-8 text-tpl-accent" />
-        ),
+        mark: <Monitor aria-hidden="true" className="size-8 text-tpl-accent" />,
       }}
       nav={[
         { href: anchor(ANCHORS.home), label: copy.nav.home },

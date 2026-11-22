@@ -34,8 +34,8 @@ import type {
  * lisible. Les `alt` sont dans la copie, traduits.
  */
 
-const unsplash = (id: string, rect = "") =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=80${rect}`;
+const unsplash = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=80`;
 
 const IMG = {
   hero: unsplash("1600607687920-4e2a09cf159d"),
@@ -47,7 +47,7 @@ const IMG = {
   calm: unsplash("1522771739844-6a9f6d5f14af"),
   kitchen: unsplash("1507089947368-19c1da9775ae"),
   salon: unsplash("1585128792020-803d29415281"),
-  lakeLiving: unsplash("1616486338812-3dadae4b4ace", "&h=700&crop=top"),
+  lakeLiving: unsplash("1713283391486-b92cda2562e8"),
   lakeKitchen: unsplash("1781249144275-c04daed37031"),
   lakeTerrace: unsplash("1760594043210-c5d4ca163df4"),
   lakeBedroom: unsplash("1617325247661-675ab4b64ae2"),
@@ -260,7 +260,7 @@ const fr = {
           meta: "3 pièces · 82 m² · 395 000 €",
           image: {
             src: IMG.lakeLiving,
-            alt: "Un séjour lumineux et sobre : un canapé d’angle beige, une table basse ronde en bois, un fauteuil cannage et un mur de décoration.",
+            alt: "Un séjour clair : un canapé bleu pétrole, un pouf tressé et une porte vitrée ouverte sur une terrasse en bois.",
           },
         },
         {
@@ -425,7 +425,7 @@ const fr = {
         {
           image: {
             src: IMG.lakeLiving,
-            alt: "Un séjour lumineux et sobre : un canapé d’angle beige, une table basse ronde en bois, un fauteuil cannage et un mur de décoration.",
+            alt: "Un séjour clair : un canapé bleu pétrole, un pouf tressé et une porte vitrée ouverte sur une terrasse en bois.",
           },
           kind: "Appartement",
           status: "Nouveau",
@@ -571,7 +571,7 @@ const fr = {
       items: [
         {
           src: IMG.lakeLiving,
-          alt: "Un séjour lumineux et sobre : un canapé d’angle beige, une table basse ronde en bois, un fauteuil cannage et un mur de décoration.",
+          alt: "Un séjour clair : un canapé bleu pétrole, un pouf tressé et une porte vitrée ouverte sur une terrasse en bois.",
         },
         {
           src: IMG.lakeKitchen,
@@ -1387,7 +1387,7 @@ const en: AgenceImmobiliereCopy = {
           meta: "3 rooms · 883 sq ft · €395,000",
           image: {
             src: IMG.lakeLiving,
-            alt: "A bright, understated living room: a beige sectional sofa, a round wooden coffee table, a cane armchair and a decorated wall.",
+            alt: "A bright living room: a teal sofa, a woven pouf and a glass door open onto a wooden deck.",
           },
         },
         {
@@ -1553,7 +1553,7 @@ const en: AgenceImmobiliereCopy = {
         {
           image: {
             src: IMG.lakeLiving,
-            alt: "A bright, understated living room: a beige sectional sofa, a round wooden coffee table, a cane armchair and a decorated wall.",
+            alt: "A bright living room: a teal sofa, a woven pouf and a glass door open onto a wooden deck.",
           },
           kind: "Apartment",
           status: "New",
@@ -1700,7 +1700,7 @@ const en: AgenceImmobiliereCopy = {
       items: [
         {
           src: IMG.lakeLiving,
-          alt: "A bright, understated living room: a beige sectional sofa, a round wooden coffee table, a cane armchair and a decorated wall.",
+          alt: "A bright living room: a teal sofa, a woven pouf and a glass door open onto a wooden deck.",
         },
         {
           src: IMG.lakeKitchen,

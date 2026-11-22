@@ -28,7 +28,8 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
         priority
       >
         <div className="mx-auto flex w-full max-w-4xl flex-1 flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:px-8">
-          <p className="mb-6 flex items-center justify-center gap-3 text-tpl-lg font-medium text-tpl-eyebrow">
+          {/* Bleu éclairci : sur la photo, la teinte des sur-titres tombait à 3:1. */}
+          <p className="mb-6 flex items-center justify-center gap-3 text-tpl-lg font-medium text-[color-mix(in_oklab,var(--tpl-eyebrow)_40%,var(--tpl-ink))]">
             <Sparkles aria-hidden="true" className="size-8 shrink-0" />
             {page.badge}
             <Sparkles aria-hidden="true" className="size-8 shrink-0" />

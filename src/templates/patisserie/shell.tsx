@@ -52,13 +52,20 @@ export function PatisserieShell({
         { href: anchor(ANCHORS.signature), label: copy.nav.signature },
         { href: anchor(ANCHORS.contact), label: copy.nav.contact },
       ]}
-      cta={{ href: anchor(ANCHORS.contact), label: copy.nav.order, icon: false }}
+      cta={{
+        href: anchor(ANCHORS.contact),
+        label: copy.nav.order,
+        icon: false,
+      }}
       footer={
         <footer className="border-t border-tpl-line bg-tpl-surface px-4 text-tpl-ink sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 py-12 md:grid-cols-3">
             <div>
               <div className="flex items-center gap-3">
-                <ChefHat aria-hidden="true" className="size-5 text-tpl-accent" />
+                <ChefHat
+                  aria-hidden="true"
+                  className="size-5 text-tpl-accent"
+                />
                 <span className="font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight)">
                   {copy.brand.name}
                 </span>

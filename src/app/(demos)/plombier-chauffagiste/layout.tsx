@@ -9,6 +9,8 @@ export default function PlombierChauffagisteLayout({
   children: ReactNode;
 }) {
   return (
-    <PlombierChauffagisteShell locale="fr">{children}</PlombierChauffagisteShell>
+    <PlombierChauffagisteShell locale="fr">
+      {children}
+    </PlombierChauffagisteShell>
   );
 }

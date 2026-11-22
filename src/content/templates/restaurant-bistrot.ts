@@ -29,7 +29,7 @@ const IMG = {
   room: unsplash("1650490632010-e18cbb694dd1"),
   plate: unsplash("1621327017866-6fb07e6c96ea"),
   glasses: unsplash("1675965218658-bd6f516742ac"),
-  counter: unsplash("1709548145082-04d0cde481d4"),
+  candle: unsplash("1666600638841-4fe4a01ae260"),
 } as const;
 
 const fr = {
@@ -173,8 +173,8 @@ const fr = {
         alt: "Verres à vin et serviette bleu nuit sur une table en bois, étagères de la salle floues à l’arrière-plan",
       },
       {
-        src: IMG.counter,
-        alt: "Salle tamisée aux murs de pierre et aux suspensions dorées, comptoir et étagères au fond",
+        src: IMG.candle,
+        alt: "Table ronde en bois éclairée par une bougie rouge, chaises bistrot et salle floue au fond",
       },
     ],
   },
@@ -256,7 +256,7 @@ const en: RestaurantBistrotCopy = {
     reservation: {
       title: "Reservations - Your business",
       description:
-        "Lunch from 12 p.m. to 2:30 p.m., dinner from 7 p.m. to 10:30 p.m., groups and light private dining on request: booking is a choice of atmosphere and service.",
+        "Lunch from 12 p.m. to 2:30 p.m., dinner from 7 p.m. to 10:30 p.m., groups and light private dining on request: booking is a choice of atmosphere and service.",
     },
     galerie: {
       title: "Gallery - Your business",
@@ -276,7 +276,7 @@ const en: RestaurantBistrotCopy = {
     contact: {
       title: "Contact - Your business",
       description:
-        "17 rue Keller, Paris 11e. Open Tuesday through Saturday, 12 p.m. to 2:30 p.m. and 7 p.m. to 10:30 p.m. Reservations: contact@example.com.",
+        "17 rue Keller, Paris 11e. Open Tuesday through Saturday, 12 p.m. to 2:30 p.m. and 7 p.m. to 10:30 p.m. Reservations: contact@example.com.",
     },
   },
   home: {
@@ -330,8 +330,8 @@ const en: RestaurantBistrotCopy = {
     description:
       "You reserve a lunch, a dinner or light private dining, not just a time slot.",
     items: [
-      "Lunch · continuous service from 12 p.m. to 2:30 p.m.",
-      "Dinner · 7 p.m. to 10:30 p.m., short menu and a lively wine cellar",
+      "Lunch · continuous service from 12 p.m. to 2:30 p.m.",
+      "Dinner · 7 p.m. to 10:30 p.m., short menu and a lively wine cellar",
       "Groups · small formats and light private dining on request",
     ],
     aside: "You reserve a table here because you already want to be there.",
@@ -354,8 +354,8 @@ const en: RestaurantBistrotCopy = {
         alt: "Wine glasses and a navy napkin on a wooden table, with the room’s shelves blurred in the background",
       },
       {
-        src: IMG.counter,
-        alt: "Dim dining room with stone walls and golden pendant lamps, a counter and shelves at the back",
+        src: IMG.candle,
+        alt: "Round wooden table lit by a red candle, bistro chairs and a blurred dining room behind",
       },
     ],
   },
@@ -384,7 +384,7 @@ const en: RestaurantBistrotCopy = {
     title: "A short page to come by, call or write.",
     items: [
       "17 rue Keller, Paris 11e",
-      "Tue-Sat, 12 p.m.-2:30 p.m. and 7 p.m.-10:30 p.m.",
+      "Tue-Sat, 12 p.m.-2:30 p.m. and 7 p.m.-10:30 p.m.",
       "contact@example.com",
     ],
   },

@@ -30,7 +30,11 @@ export type TemplateThemeTokens = {
    * `raised`.
    */
   eyebrow?: string;
-  /** Même rôle sur fond inverse. Repli : l'encre secondaire inverse. */
+  /**
+   * Même rôle sur fond inverse. Repli : l'encre secondaire inverse. Sur une photo
+   * (`TemplateHeroMedia`), le voile ne garantit que `ink` et `ink-muted` : mesurer
+   * cette teinte au pire pixel (4,5:1), l'éclaircir dans la vue au besoin.
+   */
   eyebrowInverse?: string;
   line?: string;
   radius?: string;

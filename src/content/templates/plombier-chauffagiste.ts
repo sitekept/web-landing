@@ -431,7 +431,7 @@ const fr = {
           title: "Chaudière en panne",
           items: [
             "Notez le code erreur affiché et prenez l’écran en photo.",
-            "Lisez la pression sur le manomètre et donnez-la nous : ne remplissez pas le circuit au hasard.",
+            "Lisez la pression sur le manomètre et donnez-la-nous : ne remplissez pas le circuit au hasard.",
             "Si la chaudière siffle, chauffe trop ou sent le brûlé, coupez-la et ne la relancez pas.",
           ],
         },

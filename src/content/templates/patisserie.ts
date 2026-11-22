@@ -69,7 +69,8 @@ const fr = {
   },
   collections: {
     eyebrow: "Collections",
-    title: "Une lecture par univers de création, pas par simple liste de produits.",
+    title:
+      "Une lecture par univers de création, pas par simple liste de produits.",
     items: [
       {
         title: "Entremets signature",
@@ -121,7 +122,8 @@ const fr = {
       "Une pâtisserie pensée pour les moments qui demandent plus qu’un simple dessert.",
     panel: {
       eyebrow: "Maison",
-      title: "Nous travaillons la table, le rythme du repas et la place de la pièce.",
+      title:
+        "Nous travaillons la table, le rythme du repas et la place de la pièce.",
       text: "Le site n’est pas structuré comme un menu de boutique. Il met d’abord en avant la portée symbolique de la création et le service qui l’accompagne.",
     },
     items: [
@@ -197,7 +199,8 @@ const fr = {
   },
   meta: {
     home: {
-      title: "Pâtisserie Douceur - Pâtisserie Artisanale & Créations Gourmandes",
+      title:
+        "Pâtisserie Douceur - Pâtisserie Artisanale & Créations Gourmandes",
       description:
         "Pâtisserie Douceur, artisan pâtissier depuis 1985. Spécialités françaises, entremets, gâteaux personnalisés et pâtisseries individuelles.",
     },
@@ -297,7 +300,8 @@ const en: PatisserieCopy = {
       "A pastry shop made for moments that call for more than a simple dessert.",
     panel: {
       eyebrow: "House",
-      title: "We work on the table, the rhythm of the meal and the place of the piece.",
+      title:
+        "We work on the table, the rhythm of the meal and the place of the piece.",
       text: "The site is not structured like a shop menu. It puts the symbolic weight of the creation first, along with the service that comes with it.",
     },
     items: [

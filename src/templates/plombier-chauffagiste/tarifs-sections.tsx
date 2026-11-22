@@ -35,7 +35,8 @@ export function PriceListSection({ locale }: Props) {
 
 /** Preuve : ce que couvre le prix annoncé, photo à gauche. */
 export function IncludedSection({ locale }: Props) {
-  const included = getTemplateCopy(plombierChauffagiste, locale).tarifs.included;
+  const included = getTemplateCopy(plombierChauffagiste, locale).tarifs
+    .included;
 
   return (
     <TemplateSection tone="raised">

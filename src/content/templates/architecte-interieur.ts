@@ -305,7 +305,7 @@ const en: ArchitecteInterieurCopy = {
         "The projects page works as a long table of contents of case studies. Each entry sets out an intention first, then opens the rest of the story.",
     },
     atelierMarais: {
-      title: "Studio apartment, Le Marais - Your business",
+      title: "Loft apartment, Le Marais - Your business",
       description:
         "A project sheet designed as a chapter of a case file: context, approach, materials and results in use.",
     },
@@ -361,7 +361,7 @@ const en: ArchitecteInterieurCopy = {
       items: [
         {
           label: "Chapter 01",
-          title: "Studio apartment, Le Marais",
+          title: "Loft apartment, Le Marais",
           note: "Opening up the space without erasing the memory of the place.",
           href: P.atelierMarais,
         },
@@ -384,7 +384,7 @@ const en: ArchitecteInterieurCopy = {
       title: "Case studies appear as chapter pages, not as product cards.",
       flagship: {
         eyebrow: "Flagship case",
-        text: "Studio apartment, Le Marais: opening up the sightlines, a mineral kitchen, light running through and a controlled furniture presence.",
+        text: "Loft apartment, Le Marais: opening up the sightlines, a mineral kitchen, light running through and a controlled furniture presence.",
         note: "This area deliberately replaces the usual testimonials or statistics. Here, the proof lies in the quality of the story.",
       },
       points: [
@@ -413,7 +413,7 @@ const en: ArchitecteInterieurCopy = {
     items: [
       {
         label: "Project 01",
-        title: "Studio apartment, Le Marais",
+        title: "Loft apartment, Le Marais",
         summary:
           "Opening up the plan, a mineral kitchen and through views as the guiding thread.",
         href: P.atelierMarais,
@@ -436,7 +436,7 @@ const en: ArchitecteInterieurCopy = {
   },
   atelierMarais: {
     eyebrow: "Case study",
-    title: "Studio apartment, Le Marais",
+    title: "Loft apartment, Le Marais",
     description:
       "A project sheet designed as a chapter of a case file: context, approach, materials and results in use.",
     points: [

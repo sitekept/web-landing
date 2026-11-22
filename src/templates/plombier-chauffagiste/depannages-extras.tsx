@@ -84,7 +84,8 @@ export function ReflexesSection({ locale }: Props) {
 
 /** Rupture : ce que l'entreprise ne fait pas, fond teal. */
 export function LimitsSection({ locale }: Props) {
-  const limits = getTemplateCopy(plombierChauffagiste, locale).depannages.limits;
+  const limits = getTemplateCopy(plombierChauffagiste, locale).depannages
+    .limits;
 
   return (
     <TemplateSection
