@@ -9,10 +9,7 @@ import type { MetierFaq } from "@/content/metier-pages";
  * d'origine entre parenthèses quand il aide à les retrouver.
  *
  * `demoName` et `secondaryDemo.name` nomment la démo sans mention de langue :
- * la vue (`src/views/metier.tsx`) ajoute « (in French) » seulement quand le
- * registre des templates ne déclare pas de version anglaise du template, et
- * pointe alors vers la démo française. Pour un template bilingue, le lien va
- * vers `/en/<slug>`.
+ * tous les templates publics sont bilingues, le lien va vers `/en/<slug>`.
  */
 export interface MetierPageEnglishCopy {
   /** Slug anglais, servi sous /en/{slug}. */

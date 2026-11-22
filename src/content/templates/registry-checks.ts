@@ -5,11 +5,9 @@
  * `pnpm type-check`. Il lit les définitions avec `import type`, ce qui garde le
  * registre (tiré par le middleware) libre de toute copie de template.
  *
- * Quand un template est migré sur le kit, on ajoute sa définition à
- * `Definitions` : `locales` du registre doit alors correspondre aux langues de
- * sa copie. Un template déclaré `["fr", "en"]` dans le registre doit avoir sa
- * définition ici : le contrôle couvre les templates publics bilingues comme les
- * `lab` routés (`routed: true`, toujours `["fr", "en"]`).
+ * Contrôle bilingue strict : tout template servi sur ce domaine (public ou
+ * `lab` routé) est `["fr", "en"]` dans le registre et a sa définition ici, avec
+ * sa copie française et sa copie anglaise. Aucune exception.
  */
 import type { dentiste } from "@/content/templates/dentiste";
 import type { electricien } from "@/content/templates/electricien";
@@ -77,11 +75,11 @@ type RegistryLocales<Slug extends TemplateSlug> = Extract<
 type DefinitionLocales<Slug extends keyof Definitions> =
   keyof Definitions[Slug]["copy"];
 
-/** Slugs du registre déclarés en français et en anglais. */
-type BilingualSlugs = Extract<
+/** Entrées servies sur ce domaine : publiques, ou `lab` routées. */
+type RoutedEntries = Extract<
   RegisteredTemplate,
-  { locales: readonly ["fr", "en"] }
->["slug"];
+  { status: "sitekept-public" } | { routed: true }
+>;
 
 export type RegistryChecks = [
   // Chaque définition existante annonce les langues que déclare le registre.
@@ -98,6 +96,8 @@ export type RegistryChecks = [
   >,
   // Chaque slug de `Definitions` existe dans le registre.
   Assert<Equal<Exclude<keyof Definitions, TemplateSlug>, never>>,
-  // Un template déclaré `["fr", "en"]` a sa définition (et donc sa copie EN).
-  Assert<Equal<Exclude<BilingualSlugs, keyof Definitions>, never>>,
+  // Tout template routé est déclaré en français et en anglais.
+  Assert<Equal<RoutedEntries["locales"], readonly ["fr", "en"]>>,
+  // Tout template routé a sa définition (donc sa copie EN), et rien de plus.
+  Assert<Equal<RoutedEntries["slug"], keyof Definitions>>,
 ];

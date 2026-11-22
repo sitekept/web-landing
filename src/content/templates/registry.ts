@@ -36,27 +36,12 @@ export type TemplateAdminStatus =
   | "archived";
 
 /**
- * Langues servies par un template public routé sur ce domaine
- * (`sitekept-public`). Un template `lab` routé n'a pas cette souplesse : il est
- * toujours `["fr", "en"]` (`LabRoutedTemplateEntry`).
- *
- * Le contrôle FR + EN tient dans cette union : un template routé doit être
- * `["fr", "en"]`, ou bien `["fr"]` avec le marqueur transitoire
- * `englishPending`, qui dit « version anglaise à venir (phase 5) ». Le
- * marqueur est interdit avec `["fr", "en"]` et obligatoire avec `["fr"]` :
- * déclarer un template routé en français seul sans le dire échoue au
- * `type-check`. Quand la version anglaise arrive, on passe `locales` à
- * `["fr", "en"]` et on retire le marqueur.
+ * Langues d'un template servi sur ce domaine (public ou `lab` routé) : toujours
+ * le français et l'anglais. Déclarer un template routé en français seul échoue
+ * au `type-check` (`satisfies` plus bas), et `registry-checks.ts` exige sa
+ * définition, donc sa copie anglaise.
  */
-type RoutedLocales =
-  | {
-      readonly locales: readonly ["fr", "en"];
-      readonly englishPending?: never;
-    }
-  | {
-      readonly locales: readonly ["fr"];
-      readonly englishPending: "phase-5";
-    };
+type RoutedLocales = readonly ["fr", "en"];
 
 /** Nom et description d'un template dans la galerie, par langue du site. */
 type GalleryCopy = Record<
@@ -74,17 +59,16 @@ type TemplateIdentity = {
 };
 
 /** Template servi sur ce domaine (`src/app/(demos)/<slug>`), listé en galerie. */
-export type PublicTemplateEntry = TemplateIdentity &
-  RoutedLocales & {
-    readonly status: "sitekept-public";
-    readonly routed?: never;
-    readonly gallery: {
-      /** Capture sous `public/`. */
-      readonly screenshot: string;
-      readonly featured: boolean;
-      readonly copy: GalleryCopy;
-    };
+export type PublicTemplateEntry = TemplateIdentity & {
+  readonly status: "sitekept-public";
+  readonly routed?: never;
+  readonly locales: RoutedLocales;
+  readonly gallery: {
+    /** Capture sous `public/`. */
+    readonly screenshot: string;
+    readonly copy: GalleryCopy;
   };
+};
 
 /**
  * Template `lab` servi sur ce domaine (`/<slug>` et `/en/<slug>`) : visible
@@ -93,16 +77,14 @@ export type PublicTemplateEntry = TemplateIdentity &
  *
  * - `routed: true` est le discriminant explicite : sans lui, une entrée `lab`
  *   reste un template Vercel (`UnroutedTemplateEntry`, qui interdit `routed`).
- * - Un nouveau template naît bilingue : `locales` est `["fr", "en"]`, sans
- *   `englishPending` possible.
+ * - Un nouveau template naît bilingue : `locales` est `["fr", "en"]`.
  * - Pas de bloc `gallery` : aucune capture ni copie de galerie tant que le
  *   template n'est pas validé et passé en `sitekept-public`.
  */
 export type LabRoutedTemplateEntry = TemplateIdentity & {
   readonly status: "lab";
   readonly routed: true;
-  readonly locales: readonly ["fr", "en"];
-  readonly englishPending?: never;
+  readonly locales: RoutedLocales;
   readonly gallery?: never;
 };
 
@@ -139,7 +121,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/boulangerie.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Boulangerie",
@@ -163,7 +144,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/fleuriste.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Fleuriste",
@@ -187,7 +167,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/ordinateur.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Réparation ordinateur",
@@ -211,7 +190,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/patisserie.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Pâtisserie",
@@ -235,7 +213,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/dentiste.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Dentiste",
@@ -259,7 +236,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/plombier-chauffagiste.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Plombier chauffagiste",
@@ -283,7 +259,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/salon-coiffure.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Salon de coiffure",
@@ -307,7 +282,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/menage-nettoyage.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Ménage & nettoyage",
@@ -331,7 +305,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/restaurant-bistrot.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Restaurant bistrot",
@@ -355,7 +328,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/architecte-interieur.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Architecte d'intérieur",
@@ -379,7 +351,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/cabinet-avocat.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Cabinet d'avocat",
@@ -404,7 +375,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/avocate.png",
-      featured: false,
       copy: {
         fr: {
           name: "Template Avocate",
@@ -428,7 +398,6 @@ const TEMPLATES = [
     locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/agence-immobiliere.png",
-      featured: true,
       copy: {
         fr: {
           name: "Template Agence immobilière",
@@ -636,29 +605,6 @@ export const routedTemplates: readonly RoutedTemplateEntry[] =
       isPublicTemplate(entry) || isLabRoutedTemplate(entry)
   );
 
-/** Le template est-il servi dans cette langue (`/<slug>` ou `/en/<slug>`) ? */
-export function templateServesLocale(
-  entry: TemplateEntry,
-  locale: TemplateLocale
-): boolean {
-  const locales: readonly TemplateLocale[] = entry.locales;
-  return locales.includes(locale);
-}
-
-/**
- * Le template public `slug` est-il servi dans cette langue ?
- *
- * C'est ce que consultent les liens de démo du site (galerie, pages métier) :
- * un site anglais ne pointe vers `/en/<slug>` que si le registre le déclare.
- */
-export function publicTemplateServesLocale(
-  slug: PublicTemplateSlug,
-  locale: TemplateLocale
-): boolean {
-  const entry = publicTemplates.find((template) => template.slug === slug);
-  return entry !== undefined && templateServesLocale(entry, locale);
-}
-
 /**
  * Slugs servis sur ce domaine qui ne sont pas des templates : ils restent
  * `noindex` comme les démos (`DEMO_SLUGS`), mais n'ont ni capture, ni entrée en
@@ -699,13 +645,8 @@ export interface AdminTemplateCatalogEntry {
   vercelUrl?: string;
   /** Démo française sur sitekept.com, pour un template public ou `lab` routé. */
   sitekeptUrl?: string;
-  /** Démo anglaise sur sitekept.com, quand `locales` contient `"en"` (toujours pour un `lab` routé). */
+  /** Démo anglaise sur sitekept.com, pour un template public ou `lab` routé. */
   sitekeptUrlEn?: string;
-  /**
-   * Mention affichée à la place du lien EN d'un template public qui n'a pas
-   * encore sa version anglaise (dérivée du marqueur `englishPending`).
-   */
-  englishPendingLabel?: string;
   routeStatus:
     | "Live on sitekept.com"
     | "Lab on sitekept.com"
@@ -737,13 +678,7 @@ export function toAdminCatalogEntry(
     ...(isPublicTemplate(entry) || isLabRoutedTemplate(entry)
       ? {
           sitekeptUrl: `${SITEKEPT_BASE_URL}/${entry.slug}`,
-          ...(templateServesLocale(entry, "en")
-            ? { sitekeptUrlEn: `${SITEKEPT_BASE_URL}/en/${entry.slug}` }
-            : entry.englishPending
-              ? {
-                  englishPendingLabel: `EN : ${entry.englishPending.replace("-", " ")}`,
-                }
-              : {}),
+          sitekeptUrlEn: `${SITEKEPT_BASE_URL}/en/${entry.slug}`,
         }
       : {}),
     notes: entry.notes,

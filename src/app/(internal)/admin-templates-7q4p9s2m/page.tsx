@@ -153,11 +153,6 @@ export default function AdminTemplatesPage() {
                       EN
                     </a>
                   ) : null}
-                  {template.englishPendingLabel ? (
-                    <span className="px-1 text-xs font-medium text-slate-500">
-                      {template.englishPendingLabel}
-                    </span>
-                  ) : null}
                 </div>
 
                 <p className="text-sm leading-6 text-slate-600">

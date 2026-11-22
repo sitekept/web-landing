@@ -1,20 +1,15 @@
 import { blogPosts, type SiteLocale } from "@/content/site-content";
 import { metierPages } from "@/content/metier-pages";
 import { metierPagesEn } from "@/content/metier-pages-en";
-import {
-  publicTemplates,
-  templateServesLocale,
-} from "@/content/templates/registry";
+import { publicTemplates } from "@/content/templates/registry";
 import { SITE_URL } from "@/lib/site-url";
 import { STATIC_PATH_MAP, localizeHref, type PathMap } from "@/lib/i18n-paths";
 
 /**
  * Table complète français → anglais : pages fixes, articles, pages métier et
  * démos de templates. Chaque article et chaque page métier porte son slug
- * anglais dans le contenu ; une démo a une entrée `/<slug>` → `/en/<slug>` si
- * et seulement si le registre déclare une version anglaise du template
- * (`locales` contient `"en"`). Les autres démos restent absentes de la table :
- * le site anglais renvoie alors vers la démo française.
+ * anglais dans le contenu ; chaque template public a une entrée `/<slug>` →
+ * `/en/<slug>` (tous sont bilingues).
  *
  * Cette table sert aux liens et au sélecteur de langue, jamais au sitemap ni
  * aux hreflang du site, qui ne parcourent que leurs propres listes de pages
@@ -32,9 +27,10 @@ export const PATH_MAP: PathMap = {
     ])
   ),
   ...Object.fromEntries(
-    publicTemplates
-      .filter((template) => templateServesLocale(template, "en"))
-      .map((template) => [`/${template.slug}`, `/en/${template.slug}`])
+    publicTemplates.map((template) => [
+      `/${template.slug}`,
+      `/en/${template.slug}`,
+    ])
   ),
 };
 
