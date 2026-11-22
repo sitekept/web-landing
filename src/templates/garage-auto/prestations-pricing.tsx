@@ -24,7 +24,6 @@ export function PricingSection({ locale }: { locale: TemplateLocale }) {
       eyebrow={page.eyebrow}
       title={page.title}
       description={page.description}
-      className="scroll-mt-20"
     >
       <PriceList groups={page.groups} titleAs="h3" columns={2} />
       <p className="mt-10 max-w-tpl-measure border-l-4 border-tpl-accent pl-4 text-tpl-sm text-tpl-ink-muted">

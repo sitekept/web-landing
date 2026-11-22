@@ -16,7 +16,7 @@ export function GroupsSection({ locale }: { locale: TemplateLocale }) {
   const form = page.groups.form;
 
   return (
-    <TemplateSection id="groupes" className="scroll-mt-20">
+    <TemplateSection id="groupes">
       <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
           <TemplateHeading

@@ -60,7 +60,6 @@ export function CarteView({ locale }: { locale: TemplateLocale }) {
           id={category.id}
           tone={index % 2 === 0 ? "raised" : "surface"}
           density="compact"
-          className="scroll-mt-20"
         >
           <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
             <div className="lg:sticky lg:top-28 lg:self-start">

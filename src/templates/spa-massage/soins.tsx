@@ -55,7 +55,6 @@ export function SoinsView({ locale }: { locale: TemplateLocale }) {
           key={category.id}
           id={category.id}
           tone={index % 2 === 0 ? "surface" : "raised"}
-          className="scroll-mt-20"
         >
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.7fr] lg:gap-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
@@ -82,12 +81,7 @@ export function SoinsView({ locale }: { locale: TemplateLocale }) {
         </TemplateSection>
       ))}
 
-      <TemplateSection
-        id={page.giftBand.id}
-        tone="inverse"
-        density="compact"
-        className="scroll-mt-20"
-      >
+      <TemplateSection id={page.giftBand.id} tone="inverse" density="compact">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
           <TemplateHeading
             as="h2"

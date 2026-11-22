@@ -46,7 +46,6 @@ export function VoletSection({
       eyebrow={volet.eyebrow}
       title={volet.title}
       description={volet.description}
-      className="scroll-mt-20"
     >
       <div
         className={`grid gap-10 lg:gap-14 ${flip ? "lg:grid-cols-[1.2fr_0.8fr]" : "lg:grid-cols-[0.8fr_1.2fr]"}`}

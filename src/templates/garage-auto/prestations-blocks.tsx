@@ -24,7 +24,6 @@ export function ServiceBlocks({ locale }: { locale: TemplateLocale }) {
           key={block.id}
           id={block.id}
           tone={index % 2 === 0 ? "surface" : "raised"}
-          className="scroll-mt-20"
         >
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <TemplateMedia

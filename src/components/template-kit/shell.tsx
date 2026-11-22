@@ -105,7 +105,10 @@ export type TemplateShellProps = {
    * rendue après le pied de page. Elle est `sticky` en fin de page, pas
    * `fixed` : en bas du défilement elle se pose sous le pied de page au lieu
    * de le recouvrir, donc aucune réserve de padding n'est à prévoir dans le
-   * contenu ni dans le pied de page.
+   * contenu ni dans le pied de page. Elle porte `data-mobile-actions` (le
+   * point de rupture où elle disparaît) : `globals.css` s'en sert pour réserver
+   * sa hauteur au défilement vers un élément focalisé (`scroll-padding-bottom`),
+   * voir « Dégagement du focus clavier ».
    */
   mobileActions?: ReactNode;
   /** Aspect de la barre (`surface` par défaut). */
@@ -205,6 +208,7 @@ export function TemplateShell({
         <div
           role={mobileActionsLabel ? "group" : undefined}
           aria-label={mobileActionsLabel}
+          data-mobile-actions={mobileActionsHideAt}
           className={cn(
             "sticky bottom-0 z-30",
             MOBILE_ACTIONS_TONE[mobileActionsTone],

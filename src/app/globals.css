@@ -189,6 +189,39 @@
   }
 }
 
+/*
+ * Dégagement du focus clavier des templates (WCAG 2.4.11, focus non masqué).
+ * L'en-tête du shell est `sticky top-0` (69 px à toutes les largeurs) et la
+ * barre d'actions mobile `sticky bottom-0` (`data-mobile-actions` = point de
+ * rupture où elle disparaît, 57 à 86 px selon le template, la langue et le
+ * retour à la ligne). Sans réserve, Tab (ou Maj+Tab) peut laisser l'élément
+ * focalisé dessous. `scroll-padding` sur `html`, le conteneur de défilement,
+ * réduit la zone où le navigateur considère un élément visible. Aucun JS,
+ * aucun effet sur le site marketing ni sur les démos écrites à la main (pas de
+ * `[data-template]`). Valeurs en `rem` pour suivre la taille de police.
+ *  - haut : 5rem (80 px) = en-tête + 11 px ; vaut aussi pour les ancres `#…`
+ *    (corps de page et lien d'évitement `#contenu`), donc pas de `scroll-mt-*`
+ *    dans les vues : les deux s'additionneraient ;
+ *  - bas : 6rem (96 px) = la plus haute barre mesurée (85,6 px, deux lignes à
+ *    320 px) + une marge, seulement sous le point de rupture de la barre
+ *    (`md` = 48rem, `xl` = 80rem, comme les classes `md:hidden` / `xl:hidden`).
+ */
+html:has([data-template]) {
+  scroll-padding-top: 5rem;
+}
+
+@media (width < 80rem) {
+  html:has([data-template] > [data-mobile-actions="xl"]) {
+    scroll-padding-bottom: 6rem;
+  }
+}
+
+@media (width < 48rem) {
+  html:has([data-template] > [data-mobile-actions="md"]) {
+    scroll-padding-bottom: 6rem;
+  }
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
