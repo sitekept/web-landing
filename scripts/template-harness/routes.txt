@@ -169,3 +169,10 @@ demo-en	/en/architecte-interieur/methode
 demo-en	/en/architecte-interieur/projets
 demo-en	/en/architecte-interieur/projets/atelier-marais
 demo-en	/en/architecte-interieur/studio
+demo-en	/en/restaurant-bistrot
+demo-en	/en/restaurant-bistrot/contact
+demo-en	/en/restaurant-bistrot/galerie
+demo-en	/en/restaurant-bistrot/histoire
+demo-en	/en/restaurant-bistrot/menu
+demo-en	/en/restaurant-bistrot/privatisation
+demo-en	/en/restaurant-bistrot/reservation

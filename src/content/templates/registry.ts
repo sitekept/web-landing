@@ -333,8 +333,7 @@ const TEMPLATES = [
     name: "Template Restaurant Bistrot",
     sector: "Restauration",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/restaurant-bistrot.png",
       featured: true,
