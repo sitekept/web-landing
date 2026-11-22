@@ -151,3 +151,8 @@ demo-en	/en/agence-immobiliere/contact
 demo-en	/en/agence-immobiliere/estimation
 demo-en	/en/agence-immobiliere/quartiers
 demo-en	/en/agence-immobiliere/services
+demo-en	/en/menage-nettoyage
+demo-en	/en/menage-nettoyage/entreprises
+demo-en	/en/menage-nettoyage/faq
+demo-en	/en/menage-nettoyage/formules
+demo-en	/en/menage-nettoyage/zones

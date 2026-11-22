@@ -309,8 +309,7 @@ const TEMPLATES = [
     name: "Template Ménage & Nettoyage",
     sector: "Services à domicile",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/menage-nettoyage.png",
       featured: true,

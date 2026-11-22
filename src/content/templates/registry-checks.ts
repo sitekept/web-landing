@@ -23,6 +23,7 @@ import type { photographe } from "@/content/templates/photographe";
 import type { plombierChauffagiste } from "@/content/templates/plombier-chauffagiste";
 import type { expertComptable } from "@/content/templates/expert-comptable";
 import type { garageAuto } from "@/content/templates/garage-auto";
+import type { menageNettoyage } from "@/content/templates/menage-nettoyage";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -42,6 +43,7 @@ type Definitions = {
   "plombier-chauffagiste": typeof plombierChauffagiste;
   "expert-comptable": typeof expertComptable;
   "garage-auto": typeof garageAuto;
+  "menage-nettoyage": typeof menageNettoyage;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;

@@ -1,0 +1,20 @@
+import type { TemplateLocale } from "@/components/template-kit";
+
+import { HomeHero } from "./home-hero";
+import { HomeProgress } from "./home-progress";
+import { HomeProof } from "./home-proof";
+import { HomeQuick } from "./home-quick";
+import { HomeZone } from "./home-zone";
+
+/** Accueil : devis guidé, scénarios, preuve avant / après, étapes, zone. */
+export function HomeView({ locale }: { locale: TemplateLocale }) {
+  return (
+    <>
+      <HomeHero locale={locale} />
+      <HomeQuick locale={locale} />
+      <HomeProof locale={locale} />
+      <HomeProgress locale={locale} />
+      <HomeZone locale={locale} />
+    </>
+  );
+}
