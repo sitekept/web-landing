@@ -27,6 +27,8 @@ check /agent-immobilier yes; check /agent-immobilier/biens yes
 check /en/agent-immobilier yes; check /en/agent-immobilier/biens yes
 check /photographe yes; check /photographe/portfolio yes
 check /en/photographe yes; check /en/photographe/portfolio yes
+check /plombier-serrurier yes; check /plombier-serrurier/depannages yes
+check /en/plombier-serrurier yes; check /en/plombier-serrurier/depannages yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail

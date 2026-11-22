@@ -85,6 +85,10 @@ demo	/photographe
 demo	/photographe/contact
 demo	/photographe/forfaits
 demo	/photographe/portfolio
+demo	/plombier-serrurier
+demo	/plombier-serrurier/contact
+demo	/plombier-serrurier/depannages
+demo	/plombier-serrurier/tarifs
 marketing	/templates
 marketing	/en/templates
 internal	/admin-templates-7q4p9s2m
@@ -127,3 +131,7 @@ demo-en	/en/photographe
 demo-en	/en/photographe/contact
 demo-en	/en/photographe/forfaits
 demo-en	/en/photographe/portfolio
+demo-en	/en/plombier-serrurier
+demo-en	/en/plombier-serrurier/contact
+demo-en	/en/plombier-serrurier/depannages
+demo-en	/en/plombier-serrurier/tarifs
