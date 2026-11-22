@@ -34,7 +34,8 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
             as="h1"
             scale="title"
             title={hero.title}
-            description={hero.text}
+            // Encre pleine à 80 % : l'encre secondaire passe sous 4,5:1 sur le dégradé.
+            description={<span className="text-tpl-ink/80">{hero.text}</span>}
             className="mt-6"
           />
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">

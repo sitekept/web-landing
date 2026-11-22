@@ -5,7 +5,7 @@
 
 import { clsx } from "clsx";
 import Image, { type ImageProps } from "next/image";
-import { useId, useState, type CSSProperties } from "react";
+import { useEffect, useId, useRef, useState, type CSSProperties } from "react";
 
 /**
  * Galerie à panneaux qui s'ouvrent au survol (21st.dev, « Hover Expand
@@ -33,6 +33,9 @@ import { useId, useState, type CSSProperties } from "react";
  * (bords gauche et droit alignés sur les autres blocs de la section).
  */
 export type HoverExpandGalleryWidth = "capped" | "fill";
+
+/** `lg` de Tailwind : rangée au-dessus, accordéon en dessous. */
+const ROW_QUERY = "(min-width: 64rem)";
 
 export type HoverExpandGalleryItem = {
   /** Le libellé. Tourné dans le rail sur desktop ; sous `lg`, affiché en entier (à la ligne si besoin). */
@@ -105,6 +108,23 @@ export function HoverExpandGallery({
 }: HoverExpandGalleryProps) {
   const [active, setActive] = useState(defaultIndex);
   const baseId = useId();
+  const listRef = useRef<HTMLUListElement>(null);
+
+  // Accordéon (sous `lg`) : ouvrir un panneau en replie un autre et déplace les
+  // boutons. Une fois l'animation finie, on ramène à l'écran celui qui a le
+  // focus (WCAG 2.4.11) ; sans effet s'il est déjà visible.
+  useEffect(() => {
+    if (window.matchMedia(ROW_QUERY).matches) return;
+    const focused = document.activeElement;
+    if (!(focused instanceof HTMLElement)) return;
+    if (!listRef.current?.contains(focused)) return;
+    const timer = window.setTimeout(() => {
+      if (document.activeElement === focused) {
+        focused.scrollIntoView({ block: "nearest" });
+      }
+    }, duration + 50);
+    return () => window.clearTimeout(timer);
+  }, [active, duration]);
 
   const open = (index: number) => {
     if (index !== active) setActive(index);
@@ -133,6 +153,7 @@ export function HoverExpandGallery({
       )}
     >
       <ul
+        ref={listRef}
         role="list"
         aria-label={label}
         className="flex w-full flex-col lg:h-full lg:flex-row lg:justify-center"
@@ -166,7 +187,11 @@ export function HoverExpandGallery({
                 onPointerEnter={(event) => {
                   if (event.pointerType === "mouse") open(index);
                 }}
-                onFocus={() => open(index)}
+                // Le focus n'ouvre que la rangée : dans l'accordéon, il
+                // déplacerait le bouton hors de l'écran (Entrée ou clic ouvre).
+                onFocus={() => {
+                  if (window.matchMedia(ROW_QUERY).matches) open(index);
+                }}
                 onClick={() => open(index)}
                 className="relative block w-full cursor-pointer border-0 bg-transparent p-0 text-left focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-tpl-ink lg:absolute lg:inset-0 lg:h-full lg:overflow-hidden"
               >

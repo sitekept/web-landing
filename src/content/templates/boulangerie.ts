@@ -263,7 +263,7 @@ const en: BoulangerieCopy = {
     seeShowcase: "See today’s showcase",
     prepareOrder: "Plan an order",
     stats: [
-      { value: "6:30 a.m.", label: "Bakery opens" },
+      { value: "6:30", label: "a.m. bakery opening" },
       { value: "7 days", label: "Breads and pastries" },
       { value: "48 hrs", label: "Event orders" },
     ],

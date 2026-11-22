@@ -285,7 +285,7 @@ const en: SalonCoiffureCopy = {
     prestations: {
       title: "Services - Your business",
       description:
-        "Services are described by the result you want and the length of the appointment: cut and movement, light balayage, signature treatment.",
+        "Services are described by the result you want and the length of the appointment: cut and movement, luminous balayage, signature treatment.",
     },
     stylists: {
       title: "Stylists - Your business",
@@ -300,7 +300,7 @@ const en: SalonCoiffureCopy = {
     reservation: {
       title: "Booking - Your business",
       description:
-        "Booking is presented as a chosen experience: signature cut 45 min, light balayage 3 hr, gloss and deep treatment 1 hr 15 min.",
+        "Booking is presented as a chosen experience: signature cut 45 min, luminous balayage 3 hr, gloss and deep treatment 1 hr 15 min.",
     },
     journal: {
       title: "Journal - Your business",
@@ -379,7 +379,7 @@ const en: SalonCoiffureCopy = {
         text: "45 to 60 min, quick consultation, clean cut and soft finish.",
       },
       {
-        title: "Light balayage",
+        title: "Luminous balayage",
         text: "2 hr 30 min to 3 hr 30 min, color diagnosis, contouring and a balancing gloss.",
       },
       {
@@ -431,7 +431,7 @@ const en: SalonCoiffureCopy = {
       "Each entry describes the type of appointment, the time and the beauty intention.",
     items: [
       "Signature cut · 45 min",
-      "Light balayage · 3 hr",
+      "Luminous balayage · 3 hr",
       "Gloss + deep treatment · 1 hr 15 min",
     ],
     panel: {

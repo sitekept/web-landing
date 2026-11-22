@@ -66,10 +66,10 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
               {page.prepareOrder}
             </TemplateLink>
           </div>
-          <ul className="mt-10 grid gap-4 sm:grid-cols-3">
+          <ul className="mt-10 grid gap-4 sm:grid-cols-3 lg:gap-2 xl:gap-4">
             {page.stats.map((stat) => (
               <li key={stat.label}>
-                <TemplatePanel className="h-full p-5 shadow-tpl-sm">
+                <TemplatePanel className="h-full p-5 shadow-tpl-sm lg:px-3 xl:px-5">
                   <div className="text-tpl-xl font-bold text-tpl-accent">
                     {stat.value}
                   </div>

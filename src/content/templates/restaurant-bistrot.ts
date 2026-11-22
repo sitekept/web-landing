@@ -174,7 +174,7 @@ const fr = {
       },
       {
         src: IMG.candle,
-        alt: "Table ronde en bois éclairée par une bougie rouge, chaises bistrot et salle floue au fond",
+        alt: "Table ronde en bois éclairée par une bougie dans un verre rouge, chaises bistrot et salle floue au fond",
       },
     ],
   },
@@ -355,7 +355,7 @@ const en: RestaurantBistrotCopy = {
       },
       {
         src: IMG.candle,
-        alt: "Round wooden table lit by a red candle, bistro chairs and a blurred dining room behind",
+        alt: "Round wooden table lit by a candle in a red glass, bistro chairs and a blurred dining room behind",
       },
     ],
   },

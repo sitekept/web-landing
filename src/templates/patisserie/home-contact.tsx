@@ -34,7 +34,7 @@ function Row({
 export function HomeContact({ locale }: { locale: TemplateLocale }) {
   const page = getTemplateCopy(patisserie, locale).contact;
   const link =
-    "inline-flex min-h-9 items-center underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink";
+    "-my-1.75 inline-flex min-h-9 items-center underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink";
 
   return (
     <TemplateSection

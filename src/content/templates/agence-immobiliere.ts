@@ -1259,7 +1259,7 @@ const en: AgenceImmobiliereCopy = {
     bien: {
       title: "Lake view apartment - Your business",
       description:
-        "An 883 sq ft apartment with a through living room and a terrace, a 6-minute walk from the lake: features, photos, price and showing request.",
+        "An 883 sq ft apartment with a dual-aspect living room and a terrace, a 6-minute walk from the lake: features, photos, price and showing request.",
     },
     services: {
       title: "Services - Your business",
@@ -1299,7 +1299,7 @@ const en: AgenceImmobiliereCopy = {
       },
       facts: [
         {
-          value: "48 h",
+          value: "48 hr",
           label: "to give you a written market analysis after the visit",
         },
         {
@@ -1419,8 +1419,8 @@ const en: AgenceImmobiliereCopy = {
     },
     featured: {
       eyebrow: "Featured property",
-      title: "Lake view apartment, in The Riverside.",
-      text: "A through living room, a terrace and a restrained renovation, a 6-minute walk from the lake. Storage room and parking included.",
+      title: "Lake view apartment, The Riverside.",
+      text: "A dual-aspect living room, a terrace and a restrained renovation, a 6-minute walk from the lake. Storage room and parking included.",
       facts: ["883 sq ft", "3 rooms", "2 bedrooms", "€395,000"],
       image: {
         src: IMG.lakeTerrace,
@@ -1562,7 +1562,7 @@ const en: AgenceImmobiliereCopy = {
           specs: ["883 sq ft", "3 rooms", "2 bedrooms"],
           price: "€395,000",
           opinion:
-            "A through living room and a terrace, a 6-minute walk from the lake. Storage room and parking included: the listing covers the rest.",
+            "A dual-aspect living room and a terrace, a 6-minute walk from the lake. Storage room and parking included: the listing covers the rest.",
           target: "bien",
           cta: "View the listing",
         },
@@ -1688,7 +1688,7 @@ const en: AgenceImmobiliereCopy = {
       eyebrow: "Property listing · The Riverside",
       title: "Lake view apartment",
       description:
-        "A through living room, a terrace and a restrained renovation, a 6-minute walk from the lake.",
+        "A dual-aspect living room, a terrace and a restrained renovation, a 6-minute walk from the lake.",
       status: "New",
       price: "€395,000",
       priceNote:
@@ -1729,7 +1729,7 @@ const en: AgenceImmobiliereCopy = {
       items: [
         { label: "Living area", value: "883 sq ft" },
         { label: "Rooms", value: "3 rooms, 2 bedrooms" },
-        { label: "Living room", value: "Through, open kitchen" },
+        { label: "Living room", value: "Dual aspect, open kitchen" },
         { label: "Outdoor space", value: "Terrace" },
         { label: "Renovation", value: "2023, restrained" },
         { label: "Extras", value: "Storage room and parking included" },
@@ -1744,7 +1744,7 @@ const en: AgenceImmobiliereCopy = {
       pros: {
         title: "What appeals",
         items: [
-          "A through living room, bright all day",
+          "A dual-aspect living room, bright all day",
           "A terrace with a lake view",
           "Storage room and parking included, rare in the neighborhood",
         ],

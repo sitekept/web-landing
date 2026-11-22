@@ -56,6 +56,11 @@ type TemplateIdentity = {
   readonly sector: string;
   /** Note affichée dans la page admin. */
   readonly notes: string;
+  /**
+   * Slug sur le déploiement Vercel quand il diffère de `slug` (template renommé
+   * ici) ; `null` : pas de page Vercel à ce nom, donc pas de lien dans l'admin.
+   */
+  readonly vercelSlug?: string | null;
 };
 
 /** Template servi sur ce domaine (`src/app/(demos)/<slug>`), listé en galerie. */
@@ -183,6 +188,7 @@ const TEMPLATES = [
   },
   {
     slug: "patisserie",
+    vercelSlug: "pattiserie",
     status: "sitekept-public",
     name: "Template Patisserie",
     sector: "Pâtisserie",
@@ -367,6 +373,7 @@ const TEMPLATES = [
   },
   {
     slug: "avocate",
+    vercelSlug: null,
     status: "sitekept-public",
     name: "Template Avocate",
     sector: "Juridique",
@@ -641,7 +648,7 @@ export interface AdminTemplateCatalogEntry {
   name: string;
   sector: string;
   adminStatus: TemplateAdminStatus;
-  /** Absent pour un `lab` routé : il n'existe pas sur le déploiement Vercel. */
+  /** Absent pour un `lab` routé ou `vercelSlug: null` : pas de page Vercel. */
   vercelUrl?: string;
   /** Démo française sur sitekept.com, pour un template public ou `lab` routé. */
   sitekeptUrl?: string;
@@ -659,6 +666,8 @@ export interface AdminTemplateCatalogEntry {
 export function toAdminCatalogEntry(
   entry: TemplateEntry
 ): AdminTemplateCatalogEntry {
+  const vercelSlug =
+    entry.vercelSlug === undefined ? entry.slug : entry.vercelSlug;
   return {
     slug: entry.slug,
     name: entry.name,
@@ -672,9 +681,9 @@ export function toAdminCatalogEntry(
           : entry.status === "lab"
             ? "Lab only"
             : "Vercel only",
-    ...(isLabRoutedTemplate(entry)
+    ...(isLabRoutedTemplate(entry) || vercelSlug === null
       ? {}
-      : { vercelUrl: `${TEMPLATE_VERCEL_BASE_URL}/${entry.slug}` }),
+      : { vercelUrl: `${TEMPLATE_VERCEL_BASE_URL}/${vercelSlug}` }),
     ...(isPublicTemplate(entry) || isLabRoutedTemplate(entry)
       ? {
           sitekeptUrl: `${SITEKEPT_BASE_URL}/${entry.slug}`,
