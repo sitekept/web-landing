@@ -1063,6 +1063,7 @@ export const osteopathe: TemplateDefinition<"osteopathe", OsteopatheCopy> = {
     fontDisplay:
       "var(--font-display-serif), ui-serif, Georgia, 'Times New Roman', serif",
     fontText: "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
+    fontDisplayWeight: 400,
     shadowSm: "0 1px 2px color-mix(in oklch, var(--tpl-ink) 6%, transparent)",
     shadowLg:
       "0 24px 48px -28px color-mix(in oklch, var(--tpl-ink) 22%, transparent)",

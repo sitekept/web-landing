@@ -5,11 +5,14 @@ import {
   TemplateSection,
   type TemplateLocale,
 } from "@/components/template-kit";
-import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonials-marquee";
+import {
+  clampTestimonialRating,
+  TestimonialsMarquee,
+} from "@/components/template-kit/vendor/testimonials-marquee";
 import { spaMassage } from "@/content/templates/spa-massage";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { WellnessNotice, toRating } from "./parts";
+import { WellnessNotice } from "./parts";
 
 /** Preuve : bande d'avis défilante, posée sur le fond sombre du site. */
 export function HomeProof({ locale }: { locale: TemplateLocale }) {
@@ -19,10 +22,10 @@ export function HomeProof({ locale }: { locale: TemplateLocale }) {
     quote: item.quote,
     name: item.name,
     detail: item.detail,
-    rating: toRating(item.rating),
+    rating: item.rating,
     ratingLabel: copy.common.ratingLabel.replace(
       "{rating}",
-      String(toRating(item.rating))
+      String(clampTestimonialRating(item.rating))
     ),
   }));
 

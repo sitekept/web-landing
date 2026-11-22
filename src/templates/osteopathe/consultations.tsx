@@ -49,7 +49,7 @@ export function ConsultationsView({ locale }: { locale: TemplateLocale }) {
             >
               <IconBadge icon={item.icon} />
               <div>
-                <h3 className="font-tpl-display text-tpl-lg leading-tpl-display">
+                <h3 className="font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight)">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-tpl-sm text-tpl-ink-muted">

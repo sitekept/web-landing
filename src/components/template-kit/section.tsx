@@ -100,7 +100,7 @@ export function TemplateHeading({
         id={id}
         className={cn(
           // Un mot long (« Accompagnement ») dépasse 358 px en display mobile.
-          "font-tpl-display font-semibold text-balance break-words hyphens-auto",
+          "font-tpl-display font-(weight:--tpl-display-weight) text-balance break-words hyphens-auto",
           TITLE_SCALE[scale],
           eyebrow ? "mt-4" : null
         )}

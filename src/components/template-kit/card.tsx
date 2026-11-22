@@ -18,6 +18,8 @@ import { cn } from "@/lib/utils";
 export type TemplateCardTitleLevel = "h2" | "h3" | "h4";
 export type TemplateCardElevation = "flat" | "raised" | "floating";
 export type TemplatePanelTone = "raised" | "surface";
+/** Place de l'icône : au-dessus du titre, ou à sa gauche sur la même ligne. */
+export type TemplateCardIconPosition = "top" | "inline";
 
 const ELEVATION: Record<TemplateCardElevation, string> = {
   flat: "shadow-none",
@@ -41,6 +43,15 @@ const PANEL_TONE: Record<TemplatePanelTone, string> = {
 export type TemplateCardProps = {
   title?: ReactNode;
   titleAs?: TemplateCardTitleLevel;
+  /**
+   * Icône ou pastille d'icône de la carte, décorative (`aria-hidden` à la
+   * charge de l'appelant). Rendue hors du titre : le nom du titre reste le
+   * seul texte. Peut être un bloc plein largeur (pastille et numéro côte à
+   * côte, par exemple) en position `top`.
+   */
+  icon?: ReactNode;
+  /** `top` (défaut) : au-dessus du titre. `inline` : à gauche du titre, centrée sur lui. */
+  iconPosition?: TemplateCardIconPosition;
   elevation?: TemplateCardElevation;
   /** Survol : léger soulèvement et ombre `lg` (déplacement coupé en reduced motion). */
   interactive?: boolean;
@@ -51,12 +62,28 @@ export type TemplateCardProps = {
 export function TemplateCard({
   title,
   titleAs: Title = "h3",
+  icon,
+  iconPosition = "top",
   elevation = "raised",
   interactive = false,
   className,
   children,
 }: TemplateCardProps) {
   const hasTitle = title !== undefined && title !== null && title !== "";
+  const hasIcon = icon !== undefined && icon !== null && icon !== false;
+  // Sans titre, il n'y a rien à côté de quoi se placer : l'icône passe au-dessus.
+  const inline = hasIcon && hasTitle && iconPosition === "inline";
+
+  const heading = hasTitle ? (
+    <Title
+      className={cn(
+        "font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight) text-balance",
+        inline ? "min-w-0" : null
+      )}
+    >
+      {title}
+    </Title>
+  ) : null;
 
   return (
     <article
@@ -67,11 +94,19 @@ export function TemplateCard({
         className
       )}
     >
-      {hasTitle ? (
-        <Title className="font-tpl-display text-tpl-lg leading-tpl-display font-semibold text-balance">
-          {title}
-        </Title>
-      ) : null}
+      {inline ? (
+        <div className="flex items-center gap-3">
+          <div className="shrink-0">{icon}</div>
+          {heading}
+        </div>
+      ) : (
+        <>
+          {hasIcon ? (
+            <div className={hasTitle ? "mb-5" : "mb-4"}>{icon}</div>
+          ) : null}
+          {heading}
+        </>
+      )}
       <div
         className={cn(
           "text-tpl-sm text-tpl-ink-muted",

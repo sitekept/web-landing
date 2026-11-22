@@ -1153,6 +1153,7 @@ export const createurCulinaire: TemplateDefinition<
     fontDisplay:
       "var(--font-display-serif), ui-serif, Georgia, 'Times New Roman', serif",
     fontText: "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
+    fontDisplayWeight: 400,
     shadowSm: "none",
     shadowLg:
       "0 32px 64px -40px color-mix(in oklch, var(--tpl-ink) 32%, transparent)",

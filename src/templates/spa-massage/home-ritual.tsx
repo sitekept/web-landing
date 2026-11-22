@@ -47,7 +47,7 @@ export function HomeRitual({ locale }: { locale: TemplateLocale }) {
             </span>
           </p>
 
-          <h3 className="mt-10 text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
+          <h3 className="mt-10 text-tpl-xs font-normal tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
             {page.stepsLabel}
           </h3>
           <ol className="mt-4 divide-y divide-tpl-line border-y border-tpl-line">

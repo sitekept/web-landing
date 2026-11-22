@@ -12,8 +12,8 @@ import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 
 /**
  * Shell du template coffee-shop : marque, navigation, CTA téléphone, barre
- * d'actions fixe sur mobile et pied de page. Tous les textes viennent de la
- * copie ; le sélecteur FR / EN se déduit de la définition.
+ * d'actions collée en bas sur mobile et pied de page. Tous les textes
+ * viennent de la copie ; le sélecteur FR / EN se déduit de la définition.
  *
  * Direction typographique : Inter en graisses 800 à 900, posées ici sur les
  * titres (le kit les laisse à `font-semibold`), avec un interlignage serré en
@@ -63,75 +63,71 @@ export function CoffeeShopShell({
         icon: <Phone aria-hidden="true" className="size-4" />,
       }}
       footer={
-        <>
-          <div
-            role="group"
-            aria-label={copy.footer.barLabel}
-            className="fixed inset-x-0 bottom-0 z-30 flex gap-2 border-t border-tpl-line bg-tpl-surface/95 px-4 py-3 backdrop-blur xl:hidden"
-          >
-            <TemplateLink
-              href={copy.phone.href}
-              shape="pill"
-              icon={<Phone aria-hidden="true" className="size-4" />}
-              className="flex-1"
-            >
-              {copy.cta.call}
-            </TemplateLink>
-            <TemplateLink
-              href={templateHref(locale, paths.carte)}
-              variant="outline"
-              shape="pill"
-              icon={false}
-              className="flex-1"
-            >
-              {copy.cta.carte}
-            </TemplateLink>
-          </div>
-
-          <footer className="border-t border-tpl-line bg-tpl-raised px-4 pb-20 sm:px-6 lg:px-8 xl:pb-0">
-            <div className="mx-auto grid max-w-7xl gap-10 py-12 lg:grid-cols-[1.3fr_1fr_1fr]">
-              <div className="max-w-md">
-                <p className="font-tpl-display text-tpl-xl leading-tpl-display font-extrabold tracking-tight text-balance">
-                  {copy.footer.title}
-                </p>
-                <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
-                  {copy.footer.text}
-                </p>
-              </div>
-              <div>
-                <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
-                  {copy.common.hoursLabel}
-                </p>
-                <dl className="mt-4 space-y-2 text-tpl-sm">
-                  {copy.common.hoursShort.map((row) => (
-                    <div key={row.day} className="flex flex-col">
-                      <dt className="text-tpl-ink-muted">{row.day}</dt>
-                      <dd className="font-semibold tabular-nums">{row.time}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-              <div>
-                <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
-                  {copy.footer.contactLabel}
-                </p>
-                <ul className="mt-4 space-y-2 text-tpl-sm">
-                  <li>
-                    <a
-                      href={copy.phone.href}
-                      className="inline-flex min-h-11 items-center font-semibold tabular-nums underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
-                    >
-                      {copy.phone.label}
-                    </a>
-                  </li>
-                  <li>{copy.common.email}</li>
-                  <li className="text-tpl-ink-muted">
-                    {copy.common.address.join(", ")}
-                  </li>
-                </ul>
-              </div>
+        <footer className="border-t border-tpl-line bg-tpl-raised px-4 pb-20 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 py-12 lg:grid-cols-[1.3fr_1fr_1fr]">
+            <div className="max-w-md">
+              <p className="font-tpl-display text-tpl-xl leading-tpl-display font-extrabold tracking-tight text-balance">
+                {copy.footer.title}
+              </p>
+              <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
+                {copy.footer.text}
+              </p>
             </div>
-          </footer>
+            <div>
+              <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
+                {copy.common.hoursLabel}
+              </p>
+              <dl className="mt-4 space-y-2 text-tpl-sm">
+                {copy.common.hoursShort.map((row) => (
+                  <div key={row.day} className="flex flex-col">
+                    <dt className="text-tpl-ink-muted">{row.day}</dt>
+                    <dd className="font-semibold tabular-nums">{row.time}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <div>
+              <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
+                {copy.footer.contactLabel}
+              </p>
+              <ul className="mt-4 space-y-2 text-tpl-sm">
+                <li>
+                  <a
+                    href={copy.phone.href}
+                    className="inline-flex min-h-11 items-center font-semibold tabular-nums underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
+                  >
+                    {copy.phone.label}
+                  </a>
+                </li>
+                <li>{copy.common.email}</li>
+                <li className="text-tpl-ink-muted">
+                  {copy.common.address.join(", ")}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      }
+      mobileActionsLabel={copy.footer.barLabel}
+      mobileActions={
+        <>
+          <TemplateLink
+            href={copy.phone.href}
+            shape="pill"
+            icon={<Phone aria-hidden="true" className="size-4" />}
+            className="flex-1"
+          >
+            {copy.cta.call}
+          </TemplateLink>
+          <TemplateLink
+            href={templateHref(locale, paths.carte)}
+            variant="outline"
+            shape="pill"
+            icon={false}
+            className="flex-1"
+          >
+            {copy.cta.carte}
+          </TemplateLink>
         </>
       }
     >

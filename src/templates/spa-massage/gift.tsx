@@ -48,7 +48,7 @@ export function GiftSection({ locale }: { locale: TemplateLocale }) {
             description={gift.text}
             scale="title"
           />
-          <h3 className="mt-8 text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
+          <h3 className="mt-8 text-tpl-xs font-normal tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
             {gift.amountsLabel}
           </h3>
           <ul className="mt-4 flex flex-wrap gap-3">

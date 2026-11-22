@@ -68,7 +68,9 @@ export function CreationsSeasons({ locale }: { locale: TemplateLocale }) {
             key={item.season}
             className="grid gap-2 border-t border-tpl-ink py-6 lg:grid-cols-[1fr_1.3fr_1fr] lg:items-baseline lg:gap-10"
           >
-            <h3 className="font-tpl-display text-tpl-xl">{item.season}</h3>
+            <h3 className="font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight)">
+              {item.season}
+            </h3>
             <p className="text-tpl-base">{item.flavors}</p>
             <p className="text-tpl-sm text-tpl-ink-muted">{item.text}</p>
           </li>

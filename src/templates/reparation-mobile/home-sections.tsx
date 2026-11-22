@@ -8,10 +8,7 @@ import {
   type TemplateLocale,
 } from "@/components/template-kit";
 import { TemplateMedia } from "@/components/template-kit/media";
-import {
-  TestimonialsMarquee,
-  type TestimonialMarqueeItem,
-} from "@/components/template-kit/vendor/testimonials-marquee";
+import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonials-marquee";
 import { reparationMobile } from "@/content/templates/reparation-mobile";
 import { getTemplateCopy } from "@/content/templates/types";
 import { templateHref } from "@/lib/template-href";
@@ -19,22 +16,6 @@ import { templateHref } from "@/lib/template-href";
 import { HEADING_CLASS, ICONS, IconChip, PillEyebrow } from "./parts";
 
 type Props = { locale: TemplateLocale };
-
-const RATINGS = [1, 2, 3, 4, 5] as const;
-
-/** La copie élargit `rating` à `number` : on le ramène à la plage 1 à 5. */
-function toReview(item: {
-  quote: string;
-  name: string;
-  detail: string;
-  rating: number;
-  ratingLabel: string;
-}): TestimonialMarqueeItem {
-  const rating = RATINGS.find((value) => value === item.rating);
-  const base = { quote: item.quote, name: item.name, detail: item.detail };
-
-  return rating ? { ...base, rating, ratingLabel: item.ratingLabel } : base;
-}
 
 export function Steps({ locale }: Props) {
   const page = getTemplateCopy(reparationMobile, locale).home.steps;
@@ -56,16 +37,18 @@ export function Steps({ locale }: Props) {
               titleAs="h3"
               elevation="raised"
               className="h-full"
+              icon={
+                <div className="flex items-center justify-between gap-4">
+                  <IconChip icon={item.icon} />
+                  <span
+                    aria-hidden="true"
+                    className="font-tpl-display text-tpl-3xl leading-none font-extrabold text-tpl-line"
+                  >
+                    {index + 1}
+                  </span>
+                </div>
+              }
             >
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <IconChip icon={item.icon} />
-                <span
-                  aria-hidden="true"
-                  className="font-tpl-display text-tpl-3xl leading-none font-extrabold text-tpl-line"
-                >
-                  {index + 1}
-                </span>
-              </div>
               {item.text}
             </TemplateCard>
           </li>
@@ -99,9 +82,12 @@ export function Popular({ locale }: Props) {
                 title={item.title}
                 titleAs="h3"
                 interactive
+                icon={
+                  <Icon aria-hidden="true" className="size-6 text-tpl-ink" />
+                }
+                iconPosition="inline"
                 className="flex h-full flex-col bg-tpl-surface"
               >
-                <Icon aria-hidden="true" className="mb-4 size-6 text-tpl-ink" />
                 <p>{item.text}</p>
                 <p className="mt-6 text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase">
                   {page.fromLabel}
@@ -146,7 +132,7 @@ export function Proof({ locale }: Props) {
     >
       <TestimonialsMarquee
         label={page.label}
-        items={page.items.map(toReview)}
+        items={page.items}
         durationSeconds={55}
         tone="surface"
       />

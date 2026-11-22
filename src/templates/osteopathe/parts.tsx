@@ -84,25 +84,12 @@ export function IconCard({
     <TemplateCard
       elevation="flat"
       className={`h-full ${className ?? ""}`}
-      title={
-        <span className="flex flex-col items-start gap-5">
-          <IconBadge icon={icon} />
-          <span>{title}</span>
-        </span>
-      }
+      icon={<IconBadge icon={icon} />}
+      title={title}
     >
       {children}
     </TemplateCard>
   );
-}
-
-type RatingValue = 1 | 2 | 3 | 4 | 5;
-
-/** Note de la copie (un nombre) ramenée à l'échelle de 1 à 5 du marquee. */
-export function toRating(value: number): RatingValue {
-  const clamped = Math.min(5, Math.max(1, Math.round(value)));
-
-  return clamped as RatingValue;
 }
 
 /** Bande inverse de fin de page : question, texte, appel et prise de rendez-vous. */

@@ -32,15 +32,6 @@ export const ICONS: Record<SpaMassageIconKey, LucideIcon> = {
   sparkles: Sparkles,
 };
 
-/** Une note de 1 à 5 : la copie stocke un nombre, le composant d'avis attend l'union. */
-export function toRating(value: number): 1 | 2 | 3 | 4 | 5 {
-  if (value >= 5) return 5;
-  if (value >= 4) return 4;
-  if (value >= 3) return 3;
-  if (value >= 2) return 2;
-  return 1;
-}
-
 /** Pastille d'icône : anneau laiton, fond transparent (de la lumière, pas du relief). */
 export function IconRing({ icon }: { icon: SpaMassageIconKey }) {
   const Icon = ICONS[icon];

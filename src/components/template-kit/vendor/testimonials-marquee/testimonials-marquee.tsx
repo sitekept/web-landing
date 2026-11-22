@@ -37,11 +37,29 @@ import { cn } from "@/lib/utils";
 
 export type TestimonialMarqueeTone = "surface" | "raised" | "inverse";
 
+/**
+ * Couleur des étoiles : l'accent du template (`accent`, défaut ; `inverse-ink`
+ * sur fond inverse), ou l'encre du fond (`ink`) quand l'accent est trop clair
+ * pour se lire sur la carte.
+ */
+export type TestimonialMarqueeStarTone = "accent" | "ink";
+
 type RatingValue = 1 | 2 | 3 | 4 | 5;
+
+/**
+ * Ramène une note quelconque (la copie stocke un `number`) à l'échelle de 1 à
+ * 5 : arrondie, bornée. Une valeur non finie donne 1. Utile à une vue qui
+ * doit écrire la note en toutes lettres (ex. « Note : 4 sur 5 »).
+ */
+export function clampTestimonialRating(value: number): RatingValue {
+  if (!Number.isFinite(value)) return 1;
+
+  return Math.min(5, Math.max(1, Math.round(value))) as RatingValue;
+}
 
 /** Une note exige son texte accessible, déjà formaté (ex. « Note : 5 sur 5 »). */
 type TestimonialRating =
-  | { rating: RatingValue; ratingLabel: string }
+  | { rating: number; ratingLabel: string }
   | { rating?: undefined; ratingLabel?: undefined };
 
 export type TestimonialMarqueeItem = {
@@ -66,6 +84,8 @@ export type TestimonialsMarqueeProps = {
   tone?: TestimonialMarqueeTone;
   /** Pastille d'initiales avant le nom (`true` par défaut). */
   initials?: boolean;
+  /** Couleur des étoiles (`accent` par défaut). */
+  starTone?: TestimonialMarqueeStarTone;
   className?: string;
 };
 
@@ -81,6 +101,15 @@ const STAR_ON: Record<TestimonialMarqueeTone, string> = {
   surface: "fill-current text-tpl-accent",
   raised: "fill-current text-tpl-accent",
   inverse: "fill-current text-tpl-inverse-ink",
+};
+
+/**
+ * `ink` : étoiles pleines et vides à l'encre du fond (`--tpl-ink` est rebindé
+ * par `TemplateSection tone="inverse"`, donc la classe vaut pour tous les tons).
+ */
+const STAR_INK = {
+  on: "fill-current text-tpl-ink",
+  off: "fill-none text-tpl-ink",
 };
 
 const BADGE: Record<TestimonialMarqueeTone, string> = {
@@ -106,10 +135,12 @@ function Stars({
   rating,
   label,
   tone,
+  starTone,
 }: {
   rating: RatingValue;
   label: string | undefined;
   tone: TestimonialMarqueeTone;
+  starTone: TestimonialMarqueeStarTone;
 }) {
   return (
     <div
@@ -124,7 +155,13 @@ function Stars({
           aria-hidden="true"
           className={cn(
             "size-4",
-            value <= rating ? STAR_ON[tone] : "fill-none text-tpl-line"
+            value <= rating
+              ? starTone === "ink"
+                ? STAR_INK.on
+                : STAR_ON[tone]
+              : starTone === "ink"
+                ? STAR_INK.off
+                : "fill-none text-tpl-line"
           )}
         />
       ))}
@@ -136,16 +173,23 @@ function Card({
   item,
   initials,
   tone,
+  starTone,
 }: {
   item: TestimonialMarqueeItem;
   initials: boolean;
   tone: TestimonialMarqueeTone;
+  starTone: TestimonialMarqueeStarTone;
 }) {
   return (
     <li className="flex w-72 shrink-0 sm:w-80">
       <figure className="flex w-full flex-col gap-4 rounded-tpl border border-tpl-line bg-tpl-raised p-5 text-start text-tpl-ink shadow-tpl-sm sm:p-6">
-        {item.rating ? (
-          <Stars rating={item.rating} label={item.ratingLabel} tone={tone} />
+        {item.rating !== undefined ? (
+          <Stars
+            rating={clampTestimonialRating(item.rating)}
+            label={item.ratingLabel}
+            tone={tone}
+            starTone={starTone}
+          />
         ) : null}
         <blockquote className="text-tpl-sm text-tpl-ink">
           <p>{item.quote}</p>
@@ -187,6 +231,7 @@ export function TestimonialsMarquee({
   durationSeconds = 40,
   tone = "surface",
   initials = true,
+  starTone = "accent",
   className,
 }: TestimonialsMarqueeProps) {
   if (items.length === 0) {
@@ -212,7 +257,13 @@ export function TestimonialsMarquee({
       <div className="flex gap-(--tpl-marquee-gap) p-2 [--tpl-marquee-gap:1rem]">
         <ul role="list" className={TRACK}>
           {items.map((item, index) => (
-            <Card key={index} item={item} initials={initials} tone={tone} />
+            <Card
+              key={index}
+              item={item}
+              initials={initials}
+              tone={tone}
+              starTone={starTone}
+            />
           ))}
         </ul>
         {/* Copie pour la boucle : ignorée des lecteurs d'écran, absente en reduced motion. */}
@@ -222,7 +273,13 @@ export function TestimonialsMarquee({
           className={cn(TRACK, "motion-reduce:hidden")}
         >
           {items.map((item, index) => (
-            <Card key={index} item={item} initials={initials} tone={tone} />
+            <Card
+              key={index}
+              item={item}
+              initials={initials}
+              tone={tone}
+              starTone={starTone}
+            />
           ))}
         </ul>
       </div>

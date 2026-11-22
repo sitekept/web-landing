@@ -28,3 +28,7 @@
 - Conservés : mécanique (`flex-basis` animé au-dessus de `lg`, accordéon sous `lg`), `motion-reduce`, ouverture au survol souris, au focus et au clic, commentaires de l'auteur (traduits).
 - Aucun texte en dur ; aucune dépendance ajoutée.
 - Libellé vertical (`lg:[writing-mode:vertical-rl]`) : ajout de `lg:[text-orientation:sideways]` sur le titre et la meta, pour que l'apostrophe typographique reste couchée (sinon « d’appartement » s'affiche avec une apostrophe debout).
+
+## Modifications après l'intake
+
+- 2026-11-22 : prop `width` (`capped` par défaut, comportement d'origine ; `fill` : le panneau ouvert prend la largeur de la rangée moins les rails, pour aligner la galerie sur le contenu de la page). `maxOpenWidth` ne s'applique qu'à `capped`.

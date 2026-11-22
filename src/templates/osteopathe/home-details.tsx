@@ -7,8 +7,6 @@ import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonia
 import { osteopathe } from "@/content/templates/osteopathe";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { toRating } from "./parts";
-
 /** Déroulé d'une séance : liste numérotée, titre collant à gauche. */
 export function HomeSession({ locale }: { locale: TemplateLocale }) {
   const page = getTemplateCopy(osteopathe, locale).home.session;
@@ -38,7 +36,7 @@ export function HomeSession({ locale }: { locale: TemplateLocale }) {
                 <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
                   {step.time}
                 </p>
-                <h3 className="mt-2 font-tpl-display text-tpl-xl leading-tpl-display">
+                <h3 className="mt-2 font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">
                   {step.title}
                 </h3>
                 <p className="mt-3 max-w-tpl-measure text-tpl-sm text-tpl-ink-muted">
@@ -72,7 +70,7 @@ export function HomeProof({ locale }: { locale: TemplateLocale }) {
           quote: item.quote,
           name: item.name,
           detail: item.detail,
-          rating: toRating(item.rating),
+          rating: item.rating,
           ratingLabel: item.ratingLabel,
         }))}
       />

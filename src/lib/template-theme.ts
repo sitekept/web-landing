@@ -22,6 +22,15 @@ export type TemplateThemeTokens = {
   radiusPill?: string;
   fontDisplay?: string;
   fontText?: string;
+  /**
+   * Graisse des titres en police d'affichage (nombre CSS, ex. `400`). Repli :
+   * 600. Une police sans graisse grasse (serif d'affichage en `400`
+   * seulement) la met à `400` pour éviter un gras synthétique. S'applique aux
+   * titres du kit (`TemplateHeading`, titre de `TemplateCard`, marque du
+   * shell) ; un titre écrit dans une vue prend la classe
+   * `font-(weight:--tpl-display-weight)`.
+   */
+  fontDisplayWeight?: number;
   shadowSm?: string;
   shadowLg?: string;
 };
@@ -40,6 +49,7 @@ const TOKEN_VARIABLES: Record<keyof TemplateThemeTokens, `--tpl-${string}`> = {
   radiusPill: "--tpl-radius-pill",
   fontDisplay: "--tpl-font-display",
   fontText: "--tpl-font-text",
+  fontDisplayWeight: "--tpl-display-weight",
   shadowSm: "--tpl-shadow-sm",
   shadowLg: "--tpl-shadow-lg",
 };
@@ -57,7 +67,7 @@ export function themeStyle(tokens: TemplateThemeTokens): CSSProperties {
     const value = tokens[key];
 
     if (value !== undefined) {
-      style[TOKEN_VARIABLES[key]] = value;
+      style[TOKEN_VARIABLES[key]] = String(value);
     }
   }
 

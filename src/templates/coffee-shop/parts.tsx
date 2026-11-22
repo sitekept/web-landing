@@ -51,15 +51,6 @@ export const ICONS: Record<CoffeeShopIconKey, LucideIcon> = {
   wifi: Wifi,
 };
 
-/** Une note de 1 à 5 : la copie stocke un nombre, le composant d'avis attend l'union. */
-export function toRating(value: number): 1 | 2 | 3 | 4 | 5 {
-  if (value >= 5) return 5;
-  if (value >= 4) return 4;
-  if (value >= 3) return 3;
-  if (value >= 2) return 2;
-  return 1;
-}
-
 /** Pastille de texte (catégorie, note de dégustation, repère). */
 export function Pill({
   children,

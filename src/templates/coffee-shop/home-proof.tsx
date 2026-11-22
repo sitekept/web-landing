@@ -11,7 +11,7 @@ import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonia
 import { coffeeShop } from "@/content/templates/coffee-shop";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { ICONS, toRating } from "./parts";
+import { ICONS } from "./parts";
 
 type Props = { locale: TemplateLocale };
 
@@ -32,7 +32,7 @@ export function ReviewsSection({ locale }: Props) {
           quote: item.quote,
           name: item.name,
           detail: item.detail,
-          rating: toRating(item.rating),
+          rating: item.rating,
           ratingLabel: item.ratingLabel,
         }))}
       />

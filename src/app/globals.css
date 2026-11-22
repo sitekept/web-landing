@@ -145,6 +145,14 @@
     /* Typographie */
     --tpl-font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
     --tpl-font-text: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    /*
+     * Graisse des titres en police d'affichage (kit : titres de section, de
+     * carte, marque du shell). Repli = `font-semibold`. Classe d'usage :
+     * `font-(weight:--tpl-display-weight)`. Pas de `--font-weight-tpl-*` dans
+     * @theme : il générerait `font-tpl-*`, que tailwind-merge (`cn()`) range
+     * parmi les familles et qui écraserait `font-tpl-display`.
+     */
+    --tpl-display-weight: 600;
     --tpl-text-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
     --tpl-text-sm: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
     --tpl-text-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);

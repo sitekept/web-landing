@@ -25,6 +25,15 @@ import { useId, useState, type CSSProperties } from "react";
  * composant reste appelable depuis une vue serveur.
  */
 
+/**
+ * Largeur de la rangée sur desktop. `capped` : le panneau ouvert plafonne à
+ * `maxOpenWidth` et la rangée se centre (bande portrait, plus étroite que le
+ * contenu de la page). `fill` : le panneau ouvert prend tout l'espace laissé
+ * par les rails, donc la rangée occupe toute la largeur du bloc qui la porte
+ * (bords gauche et droit alignés sur les autres blocs de la section).
+ */
+export type HoverExpandGalleryWidth = "capped" | "fill";
+
 export type HoverExpandGalleryItem = {
   /** Le libellé. Tourné dans le rail sur desktop, une simple ligne sur mobile. */
   title: string;
@@ -41,7 +50,8 @@ export type HoverExpandGalleryProps = {
   /**
    * Attribut `sizes` de `next/image` : il décrit la largeur réelle d'un
    * panneau ouvert, ex. `"(min-width: 1024px) 520px, 100vw"` avec la valeur
-   * par défaut de `maxOpenWidth`.
+   * par défaut de `maxOpenWidth`, ou `"(min-width: 1024px) 1100px, 100vw"` en
+   * `width="fill"` (largeur du contenu moins les rails, au plus ~1100 px).
    */
   sizes: string;
   /** Charge en priorité l'image du panneau ouvert au départ (image visible sans défilement). */
@@ -60,9 +70,14 @@ export type HoverExpandGalleryProps = {
    */
   railWidth?: number;
   /**
-   * Plafond de largeur du panneau ouvert sur desktop, en px. Garde une bande
-   * portrait plutôt qu'un bloc presque carré quand il y a peu de panneaux ;
-   * la rangée se centre dans l'espace restant.
+   * Largeur de la rangée sur desktop (`capped` par défaut), voir
+   * `HoverExpandGalleryWidth`. Ignorée sous 1024 px.
+   */
+  width?: HoverExpandGalleryWidth;
+  /**
+   * Plafond de largeur du panneau ouvert sur desktop, en px (`width="capped"`
+   * seulement). Garde une bande portrait plutôt qu'un bloc presque carré quand
+   * il y a peu de panneaux ; la rangée se centre dans l'espace restant.
    */
   maxOpenWidth?: number;
   /** Hauteur de l'image du panneau ouvert sous 1024 px, en px. */
@@ -81,6 +96,7 @@ export function HoverExpandGallery({
   priority = false,
   height = "36rem",
   railWidth = 64,
+  width = "capped",
   maxOpenWidth = 520,
   mobileImageHeight = 420,
   defaultIndex = 0,
@@ -93,6 +109,13 @@ export function HoverExpandGallery({
   const open = (index: number) => {
     if (index !== active) setActive(index);
   };
+
+  // `fill` : le panneau ouvert = 100 % de la rangée moins les rails des autres.
+  // La somme des `flex-basis` fait alors exactement 100 %, rien ne rétrécit.
+  const openBasis =
+    width === "fill"
+      ? `calc(100% - ${(items.length - 1) * railWidth}px)`
+      : "var(--hx-max)";
 
   const rootVars = {
     "--hx-h": height,
@@ -124,7 +147,7 @@ export function HoverExpandGallery({
             // plafond mange l'essentiel de la course : le panneau l'atteint
             // tôt et la transition se lit comme un saut.
             // Mobile : c'est la hauteur du bloc image qui s'anime.
-            "--hx-basis": isActive ? "var(--hx-max)" : "var(--hx-rail)",
+            "--hx-basis": isActive ? openBasis : "var(--hx-rail)",
             "--hx-img-h": isActive ? `${mobileImageHeight}px` : "0px",
           } as CSSProperties;
 

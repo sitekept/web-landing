@@ -16,7 +16,7 @@ import { getTemplateCopy } from "@/content/templates/types";
 import { RULE } from "./parts";
 
 const EYEBROW =
-  "text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase";
+  "text-tpl-xs font-normal tracking-tpl-eyebrow text-tpl-ink-muted uppercase";
 
 /** Commande : hero court, délais, formulaire de démonstration et coordonnées. */
 export function CommandeView({ locale }: { locale: TemplateLocale }) {
@@ -98,7 +98,7 @@ export function CommandeView({ locale }: { locale: TemplateLocale }) {
               <p className="font-tpl-display text-tpl-2xl text-tpl-accent tabular-nums">
                 {item.value}
               </p>
-              <h3 className="mt-3 font-tpl-display text-tpl-lg">
+              <h3 className="mt-3 font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight)">
                 {item.label}
               </h3>
               <p className="mt-2 text-tpl-sm text-tpl-ink-muted">{item.text}</p>

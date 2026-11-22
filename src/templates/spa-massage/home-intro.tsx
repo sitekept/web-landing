@@ -62,7 +62,7 @@ export function HomeFeatured({ locale }: { locale: TemplateLocale }) {
                 ratio="4/5"
                 sizes="(min-width: 1280px) 380px, (min-width: 768px) 30vw, 100vw"
               />
-              <h3 className="mt-6 font-tpl-display text-tpl-xl text-balance">
+              <h3 className="mt-6 font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight) text-balance">
                 {item.name}
               </h3>
               <p className="mt-2 flex items-center gap-3 text-tpl-sm tabular-nums">

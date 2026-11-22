@@ -112,7 +112,9 @@ export function ReservationView({ locale }: { locale: TemplateLocale }) {
       <TemplateSection>
         <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:gap-12">
           <TemplatePanel className="p-6 shadow-tpl-lg sm:p-10">
-            <h2 className="font-tpl-display text-tpl-xl">{page.form.title}</h2>
+            <h2 className="font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight)">
+              {page.form.title}
+            </h2>
             <p className="mt-3 mb-8 text-tpl-sm text-tpl-ink-muted">
               {page.form.intro}
             </p>

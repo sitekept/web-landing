@@ -12,7 +12,7 @@ export function TreatmentRow({
   return (
     <li className="grid gap-5 py-8 sm:grid-cols-[1fr_11rem] sm:gap-10">
       <div>
-        <h3 className="font-tpl-display text-tpl-xl text-balance">
+        <h3 className="font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight) text-balance">
           {item.name}
         </h3>
         <p className="mt-3 max-w-tpl-measure text-tpl-sm text-tpl-ink-muted">

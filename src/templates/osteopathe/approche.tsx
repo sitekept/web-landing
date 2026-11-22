@@ -38,7 +38,7 @@ export function ApprocheView({ locale }: { locale: TemplateLocale }) {
               >
                 {index + 1}
               </span>
-              <h3 className="mt-4 font-tpl-display text-tpl-xl leading-tpl-display">
+              <h3 className="mt-4 font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">
                 {item.title}
               </h3>
               <p className="mt-3 max-w-tpl-measure text-tpl-sm text-tpl-ink-muted">
@@ -56,7 +56,8 @@ export function ApprocheView({ locale }: { locale: TemplateLocale }) {
       >
         <HoverExpandGallery
           label={page.cabinet.label}
-          sizes="(min-width: 1024px) 520px, 100vw"
+          sizes="(min-width: 1024px) 1100px, 100vw"
+          width="fill"
           items={page.cabinet.items}
           height="32rem"
         />

@@ -29,9 +29,9 @@ export function CreationsView({ locale }: { locale: TemplateLocale }) {
       <TemplateSection density="compact" className="pt-0">
         <HoverExpandGallery
           label={page.gallery.label}
-          sizes="(min-width: 1024px) 720px, 100vw"
+          sizes="(min-width: 1024px) 1100px, 100vw"
           height="40rem"
-          maxOpenWidth={720}
+          width="fill"
           railWidth={72}
           priority
           items={page.gallery.items.map((item) => ({

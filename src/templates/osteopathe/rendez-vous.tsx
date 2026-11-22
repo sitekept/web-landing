@@ -94,7 +94,7 @@ export function RendezVousView({ locale }: { locale: TemplateLocale }) {
             sizes="(min-width: 1024px) 40vw, 100vw"
           />
           <TemplatePanel>
-            <h2 className="font-tpl-display text-tpl-xl leading-tpl-display">
+            <h2 className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">
               {page.details.title}
             </h2>
             <ul className="mt-5 space-y-3 text-tpl-sm">

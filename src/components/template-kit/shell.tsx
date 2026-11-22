@@ -65,6 +65,28 @@ export type TemplateShellCta = {
   icon?: ReactNode | false;
 };
 
+/**
+ * Ton de la barre d'actions mobile : `surface` (fond de page à 95 % + flou,
+ * bordure `line`, boutons côte à côte) ou `accent` (fond accent, bordure
+ * d'encre, un seul bloc plein largeur : le contenu règle son propre padding).
+ */
+export type TemplateMobileActionsTone = "surface" | "accent";
+
+/** Largeur d'écran à partir de laquelle la barre disparaît (la navigation prend le relais). */
+export type TemplateMobileActionsHideAt = "md" | "xl";
+
+/** Classes littérales : Tailwind ne génère pas de classe construite à la volée. */
+const MOBILE_ACTIONS_TONE: Record<TemplateMobileActionsTone, string> = {
+  surface:
+    "flex gap-2 border-t border-tpl-line bg-tpl-surface/95 px-4 py-3 backdrop-blur",
+  accent: "border-t border-tpl-ink bg-tpl-accent",
+};
+
+const MOBILE_ACTIONS_HIDE_AT: Record<TemplateMobileActionsHideAt, string> = {
+  md: "md:hidden",
+  xl: "xl:hidden",
+};
+
 export type TemplateShellProps = {
   locale: TemplateLocale;
   brand: TemplateShellBrand;
@@ -78,6 +100,20 @@ export type TemplateShellProps = {
   /** Tokens du template (voir `themeStyle`) ; sans eux, les replis neutres. */
   theme?: TemplateThemeTokens;
   footer?: ReactNode;
+  /**
+   * Barre d'actions collée en bas de l'écran sur mobile (appeler, réserver…),
+   * rendue après le pied de page. Elle est `sticky` en fin de page, pas
+   * `fixed` : en bas du défilement elle se pose sous le pied de page au lieu
+   * de le recouvrir, donc aucune réserve de padding n'est à prévoir dans le
+   * contenu ni dans le pied de page.
+   */
+  mobileActions?: ReactNode;
+  /** Aspect de la barre (`surface` par défaut). */
+  mobileActionsTone?: TemplateMobileActionsTone;
+  /** Point de rupture où la barre disparaît (`xl` par défaut). */
+  mobileActionsHideAt?: TemplateMobileActionsHideAt;
+  /** Nom accessible de la barre (copie FR / EN) ; en pose le rôle `group`. */
+  mobileActionsLabel?: string;
   className?: string;
   children: ReactNode;
 };
@@ -90,6 +126,10 @@ export function TemplateShell({
   localeSwitch = false,
   theme,
   footer,
+  mobileActions,
+  mobileActionsTone = "surface",
+  mobileActionsHideAt = "xl",
+  mobileActionsLabel,
   className,
   children,
 }: TemplateShellProps) {
@@ -119,7 +159,7 @@ export function TemplateShell({
             <div className="min-w-0">
               <Link
                 href={homeHref}
-                className="block truncate font-tpl-display text-tpl-lg leading-tpl-display font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
+                className="block truncate font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
               >
                 {brand.name}
               </Link>
@@ -160,6 +200,20 @@ export function TemplateShell({
       </main>
 
       {footer}
+
+      {mobileActions ? (
+        <div
+          role={mobileActionsLabel ? "group" : undefined}
+          aria-label={mobileActionsLabel}
+          className={cn(
+            "sticky bottom-0 z-30",
+            MOBILE_ACTIONS_TONE[mobileActionsTone],
+            MOBILE_ACTIONS_HIDE_AT[mobileActionsHideAt]
+          )}
+        >
+          {mobileActions}
+        </div>
+      ) : null}
     </div>
   );
 }

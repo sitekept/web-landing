@@ -30,3 +30,7 @@
 - `prefers-reduced-motion: reduce` : animation coupée, piste dupliquée et fondus masqués, cartes à la ligne.
 - `dir="rtl"` : la piste part vers la droite (`--tpl-marquee-dir`).
 - Aucun texte en dur ; aucune dépendance ajoutée.
+
+## Modifications après l'intake
+
+- 2026-11-22 : `rating` accepte un `number` (arrondi et borné à 1..5 par le composant) ; helper `clampTestimonialRating` exporté. Prop `starTone` (`accent` par défaut, `ink`) pour des étoiles à l'encre du fond.

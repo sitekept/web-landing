@@ -33,7 +33,8 @@ export function RealisationsView({ locale }: { locale: TemplateLocale }) {
         </p>
         <HoverExpandGallery
           label={page.gallery.label}
-          sizes="(min-width: 1024px) 520px, 100vw"
+          sizes="(min-width: 1024px) 1100px, 100vw"
+          width="fill"
           priority
           items={page.gallery.items}
         />

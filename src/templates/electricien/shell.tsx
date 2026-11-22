@@ -9,7 +9,7 @@ import { HazardStripe } from "./parts";
 
 /**
  * Shell du template électricien : marque, navigation, CTA téléphone, barre
- * d'appel fixe sur mobile et pied de page. Tous les textes viennent de la copie.
+ * d'appel collée en bas sur mobile et pied de page. Tous les textes viennent de la copie.
  *
  * Titres très gras et resserrés : posés ici par sélecteur descendant, pour que
  * les composants du kit gardent leur interface.
@@ -54,10 +54,20 @@ export function ElectricienShell({
         label: copy.phone.label,
         icon: <Phone aria-hidden="true" className="size-4" />,
       }}
+      mobileActionsTone="accent"
+      mobileActions={
+        <a
+          href={copy.phone.href}
+          className="flex min-h-14 items-center justify-center gap-2 px-4 text-tpl-base font-extrabold text-tpl-accent-ink tabular-nums focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-tpl-ink"
+        >
+          <Phone aria-hidden="true" className="size-5" />
+          {copy.cta.call} {copy.phone.label}
+        </a>
+      }
       footer={
         <>
           <HazardStripe />
-          <footer className="bg-tpl-inverse pb-24 text-tpl-inverse-ink xl:pb-0">
+          <footer className="bg-tpl-inverse text-tpl-inverse-ink">
             <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
               <div className="max-w-md">
                 <p className="font-tpl-display text-tpl-lg font-extrabold">
@@ -91,16 +101,6 @@ export function ElectricienShell({
               </div>
             </div>
           </footer>
-
-          <div className="fixed inset-x-0 bottom-0 z-30 border-t border-tpl-ink bg-tpl-accent xl:hidden">
-            <a
-              href={copy.phone.href}
-              className="flex min-h-14 items-center justify-center gap-2 px-4 text-tpl-base font-extrabold text-tpl-accent-ink tabular-nums focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-tpl-ink"
-            >
-              <Phone aria-hidden="true" className="size-5" />
-              {copy.cta.call} {copy.phone.label}
-            </a>
-          </div>
         </>
       }
     >

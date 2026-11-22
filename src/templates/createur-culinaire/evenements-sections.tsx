@@ -35,7 +35,7 @@ export function EventFormulas({ locale }: { locale: TemplateLocale }) {
             >
               <div>
                 <Icon aria-hidden="true" className="size-6 text-tpl-accent" />
-                <h3 className="mt-4 font-tpl-display text-tpl-xl">
+                <h3 className="mt-4 font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight)">
                   {item.name}
                 </h3>
                 <p className={`${EYEBROW} mt-4`}>{page.guestsLabel}</p>
@@ -94,7 +94,9 @@ export function EventWorkshops({ locale }: { locale: TemplateLocale }) {
           {page.items.map((item) => (
             <li key={item.title} className={`${RULE} py-6`}>
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
-                <h3 className="font-tpl-display text-tpl-xl">{item.title}</h3>
+                <h3 className="font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight)">
+                  {item.title}
+                </h3>
                 <p className="text-tpl-sm font-semibold text-tpl-accent">
                   {item.price}
                 </p>
@@ -123,7 +125,7 @@ export function EventLogistics({ locale }: { locale: TemplateLocale }) {
           return (
             <li key={item.title} className={`${RULE} pt-6`}>
               <Icon aria-hidden="true" className="size-6 text-tpl-accent" />
-              <h3 className="mt-4 font-tpl-display text-tpl-xl">
+              <h3 className="mt-4 font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight)">
                 {item.title}
               </h3>
               <p className="mt-3 text-tpl-sm text-tpl-ink-muted">{item.text}</p>

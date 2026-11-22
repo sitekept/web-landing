@@ -44,6 +44,7 @@ export type {
 export { TemplateCard, TemplatePanel } from "./card";
 export type {
   TemplateCardElevation,
+  TemplateCardIconPosition,
   TemplateCardProps,
   TemplateCardTitleLevel,
   TemplatePanelProps,
@@ -52,6 +53,8 @@ export type {
 
 export { TemplateShell } from "./shell";
 export type {
+  TemplateMobileActionsHideAt,
+  TemplateMobileActionsTone,
   TemplateNavItem,
   TemplateShellBrand,
   TemplateShellCta,

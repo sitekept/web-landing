@@ -34,8 +34,8 @@ export function EspaceView({ locale }: { locale: TemplateLocale }) {
           label={page.gallery.label}
           items={page.gallery.items}
           height="34rem"
-          maxOpenWidth={760}
-          sizes="(min-width: 1024px) 760px, 100vw"
+          width="fill"
+          sizes="(min-width: 1024px) 1100px, 100vw"
           priority
         />
       </TemplateSection>
@@ -50,7 +50,7 @@ export function EspaceView({ locale }: { locale: TemplateLocale }) {
           {page.care.items.map((item) => (
             <li key={item.title} className="flex flex-col gap-5">
               <IconRing icon={item.icon} />
-              <h3 className="font-tpl-display text-tpl-lg text-balance">
+              <h3 className="font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight) text-balance">
                 {item.title}
               </h3>
               <p className="text-tpl-sm text-tpl-ink-muted">{item.text}</p>

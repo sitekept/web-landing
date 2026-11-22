@@ -34,15 +34,6 @@ export const ICONS: Record<CreateurCulinaireIconKey, LucideIcon> = {
   wheat: Wheat,
 };
 
-/** Une note de 1 à 5 : la copie stocke un nombre, le composant d'avis attend l'union. */
-export function toRating(value: number): 1 | 2 | 3 | 4 | 5 {
-  if (value >= 5) return 5;
-  if (value >= 4) return 4;
-  if (value >= 3) return 3;
-  if (value >= 2) return 2;
-  return 1;
-}
-
 /** Numéro d'ordre sur deux chiffres (« 01 »), décor des listes numérotées. */
 export function ordinal(index: number): string {
   return String(index + 1).padStart(2, "0");

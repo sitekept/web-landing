@@ -1227,6 +1227,7 @@ export const spaMassage: TemplateDefinition<"spa-massage", SpaMassageCopy> = {
     fontDisplay:
       "var(--font-display-serif), ui-serif, Georgia, 'Times New Roman', serif",
     fontText: "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
+    fontDisplayWeight: 400,
     shadowSm: "0 1px 0 color-mix(in oklch, var(--tpl-ink) 6%, transparent)",
     shadowLg:
       "0 0 56px -18px color-mix(in oklch, var(--tpl-accent) 38%, transparent)",

@@ -13,7 +13,7 @@ import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonia
 import { electricien } from "@/content/templates/electricien";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { IconBadge, toRating } from "./parts";
+import { IconBadge } from "./parts";
 
 type Props = { locale: TemplateLocale };
 
@@ -58,12 +58,10 @@ export function ServicesSection({ locale }: Props) {
           <li key={item.title}>
             <TemplateCard
               interactive
+              icon={<IconBadge icon={item.icon} />}
               title={item.title}
               className="h-full bg-tpl-surface"
             >
-              <div className="-mt-1 mb-4">
-                <IconBadge icon={item.icon} />
-              </div>
               {item.text}
             </TemplateCard>
           </li>
@@ -94,12 +92,12 @@ export function ReviewsSection({ locale }: Props) {
         label={page.label}
         tone="surface"
         durationSeconds={55}
-        className="[&_svg]:text-tpl-ink"
+        starTone="ink"
         items={page.items.map((item) => ({
           quote: item.quote,
           name: item.name,
           detail: item.detail,
-          rating: toRating(item.rating),
+          rating: item.rating,
           ratingLabel: item.ratingLabel,
         }))}
       />

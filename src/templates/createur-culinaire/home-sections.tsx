@@ -10,7 +10,7 @@ import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonia
 import { createurCulinaire } from "@/content/templates/createur-culinaire";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { ordinal, RULE, toRating } from "./parts";
+import { ordinal, RULE } from "./parts";
 
 /** Manifeste : l'étiquette à gauche, une phrase en grand serif à droite. */
 export function HomeManifesto({ locale }: { locale: TemplateLocale }) {
@@ -61,7 +61,9 @@ export function HomeUniverses({ locale }: { locale: TemplateLocale }) {
                 >
                   {ordinal(index)}
                 </span>
-                <h3 className="font-tpl-display text-tpl-xl">{item.title}</h3>
+                <h3 className="font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight)">
+                  {item.title}
+                </h3>
               </div>
               <p className="mt-3 max-w-sm text-tpl-sm text-tpl-ink-muted">
                 {item.text}
@@ -101,7 +103,7 @@ export function HomeProof({ locale }: { locale: TemplateLocale }) {
             quote: item.quote,
             name: item.name,
             detail: item.detail,
-            rating: toRating(item.rating),
+            rating: item.rating,
             ratingLabel: item.ratingLabel,
           }))}
         />
@@ -156,7 +158,9 @@ export function HomeSteps({ locale }: { locale: TemplateLocale }) {
             >
               {ordinal(index)}
             </span>
-            <h3 className="mt-3 font-tpl-display text-tpl-xl">{item.title}</h3>
+            <h3 className="mt-3 font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight)">
+              {item.title}
+            </h3>
             <p className="mt-3 text-tpl-sm text-tpl-ink-muted">{item.text}</p>
           </li>
         ))}

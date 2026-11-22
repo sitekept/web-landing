@@ -126,9 +126,9 @@ export function ReparationsView({ locale }: { locale: TemplateLocale }) {
               <TemplateCard
                 title={item.title}
                 titleAs="h3"
+                icon={<IconChip icon={item.icon} />}
                 className="h-full bg-tpl-surface"
               >
-                <IconChip icon={item.icon} className="mb-4" />
                 {item.text}
               </TemplateCard>
             </li>
