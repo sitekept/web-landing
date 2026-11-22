@@ -171,6 +171,12 @@ export type TemplateShellProps = {
   /** Forme de l'en-tête (`bar` par défaut). */
   header?: TemplateShellHeader;
   /**
+   * Ton de la carte `header="floating"` : `surface` (défaut) ou `inverse`
+   * (carte sombre, `data-tone="inverse"`, menu mobile compris). Sans effet sur
+   * les autres en-têtes.
+   */
+  headerTone?: "surface" | "inverse";
+  /**
    * `header="rail"` : numérote les liens de la colonne (01, 02…). Les numéros
    * sont décoratifs (`aria-hidden`).
    */
@@ -199,6 +205,7 @@ export function TemplateShell({
   topBar,
   topBarTone = "raised",
   header = "bar",
+  headerTone = "surface",
   railNumbers = false,
   railFooter,
   className,
@@ -217,6 +224,7 @@ export function TemplateShell({
     <TemplateLink
       href={templateHref(locale, cta.href)}
       size="sm"
+      variant={floating && headerTone === "inverse" ? "inverse" : "solid"}
       icon={cta.icon}
     >
       {cta.label}
@@ -312,7 +320,10 @@ export function TemplateShell({
       className={cn("sticky top-0 z-40 h-0", SHELL_GUTTER)}
     >
       <div className={cn(SHELL_WIDTH, "pt-(--tpl-header-gap)")}>
-        <div className="relative rounded-[var(--tpl-header-radius)] border border-tpl-line bg-tpl-surface/95 px-5 shadow-tpl-lg backdrop-blur-md sm:px-6">
+        <div
+          data-tone={headerTone === "inverse" ? "inverse" : undefined}
+          className="relative rounded-[var(--tpl-header-radius)] border border-tpl-line bg-tpl-surface/95 px-5 text-tpl-ink shadow-tpl-lg backdrop-blur-md sm:px-6"
+        >
           <div className="flex items-center justify-between gap-3 py-3 xl:gap-4">
             {brandBlock}
             {barNav}
