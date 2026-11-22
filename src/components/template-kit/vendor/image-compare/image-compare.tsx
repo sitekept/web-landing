@@ -95,14 +95,12 @@ const TOUCH_SLOP = 6;
 const clamp = (n: number) => Math.min(100, Math.max(0, n));
 
 /**
- * Poignée et trait : paire `inverse` / `inverse-ink`, que le bloc
- * `[data-tone="inverse"]` de `globals.css` ne remappe pas (contrairement à
- * `raised`, `ink` et `surface`). Pastille d'un ton, liseré et halo de l'autre :
- * l'un des deux reste lisible sur photo très claire comme très sombre, quel
- * que soit le ton de la section.
+ * Pastille de libellé posée sur une image : teinte inverse, lisible sur toute
+ * photo. La poignée et le trait (plus bas) utilisent la même paire `inverse` /
+ * `inverse-ink`, que le bloc `[data-tone="inverse"]` de `globals.css` ne remappe
+ * pas (contrairement à `raised`, `ink` et `surface`) : un ton, plus un liseré et
+ * un halo de l'autre, pour rester lisibles sur photo claire comme sombre.
  */
-
-/** Pastille de libellé posée sur une image : teinte inverse, lisible sur toute photo. */
 const CHIP =
   "pointer-events-none absolute top-3 z-10 inline-flex items-center rounded-tpl-pill bg-tpl-inverse/80 px-3 py-1 font-tpl-text text-tpl-xs font-medium whitespace-nowrap text-tpl-inverse-ink";
 
@@ -167,7 +165,10 @@ export function ImageCompare({
     moveTo(event.clientX);
   };
 
-  const endGesture = (event: ReactPointerEvent<HTMLDivElement>, cancelled: boolean) => {
+  const endGesture = (
+    event: ReactPointerEvent<HTMLDivElement>,
+    cancelled: boolean
+  ) => {
     const g = gesture.current;
     if (!g || g.id !== event.pointerId) return;
     gesture.current = null;
