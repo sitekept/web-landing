@@ -29,7 +29,7 @@ const collections = [
     description:
       "Éclairs, tartelettes, choux et créations courtes avec finitions propres, silhouettes lisibles et goût de maison.",
     image:
-      "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1784841399281-40c323e95339?auto=format&fit=crop&w=1400&q=80",
   },
 ] as const;
 
@@ -72,9 +72,9 @@ const testimonials = [
 
 const gallery = [
   "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1670819916757-e8d5935a6c65?auto=format&fit=crop&w=1200&q=80",
   "https://images.unsplash.com/photo-1586985289906-406988974504?auto=format&fit=crop&w=1200&q=80",
-  "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?auto=format&fit=crop&w=1200&q=80",
+  "https://images.unsplash.com/photo-1702745571735-937e55652374?auto=format&fit=crop&w=1200&q=80",
 ] as const;
 
 export default function Pattiserie() {

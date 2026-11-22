@@ -36,7 +36,7 @@ const dailyProducts = [
     description: "Feuilletage croustillant et coeur fondant.",
     price: "1,20€",
     image:
-      "https://images.unsplash.com/photo-1555507036-ab794f4afe7a?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1623334044303-241021148842?auto=format&fit=crop&w=900&q=80",
   },
   {
     name: "Chausson aux Pommes",

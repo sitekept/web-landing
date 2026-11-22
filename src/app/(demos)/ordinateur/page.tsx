@@ -74,7 +74,7 @@ export default function Ordinateur() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=2000&q=80')",
+              "url('https://images.unsplash.com/photo-1731400800900-1bce57414c09?auto=format&fit=crop&w=2000&q=80')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/40 to-slate-50/80" />
@@ -144,7 +144,7 @@ export default function Ordinateur() {
                     "Remplacement d&apos;écran PC portable, réparation dalle LCD/LED",
                   price: "80-150€",
                   image:
-                    "https://images.unsplash.com/photo-1541101767792-f9721b0c02c1?auto=format&fit=crop&w=400&q=80",
+                    "https://images.unsplash.com/photo-1583413230540-ddf9068c9d2d?auto=format&fit=crop&w=400&q=80",
                 },
                 {
                   name: "Problème carte mère",
@@ -152,7 +152,7 @@ export default function Ordinateur() {
                     "Diagnostic et réparation carte mère, circuits électroniques",
                   price: "60-200€",
                   image:
-                    "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=400&q=80",
+                    "https://images.unsplash.com/photo-1617839625591-e5a789593135?auto=format&fit=crop&w=400&q=80",
                 },
                 {
                   name: "Récupération de données",
@@ -197,7 +197,7 @@ export default function Ordinateur() {
                     "Remplacement écran tactile, vitre cassée toutes marques",
                   price: "50-180€",
                   image:
-                    "https://images.unsplash.com/photo-1512054502232-10a0a035d4d0?auto=format&fit=crop&w=400&q=80",
+                    "https://images.unsplash.com/photo-1746006084492-24a8fd02710a?auto=format&fit=crop&w=400&q=80",
                 },
                 {
                   name: "Batterie défaillante",
@@ -212,7 +212,7 @@ export default function Ordinateur() {
                   description: "Réparation port USB-C, Lightning, micro-USB",
                   price: "45-90€",
                   image:
-                    "https://images.unsplash.com/photo-1617275252481-c9608b9c7db9?auto=format&fit=crop&w=400&q=80",
+                    "https://images.unsplash.com/photo-1660820936305-3e8df25adf0d?auto=format&fit=crop&w=400&q=80",
                 },
               ].map((item, index) => (
                 <div
@@ -366,14 +366,14 @@ export default function Ordinateur() {
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
-              "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1541101767792-f9721b0c02c1?auto=format&fit=crop&w=500&q=80",
+              "https://images.unsplash.com/photo-1617839625591-e5a789593135?auto=format&fit=crop&w=500&q=80",
+              "https://images.unsplash.com/photo-1583413230540-ddf9068c9d2d?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1512054502232-10a0a035d4d0?auto=format&fit=crop&w=500&q=80",
+              "https://images.unsplash.com/photo-1746006084492-24a8fd02710a?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1617275252481-c9608b9c7db9?auto=format&fit=crop&w=500&q=80",
+              "https://images.unsplash.com/photo-1660820936305-3e8df25adf0d?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=500&q=80",
+              "https://images.unsplash.com/photo-1727377255383-fb304fb08262?auto=format&fit=crop&w=500&q=80",
             ].map((image, index) => (
               <div
                 key={index}
