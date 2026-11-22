@@ -25,7 +25,7 @@ import type { TemplateLocale } from "@/content/templates/types";
 
 const MESSAGES: Record<TemplateLocale, { status: string; notice: string }> = {
   fr: {
-    status: "Démonstration : aucune donnée n'est envoyée.",
+    status: "Démonstration : aucune donnée n’est envoyée.",
     notice: "Formulaire de démonstration.",
   },
   en: {
