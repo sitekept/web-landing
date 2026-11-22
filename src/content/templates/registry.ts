@@ -358,8 +358,7 @@ const TEMPLATES = [
     name: "Template Architecte d'intérieur",
     sector: "Architecture intérieure",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/architecte-interieur.png",
       featured: true,

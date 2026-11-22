@@ -162,3 +162,10 @@ demo-en	/en/cabinet-avocat/consultation
 demo-en	/en/cabinet-avocat/expertises
 demo-en	/en/cabinet-avocat/methode
 demo-en	/en/cabinet-avocat/publications
+demo-en	/en/architecte-interieur
+demo-en	/en/architecte-interieur/contact
+demo-en	/en/architecte-interieur/journal
+demo-en	/en/architecte-interieur/methode
+demo-en	/en/architecte-interieur/projets
+demo-en	/en/architecte-interieur/projets/atelier-marais
+demo-en	/en/architecte-interieur/studio

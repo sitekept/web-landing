@@ -37,6 +37,8 @@ check /menage-nettoyage yes; check /menage-nettoyage/formules yes
 check /en/menage-nettoyage yes; check /en/menage-nettoyage/formules yes
 check /cabinet-avocat yes; check /cabinet-avocat/expertises yes
 check /en/cabinet-avocat yes; check /en/cabinet-avocat/expertises yes
+check /architecte-interieur yes; check /architecte-interieur/projets yes
+check /en/architecte-interieur yes; check /en/architecte-interieur/projets yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail
