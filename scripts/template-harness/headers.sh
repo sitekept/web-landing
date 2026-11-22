@@ -29,6 +29,8 @@ check /photographe yes; check /photographe/portfolio yes
 check /en/photographe yes; check /en/photographe/portfolio yes
 check /plombier-serrurier yes; check /plombier-serrurier/depannages yes
 check /en/plombier-serrurier yes; check /en/plombier-serrurier/depannages yes
+check /expert-comptable yes; check /expert-comptable/honoraires yes
+check /en/expert-comptable yes; check /en/expert-comptable/honoraires yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail

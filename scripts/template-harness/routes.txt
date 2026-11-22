@@ -89,6 +89,10 @@ demo	/plombier-serrurier
 demo	/plombier-serrurier/contact
 demo	/plombier-serrurier/depannages
 demo	/plombier-serrurier/tarifs
+demo	/expert-comptable
+demo	/expert-comptable/contact
+demo	/expert-comptable/honoraires
+demo	/expert-comptable/missions
 marketing	/templates
 marketing	/en/templates
 internal	/admin-templates-7q4p9s2m
@@ -135,3 +139,7 @@ demo-en	/en/plombier-serrurier
 demo-en	/en/plombier-serrurier/contact
 demo-en	/en/plombier-serrurier/depannages
 demo-en	/en/plombier-serrurier/tarifs
+demo-en	/en/expert-comptable
+demo-en	/en/expert-comptable/contact
+demo-en	/en/expert-comptable/honoraires
+demo-en	/en/expert-comptable/missions
