@@ -183,3 +183,7 @@ demo-en	/en/salon-coiffure/lookbook
 demo-en	/en/salon-coiffure/prestations
 demo-en	/en/salon-coiffure/reservation
 demo-en	/en/salon-coiffure/stylists
+demo-en	/en/avocate
+demo-en	/en/avocate/blog
+demo-en	/en/avocate/contact
+demo-en	/en/avocate/expertises

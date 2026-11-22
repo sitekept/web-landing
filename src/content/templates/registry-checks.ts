@@ -28,6 +28,7 @@ import type { cabinetAvocat } from "@/content/templates/cabinet-avocat";
 import type { architecteInterieur } from "@/content/templates/architecte-interieur";
 import type { restaurantBistrot } from "@/content/templates/restaurant-bistrot";
 import type { salonCoiffure } from "@/content/templates/salon-coiffure";
+import type { avocate } from "@/content/templates/avocate";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -52,6 +53,7 @@ type Definitions = {
   "architecte-interieur": typeof architecteInterieur;
   "restaurant-bistrot": typeof restaurantBistrot;
   "salon-coiffure": typeof salonCoiffure;
+  avocate: typeof avocate;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;

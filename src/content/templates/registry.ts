@@ -405,8 +405,7 @@ const TEMPLATES = [
     sector: "Juridique",
     notes:
       "Route publique SiteKept disponible, maintenant contrôlée par statut.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/avocate.png",
       featured: false,
