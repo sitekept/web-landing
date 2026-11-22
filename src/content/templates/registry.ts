@@ -160,8 +160,7 @@ const TEMPLATES = [
     name: "Template Fleuriste",
     sector: "Floral",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/fleuriste.png",
       featured: true,
