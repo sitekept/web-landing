@@ -93,6 +93,10 @@ demo	/expert-comptable
 demo	/expert-comptable/contact
 demo	/expert-comptable/honoraires
 demo	/expert-comptable/missions
+demo	/garage-auto
+demo	/garage-auto/devis
+demo	/garage-auto/prestations
+demo	/garage-auto/rendez-vous
 marketing	/templates
 marketing	/en/templates
 internal	/admin-templates-7q4p9s2m
@@ -143,3 +147,7 @@ demo-en	/en/expert-comptable
 demo-en	/en/expert-comptable/contact
 demo-en	/en/expert-comptable/honoraires
 demo-en	/en/expert-comptable/missions
+demo-en	/en/garage-auto
+demo-en	/en/garage-auto/devis
+demo-en	/en/garage-auto/prestations
+demo-en	/en/garage-auto/rendez-vous

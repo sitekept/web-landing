@@ -613,6 +613,16 @@ const TEMPLATES = [
       "Template lab servi sur sitekept.com (noindex), en attente de validation.",
     locales: ["fr", "en"],
   },
+  {
+    slug: "garage-auto",
+    status: "lab",
+    routed: true,
+    name: "Template Garage auto",
+    sector: "Automobile",
+    notes:
+      "Template lab servi sur sitekept.com (noindex), en attente de validation.",
+    locales: ["fr", "en"],
+  },
 ] as const satisfies readonly TemplateEntry[];
 
 /** Entrée du registre, avec le littéral de chaque champ (contrôles de types). */
