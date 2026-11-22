@@ -35,9 +35,9 @@ import { useId, useState, type CSSProperties } from "react";
 export type HoverExpandGalleryWidth = "capped" | "fill";
 
 export type HoverExpandGalleryItem = {
-  /** Le libellé. Tourné dans le rail sur desktop, une simple ligne sur mobile. */
+  /** Le libellé. Tourné dans le rail sur desktop ; sous `lg`, affiché en entier (à la ligne si besoin). */
   title: string;
-  /** Libellé secondaire (année, rôle, lieu…). Affiché seulement sur le panneau ouvert. */
+  /** Libellé secondaire (année, rôle, lieu…). Affiché seulement sur le panneau ouvert ; replié sous `lg`, il reste lu par les lecteurs d'écran. */
   meta?: string;
   /** `alt` obligatoire : texte de la copie, traduit. */
   image: { src: ImageProps["src"]; alt: string };
@@ -170,22 +170,25 @@ export function HoverExpandGallery({
                 onClick={() => open(index)}
                 className="relative block w-full cursor-pointer border-0 bg-transparent p-0 text-left focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-tpl-ink lg:absolute lg:inset-0 lg:h-full lg:overflow-hidden"
               >
-                {/* Libellé. Une ligne sous 1024 px ; au-dessus, un rail le long
+                {/* Libellé. Titre en entier sous 1024 px (à la ligne si besoin) ; au-dessus, un rail le long
                     du bord gauche du panneau : titre en bas, meta en haut. */}
                 <span
                   className={clsx(
-                    "flex h-16 w-full items-center justify-between gap-3 overflow-hidden px-5 text-tpl-sm tracking-tight transition-colors duration-(--hx-t) ease-out motion-reduce:transition-none lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-(--hx-rail) lg:flex-col-reverse lg:justify-between lg:px-0 lg:py-5",
+                    "flex min-h-16 w-full items-center justify-between gap-3 overflow-hidden px-5 py-3 text-tpl-sm tracking-tight transition-colors duration-(--hx-t) ease-out motion-reduce:transition-none lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:min-h-0 lg:w-(--hx-rail) lg:flex-col-reverse lg:justify-between lg:px-0 lg:py-5",
                     isActive ? "text-tpl-ink" : "text-tpl-ink-muted"
                   )}
                 >
-                  <span className="truncate lg:rotate-180 lg:overflow-hidden lg:whitespace-nowrap lg:[text-orientation:sideways] lg:[writing-mode:vertical-rl]">
+                  <span className="min-w-0 text-balance break-words lg:rotate-180 lg:overflow-hidden lg:text-ellipsis lg:whitespace-nowrap lg:[text-orientation:sideways] lg:[writing-mode:vertical-rl]">
                     {item.title}
                   </span>
                   {item.meta ? (
                     <span
                       className={clsx(
                         "shrink-0 text-tpl-xs font-medium transition-opacity duration-(--hx-t) ease-out motion-reduce:transition-none lg:rotate-180 lg:whitespace-nowrap lg:[text-orientation:sideways] lg:[writing-mode:vertical-rl]",
-                        isActive ? "opacity-100" : "opacity-0"
+                        // Sous lg, le meta cède la place au titre : replié, il
+                        // sort de la mise en page mais reste lu par les
+                        // lecteurs d'écran (sr-only) ; ouvert, il est à droite.
+                        isActive ? "opacity-100" : "opacity-0 max-lg:sr-only"
                       )}
                     >
                       {item.meta}

@@ -32,3 +32,4 @@
 ## Modifications après l'intake
 
 - 2026-11-22 : prop `width` (`capped` par défaut, comportement d'origine ; `fill` : le panneau ouvert prend la largeur de la rangée moins les rails, pour aligner la galerie sur le contenu de la page). `maxOpenWidth` ne s'applique qu'à `capped`.
+- 2026-11-22 : accordéon sous `lg`, le titre d'un panneau replié s'affiche en entier (à la ligne, sur deux lignes ou plus si besoin) au lieu d'être tronqué par « … » : `truncate` retiré, ligne de libellé en `min-h-16` (plus `h-16`) avec `py-3`. Le `meta` d'un panneau replié sort de la mise en page sous `lg` (`max-lg:sr-only`) pour laisser la place au titre, mais reste lu par les lecteurs d'écran (même nom accessible du bouton qu'avant) ; il réapparaît à droite à l'ouverture. Rien ne change à partir de `lg` (rail vertical, meta en haut du rail).
