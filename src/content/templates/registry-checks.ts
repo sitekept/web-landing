@@ -18,7 +18,7 @@ import type { reparationMobile } from "@/content/templates/reparation-mobile";
 import type { createurCulinaire } from "@/content/templates/createur-culinaire";
 import type { coffeeShop } from "@/content/templates/coffee-shop";
 import type { spaMassage } from "@/content/templates/spa-massage";
-import type { agentImmobilier } from "@/content/templates/agent-immobilier";
+import type { agenceImmobiliere } from "@/content/templates/agence-immobiliere";
 import type { photographe } from "@/content/templates/photographe";
 import type { plombierChauffagiste } from "@/content/templates/plombier-chauffagiste";
 import type { expertComptable } from "@/content/templates/expert-comptable";
@@ -37,7 +37,7 @@ type Definitions = {
   "createur-culinaire": typeof createurCulinaire;
   "coffee-shop": typeof coffeeShop;
   "spa-massage": typeof spaMassage;
-  "agent-immobilier": typeof agentImmobilier;
+  "agence-immobiliere": typeof agenceImmobiliere;
   photographe: typeof photographe;
   "plombier-chauffagiste": typeof plombierChauffagiste;
   "expert-comptable": typeof expertComptable;

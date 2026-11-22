@@ -435,8 +435,7 @@ const TEMPLATES = [
     name: "Template Agence immobilière",
     sector: "Immobilier",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/agence-immobiliere.png",
       featured: true,
@@ -444,12 +443,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Agence immobilière",
           description:
-            "Un modèle orienté recherche et estimation pour présenter les biens, les quartiers, les agents et les leads vendeurs.",
+            "Le site d’une agence de quartier : sélection de biens avec fiche détaillée, agents référents, quartiers, parcours acquéreurs et vendeurs, estimation offerte.",
         },
         en: {
           name: "Real estate agency template",
           description:
-            "A search- and valuation-oriented model to present properties, neighborhoods, agents and seller leads.",
+            "A neighborhood agency website: a property selection with a detailed listing page, lead agents, neighborhoods, buyer and seller paths, and a free home value estimate.",
         },
       },
     },
@@ -568,16 +567,6 @@ const TEMPLATES = [
     routed: true,
     name: "Template Spa & massage",
     sector: "Bien-être",
-    notes:
-      "Template lab servi sur sitekept.com (noindex), en attente de validation.",
-    locales: ["fr", "en"],
-  },
-  {
-    slug: "agent-immobilier",
-    status: "lab",
-    routed: true,
-    name: "Template Agent immobilier",
-    sector: "Immobilier",
     notes:
       "Template lab servi sur sitekept.com (noindex), en attente de validation.",
     locales: ["fr", "en"],

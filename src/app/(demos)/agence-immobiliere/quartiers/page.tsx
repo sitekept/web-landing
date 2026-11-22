@@ -1,29 +1,13 @@
-import { RealtyCard, RealtySection } from "../realty-ui";
+import { agenceImmobiliere } from "@/content/templates/agence-immobiliere";
+import { buildTemplatePageMetadata } from "@/lib/template-metadata";
+import { QuartiersView } from "@/templates/agence-immobiliere/quartiers";
 
-export default function AgenceImmobiliereQuartiersPage() {
-  return (
-    <main className="bg-[#f2f4ef]">
-      <RealtySection
-        eyebrow="Quartiers"
-        title="Les quartiers sont traités comme des contextes de vie, pas comme une simple taxonomie SEO."
-        description="Cette page donne une profondeur locale au modèle et soutient la logique de recherche du hero."
-      >
-        <div className="grid gap-4 xl:grid-cols-4">
-          {[
-            "Annecy-le-Vieux · vue, calme résidentiel et accès lac.",
-            "Albigny · promenade, lumière et biens très désirés.",
-            "Vieille ville · caractère, patrimoine et usage plus urbain.",
-            "Veyrier · jardins, maisons et respiration plus familiale.",
-          ].map((item, index) => (
-            <RealtyCard
-              key={item}
-              className={index === 0 ? "bg-[#16211d] text-white" : ""}
-            >
-              <p className="text-sm leading-7">{item}</p>
-            </RealtyCard>
-          ))}
-        </div>
-      </RealtySection>
-    </main>
-  );
+export const metadata = buildTemplatePageMetadata(
+  agenceImmobiliere,
+  "fr",
+  "quartiers"
+);
+
+export default function Page() {
+  return <QuartiersView locale="fr" />;
 }
