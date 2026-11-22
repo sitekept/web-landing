@@ -99,8 +99,15 @@ export function TemplateHeading({
       <Title
         id={id}
         className={cn(
-          // Un mot long (« Accompagnement ») dépasse 358 px en display mobile.
-          "font-tpl-display font-(weight:--tpl-display-weight) text-balance break-words hyphens-auto",
+          // Césure réservée aux mots de 15 caractères et plus : hyphens-auto +
+          // text-balance coupait des mots qui tenaient sur la ligne
+          // (« mon-tage », « be-fore »). Chromium compte aussi l'élision et la
+          // ponctuation collée (« d’intervention » = 14, « serrurerie : » = 12).
+          // Sans hyphenate-limit-chars (WebKit 18) on reste en hyphens manuel.
+          // overflow-wrap:anywhere reste le filet (break-words ne réduit pas la
+          // largeur minimale) : un mot plus large que la ligne ne déborde jamais
+          // (358 px en display mobile).
+          "font-tpl-display font-(weight:--tpl-display-weight) text-balance [overflow-wrap:anywhere] supports-[hyphenate-limit-chars:15_4_4]:hyphens-auto supports-[hyphenate-limit-chars:15_4_4]:[hyphenate-limit-chars:15_4_4]",
           TITLE_SCALE[scale],
           eyebrow ? "mt-4" : null
         )}
