@@ -144,7 +144,7 @@ export default function Ordinateur() {
                     "Remplacement d&apos;écran PC portable, réparation dalle LCD/LED",
                   price: "80-150€",
                   image:
-                    "https://images.unsplash.com/photo-1583413230540-ddf9068c9d2d?auto=format&fit=crop&w=400&q=80",
+                    "https://images.unsplash.com/photo-1515833305013-e64177301e04?auto=format&fit=crop&w=400&q=80",
                 },
                 {
                   name: "Problème carte mère",
@@ -367,13 +367,13 @@ export default function Ordinateur() {
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
             {[
               "https://images.unsplash.com/photo-1617839625591-e5a789593135?auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1583413230540-ddf9068c9d2d?auto=format&fit=crop&w=500&q=80",
+              "https://images.unsplash.com/photo-1515833305013-e64177301e04?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1746006084492-24a8fd02710a?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1660820936305-3e8df25adf0d?auto=format&fit=crop&w=500&q=80",
               "https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=500&q=80",
-              "https://images.unsplash.com/photo-1727377255383-fb304fb08262?auto=format&fit=crop&w=500&q=80",
+              "https://images.unsplash.com/photo-1562568068-7a90cf9e499d?auto=format&fit=crop&w=500&q=80",
             ].map((image, index) => (
               <div
                 key={index}
