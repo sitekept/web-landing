@@ -75,43 +75,43 @@ const fr = {
     address: "12 rue de l’Exemple, 00000 Votre ville",
     hoursLabel: "Horaires",
     hours: [
-      { day: "Lundi au jeudi", time: "9 h-18 h" },
-      { day: "Vendredi", time: "9 h-16 h" },
+      { day: "Lundi au jeudi", time: "9 h-18 h" },
+      { day: "Vendredi", time: "9 h-16 h" },
     ],
-    registration: "Inscription professionnelle : à compléter",
+    registration: "Inscription professionnelle : à compléter",
     closing: {
       eyebrow: "Premier échange",
       title: "Parlons de vos comptes, sans engagement",
-      text: "Décrivez-nous votre activité en quelques lignes : nous revenons vers vous avec une proposition écrite et un forfait clair.",
+      text: "Décrivez-nous votre activité en quelques lignes : nous revenons vers vous avec une proposition écrite et un forfait clair.",
     },
   },
   footer: {
-    text: "Cabinet d’expertise comptable pour les indépendants, les TPE et les associations : tenue, bilan, paie, création et conseil.",
+    text: "Cabinet d’expertise comptable pour les indépendants, les TPE et les associations : tenue, bilan, paie, création et conseil.",
     contactTitle: "Coordonnées",
     hoursTitle: "Horaires",
     legalTitle: "Mentions",
-    demo: "Site de démonstration : honoraires et chiffres fictifs.",
+    demo: "Site de démonstration : honoraires et chiffres fictifs.",
   },
   meta: {
     home: {
       title: "Votre entreprise - Cabinet d’expertise comptable",
       description:
-        "Petit cabinet d’expertise comptable pour indépendants, TPE et associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé avant de commencer.",
+        "Petit cabinet d’expertise comptable pour indépendants, TPE et associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé avant de commencer.",
     },
     missions: {
       title: "Missions - Votre entreprise",
       description:
-        "Tenue comptable, bilan, paie, création d’entreprise et conseil : ce que le cabinet fait, ce qu’il vous demande et le rythme d’une année type.",
+        "Tenue comptable, bilan, paie, création d’entreprise et conseil : ce que le cabinet fait, ce qu’il vous demande et le rythme d’une année type.",
     },
     honoraires: {
       title: "Honoraires - Votre entreprise",
       description:
-        "Forfaits mensuels et honoraires à partir de, hors taxes : ce qui est compris, comment le prix est fixé et les réponses aux questions fréquentes.",
+        "Forfaits mensuels et tarifs de départ, hors taxes : ce qui est compris, comment le prix est fixé et les réponses aux questions fréquentes.",
     },
     contact: {
       title: "Contact - Votre entreprise",
       description:
-        "Demandez un devis ou un premier échange : formulaire, téléphone, e-mail, horaires du cabinet et déroulé après votre message.",
+        "Demandez un devis ou un premier échange : formulaire, téléphone, e-mail, horaires du cabinet et déroulé après votre message.",
     },
   },
   missions: {
@@ -164,7 +164,7 @@ const fr = {
         code: "04",
         title: "Création d’entreprise",
         summary:
-          "Un accompagnement pour poser les bases : budget de départ, prévisionnel, choix de la forme d’exercice et démarches.",
+          "Un accompagnement pour poser les bases : budget de départ, prévisionnel, choix de la forme d’exercice et démarches.",
         includes: [
           "Entretien de cadrage du projet",
           "Budget de départ et plan de trésorerie",
@@ -178,7 +178,7 @@ const fr = {
         code: "05",
         title: "Conseil et pilotage",
         summary:
-          "Des points de gestion à la demande, pour décider avec des chiffres : tableaux de bord, simulations, projets.",
+          "Des points de gestion à la demande, pour décider avec des chiffres : tableaux de bord, simulations, projets.",
         includes: [
           "Point de gestion d’une heure",
           "Tableaux de bord sur mesure",
@@ -194,7 +194,7 @@ const fr = {
       eyebrow: "Cabinet d’expertise comptable",
       title: "Des comptes tenus au rythme de votre activité",
       description:
-        "Un petit cabinet pour les indépendants, les TPE et les associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé avant de commencer.",
+        "Un petit cabinet pour les indépendants, les TPE et les associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé avant de commencer.",
       facts: [
         "Un interlocuteur unique pour votre dossier",
         "Un forfait écrit avant le premier mois",
@@ -218,14 +218,14 @@ const fr = {
       eyebrow: "Missions",
       title: "Cinq missions, un seul dossier",
       description:
-        "Vous choisissez ce dont vous avez besoin : une tenue mensuelle, un bilan, la paie, ou un accompagnement ponctuel. Tout reste au même endroit.",
+        "Vous choisissez ce dont vous avez besoin : une tenue mensuelle, un bilan, la paie, ou un accompagnement ponctuel. Tout reste au même endroit.",
       codeLabel: "Mission",
     },
     proof: {
       eyebrow: "Ils nous confient leurs comptes",
       title: "Des chiffres que l’on comprend",
       description:
-        "Trois clients, trois métiers. Prénoms et initiales fictifs : ce sont des avis d’exemple.",
+        "Trois clients, trois métiers. Prénoms et initiales fictifs : ce sont des avis d’exemple.",
       items: [
         {
           quote:
@@ -251,7 +251,7 @@ const fr = {
       eyebrow: "Qui fait quoi",
       title: "Vous gardez l’essentiel, nous tenons le reste",
       description:
-        "Un échange simple et régulier : vous nous remettez vos pièces, nous vous remettons des comptes à jour.",
+        "Un échange simple et régulier : vous nous remettez vos pièces, nous vous remettons des comptes à jour.",
       give: {
         title: "Vous nous remettez",
         items: [
@@ -281,7 +281,7 @@ const fr = {
       eyebrow: "Missions",
       title: "Ce que le cabinet fait pour vous",
       description:
-        "Cinq missions, qui s’assemblent selon votre situation. Pour chacune : ce qui est fait, ce qui vous est demandé, et à partir de quel prix.",
+        "Cinq missions, qui s’assemblent selon votre situation. Pour chacune : ce qui est fait et à partir de quel prix. Ce que nous vous demandons figure dans le calendrier, plus bas.",
       image: {
         src: IMG.calculator,
         alt: "Bureau avec une calculatrice posée sur des graphiques en papier, ordinateur portable et carnet en arrière-plan",
@@ -340,7 +340,7 @@ const fr = {
       eyebrow: "Pour qui",
       title: "Quatre situations que nous connaissons bien",
       description:
-        "La mission est la même, le dossier ne l’est pas : chaque profil a ses besoins et son rythme.",
+        "La mission est la même, le dossier ne l’est pas : chaque profil a ses besoins et son rythme.",
       items: [
         {
           icon: "user",
@@ -365,8 +365,8 @@ const fr = {
       ],
     },
     closing: {
-      title: "Vous hésitez sur ce qu’il vous faut ?",
-      text: "Dites-nous où vous en êtes : nous vous proposons la combinaison de missions la plus simple, par écrit.",
+      title: "Vous hésitez sur ce qu’il vous faut ?",
+      text: "Dites-nous où vous en êtes : nous vous proposons la combinaison de missions la plus simple, par écrit.",
     },
   },
   honorairesPage: {
@@ -374,7 +374,7 @@ const fr = {
       eyebrow: "Honoraires",
       title: "Un forfait annoncé avant de commencer",
       description:
-        "Des honoraires au forfait, lisibles, hors taxes. Tous les prix ci-dessous sont des exemples, « à partir de » : le devis fixe le prix de votre dossier.",
+        "Des honoraires au forfait, lisibles, hors taxes. Tous les prix ci-dessous sont des tarifs de départ, donnés à titre d’exemple : le devis fixe le prix de votre dossier.",
       image: {
         src: IMG.notebook,
         alt: "Cahier ouvert à lignes, stylo vert posé dessus, deux crayons et un pot à crayons sur un bureau en bois",
@@ -384,7 +384,7 @@ const fr = {
       eyebrow: "Tarifs d’exemple",
       title: "Les honoraires, poste par poste",
       description:
-        "Tous les prix sont hors taxes et fictifs. Un prix « à partir de » est un point de départ, pas un engagement.",
+        "Tous les prix sont hors taxes et fictifs. Un prix « à partir de » est un point de départ, pas un engagement.",
       groups: [
         {
           title: "Forfaits mensuels",
@@ -473,7 +473,7 @@ const fr = {
       eyebrow: "Ce qui est compris",
       title: "Dans le forfait, et en dehors",
       description:
-        "Pour éviter les surprises : ce que couvre un forfait mensuel, et ce qui fait l’objet d’un devis à part.",
+        "Pour éviter les surprises : ce que couvre un forfait mensuel, et ce qui fait l’objet d’un devis à part.",
       yes: {
         title: "Compris dans le forfait mensuel",
         items: [
@@ -518,28 +518,28 @@ const fr = {
       title: "Vos questions sur les honoraires",
       items: [
         {
-          q: "Les honoraires sont-ils fixes ?",
+          q: "Les honoraires sont-ils fixes ?",
           a: "Le forfait est inscrit dans la lettre de mission et ne change pas en cours d’année sans votre accord écrit. Un travail en dehors du périmètre fait l’objet d’un devis préalable.",
         },
         {
-          q: "Y a-t-il des frais de mise en place ?",
+          q: "Y a-t-il des frais de mise en place ?",
           a: "Une ouverture de dossier peut donner lieu à un forfait de mise en place. Il figure sur le devis, avant que vous vous engagiez.",
         },
         {
-          q: "Et si j’envoie mes pièces en retard ?",
+          q: "Et si j’envoie mes pièces en retard ?",
           a: "Nous vous relançons. Si le retard s’installe, la remise de vos comptes est décalée d’autant, et nous vous le disons par écrit.",
         },
         {
-          q: "Puis-je changer de formule en cours d’année ?",
+          q: "Puis-je changer de formule en cours d’année ?",
           a: "Oui, d’un commun accord. Nous vous proposons alors un avenant à la lettre de mission, avec le nouveau forfait.",
         },
         {
-          q: "Comment vous transmettre mes pièces ?",
+          q: "Comment vous transmettre mes pièces ?",
           a: "Par dépôt en ligne, par photo ou par courrier, selon ce qui vous convient. Nous réglons cela avec vous au démarrage.",
         },
         {
-          q: "Les tarifs affichés sont-ils définitifs ?",
-          a: "Non. Ce sont des tarifs d’exemple, hors taxes, « à partir de ». Le devis fixe le prix pour votre situation.",
+          q: "Les tarifs affichés sont-ils définitifs ?",
+          a: "Non. Ce sont des tarifs de départ d’exemple, hors taxes. Le devis fixe le prix pour votre situation.",
         },
       ],
       image: {
@@ -557,7 +557,7 @@ const fr = {
       eyebrow: "Contact",
       title: "Parlons de vos comptes",
       description:
-        "Écrivez-nous ou appelez : nous revenons vers vous avec des questions simples et, ensuite, une proposition écrite.",
+        "Écrivez-nous ou appelez : nous revenons vers vous avec des questions simples et, ensuite, une proposition écrite.",
     },
     form: {
       title: "Demander un devis",
@@ -597,7 +597,7 @@ const fr = {
       access: "Rendez-vous au cabinet ou par téléphone.",
     },
     next: {
-      eyebrow: "Et ensuite ?",
+      eyebrow: "Et ensuite ?",
       title: "Ce qui se passe après votre message",
       steps: [
         {
@@ -653,11 +653,11 @@ const en: ExpertComptableCopy = {
   },
   common: {
     email: "contact@example.com",
-    address: "12 Example Street, 00000 Your city",
+    address: "12 Example Street, Your city 00000",
     hoursLabel: "Hours",
     hours: [
-      { day: "Monday to Thursday", time: "9 am-6 pm" },
-      { day: "Friday", time: "9 am-4 pm" },
+      { day: "Monday to Thursday", time: "9 a.m.–6 p.m." },
+      { day: "Friday", time: "9 a.m.–4 p.m." },
     ],
     registration: "Professional registration: to be completed",
     closing: {
@@ -680,7 +680,7 @@ const en: ExpertComptableCopy = {
         "A small accounting firm for freelancers, small businesses and nonprofits: bookkeeping, year-end financials, payroll, business setup and advice, with a flat fee announced upfront.",
     },
     missions: {
-      title: "Services - Your business",
+      title: "Accounting services - Your business",
       description:
         "Bookkeeping, year-end financials, payroll, business setup and advice: what the firm does, what it asks of you and the rhythm of a typical year.",
     },
@@ -721,7 +721,7 @@ const en: ExpertComptableCopy = {
         includes: [
           "Review of the year’s entries",
           "Preparation of the year-end financials",
-          "Notes and summary documents",
+          "Notes to the financials and summary documents",
           "Presentation meeting",
         ],
         from: "from €650 per fiscal year",
@@ -777,7 +777,7 @@ const en: ExpertComptableCopy = {
       description:
         "A small firm for freelancers, small businesses and nonprofits: bookkeeping, year-end financials, payroll, business setup and advice, with a flat fee announced upfront.",
       facts: [
-        "A single contact person for your file",
+        "A single point of contact for your business",
         "A written flat fee before the first month",
         "A free first conversation, no obligation",
       ],
@@ -792,7 +792,7 @@ const en: ExpertComptableCopy = {
         ],
         totalLabel: "Cash at month end",
         totalValue: "€8,460",
-        note: "Illustrative figures, unrelated to any real file.",
+        note: "Illustrative figures, unrelated to any real client.",
       },
     },
     offer: {
@@ -806,7 +806,7 @@ const en: ExpertComptableCopy = {
       eyebrow: "They trust us with their books",
       title: "Figures you can understand",
       description:
-        "Three clients, three trades. First names and initials are fictitious: these are sample reviews.",
+        "Three clients, three kinds of work. First names and initials are fictitious: these are sample reviews.",
       items: [
         {
           quote:
@@ -818,11 +818,11 @@ const en: ExpertComptableCopy = {
           quote:
             "Payroll for my two employees gets done without me thinking about it, and the quarterly check-in really helps me decide.",
           name: "Hugo M.",
-          detail: "Owner of a carpentry workshop",
+          detail: "Owner of a woodworking shop",
         },
         {
           quote:
-            "The association’s accounts are finally readable for the board. The assembly could ask its questions calmly.",
+            "The nonprofit’s books are finally readable for the board. Members could ask their questions calmly at the general meeting.",
           name: "Léa D.",
           detail: "Treasurer of a neighborhood association",
         },
@@ -848,7 +848,7 @@ const en: ExpertComptableCopy = {
           "A dashboard every month",
           "Up-to-date, explained accounts",
           "A regular check-in meeting",
-          "A contact person who knows your file",
+          "A contact person who knows your business",
         ],
       },
       image: {
@@ -862,14 +862,14 @@ const en: ExpertComptableCopy = {
       eyebrow: "Services",
       title: "What the firm does for you",
       description:
-        "Five services that combine to fit your situation. For each one: what is done, what we ask of you, and the starting price.",
+        "Five services that combine to fit your situation. For each one: what is done and the starting price. What we ask of you is in the calendar below.",
       image: {
         src: IMG.calculator,
         alt: "Desk with a calculator resting on printed charts, with a laptop and notebook in the background",
       },
     },
     list: {
-      eyebrow: "The service register",
+      eyebrow: "The full list",
       title: "Five services, from everyday to occasional",
       description:
         "Prices are sample rates, before tax. The quote sets the price for your situation.",
@@ -894,7 +894,7 @@ const en: ExpertComptableCopy = {
         },
         {
           period: "Every quarter",
-          we: "Status check-in, review of gaps, forecast update",
+          we: "Status check-in, review of variances, forecast update",
           you: "Your questions and projects for the quarter",
           receive: "A half-hour meeting",
         },
@@ -936,11 +936,11 @@ const en: ExpertComptableCopy = {
         {
           icon: "handshake",
           title: "Nonprofits",
-          text: "Year-end financials the board and the assembly can read, and a clear view of your funding.",
+          text: "Year-end financials that the board and the general meeting can read, and a clear view of your funding.",
         },
         {
           icon: "lightbulb",
-          title: "Project founders",
+          title: "Aspiring founders",
           text: "A starting budget, a forecast and support with the setup paperwork.",
         },
       ],
@@ -955,7 +955,7 @@ const en: ExpertComptableCopy = {
       eyebrow: "Fees",
       title: "A flat fee announced before we start",
       description:
-        "Clear flat-rate fees, before tax. All prices below are sample starting prices: the quote sets the price for your file.",
+        "Clear flat-rate fees, before tax. All prices below are sample starting prices: the quote sets the price for your business.",
       image: {
         src: IMG.notebook,
         alt: "Open lined notebook with a green pen on top, two pencils and a pencil cup on a wooden desk",
@@ -1004,7 +1004,7 @@ const en: ExpertComptableCopy = {
             {
               name: "Nonprofit accounts",
               detail:
-                "Per fiscal year, before tax, with a presentation to the assembly.",
+                "Per fiscal year, before tax, with a presentation to the general meeting.",
               price: "from €790",
             },
           ],
@@ -1019,7 +1019,7 @@ const en: ExpertComptableCopy = {
             },
             {
               name: "Hiring or departure of an employee",
-              detail: "Per file, before tax.",
+              detail: "Per employee, before tax.",
               price: "from €45",
             },
           ],
@@ -1103,7 +1103,7 @@ const en: ExpertComptableCopy = {
         },
         {
           q: "Are there setup fees?",
-          a: "Opening a file may involve a setup fee. It appears on the quote, before you commit.",
+          a: "Opening a new client account may involve a setup fee. It appears on the quote, before you commit.",
         },
         {
           q: "What if I send my documents late?",
@@ -1129,7 +1129,7 @@ const en: ExpertComptableCopy = {
     },
     closing: {
       title: "Get your flat fee in writing",
-      text: "A thirty-minute conversation is enough to price your file. The quote is free.",
+      text: "A thirty-minute conversation is enough to price your engagement. The quote is free.",
     },
   },
   contactPage: {

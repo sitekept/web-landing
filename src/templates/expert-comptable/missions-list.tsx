@@ -20,11 +20,11 @@ export function MissionsList({ locale }: { locale: TemplateLocale }) {
       title={list.title}
       description={list.description}
     >
-      <ol className="border-t-2 border-tpl-ink">
+      <ol className="border-t-2 border-tpl-ink md:grid md:grid-cols-[3.5rem_minmax(0,1.1fr)_minmax(0,1fr)] md:gap-x-10">
         {copy.missions.items.map((mission) => (
           <li
             key={mission.code}
-            className="grid gap-x-10 gap-y-5 border-b border-tpl-line py-8 md:grid-cols-[3.5rem_1.1fr_1fr]"
+            className="grid gap-x-10 gap-y-5 border-b border-tpl-line py-8 md:col-span-3 md:grid-cols-subgrid"
           >
             <p className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight) text-tpl-accent tabular-nums">
               {mission.code}

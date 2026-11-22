@@ -65,7 +65,7 @@ const fr = {
     seePortfolio: "Voir le portfolio",
     seePackages: "Voir les forfaits",
     seeSeries: "Voir la série",
-    seeSeriesSeparator: " : ",
+    seeSeriesSeparator: " : ",
   },
   common: {
     email: "contact@votre-entreprise.example",
@@ -77,7 +77,7 @@ const fr = {
   },
   footer: {
     title: "Des images qui gardent la lumière du jour.",
-    text: "Photographe indépendant : mariages, portraits et images d’entreprise, sur rendez-vous.",
+    text: "Photographe indépendant : mariages, portraits et images d’entreprise, sur rendez-vous.",
     contactLabel: "Contact",
     navLabel: "Pages",
     note: "Photographies d’illustration, libres de droits.",
@@ -87,22 +87,22 @@ const fr = {
     home: {
       title: "Votre entreprise - Photographe indépendant",
       description:
-        "Photographe indépendant : mariages, portraits et images d’entreprise. Peu de mise en scène, une lumière naturelle et une galerie privée livrée en trois semaines.",
+        "Photographe indépendant : mariages, portraits et images d’entreprise. Peu de mise en scène, une lumière naturelle et une galerie privée livrée en trois semaines.",
     },
     portfolio: {
       title: "Portfolio - Votre entreprise",
       description:
-        "Trois séries de photographies : mariage, portrait et entreprise. Détails, silhouettes, mains et lieux, sans mise en scène.",
+        "Trois séries de photographies : mariage, portrait et entreprise. Détails, silhouettes, mains et lieux, sans mise en scène.",
     },
     forfaits: {
       title: "Forfaits - Votre entreprise",
       description:
-        "Forfaits de photographie en euros : mariage, portrait et entreprise. Ce qui est inclus, les options et le déroulé d’une collaboration.",
+        "Forfaits de photographie en euros : mariage, portrait et entreprise. Ce qui est inclus, les options et le déroulé d’une collaboration.",
     },
     contact: {
       title: "Contact - Votre entreprise",
       description:
-        "Parlez-moi de votre projet : type de séance, date et lieu. Formulaire de démonstration, coordonnées fictives et délai de réponse.",
+        "Parlez-moi de votre projet : type de séance, date et lieu. Formulaire de démonstration, coordonnées fictives et délai de réponse.",
     },
   },
   home: {
@@ -113,14 +113,14 @@ const fr = {
         "Mariages, portraits et images d’entreprise. Peu de mise en scène, un regard attentif et des photographies qui ressemblent à ce que vous avez vécu.",
       facts: [
         "Mariage, portrait, entreprise",
-        "Déplacements dans toute la région",
+        "Déplacements inclus jusqu’à 40 km",
         "Galerie privée sous trois semaines",
       ],
       image: {
         src: IMG.lakeCouple,
-        alt: "Silhouettes d’un couple face à un lac au coucher du soleil, en noir et blanc.",
+        alt: "Silhouettes d’un couple en veste face à un lac au coucher du soleil, en noir et blanc.",
       },
-      caption: "Mariage, bord de lac, fin de journée",
+      caption: "Séance en couple, bord de lac, fin de journée",
     },
     domains: {
       eyebrow: "Trois domaines",
@@ -132,8 +132,8 @@ const fr = {
         {
           title: "Mariage",
           meta: "Cérémonie, détails, soirée",
-          text: "Des préparatifs au bal : les mains, les gestes, les silhouettes et la table dressée plutôt que des poses.",
-          from: "À partir de 690 €",
+          text: "Des préparatifs au bal : les mains, les gestes, les silhouettes et la table dressée plutôt que des poses.",
+          from: "À partir de 690 €",
           image: {
             src: IMG.ringHands,
             alt: "Les mains de deux mariés, l’une passant l’alliance à l’autre, en noir et blanc.",
@@ -143,7 +143,7 @@ const fr = {
           title: "Portrait",
           meta: "Lumière naturelle",
           text: "Une séance lente, à la lumière d’une fenêtre ou du soir, pour un portrait qui vous ressemble sans vous exposer.",
-          from: "À partir de 120 €",
+          from: "À partir de 120 €",
           image: {
             src: IMG.curtain,
             alt: "Silhouette d’une personne de dos, les bras levés devant un rideau de lumière.",
@@ -152,8 +152,8 @@ const fr = {
         {
           title: "Entreprise",
           meta: "Équipes, métiers, lieux",
-          text: "Les gestes d’un métier, un atelier, un bureau : des images sobres pour un site, une brochure ou un dossier.",
-          from: "À partir de 450 €",
+          text: "Les gestes d’un métier, un atelier, un bureau : des images sobres pour un site, une brochure ou un dossier.",
+          from: "À partir de 450 €",
           image: {
             src: IMG.workingHands,
             alt: "Deux mains d’artisan au travail de part et d’autre d’un jet clair et flou, en noir et blanc.",
@@ -165,9 +165,9 @@ const fr = {
       eyebrow: "Ils en parlent",
       title: "Des images qui tiennent dans le temps.",
       figures: [
-        { value: "12 ans", label: "de reportage et de portrait" },
+        { value: "12 ans", label: "de reportage et de portrait" },
         { value: "3 semaines", label: "pour recevoir la galerie" },
-        { value: "2 langues", label: "pour les séances : français et anglais" },
+        { value: "2 langues", label: "pour les séances : français et anglais" },
       ],
       quotes: [
         {
@@ -197,7 +197,7 @@ const fr = {
         "Quelques repères au début de la séance, puis je me fais discret. Les images gardent le rythme de la journée, pas celui d’une mise en scène.",
       points: [
         "Lumière naturelle d’abord, flash en dernier recours",
-        "Retouche sobre : ni filtre, ni effet",
+        "Retouche sobre : ni filtre, ni effet",
         "Une sélection resserrée plutôt qu’un vrac de fichiers",
       ],
       image: {
@@ -218,12 +218,12 @@ const fr = {
     categories: [
       {
         title: "Mariage",
-        text: "Alliances, robe, table dressée, couple en silhouette : l’essentiel d’une journée, vu de près.",
+        text: "Alliances, robe, table dressée, couple en silhouette : l’essentiel d’une journée, vu de près.",
         items: [
           {
             src: IMG.lakeCouple,
-            alt: "Silhouettes d’un couple face à un lac au coucher du soleil, en noir et blanc.",
-            caption: "Fin de journée, bord de lac",
+            alt: "Silhouettes d’un couple en veste face à un lac au coucher du soleil, en noir et blanc.",
+            caption: "Séance en couple, bord de lac",
           },
           {
             src: IMG.dressButtons,
@@ -249,7 +249,7 @@ const fr = {
       },
       {
         title: "Portrait",
-        text: "Contre-jour, silhouettes et personnes de dos : des portraits qui racontent sans en dire trop.",
+        text: "Contre-jour, silhouettes et personnes de dos : des portraits qui racontent sans en dire trop.",
         items: [
           {
             src: IMG.blinds,
@@ -275,7 +275,7 @@ const fr = {
       },
       {
         title: "Entreprise",
-        text: "Les gestes d’un métier et la lumière d’un lieu : des images calmes, utilisables partout.",
+        text: "Les gestes d’un métier et la lumière d’un lieu : des images calmes, utilisables partout.",
         items: [
           {
             src: IMG.corridor,
@@ -335,18 +335,18 @@ const fr = {
           items: [
             {
               name: "Cérémonie",
-              detail: "2 h de présence, environ 80 images retouchées",
+              detail: "2 h de présence, environ 80 images retouchées",
               price: "à partir de 690 €",
             },
             {
               name: "Demi-journée",
-              detail: "5 h, des préparatifs au cocktail, environ 200 images",
+              detail: "5 h, des préparatifs au cocktail, environ 200 images",
               price: "à partir de 1 290 €",
               note: "Le plus demandé",
             },
             {
               name: "Journée complète",
-              detail: "10 h, jusqu’à l’ouverture du bal, environ 450 images",
+              detail: "10 h, jusqu’à l’ouverture du bal, environ 450 images",
               price: "à partir de 1 890 €",
             },
           ],
@@ -356,17 +356,17 @@ const fr = {
           items: [
             {
               name: "Séance express",
-              detail: "30 min, un lieu, 15 images retouchées",
+              detail: "30 min, un lieu, 15 images retouchées",
               price: "à partir de 120 €",
             },
             {
               name: "Séance portrait",
-              detail: "1 h 30, deux lieux, 30 images retouchées",
+              detail: "1 h 30, deux lieux, 30 images retouchées",
               price: "à partir de 260 €",
             },
             {
               name: "Couple ou famille",
-              detail: "1 h 30, jusqu’à cinq personnes, 35 images",
+              detail: "1 h 30, jusqu’à cinq personnes, 35 images",
               price: "à partir de 320 €",
             },
           ],
@@ -397,12 +397,12 @@ const fr = {
           items: [
             {
               name: "Album relié",
-              detail: "30 × 30 cm, 20 pages",
+              detail: "12 × 12 in, 20 pages",
               price: "à partir de 220 €",
             },
             {
               name: "Tirage d’art",
-              detail: "30 × 45 cm, papier mat",
+              detail: "30 × 45 cm, papier mat",
               price: "à partir de 60 €",
             },
             {
@@ -412,7 +412,7 @@ const fr = {
             },
             {
               name: "Déplacement",
-              detail: "Au-delà de 40 km autour de votre ville",
+              detail: "Au-delà de 40 km autour de votre ville",
               price: "0,60 € / km",
             },
           ],
@@ -425,7 +425,7 @@ const fr = {
       eyebrow: "Inclus partout",
       title: "Ce que comprend chaque forfait.",
       description:
-        "Pas de supplément caché : le socle est le même, quel que soit le domaine.",
+        "Pas de supplément caché : le socle est le même, quel que soit le domaine.",
       items: [
         {
           icon: "images",
@@ -459,7 +459,7 @@ const fr = {
       items: [
         {
           title: "Premier échange",
-          text: "Un appel ou un message : date, lieu, envies. Une vingtaine de minutes suffisent.",
+          text: "Un appel ou un message : date, lieu, envies. Une vingtaine de minutes suffisent.",
         },
         {
           title: "Devis et réservation",
@@ -476,8 +476,8 @@ const fr = {
       ],
     },
     custom: {
-      title: "Un projet hors cadre ?",
-      text: "Événement, lancement, série éditoriale : décrivez-le, je vous réponds avec un devis sur mesure.",
+      title: "Un projet hors cadre ?",
+      text: "Événement, lancement, série éditoriale : décrivez-le, je vous réponds avec un devis sur mesure.",
     },
   },
   contact: {
@@ -513,8 +513,8 @@ const fr = {
       emailLabel: "E-mail",
       addressLabel: "Adresse",
       areaLabel: "Zone",
-      labelSeparator: " : ",
-      area: "Toute la région, au-delà sur devis.",
+      labelSeparator: " : ",
+      area: "Déplacements inclus jusqu’à 40 km autour de votre ville, 0,60 € / km au-delà.",
       replyLabel: "Délai de réponse",
       reply: "Sous deux jours ouvrés.",
       image: {
@@ -523,7 +523,7 @@ const fr = {
       },
     },
     next: {
-      title: "Et ensuite ?",
+      title: "Et ensuite ?",
       items: [
         {
           title: "Un premier avis",
@@ -535,7 +535,7 @@ const fr = {
         },
         {
           title: "Un devis détaillé",
-          text: "Durée, nombre d’images, options : tout est écrit avant de réserver.",
+          text: "Durée, nombre d’images, options : tout est écrit avant de réserver.",
         },
       ],
     },
@@ -573,7 +573,7 @@ const en: PhotographeCopy = {
   },
   common: {
     email: "contact@example.com",
-    address: "12 Example Street, 00000 Your city",
+    address: "12 Example Street, Your city 00000",
     closing: {
       title: "Have a date in mind? Write to me.",
       text: "A few lines are enough to know whether I am free and how to prepare the session.",
@@ -584,7 +584,7 @@ const en: PhotographeCopy = {
     text: "Independent photographer: weddings, portraits and business imagery, by appointment.",
     contactLabel: "Contact",
     navLabel: "Pages",
-    note: "Illustration photographs, royalty-free.",
+    note: "Stock photos, royalty-free.",
     barLabel: "Quick access",
   },
   meta: {
@@ -617,14 +617,14 @@ const en: PhotographeCopy = {
         "Weddings, portraits and business imagery. Little staging, an attentive eye and photographs that look like what you lived.",
       facts: [
         "Wedding, portrait, business",
-        "Travel across the whole region",
+        "Travel included within 25 miles",
         "Private gallery within three weeks",
       ],
       image: {
         src: IMG.lakeCouple,
-        alt: "Silhouettes of a couple facing a lake at sunset, in black and white.",
+        alt: "Silhouettes of a couple in jackets facing a lake at sunset, in black and white.",
       },
-      caption: "Wedding, lakeside, end of the day",
+      caption: "Couple session, lakeside, end of the day",
     },
     domains: {
       eyebrow: "Three fields",
@@ -656,7 +656,7 @@ const en: PhotographeCopy = {
         {
           title: "Business",
           meta: "Teams, trades, places",
-          text: "The gestures of a trade, a workshop, an office: calm images for a website, a brochure or a file.",
+          text: "The gestures of a trade, a workshop, an office: calm images for a website, a brochure or a proposal.",
           from: "From €450",
           image: {
             src: IMG.workingHands,
@@ -669,7 +669,7 @@ const en: PhotographeCopy = {
       eyebrow: "In their words",
       title: "Images that hold up over time.",
       figures: [
-        { value: "12 years", label: "of reportage and portraits" },
+        { value: "12 years", label: "of documentary and portrait work" },
         { value: "3 weeks", label: "to receive the gallery" },
         { value: "2 languages", label: "for sessions: French and English" },
       ],
@@ -690,7 +690,7 @@ const en: PhotographeCopy = {
           quote:
             "The workshop images finally show what we do, with no staging. Delivered on the promised date.",
           name: "Marc D.",
-          detail: "Business, activity reportage",
+          detail: "Business, workplace coverage",
         },
       ],
     },
@@ -726,8 +726,8 @@ const en: PhotographeCopy = {
         items: [
           {
             src: IMG.lakeCouple,
-            alt: "Silhouettes of a couple facing a lake at sunset, in black and white.",
-            caption: "End of the day, lakeside",
+            alt: "Silhouettes of a couple in jackets facing a lake at sunset, in black and white.",
+            caption: "Couple session, lakeside",
           },
           {
             src: IMG.dressButtons,
@@ -839,18 +839,19 @@ const en: PhotographeCopy = {
           items: [
             {
               name: "Ceremony",
-              detail: "2 h on site, about 80 edited images",
+              detail: "2 hours on site, about 80 edited images",
               price: "from €690",
             },
             {
               name: "Half day",
-              detail: "5 h, from getting ready to cocktails, about 200 images",
+              detail:
+                "5 hours, from getting ready to the cocktail hour, about 200 images",
               price: "from €1,290",
               note: "Most requested",
             },
             {
               name: "Full day",
-              detail: "10 h, up to the opening of the dance, about 450 images",
+              detail: "10 hours, through the first dance, about 450 images",
               price: "from €1,890",
             },
           ],
@@ -860,17 +861,17 @@ const en: PhotographeCopy = {
           items: [
             {
               name: "Express session",
-              detail: "30 min, one place, 15 edited images",
+              detail: "30 min, one location, 15 edited images",
               price: "from €120",
             },
             {
               name: "Portrait session",
-              detail: "1 h 30, two places, 30 edited images",
+              detail: "1.5 hours, two locations, 30 edited images",
               price: "from €260",
             },
             {
               name: "Couple or family",
-              detail: "1 h 30, up to five people, 35 images",
+              detail: "1.5 hours, up to five people, 35 images",
               price: "from €320",
             },
           ],
@@ -884,7 +885,7 @@ const en: PhotographeCopy = {
               price: "from €450",
             },
             {
-              name: "Activity reportage",
+              name: "Workplace coverage",
               detail: "Half day, about 40 images",
               price: "from €590",
             },
@@ -892,7 +893,7 @@ const en: PhotographeCopy = {
               name: "Places and workshops",
               detail: "One day, about 30 images",
               price: "from €790",
-              note: "By quote",
+              note: "Custom quote",
             },
           ],
         },
@@ -901,12 +902,12 @@ const en: PhotographeCopy = {
           items: [
             {
               name: "Bound album",
-              detail: "30 × 30 cm, 20 pages",
+              detail: "12 × 12 in, 20 pages",
               price: "from €220",
             },
             {
               name: "Fine art print",
-              detail: "30 × 45 cm, matte paper",
+              detail: "12 × 18 in, matte paper",
               price: "from €60",
             },
             {
@@ -916,14 +917,14 @@ const en: PhotographeCopy = {
             },
             {
               name: "Travel",
-              detail: "Beyond 40 km from your city",
-              price: "€0.60 / km",
+              detail: "Beyond 25 miles from your city",
+              price: "About €1 / mile",
             },
           ],
         },
       ],
       footnote:
-        "Indicative prices, options excluded. Business rates are shown before tax.",
+        "Indicative prices, options excluded. Business rates exclude tax.",
     },
     included: {
       eyebrow: "Always included",
@@ -963,7 +964,7 @@ const en: PhotographeCopy = {
       items: [
         {
           title: "First conversation",
-          text: "A call or a message: date, place, wishes. Twenty minutes or so is enough.",
+          text: "A call or a message: date, location, ideas. Twenty minutes or so is enough.",
         },
         {
           title: "Quote and booking",
@@ -989,7 +990,7 @@ const en: PhotographeCopy = {
       eyebrow: "Contact",
       title: "Let’s talk about your date.",
       description:
-        "Tell me the type of session, the date and the place. I reply within two business days, with a first opinion on feasibility.",
+        "Tell me the type of session, the date and the place. I reply within two business days, with a first answer on whether it is feasible.",
     },
     form: {
       title: "Your request",
@@ -1018,7 +1019,7 @@ const en: PhotographeCopy = {
       addressLabel: "Address",
       areaLabel: "Area",
       labelSeparator: ": ",
-      area: "The whole region, beyond on quote.",
+      area: "Travel included within 25 miles of your city, about €1 per mile beyond.",
       replyLabel: "Response time",
       reply: "Within two business days.",
       image: {
@@ -1030,7 +1031,7 @@ const en: PhotographeCopy = {
       title: "What happens next?",
       items: [
         {
-          title: "A first opinion",
+          title: "A first answer",
           text: "I check my availability and reply within two business days.",
         },
         {

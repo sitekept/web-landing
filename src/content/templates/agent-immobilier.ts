@@ -75,7 +75,7 @@ const fr = {
     address: "12 rue de l’Exemple, 00000 Votre ville",
     zone: {
       label: "Secteur",
-      text: "Votre ville et les communes voisines, dans un rayon d’environ 20 km.",
+      text: "Votre ville et les communes voisines, dans un rayon d’environ 20 km.",
     },
     hoursLabel: "Disponibilités",
     hours: [
@@ -90,10 +90,10 @@ const fr = {
     },
   },
   footer: {
-    title: "Un agent, un interlocuteur, un dossier à la fois.",
+    title: "Un agent, un interlocuteur, une sélection courte.",
     text: "J’accompagne vendeurs et acquéreurs, seul, du premier rendez-vous à la signature de l’acte.",
     contactLabel: "Contact",
-    proCard: "Carte professionnelle : à compléter",
+    proCard: "Carte professionnelle : à compléter",
     demoNotice: "Biens, prix et avis fictifs, pour la démonstration.",
     barLabel: "Accès rapide",
   },
@@ -101,22 +101,22 @@ const fr = {
     home: {
       title: "Votre entreprise - Agent immobilier indépendant",
       description:
-        "Un agent immobilier indépendant, un seul interlocuteur : estimation offerte, sélection courte de biens et accompagnement jusqu’à la signature, pour vendeurs et acquéreurs.",
+        "Un agent immobilier indépendant, un seul interlocuteur : estimation offerte, sélection courte de biens et accompagnement jusqu’à la signature, pour vendeurs et acquéreurs.",
     },
     biens: {
       title: "Biens - Votre entreprise",
       description:
-        "Ma sélection de biens : dix au plus à la fois, tous visités par moi, avec mon avis franc, les surfaces et les prix.",
+        "Ma sélection de biens : dix au plus à la fois, tous visités par moi, avec mon avis franc, les surfaces et les prix.",
     },
     estimation: {
       title: "Estimation - Votre entreprise",
       description:
-        "Estimation offerte de votre bien : visite, comparaison argumentée et avis de valeur écrit sous 48 heures. Formulaire de démonstration.",
+        "Estimation offerte de votre bien : visite, comparaison argumentée et avis de valeur écrit sous 48 heures. Formulaire de démonstration.",
     },
     contact: {
       title: "Contact - Votre entreprise",
       description:
-        "Contactez votre agent immobilier indépendant : formulaire de démonstration, coordonnées fictives, disponibilités et secteur.",
+        "Contactez votre agent immobilier indépendant : formulaire de démonstration, coordonnées fictives, disponibilités et secteur.",
     },
   },
   home: {
@@ -124,14 +124,14 @@ const fr = {
       eyebrow: "Agent immobilier indépendant",
       title: "Un seul contact, de la visite à la signature.",
       description:
-        "Je travaille seul, et c’est voulu : c’est moi qui estime, moi qui présente, moi qui négocie, et moi que vous appelez le jour de la signature. Pas d’équipe qui se relaie, pas de dossier qui change de mains.",
+        "Je travaille seul, et c’est voulu : c’est moi qui estime, moi qui présente, moi qui négocie, et moi que vous appelez le jour de la signature. Pas d’équipe qui se relaie, pas de dossier qui change de mains.",
       image: {
         src: IMG.hero,
         alt: "Une salle à manger claire avec une table noire, des chaises grises, un bouquet et une grande baie vitrée.",
       },
       facts: [
         {
-          value: "48 h",
+          value: "48 h",
           label: "pour vous remettre un avis de valeur écrit après ma visite",
         },
         {
@@ -165,7 +165,7 @@ const fr = {
       buyers: {
         icon: "key-round",
         title: "Si vous achetez",
-        text: "Vous me dites ce que vous cherchez, et je vous propose peu de biens : tous visités par moi avant vous, avec ce qui va et ce qui coince.",
+        text: "Vous me dites ce que vous cherchez, et je vous propose peu de biens : tous visités par moi avant vous, avec ce qui va et ce qui coince.",
         points: [
           "Un entretien pour cerner vos critères et votre budget",
           "Une sélection courte, commentée sans enjolivures",
@@ -184,7 +184,7 @@ const fr = {
         {
           icon: "coffee",
           title: "Nous nous rencontrons",
-          text: "Un café ou une visite : vous me racontez votre projet, je note vos contraintes et vos délais.",
+          text: "Un café ou une visite : vous me racontez votre projet, je note vos contraintes et vos délais.",
         },
         {
           icon: "ruler",
@@ -194,7 +194,7 @@ const fr = {
         {
           icon: "camera",
           title: "Je prépare",
-          text: "Photos, annonce et dossier côté vendeur ; critères affinés et visites planifiées côté acquéreur.",
+          text: "Photos, annonce et dossier côté vendeur ; critères affinés et visites planifiées côté acquéreur.",
         },
         {
           icon: "handshake",
@@ -204,7 +204,7 @@ const fr = {
         {
           icon: "file-check",
           title: "J’accompagne jusqu’à l’acte",
-          text: "Pièces à réunir, échanges avec le notaire, dernier rendez-vous : je reste à vos côtés jusqu’aux clés.",
+          text: "Pièces à réunir, échanges avec le notaire, dernier rendez-vous : je reste à vos côtés jusqu’aux clés.",
         },
       ],
     },
@@ -212,20 +212,20 @@ const fr = {
       eyebrow: "En ce moment",
       title: "Quelques biens que je présente.",
       description:
-        "Je ne garde que dix biens à la fois. En voici quatre : touchez ou survolez un bien pour le découvrir.",
+        "Je ne garde que dix biens à la fois. En voici quatre : touchez ou survolez un bien pour le découvrir.",
       label: "Biens de ma sélection",
       items: [
         {
           title: "Trois-pièces lumineux",
-          meta: "3 pièces · 68 m² · 289 000 €",
+          meta: "3 pièces · 68 m² · 289 000 €",
           image: {
             src: IMG.flat,
-            alt: "Un séjour clair et sobre avec un canapé beige, un lampadaire, un tabouret blanc et un grand tableau abstrait bleu.",
+            alt: "Un séjour clair avec un canapé beige, deux lampadaires à trépied, deux tabourets à housse blanche, une table basse en bois sur un tapis blanc et un grand tableau abstrait bleu.",
           },
         },
         {
           title: "Maison blanche et son jardin",
-          meta: "6 pièces · 160 m² · 585 000 €",
+          meta: "6 pièces · 160 m² · 585 000 €",
           image: {
             src: IMG.villa,
             alt: "Une maison contemporaine aux murs blancs, avec un jardin en pelouse et un grand arbre.",
@@ -233,7 +233,7 @@ const fr = {
         },
         {
           title: "Trois-pièces familial",
-          meta: "3 pièces · 74 m² · 312 000 €",
+          meta: "3 pièces · 74 m² · 312 000 €",
           image: {
             src: IMG.family,
             alt: "Un séjour ouvert sur la cuisine, avec un canapé gris-beige, un fauteuil en cuir brun, une table basse en bois et un comptoir à tabourets.",
@@ -241,7 +241,7 @@ const fr = {
         },
         {
           title: "Quatre-pièces lumineux",
-          meta: "4 pièces · 118 m² · 438 000 €",
+          meta: "4 pièces · 118 m² · 438 000 €",
           image: {
             src: IMG.loft,
             alt: "Un salon lumineux avec deux fauteuils, de grandes fenêtres et un séjour ouvert avec cheminée en arrière-plan.",
@@ -263,7 +263,7 @@ const fr = {
           name: "Claire M.",
           detail: "Vendeuse, appartement",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -271,7 +271,7 @@ const fr = {
           name: "Julien P.",
           detail: "Acquéreur, première acquisition",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -279,7 +279,7 @@ const fr = {
           name: "Sophie L.",
           detail: "Vendeuse, maison",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -287,7 +287,7 @@ const fr = {
           name: "Thomas R.",
           detail: "Acquéreur, maison",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -295,7 +295,7 @@ const fr = {
           name: "Nadia B.",
           detail: "Vendeuse, appartement",
           rating: 4,
-          ratingLabel: "Note : 4 sur 5",
+          ratingLabel: "Note : 4 sur 5",
         },
         {
           quote:
@@ -303,7 +303,7 @@ const fr = {
           name: "Hugo D.",
           detail: "Acquéreur, recherche discrète",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
       ],
     },
@@ -314,7 +314,7 @@ const fr = {
       signature: "Votre entreprise, agent immobilier indépendant",
       image: {
         src: IMG.calm,
-        alt: "Une chambre calme et sobre : un lit en lin blanc, des coussins bleus, une table de chevet blanche et bois et une lampe allumée.",
+        alt: "Une chambre calme et sobre : un lit en lin blanc, des coussins bleus, une table de chevet blanche et bois et une lampe allumée.",
       },
       cta: "Écrivez-moi",
     },
@@ -324,7 +324,7 @@ const fr = {
       eyebrow: "Ma sélection",
       title: "Dix biens au plus, tous visités par moi.",
       description:
-        "Je ne publie pas tout ce qui existe : seulement des biens que j’ai vus, mesurés et que je peux défendre. Chaque fiche dit ce qui plaît, et ce qui demande réflexion.",
+        "Je ne publie pas tout ce qui existe : seulement des biens que j’ai vus, mesurés et que je peux défendre. Chaque fiche dit ce qui plaît, et ce qui demande réflexion.",
       checks: {
         title: "Dans chaque fiche",
         items: [
@@ -344,14 +344,14 @@ const fr = {
         {
           image: {
             src: IMG.flat,
-            alt: "Un séjour clair et sobre avec un canapé beige, un lampadaire, un tabouret blanc et un grand tableau abstrait bleu.",
+            alt: "Un séjour clair avec un canapé beige, deux lampadaires à trépied, deux tabourets à housse blanche, une table basse en bois sur un tapis blanc et un grand tableau abstrait bleu.",
           },
           kind: "Appartement",
           status: "Nouveau",
           title: "Trois-pièces lumineux",
           place: "Centre de Votre ville",
-          specs: ["68 m²", "3 pièces", "2 chambres"],
-          price: "289 000 €",
+          specs: ["68 m²", "3 pièces", "2 chambres"],
+          price: "289 000 €",
           opinion:
             "Un séjour sobre et très clair, facile à meubler. La moquette est à remplacer, comptez-le dans votre budget.",
         },
@@ -364,10 +364,10 @@ const fr = {
           status: "Visites en cours",
           title: "Maison blanche et son jardin",
           place: "Quartier résidentiel",
-          specs: ["160 m²", "6 pièces", "4 chambres"],
-          price: "585 000 €",
+          specs: ["160 m²", "6 pièces", "4 chambres"],
+          price: "585 000 €",
           opinion:
-            "Les volumes sont rares dans ce secteur. Le chauffage est ancien : j’ai un devis pour vous.",
+            "Les volumes sont rares dans ce secteur. Le chauffage est ancien : j’ai un devis pour vous.",
         },
         {
           image: {
@@ -378,10 +378,10 @@ const fr = {
           status: "Sous compromis",
           title: "Trois-pièces familial",
           place: "Près des écoles",
-          specs: ["74 m²", "3 pièces", "2 chambres"],
-          price: "312 000 €",
+          specs: ["74 m²", "3 pièces", "2 chambres"],
+          price: "312 000 €",
           opinion:
-            "Pensé pour une famille : cuisine ouverte, rangements, deux vraies chambres.",
+            "Pensé pour une famille : cuisine ouverte, rangements, deux vraies chambres.",
         },
         {
           image: {
@@ -392,8 +392,8 @@ const fr = {
           status: "Nouveau",
           title: "Quatre-pièces lumineux",
           place: "Quartier résidentiel",
-          specs: ["118 m²", "4 pièces", "3 chambres"],
-          price: "438 000 €",
+          specs: ["118 m²", "4 pièces", "3 chambres"],
+          price: "438 000 €",
           opinion:
             "De beaux volumes et beaucoup de lumière. Je vous dis aussi ce qui reste à rafraîchir.",
         },
@@ -406,8 +406,8 @@ const fr = {
           status: "Visites en cours",
           title: "Maison de bois et de verre",
           place: "En lisière de Votre ville",
-          specs: ["142 m²", "5 pièces", "3 chambres"],
-          price: "512 000 €",
+          specs: ["142 m²", "5 pièces", "3 chambres"],
+          price: "512 000 €",
           opinion:
             "Une construction récente et soignée. L’orientation du jardin est son meilleur atout.",
         },
@@ -420,8 +420,8 @@ const fr = {
           status: "Pour investisseur",
           title: "Studio clair, bien situé",
           place: "Près de la gare",
-          specs: ["29 m²", "1 pièce", "Coin séjour"],
-          price: "139 000 €",
+          specs: ["29 m²", "1 pièce", "Coin séjour"],
+          price: "139 000 €",
           opinion:
             "Facile à louer, charges raisonnables. Je vous donne mon calcul de rentabilité, avec ses limites.",
         },
@@ -453,7 +453,7 @@ const fr = {
     search: {
       eyebrow: "Recherche discrète",
       title: "Le bien que vous cherchez n’est peut-être pas annoncé.",
-      text: "Dites-moi ce que vous voulez : je parle aux propriétaires que je connais avant que le bien n’apparaisse en ligne.",
+      text: "Dites-moi ce que vous voulez : je parle aux propriétaires que je connais avant que le bien n’apparaisse en ligne.",
       criteria: [
         "Type de bien et surface souhaitée",
         "Quartier ou secteur préféré",
@@ -465,13 +465,13 @@ const fr = {
   estimation: {
     hero: {
       eyebrow: "Estimation offerte",
-      title: "Que vaut votre bien ? Une visite pour le dire.",
+      title: "Que vaut votre bien ? Une visite pour le dire.",
       description:
         "Une estimation sérieuse se fait sur place, pas depuis un formulaire. Je visite, je compare avec les ventes récentes du secteur et je vous remets un avis de valeur écrit.",
       points: [
         "Offerte et sans engagement de vendre",
         "Avis écrit sous 48 heures après la visite",
-        "Un avis de valeur, pas une expertise : je vous explique la différence",
+        "Un avis de valeur, pas une expertise : je vous explique la différence",
       ],
       image: {
         src: IMG.kitchen,
@@ -518,7 +518,7 @@ const fr = {
         {
           icon: "door-open",
           title: "La visite",
-          text: "Quarante-cinq minutes chez vous : je regarde, je mesure, je pose des questions sur l’histoire du bien.",
+          text: "Quarante-cinq minutes chez vous : je regarde, je mesure, je pose des questions sur l’histoire du bien.",
         },
         {
           icon: "scale",
@@ -528,12 +528,12 @@ const fr = {
         {
           icon: "file-text",
           title: "L’avis écrit",
-          text: "Sous 48 heures : une fourchette de prix, la justification, et le prix de présentation que je vous conseille.",
+          text: "Sous 48 heures : une fourchette de prix, la justification, et le prix de présentation que je vous conseille.",
         },
       ],
     },
     content: {
-      eyebrow: "Dans mon avis",
+      eyebrow: "Dans mon avis de valeur",
       title: "Ce que vous trouverez dans le document.",
       description:
         "Pas une simple fourchette. Un document que vous pouvez relire, discuter et montrer à vos proches.",
@@ -577,7 +577,7 @@ const fr = {
             {
               name: "Mise en vente complète",
               detail: "Photos, annonce, visites, négociation",
-              price: "dès 4 % TTC",
+              price: "dès 4 % TTC",
               note: "À la charge du vendeur",
             },
           ],
@@ -593,7 +593,7 @@ const fr = {
             {
               name: "Accompagnement à l’achat",
               detail: "Visites, négociation, suivi jusqu’à l’acte",
-              price: "dès 3,5 % TTC",
+              price: "dès 3,5 % TTC",
               note: "Barème indicatif",
             },
           ],
@@ -604,7 +604,7 @@ const fr = {
             {
               name: "Avis de valeur détaillé",
               detail: "Partage familial, projet patrimonial",
-              price: "dès 150 €",
+              price: "dès 150 €",
               note: "Sur devis",
             },
           ],
@@ -616,22 +616,22 @@ const fr = {
       title: "Ce qu’on me demande avant de se lancer.",
       items: [
         {
-          question: "L’estimation m’engage-t-elle à vendre ?",
+          question: "L’estimation m’engage-t-elle à vendre ?",
           answer:
             "Non. Vous recevez mon avis, vous prenez le temps de réfléchir, et vous décidez ensuite, ou pas.",
         },
         {
-          question: "Pourquoi une visite plutôt qu’un simulateur ?",
+          question: "Pourquoi une visite plutôt qu’un simulateur ?",
           answer:
             "Un simulateur ne voit ni la lumière, ni l’état des finitions, ni le voisinage. Ce sont pourtant ces détails qui font varier le prix.",
         },
         {
-          question: "Combien de temps dure la démarche ?",
+          question: "Combien de temps dure la démarche ?",
           answer:
             "Compter quarante-cinq minutes de visite, puis mon avis écrit dans les 48 heures qui suivent.",
         },
         {
-          question: "Dois-je préparer des documents ?",
+          question: "Dois-je préparer des documents ?",
           answer:
             "Pas pour la visite. Si vous décidez de vendre, je vous donnerai la liste des pièces à réunir, étape par étape.",
         },
@@ -643,7 +643,7 @@ const fr = {
       eyebrow: "Contact",
       title: "Parlons de votre projet, sans intermédiaire.",
       description:
-        "Vendre, acheter, estimer ou simplement poser une question : écrivez-moi, je réponds moi-même.",
+        "Vendre, acheter, estimer ou simplement poser une question : écrivez-moi, je réponds moi-même.",
     },
     form: {
       title: "Écrivez-moi",
@@ -679,7 +679,7 @@ const fr = {
       access: "Rendez-vous chez vous, ou à mon bureau sur rendez-vous.",
       image: {
         src: IMG.salon,
-        alt: "Un séjour lumineux et dépouillé : un buffet en bois, un fauteuil gris clair, des plantes et un parquet en chevrons.",
+        alt: "Un séjour lumineux et dépouillé : un buffet en bois, un fauteuil gris clair, des plantes et un parquet en chevrons.",
       },
     },
     next: {
@@ -689,7 +689,7 @@ const fr = {
         {
           icon: "mail-check",
           title: "Je lis, je note",
-          text: "Votre message ne passe par aucun intermédiaire : je le lis moi-même.",
+          text: "Votre message ne passe par aucun intermédiaire : je le lis moi-même.",
         },
         {
           icon: "phone-call",
@@ -737,15 +737,15 @@ const en: AgentImmobilierCopy = {
   },
   common: {
     email: "contact@example.com",
-    address: "12 Example Street, 00000 Your city",
+    address: "12 Example Street, Your city 00000",
     zone: {
       label: "Area",
       text: "Your city and the neighboring towns, within about 12 miles.",
     },
     hoursLabel: "Availability",
     hours: [
-      { day: "Monday to Friday", time: "9 am – 7 pm" },
-      { day: "Saturday", time: "9 am – 1 pm" },
+      { day: "Monday to Friday", time: "9 a.m. – 7 p.m." },
+      { day: "Saturday", time: "9 a.m. – 1 p.m." },
       { day: "Showings", time: "By appointment, evenings included" },
     ],
     closing: {
@@ -755,7 +755,7 @@ const en: AgentImmobilierCopy = {
     },
   },
   footer: {
-    title: "One agent, one contact, one file at a time.",
+    title: "One agent, one contact, a short selection.",
     text: "I support sellers and buyers on my own, from the first meeting to closing.",
     contactLabel: "Contact",
     proCard: "Professional license: to be completed",
@@ -790,7 +790,7 @@ const en: AgentImmobilierCopy = {
       eyebrow: "Independent real estate agent",
       title: "One contact, from the first showing to closing.",
       description:
-        "I work alone, and that is deliberate: I price, I present, I negotiate, and you call me on closing day. No team taking turns, no file changing hands.",
+        "I work alone, and that is deliberate: I price, I present, I negotiate, and you call me on closing day. No team taking turns, no client passed from one person to the next.",
       image: {
         src: IMG.hero,
         alt: "A bright dining room with a black table, gray chairs, a bouquet and a large glass wall.",
@@ -835,7 +835,7 @@ const en: AgentImmobilierCopy = {
         points: [
           "An interview to pin down your criteria and budget",
           "A short selection, commented without embellishment",
-          "Help comparing, negotiating and building your file",
+          "Help comparing, negotiating and putting together your loan application",
           "A discreet search if the property is not advertised",
         ],
         cta: "See my selection",
@@ -860,7 +860,7 @@ const en: AgentImmobilierCopy = {
         {
           icon: "camera",
           title: "I prepare",
-          text: "Photos, listing and file for sellers; refined criteria and scheduled showings for buyers.",
+          text: "Photos, listing and paperwork for sellers; refined criteria and scheduled showings for buyers.",
         },
         {
           icon: "handshake",
@@ -886,7 +886,7 @@ const en: AgentImmobilierCopy = {
           meta: "3 rooms · 735 sq ft · €289,000",
           image: {
             src: IMG.flat,
-            alt: "A bright, uncluttered living room with a beige sofa, a floor lamp, a white stool and a large blue abstract painting.",
+            alt: "A bright living room with a beige sofa, two tripod floor lamps, two white fleece-covered stools, a wood coffee table on a white rug and a large blue abstract painting.",
           },
         },
         {
@@ -965,7 +965,7 @@ const en: AgentImmobilierCopy = {
         },
         {
           quote:
-            "A discreet search for a property that was never advertised. I did not believe in it, and yet.",
+            "A discreet search for a property that was never advertised. I did not think it would work, and yet it did.",
           name: "Hugo D.",
           detail: "Buyer, discreet search",
           rating: 5,
@@ -975,7 +975,7 @@ const en: AgentImmobilierCopy = {
     },
     promise: {
       quote:
-        "I prefer few files, followed closely, to a portfolio where nobody calls you back.",
+        "I prefer a few clients, closely followed, to a long client list where nobody calls you back.",
       text: "That is why I cap my selection at ten properties, and why every showing is prepared in advance.",
       signature: "Your business, independent real estate agent",
       image: {
@@ -994,10 +994,10 @@ const en: AgentImmobilierCopy = {
       checks: {
         title: "In every listing",
         items: [
-          "The showing was done by me",
-          "Strengths and reservations, no varnish",
-          "Running costs and property tax, estimated",
-          "Inspection reports, provided with the full file",
+          "I toured the property myself",
+          "Strengths and reservations, with no sugarcoating",
+          "Monthly costs and property taxes, estimated",
+          "Inspection reports, provided with the full listing",
         ],
       },
     },
@@ -1011,7 +1011,7 @@ const en: AgentImmobilierCopy = {
         {
           image: {
             src: IMG.flat,
-            alt: "A bright, uncluttered living room with a beige sofa, a floor lamp, a white stool and a large blue abstract painting.",
+            alt: "A bright living room with a beige sofa, two tripod floor lamps, two white fleece-covered stools, a wood coffee table on a white rug and a large blue abstract painting.",
           },
           kind: "Apartment",
           status: "New",
@@ -1034,7 +1034,7 @@ const en: AgentImmobilierCopy = {
           specs: ["1,720 sq ft", "6 rooms", "4 bedrooms"],
           price: "€585,000",
           opinion:
-            "Volumes like these are rare in this area. The heating is old: I have a quote for you.",
+            "Rooms this big are rare in this area. The heating system is old: I have an estimate for you.",
         },
         {
           image: {
@@ -1137,7 +1137,7 @@ const en: AgentImmobilierCopy = {
         "A serious home value estimate is done on site, not from a form. I visit, compare with recent sales in the area and hand you a written market analysis.",
       points: [
         "Free, with no commitment to sell",
-        "Written opinion within 48 hours of the visit",
+        "Written report within 48 hours of the visit",
         "A market analysis, not a formal appraisal: I explain the difference",
       ],
       image: {
@@ -1179,12 +1179,12 @@ const en: AgentImmobilierCopy = {
       eyebrow: "How I work",
       title: "Three steps, and you stay in control.",
       description:
-        "You receive my opinion, you decide. Nothing commits you to selling.",
+        "You receive my report, you decide. Nothing commits you to selling.",
       steps: [
         {
           icon: "door-open",
           title: "The visit",
-          text: "Forty-five minutes at your place: I look, I measure, I ask about the property’s history.",
+          text: "Forty-five minutes at your home: I look, I measure, I ask about the property’s history.",
         },
         {
           icon: "scale",
@@ -1193,13 +1193,13 @@ const en: AgentImmobilierCopy = {
         },
         {
           icon: "file-text",
-          title: "The written opinion",
+          title: "The written report",
           text: "Within 48 hours: a price range, the reasoning, and the asking price I recommend.",
         },
       ],
     },
     content: {
-      eyebrow: "In my opinion",
+      eyebrow: "In my report",
       title: "What you will find in the document.",
       description:
         "Not just a range. A document you can reread, discuss and show to your family.",
@@ -1230,20 +1230,20 @@ const en: AgentImmobilierCopy = {
       eyebrow: "My fees",
       title: "What I charge, in plain terms.",
       description: "My fees, by type of service.",
-      note: "Fictional scale, given as an example.",
+      note: "Sample rates, for illustration only.",
       groups: [
         {
           title: "Selling",
           items: [
             {
               name: "Home value estimate and market analysis",
-              detail: "Visit, comparison, written opinion",
+              detail: "Visit, comparison, written report",
               price: "Free",
             },
             {
               name: "Full sales service",
               detail: "Photos, listing, showings, negotiation",
-              price: "from 4% incl. tax",
+              price: "from 4%, tax included",
               note: "Paid by the seller",
             },
           ],
@@ -1259,7 +1259,7 @@ const en: AgentImmobilierCopy = {
             {
               name: "Purchase support",
               detail: "Showings, negotiation, follow-up through closing",
-              price: "from 3.5% incl. tax",
+              price: "from 3.5%, tax included",
               note: "Indicative scale",
             },
           ],
@@ -1271,7 +1271,7 @@ const en: AgentImmobilierCopy = {
               name: "Detailed market analysis",
               detail: "Estate division, wealth planning",
               price: "from €150",
-              note: "On quote",
+              note: "By quote",
             },
           ],
         },
@@ -1284,7 +1284,7 @@ const en: AgentImmobilierCopy = {
         {
           question: "Does the estimate commit me to selling?",
           answer:
-            "No. You receive my opinion, take your time to think, and decide afterward, or not.",
+            "No. You receive my report, take your time to think, and decide afterward, or not.",
         },
         {
           question: "Why a visit rather than a simulator?",
@@ -1294,7 +1294,7 @@ const en: AgentImmobilierCopy = {
         {
           question: "How long does the process take?",
           answer:
-            "Allow forty-five minutes for the visit, then my written opinion within the following 48 hours.",
+            "Allow forty-five minutes for the visit, then my written report within the following 48 hours.",
         },
         {
           question: "Do I need to prepare documents?",
@@ -1332,7 +1332,7 @@ const en: AgentImmobilierCopy = {
         times: [
           { value: "matin", label: "In the morning" },
           { value: "midi", label: "Around lunchtime" },
-          { value: "soir", label: "At the end of the day" },
+          { value: "soir", label: "In the evening" },
         ],
         message: "Your message",
       },
@@ -1342,7 +1342,7 @@ const en: AgentImmobilierCopy = {
       phoneLabel: "Phone",
       emailLabel: "Email",
       addressLabel: "Address",
-      access: "Meetings at your place, or at my office by appointment.",
+      access: "Meetings at your home, or at my office by appointment.",
       image: {
         src: IMG.salon,
         alt: "A bright, uncluttered living room with a wooden sideboard, a light gray armchair, plants and a herringbone floor.",
@@ -1365,7 +1365,7 @@ const en: AgentImmobilierCopy = {
         {
           icon: "calendar-check",
           title: "We set up a meeting",
-          text: "At your place, at my office or by phone, depending on your project.",
+          text: "At your home, at my office or by phone, depending on your project.",
         },
       ],
     },

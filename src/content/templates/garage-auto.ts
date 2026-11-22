@@ -35,7 +35,7 @@ const IMAGES = {
   tireMachine: unsplash("1730514782439-cd0e4b763483"),
   engine: unsplash("1429772011165-0c2e054367b8"),
   ratchet: unsplash("1775590766345-c117265f0c1b"),
-  wrenchHands: unsplash("1619642751034-765dfdf7c58e"),
+  dipstick: unsplash("1767180906945-bb92ba750118"),
   brakeCaliper: unsplash("1760317890314-e964ffd7e6a6"),
   tireStack: unsplash("1571335746824-742511d49bce"),
   tread: unsplash("1657307913178-97cb5a4d0cd7"),
@@ -68,25 +68,25 @@ const fr = {
     quickActions: "Actions rapides",
   },
   footer: {
-    text: "Garage indépendant, toutes marques : entretien, freinage, pneus et diagnostic. Devis écrit avant chaque intervention.",
+    text: "Garage indépendant, toutes marques : entretien, freinage, pneus et diagnostic. Devis écrit avant chaque intervention.",
     contactTitle: "Atelier",
     hoursTitle: "Horaires",
     siteTitle: "Le site",
     address: "12 rue de l’Exemple, 00000 Votre ville",
     email: "contact@votre-entreprise.example",
-    hours: "Lun-Ven 8 h-12 h et 14 h-18 h, sam 8 h-12 h",
+    hours: "Lun-Ven 8 h-12 h et 14 h-18 h, sam 8 h-12 h",
     closed: "Fermé le dimanche",
   },
   meta: {
     home: {
       title: "Votre entreprise - Garage auto indépendant, toutes marques",
       description:
-        "Garage automobile indépendant : entretien, freinage, pneus et diagnostic toutes marques. Devis écrit avant intervention, rendez-vous sous 48 h environ.",
+        "Garage automobile indépendant : entretien, freinage, pneus et diagnostic toutes marques. Devis écrit avant intervention, rendez-vous sous 48 h environ.",
     },
     prestations: {
       title: "Prestations - Votre entreprise",
       description:
-        "Entretien, freinage et pneus : ce qui est contrôlé, forfaits à partir de et ce que contient chaque facture d’un garage indépendant.",
+        "Entretien, freinage et pneus : ce qui est contrôlé, prix de départ des forfaits et contenu de chaque facture d’un garage indépendant.",
     },
     devis: {
       title: "Devis - Votre entreprise",
@@ -96,7 +96,7 @@ const fr = {
     rendezVous: {
       title: "Rendez-vous - Votre entreprise",
       description:
-        "Réservez un créneau à l’atelier : formulaire de rendez-vous, horaires, coordonnées et accès à votre garage indépendant.",
+        "Réservez un créneau à l’atelier : formulaire de rendez-vous, horaires, coordonnées et accès à votre garage indépendant.",
     },
   },
   home: {
@@ -104,15 +104,15 @@ const fr = {
       eyebrow: "Garage indépendant · toutes marques",
       title: "Votre voiture, chiffrée avant d’être ouverte.",
       description:
-        "Entretien, freinage, pneus et diagnostic dans un atelier indépendant. Vous recevez un devis écrit et détaillé avant l’intervention : rien n’est démonté sans votre accord.",
+        "Entretien, freinage, pneus et diagnostic dans un atelier indépendant. Vous recevez un devis écrit et détaillé avant l’intervention : rien n’est démonté sans votre accord.",
       image: {
         src: IMAGES.workshop,
-        alt: "Intérieur d’un atelier de mécanique : établis, servantes d’outils et enrouleurs d’air sous des néons.",
+        alt: "Intérieur d’un atelier de mécanique : établis, servantes d’outils et enrouleurs d’air sous des néons.",
       },
       spec: {
         label: "Fiche atelier",
         items: [
-          { label: "Délai moyen de rendez-vous", value: "48 h" },
+          { label: "Délai moyen de rendez-vous", value: "48 h" },
           { label: "Devis écrit", value: "Avant intervention" },
           { label: "Marques", value: "Toutes" },
           { label: "Ponts élévateurs", value: "3" },
@@ -123,12 +123,12 @@ const fr = {
       eyebrow: "Prestations",
       title: "Quatre métiers, un seul atelier.",
       description:
-        "Pas de sous-traitance cachée : ceux qui vous accueillent sont ceux qui interviennent sur la voiture.",
+        "Pas de sous-traitance cachée : ceux qui vous accueillent sont ceux qui interviennent sur la voiture.",
       label: "Prestations de l’atelier",
       items: [
         {
           title: "Entretien",
-          meta: "Vidange, filtres, courroies · dès 89 €",
+          meta: "Vidange, filtres, courroies · dès 89 €",
           image: {
             src: IMAGES.underCar,
             alt: "Mains au travail sous un véhicule, une clé à œil serrée sur un raccord.",
@@ -136,15 +136,15 @@ const fr = {
         },
         {
           title: "Freinage",
-          meta: "Plaquettes, disques, liquide · dès 119 €",
+          meta: "Plaquettes, disques, liquide · dès 119 €",
           image: {
             src: IMAGES.brakeDisc,
-            alt: "Étrier et disque de frein démontés, vus de près.",
+            alt: "Étrier et disque de frein, roue déposée, vus de près.",
           },
         },
         {
           title: "Pneus",
-          meta: "Montage, équilibrage · dès 24 €",
+          meta: "Montage, équilibrage · dès 24 €",
           image: {
             src: IMAGES.tireMachine,
             alt: "Bande de roulement d’un pneu, vue de très près.",
@@ -152,7 +152,7 @@ const fr = {
         },
         {
           title: "Diagnostic",
-          meta: "Valise multimarque · dès 59 €",
+          meta: "Valise multimarque · dès 59 €",
           image: {
             src: IMAGES.engine,
             alt: "Culasse d’un moteur ouvert, arbres à cames et chaîne de distribution.",
@@ -200,7 +200,7 @@ const fr = {
           name: "Camille R.",
           detail: "Plaquettes et disques",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -208,7 +208,7 @@ const fr = {
           name: "Hugo T.",
           detail: "Révision",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -216,7 +216,7 @@ const fr = {
           name: "Inès B.",
           detail: "Pneus hiver",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -224,7 +224,7 @@ const fr = {
           name: "Mathieu L.",
           detail: "Diagnostic",
           rating: 4,
-          ratingLabel: "Note : 4 sur 5",
+          ratingLabel: "Note : 4 sur 5",
         },
         {
           quote:
@@ -232,7 +232,7 @@ const fr = {
           name: "Léa D.",
           detail: "Entretien",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -240,7 +240,7 @@ const fr = {
           name: "Yanis K.",
           detail: "Climatisation",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
       ],
     },
@@ -272,17 +272,17 @@ const fr = {
       ],
     },
     closing: {
-      title: "Un bruit, un voyant, un contrôle à prévoir ?",
+      title: "Un bruit, un voyant, un contrôle à prévoir ?",
       description:
-        "Appelez l’atelier ou réservez un créneau : nous vous répondons dans la journée ouvrée.",
+        "Appelez l’atelier ou réservez un créneau : nous vous répondons dans la journée ouvrée.",
     },
   },
   prestations: {
     hero: {
       eyebrow: "Prestations et forfaits",
-      title: "Entretien, freinage, pneus : ce qui est fait, ce que cela coûte.",
+      title: "Entretien, freinage, pneus : ce qui est fait, ce que cela coûte.",
       description:
-        "Pour chaque prestation, la liste de ce que nous contrôlons, des forfaits à partir de et ce que vous retrouvez sur la facture.",
+        "Pour chaque prestation, ce que nous contrôlons, les prix de départ des forfaits et ce que vous retrouvez sur la facture.",
     },
     jumpLabel: "Aller à une prestation",
     jump: [
@@ -296,27 +296,27 @@ const fr = {
         id: "entretien",
         eyebrow: "01 · Entretien",
         title: "Un entretien suivi, pas une simple vidange.",
-        text: "Huile, filtres, courroies, niveaux : nous suivons les préconisations du carnet de votre véhicule et vous prévenons de ce qui approche, sans tout vendre d’un coup.",
+        text: "Huile, filtres, courroies, niveaux : nous suivons les préconisations du carnet de votre véhicule et vous prévenons de ce qui approche, sans tout vendre d’un coup.",
         image: {
-          src: IMAGES.wrenchHands,
-          alt: "Deux mains au travail sur un moteur, l’une tient une clé plate.",
+          src: IMAGES.dipstick,
+          alt: "Une main tient une jauge de niveau d’huile dont l’extrémité est marquée d’huile.",
         },
         checksTitle: "Contrôlé à chaque passage",
         checks: [
-          "Niveaux : huile, refroidissement, freins, lave-glace",
+          "Niveaux : huile, refroidissement, freins, lave-glace",
           "État des filtres et des courroies",
           "Éclairage et essuie-glaces",
           "Batterie et témoins du tableau de bord",
           "Pression et usure des pneus",
         ],
         whenTitle: "Quand venir",
-        when: "Tous les 15 000 km ou une fois par an environ, ou selon le carnet d’entretien de votre véhicule.",
+        when: "Tous les 15 000 km ou une fois par an environ, ou selon le carnet d’entretien de votre véhicule.",
       },
       {
         id: "freinage",
         eyebrow: "02 · Freinage",
         title: "Des freins contrôlés avant qu’ils ne se plaignent.",
-        text: "Plaquettes, disques, étriers, flexibles et liquide : nous mesurons l’usure et vous montrons les pièces avant de proposer un remplacement.",
+        text: "Plaquettes, disques, étriers, flexibles et liquide : nous mesurons l’usure et vous montrons les pièces avant de proposer un remplacement.",
         image: {
           src: IMAGES.brakeCaliper,
           alt: "Étrier de frein gris et disque percé, roue déposée.",
@@ -336,7 +336,7 @@ const fr = {
         id: "pneus",
         eyebrow: "03 · Pneus",
         title: "Les pneus, du montage à la géométrie.",
-        text: "Pneus été, hiver ou toutes saisons : conseil sur la gamme adaptée à votre usage, montage sur machine, équilibrage, contrôle de la pression et géométrie si besoin.",
+        text: "Pneus été, hiver ou toutes saisons : conseil sur la gamme adaptée à votre usage, montage sur machine, équilibrage, contrôle de la pression et géométrie si besoin.",
         image: {
           src: IMAGES.tireStack,
           alt: "Pile de pneus neufs, sculptures de la bande de roulement vues de près.",
@@ -365,27 +365,27 @@ const fr = {
             {
               name: "Vidange et filtre à huile",
               detail: "Huile et filtre inclus, contrôle des niveaux",
-              price: "dès 89 €",
+              price: "dès 89 €",
             },
             {
               name: "Filtres air, habitacle, carburant",
               detail: "Remplacement à l’unité ou en lot",
-              price: "dès 45 €",
+              price: "dès 45 €",
             },
             {
               name: "Courroie d’accessoires",
               detail: "Courroie et galet tendeur selon le moteur",
-              price: "dès 120 €",
+              price: "dès 120 €",
             },
             {
               name: "Climatisation",
               detail: "Contrôle d’étanchéité et recharge",
-              price: "dès 79 €",
+              price: "dès 79 €",
             },
             {
               name: "Révision complète",
               detail: "Selon les préconisations du carnet",
-              price: "dès 189 €",
+              price: "dès 189 €",
             },
           ],
         },
@@ -395,22 +395,22 @@ const fr = {
             {
               name: "Plaquettes avant",
               detail: "Jeu de quatre, pose incluse",
-              price: "dès 119 €",
+              price: "dès 119 €",
             },
             {
               name: "Plaquettes et disques avant",
               detail: "Disques par paire, pose incluse",
-              price: "dès 289 €",
+              price: "dès 289 €",
             },
             {
               name: "Plaquettes arrière",
               detail: "Jeu de quatre, pose incluse",
-              price: "dès 129 €",
+              price: "dès 129 €",
             },
             {
               name: "Purge du liquide de frein",
               detail: "Liquide neuf et contrôle de la pédale",
-              price: "dès 69 €",
+              price: "dès 69 €",
             },
           ],
         },
@@ -420,28 +420,38 @@ const fr = {
             {
               name: "Montage et équilibrage",
               detail: "Par pneu, valve neuve incluse",
-              price: "dès 24 €",
+              price: "dès 24 €",
             },
             {
               name: "Permutation des quatre roues",
               detail: "Équilibrage et serrage au couple",
-              price: "dès 39 €",
+              price: "dès 39 €",
             },
             {
               name: "Géométrie (parallélisme)",
               detail: "Contrôle et réglage sur banc",
-              price: "dès 79 €",
+              price: "dès 79 €",
             },
             {
               name: "Réparation de crevaison",
               detail: "Selon la position et la taille",
-              price: "dès 25 €",
+              price: "dès 25 €",
               note: "Sur examen",
             },
           ],
         },
+        {
+          title: "Diagnostic",
+          items: [
+            {
+              name: "Diagnostic multimarque",
+              detail: "Lecture des défauts à la valise et contrôle visuel",
+              price: "dès 59 €",
+            },
+          ],
+        },
       ],
-      note: "Un tarif n’engage qu’une fois votre devis accepté : le diagnostic vient d’abord, le prix exact ensuite.",
+      note: "Un tarif n’engage qu’une fois votre devis accepté : le diagnostic vient d’abord, le prix exact ensuite.",
     },
     invoice: {
       eyebrow: "La facture",
@@ -471,10 +481,10 @@ const fr = {
       ],
     },
     rule: {
-      eyebrow: "Et le reste ?",
+      eyebrow: "Et le reste ?",
       title: "Un devis sur mesure pour tout le reste.",
       description:
-        "Amortisseurs, échappement, distribution, climatisation, contrôle avant contrôle technique : nous chiffrons aussi ce qui n’est pas au forfait.",
+        "Amortisseurs, échappement, distribution, embrayage, contrôle avant contrôle technique : nous chiffrons aussi ce qui n’est pas au forfait.",
       items: [
         "Amortisseurs et trains roulants",
         "Échappement",
@@ -495,7 +505,7 @@ const fr = {
       eyebrow: "Devis gratuit",
       title: "Un devis écrit, avant toute intervention.",
       description:
-        "Décrivez votre véhicule et ce que vous avez remarqué. Nous revenons vers vous avec un devis détaillé : pièces, main-d’œuvre et durée.",
+        "Décrivez votre véhicule et ce que vous avez remarqué. Nous revenons vers vous avec un devis détaillé : pièces, main-d’œuvre et durée.",
       image: {
         src: IMAGES.tread,
         alt: "Sculptures d’un pneu en noir et blanc, vues de très près.",
@@ -510,11 +520,11 @@ const fr = {
       email: { label: "E-mail" },
       vehicle: {
         label: "Marque, modèle et année",
-        placeholder: "Ex. : citadine essence, 2016",
+        placeholder: "Ex. : citadine essence, 2016",
       },
       mileage: {
         label: "Kilométrage approximatif",
-        placeholder: "Ex. : 96 000 km",
+        placeholder: "Ex. : 96 000 km",
       },
       type: {
         label: "Type d’intervention",
@@ -558,21 +568,21 @@ const fr = {
       title: "À quoi ressemble notre devis.",
       description:
         "Un exemple de remplacement des plaquettes et des disques avant, tel que nous le présentons.",
-      caption: "Devis d’exemple : freinage avant",
+      caption: "Devis d’exemple : freinage avant",
       columns: { item: "Désignation", qty: "Quantité", price: "Montant" },
       lines: [
-        { label: "Plaquettes avant, jeu de quatre", qty: "1", price: "68 €" },
-        { label: "Disques avant, la paire", qty: "1", price: "124 €" },
-        { label: "Liquide de frein", qty: "1 L", price: "14 €" },
-        { label: "Main-d’œuvre freinage avant", qty: "1 h 30", price: "99 €" },
+        { label: "Plaquettes avant, jeu de quatre", qty: "1", price: "68 €" },
+        { label: "Disques avant, la paire", qty: "1", price: "124 €" },
+        { label: "Liquide de frein", qty: "1 L", price: "14 €" },
+        { label: "Main-d’œuvre freinage avant", qty: "1 h 30", price: "99 €" },
       ],
       totalLabel: "Total TTC",
-      total: "305 €",
+      total: "305 €",
       note: "Exemple fictif, donné à titre d’illustration.",
     },
     other: {
       eyebrow: "Sur mesure",
-      title: "Échappement, distribution, embrayage : parlons-en.",
+      title: "Échappement, distribution, embrayage : parlons-en.",
       description:
         "Pour les interventions qui ne sont pas au forfait, le devis est établi après examen du véhicule.",
       image: {
@@ -588,9 +598,9 @@ const fr = {
       ],
     },
     closing: {
-      title: "Préférez-vous passer à l’atelier ?",
+      title: "Préférez-vous passer à l’atelier ?",
       description:
-        "Réservez un créneau : nous examinons la voiture et nous vous remettons le devis sur place.",
+        "Réservez un créneau : nous examinons la voiture et nous vous remettons le devis sur place.",
     },
   },
   rendezVous: {
@@ -602,7 +612,7 @@ const fr = {
     },
     aside: {
       src: IMAGES.workshop,
-      alt: "Intérieur d’un atelier de mécanique : établis, servantes d’outils et enrouleurs d’air sous des néons.",
+      alt: "Intérieur d’un atelier de mécanique : établis, servantes d’outils et enrouleurs d’air sous des néons.",
     },
     form: {
       title: "Votre rendez-vous",
@@ -626,13 +636,13 @@ const fr = {
         label: "Créneau",
         placeholder: "Choisir",
         options: [
-          { value: "matin", label: "Matin (8 h-12 h)" },
-          { value: "apres-midi", label: "Après-midi (14 h-18 h)" },
+          { value: "matin", label: "Matin (8 h-12 h)" },
+          { value: "apres-midi", label: "Après-midi (14 h-18 h)" },
         ],
       },
       vehicle: {
         label: "Marque, modèle et année",
-        placeholder: "Ex. : berline diesel, 2014",
+        placeholder: "Ex. : berline diesel, 2014",
       },
       message: {
         label: "Précisions",
@@ -644,8 +654,8 @@ const fr = {
     hours: {
       title: "Horaires",
       items: [
-        { day: "Lundi au vendredi", time: "8 h-12 h et 14 h-18 h" },
-        { day: "Samedi", time: "8 h-12 h" },
+        { day: "Lundi au vendredi", time: "8 h-12 h et 14 h-18 h" },
+        { day: "Samedi", time: "8 h-12 h" },
         { day: "Dimanche", time: "Fermé" },
       ],
       note: "Atelier fermé les jours fériés.",
@@ -680,7 +690,7 @@ const fr = {
         {
           icon: "car",
           title: "Décrivez les symptômes",
-          text: "Bruit, voyant, vibration : quand cela arrive, et depuis quand.",
+          text: "Bruit, voyant, vibration : quand cela arrive, et depuis quand.",
         },
         {
           icon: "key-round",
@@ -762,9 +772,9 @@ const en: GarageAutoCopy = {
         "Independent auto repair shop: maintenance, brakes, tires and diagnostics for all makes. Written quote before any work, appointment within about 48 hours.",
     },
     prestations: {
-      title: "Services - Your business",
+      title: "Auto services - Your business",
       description:
-        "Maintenance, brakes and tires: what we inspect, starting prices and what every invoice from an independent repair shop includes.",
+        "Maintenance, brakes and tires: what we inspect, starting prices and what every invoice from an independent shop includes.",
     },
     devis: {
       title: "Quote - Your business",
@@ -774,7 +784,7 @@ const en: GarageAutoCopy = {
     rendezVous: {
       title: "Appointment - Your business",
       description:
-        "Book a slot at the shop: appointment form, opening hours, contact details and directions to your independent garage.",
+        "Book a slot at the shop: appointment form, business hours, contact details and directions to your independent shop.",
     },
   },
   home: {
@@ -817,7 +827,7 @@ const en: GarageAutoCopy = {
           meta: "Pads, rotors, fluid · from €119",
           image: {
             src: IMAGES.brakeDisc,
-            alt: "A removed brake caliper and rotor, seen up close.",
+            alt: "Brake caliper and rotor with the wheel removed, seen up close.",
           },
         },
         {
@@ -830,7 +840,7 @@ const en: GarageAutoCopy = {
         },
         {
           title: "Diagnostics",
-          meta: "Scan tool, road test · from €59",
+          meta: "Multi-make scan tool · from €59",
           image: {
             src: IMAGES.engine,
             alt: "Cylinder head of an open engine, camshafts and timing chain.",
@@ -905,7 +915,7 @@ const en: GarageAutoCopy = {
         },
         {
           quote:
-            "Oil change and filters done while I waited. The service book was filled in and the parts were noted.",
+            "Oil change and filters done while I waited. The maintenance log was updated and the parts were noted.",
           name: "Léa D.",
           detail: "Maintenance",
           rating: 5,
@@ -973,10 +983,10 @@ const en: GarageAutoCopy = {
         id: "entretien",
         eyebrow: "01 · Maintenance",
         title: "Proper upkeep, not just an oil change.",
-        text: "Oil, filters, belts, fluid levels: we follow the service schedule of your vehicle and warn you about what is coming, without selling everything at once.",
+        text: "Oil, filters, belts, fluid levels: we follow your vehicle’s maintenance schedule and warn you about what is coming, without selling everything at once.",
         image: {
-          src: IMAGES.wrenchHands,
-          alt: "Two hands at work on an engine, one holding an open-end wrench.",
+          src: IMAGES.dipstick,
+          alt: "A hand holding an oil dipstick, its tip marked with oil.",
         },
         checksTitle: "Checked at every visit",
         checks: [
@@ -987,7 +997,7 @@ const en: GarageAutoCopy = {
           "Tire pressure and wear",
         ],
         whenTitle: "When to come in",
-        when: "About every 9,000 miles or once a year, or as the service book of your vehicle says.",
+        when: "About every 9,000 miles or once a year, or as your vehicle’s maintenance schedule says.",
       },
       {
         id: "freinage",
@@ -1004,7 +1014,7 @@ const en: GarageAutoCopy = {
           "Calipers, hoses and brake lines",
           "Brake fluid level and age",
           "Brake test before and after",
-          "Wheel nuts torqued to spec",
+          "Lug nuts torqued to spec",
         ],
         whenTitle: "When to come in",
         when: "As soon as a grinding noise, a vibration or a soft pedal appears, and at every service.",
@@ -1020,10 +1030,10 @@ const en: GarageAutoCopy = {
         },
         checksTitle: "Included with mounting",
         checks: [
-          "Removal and refitting on the machine",
+          "Removal and remounting on the machine",
           "Balancing of each wheel",
           "New valves and pressure check",
-          "Wheel nuts torqued to spec",
+          "Lug nuts torqued to spec",
           "Recycling of the old tires",
         ],
         whenTitle: "When to come in",
@@ -1034,7 +1044,7 @@ const en: GarageAutoCopy = {
       eyebrow: "Packages",
       title: "Starting prices, no bad surprises.",
       description:
-        "Indicative prices including tax, fitting included, parts depend on the vehicle. The written quote is what counts.",
+        "Indicative prices including tax, installation included, parts depend on the vehicle. The written quote is what counts.",
       groups: [
         {
           title: "Maintenance",
@@ -1061,7 +1071,7 @@ const en: GarageAutoCopy = {
             },
             {
               name: "Full service",
-              detail: "According to the service book",
+              detail: "According to the maintenance schedule",
               price: "from €189",
             },
           ],
@@ -1071,17 +1081,17 @@ const en: GarageAutoCopy = {
           items: [
             {
               name: "Front brake pads",
-              detail: "Set of four, fitting included",
+              detail: "Set of four, installation included",
               price: "from €119",
             },
             {
               name: "Front pads and rotors",
-              detail: "Rotors by the pair, fitting included",
+              detail: "Rotors by the pair, installation included",
               price: "from €289",
             },
             {
               name: "Rear brake pads",
-              detail: "Set of four, fitting included",
+              detail: "Set of four, installation included",
               price: "from €129",
             },
             {
@@ -1100,20 +1110,31 @@ const en: GarageAutoCopy = {
               price: "from €24",
             },
             {
-              name: "Four-wheel rotation",
-              detail: "Balancing and torque tightening",
+              name: "Tire rotation, all four wheels",
+              detail: "Balancing and lug nuts torqued to spec",
               price: "from €39",
             },
             {
               name: "Wheel alignment",
-              detail: "Check and adjustment on the rig",
+              detail: "Check and adjustment on an alignment rack",
               price: "from €79",
             },
             {
-              name: "Puncture repair",
+              name: "Flat repair",
               detail: "Depending on position and size",
               price: "from €25",
               note: "After inspection",
+            },
+          ],
+        },
+        {
+          title: "Diagnostics",
+          items: [
+            {
+              name: "Multi-make diagnostic",
+              detail:
+                "Fault code reading with a scan tool and visual inspection",
+              price: "from €59",
             },
           ],
         },
@@ -1151,7 +1172,7 @@ const en: GarageAutoCopy = {
       eyebrow: "And the rest?",
       title: "A custom quote for everything else.",
       description:
-        "Shock absorbers, exhaust, timing belt, air conditioning, pre-inspection check: we also price what is not in a package.",
+        "Shock absorbers, exhaust, timing belt, clutch, pre-inspection check: we also price what is not in a package.",
       items: [
         "Shock absorbers and suspension",
         "Exhaust",
@@ -1181,7 +1202,7 @@ const en: GarageAutoCopy = {
     form: {
       title: "Your request",
       description:
-        "A few lines are enough. Fields marked with a star are required.",
+        "A few lines are enough. Fields marked with an asterisk are required.",
       name: { label: "Full name" },
       phone: { label: "Phone" },
       email: { label: "Email" },
@@ -1215,7 +1236,7 @@ const en: GarageAutoCopy = {
       items: [
         {
           icon: "file-text",
-          title: "Receipt",
+          title: "Received",
           text: "We read your request and call you back if a detail would help.",
         },
         {
@@ -1226,7 +1247,7 @@ const en: GarageAutoCopy = {
         {
           icon: "calendar-check",
           title: "Your approval",
-          text: "No work without your approval. The appointment comes afterwards, at your pace.",
+          text: "No work without your approval. The appointment comes afterward, at your pace.",
         },
       ],
     },
@@ -1283,7 +1304,7 @@ const en: GarageAutoCopy = {
     },
     form: {
       title: "Your appointment",
-      description: "Fields marked with a star are required.",
+      description: "Fields marked with an asterisk are required.",
       name: { label: "Full name" },
       phone: { label: "Phone" },
       email: { label: "Email" },
@@ -1318,13 +1339,13 @@ const en: GarageAutoCopy = {
       submit: "Request this slot",
     },
     hours: {
-      title: "Opening hours",
+      title: "Business hours",
       items: [
         { day: "Monday to Friday", time: "8 am‑12 pm and 2 pm‑6 pm" },
         { day: "Saturday", time: "8 am‑12 pm" },
         { day: "Sunday", time: "Closed" },
       ],
-      note: "Shop closed on public holidays.",
+      note: "Shop closed on holidays.",
     },
     details: {
       title: "Contact details",
@@ -1355,8 +1376,8 @@ const en: GarageAutoCopy = {
         },
         {
           icon: "key-round",
-          title: "Locking wheel nut key",
-          text: "If your wheels have a locking nut, remember the key.",
+          title: "Wheel lock key",
+          text: "If your wheels have lock nuts, remember the key.",
         },
       ],
     },
@@ -1364,7 +1385,7 @@ const en: GarageAutoCopy = {
       eyebrow: "Directions",
       title: "Easy to find, easy to park.",
       description:
-        "The shop is at 12 Example Street, at the entrance of the business park of Your city.",
+        "The shop is at 12 Example Street, at the entrance of the industrial park of Your city.",
       items: [
         {
           icon: "circle-parking",

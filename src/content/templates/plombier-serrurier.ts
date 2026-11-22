@@ -788,7 +788,7 @@ const en: PlombierSerrurierCopy = {
           icon: "droplets",
           label: "Water",
           title: "Plumbing",
-          text: "Leaks, drain clearing, toilets, taps, water heaters.",
+          text: "Leaks, drain clearing, toilets, faucets, water heaters.",
           from: "From €89",
           link: "See plumbing",
           anchor: "plomberie",
@@ -818,7 +818,7 @@ const en: PlombierSerrurierCopy = {
         {
           icon: "receipt",
           title: "Price stated by phone",
-          text: "You know the starting rate, any surcharge and the call-out fee before we leave.",
+          text: "You know the starting rate, any surcharge and the service call fee before we leave.",
         },
         {
           icon: "file-signature",
@@ -836,7 +836,7 @@ const en: PlombierSerrurierCopy = {
       eyebrow: "Two trades, one contact",
       title: "The most requested repairs, with their starting price.",
       description:
-        "One tradesperson for the water and the door: no subcontracting, no switchboard sending you to someone else.",
+        "One tradesperson for the water and the door: no subcontracting, no call center sending you to someone else.",
       groups: [
         {
           icon: "droplets",
@@ -844,7 +844,7 @@ const en: PlombierSerrurierCopy = {
           rows: [
             { name: "Leak detection and repair", price: "from €119" },
             {
-              name: "Sink, basin and shower drain clearing",
+              name: "Sink, bathroom sink and shower drain clearing",
               price: "from €99",
             },
             { name: "Toilet unclogging", price: "from €109" },
@@ -858,11 +858,11 @@ const en: PlombierSerrurierCopy = {
             { name: "Opening a slammed door", price: "from €89" },
             { name: "Opening a locked door", price: "from €149" },
             { name: "Cylinder change", price: "from €119" },
-            { name: "Door reinforcement", price: "on quote" },
+            { name: "Door reinforcement", price: "by quote" },
           ],
         },
       ],
-      note: "Prices include tax and labor, parts extra. Call-out fee within the area: €39.",
+      note: "Prices include tax and labor, parts extra. Service call fee within the area: €39.",
     },
     steps: {
       eyebrow: "How it works",
@@ -876,11 +876,11 @@ const en: PlombierSerrurierCopy = {
         },
         {
           title: "We state the price",
-          text: "Starting rate, call-out fee, any surcharge for the time of day: the estimated total is given before we leave.",
+          text: "Starting rate, service call fee, any surcharge for the time of day: the estimated total is given before we leave.",
         },
         {
           title: "The quote is signed on site",
-          text: "After diagnosis, we give an exact price. You sign, or you decline and pay only the call-out fee.",
+          text: "After diagnosis, we give an exact price. You sign, or you decline and pay only the service call fee.",
         },
         {
           title: "We repair, you pay",
@@ -889,7 +889,7 @@ const en: PlombierSerrurierCopy = {
       ],
       image: {
         src: IMG.keysHand,
-        alt: "Hand holding a bunch of keys in front of a front door",
+        alt: "Hand holding a set of keys in front of a front door",
       },
     },
     reviews: {
@@ -951,11 +951,12 @@ const en: PlombierSerrurierCopy = {
       items: [
         {
           refuse: "A very low come-on price that explodes once on site.",
-          instead: "A realistic starting rate, stated with the call-out fee.",
+          instead:
+            "A realistic starting rate, stated with the service call fee.",
         },
         {
           refuse: "A quote written after the work has started.",
-          instead: "A quote signed before the first move, or no work.",
+          instead: "A quote signed before the first step, or no work.",
         },
         {
           refuse: "A “7 days a week, any hour” with no word on the cost.",
@@ -1004,12 +1005,12 @@ const en: PlombierSerrurierCopy = {
         {
           icon: "droplets",
           title: "Leak detection and repair",
-          text: "Locating the leak, repairing the section or fitting, refilling and checking.",
+          text: "Locating the leak, repairing the section or fitting, turning the water back on and checking.",
           from: "from €119",
         },
         {
           icon: "waves",
-          title: "Sink, basin and shower drain clearing",
+          title: "Sink, bathroom sink and shower drain clearing",
           text: "Trap removal, mechanical clearing, drainage test.",
           from: "from €99",
         },
@@ -1021,14 +1022,14 @@ const en: PlombierSerrurierCopy = {
         },
         {
           icon: "wrench",
-          title: "Tap, mixer, trap",
-          text: "Replaced like for like or with the model you choose, supply extra.",
+          title: "Faucet or trap",
+          text: "Replaced like for like or with the model you choose, fixture extra.",
           from: "from €89",
         },
         {
           icon: "bath",
           title: "Electric water heater",
-          text: "Old tank removed, new one fitted, safety unit and commissioning.",
+          text: "Old tank removed, new one installed, safety unit and startup.",
           from: "from €290",
         },
       ],
@@ -1069,14 +1070,14 @@ const en: PlombierSerrurierCopy = {
         {
           icon: "lock",
           title: "Multi-point lock",
-          text: "Old lock removed and a multi-point locking mechanism fitted.",
+          text: "Old lock removed and a multi-point locking mechanism installed.",
           from: "from €290",
         },
         {
           icon: "shield-check",
           title: "Door reinforcement",
-          text: "Reinforcing the existing door: visit, itemized quote, fitting in the workshop or on site.",
-          from: "on quote",
+          text: "Reinforcing the existing door: visit, itemized quote, installation in the workshop or on site.",
+          from: "by quote",
         },
       ],
     },
@@ -1116,7 +1117,7 @@ const en: PlombierSerrurierCopy = {
         {
           icon: "ban",
           title: "Central heating and boilers",
-          text: "Radiators, boilers, underfloor heating: we neither install nor repair them.",
+          text: "Radiators, boilers, radiant floor heating: we neither install nor repair them.",
         },
         {
           icon: "ban",
@@ -1145,11 +1146,11 @@ const en: PlombierSerrurierCopy = {
       ticket: {
         eyebrow: "Before any work",
         rows: [
-          { label: "Call-out", value: "€39" },
+          { label: "Service call", value: "€39" },
           { label: "Quote", value: "Free" },
           { label: "Payment", value: "At the end" },
         ],
-        note: "Call-out within 20 km. If you decline the quote, you pay only the call-out fee.",
+        note: "Service calls within 20 km. If you decline the quote, you pay only the service call fee.",
       },
     },
     list: {
@@ -1163,11 +1164,11 @@ const en: PlombierSerrurierCopy = {
           items: [
             {
               name: "Leak detection and repair",
-              detail: "Locating, repairing and refilling",
+              detail: "Locating, repairing and restoring water",
               price: "from €119",
             },
             {
-              name: "Sink, basin and shower drain clearing",
+              name: "Sink, bathroom sink and shower drain clearing",
               detail: "Trap removal and mechanical clearing",
               price: "from €99",
             },
@@ -1177,13 +1178,13 @@ const en: PlombierSerrurierCopy = {
               price: "from €109",
             },
             {
-              name: "Tap, mixer or trap",
-              detail: "Fitting only, supply extra",
+              name: "Faucet or trap",
+              detail: "Installation only, supply extra",
               price: "from €89",
             },
             {
               name: "Electric water heater",
-              detail: "Removal, fitting and commissioning, tank extra",
+              detail: "Removal, installation and startup, tank extra",
               price: "from €290",
               note: "Quote",
             },
@@ -1209,14 +1210,14 @@ const en: PlombierSerrurierCopy = {
             },
             {
               name: "Multi-point lock",
-              detail: "Removal and fitting, lock extra",
+              detail: "Removal and installation, lock extra",
               price: "from €290",
               note: "Quote",
             },
             {
               name: "Door reinforcement",
               detail: "Prior visit and itemized quote",
-              price: "on quote",
+              price: "by quote",
               note: "Visit",
             },
           ],
@@ -1243,8 +1244,8 @@ const en: PlombierSerrurierCopy = {
         },
         {
           icon: "list-checks",
-          title: "Tests and commissioning",
-          text: "Refilling, drainage tests, door tests.",
+          title: "Tests and startup",
+          text: "Water back on, drainage tests, door tests.",
         },
         {
           icon: "receipt",
@@ -1254,10 +1255,10 @@ const en: PlombierSerrurierCopy = {
       ],
       image: {
         src: IMG.faucet,
-        alt: "Kitchen tap with a thin stream of water above a sink",
+        alt: "Kitchen faucet with a thin stream of water above a sink",
       },
       aside:
-        "Kept separate: parts and appliances (cylinder, lock, tap, tank), shown with their price on the quote.",
+        "Kept separate: parts and appliances (cylinder, lock, faucet, tank), shown with their price on the quote.",
     },
     surcharges: {
       eyebrow: "Surcharges",
@@ -1269,7 +1270,7 @@ const en: PlombierSerrurierCopy = {
         { label: "Weekday evening", hours: "7 pm-10 pm", value: "+ 30%" },
         { label: "Saturday", hours: "1 pm-10 pm", value: "+ 30%" },
         {
-          label: "Sundays and public holidays",
+          label: "Sundays and holidays",
           hours: "8 am-10 pm",
           value: "+ 50%",
         },
@@ -1288,16 +1289,16 @@ const en: PlombierSerrurierCopy = {
         },
         {
           title: "Written quote",
-          text: "Labor, parts, call-out fee and any surcharge, line by line.",
+          text: "Labor, parts, service call fee and any surcharge, line by line.",
         },
         {
           title: "Your decision",
-          text: "You sign and we start, or you decline and pay only the call-out fee.",
+          text: "You sign and we start, or you decline and pay only the service call fee.",
         },
       ],
       image: {
         src: IMG.sink,
-        alt: "Stainless steel kitchen sink with a chrome mixer tap",
+        alt: "Stainless steel kitchen sink with a chrome faucet",
       },
     },
     closing: {
@@ -1367,7 +1368,7 @@ const en: PlombierSerrurierCopy = {
       items: [
         { day: "Monday to Friday", time: "8 am-7 pm" },
         { day: "Saturday", time: "8 am-1 pm" },
-        { day: "Sundays and public holidays", time: "On call, 8 am-10 pm" },
+        { day: "Sundays and holidays", time: "On call, 8 am-10 pm" },
       ],
       note: "On-call service every day until 10 pm, outside opening hours: surcharge stated before we leave. After 10 pm, we offer the next morning.",
     },

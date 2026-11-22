@@ -21,11 +21,11 @@ export function HomeOffer({ locale }: { locale: TemplateLocale }) {
       title={section.title}
       description={section.description}
     >
-      <ol className="border-t-2 border-tpl-ink">
+      <ol className="border-t-2 border-tpl-ink md:grid md:grid-cols-[3.5rem_minmax(0,1fr)_minmax(0,1.3fr)_14rem] md:gap-x-8">
         {copy.missions.items.map((mission) => (
           <li
             key={mission.code}
-            className="grid items-start gap-x-8 gap-y-3 border-b border-tpl-line py-6 md:grid-cols-[3.5rem_1fr_1.3fr_14rem]"
+            className="grid items-start gap-x-8 gap-y-3 border-b border-tpl-line py-6 md:col-span-4 md:grid-cols-subgrid"
           >
             <p className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight) text-tpl-accent tabular-nums">
               <span className="sr-only">{section.codeLabel} </span>
