@@ -653,11 +653,11 @@ const en: ExpertComptableCopy = {
   },
   common: {
     email: "contact@example.com",
-    address: "12 Example Street, Your city 00000",
+    address: "12 Example Street, 00000 Your city",
     hoursLabel: "Hours",
     hours: [
-      { day: "Monday to Thursday", time: "9 a.m.–6 p.m." },
-      { day: "Friday", time: "9 a.m.–4 p.m." },
+      { day: "Monday to Thursday", time: "9 am-6 pm" },
+      { day: "Friday", time: "9 am-4 pm" },
     ],
     registration: "Professional registration: to be completed",
     closing: {
@@ -757,7 +757,7 @@ const en: ExpertComptableCopy = {
       {
         icon: "compass",
         code: "05",
-        title: "Advice and steering",
+        title: "Advice and planning",
         summary:
           "Management check-ins on request, to decide with figures: dashboards, simulations, projects.",
         includes: [
@@ -797,7 +797,7 @@ const en: ExpertComptableCopy = {
     },
     offer: {
       eyebrow: "Services",
-      title: "Five services, one file",
+      title: "Five services, one firm",
       description:
         "You choose what you need: monthly bookkeeping, year-end financials, payroll, or one-time support. Everything stays in one place.",
       codeLabel: "Service",
@@ -921,7 +921,7 @@ const en: ExpertComptableCopy = {
       eyebrow: "Who it is for",
       title: "Four situations we know well",
       description:
-        "The service is the same, the file is not: each profile has its own needs and rhythm.",
+        "The service is the same, your situation is not: each profile has its own needs and rhythm.",
       items: [
         {
           icon: "user",
@@ -1041,7 +1041,7 @@ const en: ExpertComptableCopy = {
               name: "Forecast and simulation",
               detail: "Depending on the project, before tax.",
               price: "from €350",
-              note: "On quote",
+              note: "By quote",
             },
           ],
         },
@@ -1110,7 +1110,7 @@ const en: ExpertComptableCopy = {
           a: "We follow up with you. If the delay drags on, the delivery of your accounts is pushed back by the same amount, and we tell you in writing.",
         },
         {
-          q: "Can I change plan during the year?",
+          q: "Can I change plans during the year?",
           a: "Yes, by mutual agreement. We then offer an amendment to the engagement letter with the new flat fee.",
         },
         {

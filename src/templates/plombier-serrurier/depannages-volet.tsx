@@ -78,7 +78,7 @@ export function VoletSection({
                     {item.title}
                   </h3>
                   <p className="text-tpl-base font-semibold whitespace-nowrap tabular-nums">
-                    <span className="sr-only">{fromLabel} : </span>
+                    <span className="sr-only">{fromLabel} </span>
                     {item.from}
                   </p>
                 </div>

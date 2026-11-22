@@ -397,7 +397,7 @@ const fr = {
           items: [
             {
               name: "Album relié",
-              detail: "12 × 12 in, 20 pages",
+              detail: "30 × 30 cm, 20 pages",
               price: "à partir de 220 €",
             },
             {
@@ -573,7 +573,7 @@ const en: PhotographeCopy = {
   },
   common: {
     email: "contact@example.com",
-    address: "12 Example Street, Your city 00000",
+    address: "12 Example Street, 00000 Your city",
     closing: {
       title: "Have a date in mind? Write to me.",
       text: "A few lines are enough to know whether I am free and how to prepare the session.",
@@ -924,7 +924,7 @@ const en: PhotographeCopy = {
         },
       ],
       footnote:
-        "Indicative prices, options excluded. Business rates exclude tax.",
+        "Sample prices, options not included. Business rates exclude tax.",
     },
     included: {
       eyebrow: "Always included",

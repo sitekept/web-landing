@@ -772,7 +772,7 @@ const en: PlombierSerrurierCopy = {
     contact: {
       title: "Contact - Your business",
       description:
-        "Call or write to us: contact details, hours, on-call service until 10 pm and service area within 20 km of your city.",
+        "Call or write to us: contact details, hours, on-call service until 10 pm and service area within 20 km (12 miles) of your city.",
     },
   },
   home: {
@@ -844,7 +844,7 @@ const en: PlombierSerrurierCopy = {
           rows: [
             { name: "Leak detection and repair", price: "from €119" },
             {
-              name: "Sink, bathroom sink and shower drain clearing",
+              name: "Kitchen sink, bathroom sink and shower drain clearing",
               price: "from €99",
             },
             { name: "Toilet unclogging", price: "from €109" },
@@ -855,7 +855,7 @@ const en: PlombierSerrurierCopy = {
           icon: "key-round",
           title: "Locksmith",
           rows: [
-            { name: "Opening a slammed door", price: "from €89" },
+            { name: "Lockout, door latched shut", price: "from €89" },
             { name: "Opening a locked door", price: "from €149" },
             { name: "Cylinder change", price: "from €119" },
             { name: "Door reinforcement", price: "by quote" },
@@ -909,7 +909,7 @@ const en: PlombierSerrurierCopy = {
         },
         {
           quote:
-            "Door slammed shut with the keys inside. Opened without damage, for the rate I was quoted.",
+            "Locked out with the keys inside. Opened without damage, for the rate I was quoted.",
           name: "Thomas B.",
           detail: "Door opening",
           rating: 5,
@@ -973,7 +973,7 @@ const en: PlombierSerrurierCopy = {
       eyebrow: "Contact",
       title: "Describe the problem, we state the price.",
       description:
-        "Call during opening hours or leave your request: we call back with the starting rate.",
+        "Call during business hours or leave your request: we call back with the starting rate.",
     },
   },
   depannages: {
@@ -1010,7 +1010,7 @@ const en: PlombierSerrurierCopy = {
         },
         {
           icon: "waves",
-          title: "Sink, bathroom sink and shower drain clearing",
+          title: "Kitchen sink, bathroom sink and shower drain clearing",
           text: "Trap removal, mechanical clearing, drainage test.",
           from: "from €99",
         },
@@ -1029,7 +1029,7 @@ const en: PlombierSerrurierCopy = {
         {
           icon: "bath",
           title: "Electric water heater",
-          text: "Old tank removed, new one installed, safety unit and startup.",
+          text: "Old tank removed, new one installed, safety valve and startup.",
           from: "from €290",
         },
       ],
@@ -1051,7 +1051,7 @@ const en: PlombierSerrurierCopy = {
       items: [
         {
           icon: "door-open",
-          title: "Opening a slammed door",
+          title: "Lockout, door latched shut",
           text: "Door pulled shut without the key turning: opened without damage, no lock replacement.",
           from: "from €89",
         },
@@ -1102,7 +1102,7 @@ const en: PlombierSerrurierCopy = {
           title: "Stuck door",
           items: [
             "Do not force the lock: a forced door costs more to open.",
-            "Tell us if the door is slammed or locked: the price is not the same.",
+            "Tell us if the door just latched shut or was locked with a key: the price is not the same.",
             "Have an ID or proof of address ready to show on site.",
           ],
         },
@@ -1150,7 +1150,7 @@ const en: PlombierSerrurierCopy = {
           { label: "Quote", value: "Free" },
           { label: "Payment", value: "At the end" },
         ],
-        note: "Service calls within 20 km. If you decline the quote, you pay only the service call fee.",
+        note: "Service calls within 20 km (12 miles). If you decline the quote, you pay only the service call fee.",
       },
     },
     list: {
@@ -1168,7 +1168,7 @@ const en: PlombierSerrurierCopy = {
               price: "from €119",
             },
             {
-              name: "Sink, bathroom sink and shower drain clearing",
+              name: "Kitchen sink, bathroom sink and shower drain clearing",
               detail: "Trap removal and mechanical clearing",
               price: "from €99",
             },
@@ -1194,7 +1194,7 @@ const en: PlombierSerrurierCopy = {
           title: "Locksmith",
           items: [
             {
-              name: "Opening a slammed door",
+              name: "Lockout, door latched shut",
               detail: "No damage, no lock change",
               price: "from €89",
             },
@@ -1224,7 +1224,7 @@ const en: PlombierSerrurierCopy = {
         },
       ],
       footnote:
-        "Starting rates apply to a simple job during opening hours. A special case is priced in the quote, before any work.",
+        "Starting rates apply to a simple job during business hours. A special case is priced in the quote, before any work.",
     },
     included: {
       eyebrow: "What is included",
@@ -1313,7 +1313,7 @@ const en: PlombierSerrurierCopy = {
       eyebrow: "Contact · area and hours",
       title: "Call us, or write: we reply with a price.",
       description:
-        "During opening hours, we pick up. In the evening, on Saturday afternoons and on Sundays, the on-call service answers until 10 pm, with the surcharge stated.",
+        "During business hours, we pick up. In the evening, on Saturday afternoons and on Sundays, the on-call service answers until 10 pm, with the surcharge stated.",
     },
     form: {
       title: "Your request",
@@ -1331,7 +1331,7 @@ const en: PlombierSerrurierCopy = {
           { value: "fuite", label: "Water leak" },
           { value: "debouchage", label: "Drain clearing" },
           { value: "chauffe-eau", label: "Water heater" },
-          { value: "porte-claquee", label: "Slammed or stuck door" },
+          { value: "porte-claquee", label: "Lockout or stuck door" },
           { value: "serrure", label: "Lock change" },
           { value: "blindage", label: "Door reinforcement" },
           { value: "autre", label: "Other" },
@@ -1370,7 +1370,7 @@ const en: PlombierSerrurierCopy = {
         { day: "Saturday", time: "8 am-1 pm" },
         { day: "Sundays and holidays", time: "On call, 8 am-10 pm" },
       ],
-      note: "On-call service every day until 10 pm, outside opening hours: surcharge stated before we leave. After 10 pm, we offer the next morning.",
+      note: "On-call service every day until 10 pm, outside business hours: surcharge stated before we leave. After 10 pm, we offer the next morning.",
     },
     zone: {
       title: "Service area",
@@ -1381,7 +1381,7 @@ const en: PlombierSerrurierCopy = {
       items: [
         "What is happening, since when, and on which floor.",
         "A photo of the problem, if you can.",
-        "For a door: slammed shut or locked with a key?",
+        "For a door: latched shut or locked with a key?",
       ],
     },
   },

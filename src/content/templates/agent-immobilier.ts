@@ -79,8 +79,8 @@ const fr = {
     },
     hoursLabel: "Disponibilités",
     hours: [
-      { day: "Lundi au vendredi", time: "9h – 19h" },
-      { day: "Samedi", time: "9h – 13h" },
+      { day: "Lundi au vendredi", time: "9 h-19 h" },
+      { day: "Samedi", time: "9 h-13 h" },
       { day: "Visites", time: "Sur rendez-vous, y compris en soirée" },
     ],
     closing: {
@@ -737,15 +737,15 @@ const en: AgentImmobilierCopy = {
   },
   common: {
     email: "contact@example.com",
-    address: "12 Example Street, Your city 00000",
+    address: "12 Example Street, 00000 Your city",
     zone: {
       label: "Area",
       text: "Your city and the neighboring towns, within about 12 miles.",
     },
     hoursLabel: "Availability",
     hours: [
-      { day: "Monday to Friday", time: "9 a.m. – 7 p.m." },
-      { day: "Saturday", time: "9 a.m. – 1 p.m." },
+      { day: "Monday to Friday", time: "9 am-7 pm" },
+      { day: "Saturday", time: "9 am-1 pm" },
       { day: "Showings", time: "By appointment, evenings included" },
     ],
     closing: {
@@ -1090,7 +1090,7 @@ const en: AgentImmobilierCopy = {
           specs: ["313 sq ft", "1 room", "Living nook"],
           price: "€139,000",
           opinion:
-            "Easy to rent, reasonable running costs. I will share my yield calculation, with its limits.",
+            "Easy to rent, reasonable monthly costs. I will share my yield calculation, with its limits.",
         },
       ],
     },
@@ -1159,7 +1159,7 @@ const en: AgentImmobilierCopy = {
           { value: "appartement", label: "Apartment" },
           { value: "maison", label: "House" },
           { value: "terrain", label: "Land" },
-          { value: "local", label: "Commercial unit or building" },
+          { value: "local", label: "Commercial space or building" },
           { value: "autre", label: "Other" },
         ],
         surface: "Approximate floor area (sq ft)",
@@ -1260,7 +1260,7 @@ const en: AgentImmobilierCopy = {
               name: "Purchase support",
               detail: "Showings, negotiation, follow-up through closing",
               price: "from 3.5%, tax included",
-              note: "Indicative scale",
+              note: "Sample fees",
             },
           ],
         },

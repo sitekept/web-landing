@@ -944,7 +944,7 @@ const en: GarageAutoCopy = {
         {
           icon: "file-text",
           title: "Quote before work",
-          text: "Itemized line by line, dated and kept with your file.",
+          text: "Itemized line by line, dated and kept with your records.",
         },
         {
           icon: "phone",
@@ -1044,13 +1044,13 @@ const en: GarageAutoCopy = {
       eyebrow: "Packages",
       title: "Starting prices, no bad surprises.",
       description:
-        "Indicative prices including tax, installation included, parts depend on the vehicle. The written quote is what counts.",
+        "Sample prices, tax included, installation included, parts depend on the vehicle. The written quote is what counts.",
       groups: [
         {
           title: "Maintenance",
           items: [
             {
-              name: "Oil and oil filter change",
+              name: "Oil and filter change",
               detail: "Oil and filter included, fluid level check",
               price: "from €89",
             },
@@ -1262,7 +1262,7 @@ const en: GarageAutoCopy = {
         { label: "Front brake pads, set of four", qty: "1", price: "€68" },
         { label: "Front rotors, pair", qty: "1", price: "€124" },
         { label: "Brake fluid", qty: "1 L", price: "€14" },
-        { label: "Front brake labor", qty: "1 h 30", price: "€99" },
+        { label: "Front brake labor", qty: "1.5 hr", price: "€99" },
       ],
       totalLabel: "Total incl. tax",
       total: "€305",
