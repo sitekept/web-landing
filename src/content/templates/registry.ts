@@ -184,8 +184,7 @@ const TEMPLATES = [
     name: "Template Reparation Ordinateur",
     sector: "Réparation tech",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/ordinateur.png",
       featured: true,

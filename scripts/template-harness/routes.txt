@@ -189,3 +189,4 @@ demo-en	/en/avocate/contact
 demo-en	/en/avocate/expertises
 demo-en	/en/boulangerie
 demo-en	/en/fleuriste
+demo-en	/en/ordinateur

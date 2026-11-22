@@ -31,6 +31,7 @@ import type { salonCoiffure } from "@/content/templates/salon-coiffure";
 import type { avocate } from "@/content/templates/avocate";
 import type { boulangerie } from "@/content/templates/boulangerie";
 import type { fleuriste } from "@/content/templates/fleuriste";
+import type { ordinateur } from "@/content/templates/ordinateur";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -58,6 +59,7 @@ type Definitions = {
   avocate: typeof avocate;
   boulangerie: typeof boulangerie;
   fleuriste: typeof fleuriste;
+  ordinateur: typeof ordinateur;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;
