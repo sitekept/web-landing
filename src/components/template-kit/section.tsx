@@ -92,7 +92,7 @@ export function TemplateHeading({
   return (
     <div className={cn("max-w-4xl", HEADING_ALIGN[align], className)}>
       {eyebrow ? (
-        <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
+        <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-eyebrow uppercase">
           {eyebrow}
         </p>
       ) : null}
@@ -102,7 +102,7 @@ export function TemplateHeading({
           // Césure réservée aux mots de 15 caractères et plus : hyphens-auto +
           // text-balance coupait des mots qui tenaient sur la ligne
           // (« mon-tage », « be-fore »). Chromium compte aussi l'élision et la
-          // ponctuation collée (« d’intervention » = 14, « serrurerie : » = 12).
+          // ponctuation collée (« d’intervention » = 14, « plomberie : » = 11).
           // Sans hyphenate-limit-chars (WebKit 18) on reste en hyphens manuel.
           // overflow-wrap:anywhere reste le filet (break-words ne réduit pas la
           // largeur minimale) : un mot plus large que la ligne ne déborde jamais

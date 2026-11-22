@@ -17,6 +17,14 @@ export type TemplateThemeTokens = {
   inverse: string;
   inverseInk: string;
   inkMuted?: string;
+  /**
+   * Teinte des sur-titres (`eyebrow` de `TemplateHeading`, classe
+   * `text-tpl-eyebrow`). Repli : `inkMuted`. Contraste ≥ 4,5:1 sur `surface` et
+   * `raised`.
+   */
+  eyebrow?: string;
+  /** Même rôle sur fond inverse. Repli : l'encre secondaire inverse. */
+  eyebrowInverse?: string;
   line?: string;
   radius?: string;
   radiusPill?: string;
@@ -33,6 +41,14 @@ export type TemplateThemeTokens = {
   fontDisplayWeight?: number;
   shadowSm?: string;
   shadowLg?: string;
+  /**
+   * Rayon de la carte d'en-tête `header="floating"` du shell : `9999px` pour
+   * une pilule, `0` pour un cadre droit. Repli : `--tpl-radius`. Sans effet
+   * sur les autres en-têtes.
+   */
+  headerRadius?: string;
+  /** Largeur de la colonne `header="rail"` du shell (repli : `18.125rem`, 290 px). */
+  railWidth?: string;
 };
 
 const TOKEN_VARIABLES: Record<keyof TemplateThemeTokens, `--tpl-${string}`> = {
@@ -44,6 +60,8 @@ const TOKEN_VARIABLES: Record<keyof TemplateThemeTokens, `--tpl-${string}`> = {
   inverse: "--tpl-inverse",
   inverseInk: "--tpl-inverse-ink",
   inkMuted: "--tpl-ink-muted",
+  eyebrow: "--tpl-eyebrow",
+  eyebrowInverse: "--tpl-eyebrow-inverse",
   line: "--tpl-line",
   radius: "--tpl-radius",
   radiusPill: "--tpl-radius-pill",
@@ -52,6 +70,8 @@ const TOKEN_VARIABLES: Record<keyof TemplateThemeTokens, `--tpl-${string}`> = {
   fontDisplayWeight: "--tpl-display-weight",
   shadowSm: "--tpl-shadow-sm",
   shadowLg: "--tpl-shadow-lg",
+  headerRadius: "--tpl-header-radius",
+  railWidth: "--tpl-rail-width",
 };
 
 /**

@@ -23,6 +23,18 @@ import { TemplateLocaleSwitch } from "./locale-switch";
  *
  * `clsx` et non `cn()` : aucune fusion de classes n'est nécessaire ici, et
  * tailwind-merge pèserait dans le JS client de chaque page du template.
+ *
+ * Trois présentations (`layout`), qui partagent le même module pour ne pas
+ * ajouter de fichier client aux pages :
+ *  - `bar` : liens en ligne à partir de `xl`, bouton de menu en dessous ; le
+ *    panneau s'ouvre sous la barre, pleine largeur ;
+ *  - `floating` : idem, mais le panneau est une carte posée sous la carte
+ *    d'en-tête flottante ;
+ *  - `rail` : liste verticale (colonne latérale, à partir de `xl`), CTA et
+ *    sélecteur de langue en dessous ; ni bouton ni panneau.
+ *
+ * Liens d'ancre (`/page#section`, templates mono-page) : jamais `aria-current`,
+ * toutes les ancres seraient sinon « courantes » sur la page qui les porte.
  */
 
 export type TemplateShellNavLabels = {
@@ -31,6 +43,8 @@ export type TemplateShellNavLabels = {
   /** Nom accessible de la navigation. */
   nav: string;
 };
+
+export type TemplateShellNavLayout = "bar" | "floating" | "rail";
 
 export type TemplateShellNavProps = {
   /** Liens déjà localisés (`templateHref` appliqué par `TemplateShell`). */
@@ -42,6 +56,10 @@ export type TemplateShellNavProps = {
   /** CTA rendu par le serveur ; placé dans l'en-tête et dans le menu mobile. */
   cta?: ReactNode;
   labels: TemplateShellNavLabels;
+  /** Présentation (`bar` par défaut). */
+  layout?: TemplateShellNavLayout;
+  /** `layout="rail"` : numérote les liens (01, 02…). */
+  numbered?: boolean;
 };
 
 function pathOf(href: string): string {
@@ -62,6 +80,8 @@ export function TemplateShellNav({
   showLocaleSwitch,
   cta,
   labels,
+  layout = "bar",
+  numbered = false,
 }: TemplateShellNavProps) {
   const pathname = trimTrailingSlash(usePathname());
   const home = trimTrailingSlash(pathOf(homeHref));
@@ -87,6 +107,10 @@ export function TemplateShellNav({
   }, [open]);
 
   function isCurrent(href: string): boolean {
+    if (href.includes("#")) {
+      return false;
+    }
+
     const target = trimTrailingSlash(pathOf(href));
 
     return (
@@ -102,20 +126,61 @@ export function TemplateShellNav({
     }
   }
 
+  if (layout === "rail") {
+    return (
+      <>
+        <nav aria-label={labels.nav}>
+          <ul>
+            {items.map((item, index) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  aria-current={isCurrent(item.href) ? "page" : undefined}
+                  className={clsx(
+                    "flex min-h-11 items-center justify-between gap-3 border-t border-tpl-line py-3 text-tpl-sm font-medium text-tpl-ink-muted transition-[padding] hover:pl-2 hover:text-tpl-ink aria-[current=page]:text-tpl-ink aria-[current=page]:underline aria-[current=page]:underline-offset-8 motion-reduce:transition-none motion-reduce:hover:pl-0",
+                    LINK_FOCUS
+                  )}
+                >
+                  <span>{item.label}</span>
+                  {numbered ? (
+                    <span
+                      aria-hidden="true"
+                      className="text-tpl-xs tabular-nums"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                  ) : null}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        {cta || showLocaleSwitch ? (
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            {cta}
+            {showLocaleSwitch ? <TemplateLocaleSwitch locale={locale} /> : null}
+          </div>
+        ) : null}
+      </>
+    );
+  }
+
+  const floating = layout === "floating";
+
   return (
     <>
       <nav
         aria-label={labels.nav}
         className="hidden min-w-0 flex-1 justify-center xl:flex"
       >
-        <ul className="flex flex-nowrap items-center justify-center gap-x-0.5 2xl:gap-x-1">
+        <ul className="flex flex-nowrap items-center justify-center gap-x-0.5">
           {items.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 aria-current={isCurrent(item.href) ? "page" : undefined}
                 className={clsx(
-                  "inline-flex min-h-11 items-center rounded-tpl px-2 text-tpl-sm font-medium whitespace-nowrap text-tpl-ink-muted underline-offset-8 hover:text-tpl-ink aria-[current=page]:text-tpl-ink aria-[current=page]:underline 2xl:px-3",
+                  "inline-flex min-h-11 items-center rounded-tpl px-2 text-tpl-sm font-medium whitespace-nowrap text-tpl-ink-muted underline-offset-8 hover:text-tpl-ink aria-[current=page]:text-tpl-ink aria-[current=page]:underline",
                   LINK_FOCUS
                 )}
               >
@@ -154,7 +219,12 @@ export function TemplateShellNav({
         id={panelId}
         hidden={!open}
         onClick={closeOnLinkClick}
-        className="absolute inset-x-0 top-full max-h-[calc(100dvh-4.5rem)] overflow-y-auto border-b border-tpl-line bg-tpl-surface px-4 pt-2 pb-6 shadow-tpl-lg sm:px-6 xl:hidden"
+        className={clsx(
+          "absolute inset-x-0 top-full overflow-y-auto border-tpl-line bg-tpl-surface pt-2 pb-6 shadow-tpl-lg xl:hidden",
+          floating
+            ? "mt-2 max-h-[calc(100dvh-var(--tpl-header-offset)-1rem)] rounded-tpl border px-5 sm:px-6"
+            : "max-h-[calc(100dvh-4.5rem)] border-b px-4 sm:px-6"
+        )}
       >
         <nav aria-label={labels.nav}>
           <ul>

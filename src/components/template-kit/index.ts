@@ -47,6 +47,7 @@ export type {
   TemplateCardIconPosition,
   TemplateCardProps,
   TemplateCardTitleLevel,
+  TemplateCardTone,
   TemplatePanelProps,
   TemplatePanelTone,
 } from "./card";
@@ -58,7 +59,9 @@ export type {
   TemplateNavItem,
   TemplateShellBrand,
   TemplateShellCta,
+  TemplateShellHeader,
   TemplateShellProps,
+  TemplateTopBarTone,
 } from "./shell";
 
 export { TemplateLocaleSwitch } from "./locale-switch";

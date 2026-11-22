@@ -17,7 +17,19 @@ import { cn } from "@/lib/utils";
 
 export type TemplateCardTitleLevel = "h2" | "h3" | "h4";
 export type TemplateCardElevation = "flat" | "raised" | "floating";
-export type TemplatePanelTone = "raised" | "surface";
+/**
+ * `raised` : fond `--tpl-raised`. `surface` : fond de page. `inverse` : carte
+ * sombre (ou claire dans un thème sombre) posée sur une section claire, ou
+ * ressortant d'une section `inverse`. Pose `data-tone="inverse"` : la règle de
+ * `globals.css` rebinde `--tpl-ink`, `--tpl-ink-muted`, `--tpl-line` et
+ * `--tpl-raised` sur la paire inverse, donc le texte, la bordure et le texte
+ * secondaire restent lisibles, et le fond (`--tpl-raised` rebindé : l'inverse
+ * éclairci de 7 %) se détache d'une section inverse. Un lien plein
+ * (`TemplateLink` `solid`) pose l'accent, que cette règle ne rebinde pas : sur
+ * une carte inverse, utiliser `variant="inverse"`.
+ */
+export type TemplateCardTone = "raised" | "surface" | "inverse";
+export type TemplatePanelTone = TemplateCardTone;
 /** Place de l'icône : au-dessus du titre, ou à sa gauche sur la même ligne. */
 export type TemplateCardIconPosition = "top" | "inline";
 
@@ -35,9 +47,11 @@ const ELEVATION: Record<TemplateCardElevation, string> = {
 const INTERACTIVE =
   "transition duration-200 ease-out hover:-translate-y-0.5 hover:shadow-tpl-lg focus-within:shadow-tpl-lg motion-reduce:hover:translate-none";
 
-const PANEL_TONE: Record<TemplatePanelTone, string> = {
+/** `inverse` garde `bg-tpl-raised` : c'est `data-tone` qui rebinde la variable. */
+const TONE: Record<TemplateCardTone, string> = {
   raised: "bg-tpl-raised",
   surface: "bg-tpl-surface",
+  inverse: "bg-tpl-raised",
 };
 
 export type TemplateCardProps = {
@@ -52,6 +66,8 @@ export type TemplateCardProps = {
   icon?: ReactNode;
   /** `top` (défaut) : au-dessus du titre. `inline` : à gauche du titre, centrée sur lui. */
   iconPosition?: TemplateCardIconPosition;
+  /** Fond de la carte (`raised` par défaut). */
+  tone?: TemplateCardTone;
   elevation?: TemplateCardElevation;
   /** Survol : léger soulèvement et ombre `lg` (déplacement coupé en reduced motion). */
   interactive?: boolean;
@@ -64,6 +80,7 @@ export function TemplateCard({
   titleAs: Title = "h3",
   icon,
   iconPosition = "top",
+  tone = "raised",
   elevation = "raised",
   interactive = false,
   className,
@@ -87,8 +104,10 @@ export function TemplateCard({
 
   return (
     <article
+      data-tone={tone === "inverse" ? "inverse" : undefined}
       className={cn(
-        "rounded-tpl border border-tpl-line bg-tpl-raised p-6 text-tpl-ink",
+        "rounded-tpl border border-tpl-line p-6 text-tpl-ink",
+        TONE[tone],
         ELEVATION[elevation],
         interactive ? INTERACTIVE : null,
         className
@@ -133,9 +152,10 @@ export function TemplatePanel({
 }: TemplatePanelProps) {
   return (
     <div
+      data-tone={tone === "inverse" ? "inverse" : undefined}
       className={cn(
         "rounded-tpl border border-tpl-line p-6 text-tpl-ink",
-        PANEL_TONE[tone],
+        TONE[tone],
         className
       )}
     >
