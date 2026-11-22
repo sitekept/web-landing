@@ -41,6 +41,8 @@ check /architecte-interieur yes; check /architecte-interieur/projets yes
 check /en/architecte-interieur yes; check /en/architecte-interieur/projets yes
 check /restaurant-bistrot yes; check /restaurant-bistrot/menu yes
 check /en/restaurant-bistrot yes; check /en/restaurant-bistrot/menu yes
+check /salon-coiffure yes; check /salon-coiffure/prestations yes
+check /en/salon-coiffure yes; check /en/salon-coiffure/prestations yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail

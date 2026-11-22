@@ -176,3 +176,10 @@ demo-en	/en/restaurant-bistrot/histoire
 demo-en	/en/restaurant-bistrot/menu
 demo-en	/en/restaurant-bistrot/privatisation
 demo-en	/en/restaurant-bistrot/reservation
+demo-en	/en/salon-coiffure
+demo-en	/en/salon-coiffure/contact
+demo-en	/en/salon-coiffure/journal
+demo-en	/en/salon-coiffure/lookbook
+demo-en	/en/salon-coiffure/prestations
+demo-en	/en/salon-coiffure/reservation
+demo-en	/en/salon-coiffure/stylists

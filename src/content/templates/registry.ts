@@ -284,8 +284,7 @@ const TEMPLATES = [
     name: "Template Salon de coiffure",
     sector: "Beauté",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/salon-coiffure.png",
       featured: true,
