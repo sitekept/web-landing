@@ -35,6 +35,8 @@ check /garage-auto yes; check /garage-auto/prestations yes
 check /en/garage-auto yes; check /en/garage-auto/prestations yes
 check /menage-nettoyage yes; check /menage-nettoyage/formules yes
 check /en/menage-nettoyage yes; check /en/menage-nettoyage/formules yes
+check /cabinet-avocat yes; check /cabinet-avocat/expertises yes
+check /en/cabinet-avocat yes; check /en/cabinet-avocat/expertises yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail

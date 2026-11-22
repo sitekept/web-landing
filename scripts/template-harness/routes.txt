@@ -156,3 +156,9 @@ demo-en	/en/menage-nettoyage/entreprises
 demo-en	/en/menage-nettoyage/faq
 demo-en	/en/menage-nettoyage/formules
 demo-en	/en/menage-nettoyage/zones
+demo-en	/en/cabinet-avocat
+demo-en	/en/cabinet-avocat/cas-types
+demo-en	/en/cabinet-avocat/consultation
+demo-en	/en/cabinet-avocat/expertises
+demo-en	/en/cabinet-avocat/methode
+demo-en	/en/cabinet-avocat/publications

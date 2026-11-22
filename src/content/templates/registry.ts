@@ -383,8 +383,7 @@ const TEMPLATES = [
     name: "Template Cabinet d'avocat",
     sector: "Juridique",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/cabinet-avocat.png",
       featured: true,
