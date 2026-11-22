@@ -40,7 +40,8 @@ export type TemplateFormFieldType =
   | "tel"
   | "date"
   | "select"
-  | "textarea";
+  | "textarea"
+  | "checkbox";
 
 export type TemplateFormOption = {
   value: string;
@@ -100,6 +101,24 @@ export function TemplateDemoForm({
         {fields.map((field) => {
           const id = `${baseId}-${field.name}`;
           const type = field.type ?? "text";
+
+          // Case à cocher : le libellé suit la case, sur la même ligne.
+          if (type === "checkbox") {
+            return (
+              <label
+                key={field.name}
+                className="flex gap-3 text-tpl-sm text-tpl-ink-muted sm:col-span-2"
+              >
+                <input
+                  name={field.name}
+                  type="checkbox"
+                  required={field.required}
+                  className="mt-1 size-4 shrink-0 accent-tpl-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
+                />
+                <span>{field.label}</span>
+              </label>
+            );
+          }
 
           return (
             <div
