@@ -81,6 +81,10 @@ demo	/agent-immobilier
 demo	/agent-immobilier/biens
 demo	/agent-immobilier/contact
 demo	/agent-immobilier/estimation
+demo	/photographe
+demo	/photographe/contact
+demo	/photographe/forfaits
+demo	/photographe/portfolio
 marketing	/templates
 marketing	/en/templates
 internal	/admin-templates-7q4p9s2m
@@ -119,3 +123,7 @@ demo-en	/en/agent-immobilier
 demo-en	/en/agent-immobilier/biens
 demo-en	/en/agent-immobilier/contact
 demo-en	/en/agent-immobilier/estimation
+demo-en	/en/photographe
+demo-en	/en/photographe/contact
+demo-en	/en/photographe/forfaits
+demo-en	/en/photographe/portfolio
