@@ -18,6 +18,7 @@ import type { reparationMobile } from "@/content/templates/reparation-mobile";
 import type { createurCulinaire } from "@/content/templates/createur-culinaire";
 import type { coffeeShop } from "@/content/templates/coffee-shop";
 import type { spaMassage } from "@/content/templates/spa-massage";
+import type { agentImmobilier } from "@/content/templates/agent-immobilier";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -32,6 +33,7 @@ type Definitions = {
   "createur-culinaire": typeof createurCulinaire;
   "coffee-shop": typeof coffeeShop;
   "spa-massage": typeof spaMassage;
+  "agent-immobilier": typeof agentImmobilier;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;

@@ -23,6 +23,8 @@ check /coffee-shop yes; check /coffee-shop/carte yes
 check /en/coffee-shop yes; check /en/coffee-shop/carte yes
 check /spa-massage yes; check /spa-massage/soins yes
 check /en/spa-massage yes; check /en/spa-massage/soins yes
+check /agent-immobilier yes; check /agent-immobilier/biens yes
+check /en/agent-immobilier yes; check /en/agent-immobilier/biens yes
 check /en no
 check /templates no; check /en/templates no
 exit $fail
