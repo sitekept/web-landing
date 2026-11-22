@@ -119,12 +119,13 @@ export type TemplateShellHeader = TemplateShellNavLayout;
  * texte secondaire), `accent` (fond accent, texte `accent-ink`) ou `inverse`
  * (fond inverse, `data-tone="inverse"` : les jetons d'encre y sont rebindés).
  */
-export type TemplateTopBarTone = "inverse" | "accent" | "raised";
+export type TemplateTopBarTone = "inverse" | "accent" | "raised" | "tint";
 
 const TOP_BAR_TONE: Record<TemplateTopBarTone, string> = {
   inverse: "bg-tpl-inverse text-tpl-inverse-ink",
   accent: "bg-tpl-accent text-tpl-accent-ink",
   raised: "border-b border-tpl-line bg-tpl-raised text-tpl-ink-muted",
+  tint: "border-b border-tpl-line bg-tpl-tint text-tpl-ink-muted",
 };
 
 export type TemplateShellProps = {

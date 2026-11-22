@@ -47,6 +47,14 @@
   --color-tpl-ink-muted: var(--tpl-ink-muted);
   --color-tpl-surface: var(--tpl-surface);
   --color-tpl-raised: var(--tpl-raised);
+  /*
+   * Troisième fond clair : teinte facultative du thème, sinon surface foncée de
+   * 6 %. `surface` en premier : c'est elle que garde le repli sans color-mix.
+   */
+  --color-tpl-tint: var(
+    --tpl-tint,
+    color-mix(in oklch, var(--tpl-surface) 94%, var(--tpl-ink))
+  );
   --color-tpl-line: var(--tpl-line);
   /* Sur-titres : teinte facultative du thème, sinon l'encre secondaire. */
   --color-tpl-eyebrow: var(--tpl-eyebrow, var(--tpl-ink-muted));
@@ -210,6 +218,7 @@
     );
     --tpl-line: color-mix(in oklch, var(--tpl-ink) 14%, transparent);
     --tpl-eyebrow: var(--tpl-eyebrow-inverse, var(--tpl-ink-muted));
+    --tpl-tint: var(--tpl-raised);
   }
 }
 

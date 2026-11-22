@@ -16,6 +16,13 @@ export type TemplateThemeTokens = {
   accentInk: string;
   inverse: string;
   inverseInk: string;
+  /**
+   * Troisième fond clair (bandeau, section teintée, carte pâle), classe
+   * `bg-tpl-tint` et ton `tint` de `TemplateSection`, `TemplateCard`,
+   * `TemplatePanel` et `topBarTone`. Repli : `surface` foncée de 6 % d'encre.
+   * `inkMuted` et `eyebrow` doivent y garder 4,5:1.
+   */
+  tint?: string;
   inkMuted?: string;
   /**
    * Teinte des sur-titres (`eyebrow` de `TemplateHeading`, classe
@@ -59,6 +66,7 @@ const TOKEN_VARIABLES: Record<keyof TemplateThemeTokens, `--tpl-${string}`> = {
   accentInk: "--tpl-accent-ink",
   inverse: "--tpl-inverse",
   inverseInk: "--tpl-inverse-ink",
+  tint: "--tpl-tint",
   inkMuted: "--tpl-ink-muted",
   eyebrow: "--tpl-eyebrow",
   eyebrowInverse: "--tpl-eyebrow-inverse",

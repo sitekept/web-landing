@@ -22,7 +22,12 @@ import { cn } from "@/lib/utils";
 export type TemplateHeadingLevel = "h1" | "h2" | "h3";
 export type TemplateTitleScale = "display" | "title" | "subtitle";
 export type TemplateSectionDensity = "compact" | "regular" | "spacious";
-export type TemplateSectionTone = "surface" | "raised" | "inverse" | "bare";
+export type TemplateSectionTone =
+  | "surface"
+  | "raised"
+  | "tint"
+  | "inverse"
+  | "bare";
 export type TemplateSectionWidth = "wide" | "narrow";
 export type TemplateAlign = "start" | "center";
 
@@ -57,6 +62,7 @@ const DENSITY: Record<TemplateSectionDensity, string> = {
 const TONE: Record<TemplateSectionTone, string> = {
   surface: "bg-tpl-surface text-tpl-ink",
   raised: "bg-tpl-raised text-tpl-ink",
+  tint: "bg-tpl-tint text-tpl-ink",
   inverse: "bg-tpl-inverse text-tpl-inverse-ink",
   bare: "",
 };

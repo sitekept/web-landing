@@ -28,7 +28,7 @@ export type TemplateCardElevation = "flat" | "raised" | "floating";
  * (`TemplateLink` `solid`) pose l'accent, que cette règle ne rebinde pas : sur
  * une carte inverse, utiliser `variant="inverse"`.
  */
-export type TemplateCardTone = "raised" | "surface" | "inverse";
+export type TemplateCardTone = "raised" | "surface" | "tint" | "inverse";
 export type TemplatePanelTone = TemplateCardTone;
 /** Place de l'icône : au-dessus du titre, ou à sa gauche sur la même ligne. */
 export type TemplateCardIconPosition = "top" | "inline";
@@ -51,6 +51,7 @@ const INTERACTIVE =
 const TONE: Record<TemplateCardTone, string> = {
   raised: "bg-tpl-raised",
   surface: "bg-tpl-surface",
+  tint: "bg-tpl-tint",
   inverse: "bg-tpl-raised",
 };
 
