@@ -72,35 +72,37 @@ export function PlombierSerrurierShell({
       }
       footer={
         <footer className="bg-tpl-inverse font-tpl-text text-tpl-inverse-ink">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
-            <div className="max-w-md">
-              <p className="font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight)">
-                {copy.brand.name}
-              </p>
-              <p className="mt-3 text-tpl-sm opacity-85">{footer.text}</p>
-            </div>
-            <div className="space-y-2 text-tpl-sm">
-              <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase opacity-75">
-                {footer.contactTitle}
-              </p>
-              <p>
-                <a
-                  href={copy.phone.href}
-                  className="inline-flex min-h-11 items-center font-semibold tabular-nums underline-offset-4 hover:underline"
-                >
-                  {copy.phone.label}
-                </a>
-              </p>
-              <p>{footer.email}</p>
-              <p>{footer.address}</p>
-            </div>
-            <div className="space-y-2 text-tpl-sm">
-              <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase opacity-75">
-                {footer.hoursTitle}
-              </p>
-              <p className="tabular-nums">{footer.hours}</p>
-              <p>{footer.onCall}</p>
-              <p>{footer.zone}</p>
+          <div className="px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto grid max-w-7xl gap-10 py-14 lg:grid-cols-[1.4fr_1fr_1fr]">
+              <div className="max-w-md">
+                <p className="font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight)">
+                  {copy.brand.name}
+                </p>
+                <p className="mt-3 text-tpl-sm opacity-85">{footer.text}</p>
+              </div>
+              <div className="space-y-2 text-tpl-sm">
+                <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase opacity-75">
+                  {footer.contactTitle}
+                </p>
+                <p>
+                  <a
+                    href={copy.phone.href}
+                    className="inline-flex min-h-11 items-center font-semibold tabular-nums underline-offset-4 hover:underline"
+                  >
+                    {copy.phone.label}
+                  </a>
+                </p>
+                <p>{footer.email}</p>
+                <p>{footer.address}</p>
+              </div>
+              <div className="space-y-2 text-tpl-sm">
+                <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase opacity-75">
+                  {footer.hoursTitle}
+                </p>
+                <p className="tabular-nums">{footer.hours}</p>
+                <p>{footer.onCall}</p>
+                <p>{footer.zone}</p>
+              </div>
             </div>
           </div>
           <p className="border-t border-tpl-inverse-ink/20 px-4 py-4 text-center text-tpl-xs opacity-80">

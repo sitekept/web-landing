@@ -28,6 +28,17 @@ import { TemplateShellNav } from "./shell-nav";
  * nom de template.
  */
 
+/**
+ * Largeur commune du shell et des sections `wide` : le padding latéral va sur
+ * l'élément pleine largeur, `max-w-7xl` sur le bloc intérieur (même motif que
+ * `TemplateSection`). Poser les deux sur le même bloc rogne 32 px de chaque
+ * côté du contenu : marque, navigation et pied de page se décaleraient vers
+ * l'intérieur au-dessus de 1280 px. Les pieds de page des templates suivent le
+ * même motif (voir `docs/templates.md`, section 3).
+ */
+const SHELL_GUTTER = "px-4 sm:px-6 lg:px-8";
+const SHELL_WIDTH = "mx-auto max-w-7xl";
+
 const LABELS: Record<
   TemplateLocale,
   { skip: string; menu: string; nav: string }
@@ -155,8 +166,18 @@ export function TemplateShell({
         {labels.skip}
       </a>
 
-      <header className="sticky top-0 z-40 border-b border-tpl-line bg-tpl-surface/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8 xl:gap-4">
+      <header
+        className={cn(
+          "sticky top-0 z-40 border-b border-tpl-line bg-tpl-surface/95 backdrop-blur",
+          SHELL_GUTTER
+        )}
+      >
+        <div
+          className={cn(
+            SHELL_WIDTH,
+            "flex items-center justify-between gap-3 py-3 xl:gap-4"
+          )}
+        >
           <div className="flex min-w-0 items-center gap-3">
             {brand.mark ? <div className="shrink-0">{brand.mark}</div> : null}
             <div className="min-w-0">

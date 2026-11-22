@@ -64,40 +64,42 @@ export function AgentImmobilierShell({
       }}
       footer={
         <footer className="border-t border-tpl-line bg-tpl-raised">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
-            <div className="max-w-md sm:col-span-2 lg:col-span-1">
-              <p className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">
-                {copy.footer.title}
-              </p>
-              <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
-                {copy.footer.text}
-              </p>
-              <p className="mt-5 border-l-2 border-tpl-accent pl-4 text-tpl-xs text-tpl-ink-muted">
-                {copy.footer.proCard}
-              </p>
-            </div>
-            <div>
-              <p className={FOOTER_LABEL}>{copy.footer.contactLabel}</p>
-              <ul className="mt-4 space-y-2 text-tpl-sm">
-                <li>
-                  <a href={copy.phone.href} className={LINK_FOCUS}>
-                    {copy.phone.label}
-                  </a>
-                </li>
-                <li>{copy.common.email}</li>
-                <li className="text-tpl-ink-muted">{copy.common.address}</li>
-              </ul>
-            </div>
-            <div>
-              <p className={FOOTER_LABEL}>{copy.common.hoursLabel}</p>
-              <dl className="mt-4 space-y-2 text-tpl-sm">
-                {copy.common.hours.map((row) => (
-                  <div key={row.day} className="flex flex-col">
-                    <dt className="text-tpl-ink-muted">{row.day}</dt>
-                    <dd>{row.time}</dd>
-                  </div>
-                ))}
-              </dl>
+          <div className="px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto grid max-w-7xl gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+              <div className="max-w-md sm:col-span-2 lg:col-span-1">
+                <p className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">
+                  {copy.footer.title}
+                </p>
+                <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
+                  {copy.footer.text}
+                </p>
+                <p className="mt-5 border-l-2 border-tpl-accent pl-4 text-tpl-xs text-tpl-ink-muted">
+                  {copy.footer.proCard}
+                </p>
+              </div>
+              <div>
+                <p className={FOOTER_LABEL}>{copy.footer.contactLabel}</p>
+                <ul className="mt-4 space-y-2 text-tpl-sm">
+                  <li>
+                    <a href={copy.phone.href} className={LINK_FOCUS}>
+                      {copy.phone.label}
+                    </a>
+                  </li>
+                  <li>{copy.common.email}</li>
+                  <li className="text-tpl-ink-muted">{copy.common.address}</li>
+                </ul>
+              </div>
+              <div>
+                <p className={FOOTER_LABEL}>{copy.common.hoursLabel}</p>
+                <dl className="mt-4 space-y-2 text-tpl-sm">
+                  {copy.common.hours.map((row) => (
+                    <div key={row.day} className="flex flex-col">
+                      <dt className="text-tpl-ink-muted">{row.day}</dt>
+                      <dd>{row.time}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
           </div>
           <p className="border-t border-tpl-line px-4 py-4 text-center text-tpl-xs text-tpl-ink-muted">

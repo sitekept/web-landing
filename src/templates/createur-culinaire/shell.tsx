@@ -59,8 +59,8 @@ export function CreateurCulinaireShell({
         icon: <Phone aria-hidden="true" className="size-4" />,
       }}
       footer={
-        <footer className="border-t border-tpl-ink bg-tpl-raised">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.5fr_1fr_1fr] lg:px-8">
+        <footer className="border-t border-tpl-ink bg-tpl-raised px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 py-14 lg:grid-cols-[1.5fr_1fr_1fr]">
             <div className="max-w-md">
               <p className="font-tpl-display text-tpl-2xl leading-tpl-display">
                 {copy.footer.title}

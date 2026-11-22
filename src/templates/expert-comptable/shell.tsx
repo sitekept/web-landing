@@ -71,8 +71,8 @@ export function ExpertComptableShell({
         </>
       }
       footer={
-        <footer className="border-t-4 border-double border-tpl-ink bg-tpl-inverse text-tpl-inverse-ink">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
+        <footer className="border-t-4 border-double border-tpl-ink bg-tpl-inverse px-4 text-tpl-inverse-ink sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 py-12 lg:grid-cols-[1.4fr_1fr_1fr]">
             <div className="max-w-md">
               <p className="font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight)">
                 {copy.brand.name}

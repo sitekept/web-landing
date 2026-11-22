@@ -83,8 +83,8 @@ export function DentisteShell({
             </TemplatePanel>
           </aside>
 
-          <footer className="border-t border-tpl-line bg-tpl-raised">
-            <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
+          <footer className="border-t border-tpl-line bg-tpl-raised px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto grid max-w-7xl gap-8 py-10 lg:grid-cols-[1fr_auto]">
               <div className="max-w-2xl">
                 <p className="text-tpl-lg font-semibold">{copy.footer.title}</p>
                 <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
