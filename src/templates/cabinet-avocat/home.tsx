@@ -30,6 +30,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
       <HomeHero locale={locale} />
 
       <TemplateSection
+        density="compact"
         tone="raised"
         eyebrow={signals.eyebrow}
         title={signals.title}
@@ -39,6 +40,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
       </TemplateSection>
 
       <TemplateSection
+        density="compact"
         tone="inverse"
         eyebrow={cases.eyebrow}
         title={cases.title}
@@ -48,6 +50,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
       </TemplateSection>
 
       <TemplateSection
+        density="compact"
         tone="tint"
         eyebrow={reading.eyebrow}
         title={reading.title}

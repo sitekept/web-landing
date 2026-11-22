@@ -64,6 +64,7 @@ export function ListPage({
 }) {
   return (
     <TemplateSection
+      density="compact"
       as="h1"
       tone={paper ? "surface" : "raised"}
       eyebrow={eyebrow}
