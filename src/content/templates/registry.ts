@@ -260,8 +260,7 @@ const TEMPLATES = [
     name: "Template Plombier Chauffagiste",
     sector: "Habitat",
     notes: "Visible dans le catalogue public SiteKept.",
-    locales: ["fr"],
-    englishPending: "phase-5",
+    locales: ["fr", "en"],
     gallery: {
       screenshot: "/template/plombier-chauffagiste.png",
       featured: true,
@@ -269,12 +268,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Plombier chauffagiste",
           description:
-            "Une landing d'urgence locale pensée pour les appels rapides, les zones d'intervention et une conversion immédiate.",
+            "Un site de plombier chauffagiste en quatre pages : dépannages plomberie et chauffage, tarifs de départ et majorations annoncées, devis signé avant travaux et contact avec astreinte.",
         },
         en: {
           name: "Plumber & heating template",
           description:
-            "A local emergency landing page designed for quick calls, service areas and immediate conversion.",
+            "A four-page plumber and heating contractor website: plumbing and heating repairs, starting rates and stated surcharges, quote signed before work, and contact with on-call hours.",
         },
       },
     },
@@ -589,16 +588,6 @@ const TEMPLATES = [
     routed: true,
     name: "Template Photographe",
     sector: "Photographie",
-    notes:
-      "Template lab servi sur sitekept.com (noindex), en attente de validation.",
-    locales: ["fr", "en"],
-  },
-  {
-    slug: "plombier-serrurier",
-    status: "lab",
-    routed: true,
-    name: "Template Plombier serrurier",
-    sector: "Habitat",
     notes:
       "Template lab servi sur sitekept.com (noindex), en attente de validation.",
     locales: ["fr", "en"],

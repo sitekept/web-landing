@@ -20,7 +20,7 @@ import type { coffeeShop } from "@/content/templates/coffee-shop";
 import type { spaMassage } from "@/content/templates/spa-massage";
 import type { agentImmobilier } from "@/content/templates/agent-immobilier";
 import type { photographe } from "@/content/templates/photographe";
-import type { plombierSerrurier } from "@/content/templates/plombier-serrurier";
+import type { plombierChauffagiste } from "@/content/templates/plombier-chauffagiste";
 import type { expertComptable } from "@/content/templates/expert-comptable";
 import type { garageAuto } from "@/content/templates/garage-auto";
 import type {
@@ -39,7 +39,7 @@ type Definitions = {
   "spa-massage": typeof spaMassage;
   "agent-immobilier": typeof agentImmobilier;
   photographe: typeof photographe;
-  "plombier-serrurier": typeof plombierSerrurier;
+  "plombier-chauffagiste": typeof plombierChauffagiste;
   "expert-comptable": typeof expertComptable;
   "garage-auto": typeof garageAuto;
 };

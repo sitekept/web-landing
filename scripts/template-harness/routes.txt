@@ -51,6 +51,9 @@ demo	/menage-nettoyage/zones
 demo	/ordinateur
 demo	/pattiserie
 demo	/plombier-chauffagiste
+demo	/plombier-chauffagiste/contact
+demo	/plombier-chauffagiste/depannages
+demo	/plombier-chauffagiste/tarifs
 demo	/restaurant-bistrot
 demo	/restaurant-bistrot/contact
 demo	/restaurant-bistrot/galerie
@@ -85,10 +88,6 @@ demo	/photographe
 demo	/photographe/contact
 demo	/photographe/forfaits
 demo	/photographe/portfolio
-demo	/plombier-serrurier
-demo	/plombier-serrurier/contact
-demo	/plombier-serrurier/depannages
-demo	/plombier-serrurier/tarifs
 demo	/expert-comptable
 demo	/expert-comptable/contact
 demo	/expert-comptable/honoraires
@@ -139,10 +138,10 @@ demo-en	/en/photographe
 demo-en	/en/photographe/contact
 demo-en	/en/photographe/forfaits
 demo-en	/en/photographe/portfolio
-demo-en	/en/plombier-serrurier
-demo-en	/en/plombier-serrurier/contact
-demo-en	/en/plombier-serrurier/depannages
-demo-en	/en/plombier-serrurier/tarifs
+demo-en	/en/plombier-chauffagiste
+demo-en	/en/plombier-chauffagiste/contact
+demo-en	/en/plombier-chauffagiste/depannages
+demo-en	/en/plombier-chauffagiste/tarifs
 demo-en	/en/expert-comptable
 demo-en	/en/expert-comptable/contact
 demo-en	/en/expert-comptable/honoraires
