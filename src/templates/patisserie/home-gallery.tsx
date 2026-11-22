@@ -34,8 +34,8 @@ export function HomeGallery({ locale }: { locale: TemplateLocale }) {
               rounded="none"
               sizes={
                 index === 0
-                  ? "(min-width: 1280px) 1216px, 100vw"
-                  : "(min-width: 1280px) 400px, (min-width: 768px) 32vw, 100vw"
+                  ? "(min-width: 1280px) 1216px, (min-width: 640px) 100vw, 162vw"
+                  : "(min-width: 768px) 452px, (min-width: 640px) 93vw, 452px"
               }
               className={index === 0 ? "h-[420px]" : "h-[300px]"}
             />

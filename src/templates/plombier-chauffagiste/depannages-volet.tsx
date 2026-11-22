@@ -57,14 +57,14 @@ export function VoletSection({
             src={volet.image.src}
             alt={volet.image.alt}
             ratio="1/1"
-            sizes="(min-width: 1024px) 440px, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 1280px) 874px, (min-width: 1024px) 65vw, (min-width: 640px) 84vw, 164vw"
           />
           <TemplateMedia
             src={volet.secondImage.src}
             alt={volet.secondImage.alt}
             ratio="16/9"
             className="lg:aspect-auto lg:h-full lg:min-h-40"
-            sizes="(min-width: 1024px) 440px, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 1280px) 874px, (min-width: 1024px) 65vw, (min-width: 640px) 84vw, 164vw"
           />
         </div>
         <ul className="divide-y divide-tpl-line border-y border-tpl-line">

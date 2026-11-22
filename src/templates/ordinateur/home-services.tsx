@@ -37,7 +37,7 @@ export function HomeServices({ locale }: { locale: TemplateLocale }) {
                       src={item.image.src}
                       alt={item.image.alt}
                       ratio="1/1"
-                      sizes="80px"
+                      sizes="144px"
                       className="size-20 shrink-0"
                     />
                     <div className="min-w-0 flex-1">

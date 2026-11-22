@@ -8,7 +8,7 @@ import type {
  * Template « ménage-nettoyage » (entreprise fictive « Maison Nette »).
  *
  * Toute la copie visible vit ici : navigation, appels à l'action, textes de
- * chaque page, `alt`, métadonnées. Les vues (`src/templates/menage-nettoyage/`)
+ * chaque page, métadonnées. Les vues (`src/templates/menage-nettoyage/`)
  * n'ont aucun texte en dur.
  *
  * Version anglaise : `en`, plus bas, est une traduction typée `MenageNettoyageCopy`
@@ -18,15 +18,6 @@ import type {
  * Icônes : chaque élément de liste qui en a une porte une clé `icon`, identique
  * en français et en anglais ; la table `ICONS` de `parts.tsx` la résout.
  */
-
-const unsplash = (id: string) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=75`;
-
-/** Photos de la paire avant / après : « avant » = salon, « après » = chambre. */
-const IMG = {
-  before: unsplash("1505691938895-1758d7feb511"),
-  after: unsplash("1571508601891-ca5e7a713859"),
-} as const;
 
 const fr = {
   brand: {
@@ -115,30 +106,6 @@ const fr = {
           title: "Demande simple",
           text: "Le site ne cherche pas à vendre 20 options. Il clarifie juste ce qu’il faut pour chiffrer vite.",
         },
-      ],
-    },
-    proof: {
-      eyebrow: "Preuve visuelle",
-      title: "L’avant/après sert de preuve de méthode, pas de décoration.",
-      description:
-        "Un slider simple suffit à distinguer la template des sites service classiques et renforce la promesse de remise au propre.",
-      before: {
-        src: IMG.before,
-        label: "Avant",
-        alt: "Salon lumineux avec un canapé crème, des coussins bleus, un grand tableau abstrait et deux lampes en verre",
-      },
-      after: {
-        src: IMG.after,
-        label: "Après",
-        alt: "Chambre lumineuse avec un grand lit, des coussins verts, des plantes et un rideau blanc devant la fenêtre",
-      },
-      handle: "Comparer avant et après",
-      handleValue: "{before} % avant, {after} % après",
-      note: "Ici, la preuve n’est pas une galerie décorative. Le slider montre une remise au propre lisible, adaptée au langage très pratique de la template ménage.",
-      points: [
-        "Produits adaptés au lieu, pas promesse vague « écologique » sortie du contexte.",
-        "Brief très court en entrée, puis check-list de contrôle après premier passage.",
-        "Le ton reste concret : pièces, surfaces, fréquence, accès et créneaux.",
       ],
     },
     progress: {
@@ -363,30 +330,6 @@ const en: MenageNettoyageCopy = {
           title: "Simple request",
           text: "The site doesn’t try to sell 20 options. It only clarifies what’s needed to quote quickly.",
         },
-      ],
-    },
-    proof: {
-      eyebrow: "Visual proof",
-      title: "The before/after is proof of method, not decoration.",
-      description:
-        "A simple slider is enough to set the template apart from typical service sites and strengthens the promise of a fresh start.",
-      before: {
-        src: IMG.before,
-        label: "Before",
-        alt: "Bright living room with a cream sofa, blue cushions, a large abstract painting and two glass lamps",
-      },
-      after: {
-        src: IMG.after,
-        label: "After",
-        alt: "Bright bedroom with a large bed, green cushions, plants and a white curtain by the window",
-      },
-      handle: "Compare before and after",
-      handleValue: "{before}% before, {after}% after",
-      note: "Here, the proof is not a decorative gallery. The slider shows a clear, readable fresh start, in the very practical language of the housekeeping template.",
-      points: [
-        "Products suited to the place, not a vague “eco-friendly” claim taken out of context.",
-        "A very short brief up front, then a control checklist after the first visit.",
-        "The tone stays concrete: rooms, surfaces, frequency, access and time slots.",
       ],
     },
     progress: {

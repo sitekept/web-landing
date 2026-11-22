@@ -40,7 +40,7 @@ const IMG = {
   pipes: photo("1760571327612-8ab776dcd462"),
   castIron: photo("1599028274511-e02a767949a3"),
   finnedRadiator: photo("1669725341213-7379ff6c90d5"),
-  faucet: photo("1784790601912-b30717b805b8"),
+  faucet: photo("1521207418485-99c705420785"),
   sink: photo("1661045327753-3f2a047d00a4"),
 } as const;
 
@@ -614,7 +614,7 @@ const fr = {
       ],
       image: {
         src: IMG.faucet,
-        alt: "Robinet de cuisine dont coule un filet d’eau au-dessus d’un évier",
+        alt: "Jet d’eau qui coule d’un robinet de cuisine à col de cygne, devant un fond sombre et flou",
       },
       aside:
         "Restent à part : les pièces et appareils (robinet, ballon, pièce de brûleur, vanne de radiateur), indiqués avec leur prix sur le devis.",
@@ -1326,7 +1326,7 @@ const en: PlombierChauffagisteCopy = {
       ],
       image: {
         src: IMG.faucet,
-        alt: "Kitchen faucet with a thin stream of water above a sink",
+        alt: "Water running from a gooseneck kitchen faucet, against a dark, blurred background",
       },
       aside:
         "Kept separate: parts and appliances (faucet, tank, burner part, radiator valve), shown with their price on the quote.",

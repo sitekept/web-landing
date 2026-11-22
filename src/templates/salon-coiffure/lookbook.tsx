@@ -32,7 +32,7 @@ export function LookbookView({ locale }: { locale: TemplateLocale }) {
             alt={image.alt}
             ratio="fill"
             priority={index === 0}
-            sizes="(min-width: 1280px) 624px, (min-width: 768px) 46vw, 100vw"
+            sizes="640px"
             className={`${index % 2 === 0 ? "min-h-[320px]" : "min-h-[420px]"} ${LIFT}`}
           />
         ))}

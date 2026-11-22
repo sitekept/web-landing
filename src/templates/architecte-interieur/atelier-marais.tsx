@@ -42,7 +42,7 @@ export function AtelierMaraisView({ locale }: { locale: TemplateLocale }) {
               alt={page.result.imageBedroom.alt}
               ratio="fill"
               rounded="none"
-              sizes="(min-width: 1280px) 240px, (min-width: 640px) 40vw, 100vw"
+              sizes="(min-width: 1280px) 320px, (min-width: 640px) 50vw, 100vw"
               className="min-h-[210px]"
             />
             <TemplateMedia
@@ -50,7 +50,7 @@ export function AtelierMaraisView({ locale }: { locale: TemplateLocale }) {
               alt={page.result.imageHouse.alt}
               ratio="fill"
               rounded="none"
-              sizes="(min-width: 1280px) 240px, (min-width: 640px) 40vw, 100vw"
+              sizes="(min-width: 1280px) 320px, (min-width: 640px) 50vw, 100vw"
               className="min-h-[210px]"
             />
           </div>

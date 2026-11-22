@@ -94,7 +94,7 @@ export function HomeHero({ locale }: Props) {
                         trade={trade === "water" ? "heat" : "water"}
                         className="size-9 sm:size-11"
                       />
-                      <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase">
+                      <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase max-[359px]:tracking-normal">
                         {volet.label}
                       </p>
                     </div>

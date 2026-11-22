@@ -72,7 +72,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
               </li>
             ))}
           </ol>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
             <TemplateLink
               href={`mailto:${copy.common.email}`}
               variant="inverse"

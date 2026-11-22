@@ -48,7 +48,7 @@ export function HomeAbout({ locale }: { locale: TemplateLocale }) {
             src={page.image.src}
             alt={page.image.alt}
             ratio="1/1"
-            sizes="(min-width: 1280px) 590px, (min-width: 1024px) 45vw, 100vw"
+            sizes="(min-width: 1280px) 926px, (min-width: 1024px) 69vw, 143vw"
             className="shadow-tpl-lg"
           />
           <div className="absolute right-4 bottom-4 rounded-tpl bg-tpl-accent p-6 text-center text-tpl-accent-ink shadow-tpl-lg lg:-right-6 lg:-bottom-6">

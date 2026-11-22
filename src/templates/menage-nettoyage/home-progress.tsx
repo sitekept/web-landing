@@ -13,7 +13,6 @@ export function HomeProgress({ locale }: { locale: TemplateLocale }) {
   return (
     <TemplateSection
       density="compact"
-      tone="raised"
       eyebrow={progress.eyebrow}
       title={progress.title}
       titleScale="subtitle"
@@ -22,7 +21,7 @@ export function HomeProgress({ locale }: { locale: TemplateLocale }) {
         {progress.items.map((item, index) => (
           <li key={item}>
             <TemplatePanel
-              tone={index === 1 || index === 3 ? "inverse" : "surface"}
+              tone={index === 1 || index === 3 ? "inverse" : "raised"}
               className="h-full"
             >
               <p className="text-tpl-sm font-semibold">{item}</p>

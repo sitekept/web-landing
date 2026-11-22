@@ -45,7 +45,7 @@ export function IncludedSection({ locale }: Props) {
           src={included.image.src}
           alt={included.image.alt}
           ratio="4/5"
-          sizes="(min-width: 1024px) 380px, 100vw"
+          sizes="(min-width: 1280px) 806px, (min-width: 1024px) 60vw, (min-width: 640px) 840px, 172vw"
           className="max-w-md lg:max-w-none"
         />
         <div>

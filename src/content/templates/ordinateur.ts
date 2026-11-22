@@ -158,7 +158,7 @@ const fr = {
     badge: { value: "14", label: "Années d’expérience" },
     image: {
       src: IMG.bench,
-      alt: "Technicien réparant une carte électronique de smartphone sous une lampe",
+      alt: "Technicien réparant une carte électronique bleue sous une lampe",
     },
   },
   reviews: {
@@ -212,7 +212,7 @@ const fr = {
       },
       {
         src: IMG.bench,
-        alt: "Technicien réparant une carte électronique de smartphone sous une lampe",
+        alt: "Technicien réparant une carte électronique bleue sous une lampe",
       },
       {
         src: IMG.solder,
@@ -409,7 +409,7 @@ const en: OrdinateurCopy = {
     badge: { value: "14", label: "Years of experience" },
     image: {
       src: IMG.bench,
-      alt: "Technician repairing a smartphone circuit board under a lamp",
+      alt: "Technician repairing a blue circuit board under a lamp",
     },
   },
   reviews: {
@@ -463,7 +463,7 @@ const en: OrdinateurCopy = {
       },
       {
         src: IMG.bench,
-        alt: "Technician repairing a smartphone circuit board under a lamp",
+        alt: "Technician repairing a blue circuit board under a lamp",
       },
       {
         src: IMG.solder,

@@ -29,7 +29,7 @@ export function HomeGallery({ locale }: { locale: TemplateLocale }) {
               src={image.src}
               alt={image.alt}
               ratio="1/1"
-              sizes="(min-width: 1280px) 296px, (min-width: 768px) 25vw, 50vw"
+              sizes="(min-width: 1280px) 550px, (min-width: 768px) 41vw, 80vw"
               className="shadow-tpl-lg"
             />
           </li>

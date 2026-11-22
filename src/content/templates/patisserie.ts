@@ -150,7 +150,7 @@ const fr = {
       },
       {
         src: IMG.individuel,
-        alt: "Entremets individuel aux couches de mousse au chocolat et de crème claire, couronné de mûres, sur une petite assiette claire avec une fourchette.",
+        alt: "Entremets individuel aux couches de mousse au chocolat et de crème claire, couronné d’une mûre et de myrtilles, sur une petite assiette claire avec une fourchette.",
       },
     ],
   },
@@ -275,7 +275,7 @@ const en: PatisserieCopy = {
   signature: {
     eyebrow: "Signature",
     title: "Emblematic pieces are shown as icons of the house.",
-    text: "Where the florist template tells an editorial portfolio story and the bakery template a neighborhood shop, the pastry shop template has to express a more statuesque, almost ceremonial authority.",
+    text: "Where the florist template tells an editorial portfolio story and the bakery template a neighborhood shop, the pastry shop template has to express a more stately, almost ceremonial authority.",
     items: [
       {
         name: "Royal Opéra",
@@ -328,7 +328,7 @@ const en: PatisserieCopy = {
       },
       {
         src: IMG.individuel,
-        alt: "Individual entremets with layers of chocolate mousse and light cream, topped with blackberries, on a small pale plate with a fork.",
+        alt: "Individual entremets with layers of chocolate mousse and light cream, topped with a blackberry and blueberries, on a small pale plate with a fork.",
       },
     ],
   },
@@ -340,7 +340,7 @@ const en: PatisserieCopy = {
       {
         name: "Elise B.",
         role: "Wedding order",
-        text: "“The cake wasn’t just excellent, it set the tone for the entire reception. An almost statuesque presence.”",
+        text: "“The cake wasn’t just excellent, it set the tone for the entire reception. An almost stately presence.”",
       },
       {
         name: "V. Events",
@@ -373,7 +373,7 @@ const en: PatisserieCopy = {
     navLabel: "Navigation",
     positionLabel: "Positioning",
     positionText:
-      "A more statuesque, darker and more ceremonial architecture than the other two templates.",
+      "A more stately, darker and more ceremonial architecture than the other two templates.",
   },
   meta: {
     home: {

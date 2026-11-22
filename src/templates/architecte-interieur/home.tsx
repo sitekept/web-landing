@@ -63,7 +63,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
                 alt={hero.imageSide.alt}
                 ratio="fill"
                 rounded="none"
-                sizes="(min-width: 1280px) 190px, (min-width: 640px) 30vw, 100vw"
+                sizes="(min-width: 1280px) 456px, (min-width: 1024px) 36vw, (min-width: 640px) 45vw, 100vw"
                 className="min-h-[240px] border border-tpl-line transition duration-700 hover:-translate-y-2 motion-reduce:hover:translate-none"
               />
               <TemplatePanel tone="tint">
@@ -79,7 +79,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
               ratio="fill"
               rounded="none"
               priority
-              sizes="(min-width: 1280px) 320px, (min-width: 640px) 50vw, 100vw"
+              sizes="(min-width: 1280px) 1430px, (min-width: 1024px) 840px, (min-width: 640px) 932px, 840px"
               className="min-h-[560px] border border-tpl-line transition duration-700 hover:translate-y-2 motion-reduce:hover:translate-none"
             />
           </div>

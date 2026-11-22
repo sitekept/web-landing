@@ -48,7 +48,7 @@ export function HomePromise({ locale }: { locale: TemplateLocale }) {
             src={page.image.src}
             alt={page.image.alt}
             ratio="4/5"
-            sizes="(min-width: 1024px) 34vw, (min-width: 640px) 384px, 100vw"
+            sizes="(min-width: 1280px) 900px, (min-width: 1024px) 66vw, (min-width: 640px) 720px, 172vw"
             className="mx-auto max-w-sm lg:max-w-none"
           />
         </div>

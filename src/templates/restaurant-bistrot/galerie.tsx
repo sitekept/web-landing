@@ -27,7 +27,7 @@ export function GalerieView({ locale }: { locale: TemplateLocale }) {
             src={image.src}
             alt={image.alt}
             ratio="fill"
-            sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
+            sizes="640px"
             priority={index < 2}
             className={`motion-safe:transition motion-safe:duration-500 motion-safe:hover:scale-[1.01] ${
               index % 2 === 0 ? "min-h-[320px]" : "min-h-[420px]"

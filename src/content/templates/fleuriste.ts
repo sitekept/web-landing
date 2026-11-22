@@ -68,7 +68,7 @@ const fr = {
       "Cette page vend du sur-mesure haut de gamme. Aucun ton “commerce de quartier”, aucun bloc utilitaire en vitrine : tout est pensé pour évoquer un atelier créatif et premium.",
     vision: {
       src: IMG.vision,
-      alt: "Pivoines roses dans un vase en grès devant un mur gris patiné.",
+      alt: "Roses de jardin dans un vase en grès devant un mur gris patiné.",
     },
     main: {
       src: IMG.main,
@@ -240,7 +240,7 @@ const en: FleuristeCopy = {
       "This page sells high-end, made-to-measure work. No “neighborhood shop” tone, no utilitarian block in the window: everything is designed to evoke a creative, premium studio.",
     vision: {
       src: IMG.vision,
-      alt: "Pink peonies in a stoneware vase in front of a weathered gray wall.",
+      alt: "Pink garden roses in a stoneware vase in front of a weathered gray wall.",
     },
     main: {
       src: IMG.main,

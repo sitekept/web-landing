@@ -70,7 +70,12 @@ export type TemplateMediaProps = {
   alt: string;
   /** Ratio fixe, ou `fill` (voir plus haut : la hauteur vient du parent ou d'un `min-h`). */
   ratio: TemplateMediaRatio | "fill";
-  /** Obligatoire avec `fill` : sans lui, next/image télécharge la plus grande variante. */
+  /**
+   * Obligatoire avec `fill` : sans lui, next/image télécharge la plus grande variante.
+   * Décrit la largeur du fichier utile, pas celle de la boîte : avec `object-cover`,
+   * `max(largeur, hauteur × ratio de la photo)`. Une photo paysage dans une boîte
+   * haute (`ratio="fill"`, `3/4`…) demande donc bien plus que la boîte, sinon elle est floue.
+   */
   sizes: string;
   /** À réserver à l'image visible sans défilement (LCP). */
   priority?: boolean;
@@ -135,7 +140,7 @@ export type TemplateHeroMediaProps = {
 };
 
 /**
- * Bloc pleine largeur : photo de fond (`next/image` `fill`, `sizes="100vw"`),
+ * Bloc pleine largeur : photo de fond (`next/image` `fill`, `sizes` élargi sous 1024 px),
  * voile issu des tokens `inverse` et contenu par-dessus.
  *
  * Le voile (`--tpl-inverse` à 78 % en haut, 88 % en bas) et `data-tone="inverse"`
@@ -174,7 +179,9 @@ export function TemplateHeroMedia({
         src={src}
         alt={alt}
         fill
-        sizes="100vw"
+        // Boîte plus haute que large sur mobile : `object-cover` agrandit une photo
+        // paysage, il faut donc un fichier plus large que l'écran.
+        sizes="(min-width: 1024px) 100vw, (min-width: 640px) 150vw, 200vw"
         priority={priority}
         className="object-cover"
       />

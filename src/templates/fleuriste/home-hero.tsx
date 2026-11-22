@@ -80,14 +80,14 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
             src={page.vision.src}
             alt={page.vision.alt}
             sizes="(min-width: 1024px) 26vw, 100vw"
-            className="min-h-[260px]"
+            className="min-h-[260px] sm:max-lg:min-h-[400px] [&_img]:object-[50%_72%]"
           />
         </div>
 
         <FillPhoto
           src={page.main.src}
           alt={page.main.alt}
-          sizes="(min-width: 1024px) 40vw, 100vw"
+          sizes="(min-width: 1280px) 524px, (min-width: 1024px) 47vw, (min-width: 640px) 96vw, 134vw"
           className="min-h-[640px] rounded-[2.25rem] shadow-tpl-lg"
           priority
           veil
@@ -97,7 +97,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
           <FillPhoto
             src={page.side.src}
             alt={page.side.alt}
-            sizes="(min-width: 1024px) 26vw, 100vw"
+            sizes="(min-width: 1280px) 464px, (min-width: 1024px) 41vw, 100vw"
             className="min-h-[240px]"
           />
           <TemplatePanel tone="inverse" className="p-6 shadow-tpl-lg">

@@ -40,7 +40,7 @@ const unsplash = (id: string) =>
 const IMG = {
   hero: unsplash("1600607687920-4e2a09cf159d"),
   villa: unsplash("1523217582562-09d0def993a6"),
-  timber: unsplash("1706808849777-96e0d7be3bb7"),
+  timber: unsplash("1780232581508-55b904f17ffc"),
   family: unsplash("1560185127-6ed189bf02f4"),
   loft: unsplash("1560448204-e02f11c3d0e2"),
   studio: unsplash("1513694203232-719a280e022f"),
@@ -489,11 +489,11 @@ const fr = {
         {
           image: {
             src: IMG.timber,
-            alt: "Une maison contemporaine à façade de lattes de bois et de pierre, avec une entrée vitrée et une pelouse.",
+            alt: "Une maison contemporaine bardée de bois, au toit à deux pentes, sur une pelouse bordée de grands arbres.",
           },
           kind: "Maison",
           status: "Visites en cours",
-          title: "Maison de bois et de verre",
+          title: "Maison de bois sous les arbres",
           place: "Le Coteau",
           specs: ["142 m²", "5 pièces", "3 chambres"],
           price: "512 000 €",
@@ -755,7 +755,7 @@ const fr = {
     list: {
       eyebrow: "Les agents",
       title: "Qui s’occupe de quoi.",
-      sectorLabel: "Quartiers",
+      sectorLabel: "Secteur",
       items: [
         {
           name: "Élise",
@@ -1259,7 +1259,7 @@ const en: AgenceImmobiliereCopy = {
     bien: {
       title: "Lake view apartment - Your business",
       description:
-        "An 883 sq ft apartment with a dual-aspect living room and a terrace, a 6-minute walk from the lake: features, photos, price and showing request.",
+        "An 883 sq ft apartment with a dual-exposure living room and a terrace, a 6-minute walk from the lake: features, photos, price and showing request.",
     },
     services: {
       title: "Services - Your business",
@@ -1420,7 +1420,7 @@ const en: AgenceImmobiliereCopy = {
     featured: {
       eyebrow: "Featured property",
       title: "Lake view apartment, The Riverside.",
-      text: "A dual-aspect living room, a terrace and a restrained renovation, a 6-minute walk from the lake. Storage room and parking included.",
+      text: "A dual-exposure living room, a terrace and a restrained renovation, a 6-minute walk from the lake. Storage room and parking included.",
       facts: ["883 sq ft", "3 rooms", "2 bedrooms", "€395,000"],
       image: {
         src: IMG.lakeTerrace,
@@ -1562,7 +1562,7 @@ const en: AgenceImmobiliereCopy = {
           specs: ["883 sq ft", "3 rooms", "2 bedrooms"],
           price: "€395,000",
           opinion:
-            "A dual-aspect living room and a terrace, a 6-minute walk from the lake. Storage room and parking included: the listing covers the rest.",
+            "A dual-exposure living room and a terrace, a 6-minute walk from the lake. Storage room and parking included: the listing covers the rest.",
           target: "bien",
           cta: "View the listing",
         },
@@ -1617,11 +1617,11 @@ const en: AgenceImmobiliereCopy = {
         {
           image: {
             src: IMG.timber,
-            alt: "A contemporary house with a facade of wooden slats and stone, a glass entrance and a lawn.",
+            alt: "A contemporary wood-clad house with a pitched roof, on a lawn lined with tall trees.",
           },
           kind: "House",
           status: "Showings underway",
-          title: "Wood and glass house",
+          title: "Wood house under the trees",
           place: "The Hillside",
           specs: ["1,528 sq ft", "5 rooms", "3 bedrooms"],
           price: "€512,000",
@@ -1688,7 +1688,7 @@ const en: AgenceImmobiliereCopy = {
       eyebrow: "Property listing · The Riverside",
       title: "Lake view apartment",
       description:
-        "A dual-aspect living room, a terrace and a restrained renovation, a 6-minute walk from the lake.",
+        "A dual-exposure living room, a terrace and a restrained renovation, a 6-minute walk from the lake.",
       status: "New",
       price: "€395,000",
       priceNote:
@@ -1729,7 +1729,7 @@ const en: AgenceImmobiliereCopy = {
       items: [
         { label: "Living area", value: "883 sq ft" },
         { label: "Rooms", value: "3 rooms, 2 bedrooms" },
-        { label: "Living room", value: "Dual aspect, open kitchen" },
+        { label: "Living room", value: "Dual exposure, open kitchen" },
         { label: "Outdoor space", value: "Terrace" },
         { label: "Renovation", value: "2023, restrained" },
         { label: "Extras", value: "Storage room and parking included" },
@@ -1744,7 +1744,7 @@ const en: AgenceImmobiliereCopy = {
       pros: {
         title: "What appeals",
         items: [
-          "A dual-aspect living room, bright all day",
+          "A dual-exposure living room, bright all day",
           "A terrace with a lake view",
           "Storage room and parking included, rare in the neighborhood",
         ],
@@ -1884,7 +1884,7 @@ const en: AgenceImmobiliereCopy = {
     list: {
       eyebrow: "The agents",
       title: "Who takes care of what.",
-      sectorLabel: "Neighborhoods",
+      sectorLabel: "Area",
       items: [
         {
           name: "Élise",
