@@ -22,7 +22,7 @@ export function HomeApproach({ locale }: { locale: TemplateLocale }) {
           src={approach.image.src}
           alt={approach.image.alt}
           ratio="4/5"
-          sizes="(min-width: 1280px) 520px, (min-width: 1024px) 40vw, 90vw"
+          sizes="(min-width: 1072px) 512px, 384px"
         />
         <div className="lg:col-span-6 lg:col-start-7">
           <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">

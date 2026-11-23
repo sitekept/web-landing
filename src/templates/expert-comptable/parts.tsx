@@ -115,7 +115,7 @@ export function PageHero({
             src={image.src}
             alt={image.alt}
             ratio="3/2"
-            sizes="(min-width: 1280px) 520px, (min-width: 1024px) 42vw, 100vw"
+            sizes="(min-width: 1024px) 512px, calc(88vw - 41px)"
             priority
           />
         ) : null}

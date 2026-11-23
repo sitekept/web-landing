@@ -83,7 +83,7 @@ export function ApproachSection({ locale }: { locale: TemplateLocale }) {
           src={approach.image.src}
           alt={approach.image.alt}
           ratio="4/3"
-          sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 100vw"
+          sizes="(min-width: 1024px) calc(43vw - 11px), calc(96vw - 22px)"
           className="border border-tpl-line"
         />
         <TemplatePanel>

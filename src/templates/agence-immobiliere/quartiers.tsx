@@ -46,7 +46,7 @@ export function QuartiersView({ locale }: { locale: TemplateLocale }) {
                 alt={item.image.alt}
                 ratio="16/9"
                 rounded="none"
-                sizes="(min-width: 1280px) 600px, (min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 1408px) 512px, (min-width: 768px) calc(41.5vw - 15px), calc(84vw - 13px)"
               />
               <div className="flex flex-1 flex-col p-6 sm:p-7">
                 <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-accent uppercase">

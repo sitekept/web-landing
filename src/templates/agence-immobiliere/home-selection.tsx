@@ -23,7 +23,7 @@ export function HomeSelection({ locale }: { locale: TemplateLocale }) {
       <div className="mt-12">
         <HoverExpandGallery
           label={page.label}
-          sizes="(min-width: 1344px) 910px, (min-width: 1024px) calc(90vw - 300px), (min-width: 640px) calc(90vw - 43px), max(567px, calc(90vw - 29px))"
+          sizes="(min-width: 992px) 828px, 750px"
           width="fill"
           height="30rem"
           items={page.items}

@@ -189,7 +189,7 @@ export function WorksPreview({ locale }: Props) {
               src={item.image.src}
               alt={item.image.alt}
               ratio="4/3"
-              sizes="(min-width: 768px) 33vw, 100vw"
+              sizes="(min-width: 1376px) 512px, (min-width: 768px) calc(33.5vw - 23px), calc(104.5vw - 34px)"
             />
             <h3 className="mt-4 text-tpl-lg">{item.title}</h3>
             <p className="mt-1 text-tpl-sm text-tpl-ink-muted">{item.meta}</p>

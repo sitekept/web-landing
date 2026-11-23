@@ -80,7 +80,7 @@ export function TerraceSection({ locale }: Props) {
           src={page.image.src}
           alt={page.image.alt}
           ratio="4/3"
-          sizes="(min-width: 1280px) 720px, (min-width: 1024px) 55vw, 100vw"
+          sizes="(min-width: 1024px) 640px, calc(85vw - 16px)"
           className="lg:aspect-[5/4]"
         />
       </div>

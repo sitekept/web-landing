@@ -69,7 +69,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
               src={page.image.src}
               alt={page.image.alt}
               ratio="4/5"
-              sizes="(min-width: 1280px) 520px, (min-width: 1024px) 42vw, 100vw"
+              sizes="(min-width: 1024px) 512px, calc(85vw - 16px)"
               priority
             />
             <TemplatePanel className="absolute bottom-0 left-4 w-64 shadow-tpl-lg lg:bottom-12 lg:-left-12">

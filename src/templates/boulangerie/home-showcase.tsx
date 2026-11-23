@@ -54,7 +54,7 @@ export function HomeShowcase({ locale }: { locale: TemplateLocale }) {
                 alt={item.image.alt}
                 ratio="fill"
                 rounded="none"
-                sizes="(min-width: 1024px) 340px, (min-width: 640px) 53vw, 100vw"
+                sizes="(min-width: 640px) 384px, (min-width: 528px) 512px, 384px"
                 className="h-56"
               />
               <div className="p-5">

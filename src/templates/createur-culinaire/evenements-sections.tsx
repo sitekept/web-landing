@@ -88,7 +88,7 @@ export function EventWorkshops({ locale }: { locale: TemplateLocale }) {
           alt={page.image.alt}
           ratio="4/5"
           rounded="none"
-          sizes="(min-width: 1280px) 480px, (min-width: 1024px) 38vw, 100vw"
+          sizes="(min-width: 1024px) 750px, calc(155.5vw - 10px)"
         />
         <ul className="border-b border-tpl-ink">
           {page.items.map((item) => (

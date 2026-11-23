@@ -98,7 +98,7 @@ export function StepsSection({ locale }: Props) {
             src={steps.image.src}
             alt={steps.image.alt}
             ratio="4/5"
-            sizes="(min-width: 1024px) 720px, 100vw"
+            sizes="640px"
             className="mt-8 hidden max-w-sm lg:block"
           />
         </div>

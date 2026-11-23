@@ -28,7 +28,7 @@ export function GiftSection({ locale }: { locale: TemplateLocale }) {
             src={gift.image.src}
             alt={gift.image.alt}
             ratio="4/3"
-            sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 100vw"
+            sizes="(min-width: 1408px) 640px, (min-width: 1024px) calc(45.5vw - 37px), calc(96vw - 19px)"
           />
           <div className="absolute right-4 bottom-0 left-4 rounded-tpl border border-tpl-accent/60 bg-tpl-inverse-ink p-5 text-tpl-inverse shadow-tpl-lg sm:right-auto sm:left-8 sm:w-80 sm:p-6">
             <p className="flex items-center gap-2 text-tpl-xs font-semibold tracking-tpl-eyebrow uppercase">

@@ -32,7 +32,7 @@ export function HomeDomains({ locale }: { locale: TemplateLocale }) {
     >
       <HoverExpandGallery
         label={domains.label}
-        sizes="(min-width: 1024px) 1100px, 100vw"
+        sizes="(min-width: 992px) 828px, 750px"
         height="34rem"
         width="fill"
         railWidth={72}

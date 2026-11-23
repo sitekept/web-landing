@@ -85,7 +85,7 @@ export function ContactView({ locale }: { locale: TemplateLocale }) {
               src={page.details.image.src}
               alt={page.details.image.alt}
               ratio="3/2"
-              sizes="(min-width: 1280px) 520px, (min-width: 1024px) 40vw, 100vw"
+              sizes="(min-width: 1392px) 512px, (min-width: 1024px) calc(35.5vw - 38px), calc(88vw - 41px)"
             />
             <TemplatePanel tone="surface">
               <h2 className="font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight)">

@@ -26,7 +26,7 @@ export function HomeRitual({ locale }: { locale: TemplateLocale }) {
             src={page.image.src}
             alt={page.image.alt}
             ratio="4/5"
-            sizes="(min-width: 1280px) 480px, (min-width: 1024px) 40vw, 100vw"
+            sizes="(min-width: 1024px) 750px, calc(155.5vw - 30px)"
             className="relative"
           />
         </div>

@@ -154,7 +154,7 @@ export function AppointmentSection({ locale }: { locale: TemplateLocale }) {
             src={page.aside.src}
             alt={page.aside.alt}
             ratio="4/3"
-            sizes="(min-width: 1024px) 40vw, 100vw"
+            sizes="(min-width: 1024px) 512px, calc(96vw - 19px)"
             rounded="none"
           />
         </div>

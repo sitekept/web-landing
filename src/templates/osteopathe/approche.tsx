@@ -56,7 +56,7 @@ export function ApprocheView({ locale }: { locale: TemplateLocale }) {
       >
         <HoverExpandGallery
           label={page.cabinet.label}
-          sizes="(min-width: 1024px) 1100px, 100vw"
+          sizes="(min-width: 1312px) 1080px, 828px"
           width="fill"
           items={page.cabinet.items}
           height="32rem"

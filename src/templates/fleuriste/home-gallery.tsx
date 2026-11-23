@@ -23,12 +23,12 @@ const SPANS = [
 ] as const;
 
 const SIZES = [
-  "(min-width: 1280px) 700px, (min-width: 1024px) 58vw, (min-width: 768px) 50vw, 100vw",
-  "(min-width: 1280px) 500px, (min-width: 1024px) 42vw, (min-width: 768px) 50vw, 100vw",
-  "(min-width: 1280px) 500px, (min-width: 1024px) 42vw, (min-width: 768px) 50vw, 100vw",
-  "(min-width: 1280px) 400px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw",
-  "(min-width: 1280px) 400px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw",
-  "(min-width: 1280px) 400px, (min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw",
+  "(min-width: 1024px) 640px, (min-width: 768px) 384px, calc(79vw + 22px)",
+  "(min-width: 1248px) 512px, (min-width: 768px) 384px, (min-width: 704px) 640px, 512px",
+  "(min-width: 1248px) 512px, (min-width: 768px) 384px, (min-width: 704px) 640px, 512px",
+  "(min-width: 768px) 384px, calc(88vw - 28px)",
+  "(min-width: 768px) 384px, calc(88vw - 28px)",
+  "(min-width: 768px) 384px, calc(88vw - 28px)",
 ] as const;
 
 /** Galerie : six photos en mosaïque libre, fond blanc. */

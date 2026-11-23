@@ -30,7 +30,7 @@ export function InfosView({ locale }: { locale: TemplateLocale }) {
             src={page.hero.image.src}
             alt={page.hero.image.alt}
             ratio="3/2"
-            sizes="(min-width: 1280px) 500px, (min-width: 1024px) 40vw, 100vw"
+            sizes="(min-width: 1024px) 512px, calc(85vw - 17px)"
             priority
             className="border border-tpl-ink"
           />

@@ -22,7 +22,7 @@ export function HomeHandover({ locale }: { locale: TemplateLocale }) {
           src={section.image.src}
           alt={section.image.alt}
           ratio="4/5"
-          sizes="(min-width: 1280px) 440px, (min-width: 1024px) 34vw, 100vw"
+          sizes="(min-width: 1024px) 384px, calc(85vw - 16px)"
         />
         <div>
           <ColumnLabel>{section.eyebrow}</ColumnLabel>

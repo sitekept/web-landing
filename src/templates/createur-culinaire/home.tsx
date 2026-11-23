@@ -64,7 +64,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
               ratio="4/5"
               rounded="none"
               priority
-              sizes="(min-width: 1280px) 520px, (min-width: 1024px) 40vw, 100vw"
+              sizes="(min-width: 1408px) 512px, (min-width: 1024px) calc(34.5vw - 19px), calc(85vw - 16px)"
             />
             <figcaption className="mt-3 font-tpl-display text-tpl-base text-tpl-ink-muted italic">
               {page.caption}

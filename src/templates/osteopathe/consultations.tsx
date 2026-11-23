@@ -29,7 +29,7 @@ export function ConsultationsView({ locale }: { locale: TemplateLocale }) {
             src={page.hero.image.src}
             alt={page.hero.image.alt}
             ratio="3/2"
-            sizes="(min-width: 1024px) 40vw, 100vw"
+            sizes="(min-width: 1024px) 512px, calc(85vw - 15px)"
             priority
           />
         </div>

@@ -51,7 +51,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
               alt={page.image.alt}
               ratio="fill"
               rounded="none"
-              sizes="(min-width: 1280px) 640px, (min-width: 1024px) 52vw, 100vw"
+              sizes="(min-width: 1024px) 640px, (min-width: 560px) calc(85.5vw - 50px), 384px"
               className="absolute inset-0 min-h-[520px]"
               priority
             />

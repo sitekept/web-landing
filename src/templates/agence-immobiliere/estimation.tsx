@@ -106,7 +106,7 @@ export function EstimationView({ locale }: { locale: TemplateLocale }) {
               src={page.hero.image.src}
               alt={page.hero.image.alt}
               ratio="3/2"
-              sizes="(min-width: 1024px) 45vw, 100vw"
+              sizes="(min-width: 1024px) 512px, calc(88.5vw - 43px)"
               className="mt-10"
             />
           </div>

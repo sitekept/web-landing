@@ -89,7 +89,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
               alt={page.image.alt}
               ratio="fill"
               rounded="none"
-              sizes="(min-width: 1280px) 980px, (min-width: 1024px) 1265px, (min-width: 768px) 106vw, 812px"
+              sizes="(min-width: 1024px) 1080px, 828px"
               className="absolute inset-0 min-h-[540px]"
               priority
             />

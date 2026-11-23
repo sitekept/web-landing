@@ -20,6 +20,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
       alt={hero.image.alt}
       height="auto"
       priority
+      sizes="(min-width: 1504px) calc(88vw), (min-width: 1360px) 1200px, 1080px"
       className="border-b border-tpl-line lg:min-h-[620px]"
     >
       <div className="w-full px-4 py-20 sm:px-6 lg:px-8 lg:py-24">

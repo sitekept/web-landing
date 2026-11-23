@@ -60,7 +60,7 @@ function Hero({ locale }: { locale: TemplateLocale }) {
             src={page.image.src}
             alt={page.image.alt}
             ratio="4/5"
-            sizes="(min-width: 1024px) 40vw, (min-width: 448px) 448px, 100vw"
+            sizes="(min-width: 640px) 828px, calc(95.5vw - 18px)"
             priority
             className="aspect-[4/3] shadow-tpl-lg sm:aspect-[4/5]"
           />

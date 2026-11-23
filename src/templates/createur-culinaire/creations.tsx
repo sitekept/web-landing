@@ -29,7 +29,7 @@ export function CreationsView({ locale }: { locale: TemplateLocale }) {
       <TemplateSection density="compact" className="pt-0">
         <HoverExpandGallery
           label={page.gallery.label}
-          sizes="(min-width: 1024px) 1100px, 100vw"
+          sizes="(min-width: 1024px) 1080px, 828px"
           height="40rem"
           width="fill"
           railWidth={72}

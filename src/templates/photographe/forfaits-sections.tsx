@@ -19,7 +19,7 @@ export function ForfaitsIncluded({ locale }: { locale: TemplateLocale }) {
           src={included.image.src}
           alt={included.image.alt}
           ratio="4/5"
-          sizes="(min-width: 1280px) 420px, (min-width: 1024px) 32vw, 90vw"
+          sizes="(min-width: 1024px) calc(27.5vw - 26px), (min-width: 448px) 384px, calc(80.5vw - 2px)"
         />
         <div className="lg:col-span-7 lg:col-start-6">
           <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">

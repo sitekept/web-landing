@@ -41,7 +41,7 @@ export function ReparationsView({ locale }: { locale: TemplateLocale }) {
             src={page.hero.image.src}
             alt={page.hero.image.alt}
             ratio="4/3"
-            sizes="(min-width: 1024px) 40vw, 100vw"
+            sizes="(min-width: 1024px) 512px, calc(96vw - 19px)"
             priority
             className="shadow-tpl-lg"
           />

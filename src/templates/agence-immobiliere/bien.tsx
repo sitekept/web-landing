@@ -70,7 +70,7 @@ export function BienView({ locale }: { locale: TemplateLocale }) {
               src={main.src}
               alt={main.alt}
               ratio="4/3"
-              sizes="(min-width: 1264px) 1200px, (min-width: 1024px) calc(100vw - 64px), (min-width: 768px) calc(90vw - 43px), calc(100vw - 32px)"
+              sizes="calc(83vw + 1px)"
               priority
               className="md:aspect-video"
             />
@@ -81,7 +81,7 @@ export function BienView({ locale }: { locale: TemplateLocale }) {
                 src={image.src}
                 alt={image.alt}
                 ratio="4/3"
-                sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, 100vw"
+                sizes="(min-width: 1408px) 384px, (min-width: 768px) calc(29.5vw - 9px), calc(89vw - 11px)"
               />
             </li>
           ))}

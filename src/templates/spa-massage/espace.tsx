@@ -35,7 +35,7 @@ export function EspaceView({ locale }: { locale: TemplateLocale }) {
           items={page.gallery.items}
           height="34rem"
           width="fill"
-          sizes="(min-width: 1024px) 1100px, 100vw"
+          sizes="(min-width: 992px) 828px, 750px"
           priority
         />
       </TemplateSection>

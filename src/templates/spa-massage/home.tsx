@@ -31,7 +31,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
           src={hero.image.src}
           alt={hero.image.alt}
           ratio="16/9"
-          sizes="100vw"
+          sizes="(min-width: 1360px) calc(88vw), 1080px"
           rounded="none"
           priority
           className="absolute inset-0 -z-20 h-full"

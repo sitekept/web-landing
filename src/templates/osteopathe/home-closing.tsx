@@ -42,7 +42,7 @@ export function HomePause({ locale }: { locale: TemplateLocale }) {
           src={page.image.src}
           alt={page.image.alt}
           ratio="4/5"
-          sizes="(min-width: 1024px) 42vw, 100vw"
+          sizes="(min-width: 1024px) 828px, calc(157.5vw - 19px)"
         />
       </div>
     </TemplateSection>

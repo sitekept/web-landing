@@ -35,6 +35,18 @@ export function HomeManifesto({ locale }: { locale: TemplateLocale }) {
 /** Décalage vertical de chaque carte : les trois univers descendent en escalier. */
 const STAGGER = ["", "md:mt-14", "md:mt-28"] as const;
 
+/**
+ * `sizes` de chaque carte. La boîte est en 3/4 et les trois photos n'ont pas le
+ * même ratio (paysage, portrait, paysage) : `object-cover` dimensionne le
+ * fichier sur la hauteur de la boîte pour les paysages, d'où des valeurs
+ * différentes par carte.
+ */
+const UNIVERSE_SIZES = [
+  "(min-width: 1024px) 750px, (min-width: 768px) calc(66.5vw - 73px), calc(194.5vw - 40px)",
+  "(min-width: 1136px) 384px, (min-width: 768px) 256px, calc(84vw - 11px)",
+  "(min-width: 1120px) 640px, (min-width: 768px) 512px, calc(168.5vw - 22px)",
+] as const;
+
 /** Trois univers en cartes image, en escalier à partir de `md`. */
 export function HomeUniverses({ locale }: { locale: TemplateLocale }) {
   const page = getTemplateCopy(createurCulinaire, locale).home.universes;
@@ -52,7 +64,7 @@ export function HomeUniverses({ locale }: { locale: TemplateLocale }) {
                 alt={item.image.alt}
                 ratio="3/4"
                 rounded="none"
-                sizes="(min-width: 1280px) 400px, (min-width: 768px) 30vw, 100vw"
+                sizes={UNIVERSE_SIZES[index]}
               />
               <div className="mt-6 flex items-baseline gap-4">
                 <span
@@ -123,7 +135,7 @@ export function HomePause({ locale }: { locale: TemplateLocale }) {
         alt={page.image.alt}
         ratio="4/3"
         rounded="none"
-        sizes="100vw"
+        sizes="(min-width: 1024px) calc(88vw), calc(99vw)"
         className="lg:aspect-[21/9]"
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

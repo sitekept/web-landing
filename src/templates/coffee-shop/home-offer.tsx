@@ -13,6 +13,16 @@ import { Pill, PriceRow } from "./parts";
 
 type Props = { locale: TemplateLocale };
 
+/**
+ * `sizes` de chaque carte : la boîte est en 4/3, la première photo est plus
+ * large (paysage 16/9) et `object-cover` la dimensionne sur la hauteur.
+ */
+const PICK_SIZES = [
+  "(min-width: 1024px) 512px, calc(114vw - 25px)",
+  "(min-width: 1024px) 384px, calc(85vw - 18px)",
+  "(min-width: 1024px) 384px, calc(85vw - 18px)",
+] as const;
+
 /** Trois incontournables : une boisson, un sucré, un salé. */
 export function PicksSection({ locale }: Props) {
   const page = getTemplateCopy(coffeeShop, locale).home.picks;
@@ -25,7 +35,7 @@ export function PicksSection({ locale }: Props) {
       description={page.description}
     >
       <ul className="grid gap-8 lg:grid-cols-3 lg:gap-6">
-        {page.items.map((item) => (
+        {page.items.map((item, index) => (
           <li key={item.title} className="flex lg:[&:nth-child(2)]:mt-10">
             <article className="flex w-full flex-col overflow-hidden rounded-tpl border border-tpl-ink bg-tpl-surface shadow-tpl-lg">
               <TemplateMedia
@@ -33,7 +43,7 @@ export function PicksSection({ locale }: Props) {
                 alt={item.image.alt}
                 ratio="4/3"
                 rounded="none"
-                sizes="(min-width: 1280px) 400px, (min-width: 1024px) 30vw, 100vw"
+                sizes={PICK_SIZES[index] ?? PICK_SIZES[1]}
               />
               <div className="flex flex-1 flex-col gap-3 p-5">
                 <div className="flex items-center justify-between gap-3">

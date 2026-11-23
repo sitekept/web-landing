@@ -30,7 +30,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
           alt={hero.image.alt}
           caption={hero.caption}
           ratio="3/2"
-          sizes="(min-width: 1280px) 840px, (min-width: 1024px) 64vw, 100vw"
+          sizes="(min-width: 1024px) 750px, calc(88vw - 41px)"
           priority
         />
         <div className="flex flex-col gap-8 lg:col-span-4">

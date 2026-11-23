@@ -30,7 +30,7 @@ export function ServiceBlocks({ locale }: { locale: TemplateLocale }) {
               src={block.image.src}
               alt={block.image.alt}
               ratio="4/3"
-              sizes="(min-width: 1024px) 560px, 100vw"
+              sizes="(min-width: 1392px) 640px, (min-width: 1024px) calc(45vw - 41px), calc(93.5vw - 46px)"
               rounded="none"
               className={index % 2 === 0 ? undefined : "lg:order-2"}
             />

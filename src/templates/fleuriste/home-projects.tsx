@@ -42,7 +42,7 @@ export function HomeProjects({ locale }: { locale: TemplateLocale }) {
               <FillPhoto
                 src={story.image.src}
                 alt={story.image.alt}
-                sizes="(min-width: 1280px) 630px, (min-width: 1024px) 59vw, (min-width: 640px) 92vw, 160vw"
+                sizes="(min-width: 1024px) 512px, (min-width: 896px) 750px, 640px"
                 className="min-h-[380px]"
               />
               <div className="flex flex-col justify-center p-2 sm:p-6">

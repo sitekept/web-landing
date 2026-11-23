@@ -91,7 +91,7 @@ export function RendezVousView({ locale }: { locale: TemplateLocale }) {
             src={page.hero.image.src}
             alt={page.hero.image.alt}
             ratio="3/2"
-            sizes="(min-width: 1024px) 40vw, 100vw"
+            sizes="(min-width: 1024px) 640px, calc(107.5vw - 21px)"
           />
           <TemplatePanel>
             <h2 className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">

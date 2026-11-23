@@ -45,7 +45,7 @@ export function IncludedSection({ locale }: Props) {
           src={included.image.src}
           alt={included.image.alt}
           ratio="4/5"
-          sizes="(min-width: 1280px) 806px, (min-width: 1024px) 60vw, (min-width: 640px) 840px, 172vw"
+          sizes="(min-width: 512px) 750px, calc(159vw - 30px)"
           className="max-w-md lg:max-w-none"
         />
         <div>
@@ -150,7 +150,7 @@ export function QuoteSection({ locale }: Props) {
           src={quote.image.src}
           alt={quote.image.alt}
           ratio="4/3"
-          sizes="(min-width: 1024px) 440px, 100vw"
+          sizes="(min-width: 1024px) 512px, calc(96vw - 20px)"
         />
       </div>
     </TemplateSection>

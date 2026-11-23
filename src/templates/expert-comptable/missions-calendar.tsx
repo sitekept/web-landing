@@ -36,7 +36,7 @@ export function MissionsCalendar({ locale }: { locale: TemplateLocale }) {
           src={calendar.image.src}
           alt={calendar.image.alt}
           ratio="3/2"
-          sizes="(min-width: 1024px) 30vw, 100vw"
+          sizes="(min-width: 1024px) 384px, calc(85vw - 16px)"
         />
       </div>
 

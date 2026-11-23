@@ -39,7 +39,7 @@ export function HomeCollections({ locale }: { locale: TemplateLocale }) {
                   alt={item.image.alt}
                   ratio="fill"
                   rounded="none"
-                  sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 100vw"
+                  sizes="(min-width: 1024px) 512px, calc(72.5vw - 4px)"
                   className="absolute inset-0 min-h-[380px]"
                 />
               </div>

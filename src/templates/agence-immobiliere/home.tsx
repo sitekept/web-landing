@@ -59,7 +59,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
           src={page.image.src}
           alt={page.image.alt}
           ratio="4/5"
-          sizes="(min-width: 1280px) 1280px, (min-width: 768px) 95vw, 173vw"
+          sizes="(min-width: 768px) calc(83vw + 1px), calc(158vw - 23px)"
           priority
           className="mt-12 md:aspect-video"
         />

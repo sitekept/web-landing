@@ -67,7 +67,7 @@ export function HomeView({ locale }: { locale: TemplateLocale }) {
               src={page.image.src}
               alt={page.image.alt}
               ratio="4/5"
-              sizes="(min-width: 1280px) 480px, (min-width: 1024px) 40vw, 100vw"
+              sizes="(min-width: 1024px) 828px, calc(156vw - 14px)"
               priority
               className="border border-tpl-ink"
             />

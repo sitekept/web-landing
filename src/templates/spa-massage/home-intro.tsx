@@ -60,7 +60,7 @@ export function HomeFeatured({ locale }: { locale: TemplateLocale }) {
                 src={item.image.src}
                 alt={item.image.alt}
                 ratio="4/5"
-                sizes="(min-width: 1280px) 380px, (min-width: 768px) 30vw, 100vw"
+                sizes="(min-width: 1184px) 640px, (min-width: 768px) 512px, calc(158.5vw - 23px)"
               />
               <h3 className="mt-6 font-tpl-display text-tpl-xl font-(weight:--tpl-display-weight) text-balance">
                 {item.name}

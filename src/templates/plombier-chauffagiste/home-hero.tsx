@@ -85,7 +85,7 @@ export function HomeHero({ locale }: Props) {
                     ratio="4/5"
                     rounded="none"
                     priority={index === 0}
-                    sizes="(min-width: 1024px) 320px, 45vw"
+                    sizes="(min-width: 1024px) 256px, calc(44vw - 32px)"
                   />
                   <div className={`p-4 sm:p-5 ${TILE_BODY[trade]}`}>
                     <div className="flex items-center gap-2 sm:gap-3">

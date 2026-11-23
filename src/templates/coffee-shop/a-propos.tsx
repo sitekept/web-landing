@@ -29,7 +29,7 @@ export function AProposView({ locale }: { locale: TemplateLocale }) {
             src={page.hero.image.src}
             alt={page.hero.image.alt}
             ratio="4/5"
-            sizes="(min-width: 1280px) 460px, (min-width: 1024px) 38vw, 100vw"
+            sizes="(min-width: 1024px) 828px, calc(156vw - 15px)"
             priority
             className="border border-tpl-ink lg:-rotate-2"
           />
@@ -83,7 +83,7 @@ export function AProposView({ locale }: { locale: TemplateLocale }) {
       >
         <HoverExpandGallery
           label={page.gallery.label}
-          sizes="(min-width: 1024px) 1100px, 100vw"
+          sizes="(min-width: 992px) 828px, 750px"
           width="fill"
           height="34rem"
           items={page.gallery.items}

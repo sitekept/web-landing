@@ -32,7 +32,7 @@ export function ServicesGallery({ locale }: { locale: TemplateLocale }) {
         width="fill"
         height="32rem"
         railWidth={72}
-        sizes="(min-width: 1024px) 1000px, 100vw"
+        sizes="(min-width: 992px) 828px, 750px"
         items={page.items.map((item) => ({
           title: item.title,
           meta: item.meta,

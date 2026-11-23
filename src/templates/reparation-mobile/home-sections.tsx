@@ -188,7 +188,7 @@ export function HomeService({ locale }: Props) {
           src={page.image.src}
           alt={page.image.alt}
           ratio="4/3"
-          sizes="(min-width: 1024px) 560px, 100vw"
+          sizes="(min-width: 1024px) 640px, calc(95.5vw - 18px)"
           className="shadow-tpl-lg"
         />
       </div>

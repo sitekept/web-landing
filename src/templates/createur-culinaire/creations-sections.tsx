@@ -19,6 +19,21 @@ const GRID_RATIOS: readonly TemplateMediaRatio[] = [
   "4/5",
 ];
 
+/**
+ * `sizes` de chaque image, dans l'ordre de `GRID_RATIOS`. Les photos n'ont pas
+ * toutes le ratio de leur boîte : `object-cover` dimensionne le fichier sur la
+ * hauteur de la boîte pour les photos paysage des boîtes 1/1 et 4/3, d'où
+ * deux valeurs plus larges que les autres.
+ */
+const GRID_SIZES = [
+  "(min-width: 1024px) calc(27.5vw - 26px), (min-width: 640px) calc(44vw - 35px), calc(88vw - 28px)",
+  "(min-width: 1024px) 512px, (min-width: 640px) calc(66vw - 52px), calc(132.5vw - 43px)",
+  "(min-width: 1024px) calc(27.5vw - 26px), (min-width: 640px) calc(44vw - 35px), calc(88vw - 28px)",
+  "(min-width: 1024px) calc(27.5vw - 26px), (min-width: 640px) calc(44vw - 35px), calc(88vw - 28px)",
+  "(min-width: 1024px) 384px, (min-width: 640px) calc(49.5vw - 39px), calc(99vw - 31px)",
+  "(min-width: 1024px) calc(27.5vw - 26px), (min-width: 640px) calc(44vw - 35px), calc(88vw - 28px)",
+] as const;
+
 /** Grille d'images à ratios variés (colonnes), légende sous chaque image. */
 export function CreationsGrid({ locale }: { locale: TemplateLocale }) {
   const page = getTemplateCopy(createurCulinaire, locale).creations.grid;
@@ -39,7 +54,7 @@ export function CreationsGrid({ locale }: { locale: TemplateLocale }) {
                 alt={item.image.alt}
                 ratio={GRID_RATIOS[index] ?? "4/3"}
                 rounded="none"
-                sizes="(min-width: 1280px) 380px, (min-width: 640px) 45vw, 100vw"
+                sizes={GRID_SIZES[index] ?? GRID_SIZES[0]}
               />
               <figcaption className="mt-3 font-tpl-display text-tpl-lg text-tpl-ink-muted italic">
                 {item.caption}

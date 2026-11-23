@@ -8,6 +8,12 @@ import { TemplateMedia } from "@/components/template-kit/media";
  * inverse), avec un `sizes` propre. Sur un téléphone la boîte (un écran moins le bandeau de démonstration) est bien
  * plus haute que large : avec `object-cover`, le fichier utile fait environ
  * 3,3 fois la largeur de l'écran, ce que le `sizes` du kit (200 vw) ne couvre pas.
+ *
+ * `sizes` : la boîte mesure `100svh` moins le bandeau (40 px, 72 px sous 640 px) et
+ * au moins la hauteur de son contenu (environ 700 px) ; la photo (3/2) est
+ * dimensionnée sur la plus grande de la largeur et de la hauteur × 1,5. Le
+ * `sizes` suit cette valeur réduite de 20 % (`80vw`, `120svh`), avec un plancher
+ * pour le contenu : 1,3 au plus à 360 × 640, 1440 × 1200 ou 1024 × 1366.
  */
 export function BistrotHero({
   src,
@@ -29,7 +35,7 @@ export function BistrotHero({
         ratio="fill"
         rounded="none"
         priority
-        sizes="(min-width: 1500px) 100vw, 1200px"
+        sizes="(min-width: 640px) max(80vw, calc(120svh - 48px), 840px), max(80vw, calc(120svh - 87px), 950px)"
         className="absolute inset-0"
       />
       <div

@@ -30,7 +30,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
             src={page.image.src}
             alt={page.image.alt}
             ratio="4/3"
-            sizes="(min-width: 1280px) 540px, (min-width: 1024px) 45vw, 100vw"
+            sizes="(min-width: 1024px) 512px, calc(96vw - 19px)"
             rounded="none"
             priority
           />

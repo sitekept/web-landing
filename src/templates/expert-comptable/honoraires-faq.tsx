@@ -36,7 +36,7 @@ export function HonorairesFaq({ locale }: { locale: TemplateLocale }) {
             src={faq.image.src}
             alt={faq.image.alt}
             ratio="1/1"
-            sizes="(min-width: 1024px) 30vw, 100vw"
+            sizes="(min-width: 1024px) 384px, calc(85vw - 16px)"
           />
         </div>
       </div>

@@ -37,9 +37,44 @@ const GROW: Record<string, { grow: string; weight: number }> = {
   "1/1": { grow: "md:flex-[1_1_0%]", weight: 1 },
 };
 
-function sizesFor(weight: number, total: number): string {
-  const share = weight / total;
-  return `(min-width: 1280px) ${Math.round(1280 * share)}px, (min-width: 768px) ${Math.round(100 * share)}vw, 100vw`;
+/** Marge de 12 % sous la largeur utile, comme les `sizes` des autres templates. */
+const SHRINK = 0.88;
+/** Écart entre deux images d'une rangée (`md:gap-6`), en px. */
+const ROW_GAP = 24;
+
+/**
+ * Photo plus large que sa boîte (`object-cover` la dimensionne sur la hauteur) :
+ * multiplicateur de la largeur utile, par série et rang dans la série. Une
+ * photo de 0,99 dans une boîte 4/5 vaut 1,24 ; une photo de 1,5 dans une boîte
+ * 1/1 vaut 1,5.
+ */
+const WIDE_PHOTO: Record<string, number> = { "1-2": 1.24, "2-3": 1.5 };
+
+/**
+ * `sizes` d'une image de rangée : sa part de la largeur du contenu (64 px de
+ * marges au-dessus de 1024 px, 48 px dessous, plafond de 1280 px à partir de
+ * 1344 px) moins les écarts de la rangée ; en colonne sous 768 px, la largeur
+ * de l'écran moins les marges. `calc` partout : un `vw` isolé fait retirer à
+ * Next les petites variantes.
+ */
+function sizesFor(
+  weight: number,
+  total: number,
+  count: number,
+  boost: number
+): string {
+  const share = (SHRINK * boost * weight) / total;
+  const gaps = ROW_GAP * (count - 1);
+  const fit = (vw: number, px: number) =>
+    `calc(${+vw.toFixed(1)}vw - ${Math.round(px)}px)`;
+
+  return [
+    `(min-width: 1344px) ${Math.round(share * (1280 - gaps))}px`,
+    `(min-width: 1024px) ${fit(100 * share, share * (64 + gaps))}`,
+    `(min-width: 768px) ${fit(100 * share, share * (48 + gaps))}`,
+    `(min-width: 640px) ${fit(100 * SHRINK * boost, 48 * SHRINK * boost)}`,
+    fit(100 * SHRINK * boost, 32 * SHRINK * boost),
+  ].join(", ");
 }
 
 /** Les trois séries, chacune sous son index et son texte. */
@@ -77,6 +112,7 @@ export function PortfolioSeries({ locale }: { locale: TemplateLocale }) {
                   >
                     {row.map((ratio) => {
                       const item = category.items[cursor];
+                      const boost = WIDE_PHOTO[`${index}-${cursor}`] ?? 1;
                       cursor += 1;
 
                       return (
@@ -87,7 +123,12 @@ export function PortfolioSeries({ locale }: { locale: TemplateLocale }) {
                           alt={item.alt}
                           caption={item.caption}
                           ratio={ratio}
-                          sizes={sizesFor(GROW[ratio].weight, total)}
+                          sizes={sizesFor(
+                            GROW[ratio].weight,
+                            total,
+                            row.length,
+                            boost
+                          )}
                         />
                       );
                     })}
