@@ -1,12 +1,21 @@
+import { CalendarCheck, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
-import { TemplateShell, type TemplateLocale } from "@/components/template-kit";
+import {
+  TemplateLink,
+  TemplateShell,
+  templateHref,
+  type TemplateLocale,
+} from "@/components/template-kit";
 import { restaurantBistrot } from "@/content/templates/restaurant-bistrot";
 import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 
+import { HoursList } from "./parts";
+
 /**
  * Shell du template restaurant-bistrot : en-tête flottant à cadre droit, fond
- * sombre translucide, au-dessus du héros ; pied de page sombre. Tous les textes
+ * sombre translucide, au-dessus du premier bloc ; pied de page sombre (adresse,
+ * horaires, contact) ; barre « réserver / appeler » sur mobile. Tous les textes
  * viennent de la copie.
  */
 export function RestaurantBistrotShell({
@@ -18,6 +27,7 @@ export function RestaurantBistrotShell({
 }) {
   const copy = getTemplateCopy(restaurantBistrot, locale);
   const { paths } = restaurantBistrot;
+  const { common } = copy;
 
   return (
     <TemplateShell
@@ -45,22 +55,62 @@ export function RestaurantBistrotShell({
         label: copy.cta.book,
         icon: false,
       }}
+      mobileActionsLabel={common.quickActions}
+      mobileActions={
+        <>
+          <TemplateLink
+            href={copy.phone.href}
+            variant="outline"
+            icon={<Phone aria-hidden="true" className="size-4" />}
+            className="flex-1"
+          >
+            {copy.cta.call}
+          </TemplateLink>
+          <TemplateLink
+            href={templateHref(locale, paths.reservation)}
+            icon={<CalendarCheck aria-hidden="true" className="size-4" />}
+            className="flex-1"
+          >
+            {copy.cta.book}
+          </TemplateLink>
+        </>
+      }
       footer={
         <footer
           data-tone="inverse"
           className="border-t border-tpl-line bg-tpl-raised px-4 text-tpl-ink sm:px-6 lg:px-8"
         >
-          <div className="mx-auto grid max-w-7xl gap-8 py-10 lg:grid-cols-[1fr_auto]">
-            <div className="max-w-2xl">
-              <p className="text-tpl-lg font-semibold">{copy.footer.title}</p>
-              <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
+          <div className="mx-auto grid max-w-7xl gap-10 py-12 lg:grid-cols-12">
+            <div className="lg:col-span-5">
+              <p className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">
+                {copy.brand.name}
+              </p>
+              <p className="mt-3 max-w-md text-tpl-sm text-tpl-ink-muted">
                 {copy.footer.text}
               </p>
             </div>
-            <div className="space-y-2 text-tpl-sm text-tpl-ink-muted sm:text-right">
-              <p>{copy.footer.address}</p>
-              <p>{copy.footer.email}</p>
-              <p>{copy.footer.hours}</p>
+            <div className="lg:col-span-4">
+              <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-eyebrow uppercase">
+                {common.hoursLabel}
+              </p>
+              <HoursList rows={common.hours} className="mt-3 text-tpl-sm" />
+            </div>
+            <div className="lg:col-span-3">
+              <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-eyebrow uppercase">
+                {copy.footer.contactLabel}
+              </p>
+              <address className="mt-3 space-y-2 text-tpl-sm text-tpl-ink-muted not-italic">
+                <p>{common.address}</p>
+                <p className="tabular-nums">
+                  <a
+                    href={copy.phone.href}
+                    className="underline-offset-4 hover:underline"
+                  >
+                    {copy.phone.label}
+                  </a>
+                </p>
+                <p>{common.email}</p>
+              </address>
             </div>
           </div>
         </footer>
