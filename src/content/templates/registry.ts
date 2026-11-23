@@ -176,12 +176,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Réparation ordinateur",
           description:
-            "Une vitrine directe et rassurante pour présenter vos services, vos garanties et vos prises de contact sans friction.",
+            "Un atelier de réparation d’ordinateurs, Mac et PC : diagnostic gratuit sous 24 h ouvrées, devis ferme avant toute réparation, garantie de 6 mois, dépôt ou enlèvement.",
         },
         en: {
           name: "Computer repair template",
           description:
-            "A direct and reassuring site to present your services, your guarantees and your contact options without friction.",
+            "A computer repair shop for Mac and PC: free diagnosis within one business day, a firm quote before any repair, a 6-month warranty, shop drop-off or pickup.",
         },
       },
     },
@@ -223,12 +223,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Dentiste",
           description:
-            "Une base clinique premium pour structurer l'information, rassurer dès le hero et pousser la prise de rendez-vous sans friction.",
+            "Un cabinet dentaire qui explique chaque soin, remet un devis écrit avant tout traitement et propose un premier rendez-vous sous 48 h, avec réservation en ligne.",
         },
         en: {
           name: "Dentist template",
           description:
-            "A premium clinical base to structure information, reassure from the hero section and drive appointment booking without friction.",
+            "A dental practice that explains every treatment, gives a written estimate before any care and offers a first appointment within 48 hours, with online booking.",
         },
       },
     },
@@ -269,12 +269,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Salon de coiffure",
           description:
-            "Une direction lifestyle et booking-first avec lookbook, prestations, équipe et réservations dans un cadre plus éditorial.",
+            "Un salon qui affiche ses prestations avec les prix, présente ses trois stylistes, montre des coiffures récentes en photo et prend les réservations en ligne.",
         },
         en: {
           name: "Hair salon template",
           description:
-            "A lifestyle, booking-first direction with a lookbook, services, team and reservations in a more editorial setting.",
+            "A salon that lists its services with prices, introduces its three stylists, shows recent hairstyles in photos and takes bookings online.",
         },
       },
     },
@@ -292,12 +292,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Ménage & nettoyage",
           description:
-            "Une page claire et rassurante pour vendre des formules, des zones couvertes et une promesse de simplicité immédiate.",
+            "Une entreprise de ménage à domicile et de nettoyage de bureaux : devis en quatre questions, formules, secteurs desservis, prix ferme sous 24 h et questions fréquentes.",
         },
         en: {
           name: "Housekeeping & cleaning template",
           description:
-            "A clear, reassuring page to sell service packages, areas covered and a promise of instant simplicity.",
+            "A home and office cleaning company: a quote in four questions, service packages, areas served, a firm price within 24 hours and frequently asked questions.",
         },
       },
     },
@@ -315,12 +315,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Restaurant bistrot",
           description:
-            "Un univers d'hospitalité plus immersif pour mettre en avant ambiance, carte, réservation et privatisation.",
+            "La carte courte qui suit le marché, une cave au verre, un comptoir sans réservation, la réservation de table et la privatisation pour 9 à 20 convives.",
         },
         en: {
           name: "Bistro restaurant template",
           description:
-            "A more immersive hospitality universe to highlight the atmosphere, the menu, reservations and private-event bookings.",
+            "A short menu that follows the market, wines by the glass, a walk-in counter, table reservations and private dining for 9 to 20 guests.",
         },
       },
     },
@@ -338,12 +338,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Architecte d'intérieur",
           description:
-            "Une base narrative et premium pour vendre une direction artistique, des projets et une méthode en format portfolio.",
+            "Un studio d’architecture d’intérieur : réalisations en photo, honoraires annoncés d’avance, méthode en quatre temps et premier rendez-vous d’une heure offert.",
         },
         en: {
           name: "Interior architect template",
           description:
-            "A narrative, premium base to sell an artistic direction, projects and a method in a portfolio format.",
+            "An interior architecture studio: photos of its projects, fees stated up front, a four-step method and a free one-hour first meeting.",
         },
       },
     },
@@ -361,12 +361,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Cabinet d'avocat",
           description:
-            "Une landing sobre et autoritaire pour convertir sur la consultation initiale avec preuve d'expertise et structure documentaire.",
+            "Un cabinet d’avocats d’affaires pour dirigeants et PME : domaines d’intervention, honoraires annoncés, première consultation de 45 minutes, réponse sous 48 h ouvrées.",
         },
         en: {
           name: "Law firm template",
           description:
-            "A sober, authoritative landing page to convert on the initial consultation, with proof of expertise and a document-style structure.",
+            "A business law firm for owners and small companies: practice areas, fees quoted up front, a 45-minute first consultation and a reply within 2 business days.",
         },
       },
     },

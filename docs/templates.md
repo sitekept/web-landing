@@ -1,8 +1,8 @@
 # Templates de démonstration : guide
 
-Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en cas d'écart avec ce guide, c'est le guide qu'on corrige. Modèle de référence : `dentiste`.
+Comment créer, migrer et vérifier un template Sitekept. Le code fait foi : en cas d'écart avec ce guide, c'est le guide qu'on corrige. Modèle de référence pour une migration : `dentiste` (avant sa refonte, voir section 9). Modèles de finition pour un nouveau template ou une refonte : `expert-comptable`, `coffee-shop`, `garage-auto`.
 
-État (fin de la phase 5) : les treize démos publiques sont sur le kit et bilingues (`dentiste` et les douze migrées ou fusionnées en phase 5 ; `pattiserie` est devenue `patisserie`, avec redirection). Neuf templates sont nés bilingues sur le kit, au statut `lab` servi ici (`noindex`, hors galerie, en attente de validation) : `electricien`, `osteopathe`, `reparation-mobile`, `spa-massage`, `coffee-shop`, `createur-culinaire`, `garage-auto`, `photographe`, `expert-comptable`. `agent-immobilier` et `plombier-serrurier` ont été fusionnés dans `agence-immobiliere` et `plombier-chauffagiste` (un seul template par métier). Le registre unique (`src/content/templates/registry.ts`) liste tous les templates.
+État (phase 6) : les treize démos publiques sont sur le kit et bilingues (migrées ou fusionnées en phase 5 ; `pattiserie` est devenue `patisserie`, avec redirection). La phase 6 a refondu sept d'entre elles, de l'accueil aux sous-pages, en FR et en EN : `restaurant-bistrot`, `salon-coiffure`, `menage-nettoyage`, `cabinet-avocat`, `dentiste`, `architecte-interieur` et `ordinateur` (section 9). `fleuriste`, `patisserie`, `boulangerie` et `avocate` ont une copie revue en phase 6 ; `agence-immobiliere` et `plombier-chauffagiste` ont reçu des retouches. Neuf templates sont nés bilingues sur le kit, au statut `lab` servi ici (`noindex`, hors galerie, en attente de validation) : `electricien`, `osteopathe`, `reparation-mobile`, `spa-massage`, `coffee-shop`, `createur-culinaire`, `garage-auto`, `photographe`, `expert-comptable`. `agent-immobilier` et `plombier-serrurier` ont été fusionnés dans `agence-immobiliere` et `plombier-chauffagiste` (un seul template par métier). Le registre unique (`src/content/templates/registry.ts`) liste tous les templates.
 
 ## 1. Architecture
 
@@ -226,7 +226,7 @@ Helpers de liens (purs, utilisables côté client et serveur), plus `TEMPLATE_LO
 - Entreprises fictives uniquement. Aucun texte, image ni coordonnée de vrais clients ; aucun nom, domaine d'e-mail ou lieu qui permette de les identifier.
 - Coordonnées manifestement factices : e-mail en `.example`, numéro d'une plage fictive de l'ARCEP (`01 99 00`, `02 61 91`, `03 53 01`, `04 65 71`, `05 36 49`, `06 39 98`).
 - Version anglaise : traduction neutre de la même entreprise. Marque « Your business », e-mail `contact@example.com`, numéro factice conservé, prix en euros.
-- Les images viennent de `public/` ou d'une source libre de droits, passent par `TemplateMedia`, avec un `alt` traduit. Chaque photo est regardée à 2400 px, avec un zoom sur les objets (livres, montres, outils, étiquettes, cadres) : aucune marque, texte lisible ni visage reconnaissable, et le sujet est le bon (pas de rendu IA). Une photo ne sert qu'à un template : chercher l'identifiant nu (`1600047509807`), les définitions l'écrivent sans préfixe `photo-`. Un recadrage imgix (`&rect=x,y,w,h` en proportions) peut exclure un détail gênant.
+- Les images viennent de `public/` ou d'une source libre de droits, passent par `TemplateMedia`, avec un `alt` traduit. Chaque photo est regardée à 2400 px, avec un zoom sur les objets (livres, montres, outils, étiquettes, cadres) : aucune marque, texte lisible ni visage reconnaissable, et le sujet est le bon (pas de rendu IA). Une photo ne sert qu'à un template : chercher l'identifiant nu (`1600047509807`), les définitions l'écrivent sans préfixe `photo-`. Un recadrage imgix (`&rect=x,y,w,h`, en pixels de l'original) peut exclure un détail gênant.
 - Titres de page (lot B, convention à confirmer pour les autres) : « Page - Votre entreprise » / « Page - Your business », et « Votre entreprise - <activité> » pour l'accueil.
 - Anglais des États-Unis, sans calque du français.
 
@@ -265,11 +265,11 @@ Ils vivent dans `src/components/template-kit/vendor/<nom>/` avec un `SOURCE.md` 
 - **Harnais** : `scripts/template-harness/` (`routes.txt`, `snapshot.mjs`, `headers.sh`, `README.md`). Snapshot du texte rendu de chaque route, comparé à une baseline prise sur un commit de référence, plus contrôle des en-têtes `X-Robots-Tag`. Procédure complète dans son `README.md` ; raccourcis `pnpm harness:snapshot <url> <dossier>` et `pnpm harness:headers <url>`. Les snapshots s'écrivent hors du dépôt.
 - **Jamais de build dans le dépôt** : `pnpm build` se lance dans une copie isolée (`rsync` sans `.git`, `.next`, `node_modules` ni `.env*`, puis lien symbolique vers `node_modules`). Et on ne tue jamais un processus qu'on n'a pas lancé.
 - `pnpm type-check` et `pnpm lint` se lancent dans le dépôt.
-- Poids JS : à la fin du `pnpm build` isolé, relever le « First Load JS » des routes du template. `dentiste` est à 108 kB ; un écart de plusieurs kB vient presque toujours d'un import du barrel, de `cn()` dans un composant client, ou de `TemplateDemoForm` importé là où il n'est pas utilisé.
+- Poids JS : à la fin du `pnpm build` isolé, relever le « First Load JS » des routes du template. `dentiste` est à 114 kB (115 kB pour ses pages à formulaire) ; un écart de plusieurs kB vient presque toujours d'un import du barrel, de `cn()` dans un composant client, ou de `TemplateDemoForm` importé là où il n'est pas utilisé.
 
 ## 8. Migrer un template existant
 
-Pour passer une démo écrite à la main (hex en dur, `*-ui.tsx`, formulaire client maison) sur le kit, avec sa version anglaise. Modèle : `dentiste`. Le principe : **le rendu français ne change pas**, à l'exception des corrections voulues.
+Pour passer une démo écrite à la main (hex en dur, `*-ui.tsx`, formulaire client maison) sur le kit, avec sa version anglaise. `dentiste` en a été le modèle en phase 5 ; elle a depuis été refondue (phase 6, section 9) et son rendu n'est plus celui d'une migration. Le principe : **le rendu français ne change pas**, à l'exception des corrections voulues. Il vaut pour une migration, pas pour une refonte : pour refaire le dessin et la copie d'un template déjà sur le kit, voir la section 9.
 
 1. **Baseline avant de toucher au code.** Ajouter les routes du template à `routes.txt` s'il en manque, puis prendre un snapshot du commit de référence (README du harnais). Repérer ce que la démo contient : pages, textes, images, formulaires, composants locaux (`*-ui.tsx`), couleurs en dur.
 2. **Extraire la copie à rendu FR constant.** Copier chaque texte visible tel quel dans `const fr = { … } as const` de `src/content/templates/<slug>.ts` : ponctuation, majuscules, `alt`. Pas de reformulation à cette étape : une copie qui change le texte fausse la diff. Seules corrections admises (à lister) : apostrophes `’`, espaces insécables, guillemets « », faute d'orthographe, coordonnée hors plage fictive, nom complet d'un avis réduit à « Prénom I. ». Ajouter le bloc `meta` (titre et description par page) et les `paths`. Les vues lisent `getTemplateCopy(def, locale)`.
@@ -288,3 +288,28 @@ Pour passer une démo écrite à la main (hex en dur, `*-ui.tsx`, formulaire cli
 - Fichiers EN (`en__<slug>*.txt`) : n'existent pas dans la baseline. Les relire : aucun français visible, un `<h1>`, un `<title>` anglais, `LANG: en`.
 - Rythme : `density="compact"` correspond à l'ancien `py-16` ; garder la hauteur d'une page à 25 % près.
 - Les snapshots ne voient ni les classes ni les couleurs : le rendu visuel se vérifie par les captures (390, 768, 1440 px).
+
+## 9. Refondre un template (phase 6)
+
+Refaire un template déjà sur le kit : accueil, sous-pages, photos et copie, FR et EN, en gardant la famille de couleurs et la police d'affichage. Les URL, les pages et le registre ne changent pas. Contrairement à une migration (section 8), le rendu français change, et la diff de snapshot n'est plus vide : elle se relit page par page. Fait en phase 6 pour `restaurant-bistrot`, `salon-coiffure`, `menage-nettoyage`, `cabinet-avocat`, `dentiste`, `architecte-interieur` et `ordinateur`.
+
+**Règles visuelles** (à tenir et à mesurer) :
+- **Typo** : échelle `text-tpl-*`, sur-titre au tracking du token (`tracking-tpl-eyebrow`), `text-balance` sur les titres et `text-pretty` sur les paragraphes (déjà dans `TemplateHeading`), ligne de 68 caractères au plus.
+- **Grille** : deux largeurs de contenu (`7xl`, `5xl`) ; découpes 7/5, 8/4 ou 1/1, et leur miroir. Pas de colonnes à pourcentage arbitraire.
+- **Formes** : deux rayons (`radius`, `radiusPill`) et deux ombres (`shadow-tpl-sm`, `shadow-tpl-lg`) au plus, ombres dérivées de l'encre.
+- **Images** : trois ratios au plus par template, un seul type de voile (le dégradé de `TemplateHeroMedia`), au plus une image pleine largeur par section, aucun `background-image`.
+- **Mouvement** : `ScrollReveal` facultatif, trois paliers de délai au plus (0, 80, 160 ms), distance de 16 à 20 px ; survol `-translate-y-0.5` en 200 ms ; tout respecte `prefers-reduced-motion`.
+- **Contraste** : texte courant à 4,5:1 au moins, partout (fond uni mesuré par le DOM, texte sur photo ou dégradé mesuré au pixel sur capture) ; la paire `ink-muted` / `surface` est relevée.
+- À éviter : une grille de cartes identiques par section, un sur-titre sur chaque section, des pilules partout, du remplissage, des chiffres sans source plausible, une section vide à 1440 px.
+
+**Copie** : elle parle du métier, jamais du site. Aucun mot de designer (« homepage », « hero », « section », « structure », « conversion », « landing », « module ») dans le texte visible, les `alt` et les `meta` : elle s'adresse au client de l'entreprise fictive. Totaux, prix, horaires, années et délais sont les mêmes d'une page à l'autre et entre FR et EN ; adresses manifestement fictives, sans lieu réel.
+
+**Photos** :
+- Téléchargées à 2400 px et regardées avec un zoom sur chaque objet à risque ; l'`alt` (FR et EN) décrit ce qu'on voit ; une photo ne sert qu'à un template.
+- Un recadrage imgix se déclare dans l'URL servie, avec `rect=x,y,w,h` **en pixels de l'original** (pas en proportions), de sorte que le fichier servi est celui qu'on a regardé.
+- `sizes` mesuré sur le rendu réel à 390, 768, 1024 et 1440 px : facteur d'agrandissement (largeur utile × DPR rapportée au `w` de `currentSrc`) d'au plus 1,3 à DPR 1. Le contenu plafonne à 1280 px : `sizes` plafonne donc aussi, avec un palier fixe en pixels à partir de 1344 px (`(min-width: 1344px) 608px, (min-width: 1024px) 45vw, …`), sinon la photo est trop agrandie sur un grand écran.
+- `priority` sur l'image du hero seulement ; CLS à 0.
+
+**Vérification** : comme section 7 (type-check, lint, build isolé, snapshot, en-têtes, greps), plus des captures avant / après à 390, 768 et 1440 px en FR et en EN, regardées une à une, la mesure du contraste de tous les textes, et un second regard (vérificateur indépendant) sur l'état exact qui sera commité. Les captures de galerie et les textes du registre se refont à la fin (section 4, « Passage en public »).
+
+**État** : les sept templates ci-dessus sont refondus et commités ; la galerie (`/templates`, `/en/templates`) montre leurs nouvelles captures et de nouveaux textes. Le kit a évolué pendant la phase pour eux (menu mobile au clavier, bascule en navigation en ligne à 1280 px avec `xl:@min-[78rem]:`, `sizes` de `TemplateHeroMedia`, `position` de `TemplateMedia`, `imageSizes` à 512, image Open Graph anglaise) : tout est décrit en section 3 et dans `next.config.ts`.
