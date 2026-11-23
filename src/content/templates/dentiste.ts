@@ -32,7 +32,8 @@ const IMG = {
   // Recadrée en 4 / 5 sur le fauteuil et le scialytique (sans le plafond).
   cabinet: unsplash("1728342057953-94bfad8f0e7e", "&rect=0.05,0.22,0.85,0.71"),
   implant: unsplash("1771442873035-474765b40ac6"),
-  xray: unsplash("1777445374290-eedda5be8e5b"),
+  // Film de radiographie panoramique (scan réel), recadré en 3 / 2 au-dessus du bord de film.
+  xray: unsplash("1522849696084-818b29dfe210", "&rect=0,0.02,1,0.889"),
   // Recadrée en 3 / 2 sous le panneau écrit : l'olivier et les premières chaises.
   waiting: unsplash("1762625570087-6d98fca29531", "&rect=0,0.64,0.63,0.36"),
   instruments: unsplash("1643660527072-47bd5735f721"),
@@ -204,7 +205,7 @@ const fr = {
         "Un équipement n’entre au cabinet que s’il améliore le diagnostic ou votre confort. Vous voyez vos images en direct, avec le praticien.",
       image: {
         src: IMG.xray,
-        alt: "Radiographie panoramique des dents et des mâchoires",
+        alt: "Film de radiographie panoramique en noir et blanc : les dents et les deux mâchoires",
       },
       items: [
         {
@@ -836,7 +837,7 @@ const en: DentisteCopy = {
         "A device only comes into the practice if it improves diagnosis or your comfort. You see your images live, together with the dentist.",
       image: {
         src: IMG.xray,
-        alt: "Panoramic X-ray of the teeth and jaws",
+        alt: "Black-and-white panoramic X-ray film showing the teeth and both jaws",
       },
       items: [
         {
