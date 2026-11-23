@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 
 import {
   TemplateLink,
-  TemplatePanel,
   TemplateShell,
   templateHref,
   type TemplateLocale,
@@ -12,11 +11,15 @@ import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 
 /**
- * Shell du template dentiste : marque, navigation, CTA téléphone, rail de
- * réservation fixe et pied de page. Tous les textes viennent de la copie.
+ * Shell du template dentiste : marque, navigation, CTA téléphone, bandeau
+ * d'horaires, barre d'actions mobile (appeler, rendez-vous) et pied de page.
+ * Tous les textes viennent de la copie.
  *
- * Le sélecteur FR / EN est déduit de la définition : il s'affiche dès qu'elle
- * a une copie anglaise (`en` dans `copy`), donc jamais de lien vers une 404.
+ * Le rendez-vous reste à portée sans rien poser par-dessus le contenu : lien
+ * « Rendez-vous » de la navigation, bouton de chaque page, et barre d'actions
+ * collée en bas sous `xl`. Le sélecteur FR / EN est déduit de la définition :
+ * il s'affiche dès qu'elle a une copie anglaise, donc jamais de lien vers une
+ * 404.
  */
 export function DentisteShell({
   locale,
@@ -27,6 +30,17 @@ export function DentisteShell({
 }) {
   const copy = getTemplateCopy(dentiste, locale);
   const { paths } = dentiste;
+  const nav = [
+    { href: paths.home, label: copy.nav.home },
+    { href: paths.soins, label: copy.nav.soins },
+    { href: paths.technologies, label: copy.nav.technologies },
+    { href: paths.equipe, label: copy.nav.equipe },
+    { href: paths.premiereVisite, label: copy.nav.premiereVisite },
+    { href: paths.rendezVous, label: copy.nav.rendezVous },
+    { href: paths.contact, label: copy.nav.contact },
+  ];
+  const eyebrow =
+    "text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-eyebrow uppercase";
 
   return (
     <TemplateShell
@@ -46,59 +60,98 @@ export function DentisteShell({
           </div>
         ),
       }}
-      nav={[
-        { href: paths.home, label: copy.nav.home },
-        { href: paths.soins, label: copy.nav.soins },
-        { href: paths.technologies, label: copy.nav.technologies },
-        { href: paths.equipe, label: copy.nav.equipe },
-        { href: paths.premiereVisite, label: copy.nav.premiereVisite },
-        { href: paths.rendezVous, label: copy.nav.rendezVous },
-        { href: paths.contact, label: copy.nav.contact },
-      ]}
+      nav={nav}
       cta={{
         href: copy.phone.href,
         label: copy.phone.label,
         icon: <Phone aria-hidden="true" className="size-4" />,
       }}
-      footer={
+      topBar={
         <>
-          <aside className="pointer-events-none fixed top-28 right-5 z-30 hidden w-64 xl:block">
-            <TemplatePanel className="pointer-events-auto p-4 shadow-tpl-lg">
-              <p className="text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-ink-muted uppercase">
-                {copy.rail.eyebrow}
-              </p>
-              <p className="mt-3 text-tpl-lg leading-tpl-display font-semibold">
-                {copy.rail.title}
+          <span className="tabular-nums">{copy.topBar.hours}</span>
+          <span>{copy.topBar.promise}</span>
+        </>
+      }
+      topBarTone="tint"
+      mobileActionsLabel={copy.a11y.quickActions}
+      mobileActions={
+        <>
+          <TemplateLink
+            href={copy.phone.href}
+            variant="outline"
+            icon={<Phone aria-hidden="true" className="size-4" />}
+            className="flex-1"
+          >
+            {copy.cta.call}
+          </TemplateLink>
+          <TemplateLink
+            href={templateHref(locale, paths.rendezVous)}
+            icon={<CalendarDays aria-hidden="true" className="size-4" />}
+            className="flex-1"
+          >
+            {copy.cta.bookShort}
+          </TemplateLink>
+        </>
+      }
+      footer={
+        <footer className="border-t border-tpl-line bg-tpl-raised px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-10 py-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+            <div className="max-w-md">
+              <p className="font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight)">
+                {copy.brand.name}
               </p>
               <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
-                {copy.rail.text}
+                {copy.footer.text}
               </p>
-              <TemplateLink
-                href={templateHref(locale, paths.rendezVous)}
-                icon={<CalendarDays aria-hidden="true" className="size-4" />}
-                className="mt-4 w-full"
-              >
-                {copy.cta.book}
-              </TemplateLink>
-            </TemplatePanel>
-          </aside>
-
-          <footer className="border-t border-tpl-line bg-tpl-raised px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto grid max-w-7xl gap-8 py-10 lg:grid-cols-[1fr_auto]">
-              <div className="max-w-2xl">
-                <p className="text-tpl-lg font-semibold">{copy.footer.title}</p>
-                <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
-                  {copy.footer.text}
-                </p>
-              </div>
-              <div className="space-y-2 text-tpl-sm text-tpl-ink-muted sm:text-right">
-                <p>{copy.footer.address}</p>
-                <p>{copy.footer.hours}</p>
-                <p>{copy.footer.email}</p>
-              </div>
             </div>
-          </footer>
-        </>
+            <div className="space-y-2 text-tpl-sm text-tpl-ink-muted">
+              <p className={eyebrow}>{copy.footer.contactTitle}</p>
+              <p>
+                <a
+                  href={copy.phone.href}
+                  className="inline-flex min-h-11 items-center font-semibold text-tpl-ink tabular-nums underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
+                >
+                  {copy.phone.label}
+                </a>
+              </p>
+              <p>{copy.info.email}</p>
+              <p>{copy.info.address}</p>
+            </div>
+            <div className="text-tpl-sm text-tpl-ink-muted">
+              <p className={eyebrow}>{copy.footer.hoursTitle}</p>
+              <dl className="mt-2 divide-y divide-tpl-line">
+                {copy.info.hours.map((row) => (
+                  <div
+                    key={row.day}
+                    className="flex justify-between gap-4 py-2"
+                  >
+                    <dt>{row.day}</dt>
+                    <dd className="font-semibold text-tpl-ink tabular-nums">
+                      {row.time}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <nav aria-label={copy.footer.siteTitle} className="text-tpl-sm">
+              <p className={eyebrow}>{copy.footer.siteTitle}</p>
+              <ul className="mt-2 sm:columns-2 lg:columns-1">
+                {nav.map((item) => (
+                  <li key={item.href}>
+                    <TemplateLink
+                      href={templateHref(locale, item.href)}
+                      variant="ghost"
+                      icon={false}
+                      className="-ml-5 text-tpl-ink-muted"
+                    >
+                      {item.label}
+                    </TemplateLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        </footer>
       }
     >
       {children}

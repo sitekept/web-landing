@@ -1,73 +1,58 @@
 import {
-  TemplateCard,
-  TemplateLink,
   TemplateSection,
-  templateHref,
   type TemplateLocale,
 } from "@/components/template-kit";
 import { dentiste } from "@/content/templates/dentiste";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { IconCard } from "./parts";
+import { ClosingBand } from "./closing";
+import { CheckList, IconBadge, PageIntro } from "./parts";
+import { PricesTable } from "./soins-prices";
 
+/**
+ * Soins : ouverture, quatre familles de soins (titre et tarif à gauche,
+ * description et gestes à droite, 4 / 8 colonnes), puis tarifs et prise en
+ * charge.
+ */
 export function SoinsView({ locale }: { locale: TemplateLocale }) {
-  const copy = getTemplateCopy(dentiste, locale);
-  const { paths } = dentiste;
-  const { intro, principles } = copy.soins;
-  const href = (path: string) => templateHref(locale, path);
+  const page = getTemplateCopy(dentiste, locale).soins;
 
   return (
     <>
-      <TemplateSection
-        density="compact"
-        as="h1"
-        titleScale="subtitle"
-        eyebrow={intro.eyebrow}
-        title={intro.title}
-        description={intro.description}
-      >
-        <div className="grid gap-4 lg:grid-cols-2">
-          {intro.treatments.map((item) => (
-            <TemplateCard key={item.title} title={item.title}>
-              {item.text}
-            </TemplateCard>
-          ))}
-        </div>
-      </TemplateSection>
+      <PageIntro {...page.intro} />
 
-      <TemplateSection
-        density="compact"
-        tone="raised"
-        eyebrow={principles.eyebrow}
-        title={principles.title}
-        titleScale="subtitle"
-      >
-        <div className="grid gap-4 lg:grid-cols-3">
-          {principles.items.map((item) => (
-            <IconCard
+      <TemplateSection>
+        <ul
+          aria-label={page.treatmentsLabel}
+          className="divide-y divide-tpl-line border-y border-tpl-line"
+        >
+          {page.treatments.map((item) => (
+            <li
               key={item.title}
-              icon={item.icon}
-              title={item.title}
-              inverse
+              className="grid gap-6 py-10 lg:grid-cols-12 lg:gap-14"
             >
-              {item.text}
-            </IconCard>
+              <div className="lg:col-span-4">
+                <IconBadge icon={item.icon} />
+                <h2 className="mt-5 font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight)">
+                  {item.title}
+                </h2>
+                <p className="mt-2 text-tpl-sm font-semibold tabular-nums">
+                  {item.price}
+                </p>
+              </div>
+              <div className="lg:col-span-8">
+                <p className="max-w-tpl-measure text-tpl-base text-tpl-ink-muted">
+                  {item.text}
+                </p>
+                <CheckList items={item.points} className="mt-6" />
+              </div>
+            </li>
           ))}
-        </div>
-
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <TemplateLink href={href(paths.rendezVous)}>
-            {copy.cta.book}
-          </TemplateLink>
-          <TemplateLink
-            href={href(paths.technologies)}
-            variant="outline"
-            className="bg-tpl-raised"
-          >
-            {copy.cta.seeTechnologies}
-          </TemplateLink>
-        </div>
+        </ul>
       </TemplateSection>
+
+      <PricesTable locale={locale} />
+      <ClosingBand locale={locale} />
     </>
   );
 }
