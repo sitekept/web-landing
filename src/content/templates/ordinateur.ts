@@ -251,7 +251,7 @@ const fr = {
     ],
   },
   workshop: {
-    title: "Réparé sur place, à l’établi",
+    title: "Réparé à l’atelier, à l’établi",
     description:
       "Pas de sous-traitance : votre machine reste dans notre atelier, du diagnostic à l’essai final.",
     points: [
@@ -560,7 +560,7 @@ const en: OrdinateurCopy = {
     ],
   },
   workshop: {
-    title: "Repaired on site, at the bench",
+    title: "Repaired in our shop, at the bench",
     description:
       "No outsourcing: your computer stays in our shop, from diagnosis to the final test.",
     points: [

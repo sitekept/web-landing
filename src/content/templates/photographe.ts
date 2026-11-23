@@ -87,7 +87,7 @@ const fr = {
     home: {
       title: "Votre entreprise - Photographe indépendant",
       description:
-        "Photographe indépendant : mariages, portraits et images d’entreprise. Peu de mise en scène, une lumière naturelle et une galerie privée livrée en trois semaines.",
+        "Photographe indépendant : mariages, portraits et images d’entreprise. Peu de mise en scène, lumière naturelle et galerie privée livrée en trois semaines.",
     },
     portfolio: {
       title: "Portfolio - Votre entreprise",
@@ -102,7 +102,7 @@ const fr = {
     contact: {
       title: "Contact - Votre entreprise",
       description:
-        "Parlez-moi de votre projet : type de séance, date et lieu. Formulaire de démonstration, coordonnées fictives et délai de réponse.",
+        "Parlez-moi de votre projet : type de séance, date et lieu. Coordonnées, disponibilités et délai de réponse.",
     },
   },
   home: {
@@ -606,7 +606,7 @@ const en: PhotographeCopy = {
     contact: {
       title: "Contact - Your business",
       description:
-        "Tell me about your project: type of session, date and place. Demo form, fictional contact details and response time.",
+        "Tell me about your project: type of session, date and place. Contact details, availability and response time.",
     },
   },
   home: {

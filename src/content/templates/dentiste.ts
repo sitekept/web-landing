@@ -74,7 +74,7 @@ const fr = {
   },
   a11y: { quickActions: "Actions rapides", facts: "Le cabinet en bref" },
   topBar: {
-    hours: "Lun–Ven 8 h 30–19 h 00 · Sam 9 h 00–13 h 00",
+    hours: "Lun⁠–⁠Ven 8 h 30⁠–⁠19 h 00 · Sam 9 h 00⁠–⁠13 h 00",
     promise: "Premier rendez-vous sous 48 h",
   },
   info: {
@@ -82,8 +82,8 @@ const fr = {
     address: "12 rue de l’Exemple, 00000 Votre ville",
     hoursLabel: "Horaires",
     hours: [
-      { day: "Lundi–vendredi", time: "8 h 30–19 h 00" },
-      { day: "Samedi", time: "9 h 00–13 h 00" },
+      { day: "Lundi⁠–⁠vendredi", time: "8 h 30⁠–⁠19 h 00" },
+      { day: "Samedi", time: "9 h 00⁠–⁠13 h 00" },
       { day: "Dimanche", time: "Fermé" },
     ],
     emailLabel: "E‑mail",
@@ -130,7 +130,7 @@ const fr = {
     rendezVous: {
       title: "Rendez-vous - Clinique Nova Sourire",
       description:
-        "Choisissez votre motif, une date et un créneau pour prendre rendez-vous au cabinet. Confirmation dans la journée, créneau d’urgence chaque jour d’ouverture.",
+        "Choisissez votre motif, une date et un créneau pour prendre rendez-vous au cabinet. Confirmation dans la journée.",
     },
     contact: {
       title: "Contact et accès - Clinique Nova Sourire",
@@ -349,18 +349,18 @@ const fr = {
         },
         {
           care: "Détartrage",
-          price: "30 à 45 €",
+          price: "30 à 45 €",
           coverage:
             "Remboursé à 70 % sur le tarif de base, le solde selon votre mutuelle.",
         },
         {
           care: "Soin d’une carie",
-          price: "40 à 120 €",
+          price: "40 à 120 €",
           coverage: "Remboursé à 70 % sur le tarif de base.",
         },
         {
           care: "Couronne en céramique",
-          price: "500 à 600 €",
+          price: "500 à 600 €",
           coverage:
             "Offre « 100 % Santé » à 500 € : sans reste à charge avec une mutuelle éligible. Tarif libre au‑delà.",
         },
@@ -371,7 +371,7 @@ const fr = {
         },
         {
           care: "Implant et couronne",
-          price: "1 800 à 2 400 €",
+          price: "1 800 à 2 400 €",
           coverage:
             "Non remboursé par l’Assurance maladie, participation possible de certaines mutuelles.",
         },
@@ -594,9 +594,9 @@ const fr = {
         label: "Créneau",
         placeholder: "Choisir un créneau",
         options: [
-          { value: "morning", label: "Matin, 8 h 30–12 h 00" },
-          { value: "noon", label: "Début d’après-midi, 12 h 00–15 h 00" },
-          { value: "evening", label: "Fin d’après-midi, 15 h 00–19 h 00" },
+          { value: "morning", label: "Matin, 8 h 30⁠–⁠12 h 00" },
+          { value: "noon", label: "Début d’après-midi, 12 h 00⁠–⁠15 h 00" },
+          { value: "evening", label: "Fin d’après-midi, 15 h 00⁠–⁠19 h 00" },
         ],
       },
       message: {
@@ -624,7 +624,7 @@ const fr = {
       eyebrow: "Contact",
       title: "Nous joindre et venir au cabinet.",
       description:
-        "Le secrétariat répond du lundi au samedi. En cas de douleur, appelez plutôt que d’écrire : nous gardons un créneau d’urgence chaque jour d’ouverture.",
+        "Le secrétariat répond du lundi au samedi. En cas de douleur, appelez plutôt que d’écrire : nous vous répondons de vive voix.",
     },
     access: {
       title: "Venir au cabinet",
@@ -706,7 +706,7 @@ const en: DentisteCopy = {
   },
   a11y: { quickActions: "Quick actions", facts: "The practice at a glance" },
   topBar: {
-    hours: "Mon–Fri 8:30 am–7:00 pm · Sat 9:00 am–1:00 pm",
+    hours: "Mon⁠–⁠Fri 8:30 am⁠–⁠7:00 pm · Sat 9:00 am⁠–⁠1:00 pm",
     promise: "First appointment within 48 hours",
   },
   info: {
@@ -714,8 +714,8 @@ const en: DentisteCopy = {
     address: "12 Example Street, 00000 Your city",
     hoursLabel: "Hours",
     hours: [
-      { day: "Monday–Friday", time: "8:30 am–7:00 pm" },
-      { day: "Saturday", time: "9:00 am–1:00 pm" },
+      { day: "Monday⁠–⁠Friday", time: "8:30 am⁠–⁠7:00 pm" },
+      { day: "Saturday", time: "9:00 am⁠–⁠1:00 pm" },
       { day: "Sunday", time: "Closed" },
     ],
     emailLabel: "Email",
@@ -762,7 +762,7 @@ const en: DentisteCopy = {
     rendezVous: {
       title: "Appointments - Your business",
       description:
-        "Pick a reason, a date and a time slot to book at the practice. Confirmation within the day, emergency slot every business day.",
+        "Pick a reason, a date and a time slot to book at the practice. Confirmation within the day.",
     },
     contact: {
       title: "Contact and directions - Your business",
@@ -788,7 +788,7 @@ const en: DentisteCopy = {
     },
     facts: [
       { value: "48 hours", label: "to get a first appointment" },
-      { value: "Written quote", label: "before any treatment" },
+      { value: "Written estimate", label: "before any treatment" },
       {
         value: "Direct billing",
         label: "with national insurance and most supplemental plans",
@@ -1224,9 +1224,9 @@ const en: DentisteCopy = {
         label: "Time slot",
         placeholder: "Choose a time slot",
         options: [
-          { value: "morning", label: "Morning, 8:30 am–12:00 pm" },
-          { value: "noon", label: "Early afternoon, 12:00–3:00 pm" },
-          { value: "evening", label: "Late afternoon, 3:00–7:00 pm" },
+          { value: "morning", label: "Morning, 8:30 am⁠–⁠12:00 pm" },
+          { value: "noon", label: "Early afternoon, 12:00⁠–⁠3:00 pm" },
+          { value: "evening", label: "Late afternoon, 3:00⁠–⁠7:00 pm" },
         ],
       },
       message: {
@@ -1254,7 +1254,7 @@ const en: DentisteCopy = {
       eyebrow: "Contact",
       title: "Reach us and find the practice.",
       description:
-        "The front desk answers Monday to Saturday. If you are in pain, call rather than write: we keep an emergency slot open every business day.",
+        "The front desk answers Monday to Saturday. If you are in pain, call rather than write: you will reach a person.",
     },
     access: {
       title: "Getting here",

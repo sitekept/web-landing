@@ -73,36 +73,36 @@ const fr = {
     hoursLabel: "Horaires",
     hours: [
       { day: "Lundi", time: "Fermé" },
-      { day: "Mardi au vendredi", time: "10 h – 20 h" },
-      { day: "Samedi", time: "9 h 30 – 19 h" },
+      { day: "Mardi au vendredi", time: "10 h – 20 h" },
+      { day: "Samedi", time: "9 h 30 – 19 h" },
       { day: "Dimanche", time: "Fermé" },
     ],
     email: "contact@votre-entreprise.example",
     address: "12 rue de l’Exemple, 00000 Votre ville",
     access:
       "Centre-ville, entrée de plain-pied, stationnement public à quelques minutes à pied.",
-    ratingLabel: "Note : {rating} sur 5",
+    ratingLabel: "Note : {rating} sur 5",
   },
   meta: {
     home: {
       title: "Votre entreprise - Institut de massage et de bien-être",
       description:
-        "Massages de bien-être, soins du visage et rituels de 90 à 120 minutes dans un institut feutré. Tarifs, cartes cadeaux et réservation.",
+        "Massages de bien-être, soins du visage et rituels de 90 à 120 minutes dans un institut feutré. Tarifs, cartes cadeaux et réservation.",
     },
     soins: {
       title: "Soins et tarifs - Votre entreprise",
       description:
-        "La carte complète : cinq massages de bien-être, trois soins du visage et trois rituels, avec durées, tarifs en euros, conseils avant et après le soin.",
+        "La carte complète : cinq massages de bien-être, trois soins du visage et trois rituels, avec durées, tarifs en euros, conseils avant et après le soin.",
     },
     espace: {
       title: "L’espace - Votre entreprise",
       description:
-        "Découvrez l’institut : salle de massage, salle duo, espace détente, tisanerie et vestiaire. Hygiène, accueil et horaires d’ouverture.",
+        "Découvrez l’institut : salle de massage, salle duo, espace détente, tisanerie et vestiaire. Hygiène, accueil et horaires d’ouverture.",
     },
     reservation: {
       title: "Réservation - Votre entreprise",
       description:
-        "Demandez un soin : formulaire de démonstration, coordonnées fictives, horaires et conditions d’annulation de l’institut.",
+        "Demandez un soin : choisissez un créneau, retrouvez les horaires, les coordonnées et les conditions d’annulation de l’institut.",
     },
   },
   home: {
@@ -110,9 +110,9 @@ const fr = {
       eyebrow: "Institut de massage et de bien-être",
       title: "Laissez le monde au vestiaire.",
       description:
-        "Lumière tamisée, huiles tièdes, gestes lents : massages de bien-être, soins du visage et rituels de 90 à 120 minutes, dans un institut pensé pour le silence.",
+        "Lumière tamisée, huiles tièdes, gestes lents : massages de bien-être, soins du visage et rituels de 90 à 120 minutes, dans un institut pensé pour le silence.",
       facts: [
-        "Soins de 45 à 120 minutes",
+        "Soins de 45 à 120 minutes",
         "Sur rendez-vous, du mardi au samedi",
         "Tisane offerte après chaque soin",
       ],
@@ -126,9 +126,9 @@ const fr = {
       title: "Chaque soin commence par dix minutes de silence.",
       text: "Vous arrivez, vous déposez votre manteau, on vous sert une tisane. Puis la lumière baisse, l’huile est tiédie entre les mains et le soin commence, à votre rythme. Rien n’est pressé, rien n’est imposé.",
       stats: [
-        { value: "45–120", label: "minutes de soin, selon la formule" },
+        { value: "45⁠–⁠120", label: "minutes de soin, selon la formule" },
         { value: "5", label: "massages de bien-être" },
-        { value: "3", label: "rituels de 90 à 120 minutes" },
+        { value: "3", label: "rituels de 90 à 120 minutes" },
         { value: "1", label: "tisane offerte après chaque soin" },
       ],
     },
@@ -173,7 +173,7 @@ const fr = {
     ritual: {
       eyebrow: "Le rituel à l’honneur",
       title: "Rituel Nuit d’ambre",
-      text: "Deux heures hors du temps : un bain tiède aux huiles, un gommage doux, un massage aux pierres chaudes et un soin du visage, puis une tisane au calme.",
+      text: "Deux heures hors du temps : un bain tiède aux huiles, un gommage doux, un massage aux pierres chaudes et un soin du visage, puis une tisane au calme.",
       duration: "120 min",
       price: "189 €",
       stepsLabel: "Le déroulé",
@@ -227,7 +227,7 @@ const fr = {
         },
         {
           quote:
-            "Le rituel Nuit d’ambre est un vrai cadeau à soi-même. Le bain, la lumière, la tisane : tout est pensé.",
+            "Le rituel Nuit d’ambre est un vrai cadeau à soi-même. Le bain, la lumière, la tisane : tout est pensé.",
           name: "Sophie L.",
           detail: "Rituel Nuit d’ambre",
           rating: 5,
@@ -275,7 +275,7 @@ const fr = {
     },
     closing: {
       title: "Votre prochain soin vous attend.",
-      text: "Réservez en ligne ou appelez-nous : nous vous conseillons volontiers le soin qui vous convient.",
+      text: "Réservez en ligne ou appelez-nous : nous vous conseillons volontiers le soin qui vous convient.",
     },
   },
   gift: {
@@ -297,7 +297,7 @@ const fr = {
       eyebrow: "La carte des soins",
       title: "Soins et rituels",
       description:
-        "Massages, soins du visage et rituels de 90 à 120 minutes. Tous les soins de l’institut sont des soins de bien-être, non thérapeutiques et non médicaux.",
+        "Massages, soins du visage et rituels de 90 à 120 minutes. Tous les soins de l’institut sont des soins de bien-être, non thérapeutiques et non médicaux.",
       jumpLabel: "Aller à une catégorie",
       jumps: [
         { id: "massages", label: "Massages" },
@@ -325,7 +325,7 @@ const fr = {
           },
           {
             name: "Massage tissus profonds",
-            text: "Pressions plus appuyées et ciblées sur les zones chargées : nuque, épaules, bas du dos. L’intensité s’ajuste à votre ressenti.",
+            text: "Pressions plus appuyées et ciblées sur les zones chargées : nuque, épaules, bas du dos. L’intensité s’ajuste à votre ressenti.",
             note: "",
             options: [
               { duration: "60 min", price: "90 €" },
@@ -349,7 +349,7 @@ const fr = {
           },
           {
             name: "Massage duo",
-            text: "Deux tables côte à côte, deux praticiennes, le même rythme : un moment à partager en couple ou entre proches.",
+            text: "Deux tables côte à côte, deux praticiennes, le même rythme : un moment à partager en couple ou entre proches.",
             note: "Tarifs pour deux personnes.",
             options: [
               { duration: "60 min", price: "160 €" },
@@ -373,7 +373,7 @@ const fr = {
           },
           {
             name: "Soin hydratation intense",
-            text: "Un soin profond pour les peaux qui tiraillent : sérum, masque nourrissant, massage du visage et du cou.",
+            text: "Un soin profond pour les peaux qui tiraillent : sérum, masque nourrissant, massage du visage et du cou.",
             note: "",
             options: [{ duration: "60 min", price: "90 €" }],
           },
@@ -390,7 +390,7 @@ const fr = {
         number: "03",
         title: "Rituels",
         intro:
-          "Des parcours complets de 90 à 120 minutes, qui enchaînent plusieurs soins sans que vous ayez à y penser.",
+          "Des parcours complets de 90 à 120 minutes, qui enchaînent plusieurs soins sans que vous ayez à y penser.",
         items: [
           {
             name: "Rituel Détente profonde",
@@ -427,7 +427,7 @@ const fr = {
           "Arrivez dix minutes à l’avance pour vous installer sans hâte.",
           "Évitez un repas copieux dans l’heure qui précède.",
           "Signalez toute zone sensible, blessure récente ou allergie aux huiles.",
-          "Laissez bijoux et montre au vestiaire : peignoir et chaussons sont fournis.",
+          "Laissez bijoux et montre au vestiaire : peignoir et chaussons sont fournis.",
         ],
       },
       after: {
@@ -435,7 +435,7 @@ const fr = {
         items: [
           "Buvez un grand verre d’eau et gardez, si possible, une soirée calme.",
           "Évitez le sport intense et l’alcool le soir même.",
-          "Une légère somnolence est normale : laissez-vous un peu de temps avant de reprendre la route.",
+          "Une légère somnolence est normale : laissez-vous un peu de temps avant de reprendre la route.",
           "Hydratez la peau avec une crème neutre si elle vous paraît tendue.",
         ],
       },
@@ -444,15 +444,15 @@ const fr = {
       title: "À savoir avant de réserver",
       text: "Nos massages sont des soins de bien-être. Ils n’ont aucune visée thérapeutique et ne remplacent pas un suivi médical.",
       items: [
-        "Grossesse : seul le massage prénatal est proposé, avec l’accord de votre médecin ou de votre sage-femme.",
-        "Fièvre, infection, maladie de peau ou blessure récente : mieux vaut reporter le soin.",
-        "Problème cardiaque ou circulatoire, traitement en cours ou antécédent important : demandez l’avis de votre médecin avant de réserver.",
-        "En cas de doute, appelez-nous : nous vous conseillerons ou adapterons le soin.",
+        "Grossesse : seul le massage prénatal est proposé, avec l’accord de votre médecin ou de votre sage-femme.",
+        "Fièvre, infection, maladie de peau ou blessure récente : mieux vaut reporter le soin.",
+        "Problème cardiaque ou circulatoire, traitement en cours ou antécédent important : demandez l’avis de votre médecin avant de réserver.",
+        "En cas de doute, appelez-nous : nous vous conseillerons ou adapterons le soin.",
       ],
     },
     closing: {
-      title: "Un soin vous tente ?",
-      text: "Dites-nous ce qui vous ferait du bien : nous trouverons la durée et le soin qui conviennent.",
+      title: "Un soin vous tente ?",
+      text: "Dites-nous ce qui vous ferait du bien : nous trouverons la durée et le soin qui conviennent.",
     },
   },
   espace: {
@@ -460,7 +460,7 @@ const fr = {
       eyebrow: "L’espace",
       title: "Un lieu pensé pour le silence.",
       description:
-        "Cinq pièces, une lumière chaude et des matières naturelles : l’institut a été aménagé pour que l’on ralentisse dès la porte.",
+        "Cinq pièces, une lumière chaude et des matières naturelles : l’institut a été aménagé pour que l’on ralentisse dès la porte.",
     },
     gallery: {
       label: "Les espaces de l’institut",
@@ -478,7 +478,7 @@ const fr = {
           meta: "Deux tables côte à côte",
           image: {
             src: IMG.duoRoom,
-            alt: "Deux tables de massage côte à côte : les mains d’une praticienne versent de l’huile sur le dos d’une personne, une seconde personne est allongée derrière.",
+            alt: "Deux tables de massage côte à côte : les mains d’une praticienne versent de l’huile sur le dos d’une personne, une seconde personne est allongée derrière.",
           },
         },
         {
@@ -511,7 +511,7 @@ const fr = {
       eyebrow: "Hygiène et accueil",
       title: "Un accueil attentif, un lieu irréprochable.",
       description:
-        "Ce qui se voit à peine compte autant que ce qui se voit : voici comment nous préparons chaque soin.",
+        "Ce qui se voit à peine compte autant que ce qui se voit : voici comment nous préparons chaque soin.",
       items: [
         {
           icon: "sparkles",
@@ -538,7 +538,7 @@ const fr = {
     hours: {
       eyebrow: "Horaires",
       title: "Quand nous rendre visite",
-      text: "Le dernier soin est calé pour se terminer avant la fermeture. En dehors de ces horaires, appelez-nous : nous étudions volontiers une demande particulière.",
+      text: "Le dernier soin est calé pour se terminer avant la fermeture. En dehors de ces horaires, appelez-nous : nous étudions volontiers une demande particulière.",
     },
     closing: {
       title: "Venez voir par vous-même.",
@@ -550,12 +550,12 @@ const fr = {
       eyebrow: "Réservation",
       title: "Réservez votre moment.",
       description:
-        "Choisissez un soin et un créneau : nous confirmons votre rendez-vous par téléphone ou par e-mail sous 24 heures.",
+        "Choisissez un soin et un créneau : nous confirmons votre rendez-vous par téléphone ou par e-mail sous 24 heures.",
     },
     form: {
       title: "Votre demande",
       intro:
-        "Cette page est une démonstration : l’institut est fictif et aucune donnée n’est envoyée.",
+        "Indiquez le soin souhaité et vos disponibilités : nous confirmons sous 24 heures.",
       submit: "Envoyer ma demande",
       fields: {
         name: "Nom et prénom",
@@ -588,7 +588,7 @@ const fr = {
           { value: "conseil", label: "Je ne sais pas encore" },
         ],
         date: "Date souhaitée",
-        datePlaceholder: "Par exemple : samedi après-midi",
+        datePlaceholder: "Par exemple : samedi après-midi",
         message: "Message (facultatif)",
         messagePlaceholder: "Allergies, grossesse, attentes particulières…",
       },
@@ -604,7 +604,7 @@ const fr = {
       title: "Conditions d’annulation",
       items: [
         "Annulation ou report gratuit jusqu’à 24 heures avant le soin.",
-        "Moins de 24 heures avant : la moitié du soin est facturée.",
+        "Moins de 24 heures avant : la moitié du soin est facturée.",
         "En cas de retard, la durée du soin peut être raccourcie pour ne pas décaler les suivants.",
         "Les cartes cadeaux ne sont ni remboursables ni échangeables contre de l’argent.",
       ],
@@ -612,7 +612,7 @@ const fr = {
   },
   footer: {
     title: "Institut de massage et de bien-être",
-    text: "Un lieu calme pour ralentir : massages, soins du visage et rituels, sur rendez-vous.",
+    text: "Un lieu calme pour ralentir : massages, soins du visage et rituels, sur rendez-vous.",
     contactLabel: "Contact",
     barLabel: "Accès rapide",
   },
@@ -656,8 +656,8 @@ const en: SpaMassageCopy = {
     hoursLabel: "Opening hours",
     hours: [
       { day: "Monday", time: "Closed" },
-      { day: "Tuesday to Friday", time: "10 AM – 8 PM" },
-      { day: "Saturday", time: "9:30 AM – 7 PM" },
+      { day: "Tuesday to Friday", time: "10 AM – 8 PM" },
+      { day: "Saturday", time: "9:30 AM – 7 PM" },
       { day: "Sunday", time: "Closed" },
     ],
     email: "contact@example.com",
@@ -685,7 +685,7 @@ const en: SpaMassageCopy = {
     reservation: {
       title: "Booking - Your business",
       description:
-        "Request a treatment: demo form, fictional contact details, opening hours and the studio’s cancellation policy.",
+        "Request a treatment: choose a time slot and find the studio’s hours, contact details and cancellation policy.",
     },
   },
   home: {
@@ -710,7 +710,7 @@ const en: SpaMassageCopy = {
       text: "You arrive, hang up your coat, and are served a herbal tea. Then the lights lower, the oil is warmed between hands and the treatment begins, at your pace. Nothing is rushed, nothing is imposed.",
       stats: [
         {
-          value: "45–120",
+          value: "45⁠–⁠120",
           label: "minutes per treatment, depending on the option",
         },
         { value: "5", label: "wellness massages" },
@@ -1141,7 +1141,7 @@ const en: SpaMassageCopy = {
     form: {
       title: "Your request",
       intro:
-        "This page is a demo: the studio is fictional and no data is sent.",
+        "Tell us which treatment you would like and when you are available: we confirm within 24 hours.",
       submit: "Send my request",
       fields: {
         name: "Full name",

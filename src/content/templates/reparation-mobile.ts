@@ -37,7 +37,7 @@ const fr = {
   },
   cta: {
     quote: "Demander un devis",
-    call: "Appeler l'atelier",
+    call: "Appeler l’atelier",
     callWithNumber: "Appeler le 01 99 00 00 47",
     allPrices: "Voir tous les tarifs",
     bookHome: "Réserver à domicile",
@@ -51,10 +51,10 @@ const fr = {
     call: "Appeler",
   },
   hours: {
-    label: "Horaires de l'atelier",
+    label: "Horaires de l’atelier",
     items: [
-      { day: "Lundi au vendredi", time: "9h00 à 19h00" },
-      { day: "Samedi", time: "10h00 à 17h00" },
+      { day: "Lundi au vendredi", time: "9h00 à 19h00" },
+      { day: "Samedi", time: "10h00 à 17h00" },
       { day: "Dimanche", time: "Fermé" },
     ],
     homeNote: "Réparation à domicile sur rendez-vous, du lundi au samedi.",
@@ -84,7 +84,7 @@ const fr = {
   },
   footer: {
     text: "Réparation de smartphones et de tablettes en atelier ou à domicile : devis avant intervention, pièces garanties 6 mois, données conservées.",
-    navLabel: "Pages du site",
+    navLabel: "Navigation",
   },
   meta: {
     home: {
@@ -100,27 +100,27 @@ const fr = {
     faq: {
       title: "Questions fréquentes - Votre entreprise",
       description:
-        "Délais, données, garantie, réparation à domicile, appareil tombé dans l'eau : les réponses de l'atelier aux questions les plus fréquentes.",
+        "Délais, données, garantie, réparation à domicile, appareil tombé dans l’eau : les réponses de l’atelier aux questions les plus fréquentes.",
     },
     contact: {
       title: "Contact et devis - Votre entreprise",
       description:
-        "Demandez un devis gratuit par téléphone ou en ligne, consultez les horaires de l'atelier et les coordonnées.",
+        "Demandez un devis gratuit par téléphone ou en ligne, consultez les horaires de l’atelier et les coordonnées.",
     },
   },
   home: {
     hero: {
       eyebrow: "Atelier et réparation à domicile",
-      title: "Votre téléphone réparé, le plus souvent en moins d'une heure.",
+      title: "Votre téléphone réparé, le plus souvent en moins d’une heure.",
       description:
         "Écran cassé, batterie à plat, connecteur de charge hors service : décrivez la panne, recevez un devis clair avant toute intervention, puis récupérez votre appareil en atelier ou chez vous.",
       image: {
         src: "https://images.unsplash.com/photo-1746017354751-0102ae5a7c5a?auto=format&fit=crop&w=1600&q=80",
-        alt: "Un smartphone à l'écran brisé posé sur un tapis de réparation bleu, avant le remplacement de la vitre.",
+        alt: "Un smartphone à l’écran brisé posé sur un tapis de réparation bleu, avant le remplacement de la vitre.",
       },
       badge: {
-        label: "Remplacement d'écran",
-        value: "30 à 60 min",
+        label: "Remplacement d’écran",
+        value: "30 à 60 min",
       },
       trust: [
         {
@@ -131,12 +131,12 @@ const fr = {
         {
           icon: "shield-check",
           title: "Pièces garanties 6 mois",
-          text: "Pièce et main-d'œuvre couvertes.",
+          text: "Pièce et main-d’œuvre couvertes.",
         },
         {
           icon: "database-backup",
           title: "Données conservées",
-          text: "Photos et messages restent sur l'appareil.",
+          text: "Photos et messages restent sur l’appareil.",
         },
       ],
     },
@@ -154,12 +154,12 @@ const fr = {
         {
           icon: "house",
           title: "Choisissez atelier ou domicile",
-          text: "Passez à l'atelier, ou fixez un créneau de deux heures pour que le technicien vienne chez vous.",
+          text: "Passez à l’atelier, ou fixez un créneau de deux heures pour que le technicien vienne chez vous.",
         },
         {
           icon: "badge-check",
           title: "Récupérez votre appareil réparé",
-          text: "Vous testez l'appareil avant de payer, et les pièces posées sont garanties 6 mois.",
+          text: "Vous testez l’appareil avant de payer, et les pièces posées sont garanties 6 mois.",
         },
       ],
     },
@@ -167,7 +167,7 @@ const fr = {
       eyebrow: "Réparations les plus courantes",
       title: "Les pannes que nous réglons chaque jour.",
       description:
-        "Prix indicatifs pour un smartphone, pièce et main-d'œuvre comprises. Le devis ferme est établi avant toute intervention.",
+        "Prix indicatifs pour un smartphone, pièce et main-d’œuvre comprises. Le devis ferme est établi avant toute intervention.",
       fromLabel: "À partir de",
       timeLabel: "Délai",
       items: [
@@ -176,40 +176,40 @@ const fr = {
           title: "Écran cassé ou noir",
           text: "Remplacement de la dalle et de la vitre, tactile contrôlé.",
           price: "79 €",
-          time: "30 à 60 min",
+          time: "30 à 60 min",
         },
         {
           icon: "battery-charging",
           title: "Batterie qui ne tient plus",
           text: "Batterie neuve, mesure de la capacité avant restitution.",
           price: "49 €",
-          time: "20 à 40 min",
+          time: "20 à 40 min",
         },
         {
           icon: "plug-zap",
           title: "Connecteur de charge",
-          text: "L'appareil ne charge plus ou seulement dans une position.",
+          text: "L’appareil ne charge plus ou seulement dans une position.",
           price: "59 €",
-          time: "45 à 90 min",
+          time: "45 à 90 min",
         },
         {
           icon: "camera",
           title: "Caméra floue ou fissurée",
           text: "Module photo remplacé, mise au point et flash testés.",
           price: "69 €",
-          time: "30 à 60 min",
+          time: "30 à 60 min",
         },
         {
           icon: "scan-search",
           title: "Vitre arrière brisée",
           text: "Remplacement de la vitre, sans toucher à vos données.",
           price: "49 €",
-          time: "45 à 90 min",
+          time: "45 à 90 min",
         },
         {
           icon: "droplets",
           title: "Désoxydation",
-          text: "Appareil tombé dans l'eau : nettoyage et diagnostic des composants.",
+          text: "Appareil tombé dans l’eau : nettoyage et diagnostic des composants.",
           price: "39 €",
           time: "24 h maximum",
         },
@@ -218,14 +218,14 @@ const fr = {
     proof: {
       eyebrow: "Avis clients",
       title: "Des clients qui ont retrouvé leur téléphone.",
-      description: "Note moyenne de 4,8 sur 5 d'après les avis clients.",
-      label: "Avis de clients de l'atelier",
+      description: "Note moyenne de 4,8 sur 5 d’après les avis clients.",
+      label: "Avis de clients de l’atelier",
       items: [
         {
           quote:
             "Écran remplacé pendant que je prenais un café. Le prix annoncé au téléphone était le prix payé, et mon téléphone est reparti comme neuf.",
           name: "Claire M.",
-          detail: "Remplacement d'écran",
+          detail: "Remplacement d’écran",
           rating: 5,
           ratingLabel: "Note : 5 sur 5",
         },
@@ -247,7 +247,7 @@ const fr = {
         },
         {
           quote:
-            "Un peu d'attente le samedi matin, mais le diagnostic était honnête et mon téléphone charge de nouveau parfaitement.",
+            "Un peu d’attente le samedi matin, mais le diagnostic était honnête et mon téléphone charge de nouveau parfaitement.",
           name: "Marc D.",
           detail: "Connecteur de charge",
           rating: 4,
@@ -255,7 +255,7 @@ const fr = {
         },
         {
           quote:
-            "Mon téléphone était tombé dans l'eau. L'atelier m'a expliqué ce qui était possible sans rien promettre, et il fonctionne de nouveau.",
+            "Mon téléphone était tombé dans l’eau. L’atelier m’a expliqué ce qui était possible sans rien promettre, et il fonctionne de nouveau.",
           name: "Inès K.",
           detail: "Désoxydation",
           rating: 5,
@@ -263,7 +263,7 @@ const fr = {
         },
         {
           quote:
-            "Photos floues après une chute. Devis en cinq minutes, réparation dans l'heure, facture avec la garantie de six mois.",
+            "Photos floues après une chute. Devis en cinq minutes, réparation dans l’heure, facture avec la garantie de six mois.",
           name: "Paul A.",
           detail: "Caméra arrière",
           rating: 4,
@@ -273,12 +273,12 @@ const fr = {
     },
     homeService: {
       eyebrow: "Réparation à domicile",
-      title: "Pas le temps de passer à l'atelier ? Le technicien vient à vous.",
+      title: "Pas le temps de passer à l’atelier ? Le technicien vient à vous.",
       description:
         "Il se déplace avec les pièces les plus courantes et répare votre appareil chez vous ou à votre bureau, dans un rayon de 20 km autour de votre ville.",
       image: {
         src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80",
-        alt: "Les mains d'un technicien réparent un composant électronique.",
+        alt: "Les mains d’un technicien réparent un composant électronique.",
       },
       points: [
         {
@@ -289,12 +289,12 @@ const fr = {
         {
           icon: "calendar-clock",
           title: "Créneau de deux heures",
-          text: "Confirmé par SMS, avec un rappel avant l'arrivée du technicien.",
+          text: "Confirmé par SMS, avec un rappel avant l’arrivée du technicien.",
         },
         {
           icon: "hand-coins",
           title: "Paiement après la réparation",
-          text: "Vous réglez une fois l'appareil testé et fonctionnel.",
+          text: "Vous réglez une fois l’appareil testé et fonctionnel.",
         },
       ],
     },
@@ -302,8 +302,8 @@ const fr = {
       eyebrow: "Marques acceptées",
       title: "Les principales marques de smartphones et de tablettes.",
       description:
-        "Nous réparons la plupart des modèles récents comme anciens. Le vôtre n'est pas dans la liste ? Demandez-nous, nous répondons dans la journée.",
-      label: "Marques et familles d'appareils réparés",
+        "Nous réparons la plupart des modèles récents comme anciens. Le vôtre n’est pas dans la liste ? Demandez-nous, nous répondons dans la journée.",
+      label: "Marques et familles d’appareils réparés",
       items: [
         "iPhone",
         "iPad",
@@ -330,7 +330,7 @@ const fr = {
       eyebrow: "Tarifs et délais",
       title: "Des prix clairs, des délais annoncés, des pièces garanties.",
       description:
-        "Voici nos tarifs à partir de, par type de réparation et par famille d'appareil. Le prix exact dépend du modèle : il vous est confirmé par un devis avant toute intervention.",
+        "Voici nos tarifs à partir de, par type de réparation et par famille d’appareil. Le prix exact dépend du modèle : il vous est confirmé par un devis avant toute intervention.",
       image: {
         src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80",
         alt: "Une carte électronique de smartphone en gros plan.",
@@ -352,9 +352,9 @@ const fr = {
     },
     pricing: {
       eyebrow: "Grille tarifaire",
-      title: "Nos réparations, de l'écran au connecteur de charge.",
+      title: "Nos réparations, de l’écran au connecteur de charge.",
       description:
-        "Tous les prix sont TTC, pièce et main-d'œuvre comprises. Un modèle rare ou une pièce d'origine peut modifier le tarif : le devis le précise.",
+        "Tous les prix sont TTC, pièce et main-d’œuvre comprises. Un modèle rare ou une pièce d’origine peut modifier le tarif : le devis le précise.",
       columns: {
         smartphone: "Smartphone",
         tablet: "Tablette",
@@ -367,7 +367,7 @@ const fr = {
           text: "Dalle, vitre et tactile remplacés, luminosité et réponse contrôlées.",
           smartphone: "dès 79 €",
           tablet: "dès 99 €",
-          time: "30 à 60 min",
+          time: "30 à 60 min",
         },
         {
           icon: "battery-charging",
@@ -375,7 +375,7 @@ const fr = {
           text: "Batterie neuve, capacité mesurée avant la restitution.",
           smartphone: "dès 49 €",
           tablet: "dès 69 €",
-          time: "20 à 40 min",
+          time: "20 à 40 min",
         },
         {
           icon: "plug-zap",
@@ -383,7 +383,7 @@ const fr = {
           text: "Nettoyage ou remplacement du connecteur, charge et données testées.",
           smartphone: "dès 59 €",
           tablet: "dès 69 €",
-          time: "45 à 90 min",
+          time: "45 à 90 min",
         },
         {
           icon: "camera",
@@ -391,7 +391,7 @@ const fr = {
           text: "Module avant ou arrière remplacé, mise au point et flash testés.",
           smartphone: "dès 69 €",
           tablet: "dès 79 €",
-          time: "30 à 60 min",
+          time: "30 à 60 min",
         },
         {
           icon: "scan-search",
@@ -399,12 +399,12 @@ const fr = {
           text: "Remplacement de la vitre arrière, sans toucher à vos données.",
           smartphone: "dès 49 €",
           tablet: "Sur devis",
-          time: "45 à 90 min",
+          time: "45 à 90 min",
         },
         {
           icon: "droplets",
           title: "Désoxydation",
-          text: "Appareil tombé dans l'eau : démontage, nettoyage et diagnostic.",
+          text: "Appareil tombé dans l’eau : démontage, nettoyage et diagnostic.",
           smartphone: "dès 39 €",
           tablet: "dès 49 €",
           time: "24 h maximum",
@@ -415,12 +415,12 @@ const fr = {
       eyebrow: "Garantie",
       title: "Six mois de garantie sur chaque pièce posée.",
       description:
-        "La garantie couvre la pièce et la main-d'œuvre en cas de défaut de fonctionnement. Elle ne couvre pas une nouvelle casse ni un contact avec un liquide.",
+        "La garantie couvre la pièce et la main-d’œuvre en cas de défaut de fonctionnement. Elle ne couvre pas une nouvelle casse ni un contact avec un liquide.",
       items: [
         {
           icon: "shield-check",
           title: "Pièces contrôlées",
-          text: "Chaque pièce est vérifiée avant la pose, puis l'appareil est testé en entier avant la restitution.",
+          text: "Chaque pièce est vérifiée avant la pose, puis l’appareil est testé en entier avant la restitution.",
         },
         {
           icon: "receipt-text",
@@ -430,17 +430,17 @@ const fr = {
         {
           icon: "wrench",
           title: "Reprise sans frais",
-          text: "Un défaut est couvert ? L'atelier reprend l'appareil et le corrige sans frais.",
+          text: "Un défaut est couvert ? L’atelier reprend l’appareil et le corrige sans frais.",
         },
       ],
     },
     process: {
       eyebrow: "Déroulé",
-      title: "De l'appareil cassé à l'appareil réparé.",
+      title: "De l’appareil cassé à l’appareil réparé.",
       steps: [
         "Diagnostic gratuit en quelques minutes, en votre présence.",
         "Devis ferme que vous validez ou refusez, sans frais.",
-        "Réparation, puis test complet de l'appareil.",
+        "Réparation, puis test complet de l’appareil.",
         "Restitution, paiement et facture avec la garantie.",
       ],
     },
@@ -455,19 +455,19 @@ const fr = {
       eyebrow: "Questions fréquentes",
       title: "Tout savoir avant de nous confier votre appareil.",
       description:
-        "Délais, données, garantie, réparation à domicile : les réponses aux questions que l'on nous pose le plus souvent.",
+        "Délais, données, garantie, réparation à domicile : les réponses aux questions que l’on nous pose le plus souvent.",
     },
     listLabel: "Liste des questions",
     items: [
       {
         question: "Combien de temps dure une réparation ?",
         answer:
-          "La plupart des réparations (écran, batterie, connecteur de charge) se font en moins d'une heure, pendant que vous patientez ou faites une course. Une désoxydation ou une panne plus complexe demande jusqu'à 24 heures.",
+          "La plupart des réparations (écran, batterie, connecteur de charge) se font en moins d’une heure, pendant que vous patientez ou faites une course. Une désoxydation ou une panne plus complexe demande jusqu’à 24 heures.",
       },
       {
         question: "Mes données sont-elles conservées ?",
         answer:
-          "Dans la grande majorité des cas, la réparation ne touche pas à vos données : photos, messages et applications restent sur l'appareil. Nous vous conseillons tout de même une sauvegarde avant de venir.",
+          "Dans la grande majorité des cas, la réparation ne touche pas à vos données : photos, messages et applications restent sur l’appareil. Nous vous conseillons tout de même une sauvegarde avant de venir.",
       },
       {
         question: "Le devis est-il vraiment gratuit ?",
@@ -477,32 +477,32 @@ const fr = {
       {
         question: "Quelle garantie sur les pièces ?",
         answer:
-          "Les pièces posées sont garanties 6 mois, main-d'œuvre comprise. La garantie ne couvre pas une nouvelle casse ni un contact avec un liquide après la réparation.",
+          "Les pièces posées sont garanties 6 mois, main-d’œuvre comprise. La garantie ne couvre pas une nouvelle casse ni un contact avec un liquide après la réparation.",
       },
       {
         question: "Comment fonctionne la réparation à domicile ?",
         answer:
-          "Nous convenons d'un créneau de deux heures, du lundi au samedi, dans un rayon de 20 km autour de votre ville. Le technicien arrive avec les pièces les plus courantes ; si une pièce manque, il la commande et revient.",
+          "Nous convenons d’un créneau de deux heures, du lundi au samedi, dans un rayon de 20 km autour de votre ville. Le technicien arrive avec les pièces les plus courantes ; si une pièce manque, il la commande et revient.",
       },
       {
-        question: "Mon téléphone ne s'allume plus, est-ce réparable ?",
+        question: "Mon téléphone ne s’allume plus, est-ce réparable ?",
         answer:
           "Souvent, oui : la batterie, le connecteur de charge ou un écran défaillant en sont les causes les plus fréquentes. Nous faisons un diagnostic gratuit, et vous ne payez rien si la réparation est impossible.",
       },
       {
-        question: "Mon appareil est tombé dans l'eau, que faire ?",
+        question: "Mon appareil est tombé dans l’eau, que faire ?",
         answer:
-          "Éteignez-le tout de suite, ne le branchez pas et n'essayez pas de le sécher avec une source de chaleur. Apportez-le-nous le plus vite possible : plus la désoxydation est rapide, plus les chances de sauver l'appareil sont grandes, sans garantie de résultat.",
+          "Éteignez-le tout de suite, ne le branchez pas et n’essayez pas de le sécher avec une source de chaleur. Apportez-le-nous le plus vite possible : plus la désoxydation est rapide, plus les chances de sauver l’appareil sont grandes, sans garantie de résultat.",
       },
       {
-        question: "Utilisez-vous des pièces d'origine ?",
+        question: "Utilisez-vous des pièces d’origine ?",
         answer:
-          "Selon le modèle et votre budget, nous proposons des pièces d'origine ou des pièces compatibles de qualité équivalente. Le type de pièce est indiqué sur le devis, avant votre accord.",
+          "Selon le modèle et votre budget, nous proposons des pièces d’origine ou des pièces compatibles de qualité équivalente. Le type de pièce est indiqué sur le devis, avant votre accord.",
       },
     ],
     aside: {
-      title: "Votre question n'est pas dans la liste ?",
-      text: "Appelez l'atelier ou envoyez-nous un message : nous répondons dans la journée.",
+      title: "Votre question n’est pas dans la liste ?",
+      text: "Appelez l’atelier ou envoyez-nous un message : nous répondons dans la journée.",
     },
   },
   contact: {
@@ -510,12 +510,12 @@ const fr = {
       eyebrow: "Contact",
       title: "Un devis en deux minutes, par téléphone ou en ligne.",
       description:
-        "Indiquez l'appareil et la panne : nous vous répondons avec un prix ferme et le délai de réparation.",
+        "Indiquez l’appareil et la panne : nous vous répondons avec un prix ferme et le délai de réparation.",
     },
     form: {
       title: "Demander un devis",
       description:
-        "Les champs marqués d'un astérisque sont nécessaires pour établir le devis.",
+        "Les champs marqués d’un astérisque sont nécessaires pour établir le devis.",
       submit: "Envoyer ma demande",
       fields: {
         name: "Nom",
@@ -529,7 +529,7 @@ const fr = {
         modePlaceholder: "Atelier ou domicile",
         message: "Message",
         messagePlaceholder:
-          "Décrivez ce qui s'est passé, si vous le souhaitez.",
+          "Décrivez ce qui s’est passé, si vous le souhaitez.",
       },
       issueOptions: [
         { value: "screen", label: "Écran cassé ou noir" },
@@ -537,11 +537,11 @@ const fr = {
         { value: "charging", label: "Connecteur de charge" },
         { value: "camera", label: "Caméra" },
         { value: "back-glass", label: "Vitre arrière" },
-        { value: "water", label: "Appareil tombé dans l'eau" },
+        { value: "water", label: "Appareil tombé dans l’eau" },
         { value: "other", label: "Autre panne" },
       ],
       modeOptions: [
-        { value: "workshop", label: "À l'atelier" },
+        { value: "workshop", label: "À l’atelier" },
         { value: "home", label: "À domicile" },
       ],
     },
@@ -550,9 +550,9 @@ const fr = {
       text: "Choisissez « À domicile » dans le formulaire : nous vous proposons un créneau de deux heures dans un rayon de 20 km.",
     },
     closing: {
-      title: "Besoin d'une réponse tout de suite ?",
+      title: "Besoin d’une réponse tout de suite ?",
       description:
-        "L'atelier décroche pendant les horaires d'ouverture et vous donne un prix sans attendre.",
+        "L’atelier décroche pendant les horaires d’ouverture et vous donne un prix sans attendre.",
     },
   },
 };
@@ -625,7 +625,7 @@ const en: ReparationMobileCopy = {
   },
   footer: {
     text: "Smartphone and tablet repair in our shop or at your home: a quote before any work, parts guaranteed for 6 months, your data kept intact.",
-    navLabel: "Site pages",
+    navLabel: "Navigation",
   },
   meta: {
     home: {
@@ -641,12 +641,12 @@ const en: ReparationMobileCopy = {
     faq: {
       title: "FAQ - Your business",
       description:
-        "Turnaround, data, warranty, home repairs, a device dropped in water: the shop's answers to the most common questions.",
+        "Turnaround, data, warranty, home repairs, a device dropped in water: the shop’s answers to the most common questions.",
     },
     contact: {
       title: "Contact and quote - Your business",
       description:
-        "Request a free quote by phone or online, and check the shop's opening hours and contact details.",
+        "Request a free quote by phone or online, and check the shop’s opening hours and contact details.",
     },
   },
   home: {
@@ -779,7 +779,7 @@ const en: ReparationMobileCopy = {
         },
         {
           quote:
-            "The technician arrived within the announced window and replaced my tablet's charging port on the spot.",
+            "The technician arrived within the announced window and replaced my tablet’s charging port on the spot.",
           name: "Sofia L.",
           detail: "Home repair",
           rating: 5,
@@ -818,7 +818,7 @@ const en: ReparationMobileCopy = {
         "They bring the most common parts and repair your device at your home or office, within 20 km of your city.",
       image: {
         src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1600&q=80",
-        alt: "A technician's hands repairing an electronic component.",
+        alt: "A technician’s hands repairing an electronic component.",
       },
       points: [
         {
@@ -1086,7 +1086,7 @@ const en: ReparationMobileCopy = {
     },
     homeCard: {
       title: "Home repairs",
-      text: 'Choose "At my home" in the form: we offer you a two-hour window within 20 km.',
+      text: "Choose “At my home” in the form: we offer you a two-hour window within 20 km.",
     },
     closing: {
       title: "Need an answer right now?",

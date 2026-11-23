@@ -158,7 +158,7 @@ const fr = {
         {
           icon: "clock",
           title: "Horaires et astreinte affichés",
-          text: "Semaine, samedi matin et astreinte tous les jours jusqu’à 22 h : tout est écrit sur le site, avec la majoration qui s’applique.",
+          text: "Semaine, samedi matin et astreinte tous les jours jusqu’à 22 h : tout est affiché, avec la majoration qui s’applique.",
         },
       ],
     },
@@ -870,7 +870,7 @@ const en: PlombierChauffagisteCopy = {
         {
           icon: "clock",
           title: "Hours and on-call posted",
-          text: "Weekdays, Saturday morning and on-call every day until 10 pm: it is all on the site, with the surcharge that applies.",
+          text: "Weekdays, Saturday morning and on-call every day until 10 pm: it is all posted, with the surcharge that applies.",
         },
       ],
     },

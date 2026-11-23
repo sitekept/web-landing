@@ -250,7 +250,7 @@ const en: FleuristeCopy = {
   },
   projects: {
     eyebrow: "Our work",
-    title: "The events we do flowers for most often.",
+    title: "The events we decorate most often.",
     link: "Plan something similar",
     items: [
       {

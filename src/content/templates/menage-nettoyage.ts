@@ -60,7 +60,7 @@ const fr = {
     email: "bonjour@maisonnette.example",
     address: "12 rue de l’Exemple, 00000 Votre ville",
     area: "Votre ville et communes voisines",
-    hours: "Du lundi au samedi, 8 h à 19 h",
+    hours: "Du lundi au samedi, 8 h à 19 h",
   },
   footer: {
     title:
@@ -71,22 +71,22 @@ const fr = {
   },
   closing: {
     title: "Recevez votre prix ferme sous 24 h",
-    text: "Envoyez-nous les réponses aux quatre questions du devis ou appelez-nous : nous répondons du lundi au samedi.",
+    text: "Envoyez-nous ces quatre informations pour votre devis ou appelez-nous : nous répondons du lundi au samedi.",
   },
   home: {
     hero: {
       eyebrow: "Ménage à domicile et nettoyage de bureaux",
       title: "Un logement net toute la semaine, un devis en deux minutes.",
-      text: "Quatre questions pour un devis juste : dites-nous votre besoin par e-mail ou par téléphone, nous vous envoyons un prix ferme sous 24 h. Une équipe fixe passe chez vous avec ses produits et son matériel.",
+      text: "Quatre informations suffisent pour un devis juste : envoyez-les-nous par e-mail ou par téléphone, nous vous envoyons un prix ferme sous 24 h. Une équipe fixe passe chez vous avec ses produits et son matériel.",
       points: [
         "Prix ferme avant le premier passage",
         "Produits et matériel fournis",
         "Toujours la même équipe",
       ],
-      cardTitle: "Votre devis en 4 questions",
+      cardTitle: "Votre devis en 4 infos",
       cardTime: "2 min",
       cardNote:
-        "Envoyez-nous vos réponses par e-mail ou par téléphone. Gratuit, sans engagement, réponse sous 24 h.",
+        "Envoyez-nous ces informations par e-mail ou par téléphone. Gratuit, sans engagement, réponse sous 24 h.",
       steps: [
         {
           label: "Votre besoin",
@@ -115,7 +115,7 @@ const fr = {
           icon: "sparkles",
           title: "Entretien régulier",
           text: "Un passage chaque semaine ou tous les quinze jours : cuisine, sanitaires, sols, poussières et poubelles sorties.",
-          meta: "2 à 4 h par passage",
+          meta: "2 à 4 h par passage",
         },
         {
           icon: "clipboard",
@@ -239,13 +239,13 @@ const fr = {
       {
         title: "Essentiel",
         audience: "Studio ou appartement jusqu’à 70 m²",
-        rhythm: "Un passage par semaine, 2 à 3 h",
+        rhythm: "Un passage par semaine, 2 à 3 h",
         text: "Cuisine, sanitaires, sols et poussières : l’entretien courant, fait de la même façon à chaque visite.",
       },
       {
         title: "Confort",
         audience: "Famille ou maison jusqu’à 120 m²",
-        rhythm: "Un à deux passages par semaine, 3 à 4 h",
+        rhythm: "Un à deux passages par semaine, 3 à 4 h",
         text: "L’Essentiel, plus les rangements légers, le lit refait et une machine de linge lancée.",
       },
       {
@@ -418,7 +418,7 @@ const en: MenageNettoyageCopy = {
     home: "Home",
     formules: "Packages",
     zones: "Areas",
-    entreprises: "Business",
+    entreprises: "Commercial",
     faq: "FAQ",
   },
   cta: {
@@ -443,22 +443,22 @@ const en: MenageNettoyageCopy = {
   },
   closing: {
     title: "Get your firm price within 24 hours",
-    text: "Send us your answers to the four quote questions or give us a call: we pick up Monday to Saturday.",
+    text: "Send us these four details for your quote or give us a call: we pick up Monday to Saturday.",
   },
   home: {
     hero: {
       eyebrow: "Home and office cleaning",
       title: "A spotless home all week, and a quote in two minutes.",
-      text: "Four questions for an accurate quote: tell us what you need by email or phone, and we send a firm price within 24 hours. The same team comes to your home with its own products and equipment.",
+      text: "Four details are enough for an accurate quote: send them to us by email or phone, and we reply with a firm price within 24 hours. The same team comes to your home with its own products and equipment.",
       points: [
         "Firm price before the first visit",
         "Products and equipment included",
         "The same team every time",
       ],
-      cardTitle: "Your quote in 4 questions",
+      cardTitle: "Your quote in 4 details",
       cardTime: "2 min",
       cardNote:
-        "Send us your answers by email or phone. Free, no obligation, reply within 24 hours.",
+        "Send us these details by email or phone. Free, no obligation, reply within 24 hours.",
       steps: [
         {
           label: "Your need",
@@ -664,7 +664,7 @@ const en: MenageNettoyageCopy = {
     },
   },
   entreprises: {
-    eyebrow: "Business",
+    eyebrow: "Commercial cleaning",
     title: "Cleaning for your premises, without disrupting your work",
     description:
       "We come before opening or after closing, with a written service plan and a single point of contact.",
@@ -762,7 +762,7 @@ const en: MenageNettoyageCopy = {
         "Six areas served, each with its own route days. First visit within five business days of accepting the quote.",
     },
     entreprises: {
-      title: "Business - Your business",
+      title: "Commercial cleaning - Your business",
       description:
         "Cleaning for offices, practices and shops before opening or after closing, with a written service plan and a single point of contact.",
     },

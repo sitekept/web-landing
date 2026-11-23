@@ -44,8 +44,8 @@ const IMG = {
 /** Horaires, une seule fois par langue (espaces insécables). */
 const FR_NOON = "12 h – 14 h 30";
 const FR_EVENING = "19 h – 22 h 30";
-const EN_NOON = "12 p.m.–2:30 p.m.";
-const EN_EVENING = "7 p.m.–10:30 p.m.";
+const EN_NOON = "12 p.m.⁠–⁠2:30 p.m.";
+const EN_EVENING = "7 p.m.⁠–⁠10:30 p.m.";
 
 const fr = {
   brand: {
@@ -77,8 +77,8 @@ const fr = {
     email: "reservation@lesillon.example",
     hoursLabel: "Horaires",
     hours: [
-      { day: "Mardi – samedi, midi", time: FR_NOON },
-      { day: "Mardi – samedi, soir", time: FR_EVENING },
+      { day: "Mardi – samedi, midi", time: FR_NOON },
+      { day: "Mardi – samedi, soir", time: FR_EVENING },
       { day: "Dimanche et lundi", time: "Fermé" },
     ],
     quickActions: "Réserver ou appeler",
@@ -91,7 +91,7 @@ const fr = {
     home: {
       title: "Le Sillon - Restaurant Bistrot",
       description:
-        "Bistrot de quartier : cuisine du marché, cave vivante et comptoir ouvert. Service midi et soir du mardi au samedi, tables de 2 à 8, réservation en ligne.",
+        "Bistrot de quartier : cuisine du marché, cave vivante et comptoir ouvert. Service midi et soir du mardi au samedi, tables de 2 à 8, réservation en ligne.",
     },
     menu: {
       title: "Menu - Le Sillon",
@@ -101,7 +101,7 @@ const fr = {
     reservation: {
       title: "Réservation - Le Sillon",
       description:
-        "Réservez une table pour le déjeuner (12 h à 14 h 30) ou le dîner (19 h à 22 h 30). Du mardi au samedi, tables de 2 à 8, groupes sur demande.",
+        "Réservez une table pour le déjeuner (12 h à 14 h 30) ou le dîner (19 h à 22 h 30). Du mardi au samedi, tables de 2 à 8, groupes sur demande.",
     },
     galerie: {
       title: "Galerie - Le Sillon",
@@ -116,12 +116,12 @@ const fr = {
     privatisation: {
       title: "Privatisation - Le Sillon",
       description:
-        "Dîner d’équipe, repas de presse ou anniversaire : privatisez le Sillon pour 9 à 20 convives, menu en trois temps dès 36 € par personne.",
+        "Dîner d’équipe, repas de presse ou anniversaire : privatisez le Sillon pour 9 à 20 convives, menu en trois temps dès 36 € par personne.",
     },
     contact: {
       title: "Contact - Le Sillon",
       description:
-        "12 rue de l’Exemple, 00000 Votre ville. Ouvert du mardi au samedi, de 12 h à 14 h 30 et de 19 h à 22 h 30. Téléphone : 01 99 00 00 21.",
+        "12 rue de l’Exemple, 00000 Votre ville. Ouvert du mardi au samedi, de 12 h à 14 h 30 et de 19 h à 22 h 30. Téléphone : 01 99 00 00 21.",
     },
   },
   home: {
@@ -191,7 +191,7 @@ const fr = {
       description:
         "Bois sombre, une bougie sur chaque table, un comptoir où l’on s’installe sans réserver. On y vient à deux, à huit, ou seul avec un verre et le journal.",
       facts: [
-        { label: "En salle", value: "Tables de 2 à 8" },
+        { label: "En salle", value: "Tables de 2 à 8" },
         { label: "Au comptoir", value: "Douze places, sans réservation" },
         {
           label: "À la cave",
@@ -363,8 +363,8 @@ const fr = {
       date: "Date",
       service: "Service",
       services: [
-        { value: "midi", label: "Midi, de 12\u00a0h à 14\u00a0h\u00a030" },
-        { value: "soir", label: "Soir, de 19\u00a0h à 22\u00a0h\u00a030" },
+        { value: "midi", label: "Midi, de 12\u00a0h\u00a0à\u00a014\u00a0h\u00a030" },
+        { value: "soir", label: "Soir, de 19\u00a0h\u00a0à\u00a022\u00a0h\u00a030" },
       ],
       guests: "Nombre de couverts",
       guestOptions: [
@@ -482,19 +482,19 @@ const fr = {
       items: [
         {
           title: "Dîner d’équipe",
-          capacity: "12 à 20",
+          capacity: "12 à 20",
           price: "dès 42 € par personne",
           text: "Menu en trois temps, accord mets et vins en option, salle à vous toute la soirée.",
         },
         {
           title: "Repas de presse ou lancement",
-          capacity: "12 à 20",
+          capacity: "12 à 20",
           price: "dès 36 € par personne",
           text: "Déjeuner ou cocktail dînatoire, service continu et espace pour présenter.",
         },
         {
           title: "Anniversaire intime",
-          capacity: "9 à 14",
+          capacity: "9 à 14",
           price: "dès 40 € par personne",
           text: "Un menu court, une table dressée pour vous et un gâteau sur demande.",
         },
@@ -574,8 +574,8 @@ const en: RestaurantBistrotCopy = {
     email: "contact@example.com",
     hoursLabel: "Hours",
     hours: [
-      { day: "Tuesday–Saturday, lunch", time: EN_NOON },
-      { day: "Tuesday–Saturday, dinner", time: EN_EVENING },
+      { day: "Tuesday⁠–⁠Saturday, lunch", time: EN_NOON },
+      { day: "Tuesday⁠–⁠Saturday, dinner", time: EN_EVENING },
       { day: "Sunday and Monday", time: "Closed" },
     ],
     quickActions: "Reserve or call",

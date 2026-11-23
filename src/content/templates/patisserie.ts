@@ -62,7 +62,7 @@ const fr = {
       text: "Montage le matin même, puis une boîte rigide qui se transporte sans risque jusqu’à chez vous.",
       stats: [
         { value: "1985", label: "année de création" },
-        { value: "15+", label: "prix de pâtisserie" },
+        { value: "15", label: "prix de pâtisserie" },
         { value: "48 h", label: "pour un décor sur mesure" },
       ],
     },
@@ -121,7 +121,7 @@ const fr = {
     panel: {
       eyebrow: "Conseil",
       title:
-        "Nous choisissons avec vous la taille, le format et l’heure du service.",
+        "Nous choisissons avec vous la taille, le décor et l’heure du service.",
       text: "Livraison possible dans un rayon de 20 km : le gâteau arrive prêt à découper, avec ses conseils de conservation.",
     },
     items: [
@@ -173,7 +173,7 @@ const fr = {
     eyebrow: "Contact",
     title: "Dites-nous la date, le nombre d’invités et vos envies.",
     address: "12 rue de l’Exemple, 00000 Votre ville",
-    hours: "Mar.–sam. 7 h–19 h 30, dim. 8 h–13 h",
+    hours: "Mar.⁠–⁠sam. 7 h⁠–⁠19 h 30, dim. 8 h⁠–⁠13 h",
     phone: { href: "tel:+33199000057", label: "01 99 00 00 57" },
     email: {
       href: "mailto:contact@patisserie-douceur.example",
@@ -227,7 +227,7 @@ const en: PatisserieCopy = {
     titleAccent: "made by hand",
     titleEnd: "for every celebration.",
     description:
-      "Éclairs and tartlets by the piece, entremets for 6 to 10: pick them up in the shop or order ahead for a birthday, a wedding or a dinner party.",
+      "Éclairs and tartlets by the piece, entremets that serve 6 to 10: pick them up in the shop or order ahead for a birthday, a wedding or a dinner party.",
     image: {
       src: IMG.hero,
       alt: "Chocolate entremets topped with raspberries, blueberries, figs and rose petals, on a dark cake stand over white muslin.",
@@ -238,7 +238,7 @@ const en: PatisserieCopy = {
       text: "Assembled that morning and packed in a sturdy box that travels safely all the way home.",
       stats: [
         { value: "1985", label: "year founded" },
-        { value: "15+", label: "pastry awards" },
+        { value: "15", label: "pastry awards" },
         { value: "2 days", label: "for custom designs" },
       ],
     },
@@ -297,7 +297,7 @@ const en: PatisserieCopy = {
     panel: {
       eyebrow: "Planning",
       title:
-        "Together we choose the size, the style and the right time to serve it.",
+        "Together we choose the size, the decoration and the right time to serve it.",
       text: "Delivery available within 12 miles; the cake arrives ready to slice, with storage tips.",
     },
     items: [
@@ -349,7 +349,7 @@ const en: PatisserieCopy = {
     eyebrow: "Contact",
     title: "Tell us the date, the guest count and your ideas.",
     address: "12 Example Street, 00000 Your city",
-    hours: "Tue–Sat 7 a.m.–7:30 p.m., Sun 8 a.m.–1 p.m.",
+    hours: "Tue⁠–⁠Sat 7 a.m.⁠–⁠7:30 p.m., Sun 8 a.m.⁠–⁠1 p.m.",
     phone: { href: "tel:+33199000057", label: "01 99 00 00 57" },
     email: {
       href: "mailto:contact@example.com",

@@ -86,7 +86,7 @@ const fr = {
     phone: { label: "01 99 00 00 52", href: "tel:+33199000052" },
     appointment: "Études sur rendez-vous",
     hoursLabel: "Horaires",
-    hours: "Du mardi au vendredi, 9 h à 18 h",
+    hours: "Du mardi au vendredi, 9 h à 18 h",
   },
   meta: {
     home: {
@@ -220,7 +220,7 @@ const fr = {
         name: "Mission complète",
         detail:
           "Pourcentage du montant des travaux, de l’esquisse à la remise des clés : plans, consultation des entreprises, suivi de chantier.",
-        price: "8 à 12 %",
+        price: "8 à 12 %",
       },
       {
         name: "Mobilier sur mesure",
@@ -389,26 +389,26 @@ const fr = {
     steps: [
       {
         title: "Écoute et relevé",
-        time: "1 à 2 semaines",
+        time: "1 à 2 semaines",
         text: "Nous visitons le lieu, mesurons chaque pièce et vous demandons comment vous vivez chez vous : qui cuisine, où l’on travaille, ce qui vous gêne aujourd’hui.",
         deliverable: "Un relevé coté et un cahier des besoins.",
       },
       {
         title: "Esquisse et plans",
-        time: "3 à 4 semaines",
+        time: "3 à 4 semaines",
         text: "Nous dessinons l’organisation des pièces, les circulations et la lumière, puis trois ambiances de matières, avec des échantillons à toucher.",
         deliverable:
           "Plans, coupes, planches de matières et estimation des travaux.",
       },
       {
         title: "Chantier",
-        time: "3 à 9 mois selon le projet",
+        time: "3 à 9 mois selon le projet",
         text: "Nous consultons les entreprises, comparons les devis et passons sur le chantier chaque semaine. Un compte rendu écrit vous est envoyé après chaque visite.",
         deliverable: "Devis comparés et compte rendu hebdomadaire.",
       },
       {
         title: "Remise des clés",
-        time: "2 à 4 semaines",
+        time: "2 à 4 semaines",
         text: "Réception des travaux, levée des réserves, installation du mobilier et réglage de l’éclairage, pièce par pièce.",
         deliverable:
           "Le dossier des ouvrages et un carnet d’entretien des matières.",
@@ -427,7 +427,7 @@ const fr = {
       items: [
         {
           q: "Quel budget prévoir pour les travaux ?",
-          a: "Comptez 1 200 à 2 500 € HT le mètre carré pour une rénovation complète, selon l’état du lieu et le niveau de finition. Nous le confirmons après le relevé.",
+          a: "Comptez 1 200 à 2 500 € HT le mètre carré pour une rénovation complète, selon l’état du lieu et le niveau de finition. Nous le confirmons après le relevé.",
         },
         {
           q: "Pouvez-vous travailler à distance ?",
@@ -541,8 +541,8 @@ const fr = {
         budgetPlaceholder: "Choisir",
         budgets: [
           { value: "50", label: "Moins de 50 000 €" },
-          { value: "150", label: "50 000 à 150 000 €" },
-          { value: "300", label: "150 000 à 300 000 €" },
+          { value: "150", label: "50 000 à 150 000 €" },
+          { value: "300", label: "150 000 à 300 000 €" },
           { value: "plus", label: "Plus de 300 000 €" },
           { value: "nsp", label: "Je ne sais pas encore" },
         ],
@@ -659,7 +659,7 @@ const en: ArchitecteInterieurCopy = {
           "The rooms open onto one another and the herringbone floor and moldings stay: an older apartment turned into one big living space, bright from morning to evening.",
         surface: "990 sq ft",
         duration: "7 months",
-        works: "€150,000 plus VAT",
+        works: "€150,000 before VAT",
         mission: "Design and construction supervision",
         href: P.atelierMarais,
         cta: "Read the case study",
@@ -669,7 +669,7 @@ const en: ArchitecteInterieurCopy = {
         },
         imageSide: {
           src: IMG.seat,
-          alt: "Wooden window seat in the bay of a large window, checked cushions, a small round stool and trees outside the glass",
+          alt: "Wooden window seat in the bay of a large window, plaid cushions, a small round stool and trees outside the glass",
         },
       },
       {
@@ -680,7 +680,7 @@ const en: ArchitecteInterieurCopy = {
           "The living spaces are arranged around a stone-paved patio with its fountain and potted plants. A pale ash staircase connects the two levels.",
         surface: "1,500 sq ft",
         duration: "9 months",
-        works: "€260,000 plus VAT",
+        works: "€260,000 before VAT",
         mission: "Full scope, furniture included",
         href: `${P.projets}#maison-patio`,
         cta: "See the project",
@@ -701,17 +701,17 @@ const en: ArchitecteInterieurCopy = {
           "A room designed for rest: upholstered headboard, warm lighting, and a bathroom in pale stone and wood. Delivered in four months, with the hotel open.",
         surface: "410 sq ft",
         duration: "4 months",
-        works: "€95,000 plus VAT",
+        works: "€95,000 before VAT",
         mission: "Design, custom furniture, supervision",
         href: `${P.projets}#suite-hotel`,
         cta: "See the project",
         imageMain: {
           src: IMG.suite,
-          alt: "Hotel room: a large bed with a gray upholstered headboard, a checked blanket, bedside lamps and a big window onto the city",
+          alt: "Hotel room: a large bed with a gray upholstered headboard, a plaid blanket, bedside lamps and a big window onto the city",
         },
         imageSide: {
           src: IMG.bath,
-          alt: "Bathroom: a round white basin on a pale stone counter, a floating wooden vanity, a glass shower and white tiles",
+          alt: "Bathroom: a round white sink on a pale stone counter, a floating wooden vanity, a glass shower and white tiles",
         },
       },
     ],
@@ -751,7 +751,7 @@ const en: ArchitecteInterieurCopy = {
     hero: {
       eyebrow: "Interior architect",
       title: "Calm interiors, designed around the life you lead in them.",
-      text: "Your business transforms apartments, houses and hotels: a clear plan, carefully chosen materials, and a job site followed all the way to handing over the keys.",
+      text: "Your business transforms apartments, houses and hotels: a clear plan, carefully chosen materials, and a job site we follow until the day we hand over the keys.",
       image: {
         src: IMG.kitchen,
         alt: "A long open kitchen facing a garden: pale wood cabinets, a white countertop and beige floor tiles in low sunlight",
@@ -879,12 +879,12 @@ const en: ArchitecteInterieurCopy = {
         },
         {
           name: "Oiled oak",
-          text: "The window seat and custom-drawn joinery.",
+          text: "The window seat and custom-designed millwork.",
         },
       ],
       image: {
         src: IMG.seat,
-        alt: "Wooden window seat in the bay of a large window, checked cushions, a small round stool and trees outside the glass",
+        alt: "Wooden window seat in the bay of a large window, plaid cushions, a small round stool and trees outside the glass",
       },
     },
     result: {
@@ -999,7 +999,7 @@ const en: ArchitecteInterieurCopy = {
         text: "Three materials per room at most, picked by hand from samples.",
       },
       {
-        title: "A job site that holds the project",
+        title: "A job site that keeps the project on track",
         text: "We are on site every week so the details we drew are the ones that get built.",
       },
     ],

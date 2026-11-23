@@ -57,7 +57,7 @@ const fr = {
   },
   topBar: {
     left: "Votre ville",
-    right: "Du lundi au vendredi, 9 h–19 h",
+    right: "Du lundi au vendredi, 9 h⁠–⁠19 h",
   },
   nav: {
     home: "Accueil",
@@ -111,9 +111,9 @@ const fr = {
     },
     expertises: {
       eyebrow: "Expertises",
-      title: "Deux domaines du droit, des dossiers souvent sensibles.",
+      title: "Trois matières du droit, des dossiers souvent sensibles.",
       description:
-        "Le cabinet ne traite que ces deux matières : vous obtenez des réponses rapides et des honoraires prévisibles.",
+        "Le cabinet ne traite que ces trois matières : vous obtenez des réponses rapides et des honoraires prévisibles.",
       cards: [
         {
           title: "Immobilier",
@@ -208,7 +208,7 @@ const fr = {
       eyebrow: "Expertises",
       title: "Immobilier, successions et droit de la famille.",
       description:
-        "Deux domaines seulement, pour des conseils précis et des honoraires annoncés à l’avance.",
+        "Trois matières seulement, pour des conseils précis et des honoraires annoncés à l’avance.",
     },
     areaLabel: "Domaine",
     areas: [
@@ -291,7 +291,7 @@ const fr = {
     expertises: {
       title: "Expertises - Votre cabinet",
       description:
-        "Immobilier, successions et droit de la famille : les deux domaines du cabinet, avec des honoraires annoncés à l’avance.",
+        "Immobilier, successions et droit de la famille : les trois matières du cabinet, avec des honoraires annoncés à l’avance.",
     },
     blog: {
       title: "Blog - Votre cabinet",
@@ -315,7 +315,7 @@ const en: AvocateCopy = {
   },
   topBar: {
     left: "Your city",
-    right: "Monday to Friday, 9 a.m.–7 p.m.",
+    right: "Monday to Friday, 9 a.m.⁠–⁠7 p.m.",
   },
   nav: {
     home: "Home",
@@ -360,7 +360,7 @@ const en: AvocateCopy = {
       eyebrow: "Real estate, inheritance, family law",
       title: "Your firm",
       description:
-        "Buying or selling a property, settling a loved one’s estate, going through a separation: the firm advises and represents you, from the first call to a settlement or a judgment.",
+        "Buying or selling a property, settling a loved one’s estate, going through a separation: we advise and represent you, from the first call to a settlement or a judgment.",
       image: { src: IMG.hero, alt: "" },
       aside: {
         title: "One lawyer handles your case from start to finish.",
@@ -369,9 +369,9 @@ const en: AvocateCopy = {
     },
     expertises: {
       eyebrow: "Practice areas",
-      title: "Two fields of law, often sensitive matters.",
+      title: "Three areas of law, often sensitive matters.",
       description:
-        "The firm takes on nothing else, so you get quick answers and predictable fees.",
+        "We take on nothing else, so you get quick answers and predictable fees.",
       cards: [
         {
           title: "Real estate",
@@ -417,7 +417,7 @@ const en: AvocateCopy = {
       eyebrow: "Complex cases",
       title: "When a property, a family and deadlines all overlap.",
       description:
-        "A house co-owned by heirs after a death, a sale held up by a divorce: the firm puts every step back in the right order.",
+        "A house co-owned by heirs after a death, a sale held up by a divorce: we put every step back in the right order.",
       image: {
         src: IMG.desk,
         alt: "A hand signing a document on a desk.",
@@ -449,7 +449,7 @@ const en: AvocateCopy = {
       eyebrow: "Contact",
       title: "Tell us what’s going on, and we’ll get back to you.",
       description:
-        "A few lines are enough: the firm replies within 2 business days to set up a first meeting.",
+        "A few lines are enough: we reply within 2 business days to set up a first meeting.",
       info: {
         title: "Helpful to include",
         items: [
@@ -466,14 +466,14 @@ const en: AvocateCopy = {
       eyebrow: "Practice areas",
       title: "Real estate, inheritance and family law.",
       description:
-        "Just two fields, so you get precise advice and fees agreed in advance.",
+        "Just three areas, so you get precise advice and fees agreed in advance.",
     },
     areaLabel: "Area",
     areas: [
       {
         title: "Real estate",
         intro:
-          "A real estate project, a lease or a construction job: the firm reviews your documents and defends you if something goes wrong.",
+          "A real estate project, a lease or a construction job: we review your documents and defend you if something goes wrong.",
         items: [
           "Buying or selling: checks on the seller, the property and the inspection reports.",
           "Review of the purchase agreement, loan offer or lease before you sign.",
@@ -484,7 +484,7 @@ const en: AvocateCopy = {
       {
         title: "Inheritance and family law",
         intro:
-          "A death, a family rift or a disagreement over an estate: the firm advises and represents you, alongside the notary.",
+          "A death, a divorce or a disagreement over an estate: we advise and represent you, alongside the notary.",
         items: [
           "Locating the heirs and listing the assets.",
           "Dealing with the notary and the other parties’ lawyers.",
@@ -497,7 +497,7 @@ const en: AvocateCopy = {
       eyebrow: "Your case",
       title: "What to put in your first message.",
       description:
-        "Four details are enough for the firm to give you a useful answer right away.",
+        "Four details are enough for us to give you a useful answer right away.",
       items: [
         "Type of matter",
         "People involved",
@@ -525,9 +525,9 @@ const en: AvocateCopy = {
   contact: {
     hero: {
       eyebrow: "Contact",
-      title: "Write to the firm.",
+      title: "Write to us.",
       description:
-        "Explain your situation in a few lines. The firm replies within 2 business days, in writing or by phone.",
+        "Explain your situation in a few lines. We reply within 2 business days, in writing or by phone.",
     },
     before: {
       title: "Before you write",
@@ -549,7 +549,7 @@ const en: AvocateCopy = {
     expertises: {
       title: "Practice areas - Your firm",
       description:
-        "Real estate, inheritance and family law: the firm’s two fields, with fees agreed in advance.",
+        "Real estate, inheritance and family law: our three areas, with fees agreed in advance.",
     },
     blog: {
       title: "Blog - Your firm",
@@ -559,7 +559,7 @@ const en: AvocateCopy = {
     contact: {
       title: "Contact - Your firm",
       description:
-        "Write to the firm in a few lines: a reply within 2 business days to set up a first meeting.",
+        "Write to us in a few lines: a reply within 2 business days to set up a first meeting.",
     },
   },
 };

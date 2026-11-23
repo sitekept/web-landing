@@ -132,7 +132,7 @@ const fr = {
     bien: {
       title: "Appartement vue lac - Votre entreprise",
       description:
-        "Appartement de 82 m² avec séjour traversant et terrasse, à 6 minutes à pied du lac : caractéristiques, photos, prix et demande de visite.",
+        "Appartement de 82 m² avec séjour lumineux et terrasse, au bord du lac : caractéristiques, photos, prix et demande de visite.",
     },
     services: {
       title: "Services - Votre entreprise",
@@ -152,12 +152,12 @@ const fr = {
     estimation: {
       title: "Estimation - Votre entreprise",
       description:
-        "Estimation offerte de votre bien : visite, comparaison argumentée et avis de valeur écrit sous 48 heures. Formulaire de démonstration.",
+        "Estimation offerte de votre bien : visite, comparaison argumentée et avis de valeur écrit sous 48 heures.",
     },
     contact: {
       title: "Contact - Votre entreprise",
       description:
-        "Contactez l’agence : formulaire de démonstration, coordonnées fictives, disponibilités et secteur couvert.",
+        "Contactez l’agence : téléphone, e-mail, disponibilités et secteur couvert.",
     },
   },
   home: {
@@ -293,7 +293,7 @@ const fr = {
     featured: {
       eyebrow: "Bien du moment",
       title: "Appartement vue lac, aux Rives.",
-      text: "Séjour traversant, terrasse et rénovation sobre, à 6 minutes à pied du lac. Cave et stationnement inclus.",
+      text: "Séjour lumineux, terrasse et rénovation sobre, au bord du lac. Cave et stationnement inclus.",
       facts: ["82 m²", "3 pièces", "2 chambres", "395 000 €"],
       image: {
         src: IMG.lakeTerrace,
@@ -434,7 +434,7 @@ const fr = {
           specs: ["82 m²", "3 pièces", "2 chambres"],
           price: "395 000 €",
           opinion:
-            "Un séjour traversant et une terrasse, à 6 minutes à pied du lac. Cave et stationnement inclus : la fiche détaille le reste.",
+            "Un séjour lumineux et une terrasse, au bord du lac. Cave et stationnement inclus : la fiche détaille le reste.",
           target: "bien",
           cta: "Voir la fiche",
         },
@@ -560,7 +560,7 @@ const fr = {
       eyebrow: "Fiche bien · Les Rives",
       title: "Appartement vue lac",
       description:
-        "Un séjour traversant, une terrasse et une rénovation sobre, à 6 minutes à pied du lac.",
+        "Un séjour lumineux, une terrasse et une rénovation sobre, au bord du lac.",
       status: "Nouveau",
       price: "395 000 €",
       priceNote: "Honoraires à la charge du vendeur : 4 % TTC (barème fictif).",
@@ -591,8 +591,8 @@ const fr = {
       eyebrow: "Le bien",
       title: "Un appartement calme, à vivre dedans comme dehors.",
       paragraphs: [
-        "82 m² traversants, avec un séjour ouvert sur la cuisine et une terrasse avec vue sur le lac. Rénové en 2023 dans un registre sobre et lumineux : parquet, pierre et bois, sans fioritures.",
-        "À 6 minutes à pied du lac, dans une copropriété calme aux charges maîtrisées. Une cave et un stationnement sont inclus.",
+        "82 m² avec un séjour lumineux ouvert sur la cuisine et une terrasse avec vue sur le lac. Rénové en 2023 dans un registre sobre et chaleureux : pierre, noyer et bois clair, sans fioritures.",
+        "Au bord du lac, dans une copropriété calme aux charges maîtrisées. Une cave et un stationnement sont inclus.",
       ],
     },
     features: {
@@ -600,11 +600,11 @@ const fr = {
       items: [
         { label: "Surface habitable", value: "82 m²" },
         { label: "Pièces", value: "3 pièces, 2 chambres" },
-        { label: "Séjour", value: "Traversant, cuisine ouverte" },
+        { label: "Séjour", value: "Lumineux, cuisine ouverte" },
         { label: "Extérieur", value: "Terrasse" },
         { label: "Rénovation", value: "2023, sobre" },
         { label: "Annexes", value: "Cave et stationnement inclus" },
-        { label: "Situation", value: "6 minutes à pied du lac" },
+        { label: "Situation", value: "Au bord du lac" },
         { label: "Copropriété", value: "Calme, charges maîtrisées" },
         { label: "Étiquette énergétique", value: "À compléter" },
       ],
@@ -615,7 +615,7 @@ const fr = {
       pros: {
         title: "Ce qui plaît",
         items: [
-          "Un séjour traversant, lumineux toute la journée",
+          "Un séjour lumineux, ouvert sur la terrasse",
           "Une terrasse avec vue sur le lac",
           "Cave et stationnement inclus, rares dans le quartier",
         ],
@@ -1259,7 +1259,7 @@ const en: AgenceImmobiliereCopy = {
     bien: {
       title: "Lake view apartment - Your business",
       description:
-        "An 883 sq ft apartment with a dual-exposure living room and a terrace, a 6-minute walk from the lake: features, photos, price and showing request.",
+        "An 883 sq ft apartment with a bright living room and a terrace, right on the lake: features, photos, price and showing request.",
     },
     services: {
       title: "Services - Your business",
@@ -1279,12 +1279,12 @@ const en: AgenceImmobiliereCopy = {
     estimation: {
       title: "Home value - Your business",
       description:
-        "A free home value estimate of your property: a visit, a reasoned comparison and a written market analysis within 48 hours. Demo form.",
+        "A free home value estimate of your property: a visit, a reasoned comparison and a written market analysis within 48 hours.",
     },
     contact: {
       title: "Contact - Your business",
       description:
-        "Contact the agency: demo form, fictional contact details, availability and area covered.",
+        "Contact the agency: phone, email, availability and area covered.",
     },
   },
   home: {
@@ -1420,7 +1420,7 @@ const en: AgenceImmobiliereCopy = {
     featured: {
       eyebrow: "Featured property",
       title: "Lake view apartment, The Riverside.",
-      text: "A dual-exposure living room, a terrace and a restrained renovation, a 6-minute walk from the lake. Storage room and parking included.",
+      text: "A bright living room, a terrace and a restrained renovation, right on the lake. Storage room and parking included.",
       facts: ["883 sq ft", "3 rooms", "2 bedrooms", "€395,000"],
       image: {
         src: IMG.lakeTerrace,
@@ -1562,7 +1562,7 @@ const en: AgenceImmobiliereCopy = {
           specs: ["883 sq ft", "3 rooms", "2 bedrooms"],
           price: "€395,000",
           opinion:
-            "A dual-exposure living room and a terrace, a 6-minute walk from the lake. Storage room and parking included: the listing covers the rest.",
+            "A bright living room and a terrace, right on the lake. Storage room and parking included: the listing covers the rest.",
           target: "bien",
           cta: "View the listing",
         },
@@ -1688,7 +1688,7 @@ const en: AgenceImmobiliereCopy = {
       eyebrow: "Property listing · The Riverside",
       title: "Lake view apartment",
       description:
-        "A dual-exposure living room, a terrace and a restrained renovation, a 6-minute walk from the lake.",
+        "A bright living room, a terrace and a restrained renovation, right on the lake.",
       status: "New",
       price: "€395,000",
       priceNote:
@@ -1720,8 +1720,8 @@ const en: AgenceImmobiliereCopy = {
       eyebrow: "The property",
       title: "A quiet apartment, to live in indoors and out.",
       paragraphs: [
-        "883 sq ft running front to back, with a living room open to the kitchen and a terrace with a lake view. Renovated in 2023 in a restrained, bright style: wood floors, stone and wood, no frills.",
-        "A 6-minute walk from the lake, in a quiet building with moderate monthly costs. A storage room and a parking space are included.",
+        "883 sq ft with a bright living room open to the kitchen and a terrace with a lake view. Renovated in 2023 in a restrained, bright style: stone, walnut and light wood, no frills.",
+        "Right on the lake, in a quiet building with moderate monthly costs. A storage room and a parking space are included.",
       ],
     },
     features: {
@@ -1729,11 +1729,11 @@ const en: AgenceImmobiliereCopy = {
       items: [
         { label: "Living area", value: "883 sq ft" },
         { label: "Rooms", value: "3 rooms, 2 bedrooms" },
-        { label: "Living room", value: "Dual exposure, open kitchen" },
+        { label: "Living room", value: "Bright, open kitchen" },
         { label: "Outdoor space", value: "Terrace" },
         { label: "Renovation", value: "2023, restrained" },
         { label: "Extras", value: "Storage room and parking included" },
-        { label: "Location", value: "6-minute walk from the lake" },
+        { label: "Location", value: "Lakefront" },
         { label: "Building", value: "Quiet, moderate monthly costs" },
         { label: "Energy rating", value: "To be completed" },
       ],
@@ -1744,7 +1744,7 @@ const en: AgenceImmobiliereCopy = {
       pros: {
         title: "What appeals",
         items: [
-          "A dual-exposure living room, bright all day",
+          "A bright living room opening onto the terrace",
           "A terrace with a lake view",
           "Storage room and parking included, rare in the neighborhood",
         ],

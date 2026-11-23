@@ -63,9 +63,9 @@ const fr = {
       "L’ostéopathie ne remplace pas un avis médical. En cas de symptôme inhabituel, consultez un médecin.",
     hoursLabel: "Horaires",
     hours: [
-      { day: "Lundi, mardi, jeudi", time: "9h – 19h" },
-      { day: "Mercredi", time: "9h – 13h" },
-      { day: "Vendredi", time: "9h – 18h" },
+      { day: "Lundi, mardi, jeudi", time: "9h – 19h" },
+      { day: "Mercredi", time: "9h – 13h" },
+      { day: "Vendredi", time: "9h – 18h" },
       { day: "Samedi", time: "Matin, sur rendez-vous" },
     ],
     email: "contact@votre-entreprise.example",
@@ -77,7 +77,7 @@ const fr = {
   },
   footer: {
     title: "Un cabinet calme, sur rendez-vous.",
-    text: "Séances de 45 à 60 minutes pour les adultes, les sportifs, les femmes enceintes et les seniors.",
+    text: "Séances de 45 à 60 minutes pour les adultes, les sportifs, les femmes enceintes et les seniors.",
     contactLabel: "Contact",
     barLabel: "Accès rapide au cabinet",
   },
@@ -85,7 +85,7 @@ const fr = {
     home: {
       title: "Votre entreprise - Cabinet d’ostéopathie",
       description:
-        "Un cabinet d’ostéopathie calme et lumineux : séances de 45 à 60 minutes pour les adultes, les sportifs, les femmes enceintes et les seniors, sur rendez-vous.",
+        "Un cabinet d’ostéopathie calme et lumineux : séances de 45 à 60 minutes pour les adultes, les sportifs, les femmes enceintes et les seniors, sur rendez-vous.",
     },
     consultations: {
       title: "Consultations - Votre entreprise",
@@ -95,12 +95,12 @@ const fr = {
     approche: {
       title: "L’approche - Votre entreprise",
       description:
-        "Une ostéopathie à votre rythme : écoute, observation, gestes doux et orientation vers un médecin quand il le faut.",
+        "Une ostéopathie à votre rythme : écoute, observation, gestes doux et orientation vers un médecin quand il le faut.",
     },
     rendezVous: {
       title: "Rendez-vous - Votre entreprise",
       description:
-        "Demandez un rendez-vous d’ostéopathie : formulaire de démonstration, coordonnées fictives et horaires du cabinet.",
+        "Demandez un rendez-vous d’ostéopathie : choisissez un créneau, retrouvez les horaires, l’adresse et le téléphone du cabinet.",
     },
   },
   home: {
@@ -108,9 +108,9 @@ const fr = {
       eyebrow: "Cabinet d’ostéopathie",
       title: "Retrouvez de l’aisance dans votre corps.",
       description:
-        "Un cabinet calme, des séances de 45 à 60 minutes et un praticien qui prend le temps d’écouter avant de toucher. Pour les tensions du quotidien, le sport, la grossesse et les années qui passent.",
+        "Un cabinet calme, des séances de 45 à 60 minutes et un praticien qui prend le temps d’écouter avant de toucher. Pour les tensions du quotidien, le sport, la grossesse et les années qui passent.",
       facts: [
-        "Séance de 45 à 60 minutes",
+        "Séance de 45 à 60 minutes",
         "Sur rendez-vous, du lundi au samedi",
         "Remboursement possible selon votre mutuelle",
       ],
@@ -121,7 +121,7 @@ const fr = {
       card: {
         label: "Une séance",
         value: "60 €",
-        text: "45 à 60 minutes, échange et conseils compris.",
+        text: "45 à 60 minutes, échange et conseils compris.",
       },
     },
     forWho: {
@@ -159,22 +159,22 @@ const fr = {
         "Une séance suit toujours le même fil, pour que vous sachiez à quoi vous attendre.",
       steps: [
         {
-          time: "0 – 10 min",
+          time: "0 – 10 min",
           title: "On commence par parler",
           text: "Votre motif, votre histoire, ce que vous ressentez au quotidien et ce que vous attendez de la séance.",
         },
         {
-          time: "10 – 20 min",
+          time: "10 – 20 min",
           title: "On observe",
-          text: "Posture, mobilité, appuis : un examen simple, en tenue souple, pour repérer où le mouvement se raidit.",
+          text: "Posture, mobilité, appuis : un examen simple, en tenue souple, pour repérer où le mouvement se raidit.",
         },
         {
-          time: "20 – 50 min",
+          time: "20 – 50 min",
           title: "On travaille en douceur",
           text: "Des gestes manuels lents et adaptés, que vous pouvez interrompre à tout moment.",
         },
         {
-          time: "50 – 60 min",
+          time: "50 – 60 min",
           title: "On conclut ensemble",
           text: "Ce que vous avez senti, des conseils simples pour les jours suivants et la suite à prévoir, ou non.",
         },
@@ -193,7 +193,7 @@ const fr = {
           name: "Claire M.",
           detail: "Tensions de nuque",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -201,7 +201,7 @@ const fr = {
           name: "Thomas R.",
           detail: "Sportif",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -209,7 +209,7 @@ const fr = {
           name: "Inès B.",
           detail: "Grossesse",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -217,15 +217,15 @@ const fr = {
           name: "Marc D.",
           detail: "Première visite",
           rating: 4,
-          ratingLabel: "Note : 4 sur 5",
+          ratingLabel: "Note : 4 sur 5",
         },
         {
           quote:
-            "À mon âge, je craignais d’être brusquée. Pas du tout : tout s’est fait doucement, à mon rythme.",
+            "À mon âge, je craignais d’être brusquée. Pas du tout : tout s’est fait doucement, à mon rythme.",
           name: "Odile P.",
           detail: "Senior",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -233,7 +233,7 @@ const fr = {
           name: "Julien S.",
           detail: "Dos et épaules",
           rating: 4,
-          ratingLabel: "Note : 4 sur 5",
+          ratingLabel: "Note : 4 sur 5",
         },
       ],
     },
@@ -256,7 +256,7 @@ const fr = {
       price: {
         label: "Tarif",
         value: "60 €",
-        text: "Séance de 45 à 60 minutes. Remboursement possible selon votre mutuelle : une facture détaillée vous est remise.",
+        text: "Séance de 45 à 60 minutes. Remboursement possible selon votre mutuelle : une facture détaillée vous est remise.",
       },
     },
   },
@@ -275,7 +275,7 @@ const fr = {
       eyebrow: "Motifs fréquents",
       title: "Ce qui vous amène au cabinet",
       description:
-        "Une liste indicative : si votre situation n’y figure pas, posez la question avant de réserver.",
+        "Une liste indicative : si votre situation n’y figure pas, posez la question avant de réserver.",
       items: [
         {
           icon: "armchair",
@@ -315,7 +315,7 @@ const fr = {
       items: [
         {
           title: "Adultes",
-          text: "Séance classique de 45 à 60 minutes : échange, examen, gestes manuels, conseils. Adaptée à une gêne récente ou à des tensions qui reviennent.",
+          text: "Séance classique de 45 à 60 minutes : échange, examen, gestes manuels, conseils. Adaptée à une gêne récente ou à des tensions qui reviennent.",
         },
         {
           title: "Sportifs",
@@ -342,7 +342,7 @@ const fr = {
         price: "Tarif",
       },
       rows: [
-        { service: "Adulte", duration: "45 à 60 min", price: "60 €" },
+        { service: "Adulte", duration: "45 à 60 min", price: "60 €" },
         {
           service: "Sportif, avec bilan de pratique",
           duration: "60 min",
@@ -355,7 +355,7 @@ const fr = {
           price: "55 €",
         },
       ],
-      note: "Remboursement possible selon votre mutuelle et les conditions de votre contrat : demandez-nous une facture détaillée.",
+      note: "Remboursement possible selon votre mutuelle et les conditions de votre contrat : demandez-nous une facture détaillée.",
     },
     bring: {
       eyebrow: "Avant de venir",
@@ -382,12 +382,12 @@ const fr = {
     limits: {
       eyebrow: "Limites",
       title: "Quand consulter un médecin d’abord",
-      text: "L’ostéopathie ne remplace pas un avis médical. Consultez un médecin avant de prendre rendez-vous, ou à la place, si vous avez :",
+      text: "L’ostéopathie ne remplace pas un avis médical. Consultez un médecin avant de prendre rendez-vous, ou à la place, si vous avez :",
       items: [
-        "de la fièvre ou un état général qui vous inquiète ;",
-        "une douleur brutale, très intense ou qui ne cède pas au repos ;",
-        "une perte de force, un engourdissement ou des fourmillements qui s’étendent ;",
-        "un traumatisme récent, comme une chute ou un accident ;",
+        "de la fièvre ou un état général qui vous inquiète ;",
+        "une douleur brutale, très intense ou qui ne cède pas au repos ;",
+        "une perte de force, un engourdissement ou des fourmillements qui s’étendent ;",
+        "un traumatisme récent, comme une chute ou un accident ;",
         "une douleur dans la poitrine ou une gêne pour respirer.",
       ],
       closing:
@@ -399,7 +399,7 @@ const fr = {
       eyebrow: "L’approche",
       title: "Une ostéopathie à votre rythme.",
       description:
-        "Pas de promesse spectaculaire : une écoute attentive, des gestes proportionnés et des conseils que vous pouvez appliquer chez vous.",
+        "Pas de promesse spectaculaire : une écoute attentive, des gestes proportionnés et des conseils que vous pouvez appliquer chez vous.",
     },
     steps: {
       eyebrow: "La méthode",
@@ -407,7 +407,7 @@ const fr = {
       items: [
         {
           title: "Écouter",
-          text: "Votre histoire passe avant tout geste : ce que vous ressentez, depuis quand, et ce qui vous gêne vraiment au quotidien.",
+          text: "Votre histoire passe avant tout geste : ce que vous ressentez, depuis quand, et ce qui vous gêne vraiment au quotidien.",
         },
         {
           title: "Observer",
@@ -427,7 +427,7 @@ const fr = {
       eyebrow: "Le cabinet",
       title: "Une pièce simple, lumineuse et silencieuse.",
       description:
-        "Lumière du jour, matières naturelles, peu d’objets : tout est fait pour que vous puissiez vous détendre dès l’entrée.",
+        "Lumière du jour, matières naturelles, peu d’objets : tout est fait pour que vous puissiez vous détendre dès l’entrée.",
       label: "Photos du cabinet",
       items: [
         {
@@ -494,7 +494,7 @@ const fr = {
     form: {
       title: "Votre demande",
       intro:
-        "Cette page est une démonstration : le cabinet est fictif et aucune donnée n’est envoyée.",
+        "Quelques lignes suffisent : indiquez le motif de votre venue et vos disponibilités.",
       submit: "Envoyer ma demande",
       fields: {
         name: "Nom et prénom",
@@ -569,9 +569,9 @@ const en: OsteopatheCopy = {
       "Osteopathy does not replace medical advice. If you have an unusual symptom, see a doctor.",
     hoursLabel: "Opening hours",
     hours: [
-      { day: "Monday, Tuesday, Thursday", time: "9 am – 7 pm" },
-      { day: "Wednesday", time: "9 am – 1 pm" },
-      { day: "Friday", time: "9 am – 6 pm" },
+      { day: "Monday, Tuesday, Thursday", time: "9 am – 7 pm" },
+      { day: "Wednesday", time: "9 am – 1 pm" },
+      { day: "Friday", time: "9 am – 6 pm" },
       { day: "Saturday", time: "Morning, by appointment" },
     ],
     email: "contact@example.com",
@@ -606,7 +606,7 @@ const en: OsteopatheCopy = {
     rendezVous: {
       title: "Appointments - Your business",
       description:
-        "Request an osteopathy appointment: demo form, placeholder contact details and the practice's opening hours.",
+        "Request an osteopathy appointment: choose a time slot and find the practice’s hours, address and phone number.",
     },
   },
   home: {
@@ -622,7 +622,7 @@ const en: OsteopatheCopy = {
       ],
       image: {
         src: IMG.hero,
-        alt: "A practitioner's hands resting on the back of a person lying down, in a bright room.",
+        alt: "A practitioner’s hands resting on the back of a person lying down, in a bright room.",
       },
       card: {
         label: "One session",
@@ -665,22 +665,22 @@ const en: OsteopatheCopy = {
         "Every session follows the same thread, so you know what to expect.",
       steps: [
         {
-          time: "0 – 10 min",
+          time: "0 – 10 min",
           title: "We start by talking",
           text: "Your reason for coming, your history, how you feel day to day and what you hope for from the session.",
         },
         {
-          time: "10 – 20 min",
+          time: "10 – 20 min",
           title: "We observe",
           text: "Posture, mobility, support points: a simple check, in loose clothing, to see where movement gets stiff.",
         },
         {
-          time: "20 – 50 min",
+          time: "20 – 50 min",
           title: "We work gently",
           text: "Slow, adapted manual techniques that you can stop at any moment.",
         },
         {
-          time: "50 – 60 min",
+          time: "50 – 60 min",
           title: "We wrap up together",
           text: "What you felt, simple advice for the following days and what comes next, if anything.",
         },
@@ -757,7 +757,7 @@ const en: OsteopatheCopy = {
       title: "Visiting the practice",
       access: {
         label: "Getting here",
-        text: "The practice is downtown, on the ground floor, with step-free access. Parking and public transport are a few minutes' walk away.",
+        text: "The practice is downtown, on the ground floor, with step-free access. Parking and public transport are a few minutes’ walk away.",
       },
       price: {
         label: "Price",
@@ -774,7 +774,7 @@ const en: OsteopatheCopy = {
         "A first conversation to understand what bothers you, then techniques adapted to your situation. Here are the most common reasons to come and what to know before your visit.",
       image: {
         src: IMG.hands,
-        alt: "A practitioner's hands resting on the shoulder of a person lying down.",
+        alt: "A practitioner’s hands resting on the shoulder of a person lying down.",
       },
     },
     reasons: {
@@ -801,7 +801,7 @@ const en: OsteopatheCopy = {
         {
           icon: "wind",
           title: "Shoulder and jaw tension",
-          text: "Often linked to stress, screens or a bad night's sleep.",
+          text: "Often linked to stress, screens or a bad night’s sleep.",
         },
         {
           icon: "heart",
@@ -949,7 +949,7 @@ const en: OsteopatheCopy = {
           meta: "Slow techniques",
           image: {
             src: IMG.hands,
-            alt: "A practitioner's hands resting on the shoulder of a person lying down.",
+            alt: "A practitioner’s hands resting on the shoulder of a person lying down.",
           },
         },
         {
@@ -1000,7 +1000,7 @@ const en: OsteopatheCopy = {
     form: {
       title: "Your request",
       intro:
-        "This page is a demonstration: the practice is fictional and no data is sent.",
+        "A few lines are enough: tell us why you are coming in and when you are available.",
       submit: "Send my request",
       fields: {
         name: "Full name",

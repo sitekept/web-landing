@@ -75,11 +75,11 @@ const fr = {
     address: ["12 rue de l’Exemple", "00000 Votre ville"],
     hoursLabel: "Horaires",
     hoursShort: [
-      { day: "Lundi – vendredi", time: "7h30 – 18h" },
-      { day: "Samedi", time: "8h30 – 18h30" },
-      { day: "Dimanche", time: "9h – 17h" },
+      { day: "Lundi – vendredi", time: "7h30 – 18h" },
+      { day: "Samedi", time: "8h30 – 18h30" },
+      { day: "Dimanche", time: "9h – 17h" },
     ],
-    kitchenNote: "Cuisine ouverte de 11h30 à 15h.",
+    kitchenNote: "Cuisine ouverte de 11h30 à 15h.",
     closing: {
       title: "Une table, un café, un moment pour vous.",
       text: "Passez au comptoir, appelez-nous ou écrivez-nous : on se réjouit de vous servir.",
@@ -500,7 +500,7 @@ const fr = {
         id: "sale",
         name: "Salé du midi",
         short: "Salé du midi",
-        note: "Servi de 11h30 à 15h, sur place ou à emporter.",
+        note: "Servi de 11h30 à 15h, sur place ou à emporter.",
         items: [
           {
             name: "Tartine avocat-œuf",
@@ -704,15 +704,15 @@ const fr = {
     hours: {
       title: "Horaires",
       rows: [
-        { day: "Lundi", time: "7h30 – 18h" },
-        { day: "Mardi", time: "7h30 – 18h" },
-        { day: "Mercredi", time: "7h30 – 18h" },
-        { day: "Jeudi", time: "7h30 – 18h" },
-        { day: "Vendredi", time: "7h30 – 18h" },
-        { day: "Samedi", time: "8h30 – 18h30" },
-        { day: "Dimanche", time: "9h – 17h" },
+        { day: "Lundi", time: "7h30 – 18h" },
+        { day: "Mardi", time: "7h30 – 18h" },
+        { day: "Mercredi", time: "7h30 – 18h" },
+        { day: "Jeudi", time: "7h30 – 18h" },
+        { day: "Vendredi", time: "7h30 – 18h" },
+        { day: "Samedi", time: "8h30 – 18h30" },
+        { day: "Dimanche", time: "9h – 17h" },
       ],
-      note: "Cuisine ouverte de 11h30 à 15h. Dernière commande 15 minutes avant la fermeture.",
+      note: "Cuisine ouverte de 11h30 à 15h. Dernière commande 15 minutes avant la fermeture.",
     },
     address: {
       title: "Adresse et contact",
@@ -750,14 +750,14 @@ const fr = {
       description:
         "Le café se privatise le soir, pour jusqu’à 40 personnes. Pour un groupe, on prépare viennoiseries, boissons chaudes et tartines.",
       points: [
-        "Privatisation du café de 18h à 22h",
+        "Privatisation du café de 18h à 22h",
         "Commande pour 8 personnes ou plus, à prévenir 3 jours avant",
         "Réponse sous 48 heures",
       ],
       form: {
         title: "Votre demande",
         description:
-          "Quelques lignes suffisent. Démonstration : aucun message n’est envoyé.",
+          "Quelques lignes suffisent.",
         submit: "Envoyer la demande",
         name: "Nom",
         email: "E-mail",
@@ -816,9 +816,9 @@ const en: CoffeeShopCopy = {
     address: ["12 Example Street", "00000 Your city"],
     hoursLabel: "Opening hours",
     hoursShort: [
-      { day: "Monday – Friday", time: "7:30 am – 6 pm" },
-      { day: "Saturday", time: "8:30 am – 6:30 pm" },
-      { day: "Sunday", time: "9 am – 5 pm" },
+      { day: "Monday – Friday", time: "7:30 am – 6 pm" },
+      { day: "Saturday", time: "8:30 am – 6:30 pm" },
+      { day: "Sunday", time: "9 am – 5 pm" },
     ],
     kitchenNote: "Kitchen open from 11:30 am to 3 pm.",
     closing: {
@@ -1444,13 +1444,13 @@ const en: CoffeeShopCopy = {
     hours: {
       title: "Opening hours",
       rows: [
-        { day: "Monday", time: "7:30 am – 6 pm" },
-        { day: "Tuesday", time: "7:30 am – 6 pm" },
-        { day: "Wednesday", time: "7:30 am – 6 pm" },
-        { day: "Thursday", time: "7:30 am – 6 pm" },
-        { day: "Friday", time: "7:30 am – 6 pm" },
-        { day: "Saturday", time: "8:30 am – 6:30 pm" },
-        { day: "Sunday", time: "9 am – 5 pm" },
+        { day: "Monday", time: "7:30 am – 6 pm" },
+        { day: "Tuesday", time: "7:30 am – 6 pm" },
+        { day: "Wednesday", time: "7:30 am – 6 pm" },
+        { day: "Thursday", time: "7:30 am – 6 pm" },
+        { day: "Friday", time: "7:30 am – 6 pm" },
+        { day: "Saturday", time: "8:30 am – 6:30 pm" },
+        { day: "Sunday", time: "9 am – 5 pm" },
       ],
       note: "Kitchen open from 11:30 am to 3 pm. Last order 15 minutes before closing.",
     },
@@ -1497,7 +1497,7 @@ const en: CoffeeShopCopy = {
       form: {
         title: "Your request",
         description:
-          "A few lines are enough. Demo: no message is actually sent.",
+          "A few lines are enough.",
         submit: "Send the request",
         name: "Name",
         email: "Email",

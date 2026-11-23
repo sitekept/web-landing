@@ -48,7 +48,7 @@ const fr = {
   },
   topBar: {
     left: "Réponse sous 48 h ouvrées",
-    right: "Du lundi au vendredi, 9 h – 18 h",
+    right: "Du lundi au vendredi, 9 h – 18 h",
   },
   nav: {
     home: "Accueil",
@@ -70,7 +70,7 @@ const fr = {
     address: "12 rue de l’Exemple, 00000 Votre ville",
     email: "contact@cabinetvalmont.example",
     phone: { href: "tel:+33199000043", label: "01 99 00 00 43" },
-    hours: "Du lundi au vendredi, 9 h – 18 h",
+    hours: "Du lundi au vendredi, 9 h – 18 h",
     labels: {
       phone: "Téléphone",
       email: "E-mail",
@@ -501,7 +501,7 @@ const en: CabinetAvocatCopy = {
   },
   topBar: {
     left: "Reply within 2 business days",
-    right: "Monday to Friday, 9 a.m.–6 p.m.",
+    right: "Monday to Friday, 9 a.m.⁠–⁠6 p.m.",
   },
   nav: {
     home: "Home",
@@ -523,7 +523,7 @@ const en: CabinetAvocatCopy = {
     address: "12 Example Street, 00000 Your city",
     email: "contact@example.com",
     phone: { href: "tel:+33199000043", label: "01 99 00 00 43" },
-    hours: "Monday to Friday, 9 a.m.–6 p.m.",
+    hours: "Monday to Friday, 9 a.m.⁠–⁠6 p.m.",
     labels: {
       phone: "Phone",
       email: "Email",

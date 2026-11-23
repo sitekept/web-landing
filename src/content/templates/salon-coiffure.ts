@@ -72,7 +72,7 @@ const fr = {
   common: {
     hoursLabel: "Horaires",
     hours: [
-      { day: "Mardi au samedi", time: "10 h à 20 h" },
+      { day: "Mardi au samedi", time: "10 h à 20 h" },
       { day: "Dimanche et lundi", time: "Fermé" },
     ],
     addressLabel: "Adresse",
@@ -96,7 +96,7 @@ const fr = {
     prestations: {
       title: "Prestations - Studio Lune",
       description:
-        "Coupes, couleurs, coiffages et soins avec leurs prix et leurs durées : coupe dès 25 €, balayage lumière dès 160 €. Diagnostic offert avant toute couleur.",
+        "Coupes, couleurs, coiffages et soins avec leurs prix et leurs durées : coupe adulte dès 38 €, balayage lumière dès 160 €. Diagnostic offert avant toute couleur.",
     },
     stylists: {
       title: "L’équipe - Studio Lune",
@@ -121,7 +121,7 @@ const fr = {
     contact: {
       title: "Contact - Studio Lune",
       description:
-        "Adresse, horaires et téléphone de Studio Lune, ouvert du mardi au samedi de 10 h à 20 h. Écrivez-nous pour une question avant votre rendez-vous.",
+        "Adresse, horaires et téléphone de Studio Lune, ouvert du mardi au samedi de 10 h à 20 h. Écrivez-nous pour une question avant votre rendez-vous.",
     },
   },
   home: {
@@ -143,7 +143,7 @@ const fr = {
       },
       factsLabel: "En bref",
       facts: [
-        { label: "Coupe", value: "dès 25 €" },
+        { label: "Coupe adulte", value: "dès 38 €" },
         { label: "Balayage", value: "dès 160 €" },
         { label: "Ouvert", value: "mar. au sam." },
       ],
@@ -522,7 +522,7 @@ const fr = {
     ],
     salon: {
       title: "Le salon",
-      text: "Six fauteuils, de la lumière naturelle, des miroirs ronds et un coin d’attente au calme. On limite le nombre de rendez-vous en parallèle pour que chacun soit servi sans attendre.",
+      text: "Six fauteuils, de la lumière naturelle, des miroirs ronds et un coin d’attente au calme. On limite le nombre de rendez-vous en parallèle pour que l’attente reste courte.",
       points: [
         "Six postes de coiffage et deux bacs de lavage",
         "Entrée de plain-pied, accessible en fauteuil roulant",
@@ -573,9 +573,9 @@ const fr = {
         label: "Moment de la journée",
         placeholder: "Choisir un moment",
         options: [
-          { value: "morning", label: "Matin, de 10 h à 13 h" },
-          { value: "afternoon", label: "Après-midi, de 13 h à 17 h" },
-          { value: "evening", label: "Fin de journée, de 17 h à 20 h" },
+          { value: "morning", label: "Matin, de 10 h à 13 h" },
+          { value: "afternoon", label: "Après-midi, de 13 h à 17 h" },
+          { value: "evening", label: "Fin de journée, de 17 h à 20 h" },
         ],
       },
       name: { label: "Nom" },
@@ -703,7 +703,7 @@ const en: SalonCoiffureCopy = {
   common: {
     hoursLabel: "Opening hours",
     hours: [
-      { day: "Tuesday to Saturday", time: "10 a.m.–8 p.m." },
+      { day: "Tuesday to Saturday", time: "10 a.m.⁠–⁠8 p.m." },
       { day: "Sunday and Monday", time: "Closed" },
     ],
     addressLabel: "Address",
@@ -727,7 +727,7 @@ const en: SalonCoiffureCopy = {
     prestations: {
       title: "Services - Your business",
       description:
-        "Cuts, color, styling and treatments with prices and timings: cuts from €25, luminous balayage from €160. Free consultation before any color.",
+        "Cuts, color, styling and treatments with prices and timings: adult cuts from €38, luminous balayage from €160. Free consultation before any color.",
     },
     stylists: {
       title: "Team - Your business",
@@ -773,9 +773,9 @@ const en: SalonCoiffureCopy = {
       },
       factsLabel: "At a glance",
       facts: [
-        { label: "Cut", value: "from €25" },
+        { label: "Adult cut", value: "from €38" },
         { label: "Balayage", value: "from €160" },
-        { label: "Open", value: "Tue–Sat" },
+        { label: "Open", value: "Tue⁠–⁠Sat" },
       ],
     },
     prices: {
@@ -1147,7 +1147,7 @@ const en: SalonCoiffureCopy = {
     ],
     salon: {
       title: "The salon",
-      text: "Six chairs, natural light, round mirrors and a quiet waiting corner. We limit the number of simultaneous appointments so everyone is looked after without waiting.",
+      text: "Six chairs, natural light, round mirrors and a quiet waiting corner. We limit the number of simultaneous appointments so the wait stays short.",
       points: [
         "Six styling stations and two wash basins",
         "Step-free entrance, wheelchair accessible",

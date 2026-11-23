@@ -49,11 +49,11 @@ const fr = {
   },
   topBar: {
     left: "Petits-déjeuners de bureau et buffets livrés sur commande.",
-    weekdays: "Mar.–sam. 6 h 30–19 h 30",
-    sunday: "Dim. 7 h–13 h",
+    weekdays: "Mar.⁠–⁠sam. 6 h 30⁠–⁠19 h 30",
+    sunday: "Dim. 7 h⁠–⁠13 h",
   },
   common: {
-    hours: "Mar.–sam. 6 h 30–19 h 30, dim. 7 h–13 h",
+    hours: "Mar.⁠–⁠sam. 6 h 30⁠–⁠19 h 30, dim. 7 h⁠–⁠13 h",
     addressShort: "12 rue de l’Exemple, Votre ville",
     addressFull: "12 rue de l’Exemple, 00000 Votre ville",
     street: "12 rue de l’Exemple",
@@ -242,11 +242,11 @@ const en: BoulangerieCopy = {
   },
   topBar: {
     left: "Office breakfasts and buffets delivered to order.",
-    weekdays: "Tue–Sat 6:30 a.m.–7:30 p.m.",
-    sunday: "Sun 7 a.m.–1 p.m.",
+    weekdays: "Tue⁠–⁠Sat 6:30 a.m.⁠–⁠7:30 p.m.",
+    sunday: "Sun 7 a.m.⁠–⁠1 p.m.",
   },
   common: {
-    hours: "Tue–Sat 6:30 a.m.–7:30 p.m., Sun 7 a.m.–1 p.m.",
+    hours: "Tue⁠–⁠Sat 6:30 a.m.⁠–⁠7:30 p.m., Sun 7 a.m.⁠–⁠1 p.m.",
     addressShort: "12 Example Street, Your city",
     addressFull: "12 Example Street, 00000 Your city",
     street: "12 Example Street",
@@ -264,7 +264,7 @@ const en: BoulangerieCopy = {
     prepareOrder: "Order ahead",
     stats: [
       { value: "6:30", label: "Doors open" },
-      { value: "6 days", label: "A week, Tuesday to Sunday" },
+      { value: "6 days", label: "Open Tuesday to Sunday" },
       { value: "2 days", label: "To prepare a buffet" },
     ],
     image: {
@@ -281,7 +281,7 @@ const en: BoulangerieCopy = {
     products: [
       {
         name: "Traditional Baguette",
-        description: "Natural leaven, golden crust, airy crumb.",
+        description: "Natural sourdough, golden crust, airy crumb.",
         price: "€1.30",
         image: {
           src: IMG.baguette,

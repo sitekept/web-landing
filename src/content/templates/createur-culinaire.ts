@@ -73,8 +73,8 @@ const fr = {
     address: "12 rue de l’Exemple, 00000 Votre ville",
     hoursLabel: "Atelier",
     hours: [
-      { day: "Du mardi au vendredi", time: "9h – 18h, sur rendez-vous" },
-      { day: "Samedi", time: "9h – 13h, retraits et dégustations" },
+      { day: "Du mardi au vendredi", time: "9h – 18h, sur rendez-vous" },
+      { day: "Samedi", time: "9h – 13h, retraits et dégustations" },
     ],
   },
   footer: {
@@ -83,7 +83,7 @@ const fr = {
     contactLabel: "Contact",
     barLabel: "Actions rapides",
     allergens:
-      "Allergènes : informations sur demande pour chaque pièce, à préciser à la commande.",
+      "Allergènes : informations sur demande pour chaque pièce, à préciser à la commande.",
   },
   meta: {
     home: {
@@ -99,12 +99,12 @@ const fr = {
     evenements: {
       title: "Événements - Votre entreprise",
       description:
-        "Formules par type d’événement, à partir de 180 €, ateliers de pâtisserie, livraison et installation dans un rayon de 20 km. Allergènes : sur demande.",
+        "Formules par type d’événement, à partir de 180 €, ateliers de pâtisserie, livraison et installation dans un rayon de 20 km. Allergènes : sur demande.",
     },
     commande: {
       title: "Commander - Votre entreprise",
       description:
-        "Demandez votre devis : 10 jours de délai minimum, 4 semaines pour un mariage. Réponse sous 48 heures ouvrées.",
+        "Demandez votre devis : 10 jours de délai minimum, 4 semaines pour un mariage. Réponse sous 48 heures ouvrées.",
     },
   },
   home: {
@@ -127,7 +127,7 @@ const fr = {
     manifesto: {
       eyebrow: "Le manifeste",
       title:
-        "Nous cuisinons pour la table, pas pour la vitrine : peu d’ingrédients, de la précision, des gestes qui se voient.",
+        "Nous cuisinons pour la table, pas pour la vitrine : peu d’ingrédients, de la précision, des gestes qui se voient.",
       description:
         "Chaque commande est dessinée avec vous, du premier croquis à la dégustation, puis réalisée à la main dans notre atelier. Des saveurs nettes, des finitions soignées, des desserts qu’on mange jusqu’à la dernière part.",
     },
@@ -137,7 +137,7 @@ const fr = {
       items: [
         {
           title: "Gâteaux de création",
-          text: "Entremets, layer cakes et pièces montées dessinés sur mesure : saveurs, hauteur, décor et message.",
+          text: "Entremets, layer cakes et pièces montées dessinés sur mesure : saveurs, hauteur, décor et message.",
           link: "Voir les créations",
           image: {
             src: IMG.glaze,
@@ -177,7 +177,7 @@ const fr = {
           name: "Claire M.",
           detail: "Anniversaire, 40 ans",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -185,15 +185,15 @@ const fr = {
           name: "Hugo T.",
           detail: "Mariage",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
-            "Buffet impeccable, installé en vingt minutes. Seul regret : j’aurais dû commander plus de pièces salées.",
+            "Buffet impeccable, installé en vingt minutes. Seul regret : j’aurais dû commander plus de pièces salées.",
           name: "Marc D.",
           detail: "Événement d’entreprise",
           rating: 4,
-          ratingLabel: "Note : 4 sur 5",
+          ratingLabel: "Note : 4 sur 5",
         },
         {
           quote:
@@ -201,15 +201,15 @@ const fr = {
           name: "Inès B.",
           detail: "Fête de famille",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
-            "Échanges rapides, devis clair, dégustation avant le grand jour : tout était limpide.",
+            "Échanges rapides, devis clair, dégustation avant le grand jour : tout était limpide.",
           name: "Laure P.",
           detail: "Mariage",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
         {
           quote:
@@ -217,7 +217,7 @@ const fr = {
           name: "Yanis K.",
           detail: "Atelier",
           rating: 5,
-          ratingLabel: "Note : 5 sur 5",
+          ratingLabel: "Note : 5 sur 5",
         },
       ],
     },
@@ -235,7 +235,7 @@ const fr = {
       items: [
         {
           title: "Vous nous écrivez",
-          text: "Date, nombre de personnes, envies et allergies : quelques lignes suffisent.",
+          text: "Date, nombre de personnes, envies et allergies : quelques lignes suffisent.",
         },
         {
           title: "Nous dessinons ensemble",
@@ -395,8 +395,8 @@ const fr = {
       ],
     },
     closing: {
-      title: "Une idée en tête ? Envoyez-la-nous.",
-      text: "Une photo, une couleur, un souvenir : nous partons de ce que vous avez en tête pour dessiner votre gâteau.",
+      title: "Une idée en tête ? Envoyez-la-nous.",
+      text: "Une photo, une couleur, un souvenir : nous partons de ce que vous avez en tête pour dessiner votre gâteau.",
     },
   },
   evenements: {
@@ -418,7 +418,7 @@ const fr = {
         {
           icon: "cake-slice",
           name: "Anniversaire",
-          guests: "10 à 30 personnes",
+          guests: "10 à 30 personnes",
           includes: [
             "Un gâteau de création sur mesure",
             "Deux pièces sucrées assorties",
@@ -430,7 +430,7 @@ const fr = {
         {
           icon: "heart",
           name: "Mariage",
-          guests: "50 à 150 personnes",
+          guests: "50 à 150 personnes",
           includes: [
             "Pièce montée ou gâteaux de création",
             "Buffet sucré de trois pièces",
@@ -442,7 +442,7 @@ const fr = {
         {
           icon: "users",
           name: "Fête de famille",
-          guests: "15 à 60 personnes",
+          guests: "15 à 60 personnes",
           includes: [
             "Buffet salé de six pièces",
             "Plateau de pièces sucrées",
@@ -454,7 +454,7 @@ const fr = {
         {
           icon: "briefcase",
           name: "Événement d’entreprise",
-          guests: "20 à 200 personnes",
+          guests: "20 à 200 personnes",
           includes: [
             "Buffet salé et sucré",
             "Présentation sur plateaux",
@@ -487,7 +487,7 @@ const fr = {
         },
         {
           title: "Atelier d’équipe",
-          text: "Sur mesure, de 10 à 30 personnes, dans vos locaux ou à l’atelier.",
+          text: "Sur mesure, de 10 à 30 personnes, dans vos locaux ou à l’atelier.",
           price: "Sur devis",
         },
       ],
@@ -509,13 +509,13 @@ const fr = {
         {
           icon: "wheat",
           title: "Allergènes",
-          text: "Informations sur demande pour chaque pièce. Précisez vos allergies à la commande : l’atelier travaille avec du gluten, des fruits à coque, du lait et des œufs.",
+          text: "Informations sur demande pour chaque pièce. Précisez vos allergies à la commande : l’atelier travaille avec du gluten, des fruits à coque, du lait et des œufs.",
         },
       ],
     },
     closing: {
       title: "Racontez-nous votre événement.",
-      text: "Lieu, date, nombre d’invités : nous composons la formule qui vous ressemble.",
+      text: "Lieu, date, nombre d’invités : nous composons la formule qui vous ressemble.",
     },
   },
   commande: {
@@ -528,7 +528,7 @@ const fr = {
     delays: {
       eyebrow: "Délais",
       title: "Prévoyez un peu d’avance.",
-      note: "Une date plus proche ? Appelez-nous : selon le planning de l’atelier, c’est parfois possible.",
+      note: "Une date plus proche ? Appelez-nous : selon le planning de l’atelier, c’est parfois possible.",
       items: [
         {
           value: "10 jours",
@@ -616,8 +616,8 @@ const en: CreateurCulinaireCopy = {
     address: "12 Example Street, 00000 Your city",
     hoursLabel: "Workshop",
     hours: [
-      { day: "Tuesday to Friday", time: "9 a.m. – 6 p.m., by appointment" },
-      { day: "Saturday", time: "9 a.m. – 1 p.m., pickups and tastings" },
+      { day: "Tuesday to Friday", time: "9 a.m. – 6 p.m., by appointment" },
+      { day: "Saturday", time: "9 a.m. – 1 p.m., pickups and tastings" },
     ],
   },
   footer: {
