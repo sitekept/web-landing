@@ -614,7 +614,7 @@ const fr = {
       ],
       image: {
         src: IMG.faucet,
-        alt: "Jet d’eau qui coule d’un robinet de cuisine à col de cygne, devant un fond sombre et flou",
+        alt: "Jet d’eau qui coule d’un robinet de cuisine noir à col de cygne, dans un nuage de fines gouttelettes, devant un rebord de fenêtre clair et flou en haut et un fond sombre en bas",
       },
       aside:
         "Restent à part : les pièces et appareils (robinet, ballon, pièce de brûleur, vanne de radiateur), indiqués avec leur prix sur le devis.",
@@ -1326,7 +1326,7 @@ const en: PlombierChauffagisteCopy = {
       ],
       image: {
         src: IMG.faucet,
-        alt: "Water running from a gooseneck kitchen faucet, against a dark, blurred background",
+        alt: "Water running from a black gooseneck kitchen faucet in a haze of fine droplets, in front of a blurred, light window ledge above and a dark background below",
       },
       aside:
         "Kept separate: parts and appliances (faucet, tank, burner part, radiator valve), shown with their price on the quote.",

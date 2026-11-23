@@ -47,7 +47,7 @@ const IMG = {
   calm: unsplash("1522771739844-6a9f6d5f14af"),
   kitchen: unsplash("1507089947368-19c1da9775ae"),
   salon: unsplash("1585128792020-803d29415281"),
-  lakeLiving: unsplash("1713283391486-b92cda2562e8"),
+  lakeLiving: unsplash("1793986662493-d1fbf77c4863"),
   lakeKitchen: unsplash("1781249144275-c04daed37031"),
   lakeTerrace: unsplash("1760594043210-c5d4ca163df4"),
   lakeBedroom: unsplash("1617325247661-675ab4b64ae2"),
@@ -260,7 +260,7 @@ const fr = {
           meta: "3 pièces · 82 m² · 395 000 €",
           image: {
             src: IMG.lakeLiving,
-            alt: "Un séjour clair : un canapé bleu pétrole, un pouf tressé et une porte vitrée ouverte sur une terrasse en bois.",
+            alt: "Un séjour lumineux : deux fauteuils en cuir et une baie vitrée coulissante qui donne sur un ponton en bois et sur le lac.",
           },
         },
         {
@@ -425,7 +425,7 @@ const fr = {
         {
           image: {
             src: IMG.lakeLiving,
-            alt: "Un séjour clair : un canapé bleu pétrole, un pouf tressé et une porte vitrée ouverte sur une terrasse en bois.",
+            alt: "Un séjour lumineux : deux fauteuils en cuir et une baie vitrée coulissante qui donne sur un ponton en bois et sur le lac.",
           },
           kind: "Appartement",
           status: "Nouveau",
@@ -571,7 +571,7 @@ const fr = {
       items: [
         {
           src: IMG.lakeLiving,
-          alt: "Un séjour clair : un canapé bleu pétrole, un pouf tressé et une porte vitrée ouverte sur une terrasse en bois.",
+          alt: "Un séjour lumineux : deux fauteuils en cuir et une baie vitrée coulissante qui donne sur un ponton en bois et sur le lac.",
         },
         {
           src: IMG.lakeKitchen,
@@ -1387,7 +1387,7 @@ const en: AgenceImmobiliereCopy = {
           meta: "3 rooms · 883 sq ft · €395,000",
           image: {
             src: IMG.lakeLiving,
-            alt: "A bright living room: a teal sofa, a woven pouf and a glass door open onto a wooden deck.",
+            alt: "A sunlit living room: two leather armchairs and a sliding glass door that opens onto a wooden dock and the lake.",
           },
         },
         {
@@ -1553,7 +1553,7 @@ const en: AgenceImmobiliereCopy = {
         {
           image: {
             src: IMG.lakeLiving,
-            alt: "A bright living room: a teal sofa, a woven pouf and a glass door open onto a wooden deck.",
+            alt: "A sunlit living room: two leather armchairs and a sliding glass door that opens onto a wooden dock and the lake.",
           },
           kind: "Apartment",
           status: "New",
@@ -1700,7 +1700,7 @@ const en: AgenceImmobiliereCopy = {
       items: [
         {
           src: IMG.lakeLiving,
-          alt: "A bright living room: a teal sofa, a woven pouf and a glass door open onto a wooden deck.",
+          alt: "A sunlit living room: two leather armchairs and a sliding glass door that opens onto a wooden dock and the lake.",
         },
         {
           src: IMG.lakeKitchen,

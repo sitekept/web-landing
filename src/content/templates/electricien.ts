@@ -58,22 +58,22 @@ const fr = {
   },
   meta: {
     home: {
-      title: "Électricien : dépannage, mise aux normes et rénovation",
+      title: "Votre entreprise - Électricien",
       description:
-        "Artisan électricien local : dépannage le jour même selon disponibilité, tableau électrique, éclairage, bornes de recharge. Devis gratuit et attestation de conformité.",
+        "Artisan électricien local : dépannage le jour même selon disponibilité, tableau, éclairage, bornes de recharge. Devis gratuit et attestation de conformité.",
     },
     prestations: {
-      title: "Prestations d’électricien : tarifs et étapes d’intervention",
+      title: "Prestations - Votre entreprise",
       description:
-        "Dépannage, mise en sécurité, rénovation, tableau électrique, éclairage et borne de recharge : ce qui est inclus, tarifs à partir de, et déroulé d’une intervention.",
+        "Dépannage, mise en sécurité, rénovation, tableau, éclairage et borne de recharge : ce qui est inclus, tarifs à partir de, et déroulé d’une intervention.",
     },
     realisations: {
-      title: "Réalisations d’un électricien : chantiers et avant / après",
+      title: "Réalisations - Votre entreprise",
       description:
         "Tableau électrique, éclairage de cuisine, borne de recharge en garage, rénovation d’appartement, éclairage extérieur : quelques chantiers récents.",
     },
     contact: {
-      title: "Contact et devis gratuit : électricien",
+      title: "Contact - Votre entreprise",
       description:
         "Demandez un devis gratuit ou un dépannage : coordonnées, horaires et zone d’intervention dans un rayon de 25 km autour de votre ville.",
     },
@@ -557,22 +557,22 @@ const en: ElectricienCopy = {
   },
   meta: {
     home: {
-      title: "Electrician: repairs, safety upgrades and renovation",
+      title: "Your business - Electrician",
       description:
         "Local electrician: same-day repairs depending on availability, electrical panels, lighting and EV charging points. Free quote and certificate of compliance.",
     },
     prestations: {
-      title: "Electrician services: prices and how we work",
+      title: "Services - Your business",
       description:
         "Repairs, safety upgrades, renovation, electrical panels, lighting and EV charging points: what is included, starting prices and how a job unfolds.",
     },
     realisations: {
-      title: "Electrician projects: recent jobs and before / after",
+      title: "Projects - Your business",
       description:
         "Electrical panel, kitchen lighting, garage EV charger, apartment renovation, outdoor lighting: a few recent jobs.",
     },
     contact: {
-      title: "Contact and free quote: electrician",
+      title: "Contact - Your business",
       description:
         "Request a free quote or a repair: contact details, opening hours and a service area of 25 km around your city.",
     },

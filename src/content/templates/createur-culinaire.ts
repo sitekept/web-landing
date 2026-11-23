@@ -87,22 +87,22 @@ const fr = {
   },
   meta: {
     home: {
-      title: "Créateur culinaire : gâteaux de création et buffet sur commande",
+      title: "Votre entreprise - Créateur culinaire",
       description:
-        "Gâteaux de création, pièces sucrées et buffet salé réalisés sur commande pour vos anniversaires, mariages et fêtes de famille. Devis détaillé sous 48 heures ouvrées.",
+        "Gâteaux de création, pièces sucrées et buffet salé réalisés sur commande pour vos anniversaires, mariages et fêtes de famille. Devis détaillé sous 48 h ouvrées.",
     },
     creations: {
-      title: "Créations : gâteaux, pièces sucrées et buffet salé",
+      title: "Créations - Votre entreprise",
       description:
         "Six créations récentes, une galerie de pièces sucrées et salées et les saveurs de la saison. Chaque gâteau est dessiné sur mesure pour l’occasion.",
     },
     evenements: {
-      title: "Événements : formules, ateliers, livraison et installation",
+      title: "Événements - Votre entreprise",
       description:
-        "Formules par type d’événement, à partir de 180 €, ateliers de pâtisserie, livraison et installation dans un rayon de 20 km. Allergènes : informations sur demande.",
+        "Formules par type d’événement, à partir de 180 €, ateliers de pâtisserie, livraison et installation dans un rayon de 20 km. Allergènes : sur demande.",
     },
     commande: {
-      title: "Commander : devis, délais et coordonnées",
+      title: "Commander - Votre entreprise",
       description:
         "Demandez votre devis : 10 jours de délai minimum, 4 semaines pour un mariage. Réponse sous 48 heures ouvrées.",
     },
@@ -630,22 +630,22 @@ const en: CreateurCulinaireCopy = {
   },
   meta: {
     home: {
-      title: "Culinary creator: designer cakes and buffets made to order",
+      title: "Your business - Culinary creator",
       description:
         "Designer cakes, sweet pieces and savory buffets made to order for your birthdays, weddings and family celebrations. Detailed quote within 48 business hours.",
     },
     creations: {
-      title: "Creations: cakes, sweet pieces and savory buffet",
+      title: "Creations - Your business",
       description:
         "Six recent creations, a gallery of sweet and savory pieces and the flavors of the season. Every cake is designed to order for the occasion.",
     },
     evenements: {
-      title: "Events: packages, workshops, delivery and setup",
+      title: "Events - Your business",
       description:
         "Packages by event type, from €180, pastry workshops, delivery and setup within 20 km. Allergens: information on request.",
     },
     commande: {
-      title: "Order: quote, lead times and contact details",
+      title: "Order - Your business",
       description:
         "Request your quote: 10 days minimum lead time, 4 weeks for a wedding. Reply within 48 business hours.",
     },

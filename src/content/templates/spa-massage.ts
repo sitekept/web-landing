@@ -85,9 +85,9 @@ const fr = {
   },
   meta: {
     home: {
-      title: "Institut de massage et de bien-être - Votre entreprise",
+      title: "Votre entreprise - Institut de massage et de bien-être",
       description:
-        "Massages de bien-être, soins du visage et rituels de 90 à 120 minutes dans un institut feutré. Tarifs, cartes cadeaux et réservation, sur un site de démonstration.",
+        "Massages de bien-être, soins du visage et rituels de 90 à 120 minutes dans un institut feutré. Tarifs, cartes cadeaux et réservation.",
     },
     soins: {
       title: "Soins et tarifs - Votre entreprise",
@@ -668,9 +668,9 @@ const en: SpaMassageCopy = {
   },
   meta: {
     home: {
-      title: "Massage and wellness studio - Your business",
+      title: "Your business - Massage and wellness studio",
       description:
-        "Wellness massages, facials and 90 to 120 minute rituals in a hushed studio. Prices, gift cards and booking, on a demo website.",
+        "Wellness massages, facials and 90 to 120 minute rituals in a hushed studio. Prices, gift cards and booking.",
     },
     soins: {
       title: "Treatments and prices - Your business",

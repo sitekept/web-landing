@@ -22,7 +22,7 @@ import type {
  *
  * Cohérence des données (FR et EN) : service du mardi au samedi, midi de
  * 12 h à 14 h 30 et soir de 19 h à 22 h 30 (fermé dimanche et lundi) ; formule
- * du midi 24 €, menu du soir 38 € ; tables de 2 à 8 ; groupes de 12 à 20.
+ * du midi 24 €, menu du soir 38 € ; tables de 2 à 8 ; groupes de 9 à 20.
  */
 
 const unsplash = (id: string, width = 1600) =>
@@ -106,7 +106,7 @@ const fr = {
     galerie: {
       title: "Galerie - Le Sillon",
       description:
-        "La salle à la bougie, le comptoir, la cave et les assiettes du Sillon en images : volaille rôtie, huîtres gratinées, desserts maison.",
+        "La salle à la bougie, la cave et les assiettes du Sillon en images : volaille rôtie, huîtres gratinées, desserts maison.",
     },
     histoire: {
       title: "Histoire - Le Sillon",
@@ -170,7 +170,7 @@ const fr = {
           },
         ],
       },
-      formulas: "Formule du midi à 24 €, menu du soir en trois temps à 38 €.",
+      formulas: "Formule du midi à 24 €, menu du soir en trois temps à 38 €.",
       images: [
         {
           src: IMG.chicken,
@@ -310,7 +310,7 @@ const fr = {
       items: [
         {
           name: "Formule du midi",
-          detail: "Plat du jour et dessert, ou entrée et plat du jour",
+          detail: "Plat et dessert, ou entrée et plat, au choix sur la carte",
           price: "24 €",
         },
         {
@@ -356,7 +356,7 @@ const fr = {
     eyebrow: "Réservation",
     title: "Réservez votre table",
     description:
-      "Dites-nous quand vous venez et à combien : nous confirmons chaque demande dans la journée. Pour le soir même, le plus simple est de nous appeler.",
+      "Dites-nous quand vous venez et à combien : nous confirmons chaque demande dans la journée. Pour le soir même, le plus simple est de nous appeler.",
     form: {
       title: "Votre demande",
       submit: "Envoyer la demande",
@@ -368,7 +368,6 @@ const fr = {
       ],
       guests: "Nombre de couverts",
       guestOptions: [
-        { value: "1", label: "1 personne" },
         { value: "2", label: "2 personnes" },
         { value: "3", label: "3 personnes" },
         { value: "4", label: "4 personnes" },
@@ -402,7 +401,7 @@ const fr = {
     eyebrow: "Galerie",
     title: "La salle, la lumière, les assiettes",
     description:
-      "Quelques images d’un service ordinaire, du comptoir à la dernière table.",
+      "Quelques images d’un service ordinaire, de la première table à la dernière.",
     images: [
       {
         src: IMG.hero,
@@ -442,7 +441,7 @@ const fr = {
     eyebrow: "Notre histoire",
     title: "Un bistrot de quartier, à la bougie et au marché",
     paragraphs: [
-      "Le Sillon est né d’une idée simple : un endroit où l’on mange bien sans y penser, à deux pas de chez soi. Une salle chaude, une carte courte, une cave que l’on goûte au verre.",
+      "Le Sillon est né d’une idée simple : un endroit où l’on mange bien sans y penser, à deux pas de chez soi. Une salle chaude, une carte courte, une cave que l’on goûte au verre.",
       "En cuisine, tout part du marché : ce qui est beau le matin finit sur l’ardoise à midi. Les sauces sont longues, les assiettes simples, les portions faites pour se resservir.",
       "En salle, on prend le temps de conseiller un vin, de rapporter du pain et de laisser la table s’éterniser.",
     ],
@@ -511,7 +510,7 @@ const fr = {
     },
     image: {
       src: IMG.privateRoom,
-      alt: "Longue table en bois dressée pour un dîner de groupe, chaises en cuir ocre, grand luminaire en papier allumé et murs bleu nuit",
+      alt: "Longue table en bois dressée pour un dîner de groupe, chaises en cuir ocre, tasses à café sur soucoupes, statuette de cerf dorée au centre de la table, grand luminaire en papier allumé et murs bleu nuit",
     },
   },
   contact: {
@@ -604,7 +603,7 @@ const en: RestaurantBistrotCopy = {
     galerie: {
       title: "Gallery - Your business",
       description:
-        "The candlelit dining room, the counter, the cellar and our plates in pictures: roast chicken, gratinéed oysters, homemade desserts.",
+        "The candlelit dining room, the cellar and our plates in pictures: roast chicken, baked oysters, homemade desserts.",
     },
     histoire: {
       title: "Story - Your business",
@@ -712,7 +711,7 @@ const en: RestaurantBistrotCopy = {
         },
         {
           quote:
-            "The counter at 7 p.m., a glass of white, the gratinéed oysters: it has become my Thursday canteen.",
+            "The counter at 7 p.m., a glass of white, the baked oysters: it has become my Thursday canteen.",
           name: "Julien M.",
           detail: "Counter regular",
         },
@@ -752,7 +751,7 @@ const en: RestaurantBistrotCopy = {
             price: "€12",
           },
           {
-            name: "Gratinéed oysters with herb butter",
+            name: "Baked oysters with herb butter",
             detail: "Six, golden breadcrumbs",
             price: "€14",
           },
@@ -804,7 +803,7 @@ const en: RestaurantBistrotCopy = {
       items: [
         {
           name: "Lunch set menu",
-          detail: "Dish of the day and dessert, or starter and dish of the day",
+          detail: "Main and dessert, or starter and main, from the menu",
           price: "€24",
         },
         {
@@ -843,7 +842,7 @@ const en: RestaurantBistrotCopy = {
     },
     image: {
       src: IMG.table,
-      alt: "Wooden table seen from above, covered with dishes: gratinéed oysters on crushed ice, seafood pasta, risotto, a baked gratin and toasted bread",
+      alt: "Wooden table seen from above, covered with dishes: baked oysters on crushed ice, seafood pasta, risotto, a gratin and toasted bread",
     },
   },
   reservation: {
@@ -862,7 +861,6 @@ const en: RestaurantBistrotCopy = {
       ],
       guests: "Number of guests",
       guestOptions: [
-        { value: "1", label: "1 guest" },
         { value: "2", label: "2 guests" },
         { value: "3", label: "3 guests" },
         { value: "4", label: "4 guests" },
@@ -896,7 +894,7 @@ const en: RestaurantBistrotCopy = {
     eyebrow: "Gallery",
     title: "The room, the light, the plates",
     description:
-      "A few pictures of an ordinary service, from the counter to the last table.",
+      "A few pictures of an ordinary service, from the first table to the last.",
     images: [
       {
         src: IMG.hero,
@@ -904,7 +902,7 @@ const en: RestaurantBistrotCopy = {
       },
       {
         src: IMG.table,
-        alt: "Wooden table seen from above, covered with dishes: gratinéed oysters on crushed ice, seafood pasta, risotto, a baked gratin and toasted bread",
+        alt: "Wooden table seen from above, covered with dishes: baked oysters on crushed ice, seafood pasta, risotto, a gratin and toasted bread",
       },
       {
         src: IMG.room,
@@ -1005,7 +1003,7 @@ const en: RestaurantBistrotCopy = {
     },
     image: {
       src: IMG.privateRoom,
-      alt: "Long wooden table set for a group dinner, tan leather chairs, a large lit paper chandelier and midnight-blue walls",
+      alt: "Long wooden table set for a group dinner, tan leather chairs, coffee cups on saucers, a golden stag statuette in the middle of the table, a large lit paper chandelier and midnight-blue walls",
     },
   },
   contact: {

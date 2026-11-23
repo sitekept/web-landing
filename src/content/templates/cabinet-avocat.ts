@@ -545,7 +545,7 @@ const en: CabinetAvocatCopy = {
     home: {
       title: "Your business - Business law attorneys",
       description:
-        "Law firm for business owners and small companies: contracts, partners, disputes, unpaid invoices. Reply in 2 days, fees quoted up front.",
+        "Law firm for business owners and small companies: contracts, partners, disputes, unpaid invoices. Reply within 2 business days, fees quoted up front.",
     },
     expertises: {
       title: "Practice areas - Your business",
