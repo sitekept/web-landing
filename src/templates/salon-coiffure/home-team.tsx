@@ -9,6 +9,8 @@ import { TemplateMedia } from "@/components/template-kit/media";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
+import { SIZES } from "./parts";
+
 /** Équipe : trois stylistes en liste à gauche, photo des outils à droite (7/5). */
 export function TeamSection({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(salonCoiffure, locale);
@@ -64,7 +66,7 @@ export function TeamSection({ locale }: { locale: TemplateLocale }) {
             src={team.image.src}
             alt={team.image.alt}
             ratio="4/3"
-            sizes="(min-width: 1280px) 495px, (min-width: 1024px) 41vw, 100vw"
+            sizes={SIZES.COL5_G64}
           />
         </div>
       </div>
@@ -90,7 +92,7 @@ export function WorkSection({ locale }: { locale: TemplateLocale }) {
                 src={item.src}
                 alt={item.alt}
                 ratio="4/5"
-                sizes="(min-width: 1280px) 395px, (min-width: 768px) 30vw, 100vw"
+                sizes={SIZES.THIRDS}
               />
               <figcaption className="mt-4">
                 <span className="block font-semibold">{item.caption}</span>

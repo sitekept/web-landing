@@ -10,7 +10,7 @@ import { TemplateMedia } from "@/components/template-kit/media";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { CtaBand, PageIntro } from "./parts";
+import { CtaBand, PageIntro, SIZES } from "./parts";
 
 /**
  * L’équipe : une rangée par styliste (texte, spécialités, jours, réservation)
@@ -73,7 +73,7 @@ export function StylistsView({ locale }: { locale: TemplateLocale }) {
                   src={member.image.src}
                   alt={member.image.alt}
                   ratio="1/1"
-                  sizes="(min-width: 1280px) 495px, (min-width: 1024px) 41vw, 100vw"
+                  sizes={SIZES.COL5_G64}
                 />
               </div>
             </li>

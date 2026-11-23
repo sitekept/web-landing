@@ -52,7 +52,7 @@ export function CarteSection({ locale }: { locale: TemplateLocale }) {
               src={image.src}
               alt={image.alt}
               ratio="3/2"
-              sizes="(min-width: 1280px) 333px, (min-width: 1024px) 25vw, 46vw"
+              sizes="(min-width: 1344px) 299px, (min-width: 1024px) calc(24.79vw - 34px), (min-width: 640px) calc(42.5vw - 27px), calc(42.5vw - 20px)"
             />
           ))}
         </div>

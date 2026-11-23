@@ -29,7 +29,7 @@ export function BistrotHero({
         ratio="fill"
         rounded="none"
         priority
-        sizes="(min-width: 1024px) 100vw, (min-width: 640px) 200vw, 340vw"
+        sizes="(min-width: 1500px) 100vw, 1200px"
         className="absolute inset-0"
       />
       <div

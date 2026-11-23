@@ -849,7 +849,7 @@ const en: RestaurantBistrotCopy = {
     eyebrow: "Reservations",
     title: "Reserve your table",
     description:
-      "Tell us when you are coming and how many you are: we confirm every request within the day. For the same evening, calling is the simplest way.",
+      "Tell us when you’d like to come and for how many guests: we confirm every request within the day. For the same evening, calling is the simplest way.",
     form: {
       title: "Your request",
       submit: "Send the request",

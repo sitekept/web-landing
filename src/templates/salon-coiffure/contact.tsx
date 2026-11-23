@@ -11,7 +11,7 @@ import { TemplateMedia } from "@/components/template-kit/media";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { ContactLines, HoursList, PageIntro } from "./parts";
+import { ContactLines, HoursList, PageIntro, SIZES } from "./parts";
 
 /**
  * Contact : formulaire à gauche (7/12) ; à droite la photo du salon, puis
@@ -73,7 +73,7 @@ export function ContactView({ locale }: { locale: TemplateLocale }) {
               src={contact.image.src}
               alt={contact.image.alt}
               ratio="4/3"
-              sizes="(min-width: 1280px) 495px, (min-width: 1024px) 41vw, 100vw"
+              sizes={SIZES.COL5_G40}
             />
             <TemplatePanel tone="raised">
               <h2 className="font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight)">

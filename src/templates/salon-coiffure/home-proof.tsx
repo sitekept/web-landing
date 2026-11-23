@@ -12,7 +12,7 @@ import { TestimonialsMarquee } from "@/components/template-kit/vendor/testimonia
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { ContactLines, HoursList } from "./parts";
+import { ContactLines, HoursList, SIZES } from "./parts";
 
 /**
  * Bande d’avis alignée sur la grille du contenu : le kit la centre et fige la
@@ -86,7 +86,7 @@ export function VisitSection({ locale }: { locale: TemplateLocale }) {
             src={visit.image.src}
             alt={visit.image.alt}
             ratio="4/3"
-            sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw"
+            sizes={SIZES.COL7_G40}
           />
         </div>
       </div>

@@ -14,7 +14,7 @@ import { TemplateMedia } from "@/components/template-kit/media";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { HoursList, PageIntro } from "./parts";
+import { HoursList, PageIntro, SIZES } from "./parts";
 
 /**
  * Réservation : formulaire de demande à gauche (7/12), à droite la photo, les
@@ -102,7 +102,7 @@ export function ReservationView({ locale }: { locale: TemplateLocale }) {
               src={policy.image.src}
               alt={policy.image.alt}
               ratio="4/3"
-              sizes="(min-width: 1280px) 495px, (min-width: 1024px) 41vw, 100vw"
+              sizes={SIZES.COL5_G40}
             />
             <TemplatePanel tone="raised">
               <h2 className="font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight)">

@@ -10,6 +10,8 @@ import { PriceList } from "@/components/template-kit/vendor/price-list";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
+import { SIZES } from "./parts";
+
 /** Groupes montrés sur l’accueil (coupes, couleur, soins), trois lignes chacun. */
 const HOME_GROUPS = [0, 1, 3] as const;
 
@@ -49,7 +51,7 @@ export function PricesSection({ locale }: { locale: TemplateLocale }) {
             src={prices.image.src}
             alt={prices.image.alt}
             ratio="4/5"
-            sizes="(min-width: 1280px) 495px, (min-width: 1024px) 41vw, 100vw"
+            sizes={SIZES.COL5_G48}
           />
         </div>
       </div>

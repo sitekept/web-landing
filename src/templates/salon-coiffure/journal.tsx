@@ -8,7 +8,7 @@ import { TemplateMedia } from "@/components/template-kit/media";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { PageIntro } from "./parts";
+import { PageIntro, SIZES } from "./parts";
 
 const TAG =
   "text-tpl-xs font-semibold tracking-tpl-eyebrow text-tpl-eyebrow uppercase";
@@ -33,7 +33,7 @@ export function JournalView({ locale }: { locale: TemplateLocale }) {
               alt={featured.image.alt}
               ratio="4/3"
               priority
-              sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw"
+              sizes={SIZES.COL7_G64}
             />
           </div>
           <div className="lg:col-span-5">
@@ -60,7 +60,7 @@ export function JournalView({ locale }: { locale: TemplateLocale }) {
                 src={item.image.src}
                 alt={item.image.alt}
                 ratio="4/3"
-                sizes="(min-width: 1280px) 596px, (min-width: 768px) 46vw, 100vw"
+                sizes={SIZES.HALVES}
               />
               <p className={`mt-6 ${TAG}`}>
                 {item.tag} · {item.read}

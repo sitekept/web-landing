@@ -12,7 +12,7 @@ import { TemplateMedia } from "@/components/template-kit/media";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { PAGE_TOP } from "./parts";
+import { PAGE_TOP, SIZES } from "./parts";
 
 /**
  * Premier écran : promesse, deux entrées (réserver, voir les prix), trois
@@ -78,7 +78,7 @@ export function HomeHero({ locale }: { locale: TemplateLocale }) {
             alt={hero.image.alt}
             ratio="4/5"
             priority
-            sizes="(min-width: 1280px) 495px, (min-width: 1024px) 41vw, 100vw"
+            sizes={SIZES.COL5_G48}
             className="shadow-tpl-lg"
           />
           <TemplatePanel className="absolute right-4 bottom-0 left-4 p-5 shadow-tpl-lg lg:right-auto lg:-bottom-6 lg:-left-10 lg:w-72">

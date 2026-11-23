@@ -530,7 +530,7 @@ const en: OrdinateurCopy = {
     ],
     price: {
       label: "Maintenance plan",
-      value: "€29 excl. tax",
+      value: "€29 plus VAT",
       note: "per computer per month, cancel any time",
     },
     cta: "Request a plan",

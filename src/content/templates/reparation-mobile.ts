@@ -77,7 +77,7 @@ const fr = {
       {
         icon: "map-pin",
         label: "Atelier",
-        value: "12 rue de l'Exemple, 00000 Votre ville",
+        value: "12 rue de l’Exemple, 00000 Votre ville",
         href: "",
       },
     ],

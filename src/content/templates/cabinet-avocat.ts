@@ -594,7 +594,7 @@ const en: CabinetAvocatCopy = {
       eyebrow: "Practice areas",
       title: "Five subjects, handled by attorneys who do nothing else.",
       description:
-        "We don’t cover all of the law. We cover well what touches a company’s everyday life.",
+        "We don’t take on every area of law. We handle what touches a company’s everyday life, and we handle it well.",
       more: "See all practice areas",
       imageAlt: "Close-up of a stack of white binders.",
     },
@@ -750,7 +750,7 @@ const en: CabinetAvocatCopy = {
         situation:
           "A subcontractor has waited eight months for payment on completed work. The client disputes its quality.",
         action:
-          "Firm reminder, friendly expert review, then an installment agreement signed by the client.",
+          "A firm reminder, an expert appraisal both sides agree to, then an installment agreement signed by the client.",
         outcome: "10 weeks · flat fee of €1,800 plus VAT",
       },
       {

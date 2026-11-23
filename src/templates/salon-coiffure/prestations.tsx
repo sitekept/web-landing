@@ -8,7 +8,7 @@ import { PriceList } from "@/components/template-kit/vendor/price-list";
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { CtaBand, PageIntro } from "./parts";
+import { CtaBand, PageIntro, SIZES } from "./parts";
 
 /**
  * Prestations : titre, tarifs en deux colonnes (coupes, couleur, coiffage,
@@ -56,7 +56,7 @@ export function PrestationsView({ locale }: { locale: TemplateLocale }) {
               src={advice.image.src}
               alt={advice.image.alt}
               ratio="4/3"
-              sizes="(min-width: 1280px) 495px, (min-width: 1024px) 41vw, 100vw"
+              sizes={SIZES.COL5_G64}
             />
           </div>
         </div>

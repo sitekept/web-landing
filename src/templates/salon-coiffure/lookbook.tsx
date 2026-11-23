@@ -12,7 +12,7 @@ import {
 import { salonCoiffure } from "@/content/templates/salon-coiffure";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { CtaBand, PageIntro } from "./parts";
+import { CtaBand, PageIntro, SIZES } from "./parts";
 
 /**
  * Ratio de chaque photo, par rang dans la copie. Trois colonnes (rang modulo
@@ -59,7 +59,7 @@ export function LookbookView({ locale }: { locale: TemplateLocale }) {
                       alt={image.alt}
                       ratio={RATIOS[index]}
                       priority={index === 0}
-                      sizes="(min-width: 1280px) 395px, (min-width: 768px) 31vw, 100vw"
+                      sizes={SIZES.THIRDS}
                     />
                     <figcaption className="mt-3">
                       <span className="block font-semibold">
@@ -97,7 +97,7 @@ export function LookbookView({ locale }: { locale: TemplateLocale }) {
               src={salon.image.src}
               alt={salon.image.alt}
               ratio="4/3"
-              sizes="(min-width: 1280px) 700px, (min-width: 1024px) 58vw, 100vw"
+              sizes={SIZES.COL7_G64}
             />
           </div>
         </div>
