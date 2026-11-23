@@ -1,19 +1,24 @@
 import type { TemplateLocale } from "@/components/template-kit";
-import { salonCoiffure } from "@/content/templates/salon-coiffure";
-import { getTemplateCopy } from "@/content/templates/types";
 
 import { HomeHero } from "./home-hero";
-import { HomeCapsules, HomeNarration } from "./home-sections";
+import { MethodSection, PricesSection } from "./home-offer";
+import { ReviewsSection, VisitSection } from "./home-proof";
+import { TeamSection, WorkSection } from "./home-team";
 
-/** Accueil : héros en collage, narration en trois cartes, capsules de style. */
+/**
+ * Accueil : promesse et prix en un coup d’œil, prestations, déroulé d’un
+ * rendez-vous, équipe, réalisations en photo, avis, puis horaires et adresse.
+ */
 export function HomeView({ locale }: { locale: TemplateLocale }) {
-  const { home } = getTemplateCopy(salonCoiffure, locale);
-
   return (
     <>
-      <HomeHero locale={locale} hero={home.hero} />
-      <HomeNarration narration={home.narration} />
-      <HomeCapsules locale={locale} capsules={home.capsules} />
+      <HomeHero locale={locale} />
+      <PricesSection locale={locale} />
+      <MethodSection locale={locale} />
+      <TeamSection locale={locale} />
+      <WorkSection locale={locale} />
+      <ReviewsSection locale={locale} />
+      <VisitSection locale={locale} />
     </>
   );
 }
