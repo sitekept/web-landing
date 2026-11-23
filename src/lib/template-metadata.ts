@@ -8,6 +8,7 @@ import type {
 } from "@/content/templates/types";
 import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 import { absoluteUrl } from "@/lib/localized-routes";
+import { openGraphImagePath } from "@/lib/page-metadata";
 import { getMessage } from "@/lib/site-messages";
 import { templateHref } from "@/lib/template-href";
 
@@ -27,9 +28,10 @@ const OPEN_GRAPH_LOCALE = { fr: "fr_FR", en: "en_US" } as const;
  *   dans sa langue, `locale` (`fr_FR` / `en_US`) et `alternateLocale` quand la
  *   définition a l'autre langue, `siteName` repris de la racine. Une page qui
  *   définit `openGraph` ou `twitter` remplace celui du layout racine (sinon le
- *   partage reprendrait le titre et la description du site) : l'image de
- *   `src/app/opengraph-image.tsx` et le `creator` Twitter sont donc redéclarés,
- *   comme dans `page-metadata.ts`.
+ *   partage reprendrait le titre et la description du site) : l'image
+ *   (`/opengraph-image` en français, `/en/opengraph-image` en anglais, voir
+ *   `openGraphImagePath`) et le `creator` Twitter sont donc redéclarés, comme
+ *   dans `page-metadata.ts`.
  * - `alternates.languages` : hreflang `fr` ↔ `en` plus `x-default` (le
  *   français), en URL absolues comme `getLanguageAlternates` du site. Émis
  *   seulement si le template a sa version anglaise (`en` dans `def.copy`). Pas de
@@ -67,14 +69,16 @@ export function buildTemplatePageMetadata<
       type: "website",
       // Déclarée explicitement : sans elle, la carte `summary_large_image`
       // perd l'image du layout racine (voir `page-metadata.ts`).
-      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+      images: [
+        { url: openGraphImagePath(locale), width: 1200, height: 630 },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
       creator: getMessage(locale, "metadata.twitter.creator"),
-      images: ["/opengraph-image"],
+      images: [openGraphImagePath(locale)],
     },
   };
 

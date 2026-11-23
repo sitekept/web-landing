@@ -70,6 +70,19 @@ function trimTrailingSlash(pathname: string): string {
   return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
 }
 
+const FOCUSABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+/**
+ * Colonne `rail` basse : le sélecteur de langue passe du bas de la colonne
+ * (sous la navigation) à son haut (sous la marque), pour rester visible sans
+ * faire défiler la colonne. La colonne est un conteneur de taille (`shell.tsx`) :
+ * 44 rem de haut, en `rem` de la racine, donc le seuil suit le texte agrandi
+ * (la navigation grandit avec lui). Le sélecteur absent est `display: none`, pas
+ * exposé aux lecteurs d'écran.
+ */
+const RAIL_SHORT_HIDDEN = "[@container(max-height:44rem)]:hidden";
+
 const LINK_FOCUS =
   "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink";
 
@@ -88,16 +101,62 @@ export function TemplateShellNav({
   const [open, setOpen] = useState(false);
   const panelId = useId();
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
+  // Menu mobile ouvert : le focus entre dans le panneau (premier lien), Tab et
+  // Maj+Tab bouclent sur le bouton et le panneau, Échap ferme et rend le focus
+  // au bouton. Le piège disparaît avec l'état `open` (fermeture par un lien
+  // comprise) : rien ne reste attaché au document.
   useEffect(() => {
     if (!open) {
       return;
     }
 
+    const panel = panelRef.current;
+
+    /** Éléments atteignables au clavier : le bouton, puis le contenu du panneau. */
+    function cycle(): HTMLElement[] {
+      const inside = Array.from(
+        panel?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? []
+      );
+      const items = buttonRef.current
+        ? [buttonRef.current, ...inside]
+        : inside;
+
+      return items.filter((element) => element.getClientRects().length > 0);
+    }
+
+    panel?.querySelector<HTMLElement>(FOCUSABLE)?.focus();
+
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setOpen(false);
         buttonRef.current?.focus();
+
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const items = cycle();
+
+      if (items.length === 0) {
+        return;
+      }
+
+      const first = items[0];
+      const last = items[items.length - 1];
+      const active = document.activeElement;
+      const inside = active instanceof HTMLElement && items.includes(active);
+
+      if (event.shiftKey && (!inside || active === first)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (!inside || active === last)) {
+        event.preventDefault();
+        first.focus();
       }
     }
 
@@ -129,7 +188,7 @@ export function TemplateShellNav({
   if (layout === "rail") {
     return (
       <>
-        <nav aria-label={labels.nav}>
+        <nav aria-label={labels.nav} className="mt-10">
           <ul>
             {items.map((item, index) => (
               <li key={item.href}>
@@ -156,9 +215,14 @@ export function TemplateShellNav({
           </ul>
         </nav>
         {cta || showLocaleSwitch ? (
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
             {cta}
-            {showLocaleSwitch ? <TemplateLocaleSwitch locale={locale} /> : null}
+            {showLocaleSwitch ? (
+              <TemplateLocaleSwitch
+                locale={locale}
+                className={RAIL_SHORT_HIDDEN}
+              />
+            ) : null}
           </div>
         ) : null}
       </>
@@ -171,7 +235,7 @@ export function TemplateShellNav({
     <>
       <nav
         aria-label={labels.nav}
-        className="hidden min-w-0 flex-1 justify-center xl:flex"
+        className="hidden grow shrink-0 justify-center xl:@min-[78rem]:flex"
       >
         <ul className="flex flex-nowrap items-center justify-center gap-x-0.5">
           {items.map((item) => (
@@ -191,7 +255,7 @@ export function TemplateShellNav({
         </ul>
       </nav>
 
-      <div className="hidden shrink-0 items-center gap-3 whitespace-nowrap xl:flex">
+      <div className="hidden shrink-0 items-center gap-3 whitespace-nowrap xl:@min-[78rem]:flex">
         {cta}
         {showLocaleSwitch ? <TemplateLocaleSwitch locale={locale} /> : null}
       </div>
@@ -204,7 +268,7 @@ export function TemplateShellNav({
         aria-label={labels.menu}
         onClick={() => setOpen((value) => !value)}
         className={clsx(
-          "inline-flex size-11 items-center justify-center rounded-tpl border border-tpl-line text-tpl-ink hover:bg-tpl-ink/5 xl:hidden",
+          "inline-flex size-11 items-center justify-center rounded-tpl border border-tpl-line text-tpl-ink hover:bg-tpl-ink/5 xl:@min-[78rem]:hidden",
           LINK_FOCUS
         )}
       >
@@ -216,11 +280,12 @@ export function TemplateShellNav({
       </button>
 
       <div
+        ref={panelRef}
         id={panelId}
         hidden={!open}
         onClick={closeOnLinkClick}
         className={clsx(
-          "absolute inset-x-0 top-full overflow-y-auto border-tpl-line bg-tpl-surface pt-2 pb-6 shadow-tpl-lg xl:hidden",
+          "absolute inset-x-0 top-full overflow-y-auto border-tpl-line bg-tpl-surface pt-2 pb-6 shadow-tpl-lg xl:@min-[78rem]:hidden",
           floating
             ? "mt-2 max-h-[calc(100dvh-var(--tpl-header-offset)-1rem)] rounded-tpl border px-5 sm:px-6"
             : "max-h-[calc(100dvh-4.5rem)] border-b px-4 sm:px-6"

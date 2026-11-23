@@ -22,9 +22,12 @@ import { cn } from "@/lib/utils";
  * avis n'est lu qu'une fois par un lecteur d'écran.
  *
  * Accessibilité :
- * - la bande est une région nommée (`label`, issu de la copie) et focalisable :
+ * - la bande est une région nommée (`label`, issu de la copie) et focalisable
+ *   une seule fois (`tabIndex={0}` sur la région, aucune carte ni copie
+ *   focalisable : le focus n'atterrit jamais sur une carte hors champ) :
  *   pause au survol (pointeur) et au focus (clavier), sans quoi un défilement
- *   de plus de 5 secondes ne pourrait pas être arrêté au clavier ;
+ *   de plus de 5 secondes ne pourrait pas être arrêté au clavier. Le focus se
+ *   voit par un contour de 2 px à l'intérieur de la bande ;
  * - avec `prefers-reduced-motion: reduce`, aucune animation : la piste
  *   dupliquée disparaît, les cartes passent à la ligne et les fondus tombent.
  *
@@ -242,7 +245,8 @@ export function TestimonialsMarquee({
     <div
       role="region"
       aria-label={label}
-      // Focalisable : le focus met la bande en pause (voir l'en-tête).
+      // Seul arrêt au clavier de la bande : le focus la met en pause (voir
+      // l'en-tête). Les cartes et la copie de la boucle ne sont pas focalisables.
       tabIndex={0}
       style={
         {
@@ -266,10 +270,13 @@ export function TestimonialsMarquee({
             />
           ))}
         </ul>
-        {/* Copie pour la boucle : ignorée des lecteurs d'écran, absente en reduced motion. */}
+        {/* Copie pour la boucle : ignorée des lecteurs d'écran, inerte (rien à y
+            focaliser, même si une carte contenait un jour un lien) et absente
+            en reduced motion. */}
         <ul
           role="list"
           aria-hidden="true"
+          inert
           className={cn(TRACK, "motion-reduce:hidden")}
         >
           {items.map((item, index) => (

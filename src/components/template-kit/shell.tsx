@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 
 import { templateHref } from "./href";
 import { TemplateLink } from "./link";
+import { TemplateLocaleSwitch } from "./locale-switch";
 import { TemplateShellNav, type TemplateShellNavLayout } from "./shell-nav";
 
 /**
@@ -39,6 +40,19 @@ import { TemplateShellNav, type TemplateShellNavLayout } from "./shell-nav";
  *    exposé aux lecteurs d'écran) à chaque largeur.
  * Le bandeau de démonstration (`DemoBanner`, `z-50`, non collant) reste au-dessus
  * et défile ; `topBar` en fait autant, sous lui.
+ *
+ * Navigation en ligne ou menu : deux conditions réunies (`xl:@min-[78rem]:` dans
+ * `shell-nav.tsx`). `xl` (media query, 1280 px, barre de défilement comprise)
+ * fixe le seuil à 100 % : burger jusqu'à 1279 px, navigation en ligne dès
+ * 1280 px. L'en-tête (`<header>`, sans padding latéral : le gutter est sur un
+ * bloc intérieur, sinon la boîte de contenu du conteneur perdrait 64 px) est
+ * de plus un conteneur (`@container`) : sa largeur doit valoir 78 rem. Une
+ * requête de conteneur compte en `rem` de la racine, une media query non :
+ * texte seul agrandi à 200 % (WCAG 1.4.4) ou à 125 %, le conteneur n'atteint
+ * plus 78 rem et la navigation en ligne cède la place au menu au lieu de
+ * chevaucher la marque. 78 rem (1248 px) et non 80 : la largeur du conteneur
+ * exclut la barre de défilement (15 à 17 px), un écran de 1280 px en a 1263 à
+ * 1265.
  */
 
 /**
@@ -224,6 +238,10 @@ export function TemplateShell({
     <TemplateLink
       href={templateHref(locale, cta.href)}
       size="sm"
+      // Cible de 44 px (WCAG 2.5.8) dans l'en-tête comme dans le menu mobile :
+      // la hauteur de l'en-tête ne change pas, les liens de la navigation font
+      // déjà 44 px.
+      className="min-h-11"
       variant={floating && headerTone === "inverse" ? "inverse" : "solid"}
       icon={cta.icon}
     >
@@ -242,7 +260,7 @@ export function TemplateShell({
           {brand.name}
         </Link>
         {brand.tagline ? (
-          <p className="hidden truncate text-tpl-xs text-tpl-ink-muted sm:block xl:hidden 2xl:block">
+          <p className="hidden truncate text-tpl-xs text-tpl-ink-muted sm:block">
             {brand.tagline}
           </p>
         ) : null}
@@ -292,19 +310,20 @@ export function TemplateShell({
   const barHeader = (
     <header
       className={cn(
-        "sticky top-0 z-40 border-b border-tpl-line bg-tpl-surface/95 backdrop-blur",
-        SHELL_GUTTER,
+        "@container sticky top-0 z-40 border-b border-tpl-line bg-tpl-surface/95 backdrop-blur",
         rail ? "xl:hidden" : null
       )}
     >
-      <div
-        className={cn(
-          SHELL_WIDTH,
-          "flex items-center justify-between gap-3 py-3 xl:gap-4"
-        )}
-      >
-        {brandBlock}
-        {barNav}
+      <div className={SHELL_GUTTER}>
+        <div
+          className={cn(
+            SHELL_WIDTH,
+            "flex items-center justify-between gap-3 py-3 xl:gap-4"
+          )}
+        >
+          {brandBlock}
+          {barNav}
+        </div>
       </div>
     </header>
   );
@@ -317,16 +336,18 @@ export function TemplateShell({
   const floatingHeader = (
     <header
       data-floating-header
-      className={cn("sticky top-0 z-40 h-0", SHELL_GUTTER)}
+      className="@container sticky top-0 z-40 h-0"
     >
-      <div className={cn(SHELL_WIDTH, "pt-(--tpl-header-gap)")}>
-        <div
-          data-tone={headerTone === "inverse" ? "inverse" : undefined}
-          className="relative rounded-[var(--tpl-header-radius)] border border-tpl-line bg-tpl-surface/95 px-5 text-tpl-ink shadow-tpl-lg backdrop-blur-md sm:px-6"
-        >
-          <div className="flex items-center justify-between gap-3 py-3 xl:gap-4">
-            {brandBlock}
-            {barNav}
+      <div className={SHELL_GUTTER}>
+        <div className={cn(SHELL_WIDTH, "pt-(--tpl-header-gap)")}>
+          <div
+            data-tone={headerTone === "inverse" ? "inverse" : undefined}
+            className="relative rounded-[var(--tpl-header-radius)] border border-tpl-line bg-tpl-surface/95 px-5 text-tpl-ink shadow-tpl-lg backdrop-blur-md sm:px-6"
+          >
+            <div className="flex items-center justify-between gap-3 py-3 xl:gap-4">
+              {brandBlock}
+              {barNav}
+            </div>
           </div>
         </div>
       </div>
@@ -336,7 +357,7 @@ export function TemplateShell({
   const railHeader = (
     <header
       data-rail
-      className="sticky top-0 hidden h-dvh w-[var(--tpl-rail-width)] shrink-0 flex-col self-start overflow-y-auto border-r border-tpl-line bg-tpl-raised px-8 py-10 xl:flex"
+      className="[container-type:size] sticky top-0 hidden h-dvh w-[var(--tpl-rail-width)] shrink-0 flex-col self-start overflow-y-auto border-r border-tpl-line bg-tpl-raised px-8 py-10 xl:flex"
     >
       <div className="flex flex-col items-start gap-3">
         {brand.mark ? <div className="shrink-0">{brand.mark}</div> : null}
@@ -349,19 +370,24 @@ export function TemplateShell({
         {brand.tagline ? (
           <p className="text-tpl-sm text-tpl-ink-muted">{brand.tagline}</p>
         ) : null}
+        {/* Colonne basse : le sélecteur de langue monte ici (l'autre exemplaire,
+            sous la navigation, est alors masqué : voir `RAIL_SHORT_HIDDEN`). */}
+        {localeSwitch ? (
+          <div className="hidden [@container(max-height:44rem)]:block">
+            <TemplateLocaleSwitch locale={locale} />
+          </div>
+        ) : null}
       </div>
-      <div className="mt-10 flex flex-col gap-6">
-        <TemplateShellNav
-          items={navItems}
-          homeHref={homeHref}
-          locale={locale}
-          showLocaleSwitch={localeSwitch}
-          labels={{ menu: labels.menu, nav: labels.nav }}
-          layout="rail"
-          numbered={railNumbers}
-          cta={ctaLink}
-        />
-      </div>
+      <TemplateShellNav
+        items={navItems}
+        homeHref={homeHref}
+        locale={locale}
+        showLocaleSwitch={localeSwitch}
+        labels={{ menu: labels.menu, nav: labels.nav }}
+        layout="rail"
+        numbered={railNumbers}
+        cta={ctaLink}
+      />
       {railFooter ? (
         <div className="mt-auto border-t border-tpl-line pt-6 text-tpl-sm text-tpl-ink-muted">
           {railFooter}

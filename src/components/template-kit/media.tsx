@@ -80,6 +80,14 @@ export type TemplateMediaProps = {
   /** À réserver à l'image visible sans défilement (LCP). */
   priority?: boolean;
   rounded?: TemplateMediaRounded;
+  /**
+   * Cadrage de la photo dans sa boîte : valeur CSS d'`object-position`
+   * (`"top"`, `"50% 30%"`, `"left center"`…). Centré par défaut (`50% 50%`) :
+   * sans cette prop le rendu ne change pas. Sert à garder le sujet dans le
+   * cadre quand `object-cover` rogne une photo (portrait dans une boîte
+   * paysage, par exemple).
+   */
+  position?: string;
   /** Posé sur le conteneur (largeur, marges, `min-h-[…]` avec `ratio="fill"`…). */
   className?: string;
 };
@@ -91,6 +99,7 @@ export function TemplateMedia({
   sizes,
   priority = false,
   rounded = "radius",
+  position,
   className,
 }: TemplateMediaProps) {
   return (
@@ -108,6 +117,7 @@ export function TemplateMedia({
         fill
         sizes={sizes}
         priority={priority}
+        style={position ? { objectPosition: position } : undefined}
         className="object-cover"
       />
     </div>
@@ -120,6 +130,14 @@ export function TemplateMedia({
  * de l'écran, `auto` = celle du contenu.
  */
 export type TemplateHeroMediaHeight = "screen" | "tall" | "auto";
+
+/**
+ * `sizes` par défaut de la photo d'un héros. Boîte plus haute que large sur
+ * mobile : `object-cover` agrandit une photo paysage, il faut donc un fichier
+ * plus large que l'écran.
+ */
+const HERO_SIZES =
+  "(min-width: 1024px) 100vw, (min-width: 640px) 150vw, 200vw";
 
 const HERO_HEIGHT: Record<TemplateHeroMediaHeight, string> = {
   screen: "min-h-[100svh]",
@@ -134,6 +152,16 @@ export type TemplateHeroMediaProps = {
   /** `true` pour le héros visible sans défilement (LCP). */
   priority?: boolean;
   height?: TemplateHeroMediaHeight;
+  /**
+   * Attribut `sizes` de la photo. Par défaut `"(min-width: 1024px) 100vw,
+   * (min-width: 640px) 150vw, 200vw"`, qui suffit pour la hauteur `tall`. Un
+   * héros `screen` (100svh) sur téléphone est plus haut que large : `object-cover`
+   * agrandit alors une photo paysage à `hauteur × ratio` de large, bien au-delà
+   * de 200vw (ex. 844 px de haut × 3:2 = 1266 px à 390 px d'écran, soit 325vw).
+   * Passer une valeur mesurée (voir `docs/templates.md`, section 8, étape 6 : à chaque
+   * largeur, largeur utile × DPR rapportée au paramètre `w`, au plus 1,3).
+   */
+  sizes?: string;
   className?: string;
   /** Contenu posé sur la photo (titre, texte, boutons). */
   children?: ReactNode;
@@ -163,6 +191,7 @@ export function TemplateHeroMedia({
   alt,
   priority = false,
   height = "tall",
+  sizes = HERO_SIZES,
   className,
   children,
 }: TemplateHeroMediaProps) {
@@ -179,9 +208,7 @@ export function TemplateHeroMedia({
         src={src}
         alt={alt}
         fill
-        // Boîte plus haute que large sur mobile : `object-cover` agrandit une photo
-        // paysage, il faut donc un fichier plus large que l'écran.
-        sizes="(min-width: 1024px) 100vw, (min-width: 640px) 150vw, 200vw"
+        sizes={sizes}
         priority={priority}
         className="object-cover"
       />

@@ -10,6 +10,7 @@ import { ENV } from "@/lib/env";
 import { getMessage } from "@/lib/site-messages";
 import { SITE_URL } from "@/lib/site-url";
 import { absoluteUrl, localizePath } from "@/lib/localized-routes";
+import { openGraphImagePath } from "@/lib/page-metadata";
 
 /**
  * Document HTML commun à toutes les racines du site.
@@ -72,14 +73,16 @@ export function buildRootMetadata(locale: SiteLocale): Metadata {
       siteName: getMessage(locale, "metadata.openGraph.siteName"),
       locale: locale === "fr" ? "fr_FR" : "en_US",
       type: "website",
-      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+      images: [
+        { url: openGraphImagePath(locale), width: 1200, height: 630 },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: getMessage(locale, "metadata.twitter.title"),
       description: getMessage(locale, "metadata.twitter.description"),
       creator: getMessage(locale, "metadata.twitter.creator"),
-      images: ["/opengraph-image"],
+      images: [openGraphImagePath(locale)],
     },
     robots: {
       index: true,
@@ -104,7 +107,7 @@ export function RootDocument({ locale, children }: RootDocumentProps) {
   return (
     <html
       lang={locale}
-      className={`scroll-smooth ${inter.variable} ${instrumentSerif.variable}`}
+      className={`motion-safe:scroll-smooth ${inter.variable} ${instrumentSerif.variable}`}
     >
       <body suppressHydrationWarning className={inter.className}>
         {children}

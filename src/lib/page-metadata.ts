@@ -6,6 +6,15 @@ import {
   localizePath,
 } from "@/lib/localized-routes";
 
+/**
+ * Chemin de l'image de partage (Open Graph et Twitter) selon la langue : le
+ * dessin est le même, le texte suit la langue de la page. `metadataBase`
+ * (`root-document.tsx`) la rend absolue dans le HTML servi.
+ */
+export function openGraphImagePath(locale: SiteLocale): string {
+  return locale === "en" ? "/en/opengraph-image" : "/opengraph-image";
+}
+
 interface PageMetadataInput {
   title: string;
   description: string;
@@ -42,14 +51,16 @@ export function buildPageMetadata({
       // celui du layout, et l'image du fichier src/app/opengraph-image.tsx
       // n'est alors plus rattachée. Sans elle, `summary_large_image` ci-dessous
       // produit une carte de partage vide.
-      images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+      images: [
+        { url: openGraphImagePath(locale), width: 1200, height: 630 },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
       creator: "@sitekept",
-      images: ["/opengraph-image"],
+      images: [openGraphImagePath(locale)],
     },
   };
 }

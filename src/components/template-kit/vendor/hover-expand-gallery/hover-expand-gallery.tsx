@@ -184,8 +184,17 @@ export function HoverExpandGallery({
                 type="button"
                 aria-expanded={isActive}
                 aria-controls={panelId}
+                // Le survol n'ouvre que la rangée (au-dessus de `lg`, souris) :
+                // dans l'accordéon, ouvrir un panneau replie l'autre et
+                // déplace la page sous le pointeur. Dessous, clic, tap, Entrée
+                // ou Espace seulement.
                 onPointerEnter={(event) => {
-                  if (event.pointerType === "mouse") open(index);
+                  if (
+                    event.pointerType === "mouse" &&
+                    window.matchMedia(ROW_QUERY).matches
+                  ) {
+                    open(index);
+                  }
                 }}
                 // Le focus n'ouvre que la rangée : dans l'accordéon, il
                 // déplacerait le bouton hors de l'écran (Entrée ou clic ouvre).
