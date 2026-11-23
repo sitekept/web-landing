@@ -1,14 +1,20 @@
+import { Phone } from "lucide-react";
 import type { ReactNode } from "react";
 
-import { TemplateShell, type TemplateLocale } from "@/components/template-kit";
+import {
+  TemplateLink,
+  TemplateShell,
+  templateHref,
+  type TemplateLocale,
+} from "@/components/template-kit";
 import { cabinetAvocat } from "@/content/templates/cabinet-avocat";
 import { getTemplateCopy, hasTemplateLocale } from "@/content/templates/types";
 
 /**
- * Shell du template cabinet-avocat : bandeau « dossier » non collant, en-tête
- * en barre, pied de page sobre. Allure documentaire : angles droits, filets
- * fins, sur-titres espacés (`--tpl-tracking-eyebrow` posé sur la racine).
- * Tous les textes viennent de la copie.
+ * Shell du template cabinet-avocat : bandeau de réponse et d'horaires non
+ * collant, en-tête en barre, barre d'actions mobile (appeler, rendez-vous) et
+ * pied de page sobre. Angles droits, filets fins. Tous les textes viennent de
+ * la copie.
  */
 export function CabinetAvocatShell({
   locale,
@@ -19,13 +25,13 @@ export function CabinetAvocatShell({
 }) {
   const copy = getTemplateCopy(cabinetAvocat, locale);
   const { paths } = cabinetAvocat;
+  const { contact } = copy;
 
   return (
     <TemplateShell
       locale={locale}
       localeSwitch={hasTemplateLocale(cabinetAvocat, "en")}
       theme={cabinetAvocat.theme}
-      className="[--tpl-tracking-eyebrow:0.3em]"
       brand={{
         href: paths.home,
         name: copy.brand.name,
@@ -55,26 +61,47 @@ export function CabinetAvocatShell({
           </span>
         </>
       }
+      mobileActionsLabel={copy.a11y.quickActions}
+      mobileActions={
+        <>
+          <TemplateLink
+            href={contact.phone.href}
+            variant="outline"
+            icon={<Phone aria-hidden="true" className="size-4" />}
+            className="flex-1 tabular-nums"
+          >
+            {copy.cta.call}
+          </TemplateLink>
+          <TemplateLink
+            href={templateHref(locale, paths.consultation)}
+            icon={false}
+            className="flex-1"
+          >
+            {copy.cta.appointmentShort}
+          </TemplateLink>
+        </>
+      }
       footer={
         <footer className="border-t border-tpl-line bg-tpl-raised px-4 text-tpl-ink sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-8 py-10 lg:grid-cols-[1fr_auto]">
-            <div className="max-w-2xl">
-              <p className="font-tpl-display text-tpl-lg font-(weight:--tpl-display-weight)">
+          <div className="mx-auto grid max-w-7xl gap-8 py-10 lg:grid-cols-12 lg:gap-12">
+            <div className="max-w-2xl lg:col-span-7">
+              <p className="font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight)">
                 {copy.footer.title}
               </p>
-              <p className="mt-3 text-tpl-sm text-tpl-ink-muted">
+              <p className="mt-3 text-tpl-sm text-pretty text-tpl-ink-muted">
                 {copy.footer.text}
               </p>
             </div>
-            <div className="space-y-1 text-tpl-sm text-tpl-ink-muted sm:text-right">
-              <p>{copy.footer.address}</p>
-              <p>{copy.footer.email}</p>
+            <div className="space-y-1 text-tpl-sm text-tpl-ink-muted lg:col-span-5 lg:text-right">
+              <p>{contact.address}</p>
+              <p>{contact.email}</p>
+              <p>{contact.hours}</p>
               <p>
                 <a
-                  href={copy.footer.phone.href}
+                  href={contact.phone.href}
                   className="inline-flex min-h-11 items-center tabular-nums underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
                 >
-                  {copy.footer.phone.label}
+                  {contact.phone.label}
                 </a>
               </p>
             </div>
