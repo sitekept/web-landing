@@ -9,7 +9,8 @@ import { TemplateDemoForm } from "@/components/template-kit/demo-form";
 import { reparationMobile } from "@/content/templates/reparation-mobile";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { CallBand, HoursList, IconChip, PageHero, PillEyebrow } from "./parts";
+import { IconChip } from "./icons";
+import { CallBand, HoursList, PageHero, PillEyebrow } from "./parts";
 
 export function ContactView({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(reparationMobile, locale);

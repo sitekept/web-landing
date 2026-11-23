@@ -11,12 +11,11 @@ import { electricien } from "@/content/templates/electricien";
 import { getTemplateCopy } from "@/content/templates/types";
 
 import { ClosingBand } from "./closing";
+import { EmergencySection, WorksPreview } from "./home-emergency";
 import {
   CommitmentsBand,
-  EmergencySection,
   ReviewsSection,
   ServicesSection,
-  WorksPreview,
 } from "./home-sections";
 import { GridBackdrop, HazardStripe } from "./parts";
 

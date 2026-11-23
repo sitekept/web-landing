@@ -9,11 +9,10 @@ import { reparationMobile } from "@/content/templates/reparation-mobile";
 import { getTemplateCopy } from "@/content/templates/types";
 import { templateHref } from "@/lib/template-href";
 
+import { ICONS, IconChip } from "./icons";
 import {
   CallBand,
   HEADING_CLASS,
-  ICONS,
-  IconChip,
   PageHero,
   PillEyebrow,
   QuoteCallActions,

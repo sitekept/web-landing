@@ -9,11 +9,12 @@ import { reparationMobile } from "@/content/templates/reparation-mobile";
 import { getTemplateCopy } from "@/content/templates/types";
 import { templateHref } from "@/lib/template-href";
 
-import { Brands, HomeService, Popular, Proof, Steps } from "./home-sections";
+import { Popular, Proof, Steps } from "./home-sections";
+import { Brands, HomeService } from "./home-service";
+import { IconChip } from "./icons";
 import {
   CallBand,
   HEADING_CLASS,
-  IconChip,
   PillEyebrow,
   QuoteCallActions,
 } from "./parts";
