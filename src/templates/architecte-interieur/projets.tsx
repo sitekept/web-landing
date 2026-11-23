@@ -1,38 +1,44 @@
 import {
+  TemplateHeading,
   TemplateSection,
-  templateHref,
   type TemplateLocale,
 } from "@/components/template-kit";
 import { architecteInterieur } from "@/content/templates/architecte-interieur";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { EntryRow } from "./parts";
+import { CtaBand } from "./parts";
+import { ProjectBlock } from "./projets-block";
 
-/** Projets : sommaire long de cas d'étude. */
+/** Projets : trois réalisations, chacune avec deux photos et sa fiche chiffrée. */
 export function ProjetsView({ locale }: { locale: TemplateLocale }) {
-  const page = getTemplateCopy(architecteInterieur, locale).projets;
+  const copy = getTemplateCopy(architecteInterieur, locale);
+  const page = copy.projets;
 
   return (
-    <TemplateSection
-      density="compact"
-      tone="surface"
-      as="h1"
-      eyebrow={page.eyebrow}
-      title={page.title}
-      description={page.description}
-    >
-      <div className="space-y-4">
-        {page.items.map((item) => (
-          <EntryRow
-            key={item.title}
-            tinted
-            href={templateHref(locale, item.href)}
-            label={item.label}
-            title={item.title}
-            text={item.summary}
-          />
-        ))}
-      </div>
-    </TemplateSection>
+    <>
+      <TemplateSection density="compact" tone="surface">
+        <TemplateHeading
+          as="h1"
+          eyebrow={page.eyebrow}
+          title={page.title}
+          description={page.description}
+        />
+        <div className="mt-14 space-y-20 lg:space-y-24">
+          {copy.projects.items.map((project, index) => (
+            <ProjectBlock
+              key={project.id}
+              project={project}
+              locale={locale}
+              mirror={index % 2 === 1}
+            />
+          ))}
+        </div>
+      </TemplateSection>
+      <CtaBand
+        locale={locale}
+        title={page.contact.title}
+        text={page.contact.text}
+      />
+    </>
   );
 }
