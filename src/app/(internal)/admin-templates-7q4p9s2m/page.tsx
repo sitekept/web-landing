@@ -5,8 +5,8 @@ import {
 } from "@/content/templates/registry";
 
 export const metadata: Metadata = {
-  title: "Catalogue admin templates | SiteKept",
-  description: "Catalogue interne des templates SiteKept et de leurs statuts.",
+  title: "Catalogue admin templates | Sitekept",
+  description: "Catalogue interne des templates Sitekept et de leurs statuts.",
   robots: {
     index: false,
     follow: false,
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const statusLabel: Record<TemplateAdminStatus, string> = {
-  "sitekept-public": "SiteKept public",
+  "sitekept-public": "Sitekept public",
   "admin-only": "Admin only",
   lab: "Lab",
   archived: "Archivé",
@@ -132,7 +132,7 @@ export default function AdminTemplatesPage() {
                       href={template.sitekeptUrl}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`FR : ${template.name}, version française sur SiteKept`}
+                      aria-label={`FR : ${template.name}, version française sur Sitekept`}
                       className={
                         template.vercelUrl
                           ? "rounded-full border border-blue-200 px-3 py-1.5 text-blue-800 transition hover:border-blue-400"
@@ -147,7 +147,7 @@ export default function AdminTemplatesPage() {
                       href={template.sitekeptUrlEn}
                       target="_blank"
                       rel="noreferrer"
-                      aria-label={`EN : ${template.name}, version anglaise sur SiteKept`}
+                      aria-label={`EN : ${template.name}, version anglaise sur Sitekept`}
                       className="rounded-full border border-blue-200 px-3 py-1.5 text-blue-800 transition hover:border-blue-400"
                     >
                       EN

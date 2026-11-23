@@ -1,5 +1,7 @@
 # Audit Core Web Vitals & Performance — sitekept.com
 
+> Note (phase 7) : le doublon `public/logo-sitekept-rond copy.webp` a été supprimé.
+
 **Date** : 2026-08-10 · **Stack** : Next.js 15.3.6 App Router, React 19, Tailwind v4, Vercel (fra1)
 **Commit de référence** : `1c7c98d` (branche `dev`)
 **Auteur** : PERF-CWV

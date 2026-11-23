@@ -214,7 +214,7 @@ export async function submitContactForm(formData: FormData) {
           </div>
           
           <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 12px;">
-            <p>Cet email a été envoyé depuis le formulaire de contact SiteKept le ${new Date().toLocaleString()}.</p>
+            <p>Cet email a été envoyé depuis le formulaire de contact Sitekept le ${new Date().toLocaleString()}.</p>
             <p><strong>Répondre à :</strong> ${safeEmail}</p>
           </div>
         </div>

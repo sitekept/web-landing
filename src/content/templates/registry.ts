@@ -122,10 +122,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Boulangerie",
     sector: "Boulangerie",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/boulangerie.png",
+      screenshot: "/template/boulangerie.webp",
       copy: {
         fr: {
           name: "Template Boulangerie",
@@ -145,10 +145,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Fleuriste",
     sector: "Floral",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/fleuriste.png",
+      screenshot: "/template/fleuriste.webp",
       copy: {
         fr: {
           name: "Template Fleuriste",
@@ -168,10 +168,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Reparation Ordinateur",
     sector: "Réparation tech",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/ordinateur.png",
+      screenshot: "/template/ordinateur.webp",
       copy: {
         fr: {
           name: "Template Réparation ordinateur",
@@ -192,10 +192,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Patisserie",
     sector: "Pâtisserie",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/patisserie.png",
+      screenshot: "/template/patisserie.webp",
       copy: {
         fr: {
           name: "Template Pâtisserie",
@@ -215,10 +215,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Dentiste",
     sector: "Santé",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/dentiste.png",
+      screenshot: "/template/dentiste.webp",
       copy: {
         fr: {
           name: "Template Dentiste",
@@ -238,10 +238,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Plombier Chauffagiste",
     sector: "Habitat",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/plombier-chauffagiste.png",
+      screenshot: "/template/plombier-chauffagiste.webp",
       copy: {
         fr: {
           name: "Template Plombier chauffagiste",
@@ -261,10 +261,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Salon de coiffure",
     sector: "Beauté",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/salon-coiffure.png",
+      screenshot: "/template/salon-coiffure.webp",
       copy: {
         fr: {
           name: "Template Salon de coiffure",
@@ -284,10 +284,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Ménage & Nettoyage",
     sector: "Services à domicile",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/menage-nettoyage.png",
+      screenshot: "/template/menage-nettoyage.webp",
       copy: {
         fr: {
           name: "Template Ménage & nettoyage",
@@ -307,10 +307,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Restaurant Bistrot",
     sector: "Restauration",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/restaurant-bistrot.png",
+      screenshot: "/template/restaurant-bistrot.webp",
       copy: {
         fr: {
           name: "Template Restaurant bistrot",
@@ -328,12 +328,12 @@ const TEMPLATES = [
   {
     slug: "architecte-interieur",
     status: "sitekept-public",
-    name: "Template Architecte d'intérieur",
+    name: "Template Architecte d’intérieur",
     sector: "Architecture intérieure",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/architecte-interieur.png",
+      screenshot: "/template/architecte-interieur.webp",
       copy: {
         fr: {
           name: "Template Architecte d’intérieur",
@@ -351,12 +351,12 @@ const TEMPLATES = [
   {
     slug: "cabinet-avocat",
     status: "sitekept-public",
-    name: "Template Cabinet d'avocat",
+    name: "Template Cabinet d’avocat",
     sector: "Juridique",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/cabinet-avocat.png",
+      screenshot: "/template/cabinet-avocat.webp",
       copy: {
         fr: {
           name: "Template Cabinet d’avocat",
@@ -378,10 +378,10 @@ const TEMPLATES = [
     name: "Template Avocate",
     sector: "Juridique",
     notes:
-      "Route publique SiteKept disponible, maintenant contrôlée par statut.",
+      "Route publique Sitekept disponible, maintenant contrôlée par statut.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/avocate.png",
+      screenshot: "/template/avocate.webp",
       copy: {
         fr: {
           name: "Template Avocate",
@@ -401,10 +401,10 @@ const TEMPLATES = [
     status: "sitekept-public",
     name: "Template Agence immobilière",
     sector: "Immobilier",
-    notes: "Visible dans le catalogue public SiteKept.",
+    notes: "Visible dans le catalogue public Sitekept.",
     locales: ["fr", "en"],
     gallery: {
-      screenshot: "/template/agence-immobiliere.png",
+      screenshot: "/template/agence-immobiliere.webp",
       copy: {
         fr: {
           name: "Template Agence immobilière",
@@ -433,7 +433,7 @@ const TEMPLATES = [
     name: "Balinjera",
     sector: "Restauration",
     notes:
-      "Route retirée de sitekept.com : il s'agissait de la reproduction du site d'une cliente réelle, exposant son e-mail personnel. La cliente a son propre domaine, vers lequel pointe la page réalisations.",
+      "Route retirée de sitekept.com : il s’agissait de la reproduction du site d’une cliente réelle, exposant son e-mail personnel. La cliente a son propre domaine, vers lequel pointe la page réalisations.",
     locales: ["fr"],
   },
   {
@@ -584,7 +584,7 @@ export type PublicTemplateSlug = Extract<
   { status: "sitekept-public" }
 >["slug"];
 
-export const templateEntries: readonly TemplateEntry[] = TEMPLATES;
+const templateEntries: readonly TemplateEntry[] = TEMPLATES;
 
 function isPublicTemplate(entry: TemplateEntry): entry is PublicTemplateEntry {
   return entry.status === "sitekept-public";
@@ -663,7 +663,7 @@ export interface AdminTemplateCatalogEntry {
 }
 
 /** Entrée du registre complétée de ses champs dérivés (liens, présence). */
-export function toAdminCatalogEntry(
+function toAdminCatalogEntry(
   entry: TemplateEntry
 ): AdminTemplateCatalogEntry {
   const vercelSlug =
