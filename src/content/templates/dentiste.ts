@@ -74,16 +74,16 @@ const fr = {
   },
   a11y: { quickActions: "Actions rapides", facts: "Le cabinet en bref" },
   topBar: {
-    hours: "Lun–Ven 8h30–19h00 · Sam 9h00–13h00",
-    promise: "Premier rendez-vous sous 48 h",
+    hours: "Lun–Ven 8 h 30–19 h 00 · Sam 9 h 00–13 h 00",
+    promise: "Premier rendez-vous sous 48 h",
   },
   info: {
     addressLabel: "Adresse",
     address: "12 rue de l’Exemple, 00000 Votre ville",
     hoursLabel: "Horaires",
     hours: [
-      { day: "Lundi–vendredi", time: "8h30–19h00" },
-      { day: "Samedi", time: "9h00–13h00" },
+      { day: "Lundi–vendredi", time: "8 h 30–19 h 00" },
+      { day: "Samedi", time: "9 h 00–13 h 00" },
       { day: "Dimanche", time: "Fermé" },
     ],
     emailLabel: "E‑mail",
@@ -105,7 +105,7 @@ const fr = {
     home: {
       title: "Clinique Nova Sourire - Cabinet dentaire",
       description:
-        "Cabinet dentaire : soins expliqués, devis écrit avant tout traitement, radios numériques et premier rendez-vous sous 48 h. Réservez en ligne.",
+        "Cabinet dentaire : soins expliqués, devis écrit avant tout traitement, radios numériques et premier rendez-vous sous 48 h. Réservez en ligne.",
     },
     soins: {
       title: "Soins dentaires - Clinique Nova Sourire",
@@ -150,19 +150,19 @@ const fr = {
       },
       slot: {
         eyebrow: "Prochaine disponibilité",
-        value: "Demain, 10h40",
+        value: "Demain, 10 h 40",
         text: "Contrôle, douleur ou première visite. Confirmation par e‑mail ou par téléphone.",
       },
     },
     facts: [
-      { value: "48 h", label: "pour obtenir un premier rendez-vous" },
+      { value: "48 h", label: "pour obtenir un premier rendez-vous" },
       { value: "Devis écrit", label: "remis avant tout traitement" },
       {
         value: "Tiers payant",
         label: "avec l’Assurance maladie et la plupart des mutuelles",
       },
       {
-        value: "6 jours sur 7",
+        value: "6 jours sur 7",
         label: "dont un créneau d’urgence chaque jour d’ouverture",
       },
     ],
@@ -239,7 +239,7 @@ const fr = {
         },
         {
           title: "Pendant : un bilan complet",
-          text: "Examen, radios ciblées si besoin, explications sur écran. Comptez 45 minutes.",
+          text: "Examen, radios ciblées si besoin, explications sur écran. Comptez 45 minutes.",
         },
         {
           title: "Après : un plan écrit",
@@ -302,7 +302,7 @@ const fr = {
         text: "Caries, dents sensibles, anciennes restaurations à refaire : nous traitons en conservant au maximum la dent, avec une anesthésie soignée.",
         price: "Dès 40 € par dent",
         points: [
-          "Reconstitutions de la couleur de la dent",
+          "Restaurations couleur dent",
           "Traitement de racine (dévitalisation)",
           "Urgences : douleur, dent cassée, abcès",
         ],
@@ -360,9 +360,9 @@ const fr = {
         },
         {
           care: "Couronne en céramique",
-          price: "0 à 600 €",
+          price: "500 à 600 €",
           coverage:
-            "Offre « 100 % Santé » sans reste à charge avec une mutuelle éligible.",
+            "Offre « 100 % Santé » à 500 € : sans reste à charge avec une mutuelle éligible. Tarif libre au‑delà.",
         },
         {
           care: "Blanchiment",
@@ -474,7 +474,7 @@ const fr = {
         {
           icon: "clock",
           title: "Du temps pour expliquer",
-          text: "Une consultation dure au moins 30 minutes : nous répondons à vos questions avant de commencer.",
+          text: "Une consultation dure au moins 30 minutes : nous répondons à vos questions avant de commencer.",
         },
         {
           icon: "award",
@@ -511,7 +511,7 @@ const fr = {
       {
         icon: "file-text",
         title: "Pendant la consultation",
-        text: "Environ 45 minutes, sans précipitation.",
+        text: "Environ 45 minutes, sans précipitation.",
         points: [
           "Vos questions et votre motif de venue",
           "Examen complet, radios si elles sont utiles",
@@ -594,9 +594,9 @@ const fr = {
         label: "Créneau",
         placeholder: "Choisir un créneau",
         options: [
-          { value: "morning", label: "Matin, 8h30–12h00" },
-          { value: "noon", label: "Début d’après-midi, 12h00–15h00" },
-          { value: "evening", label: "Fin d’après-midi, 15h00–19h00" },
+          { value: "morning", label: "Matin, 8 h 30–12 h 00" },
+          { value: "noon", label: "Début d’après-midi, 12 h 00–15 h 00" },
+          { value: "evening", label: "Fin d’après-midi, 15 h 00–19 h 00" },
         ],
       },
       message: {
@@ -992,9 +992,9 @@ const en: DentisteCopy = {
         },
         {
           care: "Ceramic crown",
-          price: "€0 to €600",
+          price: "€500 to €600",
           coverage:
-            "“100% Health” option with no out-of-pocket cost on a qualifying supplemental plan.",
+            "“100% Health” option at €500: no out-of-pocket cost on a qualifying supplemental plan. Open pricing above that.",
         },
         {
           care: "Whitening",
