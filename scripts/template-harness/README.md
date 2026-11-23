@@ -8,6 +8,8 @@ Outil de vérification des démos (`/<slug>`, `/en/<slug>`) : il compare le text
 | `snapshot.mjs` | Récupère chaque route et écrit un fichier texte par route : statut, `<title>`, nombre de `<h1>`, `lang`, balise `robots`, puis le texte visible, un bloc par ligne. Sort en erreur si une route ne répond pas 200. |
 | `headers.sh` | Vérifie `X-Robots-Tag` : `noindex, follow` sur les démos FR et EN, rien sur `/templates`, `/en` et `/en/templates`. Sort en erreur au premier écart. |
 
+| `../check-template-routes.mjs` | Garde-fou routes / registre (voir « Garde-fou » plus bas). `pnpm check:routes`. |
+
 Règles : ne jamais construire dans le dépôt, ne jamais écrire un snapshot dans le dépôt, ne jamais tuer un processus qu'on n'a pas lancé.
 
 ## Procédure
@@ -71,6 +73,18 @@ Toutes les lignes doivent commencer par `OK`.
 ### 6. Arrêt
 
 Arrêtez le serveur que vous avez lancé, par son PID (`kill <pid>`), puis supprimez la copie isolée si elle ne sert plus.
+
+## Garde-fou routes / registre (`pnpm check:routes`)
+
+`X-Robots-Tag: noindex, follow` n'est plus posé par un middleware mais par `headers()` de `next.config.ts`, à partir des slugs du registre (`demoNoindexHeaders` dans `src/lib/public-template-routes.ts`, un motif `/:slug(a|b|c)/:path*` pour le français, un autre sous `/en`). Un dossier de route de démo absent du registre serait donc servi **sans** `noindex`. `scripts/check-template-routes.mjs` (Node >= 22.6, sans dépendance, sans build, rapide) compare les dossiers de `src/app/(demos)/` et `src/app/(demos-en)/en/` aux slugs du registre (`routedTemplates` + `nonTemplateDemos`) et sort en erreur (code 1, message en clair) pour :
+
+- un dossier de route sans entrée au registre (français ou anglais) ;
+- un template routé sans dossier FR ou sans dossier EN ;
+- une entrée de `nonTemplateDemos` sans dossier de route (`(demos)` ou `(projects)`).
+
+Il lit `src/content/templates/registry.ts` par import direct (type stripping de Node ; sur Node 22.6 à 22.17 il se relance seul avec `--experimental-strip-types`), sans réimplémenter le registre. À lancer avant chaque commit qui ajoute ou renomme un dossier de démo ; en cas d'ajout d'un template, le faire passer avant `bash scripts/template-harness/headers.sh`.
+
+Le garde-fou ne remplace pas `headers.sh`, qui contrôle l'en-tête réellement servi par un build.
 
 ## Faire évoluer `routes.txt`
 

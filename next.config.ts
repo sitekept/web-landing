@@ -1,4 +1,6 @@
 import type { NextConfig } from "next";
+// Import relatif : Next ne résout pas l'alias `@/` dans `next.config.ts`.
+import { demoNoindexHeaders } from "./src/lib/public-template-routes";
 
 const nextConfig: NextConfig = {
   images: {
@@ -21,6 +23,12 @@ const nextConfig: NextConfig = {
         hostname: "images.unsplash.com",
       },
     ],
+  },
+  // `X-Robots-Tag: noindex, follow` sur les démos (`/<slug>`, `/en/<slug>` et
+  // sous-pages), calculé au build depuis le registre. Remplace l'ancien
+  // middleware, qui coûtait un bundle Edge sur chaque requête du site.
+  async headers() {
+    return demoNoindexHeaders();
   },
 };
 

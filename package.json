@@ -19,7 +19,8 @@
     "reinstall": "pnpm clean && pnpm install",
     "update-deps": "pnpm update --interactive",
     "harness:snapshot": "node scripts/template-harness/snapshot.mjs",
-    "harness:headers": "bash scripts/template-harness/headers.sh"
+    "harness:headers": "bash scripts/template-harness/headers.sh",
+    "check:routes": "node scripts/check-template-routes.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
