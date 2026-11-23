@@ -36,47 +36,46 @@ const IMG = {
 const fr = {
   brand: {
     name: "Pâtisserie Douceur",
-    tagline: "Maison de création",
+    tagline: "Artisan pâtissier",
   },
   nav: {
-    home: "Maison",
+    home: "Accueil",
     collections: "Collections",
-    signature: "Signature",
-    contact: "Conciergerie",
+    signature: "Signatures",
+    contact: "Contact",
     order: "Commander",
   },
   hero: {
-    badge: "Artisan pâtissier depuis 1985",
-    titleStart: "Une template pensée comme",
-    titleAccent: "une maison premium",
-    titleEnd: "et non comme un studio ni un commerce local.",
+    badge: "Ouvert du mardi au dimanche",
+    titleStart: "Des entremets de saison,",
+    titleAccent: "faits à la main",
+    titleEnd: "pour vos repas de fête.",
     description:
-      "Ici, la structure vend la rareté, la signature et la précision. On avance par collections, pièces emblématiques, occasions d’exception et service de commande sur mesure.",
+      "Éclairs et tartelettes à l’unité, gâteaux de 6 à 10 parts : à emporter en boutique ou à réserver pour un anniversaire, un mariage ou un dîner.",
     image: {
       src: IMG.hero,
       alt: "Entremets au chocolat couronné de framboises, de myrtilles, de figues et de pétales de rose, sur un présentoir sombre posé sur une mousseline blanche.",
     },
     panel: {
-      eyebrow: "Maison d’exception",
-      title: "Des créations qui tiennent leur place sur une table d’exception.",
-      text: "Cette page assume le langage du luxe : moins de blocs, plus de verticalité, plus d’espace, plus de statut.",
+      eyebrow: "Le jour du retrait",
+      title: "Aussi beau sur votre table que dans notre vitrine.",
+      text: "Montage le matin même, puis une boîte rigide qui se transporte sans risque jusqu’à chez vous.",
       stats: [
-        { value: "1985", label: "naissance de la maison" },
-        { value: "15+", label: "distinctions reçues" },
-        { value: "48h", label: "pour commande sur mesure" },
+        { value: "1985", label: "année de création" },
+        { value: "15+", label: "prix de pâtisserie" },
+        { value: "48 h", label: "pour un décor sur mesure" },
       ],
     },
   },
   collections: {
     eyebrow: "Collections",
-    title:
-      "Une lecture par univers de création, pas par simple liste de produits.",
+    title: "Un gâteau pour toute la tablée, ou une douceur pour chacun.",
     items: [
       {
-        title: "Entremets signature",
-        note: "Des pièces pensées comme des collections saisonnières.",
+        title: "Entremets à partager",
+        note: "Quatre recettes nouvelles à chaque saison.",
         description:
-          "Montages précis, textures nettes, glaçages lumineux et équilibre des saveurs pour une lecture plus couture que simplement gourmande.",
+          "Biscuit, mousse, insert fruité et glaçage miroir, en 6, 8 ou 10 parts, de 38 € à 60 €.",
         image: {
           src: IMG.entremets,
           alt: "Entremets en tranche aux couches de biscuit, de crème et de gelée de fruits rouges, garni de groseilles et d’une mûre, sur une assiette claire.",
@@ -84,9 +83,9 @@ const fr = {
       },
       {
         title: "Pâtisseries individuelles",
-        note: "Des formats raffinés pour boutique, réception ou gifting.",
+        note: "À l’unité en vitrine, ou en boîte de 6 ou 12 à offrir.",
         description:
-          "Éclairs, tartelettes, choux et créations courtes avec finitions propres, silhouettes lisibles et goût de maison.",
+          "Éclairs, tartelettes aux fruits de saison et choux garnis le jour même, de 4,50 € à 7 € pièce.",
         image: {
           src: IMG.eclair,
           alt: "Éclair au chocolat parsemé d’éclats, servi sur une assiette avec des baies rouges et des mûres.",
@@ -95,46 +94,45 @@ const fr = {
     ],
   },
   signature: {
-    eyebrow: "Signature",
-    title: "Les pièces emblématiques sont montrées comme des icônes de maison.",
-    text: "Là où `fleuriste` raconte un portfolio éditorial et `boulangerie` un commerce de proximité, `patisserie` doit exprimer une autorité plus statutaire, presque cérémonielle.",
+    eyebrow: "Signatures",
+    title: "Les trois recettes que l’on nous demande le plus.",
+    text: "Disponibles toute l’année, en boutique ou sur commande 48 h à l’avance.",
     items: [
       {
-        name: "Opéra Royal",
-        detail: "Café grand cru, ganache noire, biscuit Joconde.",
+        name: "Opéra",
+        detail: "Café grand cru, ganache au chocolat noir, biscuit Joconde.",
         price: "45 €",
       },
       {
-        name: "Saint-Honoré Atelier",
-        detail: "Vanille, caramel blond, pâte feuilletée croustillante.",
+        name: "Saint-Honoré",
+        detail: "Crème légère à la vanille, caramel blond, pâte feuilletée.",
         price: "42 €",
       },
       {
-        name: "Tarte Yuzu",
-        detail: "Agrumes tendus, meringue satinée, pâte fine.",
+        name: "Tarte au yuzu",
+        detail: "Crème de yuzu acidulée, meringue flambée, pâte sablée fine.",
         price: "7 €",
       },
     ],
   },
   occasions: {
     eyebrow: "Occasions",
-    title:
-      "Une pâtisserie pensée pour les moments qui demandent plus qu’un simple dessert.",
+    title: "Des gâteaux sur commande, de 6 à 120 parts.",
     panel: {
-      eyebrow: "Maison",
+      eyebrow: "Conseil",
       title:
-        "Nous travaillons la table, le rythme du repas et la place de la pièce.",
-      text: "Le site n’est pas structuré comme un menu de boutique. Il met d’abord en avant la portée symbolique de la création et le service qui l’accompagne.",
+        "Nous choisissons avec vous la taille, le format et l’heure du service.",
+      text: "Livraison possible dans un rayon de 20 km : le gâteau arrive prêt à découper, avec ses conseils de conservation.",
     },
     items: [
-      "Mariages et pièces de réception",
-      "Anniversaires et commandes sur mesure",
-      "Maisons de luxe, gifting et événements privés",
+      "Mariages et pièces montées",
+      "Baptêmes et fêtes de famille",
+      "Cadeaux clients et fêtes d’équipe",
     ],
   },
   gallery: {
     eyebrow: "Galerie",
-    title: "Une galerie plus précieuse que démonstrative.",
+    title: "Sortis de notre atelier cette saison.",
     images: [
       {
         src: IMG.macarons,
@@ -156,53 +154,52 @@ const fr = {
   },
   reviews: {
     eyebrow: "Témoignages",
-    title: "Une preuve sociale traitée comme validation de maison.",
+    title: "Ce qu’en disent nos clients.",
     ratingLabel: "5 étoiles sur 5",
     items: [
       {
         name: "Élise B.",
-        role: "Commande mariage",
-        text: "« Le gâteau n’était pas seulement excellent, il donnait la tonalité entière de la réception. Une présence presque statutaire. »",
+        role: "Gâteau de mariage",
+        text: "« Délicieux, et encore superbe au moment de la découpe. Tous nos invités en ont repris, même ceux qui ne prennent jamais de dessert. »",
       },
       {
-        name: "Maison V.",
-        role: "Événement privé",
-        text: "« Une pâtisserie qui comprend le langage du premium : précision, retenue, élégance et impact immédiat sur table. »",
+        name: "Vincent L.",
+        role: "Dîner d’entreprise",
+        text: "« Quarante parts commandées pour un dîner d’équipe : livrées à l’heure, faciles à servir, et le Saint‑Honoré a fait l’unanimité autour de la table. »",
       },
     ],
   },
   contact: {
-    eyebrow: "Conciergerie",
-    title: "Commander une création pour une date, un lieu, une table.",
-    address: "123 Rue de la Gourmandise, 75001 Paris",
-    hours: "Mardi - Samedi 7h00 - 19h30, Dimanche 8h00 - 13h00",
-    phone: { href: "tel:+33199000055", label: "01 99 00 00 55" },
+    eyebrow: "Contact",
+    title: "Dites-nous la date, le nombre d’invités et vos envies.",
+    address: "12 rue de l’Exemple, 00000 Votre ville",
+    hours: "Mar.–sam. 7 h–19 h 30, dim. 8 h–13 h",
+    phone: { href: "tel:+33199000057", label: "01 99 00 00 57" },
     email: {
       href: "mailto:contact@patisserie-douceur.example",
       label: "contact@patisserie-douceur.example",
     },
-    special: "Commandes spéciales à partir de 48h",
+    special: "Gâteaux personnalisés : 48 h à l’avance",
     panel: {
-      eyebrow: "Ce que vend cette structure",
-      text: "Une maison premium qui assume la distinction, la précision et la valeur perçue. Ce n’est ni un site commerce rapide comme `boulangerie`, ni un portfolio studio comme `fleuriste`.",
-      request: "Demander une création",
-      appointment: "Prendre rendez-vous",
-      back: "Revoir les collections",
+      eyebrow: "Bon à savoir",
+      text: "Acompte de 30 % à la commande, solde au retrait, annulation gratuite jusqu’à 3 jours avant.",
+      request: "Commander un gâteau",
+      appointment: "Réserver une dégustation",
+      back: "Voir les collections",
     },
   },
   footer: {
-    text: "Maison de création pâtissière pour tables d’exception, gifting premium et commandes sur mesure.",
+    text: "Pâtisserie artisanale depuis 1985, ouverte du mardi au dimanche.",
     navLabel: "Navigation",
-    positionLabel: "Positionnement",
+    positionLabel: "En boutique",
     positionText:
-      "Une architecture plus statutaire, plus sombre et plus cérémonielle que les deux autres templates.",
+      "Entremets, pâtisseries individuelles et gâteaux de fête, à emporter ou sur commande.",
   },
   meta: {
     home: {
-      title:
-        "Pâtisserie Douceur - Pâtisserie Artisanale & Créations Gourmandes",
+      title: "Pâtisserie Douceur - Entremets et gâteaux sur commande",
       description:
-        "Pâtisserie Douceur, artisan pâtissier depuis 1985. Spécialités françaises, entremets, gâteaux personnalisés et pâtisseries individuelles.",
+        "Pâtisserie Douceur, artisan pâtissier depuis 1985 : entremets de saison, éclairs, tartelettes et gâteaux de fête, à emporter ou sur commande.",
     },
   },
 } as const;
@@ -215,104 +212,103 @@ export type PatisserieCopy = WidenLiterals<FrCopy>;
 const en: PatisserieCopy = {
   brand: {
     name: "Your business",
-    tagline: "House of creation",
+    tagline: "Fine French pastry",
   },
   nav: {
-    home: "House",
+    home: "Home",
     collections: "Collections",
-    signature: "Signature",
-    contact: "Concierge",
+    signature: "Signatures",
+    contact: "Contact",
     order: "Order",
   },
   hero: {
-    badge: "Artisan pastry chef since 1985",
-    titleStart: "A template designed as",
-    titleAccent: "a premium house",
-    titleEnd: "and not as a studio or a local shop.",
+    badge: "Open Tuesday through Sunday",
+    titleStart: "Seasonal cakes,",
+    titleAccent: "made by hand",
+    titleEnd: "for every celebration.",
     description:
-      "Here, the structure sells rarity, signature and precision. We move through collections, emblematic pieces, exceptional occasions and a made-to-order service.",
+      "Éclairs and tartlets by the piece, entremets for 6 to 10: pick them up in the shop or order ahead for a birthday, a wedding or a dinner party.",
     image: {
       src: IMG.hero,
-      alt: "Chocolate entremets crowned with raspberries, blueberries, figs and rose petals, on a dark serving stand set on white muslin.",
+      alt: "Chocolate entremets topped with raspberries, blueberries, figs and rose petals, on a dark cake stand over white muslin.",
     },
     panel: {
-      eyebrow: "House of distinction",
-      title: "Creations that hold their own on an exceptional table.",
-      text: "This page speaks the language of luxury: fewer blocks, more verticality, more space, more status.",
+      eyebrow: "Pickup day",
+      title: "As beautiful on your table as in our window.",
+      text: "Assembled that morning and packed in a sturdy box that travels safely all the way home.",
       stats: [
-        { value: "1985", label: "the house was born" },
-        { value: "15+", label: "awards received" },
-        { value: "48 hrs", label: "for a custom order" },
+        { value: "1985", label: "year founded" },
+        { value: "15+", label: "pastry awards" },
+        { value: "2 days", label: "for custom designs" },
       ],
     },
   },
   collections: {
     eyebrow: "Collections",
-    title: "Read by universe of creation, not as a simple product list.",
+    title: "A cake for the whole table, or one for each guest.",
     items: [
       {
-        title: "Signature entremets",
-        note: "Pieces designed like seasonal collections.",
+        title: "Entremets to share",
+        note: "Four new recipes every season.",
         description:
-          "Precise assembly, clean textures, luminous glazes and balanced flavors, for a look that is more couture than merely gourmet.",
+          "Sponge, mousse, a fruit center and a mirror glaze, in 6-, 8- or 10-serving sizes, from €38 to €60.",
         image: {
           src: IMG.entremets,
-          alt: "Slice of entremets with layers of sponge, cream and red fruit jelly, topped with red currants and a blackberry, on a pale plate.",
+          alt: "Slice of entremets with layers of sponge, cream and red berry jelly, topped with red currants and a blackberry, on a pale plate.",
         },
       },
       {
         title: "Individual pastries",
-        note: "Refined formats for the shop, receptions or gifting.",
+        note: "By the piece, or in boxes of 6 or 12 to give as gifts.",
         description:
-          "Éclairs, tartlets, choux and small creations with clean finishes, legible silhouettes and the taste of the house.",
+          "Éclairs, seasonal fruit tartlets and cream puffs filled the same day, €4.50 to €7 each.",
         image: {
           src: IMG.eclair,
-          alt: "Chocolate éclair sprinkled with chocolate shards, served on a plate with red berries and blackberries.",
+          alt: "Chocolate éclair sprinkled with chocolate shavings, on a plate with raspberries and blackberries.",
         },
       },
     ],
   },
   signature: {
-    eyebrow: "Signature",
-    title: "Emblematic pieces are shown as icons of the house.",
-    text: "Where the florist template tells an editorial portfolio story and the bakery template a neighborhood shop, the pastry shop template has to express a more stately, almost ceremonial authority.",
+    eyebrow: "Signatures",
+    title: "The three recipes our customers ask for most.",
+    text: "Available all year, in the shop or with 2 days’ notice.",
     items: [
       {
-        name: "Royal Opéra",
-        detail: "Grand cru coffee, dark ganache, Joconde sponge.",
+        name: "Opéra",
+        detail: "Single-origin coffee, dark chocolate ganache, almond sponge.",
         price: "€45",
       },
       {
-        name: "Atelier Saint-Honoré",
-        detail: "Vanilla, blond caramel, crisp puff pastry.",
+        name: "Saint-Honoré",
+        detail: "Light vanilla cream, golden caramel, puff pastry.",
         price: "€42",
       },
       {
         name: "Yuzu Tart",
-        detail: "Tangy citrus, satiny meringue, thin pastry.",
+        detail: "Tangy yuzu curd, torched meringue, thin shortbread crust.",
         price: "€7",
       },
     ],
   },
   occasions: {
     eyebrow: "Occasions",
-    title:
-      "A pastry shop made for moments that call for more than a simple dessert.",
+    title: "Custom cakes, from 6 to 120 servings.",
     panel: {
-      eyebrow: "House",
+      eyebrow: "Planning",
       title:
-        "We work on the table, the rhythm of the meal and the place of the piece.",
-      text: "The site is not structured like a shop menu. It puts the symbolic weight of the creation first, along with the service that comes with it.",
+        "Together we choose the size, the style and the right time to serve it.",
+      text: "Delivery available within 12 miles; the cake arrives ready to slice, with storage tips.",
     },
     items: [
-      "Weddings and reception centerpieces",
-      "Birthdays and custom orders",
-      "Luxury houses, gifting and private events",
+      "Weddings and tiered cakes",
+      "Christenings and family parties",
+      "Client gifts and team parties",
     ],
   },
   gallery: {
     eyebrow: "Gallery",
-    title: "A gallery that is more precious than showy.",
+    title: "Fresh from our kitchen this season.",
     images: [
       {
         src: IMG.macarons,
@@ -320,7 +316,7 @@ const en: PatisserieCopy = {
       },
       {
         src: IMG.tartelettes,
-        alt: "Blueberry, raspberry, kiwi and apple-rose tartlets seen from above on a dark slate surface.",
+        alt: "Blueberry, raspberry, kiwi and apple rose tartlets seen from above on dark slate.",
       },
       {
         src: IMG.mariage,
@@ -333,53 +329,53 @@ const en: PatisserieCopy = {
     ],
   },
   reviews: {
-    eyebrow: "Testimonials",
-    title: "Social proof treated as the house’s seal of approval.",
+    eyebrow: "Reviews",
+    title: "What our customers say.",
     ratingLabel: "5 out of 5 stars",
     items: [
       {
-        name: "Elise B.",
-        role: "Wedding order",
-        text: "“The cake wasn’t just excellent, it set the tone for the entire reception. An almost stately presence.”",
+        name: "Élise B.",
+        role: "Wedding cake",
+        text: "“Delicious, and still gorgeous when we cut it. Every guest went back for seconds, even the ones who never eat dessert.”",
       },
       {
-        name: "V. Events",
-        role: "Private event",
-        text: "“A pastry shop that understands the language of premium: precision, restraint, elegance and immediate impact on the table.”",
+        name: "Vincent L.",
+        role: "Company dinner",
+        text: "“We ordered forty servings for a team dinner: delivered on time, easy to serve, and everyone at the table loved the Saint‑Honoré.”",
       },
     ],
   },
   contact: {
-    eyebrow: "Concierge",
-    title: "Order a creation for a date, a venue, a table.",
-    address: "123 Rue de la Gourmandise, 75001 Paris",
-    hours: "Tuesday - Saturday 7:00 AM - 7:30 PM, Sunday 8:00 AM - 1:00 PM",
-    phone: { href: "tel:+33199000055", label: "01 99 00 00 55" },
+    eyebrow: "Contact",
+    title: "Tell us the date, the guest count and your ideas.",
+    address: "12 Example Street, 00000 Your city",
+    hours: "Tue–Sat 7 a.m.–7:30 p.m., Sun 8 a.m.–1 p.m.",
+    phone: { href: "tel:+33199000057", label: "01 99 00 00 57" },
     email: {
       href: "mailto:contact@example.com",
       label: "contact@example.com",
     },
-    special: "Special orders with 48 hours’ notice",
+    special: "Custom cakes: 2 days’ notice",
     panel: {
-      eyebrow: "What this structure sells",
-      text: "A premium house that embraces distinction, precision and perceived value. It is neither a quick-commerce site like the bakery template, nor a studio portfolio like the florist template.",
-      request: "Request a creation",
-      appointment: "Book an appointment",
-      back: "Back to the collections",
+      eyebrow: "Good to know",
+      text: "30% deposit when you order, balance at pickup, free cancellation up to 3 days before.",
+      request: "Order a cake",
+      appointment: "Book a tasting",
+      back: "See the collections",
     },
   },
   footer: {
-    text: "A pastry house of creation for exceptional tables, premium gifting and made-to-order cakes.",
+    text: "Artisan pastry shop since 1985, open Tuesday through Sunday.",
     navLabel: "Navigation",
-    positionLabel: "Positioning",
+    positionLabel: "In the shop",
     positionText:
-      "A more stately, darker and more ceremonial architecture than the other two templates.",
+      "Entremets, individual pastries and celebration cakes, to go or made to order.",
   },
   meta: {
     home: {
-      title: "Your business - Artisan pastry shop",
+      title: "Your business - Cakes and French pastry",
       description:
-        "Artisan pastry chef since 1985. French specialties, entremets, custom cakes and individual pastries.",
+        "Your business, an artisan pastry shop since 1985: seasonal entremets, éclairs, tartlets and celebration cakes, to go or made to order.",
     },
   },
 };

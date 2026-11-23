@@ -45,30 +45,30 @@ const fr = {
     tagline: "Atelier floral",
   },
   nav: {
-    home: "Édito",
-    projects: "Projets",
+    home: "Accueil",
+    projects: "Réalisations",
     studio: "Atelier",
     contact: "Contact",
     cta: "Demander un devis",
   },
   hero: {
-    badge: "Studio floral mariages, réceptions et marques",
-    titleStart: "Une template qui se lit comme un",
-    titleAccent: "portfolio éditorial",
-    titleEnd: "et non comme une boutique locale.",
+    badge: "Fleuriste depuis 1992",
+    titleStart: "Les fleurs de",
+    titleAccent: "votre événement,",
+    titleEnd: "du bouquet au décor de salle.",
     description:
-      "L’objectif ici est de vendre une direction artistique, une sensibilité et une capacité à sublimer un événement. La structure assume la narration, l’image et la respiration.",
-    seeProjects: "Explorer les projets",
-    bookMeeting: "Réserver un rendez-vous",
-    visionLabel: "Vision",
+      "Mariages, réceptions privées et lancements de marque : nous choisissons les fleurs avec vous, les composons à l’atelier, les installons sur place et revenons les retirer après la fête.",
+    seeProjects: "Parcourir nos projets",
+    bookMeeting: "Prendre rendez-vous",
+    visionLabel: "De saison",
     visionText:
-      "Des fleurs pensées pour le regard, le lieu et la mémoire visuelle.",
-    positioningLabel: "Positionnement",
+      "Pivoines, renoncules, roses de jardin : chaque tige est choisie pour votre date et votre lieu.",
+    positioningLabel: "Sur mesure",
     positioningText:
-      "Cette page vend du sur-mesure haut de gamme. Aucun ton “commerce de quartier”, aucun bloc utilitaire en vitrine : tout est pensé pour évoquer un atelier créatif et premium.",
+      "Une première rencontre sans engagement, puis un devis détaillé poste par poste : vous validez chaque fleur avant que nous la commandions.",
     vision: {
       src: IMG.vision,
-      alt: "Roses de jardin dans un vase en grès devant un mur gris patiné.",
+      alt: "Roses de jardin rose tendre dans un vase en grès, devant un mur gris patiné.",
     },
     main: {
       src: IMG.main,
@@ -80,16 +80,15 @@ const fr = {
     },
   },
   projects: {
-    eyebrow: "Projets & univers",
-    title:
-      "Des bandes éditoriales qui racontent une approche plus qu’un catalogue.",
-    link: "Échanger sur ce type de projet",
+    eyebrow: "Réalisations",
+    title: "Ce que nous fleurissons le plus souvent.",
+    link: "Préparer un projet similaire",
     items: [
       {
         eyebrow: "Mariages",
-        title: "Des fleurs pensées comme une mise en scène sensible.",
+        title: "Une seule palette, de la cérémonie au dîner.",
         description:
-          "Bouquet, cérémonie, dîner, détails de table et silhouettes florales : chaque ensemble est composé comme un récit visuel cohérent plutôt que comme une simple sélection de produits.",
+          "Bouquet de la mariée, boutonnières, arche et centres de table, composés ensemble et livrés le matin même.",
         image: {
           src: IMG.weddings,
           alt: "Bouquet de mariée rond de roses roses et de lisianthus blancs posé sur une planche de bois au coucher du soleil.",
@@ -97,9 +96,9 @@ const fr = {
       },
       {
         eyebrow: "Réceptions privées",
-        title: "Une esthétique plus intime, plus texturée, plus vivante.",
+        title: "Anniversaires, dîners et fêtes de famille.",
         description:
-          "Nous jouons les couleurs, les volumes et les respirations pour créer des tables, des entrées et des décors qui élèvent tout de suite la perception d’un lieu.",
+          "Centres de table, compositions d’entrée et fleurs du buffet, adaptés au nombre d’invités et à la taille de vos tables.",
         image: {
           src: IMG.receptions,
           alt: "Table ronde dressée avec des verres en cristal et un centre de table de fleurs bleues, jaunes et blanches.",
@@ -107,9 +106,9 @@ const fr = {
       },
       {
         eyebrow: "Marques & lieux",
-        title: "Un fleurissement de marque qui soutient vraiment l’image.",
+        title: "Des fleurs à vos couleurs, pour un soir ou chaque semaine.",
         description:
-          "Studios, hôtels, boutiques et lancements de collection : les compositions servent l’univers visuel, la photo et l’expérience sur place avec un vrai sens du rythme.",
+          "Hôtels, boutiques, lancements et séances photo : compositions pour un événement ou bouquets renouvelés à date fixe, livrés et entretenus par l’atelier.",
         image: {
           src: IMG.brands,
           alt: "Fleurs coupées suspendues dans de petits tubes de verre devant un mur blanc.",
@@ -119,18 +118,17 @@ const fr = {
   },
   studio: {
     eyebrow: "Atelier",
-    title:
-      "Une section pensée comme une note de studio, pas comme une liste de services.",
-    text: "Là où `boulangerie` pousse l’efficacité, `fleuriste` assume la direction artistique : plus d’espace, plus de récit, plus de mise en scène, moins de blocs “utilitaires”.",
+    title: "Comment nous préparons votre événement.",
+    text: "Un rendez-vous pour vos envies, une visite du lieu à l’heure de la fête pour voir sa lumière, puis un devis clair avant tout engagement.",
     notes: [
-      "Palette pensée autour de votre lieu et de votre lumière.",
-      "Sélection saisonnière pour un rendu plus juste et plus vivant.",
-      "Installation sur site avec regard direction artistique.",
+      "Une palette accordée à votre lieu et à votre décor.",
+      "Des fleurs de saison, achetées la semaine de l’événement.",
+      "Installation la veille ou le jour même, démontage compris.",
     ],
   },
   gallery: {
     eyebrow: "Galerie",
-    title: "Un rythme visuel plus libre, plus proche d’un moodboard de studio.",
+    title: "Quelques-unes de nos compositions récentes.",
     images: [
       {
         src: IMG.composition,
@@ -160,51 +158,49 @@ const fr = {
   },
   reviews: {
     eyebrow: "Témoignages",
-    title:
-      "Une preuve sociale qui prolonge l’univers, pas un simple bloc d’avis.",
+    title: "Ce que disent nos clients.",
     ratingLabel: "5 étoiles sur 5",
     items: [
       {
         name: "Claire & Hugo",
         role: "Mariage au château",
-        text: "« Tout semblait naturel, élégant, parfaitement à sa place. On avait l’impression que le lieu avait toujours dû ressembler à ça. »",
+        text: "« Tout semblait naturel, élégant, exactement à sa place. On aurait dit que le lieu avait toujours été décoré ainsi. »",
       },
       {
         name: "Maison de mode",
-        role: "Lancement de marque",
-        text: "« Le studio a créé une ambiance immédiatement premium. Les compositions tenaient autant du décor que du langage visuel. »",
+        role: "Lancement de collection",
+        text: "« L’atelier a fleuri notre boutique pour le lancement, de la vitrine aux tables. Nos invités ont demandé le nom du fleuriste toute la soirée. »",
       },
     ],
   },
   contact: {
-    eyebrow: "Contact studio",
-    title: "Réserver une conversation créative.",
-    phoneHref: "tel:+33465710034",
+    eyebrow: "Contact",
+    title: "Parlons de votre événement.",
+    phoneHref: "tel:+33199000067",
     emailHref: "mailto:contact@fleurs-emeraude.example",
     details: [
-      { icon: "mapPin", text: "45 Avenue des Jardins, 69003 Lyon" },
-      { icon: "phone", text: "04 65 71 00 34" },
+      { icon: "mapPin", text: "12 rue de l’Exemple, 00000 Votre ville" },
+      { icon: "phone", text: "01 99 00 00 67" },
       { icon: "mail", text: "contact@fleurs-emeraude.example" },
-      { icon: "calendar", text: "Rendez-vous conseil sous 24h ouvrées" },
+      { icon: "calendar", text: "Rendez-vous conseil sous 24 h ouvrées" },
     ],
-    panelLabel: "Ce que vend ce template",
+    panelLabel: "Bon à savoir",
     panelText:
-      "Un atelier floral haut de gamme, des projets sur mesure, une lecture éditoriale, des images mises en scène et un rapport plus sensible au client. C’est volontairement à l’opposé du rythme commerçant de `boulangerie`.",
+      "Pour un mariage, prenez contact de préférence six mois avant la date ; pour une réception ou un lancement, trois semaines suffisent souvent.",
     quote: "Demander un devis",
     call: "Planifier un appel",
   },
   footer: {
-    text: "Atelier floral éditorial pour mariages, réceptions privées et projets de marque.",
+    text: "Mariages, réceptions privées et marques, sur devis et sur rendez-vous.",
     navLabel: "Navigation",
-    narrationLabel: "Narration",
-    narration:
-      "Une structure magazine et portfolio, plus contemplative et plus haut de gamme que les templates centrées utilité.",
+    narrationLabel: "Notre savoir-faire",
+    narration: "Fleurs de saison, composées à la main et installées sur place.",
   },
   meta: {
     home: {
-      title: "Fleurs d’Émeraude - Fleuriste Artisan & Compositions Florales",
+      title: "Fleurs d’Émeraude - Fleuriste pour mariages et événements",
       description:
-        "Fleurs d’Émeraude, votre fleuriste artisan depuis 1992. Créations florales sur mesure, bouquets et compositions pour tous vos événements.",
+        "Fleurs d’Émeraude, fleuriste événementiel depuis 1992 : fleurs de mariage, de réception et de marque, composées à l’atelier et installées sur place.",
     },
   },
 } as const;
@@ -218,33 +214,34 @@ const en: FleuristeCopy = {
     tagline: "Floral studio",
   },
   nav: {
-    home: "Editorial",
-    projects: "Projects",
+    home: "Home",
+    projects: "Our work",
     studio: "Studio",
     contact: "Contact",
     cta: "Request a quote",
   },
   hero: {
-    badge: "Floral studio for weddings, receptions and brands",
-    titleStart: "A template that reads like an",
-    titleAccent: "editorial portfolio",
-    titleEnd: "and not like a local shop.",
+    badge: "Florists since 1992",
+    titleStart: "Flowers for",
+    titleAccent: "your whole event,",
+    titleEnd: "from bouquets to centerpieces.",
     description:
-      "The goal here is to sell an art direction, a sensibility and the ability to make an event shine. The structure embraces storytelling, imagery and breathing room.",
-    seeProjects: "Explore the projects",
-    bookMeeting: "Book an appointment",
-    visionLabel: "Vision",
-    visionText: "Flowers designed for the eye, the venue and visual memory.",
-    positioningLabel: "Positioning",
+      "Weddings, private parties and brand launches: we choose the flowers with you, arrange them in our studio, set them up on site and come back to take them down afterward.",
+    seeProjects: "Browse past projects",
+    bookMeeting: "Book a consultation",
+    visionLabel: "In season",
+    visionText:
+      "Peonies, ranunculus, garden roses: we pick every stem for your date and your venue.",
+    positioningLabel: "Made to order",
     positioningText:
-      "This page sells high-end, made-to-measure work. No “neighborhood shop” tone, no utilitarian block in the window: everything is designed to evoke a creative, premium studio.",
+      "A free first meeting, then a quote itemized line by line: you approve every flower before we buy anything.",
     vision: {
       src: IMG.vision,
-      alt: "Pink garden roses in a stoneware vase in front of a weathered gray wall.",
+      alt: "Soft pink garden roses in a stoneware vase in front of a weathered gray wall.",
     },
     main: {
       src: IMG.main,
-      alt: "Large bouquet of orange and pink roses, white hydrangeas and fern foliage.",
+      alt: "Large bouquet of orange and pink roses, white hydrangeas and fern leaves.",
     },
     side: {
       src: IMG.side,
@@ -252,26 +249,25 @@ const en: FleuristeCopy = {
     },
   },
   projects: {
-    eyebrow: "Projects & worlds",
-    title:
-      "Editorial bands that tell the story of an approach rather than a catalog.",
-    link: "Talk about this type of project",
+    eyebrow: "Our work",
+    title: "The events we do flowers for most often.",
+    link: "Plan something similar",
     items: [
       {
         eyebrow: "Weddings",
-        title: "Flowers designed as a sensitive staging.",
+        title: "One color palette, from the ceremony to dinner.",
         description:
-          "Bouquet, ceremony, dinner, table details and floral silhouettes: each ensemble is composed as a coherent visual story rather than a simple selection of products.",
+          "Bridal bouquet, boutonnieres, arch and centerpieces, designed together and delivered that morning.",
         image: {
           src: IMG.weddings,
-          alt: "Round bridal bouquet of pink roses and white lisianthus resting on a wooden plank at sunset.",
+          alt: "Round bridal bouquet of pink roses and white lisianthus on a wooden board at sunset.",
         },
       },
       {
-        eyebrow: "Private receptions",
-        title: "A more intimate, more textured, more alive aesthetic.",
+        eyebrow: "Private parties",
+        title: "Birthdays, dinners and family celebrations.",
         description:
-          "We play with colors, volumes and breathing space to create tables, entrances and settings that instantly elevate how a venue is perceived.",
+          "Centerpieces, entryway arrangements and buffet flowers, sized to your guest count and your tables.",
         image: {
           src: IMG.receptions,
           alt: "Round table set with crystal glasses and a centerpiece of blue, yellow and white flowers.",
@@ -279,9 +275,9 @@ const en: FleuristeCopy = {
       },
       {
         eyebrow: "Brands & venues",
-        title: "Brand florals that truly support the image.",
+        title: "Flowers in your colors, for one night or every week.",
         description:
-          "Studios, hotels, shops and collection launches: the arrangements serve the visual world, the photography and the on-site experience with a real sense of rhythm.",
+          "Hotels, boutiques, launches and photo shoots: arrangements for a single event or on a regular schedule, delivered and cared for by our team.",
         image: {
           src: IMG.brands,
           alt: "Cut flowers hanging in small glass tubes in front of a white wall.",
@@ -291,21 +287,21 @@ const en: FleuristeCopy = {
   },
   studio: {
     eyebrow: "Studio",
-    title: "A section designed as a studio note, not a list of services.",
-    text: "Where a bakery template pushes efficiency, this florist template embraces art direction: more space, more storytelling, more staging, fewer “utilitarian” blocks.",
+    title: "How we get ready for your event.",
+    text: "A meeting to hear your ideas, a venue visit at the same time of day as your event to see the light, then a clear quote before you commit.",
     notes: [
-      "A palette designed around your venue and your light.",
-      "A seasonal selection for a more accurate, livelier result.",
-      "On-site installation with an art-direction eye.",
+      "A palette that suits your venue and your decor.",
+      "Seasonal flowers, bought the week of your event.",
+      "Setup the day before or the same day, teardown included.",
     ],
   },
   gallery: {
     eyebrow: "Gallery",
-    title: "A looser visual rhythm, closer to a studio moodboard.",
+    title: "A few of our recent arrangements.",
     images: [
       {
         src: IMG.composition,
-        alt: "Arrangement of dahlias, succulents and cotton bolls in a wooden box on a pale background.",
+        alt: "Arrangement of dahlias, succulents and cotton bolls in a wooden crate on a pale background.",
       },
       {
         src: IMG.tulips,
@@ -325,56 +321,55 @@ const en: FleuristeCopy = {
       },
       {
         src: IMG.jar,
-        alt: "Pink tulips in a glass jar tied with a raffia ribbon, on a light background.",
+        alt: "Pink tulips in a glass jar tied with raffia, on a light background.",
       },
     ],
   },
   reviews: {
-    eyebrow: "Testimonials",
-    title: "Social proof that extends the world, not just a block of reviews.",
+    eyebrow: "Reviews",
+    title: "What our clients say.",
     ratingLabel: "5 out of 5 stars",
     items: [
       {
         name: "Claire & Hugo",
-        role: "Castle wedding",
-        text: "“Everything felt natural, elegant, perfectly in place. It felt like the venue had always been meant to look like this.”",
+        role: "Château wedding",
+        text: "“Everything looked natural and elegant, exactly where it belonged. It was as if the venue had always been decorated that way.”",
       },
       {
-        name: "Fashion house",
-        role: "Brand launch",
-        text: "“The studio created an instantly premium atmosphere. The arrangements were as much décor as visual language.”",
+        name: "Fashion label",
+        role: "Collection launch",
+        text: "“They filled our store with flowers for the launch, from the window display to the tables. Guests kept asking for the florist’s name all night.”",
       },
     ],
   },
   contact: {
-    eyebrow: "Contact the studio",
-    title: "Book a creative conversation.",
-    phoneHref: "tel:+33465710034",
+    eyebrow: "Contact",
+    title: "Let’s talk about your event.",
+    phoneHref: "tel:+33199000067",
     emailHref: "mailto:contact@example.com",
     details: [
-      { icon: "mapPin", text: "45 Avenue des Jardins, 69003 Lyon" },
-      { icon: "phone", text: "04 65 71 00 34" },
+      { icon: "mapPin", text: "12 Example Street, 00000 Your city" },
+      { icon: "phone", text: "01 99 00 00 67" },
       { icon: "mail", text: "contact@example.com" },
-      { icon: "calendar", text: "Consultation within 24 business hours" },
+      { icon: "calendar", text: "Consultation within one business day" },
     ],
-    panelLabel: "What this template sells",
+    panelLabel: "Good to know",
     panelText:
-      "A high-end floral studio, made-to-measure projects, an editorial reading, staged images and a more sensitive relationship with the client. It is deliberately the opposite of the shopkeeper rhythm of a bakery template.",
+      "For a wedding, reach out about six months before the date; for a party or a launch, three weeks is usually enough.",
     quote: "Request a quote",
     call: "Schedule a call",
   },
   footer: {
-    text: "Editorial floral studio for weddings, private receptions and brand projects.",
+    text: "Weddings, private parties and brands, by quote and by appointment.",
     navLabel: "Navigation",
-    narrationLabel: "Storytelling",
-    narration:
-      "A magazine and portfolio structure, more contemplative and more upscale than utility-focused templates.",
+    narrationLabel: "Our craft",
+    narration: "Seasonal flowers, arranged by hand and set up on site.",
   },
   meta: {
     home: {
-      title: "Your business - Artisan florist",
+      title: "Your business - Wedding and event florist",
       description:
-        "Your business, an artisan florist since 1992. Custom floral designs, bouquets and arrangements for every event.",
+        "Your business, an event florist since 1992: flowers for weddings, private parties and brands, arranged in our studio and set up on site.",
     },
   },
 };

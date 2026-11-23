@@ -27,10 +27,28 @@ const IMG = {
   desk: unsplash("1450101499163-c8848c66ca85"),
 } as const;
 
-const LOREM =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem sed lorem tempor posuere.";
-const LOREM_LONG =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor, lacus in finibus aliquam, augue justo dictum elit, vitae gravida erat lorem sed arcu. Integer luctus neque a mauris tempor, sed dignissim lacus cursus.";
+const EXCERPT = {
+  fr: [
+    "Identité du vendeur, servitudes, diagnostics obligatoires : trois points à faire vérifier avant de vous engager.",
+    "Acte de décès, livret de famille, testament : ce que le notaire vous demandera dès le premier rendez-vous.",
+    "Quand plusieurs proches sont concernés, une seule personne qui échange avec le notaire évite doublons et malentendus.",
+  ],
+  frLong: [
+    "Avant de signer, vérifiez l’identité du vendeur, la situation du bien, les diagnostics obligatoires et les charges de copropriété. Chaque point vérifié tôt évite un litige ensuite.",
+    "Acte de décès, livret de famille, testament, relevés de comptes : rassemblez ces pièces pour que le notaire puisse ouvrir la succession sans attendre.",
+    "Dans une succession ou une séparation, chacun a ses attentes. Décider dès le départ qui signe et qui doit être informé évite bien des conflits et des retards.",
+  ],
+  en: [
+    "The seller’s identity, easements and required inspection reports: three things to have checked before you commit.",
+    "Death certificate, marriage and birth certificates, will: what the notary will ask for at your first meeting.",
+    "When several relatives are involved, having one person deal with the notary avoids duplicate requests and misunderstandings.",
+  ],
+  enLong: [
+    "Before you sign, check the seller’s identity, the property’s legal status, the required inspection reports and the condo fees. Every point you clear early prevents a dispute later.",
+    "Death certificate, marriage and birth certificates, will, bank statements: gather these so the notary can open the estate without delay.",
+    "In an estate or a separation, every relative has their own expectations. Agreeing early on who signs and who needs to be kept informed heads off conflict and delays.",
+  ],
+};
 
 const fr = {
   brand: {
@@ -39,7 +57,7 @@ const fr = {
   },
   topBar: {
     left: "Votre ville",
-    right: "Immobilier, successions et droit de la famille",
+    right: "Du lundi au vendredi, 9 h–19 h",
   },
   nav: {
     home: "Accueil",
@@ -58,7 +76,7 @@ const fr = {
   form: {
     fields: {
       name: "Nom",
-      email: "Email",
+      email: "E-mail",
       phone: "Téléphone",
       subject: "Sujet",
       subjectPlaceholder: "Sélectionner un sujet",
@@ -66,122 +84,121 @@ const fr = {
         { value: "immobilier", label: "Immobilier" },
         { value: "successions", label: "Successions" },
         { value: "famille", label: "Droit de la famille" },
-        { value: "premier-echange", label: "Premier échange" },
+        { value: "premier-echange", label: "Autre question" },
       ],
       message: "Message",
     },
-    consent:
-      "J’accepte d’être recontacté concernant ma demande. Ce formulaire est une interface de démonstration, sans envoi API pour le moment.",
-    submit: "Envoyer la demande",
+    consent: "J’accepte d’être recontacté(e) au sujet de ma demande.",
+    submit: "Envoyer ma demande",
   },
   footer: {
-    text: "Modèle de site professionnel pour présenter les expertises en droit immobilier, successions et droit de la famille, avec une prise de contact front-only.",
+    text: "Cabinet d’avocate en droit immobilier, successions et droit de la famille, au service des particuliers.",
     city: "Votre ville",
     email: "contact@votre-cabinet.example",
     hours: "Sur rendez-vous",
   },
   home: {
     hero: {
-      eyebrow: "Avocate au barreau",
+      eyebrow: "Immobilier, successions, famille",
       title: "Votre cabinet",
       description:
-        "Conseil et contentieux en droit immobilier, successions et droit de la famille, avec une lecture claire des documents, des risques et des interlocuteurs.",
+        "Acheter ou vendre un bien, régler l’héritage d’un proche, traverser une séparation : le cabinet vous conseille et vous représente, du premier échange à l’accord ou au jugement.",
       image: { src: IMG.hero, alt: "" },
       aside: {
-        title: "Dossiers traités avec sobriété, précision et coordination.",
-        text: "Un parcours simple : comprendre le champ d’intervention, lire quelques contenus de blog, puis envoyer une demande structurée depuis le module de contact.",
+        title: "Une seule avocate suit votre dossier du début à la fin.",
+        text: "Premier rendez-vous d’une heure, honoraires annoncés par écrit avant tout engagement, réponse à vos messages sous 48 h ouvrées.",
       },
     },
     expertises: {
       eyebrow: "Expertises",
-      title: "Deux champs d’intervention pour des dossiers souvent sensibles.",
+      title: "Deux domaines du droit, des dossiers souvent sensibles.",
       description:
-        "Le site évite la dispersion et met en avant les situations où la coordination entre droit, documents et interlocuteurs devient déterminante.",
+        "Le cabinet ne traite que ces deux matières : vous obtenez des réponses rapides et des honoraires prévisibles.",
       cards: [
         {
           title: "Immobilier",
-          text: "Sécurisation des acquisitions, ventes, documents contractuels, vérifications préalables et situations litigieuses.",
+          text: "Avant de signer, relecture de vos actes ; ensuite, défense en cas de litige avec un vendeur ou un constructeur.",
           items: [
-            "Acquisition et vente",
-            "Contrats et documents",
-            "Litiges immobiliers",
+            "Achat et vente d’un bien",
+            "Compromis, baux et actes",
+            "Retards et malfaçons",
           ],
         },
         {
           title: "Successions et droit de la famille",
-          text: "Accompagnement des dossiers familiaux : règlement de succession, partage, héritiers, documents et démarches auprès des notaires.",
+          text: "Décès d’un proche ou rupture du couple : conseil, représentation et suivi du dossier avec le notaire.",
           items: [
             "Règlement de succession et partage",
-            "Coordination notariale",
-            "Documents et héritiers",
+            "Testaments et donations",
+            "Divorce et séparation",
           ],
         },
       ],
     },
     method: {
       eyebrow: "Méthode",
-      title: "Une première lecture structurée avant d’engager une démarche.",
+      title: "Trois étapes avant toute procédure.",
       description:
-        "Chaque échange doit permettre de situer le dossier, d’identifier les pièces utiles et de prioriser les prochaines actions.",
+        "Dès le premier rendez-vous, vous savez où en est votre dossier, ce qu’il manque et ce que coûtera la suite.",
       steps: [
         {
-          label: "Étape 1",
-          text: "Qualification du dossier, des juridictions concernées et des documents disponibles.",
+          label: "Étape 1",
+          text: "Lecture de vos documents et liste de ce qui manque au dossier.",
         },
         {
-          label: "Étape 2",
-          text: "Lecture des risques, des interlocuteurs et des délais utiles avant toute démarche.",
+          label: "Étape 2",
+          text: "Analyse des risques, des délais à respecter et du coût de chaque option.",
         },
         {
-          label: "Étape 3",
-          text: "Plan d’action clair : sécuriser, négocier, transmettre, contester ou coordonner.",
+          label: "Étape 3",
+          text: "Plan d’action écrit : négocier, signer, contester ou saisir le juge.",
         },
       ],
     },
     approach: {
       eyebrow: "Approche",
-      title: "Un positionnement clair, pensé pour les dossiers complexes.",
+      title: "Quand un bien, une famille et des délais s’entremêlent.",
       description:
-        "Immobilier, héritiers, actes, coordination notariale et délais administratifs doivent être mis dans le bon ordre.",
+        "Une maison en indivision après un décès, une vente bloquée par un divorce : le cabinet remet les démarches dans le bon ordre.",
       image: {
         src: IMG.desk,
-        alt: "Une main signe un document posé sur un bureau",
+        alt: "Une main signe un document posé sur un bureau.",
       },
       panel: {
-        title: "Clarifier les responsabilités et les pièces dès le départ.",
-        text: "L’objectif est de rendre lisible la spécialité du cabinet sans multiplier les promesses : un visiteur doit comprendre rapidement si son sujet relève de l’immobilier, d’une succession ou du droit de la famille.",
+        title: "Ce que vous savez après le premier rendez-vous.",
+        text: "Si votre affaire peut être prise en charge et par quoi commencer. Vous repartez aussi avec :",
         items: [
-          "Dossier lié à un bien immobilier, à une succession ou à un litige familial.",
-          "Documents déjà disponibles à vérifier et organiser.",
-          "Prochaine action à définir avant tout échange prolongé.",
+          "la liste des pièces à réunir ;",
+          "les délais à ne pas manquer ;",
+          "une estimation écrite des honoraires.",
         ],
       },
     },
     blog: {
       eyebrow: "Blog",
-      title: "Une page blog prévue pour installer l’expertise.",
+      title: "Des repères juridiques pour comprendre avant d’agir.",
       description:
-        "Les contenus restent en placeholder lorem ipsum, avec trois entrées visibles et une structure prête à enrichir.",
-      label: "Note de blog",
+        "Trois articles courts pour prendre les bonnes décisions dès le départ.",
+      label: "À lire",
       posts: [
-        "Acheter un bien immobilier : les vérifications à faire avant de signer",
+        "Acheter un bien immobilier : les points à contrôler avant de signer",
         "Succession : les premiers documents à réunir",
-        "Pourquoi cadrer le dossier avant de contacter plusieurs interlocuteurs",
+        "Famille : choisir un seul interlocuteur pour le notaire",
       ],
-      excerpt: LOREM,
+      excerpts: EXCERPT.fr,
     },
     contact: {
       eyebrow: "Contact",
-      title: "Un module de contact prêt pour l’intégration API.",
+      title: "Décrivez votre situation, nous revenons vers vous.",
       description:
-        "Le formulaire fonctionne en front-only dans cette démonstration : il bloque l’envoi réseau et confirme localement la demande.",
+        "Quelques lignes suffisent : le cabinet vous répond sous 48 h ouvrées pour fixer un premier rendez-vous.",
       info: {
-        title: "Informations utiles",
+        title: "À préciser si possible",
         items: [
-          "Sujet immobilier ou successoral.",
-          "Parties concernées et interlocuteurs déjà identifiés.",
-          "Documents déjà reçus, signés ou demandés.",
-          "Délais connus ou urgence particulière.",
+          "Le domaine : immobilier, succession ou famille.",
+          "Les personnes concernées : vendeur, héritiers, conjoint.",
+          "Les documents déjà reçus ou signés.",
+          "Une date limite ou une audience à venir.",
         ],
       },
     },
@@ -191,77 +208,77 @@ const fr = {
       eyebrow: "Expertises",
       title: "Immobilier, successions et droit de la famille.",
       description:
-        "La page détaille les deux champs d’intervention présentés sur l’accueil, sans élargir artificiellement le périmètre.",
+        "Deux domaines seulement, pour des conseils précis et des honoraires annoncés à l’avance.",
     },
     areaLabel: "Domaine",
     areas: [
       {
         title: "Immobilier",
         intro:
-          "Accompagner les opérations et difficultés immobilières avec une attention particulière aux documents, aux engagements et aux interlocuteurs.",
+          "Un projet immobilier, un bail ou un chantier : le cabinet relit vos actes et vous défend si un problème survient.",
         items: [
-          "Acquisition ou vente d’un bien, avec vérification des parties et des pièces.",
-          "Vérification des documents transmis avant engagement.",
-          "Lecture contractuelle, négociation et sécurisation des étapes.",
-          "Litige, retard, inexécution ou blocage dans une opération.",
+          "Achat ou vente : vérification du vendeur, du bien et des diagnostics.",
+          "Relecture du compromis, de l’offre de prêt ou du bail avant signature.",
+          "Négociation des clauses et des conditions suspensives.",
+          "Retard de livraison, malfaçon ou vente bloquée : mise en demeure et procédure.",
         ],
       },
       {
         title: "Successions et droit de la famille",
         intro:
-          "Cadrer les dossiers successoraux et familiaux où les héritiers, les biens, les documents ou les interlocuteurs sont multiples.",
+          "Un décès, une rupture ou un désaccord sur un héritage : le cabinet vous conseille et vous représente, aux côtés du notaire.",
         items: [
-          "Identification des héritiers, biens et documents disponibles.",
-          "Coordination avec notaires, conseils et interlocuteurs familiaux.",
-          "Organisation des pièces utiles au dossier de succession ou de partage.",
-          "Lecture des délais, demandes complémentaires et points de blocage.",
+          "Recherche des héritiers et inventaire des biens.",
+          "Échanges avec le notaire et les avocats des autres parties.",
+          "Partage amiable ou judiciaire, contestation d’un testament.",
+          "Divorce, séparation, résidence des enfants et pension alimentaire.",
         ],
       },
     ],
     file: {
       eyebrow: "Dossier",
-      title: "Ce qu’un premier message doit permettre de comprendre.",
+      title: "Ce que votre premier message peut contenir.",
       description:
-        "La prise de contact doit situer le sujet, les parties concernées, les documents disponibles et l’objectif immédiat.",
+        "Quatre informations suffisent pour que le cabinet vous réponde utilement dès le premier échange.",
       items: [
-        "Nature du dossier",
-        "Parties concernées",
-        "Documents reçus",
-        "Délai ou urgence",
+        "Type d’affaire",
+        "Personnes concernées",
+        "Documents en main",
+        "Date limite éventuelle",
       ],
     },
   },
   blog: {
     hero: {
       eyebrow: "Blog",
-      title: "Notes juridiques et repères pratiques.",
+      title: "Des réponses claires aux questions fréquentes.",
       description:
-        "Page de démonstration. Les contenus définitifs pourront être rédigés et branchés plus tard.",
+        "Des articles courts sur l’achat d’un bien, les successions et la vie de famille, à lire avant un rendez-vous.",
     },
     articleLabel: "Article",
-    placeholder: "Placeholder",
+    placeholder: "Fiche pratique",
     posts: [
-      "Immobilier : préparer une acquisition et sécuriser les documents",
-      "Succession : organiser les premières pièces du dossier",
-      "Droit de la famille : pourquoi clarifier les interlocuteurs avant d’agir",
+      "Immobilier : ce qu’il faut vérifier avant de signer un compromis",
+      "Succession : les pièces que le notaire vous demandera",
+      "Famille : qui décide, qui signe, qui informer",
     ],
-    excerpt: LOREM_LONG,
+    excerpts: EXCERPT.frLong,
   },
   contact: {
     hero: {
       eyebrow: "Contact",
-      title: "Envoyer une demande au cabinet.",
+      title: "Écrire au cabinet.",
       description:
-        "Le formulaire est prêt côté interface. Dans cette démonstration, il ne déclenche aucune API et affiche uniquement une confirmation locale.",
+        "Expliquez votre situation en quelques lignes. Le cabinet vous répond sous 48 h ouvrées, par écrit ou par téléphone.",
     },
     before: {
       title: "Avant d’écrire",
-      text: "Un premier message utile mentionne le sujet, les parties concernées, les documents disponibles et le délai éventuel.",
+      text: "Inutile d’envoyer tout le dossier : quelques précisions suffisent pour un premier avis.",
       items: [
         "Immobilier, succession ou droit de la famille.",
-        "Bien, héritiers ou interlocuteurs concernés.",
-        "Documents déjà reçus ou signés.",
-        "Objectif immédiat du premier échange.",
+        "Le bien ou les personnes concernées.",
+        "Les documents déjà reçus ou signés.",
+        "Ce que vous attendez du rendez-vous.",
       ],
     },
   },
@@ -269,22 +286,22 @@ const fr = {
     home: {
       title: "Votre cabinet - Avocate au barreau",
       description:
-        "Modèle de site pour une avocate : conseil et contentieux en droit immobilier, successions et droit de la famille.",
+        "Cabinet d’avocate : conseil et contentieux en droit immobilier, successions et droit de la famille, pour les particuliers.",
     },
     expertises: {
       title: "Expertises - Votre cabinet",
       description:
-        "Immobilier, successions et droit de la famille : les deux champs d’intervention du cabinet, sans élargir artificiellement le périmètre.",
+        "Immobilier, successions et droit de la famille : les deux domaines du cabinet, avec des honoraires annoncés à l’avance.",
     },
     blog: {
       title: "Blog - Votre cabinet",
       description:
-        "Notes juridiques et repères pratiques : page de démonstration dont les contenus définitifs pourront être rédigés et branchés plus tard.",
+        "Articles courts sur l’achat d’un bien, les successions et le droit de la famille, à lire avant un rendez-vous.",
     },
     contact: {
       title: "Contact - Votre cabinet",
       description:
-        "Envoyer une demande au cabinet : formulaire de démonstration, sans API, qui affiche uniquement une confirmation locale.",
+        "Écrivez au cabinet en quelques lignes : réponse sous 48 h ouvrées pour fixer un premier rendez-vous.",
     },
   },
 } as const;
@@ -294,11 +311,11 @@ export type AvocateCopy = WidenLiterals<typeof fr>;
 const en: AvocateCopy = {
   brand: {
     name: "Your firm",
-    tagline: "Attorney at law — advice and litigation",
+    tagline: "Attorney at law — counsel and litigation",
   },
   topBar: {
     left: "Your city",
-    right: "Real estate, inheritance and family law",
+    right: "Monday to Friday, 9 a.m.–7 p.m.",
   },
   nav: {
     home: "Home",
@@ -325,122 +342,121 @@ const en: AvocateCopy = {
         { value: "immobilier", label: "Real estate" },
         { value: "successions", label: "Inheritance" },
         { value: "famille", label: "Family law" },
-        { value: "premier-echange", label: "First conversation" },
+        { value: "premier-echange", label: "Other question" },
       ],
       message: "Message",
     },
-    consent:
-      "I agree to be contacted about my request. This form is a demonstration interface, with no API submission for now.",
-    submit: "Send the request",
+    consent: "I agree to be contacted about my request.",
+    submit: "Send my request",
   },
   footer: {
-    text: "Professional website template presenting expertise in real estate, inheritance and family law, with a front-end-only contact form.",
+    text: "A law firm serving individuals in real estate, inheritance and family law.",
     city: "Your city",
     email: "contact@example.com",
     hours: "By appointment",
   },
   home: {
     hero: {
-      eyebrow: "Attorney at law",
+      eyebrow: "Real estate, inheritance, family law",
       title: "Your firm",
       description:
-        "Advice and litigation in real estate, inheritance and family law, with a clear reading of the documents, the risks and the people involved.",
+        "Buying or selling a property, settling a loved one’s estate, going through a separation: the firm advises and represents you, from the first call to a settlement or a judgment.",
       image: { src: IMG.hero, alt: "" },
       aside: {
-        title: "Cases handled with restraint, precision and coordination.",
-        text: "A simple path: understand the scope of work, read a few blog posts, then send a structured request through the contact module.",
+        title: "One lawyer handles your case from start to finish.",
+        text: "A one-hour first meeting, fees set out in writing before you commit, and replies to your messages within 2 business days.",
       },
     },
     expertises: {
       eyebrow: "Practice areas",
-      title: "Two areas of practice for often sensitive cases.",
+      title: "Two fields of law, often sensitive matters.",
       description:
-        "The site avoids spreading thin and highlights the situations where coordination between the law, documents and the people involved becomes decisive.",
+        "The firm takes on nothing else, so you get quick answers and predictable fees.",
       cards: [
         {
           title: "Real estate",
-          text: "Securing purchases, sales, contractual documents, preliminary checks and disputed situations.",
+          text: "Before you sign, we review your documents; afterward, we represent you in any dispute with a seller or builder.",
           items: [
-            "Purchase and sale",
-            "Contracts and documents",
-            "Real estate disputes",
+            "Buying and selling property",
+            "Purchase agreements and leases",
+            "Delays and construction defects",
           ],
         },
         {
           title: "Inheritance and family law",
-          text: "Support for family matters: settling an estate, dividing assets, heirs, documents and dealings with notaries.",
+          text: "A loss in the family or a couple splitting up: advice, representation and close work with the notary.",
           items: [
-            "Estate settlement and division of assets",
-            "Coordination with notaries",
-            "Documents and heirs",
+            "Estate settlement and division",
+            "Wills and gifts",
+            "Divorce and separation",
           ],
         },
       ],
     },
     method: {
-      eyebrow: "Method",
-      title: "A structured first review before taking any step.",
+      eyebrow: "How we work",
+      title: "Three steps before any legal action.",
       description:
-        "Each conversation should place the case, identify the useful documents and prioritize the next actions.",
+        "From the first meeting, you know where your case stands, what’s missing and what the next steps will cost.",
       steps: [
         {
           label: "Step 1",
-          text: "Qualifying the case, the courts involved and the documents available.",
+          text: "We read your documents and list anything missing from the file.",
         },
         {
           label: "Step 2",
-          text: "Assessing the risks, the people involved and the deadlines that matter before any step.",
+          text: "We weigh the risks, the deadlines to meet and the cost of each option.",
         },
         {
           label: "Step 3",
-          text: "A clear action plan: secure, negotiate, pass on, contest or coordinate.",
+          text: "A written action plan: negotiate, sign, contest or go to court.",
         },
       ],
     },
     approach: {
-      eyebrow: "Approach",
-      title: "A clear positioning, designed for complex cases.",
+      eyebrow: "Complex cases",
+      title: "When a property, a family and deadlines all overlap.",
       description:
-        "Real estate, heirs, deeds, coordination with notaries and administrative deadlines have to be put in the right order.",
+        "A house co-owned by heirs after a death, a sale held up by a divorce: the firm puts every step back in the right order.",
       image: {
         src: IMG.desk,
-        alt: "A hand signing a document on a desk",
+        alt: "A hand signing a document on a desk.",
       },
       panel: {
-        title: "Clarify responsibilities and documents from the start.",
-        text: "The goal is to make the firm’s specialty clear without piling up promises: a visitor should quickly understand whether their issue falls under real estate, an estate or family law.",
+        title: "What you know after the first meeting.",
+        text: "Whether we can take your case, and where to start. You also leave with:",
         items: [
-          "A matter tied to a property, an estate or a family dispute.",
-          "Documents already available, to check and organize.",
-          "Next action to define before any extended discussion.",
+          "A list of the documents to gather",
+          "The deadlines you can’t afford to miss",
+          "A written estimate of the fees",
         ],
       },
     },
     blog: {
       eyebrow: "Blog",
-      title: "A blog page meant to build expertise.",
+      title: "Legal basics to read before you act.",
       description:
-        "The content remains lorem ipsum placeholder text, with three visible entries and a structure ready to build on.",
-      label: "Blog post",
+        "Three short articles to help you take the right first steps.",
+      label: "Read",
       posts: [
-        "Buying a property: the checks to make before signing",
+        "Buying a home: what to look at before you sign",
         "Inheritance: the first documents to gather",
-        "Why frame the case before contacting several parties",
+        "Family matters: choosing one contact for the notary",
       ],
-      excerpt: LOREM,
+      excerpts: EXCERPT.en,
     },
     contact: {
       eyebrow: "Contact",
-      title: "A contact module ready for API integration.",
+      title: "Tell us what’s going on, and we’ll get back to you.",
       description:
-        "The form works front-end only in this demo: it blocks the network request and confirms the request locally.",
+        "A few lines are enough: the firm replies within 2 business days to set up a first meeting.",
       info: {
-        title: "Useful information",
+        title: "Helpful to include",
         items: [
-          "Real estate or inheritance matter.",
-          "Parties involved and contacts already identified.",
-          "Documents already received, signed or requested.",
-          "Known deadlines or particular urgency.",
+          "The area: real estate, an estate or family law.",
+          "The people involved: seller, heirs, spouse.",
+          "Documents you’ve already received or signed.",
+          "Any deadline or upcoming hearing.",
         ],
       },
     },
@@ -450,77 +466,77 @@ const en: AvocateCopy = {
       eyebrow: "Practice areas",
       title: "Real estate, inheritance and family law.",
       description:
-        "This page details the two areas of practice presented on the home page, without artificially widening the scope.",
+        "Just two fields, so you get precise advice and fees agreed in advance.",
     },
     areaLabel: "Area",
     areas: [
       {
         title: "Real estate",
         intro:
-          "Supporting real estate transactions and difficulties, with particular attention to documents, commitments and the people involved.",
+          "A real estate project, a lease or a construction job: the firm reviews your documents and defends you if something goes wrong.",
         items: [
-          "Purchase or sale of a property, with verification of the parties and documents.",
-          "Review of the documents provided before any commitment.",
-          "Contract review, negotiation and securing each step.",
-          "Dispute, delay, non-performance or deadlock in a transaction.",
+          "Buying or selling: checks on the seller, the property and the inspection reports.",
+          "Review of the purchase agreement, loan offer or lease before you sign.",
+          "Negotiating terms and contingencies.",
+          "Late delivery, construction defects or a stalled sale: demand letters and lawsuits.",
         ],
       },
       {
         title: "Inheritance and family law",
         intro:
-          "Framing estate and family matters where the heirs, assets, documents or other parties are numerous.",
+          "A death, a family rift or a disagreement over an estate: the firm advises and represents you, alongside the notary.",
         items: [
-          "Identifying the heirs, assets and documents available.",
-          "Coordination with notaries, advisors and family members involved.",
-          "Organizing the documents needed for the estate or division file.",
-          "Reviewing deadlines, additional requests and sticking points.",
+          "Locating the heirs and listing the assets.",
+          "Dealing with the notary and the other parties’ lawyers.",
+          "Dividing an estate by agreement or in court, contesting a will.",
+          "Divorce, separation, child custody and child support.",
         ],
       },
     ],
     file: {
-      eyebrow: "Case file",
-      title: "What a first message should make clear.",
+      eyebrow: "Your case",
+      title: "What to put in your first message.",
       description:
-        "The first contact should place the subject, the parties involved, the documents available and the immediate goal.",
+        "Four details are enough for the firm to give you a useful answer right away.",
       items: [
-        "Nature of the case",
-        "Parties involved",
-        "Documents received",
-        "Deadline or urgency",
+        "Type of matter",
+        "People involved",
+        "Documents on hand",
+        "Any deadline",
       ],
     },
   },
   blog: {
     hero: {
       eyebrow: "Blog",
-      title: "Legal notes and practical pointers.",
+      title: "Clear answers to common questions.",
       description:
-        "Demo page. The final content can be written and connected later.",
+        "Short articles on buying property, estates and family matters, worth reading before an appointment.",
     },
-    articleLabel: "Post",
-    placeholder: "Placeholder",
+    articleLabel: "Article",
+    placeholder: "Quick guide",
     posts: [
-      "Real estate: preparing a purchase and securing the documents",
-      "Inheritance: organizing the first documents in the file",
-      "Family law: why clarify who is involved before acting",
+      "Real estate: what to check before signing a purchase agreement",
+      "Inheritance: the documents the notary will ask for",
+      "Family law: who decides, who signs, who to keep informed",
     ],
-    excerpt: LOREM_LONG,
+    excerpts: EXCERPT.enLong,
   },
   contact: {
     hero: {
       eyebrow: "Contact",
-      title: "Send a request to the firm.",
+      title: "Write to the firm.",
       description:
-        "The form is ready on the interface side. In this demo it triggers no API and only displays a local confirmation.",
+        "Explain your situation in a few lines. The firm replies within 2 business days, in writing or by phone.",
     },
     before: {
       title: "Before you write",
-      text: "A useful first message mentions the subject, the parties involved, the documents available and any deadline.",
+      text: "No need to send the whole file: a few details are enough for a first opinion.",
       items: [
-        "Real estate, inheritance or family law.",
-        "Property, heirs or people involved.",
+        "Real estate, an estate or family law.",
+        "The property or the people involved.",
         "Documents already received or signed.",
-        "Immediate goal of the first conversation.",
+        "What you expect from the meeting.",
       ],
     },
   },
@@ -528,22 +544,22 @@ const en: AvocateCopy = {
     home: {
       title: "Your firm - Attorney at law",
       description:
-        "Website template for a lawyer: advice and litigation in real estate, inheritance and family law.",
+        "Law firm offering counsel and litigation to individuals in real estate, inheritance and family law.",
     },
     expertises: {
       title: "Practice areas - Your firm",
       description:
-        "Real estate, inheritance and family law: the firm’s two areas of practice, without artificially widening the scope.",
+        "Real estate, inheritance and family law: the firm’s two fields, with fees agreed in advance.",
     },
     blog: {
       title: "Blog - Your firm",
       description:
-        "Legal notes and practical pointers: a demo page whose final content can be written and connected later.",
+        "Short articles on buying property, estates and family law, worth reading before an appointment.",
     },
     contact: {
       title: "Contact - Your firm",
       description:
-        "Send a request to the firm: a demo form with no API that only displays a local confirmation.",
+        "Write to the firm in a few lines: a reply within 2 business days to set up a first meeting.",
     },
   },
 };

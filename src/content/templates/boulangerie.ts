@@ -35,11 +35,11 @@ const IMG = {
 const fr = {
   brand: {
     name: "Le Fournil d’Or",
-    tagline: "Boulangerie artisanale",
+    tagline: "Artisan boulanger",
   },
   phone: {
-    href: "tel:+33536490012",
-    label: "05 36 49 00 12",
+    href: "tel:+33199000066",
+    label: "01 99 00 00 66",
   },
   nav: {
     home: "Accueil",
@@ -48,31 +48,31 @@ const fr = {
     contact: "Contact",
   },
   topBar: {
-    left: "Commande spéciale sous 48h pour événements et buffets.",
-    weekdays: "Mar - Sam 6h30 - 19h30",
-    sunday: "Dim 7h00 - 13h00",
+    left: "Petits-déjeuners de bureau et buffets livrés sur commande.",
+    weekdays: "Mar.–sam. 6 h 30–19 h 30",
+    sunday: "Dim. 7 h–13 h",
   },
   common: {
-    hours: "Mar - Sam 6h30 - 19h30, Dim 7h00 - 13h00",
-    addressShort: "12 Place du Marché, Bordeaux",
-    addressFull: "12 Place du Marché, 33000 Bordeaux",
-    street: "12 Place du Marché",
-    city: "33000 Bordeaux",
+    hours: "Mar.–sam. 6 h 30–19 h 30, dim. 7 h–13 h",
+    addressShort: "12 rue de l’Exemple, Votre ville",
+    addressFull: "12 rue de l’Exemple, 00000 Votre ville",
+    street: "12 rue de l’Exemple",
+    city: "00000 Votre ville",
     quoteHref: "mailto:contact@fournil.example",
   },
   hero: {
-    badge: "Votre fournil de quartier depuis 1978",
-    titleStart: "Le commerce",
+    badge: "Pétri et cuit sur place depuis 1978",
+    titleStart: "La boulangerie",
     titleAccent: "qui donne faim",
     titleEnd: "dès le trottoir.",
     description:
-      "Une structure pensée comme un site de commerce local qui vend immédiatement la proximité, la régularité et le plaisir du produit frais. Ici, on pousse la visite en boutique et la commande rapide.",
-    seeShowcase: "Voir la vitrine du jour",
+      "Baguettes au levain, pains de campagne et croissants pur beurre sortent du four toute la matinée. Passez en boutique ou appelez pour qu’on vous les mette de côté.",
+    seeShowcase: "Voir les produits",
     prepareOrder: "Préparer une commande",
     stats: [
-      { value: "6h30", label: "Ouverture du fournil" },
-      { value: "7j/7", label: "Pains et viennoiseries" },
-      { value: "48h", label: "Commandes événementielles" },
+      { value: "6 h 30", label: "Ouverture des portes" },
+      { value: "6 j/7", label: "Du mardi au dimanche" },
+      { value: "48 h", label: "Pour préparer un buffet" },
     ],
     image: {
       src: IMG.hero,
@@ -83,11 +83,11 @@ const fr = {
   },
   showcase: {
     eyebrow: "Vitrine du jour",
-    title: "Les produits qui font entrer en boutique.",
+    title: "Les incontournables du comptoir.",
     link: "Commander un assortiment",
     products: [
       {
-        name: "Baguette Tradition",
+        name: "Baguette tradition",
         description: "Levain naturel, croûte dorée, mie alvéolée.",
         price: "1,30 €",
         image: {
@@ -96,7 +96,7 @@ const fr = {
         },
       },
       {
-        name: "Pain de Campagne",
+        name: "Pain de campagne",
         description: "Fermentation lente et croûte épaisse.",
         price: "4,50 €",
         image: {
@@ -105,8 +105,8 @@ const fr = {
         },
       },
       {
-        name: "Croissant Pur Beurre",
-        description: "Feuilletage croustillant et cœur fondant.",
+        name: "Croissant pur beurre",
+        description: "Feuilletage croustillant et cœur moelleux.",
         price: "1,20 €",
         image: {
           src: IMG.croissant,
@@ -114,8 +114,8 @@ const fr = {
         },
       },
       {
-        name: "Chausson aux Pommes",
-        description: "Compote maison, cannelle douce, pâte brillante.",
+        name: "Chausson aux pommes",
+        description: "Compote maison, pointe de cannelle, pâte dorée.",
         price: "2,50 €",
         image: {
           src: IMG.chausson,
@@ -126,93 +126,93 @@ const fr = {
   },
   why: {
     eyebrow: "Pourquoi revenir",
-    title: "Une page pensée comme un vrai commerce de proximité.",
+    title: "Le même bon pain, à la même heure, six matins sur sept.",
     points: [
       {
         icon: "award",
-        title: "Fabrication maison",
-        text: "Chaque fournée est préparée sur place, tôt le matin, avec des méthodes artisanales assumées.",
+        title: "Tout est fait ici",
+        text: "Pâtes pétries la veille et cuites sur place dès 4 h, sans surgelé ni pâte industrielle.",
       },
       {
         icon: "users",
-        title: "Vie de quartier",
-        text: "Une adresse pensée pour le quotidien, les habitudes locales et les commandes familiales.",
+        title: "Votre pain mis de côté",
+        text: "Donnez-nous une fois votre commande du samedi : nous la préparons chaque semaine à votre nom.",
       },
       {
         icon: "calendar",
-        title: "Commandes spéciales",
-        text: "Brunchs, événements, plateaux et grandes quantités préparés sur demande.",
+        title: "Grandes quantités",
+        text: "Brunchs, plateaux de mini-viennoiseries et pains spéciaux, de 10 à 100 personnes.",
       },
     ],
     panel: {
       eyebrow: "Savoir-faire",
-      title: "Une adresse qui donne confiance avant même la première commande.",
+      title: "Un pain qui se garde trois jours.",
       stats: [
-        { icon: "award", value: "46", label: "années de présence locale" },
-        { icon: "users", value: "5000+", label: "clients réguliers fidélisés" },
+        { icon: "award", value: "1978", label: "année de création" },
+        { icon: "users", value: "5 000+", label: "clients réguliers" },
       ],
-      text: "Nous utilisons exclusivement des farines françaises de qualité, du levain naturel et des fermentations lentes pour retrouver des goûts francs, une croûte juste et une vraie régularité.",
+      text: "Farine française moulue sur meule, levain nourri deux fois par jour et 24 h de fermentation : c’est ce qui lui donne son goût et sa tenue.",
     },
   },
   services: {
     eyebrow: "Services",
-    title: "Commandes faciles, usages clairs, promesse immédiate.",
+    title: "Pour vos équipes, vos fêtes et vos matins pressés.",
     items: [
       {
         icon: "gift",
         title: "Petit-déjeuner de bureau",
-        text: "Assortiments de viennoiseries et pains frais livrés pour vos équipes.",
+        text: "Viennoiseries, pain frais et jus de fruits livrés avant 9 h, dès 10 personnes.",
       },
       {
         icon: "sparkles",
-        title: "Buffets & événements",
-        text: "Formules sur mesure pour anniversaires, baptêmes et réceptions.",
+        title: "Buffets & réceptions",
+        text: "Mini-sandwichs, plateaux salés et sucrés pour anniversaires, baptêmes et communions.",
       },
       {
         icon: "phone",
         title: "Retrait express",
-        text: "Réservation simple par téléphone pour éviter les ruptures du matin.",
+        text: "Commandez par téléphone avant 11 h : votre sac vous attend en caisse, sans faire la queue.",
       },
     ],
   },
   reviews: {
     eyebrow: "Avis du quartier",
-    title: "Une confiance construite sur la régularité.",
+    title: "Ce qu’en disent les habitués.",
     ratingLabel: "5 étoiles sur 5",
     items: [
       {
         name: "Françoise M.",
         role: "Cliente fidèle",
-        text: "« La meilleure boulangerie du quartier. Tout donne envie, et on sent le vrai travail artisanal. »",
+        text: "« Ma baguette du matin m’attend à 7 h, toujours aussi croustillante. Et les croissants du dimanche sont devenus un rituel. »",
       },
       {
         name: "Philippe D.",
         role: "Habitué du samedi",
-        text: "« Le pain de campagne est superbe et les viennoiseries du matin sont toujours impeccables. »",
+        text: "« Leur pain de campagne est superbe, et le buffet de notre baptême était parfait, livré à l’heure. »",
       },
     ],
   },
   contact: {
-    eyebrow: "Venir / appeler",
-    title: "On simplifie la commande et la visite.",
+    eyebrow: "Nous trouver",
+    title: "Adresse, horaires et téléphone.",
     quick: {
-      eyebrow: "Commande rapide",
-      title: "Réservez vos produits avant le passage en boutique.",
-      text: "Une structure de site pensée pour convertir tout de suite : commande événementielle, retrait, buffet ou simple réservation matinale.",
+      eyebrow: "À l’avance",
+      title: "Appelez la veille, retirez le lendemain.",
+      text: "Une baguette réservée, un gâteau ou un plateau de viennoiseries : un appel ou un message suffit, nous confirmons dans la journée.",
       order: "Passer commande",
       quote: "Demander un devis",
     },
   },
   footer: {
-    text: "Boulangerie artisanale de quartier, commandes simples, retrait rapide et qualité régulière.",
+    text: "Pain au levain, viennoiseries pur beurre et buffets sur commande, du mardi au dimanche.",
     navLabel: "Navigation",
-    shopLabel: "Boutique",
+    shopLabel: "La boutique",
   },
   meta: {
     home: {
-      title: "Le Fournil d’Or - Boulangerie Artisanale & Pain Traditionnel",
+      title: "Le Fournil d’Or - Boulangerie artisanale depuis 1978",
       description:
-        "Le Fournil d’Or, maître boulanger depuis 1978. Pain traditionnel, baguettes, viennoiseries et spécialités artisanales.",
+        "Le Fournil d’Or, boulangerie de quartier depuis 1978 : baguettes au levain, pains de campagne, viennoiseries pur beurre et buffets sur commande.",
     },
   },
 } as const;
@@ -228,69 +228,69 @@ export type BoulangerieIconKey = TemplateIconKey<BoulangerieCopy>;
 const en: BoulangerieCopy = {
   brand: {
     name: "Your business",
-    tagline: "Artisan bakery",
+    tagline: "Bread & pastries",
   },
   phone: {
-    href: "tel:+33536490012",
-    label: "05 36 49 00 12",
+    href: "tel:+33199000066",
+    label: "01 99 00 00 66",
   },
   nav: {
     home: "Home",
-    showcase: "Today’s showcase",
+    showcase: "Today’s bakes",
     services: "Services",
     contact: "Contact",
   },
   topBar: {
-    left: "Special orders with 48 hours’ notice for events and buffets.",
-    weekdays: "Tue-Sat 6:30 a.m.-7:30 p.m.",
-    sunday: "Sun 7:00 a.m.-1:00 p.m.",
+    left: "Office breakfasts and buffets delivered to order.",
+    weekdays: "Tue–Sat 6:30 a.m.–7:30 p.m.",
+    sunday: "Sun 7 a.m.–1 p.m.",
   },
   common: {
-    hours: "Tue-Sat 6:30 a.m.-7:30 p.m., Sun 7:00 a.m.-1:00 p.m.",
-    addressShort: "12 Place du Marché, Bordeaux",
-    addressFull: "12 Place du Marché, 33000 Bordeaux",
-    street: "12 Place du Marché",
-    city: "33000 Bordeaux",
+    hours: "Tue–Sat 6:30 a.m.–7:30 p.m., Sun 7 a.m.–1 p.m.",
+    addressShort: "12 Example Street, Your city",
+    addressFull: "12 Example Street, 00000 Your city",
+    street: "12 Example Street",
+    city: "00000 Your city",
     quoteHref: "mailto:contact@example.com",
   },
   hero: {
-    badge: "Your neighborhood bakery since 1978",
-    titleStart: "The shop",
-    titleAccent: "that makes you hungry",
+    badge: "Baking on site since 1978",
+    titleStart: "The bakery",
+    titleAccent: "you can smell",
     titleEnd: "from the sidewalk.",
     description:
-      "A layout built like a local shop’s website, one that instantly sells closeness, consistency and the pleasure of fresh products. Here, we push store visits and quick ordering.",
-    seeShowcase: "See today’s showcase",
-    prepareOrder: "Plan an order",
+      "Sourdough baguettes, country loaves and all-butter croissants come out of the oven all morning long. Stop in, or call ahead and we’ll set them aside.",
+    seeShowcase: "See what’s fresh today",
+    prepareOrder: "Order ahead",
     stats: [
-      { value: "6:30", label: "a.m. bakery opening" },
-      { value: "7 days", label: "Breads and pastries" },
-      { value: "48 hrs", label: "Event orders" },
+      { value: "6:30", label: "Doors open" },
+      { value: "6 days", label: "A week, Tuesday to Sunday" },
+      { value: "2 days", label: "To prepare a buffet" },
     ],
     image: {
       src: IMG.hero,
-      alt: "Seeded country loaves and ears of wheat on a dark floured board.",
+      alt: "Seeded country loaves and stalks of wheat on a dark, floured board.",
     },
     todayLabel: "Today",
-    infoLabel: "Practical info",
+    infoLabel: "Hours & location",
   },
   showcase: {
-    eyebrow: "Today’s showcase",
-    title: "The products that draw people into the shop.",
+    eyebrow: "Today’s bakes",
+    title: "Counter favorites.",
     link: "Order an assortment",
     products: [
       {
         name: "Traditional Baguette",
-        description: "Natural sourdough, golden crust, open crumb.",
+        description: "Natural leaven, golden crust, airy crumb.",
         price: "€1.30",
         image: {
           src: IMG.baguette,
-          alt: "Golden-crusted traditional baguettes, one cut open to show the airy crumb.",
+          alt: "Golden-crusted baguettes, one cut open to show the airy crumb.",
         },
       },
       {
         name: "Country Loaf",
-        description: "Slow fermentation and a thick crust.",
+        description: "Slow-fermented, with a thick crust.",
         price: "€4.50",
         image: {
           src: IMG.campagne,
@@ -299,16 +299,16 @@ const en: BoulangerieCopy = {
       },
       {
         name: "All-Butter Croissant",
-        description: "Crisp, flaky layers and a melting center.",
+        description: "Crisp, flaky layers and a soft center.",
         price: "€1.20",
         image: {
           src: IMG.croissant,
-          alt: "Golden croissants lined up on a tray covered with baking paper.",
+          alt: "Golden croissants lined up on a sheet pan lined with parchment paper.",
         },
       },
       {
         name: "Apple Turnover",
-        description: "Homemade compote, gentle cinnamon, shiny pastry.",
+        description: "House-made apple filling, a hint of cinnamon, golden crust.",
         price: "€2.50",
         image: {
           src: IMG.chausson,
@@ -319,93 +319,93 @@ const en: BoulangerieCopy = {
   },
   why: {
     eyebrow: "Why come back",
-    title: "A page designed like a true neighborhood shop.",
+    title: "The same good bread, at the same time, six mornings a week.",
     points: [
       {
         icon: "award",
-        title: "Homemade",
-        text: "Every batch is made on site, early in the morning, with proudly artisan methods.",
+        title: "Made right here",
+        text: "Dough mixed the night before and baked on site from 4 a.m., nothing frozen, nothing factory-made.",
       },
       {
         icon: "users",
-        title: "Neighborhood life",
-        text: "An address designed for everyday life, local habits and family orders.",
+        title: "Your bread, set aside",
+        text: "Tell us your Saturday order once, and we’ll have it ready under your name every week.",
       },
       {
         icon: "calendar",
-        title: "Special orders",
-        text: "Brunches, events, platters and large quantities prepared on request.",
+        title: "Large orders",
+        text: "Brunches, mini-pastry platters and specialty breads for 10 to 100 people.",
       },
     ],
     panel: {
-      eyebrow: "Know-how",
-      title: "An address you can trust before your very first order.",
+      eyebrow: "Our craft",
+      title: "Bread that stays fresh for three days.",
       stats: [
-        { icon: "award", value: "46", label: "years of local presence" },
-        { icon: "users", value: "5,000+", label: "loyal regular customers" },
+        { icon: "award", value: "1978", label: "year founded" },
+        { icon: "users", value: "5,000+", label: "regular customers" },
       ],
-      text: "We use only quality French flours, natural sourdough and slow fermentation to bring back honest flavors, the right crust and real consistency.",
+      text: "Stone-ground French flour, a starter fed twice a day and a 24-hour rise: that’s where the flavor and the long shelf life come from.",
     },
   },
   services: {
     eyebrow: "Services",
-    title: "Easy orders, clear uses, an immediate promise.",
+    title: "For your team, your parties and your busy mornings.",
     items: [
       {
         icon: "gift",
         title: "Office breakfast",
-        text: "Assortments of pastries and fresh bread delivered for your teams.",
+        text: "Pastries, fresh bread and juice delivered by 9 a.m., for groups of 10 or more.",
       },
       {
         icon: "sparkles",
-        title: "Buffets & events",
-        text: "Custom packages for birthdays, christenings and receptions.",
+        title: "Buffets & receptions",
+        text: "Finger sandwiches, savory platters and sweet trays for birthdays, christenings and communions.",
       },
       {
         icon: "phone",
         title: "Express pickup",
-        text: "Simple phone reservations to avoid the morning sell-outs.",
+        text: "Call before 11 a.m. and your order will be waiting at the register, no line.",
       },
     ],
   },
   reviews: {
     eyebrow: "Neighborhood reviews",
-    title: "Trust built on consistency.",
+    title: "What our regulars say.",
     ratingLabel: "5 out of 5 stars",
     items: [
       {
         name: "Françoise M.",
-        role: "Loyal customer",
-        text: "“The best bakery in the neighborhood. Everything looks tempting, and you can feel the real craftsmanship.”",
+        role: "Longtime customer",
+        text: "“My morning baguette is waiting for me at 7, always just as crisp. And Sunday croissants have become a ritual.”",
       },
       {
         name: "Philippe D.",
         role: "Saturday regular",
-        text: "“The country loaf is superb and the morning pastries are always flawless.”",
+        text: "“Their country loaf is superb, and the buffet for our christening was perfect and delivered on time.”",
       },
     ],
   },
   contact: {
-    eyebrow: "Visit / call",
-    title: "We make ordering and visiting simple.",
+    eyebrow: "Find us",
+    title: "Address, hours and phone.",
     quick: {
-      eyebrow: "Quick order",
-      title: "Reserve your products before you stop by the shop.",
-      text: "A site structure designed to convert right away: event orders, pickup, buffets or a simple morning reservation.",
+      eyebrow: "Plan ahead",
+      title: "Call today, pick up tomorrow.",
+      text: "A baguette on hold, a cake or a tray of pastries: one call or message is all it takes, and we confirm the same day.",
       order: "Place an order",
       quote: "Request a quote",
     },
   },
   footer: {
-    text: "Neighborhood artisan bakery, simple orders, fast pickup and consistent quality.",
+    text: "Sourdough bread, all-butter pastries and buffets to order, Tuesday through Sunday.",
     navLabel: "Navigation",
-    shopLabel: "Shop",
+    shopLabel: "Visit us",
   },
   meta: {
     home: {
-      title: "Your business - Artisan bakery",
+      title: "Your business - Artisan bakery since 1978",
       description:
-        "Master baker since 1978. Traditional bread, baguettes, pastries and artisan specialties.",
+        "Your business, a neighborhood bakery since 1978: sourdough baguettes, country loaves, all-butter pastries and buffets made to order.",
     },
   },
 };

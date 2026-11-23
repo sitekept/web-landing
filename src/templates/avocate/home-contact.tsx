@@ -23,7 +23,7 @@ export function BlogSection({ locale }: { locale: TemplateLocale }) {
       description={blog.description}
     >
       <div className="grid gap-4 lg:grid-cols-3">
-        {blog.posts.map((post) => (
+        {blog.posts.map((post, index) => (
           <Link
             key={post}
             href={templateHref(locale, avocate.paths.blog)}
@@ -35,7 +35,7 @@ export function BlogSection({ locale }: { locale: TemplateLocale }) {
               </p>
               <h3 className={`${CARD_TITLE} mt-4 text-tpl-lg`}>{post}</h3>
               <p className="mt-4 text-tpl-sm leading-7 text-tpl-ink-muted">
-                {blog.excerpt}
+                {blog.excerpts[index]}
               </p>
             </TemplatePanel>
           </Link>

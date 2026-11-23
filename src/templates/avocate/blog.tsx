@@ -8,7 +8,7 @@ import { getTemplateCopy } from "@/content/templates/types";
 
 import { CARD_TITLE } from "./parts";
 
-/** Blog : trois articles en placeholder. */
+/** Blog : trois articles. */
 export function BlogView({ locale }: { locale: TemplateLocale }) {
   const page = getTemplateCopy(avocate, locale).blog;
 
@@ -35,7 +35,7 @@ export function BlogView({ locale }: { locale: TemplateLocale }) {
               <div>
                 <h2 className={`${CARD_TITLE} text-tpl-xl`}>{post}</h2>
                 <p className="mt-4 text-tpl-sm leading-7 text-tpl-ink-muted">
-                  {page.excerpt}
+                  {page.excerpts[index]}
                 </p>
               </div>
             </div>
