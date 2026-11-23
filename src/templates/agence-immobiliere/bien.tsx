@@ -70,7 +70,7 @@ export function BienView({ locale }: { locale: TemplateLocale }) {
               src={main.src}
               alt={main.alt}
               ratio="4/3"
-              sizes="(min-width: 1280px) 1216px, 100vw"
+              sizes="(min-width: 1264px) 1200px, (min-width: 1024px) calc(100vw - 64px), (min-width: 768px) calc(90vw - 43px), calc(100vw - 32px)"
               priority
               className="md:aspect-video"
             />

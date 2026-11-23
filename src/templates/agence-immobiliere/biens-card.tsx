@@ -33,7 +33,7 @@ export function ListingCard({
           alt={item.image.alt}
           ratio="4/3"
           rounded="none"
-          sizes="(min-width: 1280px) 540px, (min-width: 1024px) 40vw, (min-width: 768px) 62vw, 123vw"
+          sizes="(min-width: 1344px) 403px, (min-width: 1024px) calc(33.33vw - 45px), (min-width: 768px) calc(50vw - 38px), calc(100vw - 34px)"
         />
         <span className="absolute top-3 left-3 rounded-tpl bg-tpl-inverse px-2.5 py-1 text-tpl-xs font-semibold text-tpl-inverse-ink">
           {item.status}

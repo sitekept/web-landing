@@ -47,6 +47,17 @@ export function photoSizes(
   return `${FROM_LG[width][cols]}, ${BELOW_LG}`;
 }
 
+/**
+ * Photo 3/2 affichée dans un cadre 4/5 (`PORTRAIT` : sur mobile et à partir de
+ * `lg`) : en `object-fit: cover` elle est dimensionnée sur la hauteur du cadre,
+ * sa largeur utile est donc 1,875 fois celle du cadre (4/5 -> 3/2 : 1,25 × 1,5).
+ * Valeurs de `FROM_LG[wide][7]` et `BELOW_LG` × 1,875, réduites de 10 %, puis
+ * plafonnées à 1200 px (variante suivante : 1920 px, agrandie de 1,4). De `sm` à
+ * `lg` le cadre est en 3/2 comme la source : largeur du cadre, sans facteur.
+ */
+export const LANDSCAPE_IN_PORTRAIT_SIZES =
+  "(min-width: 1500px) 1200px, (min-width: 1280px) calc(98.4vw - 397px), (min-width: 1024px) calc(98.4vw - 110px), (min-width: 640px) calc(100vw - 48px), calc(168.75vw - 54px)";
+
 /** Largeur d'un bandeau pleine largeur de section `5xl`. */
 export const BANNER_SIZES =
   "(min-width: 1378px) 1024px, (min-width: 1280px) calc(100vw - 354px), (min-width: 1088px) 1024px, (min-width: 1024px) calc(100vw - 64px), (min-width: 640px) calc(100vw - 48px), calc(100vw - 32px)";

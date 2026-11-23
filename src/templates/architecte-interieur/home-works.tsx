@@ -10,6 +10,7 @@ import { getTemplateCopy } from "@/content/templates/types";
 
 import {
   BLOCK_TITLE,
+  LANDSCAPE_IN_PORTRAIT_SIZES,
   PORTRAIT,
   TextLink,
   photoSizes,
@@ -76,7 +77,7 @@ export function HomeWorks({ locale }: { locale: TemplateLocale }) {
             project={first}
             locale={locale}
             ratio="4/5"
-            sizes={photoSizes(7)}
+            sizes={LANDSCAPE_IN_PORTRAIT_SIZES}
           />
         </div>
         <div className="grid grid-cols-1 gap-10">
