@@ -130,12 +130,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Boulangerie",
           description:
-            "Une base chaleureuse et commerçante pour vendre une présence locale claire, des horaires, une vitrine de produits et une commande simple.",
+            "Une boulangerie de quartier : la vitrine du jour avec ses prix, le pain mis de côté chaque semaine, les buffets et petits-déjeuners sur commande, les horaires et l’adresse.",
         },
         en: {
           name: "Bakery template",
           description:
-            "A warm, shop-friendly base for a clear local presence, opening hours, a product showcase and simple ordering.",
+            "A neighborhood bakery: today’s display with prices, bread set aside every week, buffets and office breakfasts to order, plus opening hours and address.",
         },
       },
     },
@@ -153,12 +153,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Fleuriste",
           description:
-            "Une direction plus éditoriale et premium pour mettre en avant un style, des compositions et un univers visuel fort.",
+            "Un atelier de fleuriste pour mariages, réceptions et entreprises : réalisations par type d’événement, déroulé de la préparation, devis détaillé et prise de rendez-vous.",
         },
         en: {
           name: "Florist template",
           description:
-            "A more editorial, premium direction to showcase a style, compositions and a strong visual world.",
+            "A florist studio for weddings, private parties and businesses: projects by type of event, how the preparation works, an itemized quote and appointment booking.",
         },
       },
     },
@@ -176,7 +176,7 @@ const TEMPLATES = [
         fr: {
           name: "Template Réparation ordinateur",
           description:
-            "Un atelier de réparation d’ordinateurs, Mac et PC : diagnostic gratuit sous 24 h ouvrées, devis ferme avant toute réparation, garantie de 6 mois, dépôt ou enlèvement.",
+            "Un atelier de réparation d’ordinateurs, Mac et PC : diagnostic gratuit sous 24 h ouvrées, devis ferme avant toute réparation, garantie de 6 mois, dépôt ou enlèvement.",
         },
         en: {
           name: "Computer repair template",
@@ -200,12 +200,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Pâtisserie",
           description:
-            "Une base plus haut de gamme pour valoriser des créations, des événements et une promesse de maison premium.",
+            "Une pâtisserie haut de gamme : entremets de 6 à 10 parts, pâtisseries à l’unité, recettes signature, gâteaux sur commande jusqu’à 120 parts et livraison locale.",
         },
         en: {
           name: "Pastry shop template",
           description:
-            "A more upscale base to showcase your creations, events and the promise of a premium pâtisserie.",
+            "An upscale pastry shop: cakes for 6 to 10, individual pastries, signature recipes, made-to-order cakes up to 120 servings and local delivery.",
         },
       },
     },
@@ -223,7 +223,7 @@ const TEMPLATES = [
         fr: {
           name: "Template Dentiste",
           description:
-            "Un cabinet dentaire qui explique chaque soin, remet un devis écrit avant tout traitement et propose un premier rendez-vous sous 48 h, avec réservation en ligne.",
+            "Un cabinet dentaire qui explique chaque soin, remet un devis écrit avant tout traitement et propose un premier rendez-vous sous 48 h, avec réservation en ligne.",
         },
         en: {
           name: "Dentist template",
@@ -246,12 +246,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Plombier chauffagiste",
           description:
-            "Un site de plombier chauffagiste en quatre pages : dépannages plomberie et chauffage, tarifs de départ et majorations annoncées, devis signé avant travaux et contact avec astreinte.",
+            "Un plombier chauffagiste qui affiche ses prix : dépannages en plomberie et en chauffage, tarifs de départ, majorations annoncées, devis signé avant travaux et astreinte jusqu’à 22 h.",
         },
         en: {
           name: "Plumber & heating template",
           description:
-            "A four-page plumber and heating contractor website: plumbing and heating repairs, starting rates and stated surcharges, quote signed before work, and contact with on-call hours.",
+            "A plumber and heating contractor who posts prices up front: plumbing and heating repairs, starting rates, surcharges disclosed in advance, a quote signed before work and on-call service until 10 p.m.",
         },
       },
     },
@@ -292,7 +292,7 @@ const TEMPLATES = [
         fr: {
           name: "Template Ménage & nettoyage",
           description:
-            "Une entreprise de ménage à domicile et de nettoyage de bureaux : devis en quatre questions, formules, secteurs desservis, prix ferme sous 24 h et questions fréquentes.",
+            "Une entreprise de ménage à domicile et de nettoyage de bureaux : devis en quatre questions, formules, secteurs desservis, prix ferme sous 24 h et questions fréquentes.",
         },
         en: {
           name: "Housekeeping & cleaning template",
@@ -315,7 +315,7 @@ const TEMPLATES = [
         fr: {
           name: "Template Restaurant bistrot",
           description:
-            "La carte courte qui suit le marché, une cave au verre, un comptoir sans réservation, la réservation de table et la privatisation pour 9 à 20 convives.",
+            "La carte courte qui suit le marché, une cave au verre, un comptoir sans réservation, la réservation de table et la privatisation pour 9 à 20 convives.",
         },
         en: {
           name: "Bistro restaurant template",
@@ -336,9 +336,9 @@ const TEMPLATES = [
       screenshot: "/template/architecte-interieur.png",
       copy: {
         fr: {
-          name: "Template Architecte d'intérieur",
+          name: "Template Architecte d’intérieur",
           description:
-            "Un studio d’architecture d’intérieur : réalisations en photo, honoraires annoncés d’avance, méthode en quatre temps et premier rendez-vous d’une heure offert.",
+            "Un studio d’architecture d’intérieur : réalisations en photo, honoraires annoncés d’avance, méthode en quatre temps et premier rendez-vous d’une heure offert.",
         },
         en: {
           name: "Interior architect template",
@@ -359,9 +359,9 @@ const TEMPLATES = [
       screenshot: "/template/cabinet-avocat.png",
       copy: {
         fr: {
-          name: "Template Cabinet d'avocat",
+          name: "Template Cabinet d’avocat",
           description:
-            "Un cabinet d’avocats d’affaires pour dirigeants et PME : domaines d’intervention, honoraires annoncés, première consultation de 45 minutes, réponse sous 48 h ouvrées.",
+            "Un cabinet d’avocats d’affaires pour dirigeants et PME : domaines d’intervention, honoraires annoncés, première consultation de 45 minutes, réponse sous 48 h ouvrées.",
         },
         en: {
           name: "Law firm template",
@@ -386,12 +386,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Avocate",
           description:
-            "Un site chic et sobre pour une avocate spécialisée en droit immobilier, successions et droit de la famille, avec blog et contact front-only.",
+            "Le cabinet d’une avocate en droit immobilier, successions et droit de la famille : expertises, méthode en trois étapes, blog et prise de contact.",
         },
         en: {
           name: "Lawyer template",
           description:
-            "A chic, understated site for a lawyer specializing in real estate, inheritance and family law, with a blog and a front-end-only contact form.",
+            "The practice of a lawyer in real estate, inheritance and family law: areas of expertise, a three-step method, a blog and a contact page.",
         },
       },
     },
@@ -409,12 +409,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Agence immobilière",
           description:
-            "Le site d’une agence de quartier : sélection de biens avec fiche détaillée, agents référents, quartiers, parcours acquéreurs et vendeurs, estimation offerte.",
+            "Une agence immobilière de quartier : sélection de biens avec fiche détaillée, un agent référent par quartier, accompagnement des acquéreurs et des vendeurs, estimation offerte.",
         },
         en: {
           name: "Real estate agency template",
           description:
-            "A neighborhood agency website: a property selection with a detailed listing page, lead agents, neighborhoods, buyer and seller paths, and a free home value estimate.",
+            "A neighborhood real estate agency: a selection of properties with a detailed listing page, a lead agent for each neighborhood, guidance for buyers and sellers, and a free home value estimate.",
         },
       },
     },

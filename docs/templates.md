@@ -298,7 +298,7 @@ Refaire un template déjà sur le kit : accueil, sous-pages, photos et copie, FR
 - **Grille** : deux largeurs de contenu (`7xl`, `5xl`) ; découpes 7/5, 8/4 ou 1/1, et leur miroir. Pas de colonnes à pourcentage arbitraire.
 - **Formes** : deux rayons (`radius`, `radiusPill`) et deux ombres (`shadow-tpl-sm`, `shadow-tpl-lg`) au plus, ombres dérivées de l'encre.
 - **Images** : trois ratios au plus par template, un seul type de voile (le dégradé de `TemplateHeroMedia`), au plus une image pleine largeur par section, aucun `background-image`.
-- **Mouvement** : `ScrollReveal` facultatif, trois paliers de délai au plus (0, 80, 160 ms), distance de 16 à 20 px ; survol `-translate-y-0.5` en 200 ms ; tout respecte `prefers-reduced-motion`.
+- **Mouvement** : `ScrollReveal` (hors du kit : `src/components/scroll-reveal.tsx`) facultatif, trois paliers de délai au plus (0, 80, 160 ms), distance de 16 à 20 px ; survol `-translate-y-0.5` en 200 ms ; tout respecte `prefers-reduced-motion`.
 - **Contraste** : texte courant à 4,5:1 au moins, partout (fond uni mesuré par le DOM, texte sur photo ou dégradé mesuré au pixel sur capture) ; la paire `ink-muted` / `surface` est relevée.
 - À éviter : une grille de cartes identiques par section, un sur-titre sur chaque section, des pilules partout, du remplissage, des chiffres sans source plausible, une section vide à 1440 px.
 
