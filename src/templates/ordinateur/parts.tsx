@@ -1,13 +1,15 @@
 import {
-  Award,
   Clock,
+  Cpu,
+  Database,
+  Laptop,
   Mail,
   MapPin,
   Phone,
+  Receipt,
   Shield,
-  Smartphone,
-  Star,
-  Users,
+  Store,
+  Truck,
   Wrench,
   type LucideIcon,
 } from "lucide-react";
@@ -19,40 +21,37 @@ import type { OrdinateurIconKey } from "@/content/templates/ordinateur";
  * (`src/content/templates/ordinateur.ts`).
  */
 export const ICONS: Record<OrdinateurIconKey, LucideIcon> = {
-  award: Award,
   clock: Clock,
+  cpu: Cpu,
+  database: Database,
+  laptop: Laptop,
   mail: Mail,
   mapPin: MapPin,
   phone: Phone,
+  receipt: Receipt,
   shield: Shield,
-  smartphone: Smartphone,
-  users: Users,
+  store: Store,
+  truck: Truck,
   wrench: Wrench,
 };
 
 /**
  * `id` des sections : cibles des ancres de la navigation
- * (`/ordinateur#services`), les mêmes en français et en anglais.
+ * (`/ordinateur#reparations`), les mêmes en français et en anglais.
  */
 export const ANCHORS = {
   home: "accueil",
-  services: "services",
-  about: "apropos",
-  gallery: "galerie",
+  repairs: "reparations",
+  process: "deroule",
+  business: "entreprises",
+  workshop: "atelier",
   contact: "contact",
 } as const;
 
-/** Cinq étoiles pleines, décrites une seule fois pour les lecteurs d'écran. */
-export function Stars({ label }: { label: string }) {
-  return (
-    <div
-      role="img"
-      aria-label={label}
-      className="flex items-center text-tpl-accent"
-    >
-      {Array.from({ length: 5 }).map((_, index) => (
-        <Star key={index} aria-hidden="true" className="size-5 fill-current" />
-      ))}
-    </div>
-  );
-}
+/** Bouton plein sur fond graphite : vert citron des sur-titres, texte graphite. */
+export const LIME_BUTTON =
+  "bg-tpl-eyebrow text-tpl-inverse hover:bg-tpl-eyebrow/90";
+
+/** Lien de texte (téléphone, e-mail) : focus visible sur tous les fonds. */
+export const TEXT_LINK =
+  "underline underline-offset-4 hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink";

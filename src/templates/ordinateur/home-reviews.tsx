@@ -1,48 +1,47 @@
 import {
-  TemplatePanel,
+  TemplateHeading,
   TemplateSection,
   type TemplateLocale,
 } from "@/components/template-kit";
 import { ordinateur } from "@/content/templates/ordinateur";
 import { getTemplateCopy } from "@/content/templates/types";
 
-import { Stars } from "./parts";
-
-/** Avis : trois témoignages sur fond de page. */
+/**
+ * Avis : une citation en grand (7 colonnes) et deux plus courtes (5), sans
+ * cartes : filet d’accent à gauche, filets fins entre les deux autres.
+ */
 export function HomeReviews({ locale }: { locale: TemplateLocale }) {
   const copy = getTemplateCopy(ordinateur, locale);
   const page = copy.reviews;
-  const quote = locale === "fr" ? ["« ", " »"] : ["“", "”"];
+  const [lead, ...others] = page.items;
 
   return (
-    <TemplateSection
-      tone="surface"
-      density="compact"
-      align="center"
-      title={page.title}
-    >
-      <ul className="grid grid-cols-1 gap-8 md:grid-cols-3">
-        {page.items.map((item) => (
-          <li key={item.name}>
-            <TemplatePanel className="h-full border-transparent p-8 shadow-tpl-lg">
-              <figure>
-                <Stars label={page.ratingLabel} />
-                <blockquote className="mt-4 mb-6 text-tpl-ink-muted italic">
-                  <p>
-                    {quote[0]}
-                    {item.text}
-                    {quote[1]}
-                  </p>
-                </blockquote>
-                <figcaption>
-                  <p className="font-semibold">{item.name}</p>
-                  <p className="text-tpl-sm text-tpl-accent">{item.event}</p>
-                </figcaption>
-              </figure>
-            </TemplatePanel>
-          </li>
-        ))}
-      </ul>
+    <TemplateSection density="compact">
+      <TemplateHeading title={page.title} />
+      <div className="mt-10 grid gap-10 sm:mt-12 lg:grid-cols-12 lg:gap-12">
+        <figure className="border-l-4 border-tpl-accent pl-6 lg:col-span-7">
+          <blockquote className="font-tpl-display text-tpl-xl leading-tpl-display font-(weight:--tpl-display-weight) text-balance">
+            <p>{lead.text}</p>
+          </blockquote>
+          <figcaption className="mt-6 text-tpl-sm">
+            <span className="font-semibold">{lead.name}</span>
+            <span className="text-tpl-ink-muted"> · {lead.context}</span>
+          </figcaption>
+        </figure>
+        <div className="border-b border-tpl-line lg:col-span-5">
+          {others.map((item) => (
+            <figure key={item.name} className="border-t border-tpl-line py-6">
+              <blockquote className="text-tpl-base text-pretty">
+                <p>{item.text}</p>
+              </blockquote>
+              <figcaption className="mt-3 text-tpl-sm">
+                <span className="font-semibold">{item.name}</span>
+                <span className="text-tpl-ink-muted"> · {item.context}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
     </TemplateSection>
   );
 }

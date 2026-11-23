@@ -5,12 +5,13 @@ import type {
 } from "@/content/templates/types";
 
 /**
- * Template « ordinateur » (atelier de réparation d’ordinateurs et de
- * smartphones, page unique, marque fictive « TechRepair Pro »).
+ * Template « ordinateur » (atelier de réparation d’ordinateurs portables et
+ * fixes, Mac et PC, particuliers et petites entreprises ; page unique, marque
+ * fictive « Atelier Octet »).
  *
  * Toute la copie visible vit ici : navigation, sections, `alt`, métadonnées.
  * Les vues (`src/templates/ordinateur/`) n’ont aucun texte en dur. La
- * navigation se fait par ancres (`/ordinateur#services`, ...), les `id` sont
+ * navigation se fait par ancres (`/ordinateur#reparations`, ...), les `id` sont
  * dans `src/templates/ordinateur/parts.tsx` et valent pour le français et
  * l’anglais.
  *
@@ -20,268 +21,330 @@ import type {
  * Icônes : chaque élément de liste qui en a une porte une clé `icon`, identique
  * en français et en anglais (table `ICONS` dans `parts.tsx`).
  *
- * Images : Unsplash, sans marque, texte lisible ni visage. `alt` dans la copie.
+ * Images : Unsplash, sans marque, texte lisible ni visage. Les deux photos
+ * d’ordinateur ouvert sont recadrées (`rect`, en pixels de l’original) pour
+ * écarter une étiquette de disque et un bord de carte. `alt` dans la copie.
+ * Prix, délais et durée de garantie sont cohérents entre sections et langues :
+ * diagnostic gratuit sous 24 h ouvrées, garantie 6 mois.
  */
 
-const unsplash = (id: string) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=80`;
+const unsplash = (id: string, extra = "") =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1600&q=80${extra}`;
 
 const IMG = {
-  hero: unsplash("1731400800900-1bce57414c09"),
-  screen: unsplash("1515833305013-e64177301e04"),
-  motherboard: unsplash("1617839625591-e5a789593135"),
-  data: unsplash("1558494949-ef010cbdcc31"),
-  phoneScreen: unsplash("1746006084492-24a8fd02710a"),
-  battery: unsplash("1601593346740-925612772716"),
-  connector: unsplash("1660820936305-3e8df25adf0d"),
-  bench: unsplash("1581092921461-eab62e97a780"),
+  /** Mains au-dessus d’un portable ouvert (original 8736 x 11648). */
+  hero: unsplash("1721333089073-215a56fd710c", "&rect=4634,2417,4102,5128"),
+  /** Ventilateur poussiéreux d’un portable (original 6000 x 4837). */
+  fan: unsplash("1769085795297-b45cc8c92f5b", "&rect=0,0,6000,4000"),
   solder: unsplash("1562568068-7a90cf9e499d"),
+  racks: unsplash("1558494949-ef010cbdcc31"),
 } as const;
 
 const fr = {
   brand: {
-    name: "TechRepair Pro",
+    name: "Atelier Octet",
+    tagline: "Réparation informatique",
   },
   phone: {
-    href: "tel:+33536490067",
-    label: "05 36 49 00 67",
+    href: "tel:+33199000031",
+    label: "01 99 00 00 31",
   },
   email: {
-    href: "mailto:contact@techrepair-pro.example",
-    label: "contact@techrepair-pro.example",
+    href: "mailto:contact@atelier-octet.example",
+    label: "contact@atelier-octet.example",
+  },
+  a11y: {
+    quickActions: "Actions rapides",
+  },
+  cta: {
+    deposit: "Déposer ma machine",
+    call: "Appeler",
   },
   nav: {
-    home: "Accueil",
-    services: "Services",
-    about: "À propos",
-    gallery: "Réalisations",
+    repairs: "Réparations",
+    process: "Déroulé",
+    business: "Entreprises",
+    workshop: "Atelier",
     contact: "Contact",
   },
   hero: {
-    badge: "Experts en réparation depuis 2010",
-    titleStart: "TechRepair",
-    titleAccent: "Pro",
+    title: "Votre ordinateur réparé,",
+    accent: "vos fichiers à l’abri.",
     description:
-      "Réparation d’ordinateurs et smartphones. Diagnostic gratuit, intervention rapide, garantie sur toutes nos réparations. Votre technologie entre de bonnes mains.",
-    seeServices: "Nos services",
-    freeDiagnostic: "Diagnostic gratuit",
+      "Portables et fixes, Mac et PC : diagnostic gratuit sous 24 h ouvrées, devis ferme avant toute réparation, et vous ne payez que si vous êtes d’accord. Déposez votre machine à l’atelier ou faites-la enlever.",
+    primary: "Déposer ma machine",
+    secondary: "Appeler le 01 99 00 00 31",
+    facts: [
+      {
+        icon: "clock",
+        title: "Diagnostic gratuit",
+        text: "Réponse sous 24 h ouvrées, sans engagement.",
+      },
+      {
+        icon: "receipt",
+        title: "Devis ferme",
+        text: "Le prix annoncé est le prix payé.",
+      },
+      {
+        icon: "shield",
+        title: "Garantie 6 mois",
+        text: "Sur la pièce et sur la main-d’œuvre.",
+      },
+    ],
     image: {
       src: IMG.hero,
-      alt: "Gros plan sur une carte électronique bleue et ses composants",
+      alt: "Mains d’un technicien au-dessus d’un ordinateur portable ouvert : ventilateur, caloducs et barrettes de mémoire",
     },
   },
-  services: {
-    title: "Nos services de réparation",
+  repairs: {
+    title: "Réparations et prix",
     description:
-      "Spécialisés dans la réparation d’ordinateurs et smartphones, nous intervenons rapidement avec des pièces de qualité et une garantie sur tous nos services.",
-    groups: [
+      "Portables et ordinateurs fixes, Mac et PC. Prix TTC, pièce et main-d’œuvre comprises ; le devis ferme est établi après le diagnostic.",
+    tabletNote: "Tablettes et smartphones aussi : demandez-nous.",
+    fromLabel: "À partir de",
+    delayLabel: "Délai\u00a0:",
+    items: [
       {
-        title: "Réparation Ordinateurs",
-        items: [
-          {
-            name: "Écran cassé / Dalle LCD",
-            description:
-              "Remplacement d’écran PC portable, réparation dalle LCD/LED",
-            price: "80-150 €",
-            image: {
-              src: IMG.screen,
-              alt: "Gros plan sur un écran fissuré, vitre brisée en étoile",
-            },
-          },
-          {
-            name: "Problème carte mère",
-            description:
-              "Diagnostic et réparation carte mère, circuits électroniques",
-            price: "60-200 €",
-            image: {
-              src: IMG.motherboard,
-              alt: "Circuit imprimé doré vu de dessus",
-            },
-          },
-          {
-            name: "Récupération de données",
-            description:
-              "Récupération fichiers disque dur défaillant, SSD endommagé",
-            price: "90-300 €",
-            image: {
-              src: IMG.data,
-              alt: "Baies de serveurs et câbles réseau dans un local technique sombre",
-            },
-          },
-        ],
+        name: "Écran cassé ou qui scintille",
+        description:
+          "Remplacement de la dalle d’un portable, avec essai des couleurs et du tactile.",
+        price: "89 €",
+        delay: "48\u00a0à\u00a072 h",
       },
       {
-        title: "Réparation Smartphones",
-        items: [
-          {
-            name: "Écran iPhone/Android",
-            description:
-              "Remplacement écran tactile, vitre cassée toutes marques",
-            price: "50-180 €",
-            image: {
-              src: IMG.phoneScreen,
-              alt: "Smartphone à l’écran brisé posé sur un fond bleu clair",
-            },
-          },
-          {
-            name: "Batterie défaillante",
-            description: "Changement batterie iPhone, Samsung, Huawei, Xiaomi",
-            price: "40-80 €",
-            image: {
-              src: IMG.battery,
-              alt: "Main tenant un smartphone dans une coque noire texturée",
-            },
-          },
-          {
-            name: "Connecteur de charge",
-            description: "Réparation port USB-C, Lightning, micro-USB",
-            price: "45-90 €",
-            image: {
-              src: IMG.connector,
-              alt: "Connecteur USB-C blanc posé sur un fond clair",
-            },
-          },
-        ],
+        name: "Batterie qui ne tient plus",
+        description: "Batterie neuve, autonomie mesurée avant la restitution.",
+        price: "59 €",
+        delay: "24 h",
+      },
+      {
+        name: "SSD : remplacement ou ajout",
+        description:
+          "Disque rapide posé, système cloné : vous retrouvez votre bureau tel quel.",
+        price: "79 €",
+        delay: "24\u00a0à\u00a048 h",
+      },
+      {
+        name: "Lent, bruyant, qui chauffe",
+        description:
+          "Ventilateurs nettoyés, pâte thermique neuve, températures contrôlées.",
+        price: "49 €",
+        delay: "24 h",
+      },
+      {
+        name: "Virus et réinstallation",
+        description:
+          "Système nettoyé ou réinstallé, vos fichiers sauvegardés d’abord.",
+        price: "59 €",
+        delay: "24\u00a0à\u00a048 h",
+      },
+      {
+        name: "Récupération de données",
+        description:
+          "Disque ou SSD en panne : analyse, puis copie sur un support neuf.",
+        price: "90 €",
+        delay: "2\u00a0à\u00a05\u00a0jours",
+      },
+      {
+        name: "Ne démarre plus",
+        description:
+          "Alimentation, carte mère, prise de charge : on cherche la panne, vous décidez.",
+        price: "69 €",
+        delay: "2\u00a0à\u00a05\u00a0jours",
+      },
+      {
+        name: "Clavier ou charnière cassés",
+        description:
+          "Remplacement du clavier, des charnières ou de la coque d’un portable.",
+        price: "49 €",
+        delay: "48\u00a0à\u00a072 h",
       },
     ],
-  },
-  about: {
-    title: "Expertise technique depuis 2010",
-    paragraphs: [
-      "Fondé par des ingénieurs passionnés d’informatique, TechRepair Pro est devenu la référence en réparation d’ordinateurs et smartphones. Notre équipe certifiée intervient sur toutes marques avec des outils professionnels de dernière génération.",
-      "Nous nous engageons sur la qualité avec une garantie de 6 mois sur toutes nos réparations. Notre atelier est équipé des dernières technologies pour diagnostiquer et réparer efficacement vos appareils électroniques.",
-    ],
-    stats: [
-      { icon: "award", value: "500+", label: "Réparations/mois" },
-      { icon: "users", value: "15 000+", label: "Clients satisfaits" },
-    ],
-    badge: { value: "14", label: "Années d’expérience" },
     image: {
-      src: IMG.bench,
-      alt: "Technicien réparant une carte électronique bleue sous une lampe",
+      src: IMG.fan,
+      alt: "Ventilateur d’un ordinateur portable ouvert, ses ailettes couvertes de poussière",
+    },
+  },
+  process: {
+    title: "Quatre étapes, sans surprise",
+    description:
+      "Vous connaissez le prix et le délai avant que nous commencions la réparation.",
+    steps: [
+      {
+        title: "Dépôt ou enlèvement",
+        text: "Venez à l’atelier ou faites enlever la machine chez vous. Nous notons avec vous les symptômes et l’état de l’appareil.",
+      },
+      {
+        title: "Diagnostic gratuit",
+        text: "Sous 24 h ouvrées, un technicien trouve la panne. Aucune pièce n’est commandée sans votre accord.",
+      },
+      {
+        title: "Devis ferme",
+        text: "Prix, pièces et délai par écrit. Vous refusez ? Vous récupérez votre machine intacte, sans frais.",
+      },
+      {
+        title: "Réparation et garantie",
+        text: "Réparée à l’atelier, puis testée plusieurs heures avant de vous être rendue. Garantie de 6 mois.",
+      },
+    ],
+    data: {
+      icon: "database",
+      title: "Vos fichiers passent avant tout",
+      text: "Nous ne les ouvrons pas sans votre accord, et nous les copions avant toute intervention risquée.",
+    },
+  },
+  business: {
+    title: "Un parc informatique qui tourne, une seule facture",
+    description:
+      "Pour les cabinets, commerces et petites équipes jusqu’à vingt postes.",
+    items: [
+      {
+        icon: "truck",
+        title: "Intervention sur site",
+        text: "Un technicien chez vous sous 24 h ouvrées.",
+      },
+      {
+        icon: "laptop",
+        title: "Poste de remplacement",
+        text: "Prêté pendant la réparation, pour que l’équipe continue de travailler.",
+      },
+      {
+        icon: "database",
+        title: "Sauvegardes et mises à jour",
+        text: "Contrôlées chaque mois, avec un compte rendu simple.",
+      },
+      {
+        icon: "receipt",
+        title: "Une facture par mois",
+        text: "Un forfait par poste, sans mauvaise surprise.",
+      },
+    ],
+    price: {
+      label: "Contrat d’entretien",
+      value: "29 € HT",
+      note: "par poste et par mois, résiliable à tout moment",
+    },
+    cta: "Demander un contrat",
+    image: {
+      src: IMG.racks,
+      alt: "Baies de serveurs et câbles réseau dans un local technique sombre",
     },
   },
   reviews: {
-    title: "Avis de nos clients",
-    ratingLabel: "5 étoiles sur 5",
+    title: "Ils nous ont confié leur machine",
     items: [
       {
-        name: "Alexandre M.",
-        text: "Écran de MacBook réparé en 2h ! Service ultra-rapide et professionnel. Mon ordinateur fonctionne parfaitement. Je recommande vivement.",
-        event: "Réparation MacBook",
+        name: "Camille R.",
+        context: "Récupération de données",
+        text: "«\u00a0Mon portable ne démarrait plus et j’avais tout mon mémoire dessus. Ils ont récupéré les fichiers avant même de parler de réparation. Prix annoncé, prix payé.\u00a0»",
       },
       {
-        name: "Sarah D.",
-        text: "iPhone tombé dans l’eau, ils ont réussi à le sauver et récupérer toutes mes photos. Équipe compétente et prix correct.",
-        event: "Réparation iPhone",
+        name: "Thomas B.",
+        context: "Batterie de portable",
+        text: "«\u00a0Batterie remplacée dans la journée, et on m’a expliqué ce qui n’était pas utile de changer.\u00a0»",
       },
       {
-        name: "Pierre L.",
-        text: "PC qui ne démarrait plus, diagnostic gratuit et réparation carte mère. Excellent travail, garantie respectée. Très satisfait !",
-        event: "Réparation PC",
+        name: "Léa M.",
+        context: "Contrat petite entreprise",
+        text: "«\u00a0Nous leur confions les cinq postes du cabinet. Quand l’un tombe en panne, un poste prêté arrive le jour même.\u00a0»",
       },
     ],
   },
-  gallery: {
-    title: "Nos réalisations",
-    description: "Aperçu de notre atelier et de nos réparations techniques",
-    images: [
-      {
-        src: IMG.motherboard,
-        alt: "Circuit imprimé doré vu de dessus",
-      },
-      {
-        src: IMG.screen,
-        alt: "Gros plan sur un écran fissuré, vitre brisée en étoile",
-      },
-      {
-        src: IMG.data,
-        alt: "Baies de serveurs et câbles réseau dans un local technique sombre",
-      },
-      {
-        src: IMG.phoneScreen,
-        alt: "Smartphone à l’écran brisé posé sur un fond bleu clair",
-      },
-      {
-        src: IMG.battery,
-        alt: "Main tenant un smartphone dans une coque noire texturée",
-      },
-      {
-        src: IMG.connector,
-        alt: "Connecteur USB-C blanc posé sur un fond clair",
-      },
-      {
-        src: IMG.bench,
-        alt: "Technicien réparant une carte électronique bleue sous une lampe",
-      },
-      {
-        src: IMG.solder,
-        alt: "Soudure d’un composant sur un circuit imprimé au fer à souder",
-      },
-    ],
-  },
-  specials: {
-    title: "Services spécialisés",
+  workshop: {
+    title: "Réparé sur place, à l’établi",
     description:
-      "Au-delà de la réparation, nous proposons des services complets",
-    items: [
-      {
-        icon: "shield",
-        title: "Dépannage à domicile",
-        description:
-          "Intervention directement chez vous pour problèmes logiciels et hardware",
-      },
+      "Pas de sous-traitance : votre machine reste dans notre atelier, du diagnostic à l’essai final.",
+    points: [
       {
         icon: "wrench",
-        title: "Maintenance préventive",
-        description:
-          "Nettoyage, optimisation et mise à jour pour prolonger la durée de vie",
+        title: "Micro-soudure",
+        text: "Prise de charge, connecteurs, condensateurs : nous réparons la carte plutôt que de la remplacer quand c’est possible.",
       },
       {
-        icon: "smartphone",
-        title: "Vente d’accessoires",
-        description:
-          "Coques, films protecteurs, chargeurs et accessoires de qualité",
+        icon: "cpu",
+        title: "Pièces au choix",
+        text: "Neuves, ou d’occasion testées et moins chères : vous choisissez sur le devis.",
+      },
+      {
+        icon: "shield",
+        title: "Ancienne pièce rendue",
+        text: "Sur simple demande, vous repartez avec la pièce remplacée.",
       },
     ],
+    image: {
+      src: IMG.solder,
+      alt: "Soudure d’un composant sur un circuit imprimé, au fer à souder et au fil d’étain tenu à la main",
+    },
   },
   contact: {
-    title: "Contactez nos experts",
+    title: "Déposer ou faire enlever votre machine",
+    description:
+      "Passez à l’atelier ou laissez-nous un message : nous vous rappelons dans la journée.",
+    options: [
+      {
+        icon: "store",
+        title: "À l’atelier",
+        text: "Sans rendez-vous aux heures d’ouverture. Une machine déposée est prise en charge le jour même.",
+      },
+      {
+        icon: "truck",
+        title: "Enlèvement",
+        text: "Nous passons chez vous ou à votre bureau : 15 €, offerts si vous faites réparer.",
+      },
+    ],
     address: {
       icon: "mapPin",
       label: "Adresse",
-      lines: ["15 Rue de la Technologie", "31000 Toulouse, France"],
+      lines: ["12 rue de l’Exemple", "00000 Votre ville"],
     },
     hours: {
       icon: "clock",
-      label: "Horaires d’ouverture",
-      weekdays: "Lundi - Vendredi : 9h00 - 18h30",
-      saturday: "Samedi : 9h00 - 17h00",
-      closed: "Fermé le dimanche",
+      label: "Horaires",
+      lines: [
+        "Du lundi au vendredi : 9 h à 18 h 30",
+        "Samedi : 9 h à 17 h",
+        "Fermé le dimanche",
+      ],
     },
     phoneInfo: { icon: "phone", label: "Téléphone" },
-    emailInfo: { icon: "mail", label: "Email" },
-    diagnostic: {
-      title: "Diagnostic gratuit",
-      text: "Apportez votre appareil pour un diagnostic gratuit et sans engagement. Devis détaillé fourni avant toute intervention. Réparation express possible.",
-      book: "Prendre rendez-vous",
-      quote: "Demander un devis",
-      note: "* Garantie 6 mois sur toutes nos réparations",
+    emailInfo: { icon: "mail", label: "E-mail" },
+    form: {
+      title: "Demander une prise en charge",
+      name: "Nom",
+      phone: "Téléphone",
+      kind: {
+        label: "Type de machine",
+        placeholder: "Choisir",
+        options: [
+          { value: "portable-pc", label: "Portable PC" },
+          { value: "portable-mac", label: "Portable Mac" },
+          { value: "fixe-pc", label: "Ordinateur fixe PC" },
+          { value: "fixe-mac", label: "Ordinateur fixe Mac" },
+        ],
+      },
+      mode: {
+        label: "Dépôt ou enlèvement",
+        placeholder: "Choisir",
+        options: [
+          { value: "depot", label: "Je dépose à l’atelier" },
+          { value: "enlevement", label: "Je souhaite un enlèvement" },
+        ],
+      },
+      message: "Que se passe-t-il ?",
+      submit: "Envoyer ma demande",
     },
   },
   footer: {
-    text: "Experts en réparation depuis 2010. Ordinateurs et smartphones entre de bonnes mains.",
-    linksTitle: "Liens rapides",
-    certTitle: "Certifications",
-    certText:
-      "Techniciens certifiés Apple, Samsung, Huawei. Matériel professionnel et pièces d’origine.",
-    copyright: "© 2024 TechRepair Pro. Tous droits réservés.",
+    text: "Réparation d’ordinateurs portables et fixes, Mac et PC, pour les particuliers et les petites entreprises.",
+    linksTitle: "Navigation",
+    contactTitle: "Atelier",
+    copyright: "Atelier Octet. Tous droits réservés.",
   },
   meta: {
     home: {
-      title: "TechRepair Pro - Réparation Ordinateurs & Smartphones",
+      title: "Atelier Octet - Réparation d’ordinateurs",
       description:
-        "TechRepair Pro, experts en réparation d’ordinateurs et smartphones depuis 2010. Diagnostic gratuit, intervention rapide, garantie sur toutes nos réparations.",
+        "Réparation d’ordinateurs portables et fixes, Mac et PC : diagnostic gratuit sous 24 h, devis ferme, garantie 6 mois. Dépôt à l’atelier ou enlèvement.",
     },
   },
 } as const;
@@ -292,245 +355,305 @@ export type OrdinateurIconKey = TemplateIconKey<OrdinateurCopy>;
 const en: OrdinateurCopy = {
   brand: {
     name: "Your business",
+    tagline: "Computer repair",
   },
   phone: {
-    href: "tel:+33536490067",
-    label: "05 36 49 00 67",
+    href: "tel:+33199000031",
+    label: "01 99 00 00 31",
   },
   email: {
     href: "mailto:contact@example.com",
     label: "contact@example.com",
   },
+  a11y: {
+    quickActions: "Quick actions",
+  },
+  cta: {
+    deposit: "Drop off my computer",
+    call: "Call",
+  },
   nav: {
-    home: "Home",
-    services: "Services",
-    about: "About",
-    gallery: "Our work",
+    repairs: "Repairs",
+    process: "How it works",
+    business: "Business",
+    workshop: "Workshop",
     contact: "Contact",
   },
   hero: {
-    badge: "Repair experts since 2010",
-    titleStart: "Your",
-    titleAccent: "business",
+    title: "Your computer fixed,",
+    accent: "your files safe.",
     description:
-      "Computer and smartphone repair. Free diagnostic, fast turnaround and a warranty on all our repairs. Your technology is in good hands.",
-    seeServices: "Our services",
-    freeDiagnostic: "Free diagnostic",
+      "Laptops and desktops, Mac and PC: a free diagnosis within one business day, a firm quote before any repair, and you only pay if you agree. Drop your computer off at the shop or have it picked up.",
+    primary: "Drop off my computer",
+    secondary: "Call 01 99 00 00 31",
+    facts: [
+      {
+        icon: "clock",
+        title: "Free diagnosis",
+        text: "An answer within one business day, no obligation.",
+      },
+      {
+        icon: "receipt",
+        title: "Firm quote",
+        text: "The price we quote is the price you pay.",
+      },
+      {
+        icon: "shield",
+        title: "6\u2011month warranty",
+        text: "On parts and on labor.",
+      },
+    ],
     image: {
       src: IMG.hero,
-      alt: "Close-up of a blue electronic circuit board and its components",
+      alt: "A technician’s hands over an open laptop: fan, heat pipes and memory modules",
     },
   },
-  services: {
-    title: "Our repair services",
+  repairs: {
+    title: "Repairs and prices",
     description:
-      "We specialize in computer and smartphone repair, and we work fast with quality parts and a warranty on all our services.",
-    groups: [
+      "Laptops and desktops, Mac and PC. Prices include tax, parts and labor; the firm quote follows the diagnosis.",
+    tabletNote: "Tablets and smartphones too: just ask.",
+    fromLabel: "From",
+    delayLabel: "Turnaround:",
+    items: [
       {
-        title: "Computer repair",
-        items: [
-          {
-            name: "Broken screen / LCD panel",
-            description: "Laptop screen replacement, LCD/LED panel repair",
-            price: "€80-150",
-            image: {
-              src: IMG.screen,
-              alt: "Close-up of a cracked screen with glass shattered in a starburst",
-            },
-          },
-          {
-            name: "Motherboard issue",
-            description:
-              "Motherboard diagnosis and repair, electronic circuits",
-            price: "€60-200",
-            image: {
-              src: IMG.motherboard,
-              alt: "Overhead view of a gold circuit board",
-            },
-          },
-          {
-            name: "Data recovery",
-            description:
-              "File recovery from failing hard drives and damaged SSDs",
-            price: "€90-300",
-            image: {
-              src: IMG.data,
-              alt: "Server racks and network cables in a dark equipment room",
-            },
-          },
-        ],
+        name: "Cracked or flickering screen",
+        description: "Laptop panel replacement, with a color and touch test.",
+        price: "€89",
+        delay: "2\u00a0to\u00a03\u00a0days",
       },
       {
-        title: "Smartphone repair",
-        items: [
-          {
-            name: "iPhone/Android screen",
-            description:
-              "Touchscreen replacement, broken glass repair, all brands",
-            price: "€50-180",
-            image: {
-              src: IMG.phoneScreen,
-              alt: "Smartphone with a shattered screen lying on a light blue background",
-            },
-          },
-          {
-            name: "Failing battery",
-            description:
-              "Battery replacement for iPhone, Samsung, Huawei, Xiaomi",
-            price: "€40-80",
-            image: {
-              src: IMG.battery,
-              alt: "Hand holding a smartphone in a textured black case",
-            },
-          },
-          {
-            name: "Charging port",
-            description: "USB-C, Lightning and micro-USB port repair",
-            price: "€45-90",
-            image: {
-              src: IMG.connector,
-              alt: "White USB-C connector on a light background",
-            },
-          },
-        ],
+        name: "Battery that no longer holds a charge",
+        description: "New battery, battery life measured before pickup.",
+        price: "€59",
+        delay: "1 day",
+      },
+      {
+        name: "SSD: replacement or upgrade",
+        description:
+          "A fast drive installed and your system cloned: your desktop stays exactly as it was.",
+        price: "€79",
+        delay: "1\u00a0to\u00a02\u00a0days",
+      },
+      {
+        name: "Slow, loud, running hot",
+        description: "Fans cleaned, fresh thermal paste, temperatures checked.",
+        price: "€49",
+        delay: "1 day",
+      },
+      {
+        name: "Viruses and reinstall",
+        description:
+          "System cleaned or reinstalled, your files backed up first.",
+        price: "€59",
+        delay: "1\u00a0to\u00a02\u00a0days",
+      },
+      {
+        name: "Data recovery",
+        description:
+          "Failed drive or SSD: analysis, then a copy onto new storage.",
+        price: "€90",
+        delay: "2\u00a0to\u00a05\u00a0days",
+      },
+      {
+        name: "Won’t turn on",
+        description:
+          "Power supply, motherboard, charging port: we find the fault, you decide.",
+        price: "€69",
+        delay: "2\u00a0to\u00a05\u00a0days",
+      },
+      {
+        name: "Broken keyboard or hinge",
+        description: "Replacement of a laptop’s keyboard, hinges or case.",
+        price: "€49",
+        delay: "2\u00a0to\u00a03\u00a0days",
       },
     ],
-  },
-  about: {
-    title: "Technical expertise since 2010",
-    paragraphs: [
-      "Founded by engineers who love computing, Your business has become a go-to name in computer and smartphone repair. Our certified team works on all brands with the latest professional tools.",
-      "We stand behind our quality with a 6-month warranty on all our repairs. Our workshop is equipped with the latest technology to diagnose and repair your electronic devices efficiently.",
-    ],
-    stats: [
-      { icon: "award", value: "500+", label: "Repairs/month" },
-      { icon: "users", value: "15,000+", label: "Satisfied customers" },
-    ],
-    badge: { value: "14", label: "Years of experience" },
     image: {
-      src: IMG.bench,
-      alt: "Technician repairing a blue circuit board under a lamp",
+      src: IMG.fan,
+      alt: "Fan inside an open laptop, its blades coated in dust",
+    },
+  },
+  process: {
+    title: "Four steps, no surprises",
+    description:
+      "You know the price and the turnaround before we start the repair.",
+    steps: [
+      {
+        title: "Drop\u2011off or pickup",
+        text: "Bring it to the shop or have us pick it up at your place. We note the symptoms and the condition of the device with you.",
+      },
+      {
+        title: "Free diagnosis",
+        text: "Within one business day, a technician finds the fault. No part is ordered without your approval.",
+      },
+      {
+        title: "Firm quote",
+        text: "Price, parts and turnaround in writing. Not interested? You get your computer back untouched, at no charge.",
+      },
+      {
+        title: "Repair and warranty",
+        text: "Repaired in our shop, then tested for several hours before it goes back to you. 6\u2011month warranty.",
+      },
+    ],
+    data: {
+      icon: "database",
+      title: "Your files come first",
+      text: "We don’t open them without your approval, and we copy them before any risky work.",
+    },
+  },
+  business: {
+    title: "A fleet of computers that runs, one invoice",
+    description:
+      "For offices, shops and small teams of up to twenty computers.",
+    items: [
+      {
+        icon: "truck",
+        title: "On-site service",
+        text: "A technician at your door within one business day.",
+      },
+      {
+        icon: "laptop",
+        title: "Loaner computer",
+        text: "Lent during the repair, so your team keeps working.",
+      },
+      {
+        icon: "database",
+        title: "Backups and updates",
+        text: "Checked every month, with a plain\u2011language report.",
+      },
+      {
+        icon: "receipt",
+        title: "One invoice a month",
+        text: "A flat fee per computer, no surprises.",
+      },
+    ],
+    price: {
+      label: "Maintenance plan",
+      value: "€29 excl. tax",
+      note: "per computer per month, cancel any time",
+    },
+    cta: "Request a plan",
+    image: {
+      src: IMG.racks,
+      alt: "Server racks and network cables in a dark equipment room",
     },
   },
   reviews: {
-    title: "What our customers say",
-    ratingLabel: "5 out of 5 stars",
+    title: "They trusted us with their computer",
     items: [
       {
-        name: "Alexandre M.",
-        text: "MacBook screen repaired in 2 hours! Super fast and professional service. My computer works perfectly. Highly recommended.",
-        event: "MacBook repair",
+        name: "Camille R.",
+        context: "Data recovery",
+        text: "“My laptop wouldn’t start and my thesis was on it. They recovered the files before we even talked about repairs. Quoted price, paid price.”",
       },
       {
-        name: "Sarah D.",
-        text: "My iPhone fell in the water and they managed to save it and recover all my photos. Skilled team and fair prices.",
-        event: "iPhone repair",
+        name: "Thomas B.",
+        context: "Laptop battery",
+        text: "“Battery replaced the same day, and they told me what wasn’t worth changing.”",
       },
       {
-        name: "Pierre L.",
-        text: "My PC wouldn’t start anymore. Free diagnostic and a motherboard repair. Excellent work, warranty honored. Very satisfied!",
-        event: "PC repair",
+        name: "Léa M.",
+        context: "Small business plan",
+        text: "“We trust them with all five computers at our practice. When one goes down, a loaner arrives the same day.”",
       },
     ],
   },
-  gallery: {
-    title: "Our work",
-    description: "A look at our workshop and our technical repairs",
-    images: [
-      {
-        src: IMG.motherboard,
-        alt: "Overhead view of a gold circuit board",
-      },
-      {
-        src: IMG.screen,
-        alt: "Close-up of a cracked screen with glass shattered in a starburst",
-      },
-      {
-        src: IMG.data,
-        alt: "Server racks and network cables in a dark equipment room",
-      },
-      {
-        src: IMG.phoneScreen,
-        alt: "Smartphone with a shattered screen lying on a light blue background",
-      },
-      {
-        src: IMG.battery,
-        alt: "Hand holding a smartphone in a textured black case",
-      },
-      {
-        src: IMG.connector,
-        alt: "White USB-C connector on a light background",
-      },
-      {
-        src: IMG.bench,
-        alt: "Technician repairing a blue circuit board under a lamp",
-      },
-      {
-        src: IMG.solder,
-        alt: "Soldering a component onto a circuit board with a soldering iron",
-      },
-    ],
-  },
-  specials: {
-    title: "Specialty services",
-    description: "Beyond repair, we offer a full range of services",
-    items: [
-      {
-        icon: "shield",
-        title: "On-site support",
-        description: "We come to you to fix software and hardware problems",
-      },
+  workshop: {
+    title: "Repaired on site, at the bench",
+    description:
+      "No outsourcing: your computer stays in our shop, from diagnosis to the final test.",
+    points: [
       {
         icon: "wrench",
-        title: "Preventive maintenance",
-        description:
-          "Cleaning, optimization and updates to extend your device’s lifespan",
+        title: "Micro\u2011soldering",
+        text: "Charging ports, connectors, capacitors: we repair the board rather than replace it whenever we can.",
       },
       {
-        icon: "smartphone",
-        title: "Accessory sales",
-        description:
-          "Cases, screen protectors, chargers and quality accessories",
+        icon: "cpu",
+        title: "Parts of your choice",
+        text: "New, or tested used parts that cost less: you choose on the quote.",
+      },
+      {
+        icon: "shield",
+        title: "Old part returned",
+        text: "Just ask and you leave with the part we replaced.",
       },
     ],
+    image: {
+      src: IMG.solder,
+      alt: "Soldering a component onto a circuit board with a soldering iron and a hand\u2011held strand of solder",
+    },
   },
   contact: {
-    title: "Contact our experts",
+    title: "Drop off or have your computer picked up",
+    description:
+      "Stop by the shop or leave us a message: we call you back the same day.",
+    options: [
+      {
+        icon: "store",
+        title: "At the shop",
+        text: "No appointment needed during opening hours. A computer dropped off is logged the same day.",
+      },
+      {
+        icon: "truck",
+        title: "Pickup",
+        text: "We come to your home or office: €15, waived if you go ahead with the repair.",
+      },
+    ],
     address: {
       icon: "mapPin",
       label: "Address",
-      lines: ["15 Rue de la Technologie", "31000 Toulouse, France"],
+      lines: ["12 Example Street", "00000 Your city"],
     },
     hours: {
       icon: "clock",
       label: "Opening hours",
-      weekdays: "Monday-Friday: 9:00 AM-6:30 PM",
-      saturday: "Saturday: 9:00 AM-5:00 PM",
-      closed: "Closed on Sundays",
+      lines: [
+        "Monday to Friday: 9\u00a0AM to 6:30\u00a0PM",
+        "Saturday: 9\u00a0AM to 5\u00a0PM",
+        "Closed on Sundays",
+      ],
     },
     phoneInfo: { icon: "phone", label: "Phone" },
     emailInfo: { icon: "mail", label: "Email" },
-    diagnostic: {
-      title: "Free diagnostic",
-      text: "Bring in your device for a free, no-obligation diagnostic. A detailed quote is provided before any work begins. Express repair available.",
-      book: "Book an appointment",
-      quote: "Request a quote",
-      note: "* 6-month warranty on all our repairs",
+    form: {
+      title: "Request a drop\u2011off or pickup",
+      name: "Name",
+      phone: "Phone",
+      kind: {
+        label: "Type of computer",
+        placeholder: "Choose",
+        options: [
+          { value: "portable-pc", label: "PC laptop" },
+          { value: "portable-mac", label: "Mac laptop" },
+          { value: "fixe-pc", label: "PC desktop" },
+          { value: "fixe-mac", label: "Mac desktop" },
+        ],
+      },
+      mode: {
+        label: "Drop\u2011off or pickup",
+        placeholder: "Choose",
+        options: [
+          { value: "depot", label: "I’ll drop it off at the shop" },
+          { value: "enlevement", label: "I’d like a pickup" },
+        ],
+      },
+      message: "What’s going on?",
+      submit: "Send my request",
     },
   },
   footer: {
-    text: "Repair experts since 2010. Computers and smartphones in good hands.",
-    linksTitle: "Quick links",
-    certTitle: "Certifications",
-    certText:
-      "Technicians certified by Apple, Samsung and Huawei. Professional equipment and genuine parts.",
-    copyright: "© 2024 Your business. All rights reserved.",
+    text: "Repair of laptops and desktops, Mac and PC, for individuals and small businesses.",
+    linksTitle: "Navigation",
+    contactTitle: "Shop",
+    copyright: "Your business. All rights reserved.",
   },
   meta: {
     home: {
-      title: "Your business - Computer and phone repair",
+      title: "Your business - Computer repair",
       description:
-        "Computer and smartphone repair experts since 2010. Free diagnostic, fast turnaround and a warranty on all our repairs. Professional service and quality parts.",
+        "Laptop and desktop repair, Mac and PC: free diagnosis within one business day, firm quote, 6\u2011month warranty. Shop drop\u2011off or pickup.",
     },
   },
 };
@@ -540,32 +663,34 @@ export type OrdinateurPage = keyof OrdinateurCopy["meta"];
 export const ordinateur: TemplateDefinition<"ordinateur", OrdinateurCopy> = {
   slug: "ordinateur",
   /**
-   * Palette ardoise et bleu : fond de page `slate-50`, encre `slate-800`,
-   * accent bleu plein (`blue-600`), fond inverse ardoise (à propos, contact,
-   * héros), sur-titres en bleu clair sur fond sombre. Inter partout (la
-   * démo d’origine demandait une police mono qui n’a jamais été chargée),
-   * titres en gras, rayons de 8 px.
+   * Papier gris-vert très clair, encre graphite et vert « masque de soudure »
+   * pour l’accent (texte blanc dessus, 7:1). Les fonds inverses sont du graphite
+   * avec un vert citron en sur-titre et en mots mis en valeur
+   * (`eyebrowInverse`, plus de 11:1 sur le graphite). Inter partout, titres en
+   * gras, un seul rayon (4 px, angles presque droits : allure d’établi),
+   * ombres dérivées de l’encre.
    */
   theme: {
-    surface: "oklch(0.984 0.003 247.858)",
+    surface: "oklch(0.974 0.005 125)",
     raised: "oklch(1 0 0)",
-    tint: "oklch(0.968 0.007 247.896)",
-    ink: "oklch(0.279 0.041 260.031)",
-    inkMuted: "oklch(0.5 0.035 257)",
-    line: "oklch(0.929 0.013 255.508)",
-    eyebrow: "oklch(0.546 0.245 262.881)",
-    eyebrowInverse: "oklch(0.707 0.165 254.624)",
-    accent: "oklch(0.546 0.245 262.881)",
+    tint: "oklch(0.945 0.011 130)",
+    ink: "oklch(0.24 0.014 165)",
+    inkMuted: "oklch(0.44 0.022 155)",
+    line: "oklch(0.88 0.012 140)",
+    eyebrow: "oklch(0.42 0.11 150)",
+    eyebrowInverse: "oklch(0.87 0.19 130)",
+    accent: "oklch(0.43 0.11 150)",
     accentInk: "oklch(1 0 0)",
-    inverse: "oklch(0.279 0.041 260.031)",
-    inverseInk: "oklch(1 0 0)",
-    radius: "0.5rem",
+    inverse: "oklch(0.2 0.013 170)",
+    inverseInk: "oklch(0.97 0.006 125)",
+    radius: "0.25rem",
     fontDisplay: "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
     fontText: "var(--font-inter), ui-sans-serif, system-ui, sans-serif",
     fontDisplayWeight: 700,
-    shadowSm: "0 1px 3px oklch(0 0 0 / 0.1), 0 1px 2px -1px oklch(0 0 0 / 0.1)",
+    shadowSm:
+      "0 1px 2px oklch(0.24 0.014 165 / 0.1), 0 1px 1px oklch(0.24 0.014 165 / 0.06)",
     shadowLg:
-      "0 10px 15px -3px oklch(0 0 0 / 0.1), 0 4px 6px -4px oklch(0 0 0 / 0.1)",
+      "0 20px 40px -16px oklch(0.24 0.014 165 / 0.25), 0 6px 12px -6px oklch(0.24 0.014 165 / 0.12)",
   },
   paths: {
     home: "/ordinateur",

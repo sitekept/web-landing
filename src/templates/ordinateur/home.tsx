@@ -1,26 +1,27 @@
 import type { TemplateLocale } from "@/components/template-kit";
 
-import { HomeAbout } from "./home-about";
+import { HomeBusiness } from "./home-business";
 import { HomeContact } from "./home-contact";
-import { HomeGallery } from "./home-gallery";
 import { HomeHero } from "./home-hero";
+import { HomeProcess } from "./home-process";
+import { HomeRepairs } from "./home-repairs";
 import { HomeReviews } from "./home-reviews";
-import { HomeServices } from "./home-services";
-import { HomeSpecials } from "./home-specials";
+import { HomeWorkshop } from "./home-workshop";
 
 /**
- * Page unique : héros, services, à propos, avis, réalisations, services
- * spécialisés, contact. Alternance ardoise, clair et bleu plein.
+ * Page unique : accueil graphite (promesse, preuves, photo), réparations avec
+ * prix et délais, déroulé en quatre étapes, entreprises (fond graphite), avis,
+ * atelier, contact avec formulaire de prise en charge.
  */
 export function HomeView({ locale }: { locale: TemplateLocale }) {
   return (
     <>
       <HomeHero locale={locale} />
-      <HomeServices locale={locale} />
-      <HomeAbout locale={locale} />
+      <HomeRepairs locale={locale} />
+      <HomeProcess locale={locale} />
+      <HomeBusiness locale={locale} />
       <HomeReviews locale={locale} />
-      <HomeGallery locale={locale} />
-      <HomeSpecials locale={locale} />
+      <HomeWorkshop locale={locale} />
       <HomeContact locale={locale} />
     </>
   );
