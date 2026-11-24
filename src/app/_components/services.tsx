@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Globe, ArrowRight, Sparkles, CheckCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { scrollToSection } from "./scroll-to-section";
 
 export function Services() {
   const t = useTranslations("services");
@@ -135,11 +136,7 @@ export function Services() {
                 <Button
                   size="lg"
                   className="w-full transform bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg transition-all duration-200 hover:scale-105 hover:from-blue-700 hover:to-purple-700"
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                  onClick={() => scrollToSection("contact")}
                 >
                   {t("pricing.essential.cta")}
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -232,11 +229,7 @@ export function Services() {
                 <Button
                   size="lg"
                   className="w-full transform bg-gradient-to-r from-purple-700 to-indigo-600 text-white shadow-lg transition-all duration-200 hover:scale-105 hover:from-purple-800 hover:to-indigo-700"
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
+                  onClick={() => scrollToSection("contact")}
                 >
                   {t("pricing.advanced.cta")}
                   <ArrowRight className="ml-2 h-4 w-4" />

@@ -20,6 +20,15 @@ import { useEffect, useId, useRef, useState, type CSSProperties } from "react";
  * panneau image. L'image d'un panneau fermé est masquée aux lecteurs d'écran
  * (`aria-hidden`). La liste est nommée par `label` (copie FR / EN).
  *
+ * Chargement des images : l'image du panneau ouvert est dans le HTML ; celles
+ * des panneaux fermés ne sont rendues qu'une fois « armées ». Au-dessus de `lg`,
+ * dès l'hydratation (elles s'ouvrent au survol, il faut qu'elles soient prêtes).
+ * Sous `lg` (accordéon, panneaux fermés de hauteur nulle, donc invisibles), à la
+ * première interaction (pression, focus) : sans cela le navigateur les télécharge
+ * toutes, `loading="lazy"` ne retardant pas une image de hauteur nulle placée
+ * près de l'écran. La pression précède le clic de quelques dizaines de
+ * millisecondes, le téléchargement commence donc avant l'ouverture.
+ *
  * Tous les textes (titres, légendes, `alt`, `label`) viennent des props, donc
  * de la copie du template ; aucune fonction n'est acceptée en prop pour que le
  * composant reste appelable depuis une vue serveur.
@@ -107,6 +116,7 @@ export function HoverExpandGallery({
   className,
 }: HoverExpandGalleryProps) {
   const [active, setActive] = useState(defaultIndex);
+  const [armed, setArmed] = useState(false);
   const baseId = useId();
   const listRef = useRef<HTMLUListElement>(null);
 
@@ -125,6 +135,18 @@ export function HoverExpandGallery({
     }, duration + 50);
     return () => window.clearTimeout(timer);
   }, [active, duration]);
+
+  // Rangée (au-dessus de `lg`) : les images des panneaux fermés sont prêtes dès
+  // l'hydratation, et aussi si la fenêtre s'élargit ensuite.
+  useEffect(() => {
+    const query = window.matchMedia(ROW_QUERY);
+    const arm = () => {
+      if (query.matches) setArmed(true);
+    };
+    arm();
+    query.addEventListener("change", arm);
+    return () => query.removeEventListener("change", arm);
+  }, []);
 
   const open = (index: number) => {
     if (index !== active) setActive(index);
@@ -156,6 +178,9 @@ export function HoverExpandGallery({
         ref={listRef}
         role="list"
         aria-label={label}
+        // Accordéon : première pression ou premier focus (clavier compris).
+        onPointerDownCapture={() => setArmed(true)}
+        onFocusCapture={() => setArmed(true)}
         className="flex w-full flex-col lg:h-full lg:flex-row lg:justify-center"
       >
         {items.map((item, index) => {
@@ -243,15 +268,17 @@ export function HoverExpandGallery({
                   isActive ? "opacity-100" : "opacity-0"
                 )}
               >
-                <Image
-                  src={item.image.src}
-                  alt={item.image.alt}
-                  fill
-                  sizes={sizes}
-                  priority={priority && index === defaultIndex}
-                  draggable={false}
-                  className="object-cover"
-                />
+                {isActive || armed ? (
+                  <Image
+                    src={item.image.src}
+                    alt={item.image.alt}
+                    fill
+                    sizes={sizes}
+                    priority={priority && index === defaultIndex}
+                    draggable={false}
+                    className="object-cover"
+                  />
+                ) : null}
               </div>
             </li>
           );

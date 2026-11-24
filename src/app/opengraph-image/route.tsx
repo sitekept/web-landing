@@ -1,10 +1,23 @@
 import { ImageResponse } from "next/og";
 
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-export const alt = "Sitekept — site professionnel livré en 48 h, sans abonnement";
+/**
+ * Image de partage française (Open Graph et Twitter), `GET /opengraph-image`.
+ * Même dessin que `(site-en)/en/opengraph-image/route.tsx`, texte en français.
+ *
+ * Route et non fichier de métadonnées `opengraph-image.tsx` à la racine de
+ * `app/` : ce fichier est lu par Next avant tout layout, donc avant
+ * `metadataBase` (posé par `buildRootMetadata` dans chaque layout racine de
+ * groupe). Next résolvait alors son URL relative sans base, avec l'avertissement
+ * « metadataBase property in metadata export is not set » au build (une fois
+ * par processus de génération). L'adresse reste stable, et `openGraphImagePath`
+ * (`page-metadata.ts`) la déclare dans les métadonnées de chaque page, rendue
+ * absolue par `metadataBase`. Prérendue au build.
+ */
+export const dynamic = "force-static";
 
-export default function OpengraphImage() {
+const size = { width: 1200, height: 630 };
+
+export function GET() {
   return new ImageResponse(
     (
       <div

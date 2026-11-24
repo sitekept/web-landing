@@ -10,13 +10,13 @@ const COPY: Record<
   fr: {
     label: "Démonstration",
     notice: "Entreprise fictive, coordonnées non attribuées.",
-    linkLabel: "Site d'exemple SiteKept",
+    linkLabel: "Site d’exemple Sitekept",
     linkHref: "https://www.sitekept.com",
   },
   en: {
     label: "Demo",
     notice: "Fictional business, placeholder contact details.",
-    linkLabel: "SiteKept example site",
+    linkLabel: "Sitekept example site",
     // Le site anglais : le retour d'une démo anglaise reste dans la langue.
     linkHref: "/en",
   },
@@ -49,7 +49,12 @@ export function DemoBanner({ locale = "fr" }: { locale?: TemplateLocale }) {
         </span>
         <Link
           href={copy.linkHref}
-          className="inline-flex items-center gap-1 font-medium text-blue-300 underline underline-offset-4 hover:text-blue-200"
+          // Cible de 24 px de haut au moins (WCAG 2.5.8) : le manque (`1lh` =
+          // interligne du lien) est ajouté en padding puis retiré par la marge
+          // négative, donc le bandeau garde la hauteur que le texte seul lui
+          // donnait. Contour de focus de 2 px, blanc sur le fond slate-900 du
+          // bandeau (environ 17:1).
+          className="[--link-pad:max(0px,calc((1.5rem-1lh)/2))] -my-(--link-pad) inline-flex items-center gap-1 py-(--link-pad) font-medium text-blue-300 underline underline-offset-4 hover:text-blue-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           {copy.linkLabel}
           <ArrowRight className="h-3 w-3" aria-hidden="true" />

@@ -253,15 +253,24 @@ export function TemplateShell({
     <div className="flex min-w-0 items-center gap-3">
       {brand.mark ? <div className="shrink-0">{brand.mark}</div> : null}
       <div className="min-w-0">
+        {/* Cible d'au moins 24 px de haut (WCAG 2.5.8) : le manque est ajouté en
+            padding, puis retiré par la marge négative, donc la mise en page ne
+            bouge pas. `1lh` = interligne propre du lien. */}
         <Link
           href={homeHref}
-          className="block truncate font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
+          className="block [--brand-pad:max(0px,calc((1.5rem-1lh)/2))] -my-(--brand-pad) truncate py-(--brand-pad) font-tpl-display text-tpl-lg leading-tpl-display font-(weight:--tpl-display-weight) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
         >
           {brand.name}
         </Link>
         {brand.tagline ? (
-          <p className="hidden truncate text-tpl-xs text-tpl-ink-muted sm:block">
-            {brand.tagline}
+          /* Jamais coupée par une ellipse : elle s'affiche en entier ou pas du
+              tout. Conteneur d'une ligne de haut qui coupe ce qui déborde ; une
+              cale d'une ligne de haut occupe la première ligne, donc une
+              tagline plus large que la place disponible passe à la seconde
+              ligne, rognée. Sans JavaScript, sans flash au chargement. */
+          <p className="hidden h-[1lh] flex-wrap content-start overflow-hidden text-tpl-xs text-tpl-ink-muted sm:flex">
+            <span aria-hidden="true" className="h-[1lh] w-0" />
+            <span className="whitespace-nowrap">{brand.tagline}</span>
           </p>
         ) : null}
       </div>
@@ -300,7 +309,7 @@ export function TemplateShell({
   const skipLink = (
     <a
       href="#contenu"
-      className="sr-only rounded-tpl bg-tpl-accent px-4 py-2 text-tpl-sm font-semibold text-tpl-accent-ink focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tpl-ink"
+      className="sr-only rounded-tpl bg-tpl-accent text-tpl-sm font-semibold text-tpl-accent-ink focus:not-sr-only focus:fixed focus:px-4 focus:py-2 focus:top-3 focus:left-3 focus:z-50 focus:shadow-[0_0_0_2px_var(--tpl-inverse-ink)] focus:outline-2 focus:outline-offset-2 focus:outline-tpl-inverse"
     >
       {labels.skip}
     </a>
@@ -354,10 +363,19 @@ export function TemplateShell({
     </header>
   );
 
+  /*
+   * Colonne `rail` : elle défile sur elle-même, et Chrome ne fait défiler un
+   * lien focalisé que s'il n'est pas entièrement visible. Un lien collé au bord
+   * bas de la colonne ne bougeait donc pas, et l'anneau de focus (4 px hors de
+   * la boîte : 2 px de contour, 2 px de décalage) était rogné par le bord. Une
+   * marge de défilement de 8 px autour de chaque lien (`scroll-my-2`) compte
+   * dans ce test : l'anneau est entier à toutes les hauteurs. (`scroll-padding`
+   * n'y change rien : il ne sert qu'au calcul du déplacement, pas au test.)
+   */
   const railHeader = (
     <header
       data-rail
-      className="[container-type:size] sticky top-0 hidden h-dvh w-[var(--tpl-rail-width)] shrink-0 flex-col self-start overflow-y-auto border-r border-tpl-line bg-tpl-raised px-8 py-10 xl:flex"
+      className="[container-type:size] [&_a]:scroll-my-2 sticky top-0 hidden h-dvh w-[var(--tpl-rail-width)] shrink-0 flex-col self-start overflow-y-auto border-r border-tpl-line bg-tpl-raised px-8 py-10 xl:flex"
     >
       <div className="flex flex-col items-start gap-3">
         {brand.mark ? <div className="shrink-0">{brand.mark}</div> : null}

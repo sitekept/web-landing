@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { scrollToSection } from "./scroll-to-section";
 
 export function CallToAction() {
   const t = useTranslations("cta");
@@ -29,11 +30,7 @@ export function CallToAction() {
           <Button
             size="lg"
             className="bg-white px-8 py-4 text-lg font-semibold text-blue-700 hover:bg-blue-50"
-            onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => scrollToSection("contact")}
           >
             {t("mainCta")}
             <ArrowRight className="ml-2 h-5 w-5" />

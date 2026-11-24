@@ -131,14 +131,6 @@ export function TemplateMedia({
  */
 export type TemplateHeroMediaHeight = "screen" | "tall" | "auto";
 
-/**
- * `sizes` par défaut de la photo d'un héros. Boîte plus haute que large sur
- * mobile : `object-cover` agrandit une photo paysage, il faut donc un fichier
- * plus large que l'écran.
- */
-const HERO_SIZES =
-  "(min-width: 1024px) 100vw, (min-width: 640px) 150vw, 200vw";
-
 const HERO_HEIGHT: Record<TemplateHeroMediaHeight, string> = {
   screen: "min-h-[100svh]",
   tall: "min-h-[72svh]",
@@ -153,22 +145,25 @@ export type TemplateHeroMediaProps = {
   priority?: boolean;
   height?: TemplateHeroMediaHeight;
   /**
-   * Attribut `sizes` de la photo. Par défaut `"(min-width: 1024px) 100vw,
-   * (min-width: 640px) 150vw, 200vw"`, qui suffit pour la hauteur `tall`. Un
-   * héros `screen` (100svh) sur téléphone est plus haut que large : `object-cover`
-   * agrandit alors une photo paysage à `hauteur × ratio` de large, bien au-delà
-   * de 200vw (ex. 844 px de haut × 3:2 = 1266 px à 390 px d'écran, soit 325vw).
-   * Passer une valeur mesurée (voir `docs/templates.md`, section 8, étape 6 : à chaque
-   * largeur, largeur utile × DPR rapportée au paramètre `w`, au plus 1,3).
+   * Attribut `sizes` de la photo, obligatoire : il n'existe pas de valeur par
+   * défaut juste. La photo remplit la boîte avec `object-cover`, et la boîte
+   * (`min-h-[72svh]` ou `100svh`) est plus haute que large sur téléphone :
+   * `cover` y est alors piloté par la hauteur et agrandit une photo paysage à
+   * `hauteur × ratio` de large (ex. 608 px de haut × 3:2 = 912 px à 390 px
+   * d'écran, soit 234 vw ; 844 px × 3:2 = 1266 px, soit 325 vw), à une largeur
+   * qui dépend de la hauteur de l'écran et du ratio de la photo, jamais de la
+   * seule largeur de l'écran. Passer une valeur mesurée (voir
+   * `docs/templates.md`, section 8, étape 6 : à chaque largeur, largeur utile
+   * × DPR rapportée au paramètre `w`, au plus 1,3).
    */
-  sizes?: string;
+  sizes: string;
   className?: string;
   /** Contenu posé sur la photo (titre, texte, boutons). */
   children?: ReactNode;
 };
 
 /**
- * Bloc pleine largeur : photo de fond (`next/image` `fill`, `sizes` élargi sous 1024 px),
+ * Bloc pleine largeur : photo de fond (`next/image` `fill`, `sizes` mesuré passé par la vue),
  * voile issu des tokens `inverse` et contenu par-dessus.
  *
  * Le voile (`--tpl-inverse` à 78 % en haut, 88 % en bas) et `data-tone="inverse"`
@@ -191,7 +186,7 @@ export function TemplateHeroMedia({
   alt,
   priority = false,
   height = "tall",
-  sizes = HERO_SIZES,
+  sizes,
   className,
   children,
 }: TemplateHeroMediaProps) {
