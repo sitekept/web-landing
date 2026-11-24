@@ -115,6 +115,44 @@
 }
 
 /*
+ * Galerie du hero de l'accueil (`src/app/_components/hero-gallery.tsx`) :
+ * chaque piste contient sa liste deux fois et translate de -50 %, d'où une
+ * boucle sans saut. Les deux colonnes desktop vont en sens opposés.
+ */
+@theme inline {
+  --animate-hero-up: hero-up 45s linear infinite;
+  --animate-hero-down: hero-down 55s linear infinite;
+  --animate-hero-x: hero-x 50s linear infinite;
+
+  @keyframes hero-up {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes hero-down {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/*
  * Contrat des templates : un template rebinde ces --tpl-* via `style` sur
  * l'élément [data-template] (voir src/lib/template-theme.ts). Les valeurs
  * ci-dessous sont des replis neutres. Un nouveau besoin visuel devient
