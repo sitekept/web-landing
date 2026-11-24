@@ -31,6 +31,7 @@ import type { boulangerie } from "@/content/templates/boulangerie";
 import type { fleuriste } from "@/content/templates/fleuriste";
 import type { ordinateur } from "@/content/templates/ordinateur";
 import type { patisserie } from "@/content/templates/patisserie";
+import type { eCommerce } from "@/content/templates/e-commerce";
 import type {
   RegisteredTemplate,
   TemplateSlug,
@@ -60,6 +61,7 @@ type Definitions = {
   fleuriste: typeof fleuriste;
   ordinateur: typeof ordinateur;
   patisserie: typeof patisserie;
+  "e-commerce": typeof eCommerce;
 };
 
 type Equal<A, B> = [A] extends [B] ? ([B] extends [A] ? true : false) : false;

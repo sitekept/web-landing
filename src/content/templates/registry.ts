@@ -568,6 +568,16 @@ const TEMPLATES = [
       "Template lab servi sur sitekept.com (noindex), en attente de validation.",
     locales: ["fr", "en"],
   },
+  {
+    slug: "e-commerce",
+    status: "lab",
+    routed: true,
+    name: "Template E-commerce",
+    sector: "Boutique en ligne",
+    notes:
+      "Template lab servi sur sitekept.com (noindex), en attente de validation. Boutique fictive (catalogue, fiches produit, panier dans le navigateur) et espace gestion (CRM : tableau de bord, commandes, stocks, clients).",
+    locales: ["fr", "en"],
+  },
 ] as const satisfies readonly TemplateEntry[];
 
 /** Entrée du registre, avec le littéral de chaque champ (contrôles de types). */
@@ -664,9 +674,7 @@ export interface AdminTemplateCatalogEntry {
 }
 
 /** Entrée du registre complétée de ses champs dérivés (liens, présence). */
-function toAdminCatalogEntry(
-  entry: TemplateEntry
-): AdminTemplateCatalogEntry {
+function toAdminCatalogEntry(entry: TemplateEntry): AdminTemplateCatalogEntry {
   const vercelSlug =
     entry.vercelSlug === undefined ? entry.slug : entry.vercelSlug;
   return {
