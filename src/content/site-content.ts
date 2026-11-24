@@ -170,12 +170,12 @@ export const homeContent: HomeContent = {
       en: "The website for everyone in 48 hours.",
     },
     title: {
-      fr: "Création de site internet pour PME et artisans, livré en 48h et 100 % à vous.",
-      en: "Website design for small businesses and tradespeople, delivered in 48 hours and 100% yours.",
+      fr: "Le site que vous gardez.",
+      en: "The website you keep.",
     },
     description: {
-      fr: "Vous gardez la propriété complète, nous gérons le déploiement, le domaine est offert la première année.",
-      en: "You keep full ownership, we handle deployment, and the domain name is free for the first year.",
+      fr: "Création de site internet pour PME et artisans, livré en 48h et 100 % à vous. Vous gardez la propriété complète, nous gérons le déploiement, le domaine est offert la première année.",
+      en: "Website design for small businesses and tradespeople, delivered in 48 hours and 100% yours. You keep full ownership, we handle deployment, and the domain name is free for the first year.",
     },
     primaryCta: {
       fr: "Demander un devis",

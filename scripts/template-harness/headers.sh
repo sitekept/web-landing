@@ -33,6 +33,8 @@ check /expert-comptable yes; check /expert-comptable/honoraires yes
 check /en/expert-comptable yes; check /en/expert-comptable/honoraires yes
 check /garage-auto yes; check /garage-auto/prestations yes
 check /en/garage-auto yes; check /en/garage-auto/prestations yes
+check /e-commerce yes; check /e-commerce/produit/bougie-ambre yes; check /e-commerce/crm/stocks yes
+check /en/e-commerce yes; check /en/e-commerce/produit/bougie-ambre yes; check /en/e-commerce/crm/stocks yes
 check /menage-nettoyage yes; check /menage-nettoyage/formules yes
 check /en/menage-nettoyage yes; check /en/menage-nettoyage/formules yes
 check /cabinet-avocat yes; check /cabinet-avocat/expertises yes

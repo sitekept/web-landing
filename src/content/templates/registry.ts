@@ -577,6 +577,30 @@ const TEMPLATES = [
       "Template lab servi sur sitekept.com (noindex), en attente de validation.",
     locales: ["fr", "en"],
   },
+  {
+    slug: "e-commerce",
+    status: "sitekept-public",
+    name: "Template E-commerce",
+    sector: "Boutique en ligne",
+    notes:
+      "Visible dans le catalogue public Sitekept. Boutique (catalogue, fiches produit, panier) et espace gestion (CRM : tableau de bord, commandes, stocks, clients).",
+    locales: ["fr", "en"],
+    gallery: {
+      screenshot: "/template/e-commerce.webp",
+      copy: {
+        fr: {
+          name: "Template E-commerce",
+          description:
+            "Une boutique en ligne d’objets pour la maison : catalogue filtrable, fiches produit, panier avec code promo et livraison offerte dès 60 €, plus un espace gestion pour suivre ventes, commandes, stocks et clients.",
+        },
+        en: {
+          name: "E-commerce template",
+          description:
+            "An online shop for home goods: filterable catalog, product pages, a cart with promo code and free shipping over €60, plus a back office to track sales, orders, inventory and customers.",
+        },
+      },
+    },
+  },
 ] as const satisfies readonly TemplateEntry[];
 
 /** Entrée du registre, avec le littéral de chaque champ (contrôles de types). */
@@ -673,9 +697,7 @@ export interface AdminTemplateCatalogEntry {
 }
 
 /** Entrée du registre complétée de ses champs dérivés (liens, présence). */
-function toAdminCatalogEntry(
-  entry: TemplateEntry
-): AdminTemplateCatalogEntry {
+function toAdminCatalogEntry(entry: TemplateEntry): AdminTemplateCatalogEntry {
   const vercelSlug =
     entry.vercelSlug === undefined ? entry.slug : entry.vercelSlug;
   return {
