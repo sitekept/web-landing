@@ -83,7 +83,12 @@ export interface BlogPost {
 export interface HomeContent {
   hero: {
     eyebrow: LocalizedText;
-    title: LocalizedText;
+    /** Titre en trois morceaux : `highlight` est le mot mis en bleu. */
+    title: Record<
+      SiteLocale,
+      { before: string; highlight: string; after: string }
+    >;
+    galleryLabel: LocalizedText;
     description: LocalizedText;
     primaryCta: LocalizedText;
     secondaryCta: LocalizedText;
@@ -170,8 +175,12 @@ export const homeContent: HomeContent = {
       en: "The website for everyone in 48 hours.",
     },
     title: {
-      fr: "Le site que vous gardez.",
-      en: "The website you keep.",
+      fr: { before: "Le site que vous ", highlight: "gardez", after: "." },
+      en: { before: "The website you ", highlight: "keep", after: "." },
+    },
+    galleryLabel: {
+      fr: "Exemples de sites",
+      en: "Website examples",
     },
     description: {
       fr: "Création de site internet pour PME et artisans, livré en 48h et 100 % à vous. Vous gardez la propriété complète, nous gérons le déploiement, le domaine est offert la première année.",

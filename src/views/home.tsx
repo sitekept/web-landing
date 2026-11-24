@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import TubesCursor from "@/components/ui/tubes-cursor";
 import {
   blogPosts,
   faqItems,
@@ -18,6 +17,7 @@ import { buildPageMetadata } from "@/lib/page-metadata";
 import { linkLocalizer } from "@/lib/localized-routes";
 import { Contact } from "@/app/_components/contact";
 import { PortfolioPreview } from "@/app/_components/portfolio-preview";
+import { HeroGallery } from "@/app/_components/hero-gallery";
 
 export function homeMetadata(locale: SiteLocale): Metadata {
   return buildPageMetadata({
@@ -37,6 +37,7 @@ export function homeMetadata(locale: SiteLocale): Metadata {
 export function HomeView({ locale }: { locale: SiteLocale }) {
   const href = linkLocalizer(locale);
   const hero = homeContent.hero;
+  const heroTitle = getLocalizedValue(hero.title, locale);
   const deliveryArticle = blogPosts.find(
     (post) => post.slug === "comment-se-passe-la-livraison-d-un-site-web-chez-sitekept"
   );
@@ -45,22 +46,22 @@ export function HomeView({ locale }: { locale: SiteLocale }) {
     <>
       <section
         id="hero"
-        className="relative overflow-hidden bg-black px-6 pb-20 pt-28 text-white sm:pb-24 sm:pt-36 lg:px-8"
+        className="bg-white px-6 pb-16 pt-28 text-slate-950 sm:pb-20 sm:pt-32 lg:px-8"
       >
-        <TubesCursor className="z-0 opacity-90" />
-        <div className="pointer-events-none absolute inset-0 z-0 bg-black/45" />
-        <div className="relative z-10 mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:items-start">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-12 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center rounded-sm border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur">
-              <span className="mr-2 h-2 w-2 rounded-full bg-blue-300" />
+            <div className="inline-flex items-center rounded-sm bg-blue-50 px-4 py-2 text-sm font-medium text-blue-800">
+              <span className="mr-2 h-2 w-2 rounded-full bg-blue-600" />
               {getLocalizedText(hero.eyebrow, locale)}
             </div>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-7xl">
-              {getLocalizedText(hero.title, locale)}
+            <h1 className="mt-6 max-w-4xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-7xl">
+              {heroTitle.before}
+              <span className="text-blue-600">{heroTitle.highlight}</span>
+              {heroTitle.after}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
               {getLocalizedText(hero.description, locale)}
             </p>
 
@@ -79,7 +80,7 @@ export function HomeView({ locale }: { locale: SiteLocale }) {
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/20 bg-white/5 px-8 text-base text-white hover:bg-white/10"
+                className="border-slate-300 bg-white px-8 text-base text-slate-950 hover:bg-slate-50"
               >
                 <Link href={href("/templates")}>
                   {getLocalizedText(hero.secondaryCta, locale)}
@@ -91,7 +92,7 @@ export function HomeView({ locale }: { locale: SiteLocale }) {
               {getLocalizedValue(hero.proofPoints, locale).map((proofPoint) => (
                 <span
                   key={proofPoint}
-                  className="rounded-sm border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200"
+                  className="rounded-sm border border-slate-200 bg-slate-50 px-4 py-2 text-sm text-slate-700"
                 >
                   {proofPoint}
                 </span>
@@ -99,46 +100,7 @@ export function HomeView({ locale }: { locale: SiteLocale }) {
             </div>
           </div>
 
-          <aside className="rounded-md border border-white/10 bg-white/5 p-6 shadow-xl shadow-slate-950/20 backdrop-blur">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
-              {locale === "fr" ? "Offre de départ" : "Starter offer"}
-            </p>
-            <div className="mt-5 rounded-sm bg-slate-950/60 p-6">
-              <p className="text-sm text-slate-300">
-                {locale === "fr"
-                  ? "Pour PME locales, indépendants et équipes qui veulent aller vite sans s'enfermer."
-                  : "For local small businesses, freelancers and teams who want to move fast without getting locked in."}
-              </p>
-              {/* « À partir de » se lit avant le prix en français, « starting
-                  price » après le prix en anglais. */}
-              <div className="mt-5 flex items-end gap-3">
-                {locale === "fr" ? (
-                  <span className="pb-1 text-sm text-slate-400">À partir de</span>
-                ) : null}
-                <span className="text-5xl font-semibold text-white">
-                  {locale === "fr" ? "500\u00a0€" : "€500"}
-                </span>
-                {locale === "en" ? (
-                  <span className="pb-1 text-sm text-slate-400">
-                    starting price
-                  </span>
-                ) : null}
-              </div>
-              <div className="mt-6 space-y-3">
-                {getLocalizedValue(homeContent.trustStrip, locale).map((item) => (
-                  <div key={item} className="flex items-start gap-3 text-sm text-slate-200">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-400" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="mt-4 text-sm leading-6 text-slate-300">
-              {locale === "fr"
-                ? "Le cadre est simple : vous choisissez une direction, nous livrons le site, le domaine et la mise en ligne."
-                : "Here's how it works: you choose a direction, and we deliver the website, the domain and the launch."}
-            </p>
-          </aside>
+          <HeroGallery locale={locale} />
         </div>
       </section>
 

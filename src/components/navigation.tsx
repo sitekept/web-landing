@@ -89,9 +89,11 @@ export function Navigation({ locale, pathMap }: NavigationProps) {
   const navClassName = solidNavigation
     ? "bg-white/95 shadow-sm backdrop-blur-md"
     : "bg-transparent";
-  const textClassName = solidNavigation ? "text-slate-700" : "text-slate-200";
-  const brandClassName = solidNavigation ? "text-slate-950" : "text-white";
-  const menuButtonClassName = solidNavigation ? "text-slate-900" : "text-white";
+  // Le hero de l'accueil est sur fond blanc : la nav transparente garde un
+  // texte sombre, seul le fond change au défilement.
+  const textClassName = "text-slate-700";
+  const brandClassName = "text-slate-950";
+  const menuButtonClassName = "text-slate-900";
 
   return (
     <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${navClassName}`}>
@@ -116,9 +118,7 @@ export function Navigation({ locale, pathMap }: NavigationProps) {
                 Sitekept
               </span>
               <span
-                className={`hidden text-[10px] uppercase tracking-[0.24em] sm:block ${
-                  solidNavigation ? "text-slate-500" : "text-blue-200"
-                }`}
+                className="hidden text-[10px] uppercase tracking-[0.24em] text-slate-500 sm:block"
               >
                 {labels.brandMeta}
               </span>
@@ -140,9 +140,7 @@ export function Navigation({ locale, pathMap }: NavigationProps) {
               hrefLang={alternateLocale}
               lang={alternateLocale}
               aria-label={labels.switchAria}
-              className={`rounded-sm border px-2 py-1 text-xs font-semibold tracking-wider transition-colors hover:text-blue-600 ${
-                solidNavigation ? "border-slate-300" : "border-white/30"
-              } ${textClassName}`}
+              className={`rounded-sm border border-slate-300 px-2 py-1 text-xs font-semibold tracking-wider transition-colors hover:text-blue-600 ${textClassName}`}
             >
               {labels.switchLabel}
             </a>
