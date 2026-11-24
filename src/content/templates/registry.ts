@@ -447,6 +447,15 @@ const TEMPLATES = [
     locales: ["fr"],
   },
   {
+    slug: "colchis",
+    status: "admin-only",
+    name: "Colchis",
+    sector: "Immobilier international (Géorgie)",
+    notes:
+      "Site immobilier statique en 4 langues (hébreu RTL, russe, anglais, géorgien), servi sur Vercel uniquement, non affiché sur sitekept.com.",
+    locales: ["en"],
+  },
+  {
     slug: "annecyelec",
     status: "lab",
     name: "Annecy Elec",
