@@ -94,7 +94,6 @@ export interface HomeContent {
     secondaryCta: LocalizedText;
     proofPoints: Record<SiteLocale, string[]>;
   };
-  trustStrip: Record<SiteLocale, string[]>;
   offerSection: {
     eyebrow: LocalizedText;
     title: LocalizedText;
@@ -208,20 +207,6 @@ export const homeContent: HomeContent = {
         "Domain name free for 1 year",
       ],
     },
-  },
-  trustStrip: {
-    fr: [
-      "À partir de 500\u00a0€",
-      "Mise en ligne en 48h",
-      "100\u00a0% à vous",
-      "Déploiement inclus",
-    ],
-    en: [
-      "From €500",
-      "Launch in 48 hours",
-      "100% yours",
-      "Deployment included",
-    ],
   },
   offerSection: {
     eyebrow: {

@@ -104,19 +104,6 @@ export function HomeView({ locale }: { locale: SiteLocale }) {
         </div>
       </section>
 
-      <section className="border-y border-blue-100 bg-slate-50 px-6 py-4 lg:px-8">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-3 text-sm font-medium text-slate-700">
-          {getLocalizedValue(homeContent.trustStrip, locale).map((item) => (
-            <span
-              key={item}
-              className="rounded-sm bg-white px-4 py-2 text-sm shadow-sm ring-1 ring-slate-200"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
-      </section>
-
       <section className="bg-white px-6 py-20 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl">
