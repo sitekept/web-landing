@@ -96,7 +96,7 @@ const fr = {
     home: {
       title: "Votre entreprise - Cabinet d’expertise comptable",
       description:
-        "Petit cabinet d’expertise comptable pour indépendants, TPE et associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé avant de commencer.",
+        "Petit cabinet d’expertise comptable pour indépendants, TPE et associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé d’avance.",
     },
     missions: {
       title: "Missions - Votre entreprise",
@@ -194,7 +194,7 @@ const fr = {
       eyebrow: "Cabinet d’expertise comptable",
       title: "Des comptes tenus au rythme de votre activité",
       description:
-        "Un petit cabinet pour les indépendants, les TPE et les associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé avant de commencer.",
+        "Un petit cabinet pour les indépendants, les TPE et les associations : tenue, bilan, paie, création et conseil, avec un forfait annoncé d’avance.",
       facts: [
         "Un interlocuteur unique pour votre dossier",
         "Un forfait écrit avant le premier mois",
@@ -677,7 +677,7 @@ const en: ExpertComptableCopy = {
     home: {
       title: "Your business - Accounting firm",
       description:
-        "A small accounting firm for freelancers, small businesses and nonprofits: bookkeeping, year-end financials, payroll, business setup and advice, with a flat fee announced upfront.",
+        "A small firm for freelancers, small businesses and nonprofits: bookkeeping, year-end financials, payroll, business setup and advice, with a flat fee upfront.",
     },
     missions: {
       title: "Accounting services - Your business",

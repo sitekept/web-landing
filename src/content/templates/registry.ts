@@ -293,12 +293,12 @@ const TEMPLATES = [
         fr: {
           name: "Template Ménage & nettoyage",
           description:
-            "Une entreprise de ménage à domicile et de nettoyage de bureaux : devis en quatre questions, formules, secteurs desservis, prix ferme sous 24 h et questions fréquentes.",
+            "Une entreprise de ménage à domicile et de nettoyage de bureaux : devis en 4 infos, formules, secteurs desservis, prix ferme sous 24 h et questions fréquentes.",
         },
         en: {
           name: "Housekeeping & cleaning template",
           description:
-            "A home and office cleaning company: a quote in four questions, service packages, areas served, a firm price within 24 hours and frequently asked questions.",
+            "A home and office cleaning company: a quote in 4 details, service packages, areas served, a firm price within 24 hours and frequently asked questions.",
         },
       },
     },
