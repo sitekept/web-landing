@@ -2,18 +2,8 @@
 // résout pas l'alias `@/` (voir `demoNoindexHeaders`).
 import {
   nonTemplateDemos,
-  publicTemplates,
   routedTemplates,
 } from "../content/templates/registry";
-
-/**
- * Slugs des templates publics (statut `sitekept-public`), dans l'ordre du
- * registre. Les templates `lab` routés n'y figurent pas : ils sont `noindex`
- * (`DEMO_SLUGS`) mais hors galerie et hors pages métier.
- */
-export const PUBLIC_TEMPLATE_SLUGS: readonly string[] = publicTemplates.map(
-  (template) => template.slug
-);
 
 /**
  * Tous les slugs de démonstration servis par ce domaine : les templates

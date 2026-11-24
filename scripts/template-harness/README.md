@@ -7,7 +7,6 @@ Outil de vérification des démos (`/<slug>`, `/en/<slug>`) : il compare le text
 | `routes.txt` | Routes à capturer, une par ligne : `catégorie<TAB>chemin`. Catégories : `demo`, `demo-en`, `marketing`, `internal`. |
 | `snapshot.mjs` | Récupère chaque route et écrit un fichier texte par route : statut, `<title>`, nombre de `<h1>`, `lang`, balise `robots`, puis le texte visible, un bloc par ligne. Sort en erreur si une route ne répond pas 200. |
 | `headers.sh` | Vérifie `X-Robots-Tag` : `noindex, follow` sur les démos FR et EN, rien sur `/templates`, `/en` et `/en/templates`. Sort en erreur au premier écart. |
-
 | `../check-template-routes.mjs` | Garde-fou routes / registre (voir « Garde-fou » plus bas). `pnpm check:routes`. |
 
 Règles : ne jamais construire dans le dépôt, ne jamais écrire un snapshot dans le dépôt, ne jamais tuer un processus qu'on n'a pas lancé.

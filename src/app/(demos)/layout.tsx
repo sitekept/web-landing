@@ -14,7 +14,8 @@ import {
  *
  * Il existe pour rendre le bandeau de démonstration à un seul endroit, de
  * façon statique. La version précédente le déclenchait depuis le layout
- * racine via un en-tête posé par le middleware, ce qui imposait un appel à
+ * racine via un en-tête posé par un middleware (supprimé depuis : le `noindex`
+ * vient de `headers()` de next.config.ts), ce qui imposait un appel à
  * `headers()` — et basculait donc **toutes** les routes du site en rendu
  * dynamique, y compris les pages commerciales.
  *

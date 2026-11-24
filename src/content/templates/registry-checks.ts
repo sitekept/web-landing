@@ -3,7 +3,7 @@
  *
  * Ce fichier n'est importé par aucun code exécuté : il n'existe que pour
  * `pnpm type-check`. Il lit les définitions avec `import type`, ce qui garde le
- * registre (tiré par le middleware) libre de toute copie de template.
+ * registre (tiré par next.config.ts) libre de toute copie de template.
  *
  * Contrôle bilingue strict : tout template servi sur ce domaine (public ou
  * `lab` routé) est `["fr", "en"]` dans le registre et a sa définition ici, avec

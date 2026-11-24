@@ -5,12 +5,13 @@ import type { TemplateLocale } from "@/content/templates/types";
  *
  * Source de vérité de tout ce qui sert à les lister : statut, nom et secteur
  * côté admin, copie de la galerie, langues servies. Consommé par la galerie
- * (`TemplatesShowcase`), la page admin, `public-template-routes.ts` (donc le
- * middleware, qui pose `noindex`) et `metier-pages.ts`.
+ * (`TemplatesShowcase`), la page admin, `public-template-routes.ts` (donc
+ * `headers()` de next.config.ts, qui pose `noindex`) et `metier-pages.ts`.
  *
- * Données pures, volontairement. Le middleware tire ce fichier dans le bundle
- * Edge : pas de React, pas de `lucide-react`, et jamais d'import de la copie
- * d'un template (`src/content/templates/<slug>.ts`). La cohérence avec les
+ * Données pures, volontairement. `next.config.ts` charge ce fichier (par
+ * `public-template-routes.ts`) : pas de React, pas de `lucide-react`, et
+ * jamais d'import de la copie d'un template
+ * (`src/content/templates/<slug>.ts`). La cohérence avec les
  * définitions se vérifie à part, au `type-check`, dans `registry-checks.ts`
  * (`import type` seulement, aucun code exécuté).
  *

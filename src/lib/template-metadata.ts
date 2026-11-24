@@ -21,7 +21,7 @@ const OPEN_GRAPH_LOCALE = { fr: "fr_FR", en: "en_US" } as const;
  *   racine des démos (`buildRootMetadata`) pose un `title` chaîne, sans
  *   `template` : le titre de la page n'est donc pas préfixé ni doublé.
  * - `robots: noindex, follow` : une démo n'a pas à être indexée, et cela aligne
- *   la balise sur l'en-tête `X-Robots-Tag` posé par le middleware (le layout
+ *   la balise sur l'en-tête `X-Robots-Tag` posé par `headers()` de next.config.ts (le layout
  *   racine déclarait sinon `index, follow`, contradictoire).
  *
  * - `openGraph` et `twitter` : titre et description de la page, `url` absolue

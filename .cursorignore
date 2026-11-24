@@ -52,6 +52,5 @@ Thumbs.db
 *~
 
 # Lock files (usually not needed in cursor indexing)
-package-lock.json
 pnpm-lock.yaml
 yarn.lock 

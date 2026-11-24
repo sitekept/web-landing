@@ -32,7 +32,7 @@ const COPY: Record<
  *
  * Rendu par le layout du groupe de routes `(demos)` (français) ou
  * `(demos-en)` (anglais, lien de retour vers `/en`), pour couvrir toutes les
- * démos d'un seul endroit et de façon statique, sans dépendre du middleware.
+ * démos d'un seul endroit et de façon statique, sans dépendre d'un en-tête de requête.
  */
 export function DemoBanner({ locale = "fr" }: { locale?: TemplateLocale }) {
   const copy = COPY[locale];

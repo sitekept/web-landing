@@ -48,7 +48,7 @@ export function buildPageMetadata({
       locale: locale === "fr" ? "fr_FR" : "en_US",
       type: "website",
       // Déclarée explicitement : une page qui définit `openGraph` remplace
-      // celui du layout, et l'image du fichier src/app/opengraph-image.tsx
+      // celui du layout, et l'image de la route src/app/opengraph-image/route.tsx
       // n'est alors plus rattachée. Sans elle, `summary_large_image` ci-dessous
       // produit une carte de partage vide.
       images: [

@@ -11,8 +11,8 @@ import {
  * Sitemap des pages commerciales uniquement.
  *
  * Les pages de démonstration de templates (/boulangerie, /dentiste, ...) en
- * sont volontairement exclues : elles sont servies en `noindex, follow` via
- * src/middleware.ts. Déclarer dans un sitemap des URLs qu'on demande par
+ * sont volontairement exclues : elles sont servies en `noindex, follow` par
+ * `headers()` de next.config.ts. Déclarer dans un sitemap des URLs qu'on demande par
  * ailleurs de ne pas indexer enverrait deux signaux contradictoires à Google.
  *
  * `lastModified` n'est renseigné que là où une date réelle existe : les

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 /**
  * Image de partage anglaise (Open Graph et Twitter), même dessin que
- * `src/app/opengraph-image.tsx`, texte en anglais.
+ * `src/app/opengraph-image/route.tsx`, texte en anglais.
  *
  * Route (`GET /en/opengraph-image`) plutôt que fichier de métadonnées
  * `opengraph-image.tsx` : sous un segment autre que la racine, Next suffixe

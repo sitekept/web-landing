@@ -11,7 +11,7 @@
  * dessert plus qu'il ne sert.
  *
  * `demoSlug` pointe vers la démo correspondante. Ces démos sont en `noindex`
- * (voir src/middleware.ts) : le lien sert le visiteur, pas le référencement.
+ * (voir `headers()` de next.config.ts) : le lien sert le visiteur, pas le référencement.
  *
  * La version anglaise de chaque page vit dans src/content/metier-pages-en.ts,
  * indexée par le slug français.

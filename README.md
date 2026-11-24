@@ -1,4 +1,4 @@
-# SiteKept - Page d'Atterrissage d'Agence
+# Sitekept - Page d'Atterrissage d'Agence
 
 Une page d'atterrissage moderne et haute performance pour une agence de développement web construite avec Next.js 15, TypeScript et Tailwind CSS. Met l'accent sur le développement rapide, un design épuré et une architecture prête pour la production.
 
@@ -46,7 +46,7 @@ Une page d'atterrissage moderne et haute performance pour une agence de dévelop
 
    ```
    RESEND_API_KEY=votre-clé-api-resend
-   FROM_EMAIL=SiteKept <sitekept@gmail.com>
+   FROM_EMAIL=Sitekept <sitekept@gmail.com>
    AGENCY_EMAIL=sitekept@gmail.com
    ```
 
