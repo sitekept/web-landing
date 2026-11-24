@@ -1,31 +1,12 @@
-import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
-export const metadata: Metadata = {
-  title: "Le Fournil d'Or - Boulangerie Artisanale & Pain Traditionnel",
-  description:
-    "Le Fournil d'Or, maître boulanger depuis 1978. Pain traditionnel, baguettes, viennoiseries et spécialités artisanales. Méthodes traditionnelles et ingrédients soigneusement sélectionnés.",
-  keywords:
-    "boulangerie artisanale, pain traditionnel, baguette, viennoiserie, croissant, pain de campagne, boulanger, levain",
-  authors: [{ name: "Le Fournil d'Or" }],
-  openGraph: {
-    title: "Le Fournil d'Or - Boulangerie Artisanale & Pain Traditionnel",
-    description:
-      "Le Fournil d'Or, maître boulanger depuis 1978. Pain traditionnel, baguettes, viennoiseries et spécialités artisanales.",
-    type: "website",
-    locale: "fr_FR",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Le Fournil d'Or - Boulangerie Artisanale & Pain Traditionnel",
-    description:
-      "Le Fournil d'Or, maître boulanger depuis 1978. Pain traditionnel, baguettes, viennoiseries et spécialités artisanales.",
-  },
-};
+import { BoulangerieShell } from "@/templates/boulangerie/shell";
 
+/** Layout du template boulangerie (français), partagé avec la version anglaise. */
 export default function BoulangerieLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
-  return <>{children}</>;
+  return <BoulangerieShell locale="fr">{children}</BoulangerieShell>;
 }

@@ -1,0 +1,215 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import {
+  blogPosts,
+  getBlogPost,
+  getLocalizedText,
+  getLocalizedValue,
+  type SiteLocale,
+} from "@/content/site-content";
+import { buildPageMetadata } from "@/lib/page-metadata";
+import { linkLocalizer } from "@/lib/localized-routes";
+import {
+  BlogPostingJsonLd,
+  BreadcrumbJsonLd,
+} from "@/components/structured-data";
+
+/** Slugs à prérendre pour une langue : chaque article a un slug par langue. */
+export function getBlogStaticParams(locale: SiteLocale) {
+  return blogPosts.map((post) => ({
+    slug: locale === "fr" ? post.slug : post.enSlug,
+  }));
+}
+
+export function blogPostMetadata(locale: SiteLocale, slug: string): Metadata {
+  const post = getBlogPost(slug, locale);
+
+  if (!post) {
+    return {};
+  }
+
+  return buildPageMetadata({
+    title: getLocalizedText(post.seoTitle, locale),
+    description: getLocalizedText(post.seoDescription, locale),
+    path: `/blog/${post.slug}`,
+    locale,
+  });
+}
+
+export function BlogPostView({
+  locale,
+  slug,
+}: {
+  locale: SiteLocale;
+  slug: string;
+}) {
+  const href = linkLocalizer(locale);
+  const post = getBlogPost(slug, locale);
+
+  if (!post) {
+    notFound();
+  }
+
+  const dateFormatter = new Intl.DateTimeFormat(
+    locale === "fr" ? "fr-FR" : "en-US",
+    { day: "numeric", month: "long", year: "numeric" }
+  );
+  const publishedLabel = dateFormatter.format(new Date(post.publishedAt));
+  const updatedLabel = dateFormatter.format(new Date(post.updatedAt));
+  const wasUpdated = post.updatedAt !== post.publishedAt;
+
+  return (
+    <>
+      <BlogPostingJsonLd
+        path={href(`/blog/${post.slug}`)}
+        headline={getLocalizedText(post.title, locale)}
+        description={getLocalizedText(post.seoDescription, locale)}
+        publishedAt={post.publishedAt}
+        updatedAt={post.updatedAt}
+        author={post.author}
+        locale={locale}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: locale === "fr" ? "Accueil" : "Home", path: href("/") },
+          { name: "Blog", path: href("/blog") },
+          {
+            name: getLocalizedText(post.title, locale),
+            path: href(`/blog/${post.slug}`),
+          },
+        ]}
+      />
+
+      <section className="bg-[linear-gradient(180deg,#eff6ff_0%,#ffffff_100%)] px-6 pb-14 pt-28 sm:pt-32 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
+            {getLocalizedText(post.category, locale)}
+          </p>
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+            {getLocalizedText(post.title, locale)}
+          </h1>
+
+          {/* Signature et datation : deux signaux E-E-A-T absents jusqu'ici,
+              et prérequis du schéma BlogPosting. */}
+          <p className="mt-5 text-sm text-slate-500">
+            <span>{post.author}</span>
+            <span aria-hidden="true"> · </span>
+            <time dateTime={post.publishedAt}>
+              {locale === "fr"
+                ? `Publié le ${publishedLabel}`
+                : `Published ${publishedLabel}`}
+            </time>
+            {wasUpdated ? (
+              <>
+                <span aria-hidden="true"> · </span>
+                <time dateTime={post.updatedAt}>
+                  {locale === "fr"
+                    ? `mis à jour le ${updatedLabel}`
+                    : `updated ${updatedLabel}`}
+                </time>
+              </>
+            ) : null}
+          </p>
+
+          <p className="mt-6 text-lg leading-8 text-slate-600">
+            {getLocalizedText(post.intro, locale)}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 pb-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <article className="space-y-10">
+            {post.sections.map((section) => {
+              const paragraphs = getLocalizedValue(section.paragraphs, locale);
+              const bullets = section.bullets
+                ? getLocalizedValue(section.bullets, locale)
+                : undefined;
+
+              return (
+                <section key={section.id} className="rounded-md border border-blue-100 bg-slate-50 p-8">
+                  <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+                    {getLocalizedText(section.title, locale)}
+                  </h2>
+                  <div className="mt-5 space-y-4 text-base leading-8 text-slate-700">
+                    {paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                  {bullets?.length ? (
+                    <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-700">
+                      {bullets.map((bullet) => (
+                        <li key={bullet} className="flex gap-3">
+                          <span className="mt-2 h-2 w-2 rounded-full bg-blue-600" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </section>
+              );
+            })}
+          </article>
+
+          <aside className="space-y-6">
+            <div className="rounded-md border border-blue-900/40 bg-[linear-gradient(135deg,#0f172a_0%,#172554_100%)] p-8 text-white">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-300">
+                Sitekept
+              </p>
+              <h2 className="mt-4 text-2xl font-semibold">
+                {getLocalizedText(post.ctaTitle, locale)}
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-slate-300">
+                {getLocalizedText(post.ctaDescription, locale)}
+              </p>
+              <div className="mt-6 flex flex-col gap-3">
+                <Button asChild className="bg-blue-600 text-white hover:bg-blue-700">
+                  <Link href={href("/#contact")}>
+                    {locale === "fr" ? "Demander un devis" : "Request a quote"}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-white/20 bg-transparent text-white hover:bg-white/10"
+                >
+                  <Link href={href("/templates")}>
+                    {locale === "fr" ? "Voir les templates" : "Browse templates"}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="rounded-md border border-blue-100 bg-white p-6 shadow-sm">
+              <h3 className="text-lg font-semibold text-slate-950">
+                {locale === "fr" ? "Autres pages utiles" : "Other useful pages"}
+              </h3>
+              <div className="mt-4 space-y-4">
+                {blogPosts
+                  .filter((candidate) => candidate.slug !== post.slug)
+                  .map((candidate) => (
+                    <Link
+                      key={candidate.slug}
+                      href={href(`/blog/${candidate.slug}`)}
+                      className="block rounded-sm bg-slate-50 p-4 transition hover:bg-blue-50"
+                    >
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-700">
+                        {getLocalizedText(candidate.category, locale)}
+                      </p>
+                      <p className="mt-2 text-sm font-medium leading-6 text-slate-900">
+                        {getLocalizedText(candidate.title, locale)}
+                      </p>
+                    </Link>
+                  ))}
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </>
+  );
+}

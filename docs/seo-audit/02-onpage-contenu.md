@@ -1,5 +1,7 @@
 # Audit SEO on-page & contenu — sitekept.com
 
+> Note (phase 7) : `src/content/admin-template-catalog.ts` a été remplacé par `src/content/templates/registry.ts` (et `src/lib/public-template-routes.ts`) depuis la refonte ; les références à ce fichier ci-dessous datent de l’audit. Le doublon `public/logo-sitekept-rond copy.webp` a été supprimé.
+
 **Date** : 10 août 2026
 **Périmètre** : SEO on-page + contenu (hors technique pure / Core Web Vitals / netlinking)
 **Méthode** : lecture du code (branche `dev`, HEAD `1c7c98d`) + inspection du HTML rendu en production (`curl -L`, parsing des `<head>`, des `Hn` et des `<a href>`)

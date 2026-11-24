@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Gift, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { scrollToSection } from "./scroll-to-section";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -67,11 +68,7 @@ export function Hero() {
           <Button
             size="lg"
             className="transform bg-blue-600 px-8 py-3 text-lg text-white transition-all duration-200 hover:scale-105 hover:bg-blue-700"
-            onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => scrollToSection("contact")}
           >
             {t("cta")}
             <ArrowRight className="ml-2 h-5 w-5" />

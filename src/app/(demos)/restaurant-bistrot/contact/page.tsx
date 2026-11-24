@@ -1,27 +1,13 @@
-import { BistrotSection } from "../bistrot-ui";
+import { restaurantBistrot } from "@/content/templates/restaurant-bistrot";
+import { buildTemplatePageMetadata } from "@/lib/template-metadata";
+import { ContactView } from "@/templates/restaurant-bistrot/contact";
 
-export default function RestaurantBistrotContactPage() {
-  return (
-    <main className="bg-[#221918] pt-28 text-white">
-      <BistrotSection
-        eyebrow="Contact"
-        title="Une page brève pour venir, appeler ou écrire."
-      >
-        <div className="grid gap-4 lg:grid-cols-3">
-          {[
-            "17 rue Keller, Paris 11e",
-            "Mar-Sam, 12h-14h30 et 19h-22h30",
-            "reservation@lesillon.example",
-          ].map((item) => (
-            <div
-              key={item}
-              className="border border-white/10 bg-white/6 p-6 text-sm leading-7 text-white/76"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </BistrotSection>
-    </main>
-  );
+export const metadata = buildTemplatePageMetadata(
+  restaurantBistrot,
+  "fr",
+  "contact"
+);
+
+export default function Page() {
+  return <ContactView locale="fr" />;
 }

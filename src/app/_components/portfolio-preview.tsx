@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { type SiteLocale } from "@/content/site-content";
+import { linkLocalizer } from "@/lib/localized-routes";
 import { getMessage } from "@/lib/site-messages";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -14,6 +15,7 @@ export function PortfolioPreview({
   locale,
   sectionId = "selected-templates",
 }: PortfolioPreviewProps) {
+  const href = linkLocalizer(locale);
   const cards = [
     {
       id: "templates",
@@ -21,15 +23,15 @@ export function PortfolioPreview({
       title: getMessage(locale, "portfolio.templates.title"),
       description: getMessage(locale, "portfolio.templates.description"),
       cta: getMessage(locale, "portfolio.templates.cta"),
-      href: "/templates",
+      href: href("/templates"),
     },
     {
       id: "realizations",
-      eyebrow: locale === "fr" ? "Realisations" : "Our work",
+      eyebrow: locale === "fr" ? "Réalisations" : "Our work",
       title: getMessage(locale, "portfolio.realizations.title"),
       description: getMessage(locale, "portfolio.realizations.description"),
       cta: getMessage(locale, "portfolio.realizations.cta"),
-      href: "/realization",
+      href: href("/realization"),
     },
   ] as const;
 
@@ -38,7 +40,7 @@ export function PortfolioPreview({
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
-            {locale === "fr" ? "Templates et réalisations" : "Templates and work"}
+            {locale === "fr" ? "Templates et réalisations" : "Templates and our work"}
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
             {getMessage(locale, "portfolio.title")}

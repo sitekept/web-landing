@@ -1,6 +1,8 @@
+import type { SiteLocale } from "@/content/site-content";
+import { STATIC_PATH_MAP, localizeHref } from "@/lib/i18n-paths";
 import { SITE_URL } from "@/lib/site-url";
 
-const t = {
+const fr = {
   subject: "Bien reçu ! 4 questions avant notre échange",
   greeting: "Bonjour,",
   thanks: "Merci pour votre demande, elle est bien arrivée chez nous.",
@@ -25,6 +27,33 @@ const t = {
   footer: "Vous recevez ce message car vous avez envoyé une demande sur",
 };
 
+const en: typeof fr = {
+  subject: "Got it! 4 questions before we talk",
+  greeting: "Hello,",
+  thanks: "Thank you for your request. We've received it.",
+  eager:
+    "We look forward to talking with you about your project. Before we call, here are the questions we'll ask:",
+  questions: [
+    "What is the number one goal of your website: being found on Google, receiving quote requests, taking bookings, or selling online?",
+    "Do you already have a domain name, a logo, photos, or an existing website to replace?",
+    "Which 2 or 3 websites do you like (competitors or not), and what do you like about them?",
+    "When would you like to be online, and what budget do you have in mind?",
+  ],
+  prepare:
+    "Taking a few minutes to think them over will let us get straight to the point and give you a clear price on our very first call.",
+  answersBefore: "Already have the answers? Send them to",
+  answersAfter: ", and we'll save time.",
+  meanwhile: "In the meantime, take a look at the websites we've delivered:",
+  cta: "See our work",
+  noReply:
+    "This email was sent automatically. Please do not reply to it directly.",
+  closing: "Talk soon,",
+  signature: "The Sitekept team",
+  footer: "You are receiving this message because you submitted a request on",
+};
+
+const COPY: Record<SiteLocale, typeof fr> = { fr, en };
+
 const FONT =
   "font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;";
 const PARAGRAPH = `margin:0 0 18px;${FONT}font-size:16px;line-height:1.6;color:#334155;`;
@@ -32,8 +61,16 @@ const PARAGRAPH = `margin:0 0 18px;${FONT}font-size:16px;line-height:1.6;color:#
 // Aucun contenu saisi par le visiteur ici, pas même son nom : le formulaire est
 // public, il ne doit pas permettre de faire envoyer un texte ou un lien de son
 // choix à une adresse tierce depuis notre domaine.
-export function buildConfirmationEmail(contactEmail: string) {
-  const realizationUrl = `${SITE_URL}/realization`;
+export function buildConfirmationEmail(
+  contactEmail: string,
+  locale: SiteLocale = "fr"
+) {
+  const t = COPY[locale];
+  const realizationUrl = `${SITE_URL}${localizeHref(
+    "/realization",
+    locale,
+    STATIC_PATH_MAP
+  )}`;
   const siteLabel = new URL(SITE_URL).hostname.replace(/^www\./, "");
 
   return {

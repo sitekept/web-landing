@@ -17,7 +17,10 @@
     "type-check": "tsc --noEmit",
     "clean": "rm -rf .next node_modules",
     "reinstall": "pnpm clean && pnpm install",
-    "update-deps": "pnpm update --interactive"
+    "update-deps": "pnpm update --interactive",
+    "harness:snapshot": "node scripts/template-harness/snapshot.mjs",
+    "harness:headers": "bash scripts/template-harness/headers.sh",
+    "check:routes": "node scripts/check-template-routes.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
@@ -31,6 +34,7 @@
     "clsx": "^2.1.1",
     "libphonenumber-js": "^1.13.15",
     "lucide-react": "^0.522.0",
+    "motion": "^14.9.0",
     "next": "15.3.6",
     "next-intl": "^4.3.4",
     "react": "^19.0.0",

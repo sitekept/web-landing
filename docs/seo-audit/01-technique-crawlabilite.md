@@ -1,5 +1,7 @@
 # Audit SEO technique & crawlabilité — sitekept.com
 
+> Note (phase 7) : `src/content/admin-template-catalog.ts` a été remplacé par `src/content/templates/registry.ts` (et `src/lib/public-template-routes.ts`) depuis la refonte ; les références à ce fichier ci-dessous datent de l’audit. Le doublon `public/logo-sitekept-rond copy.webp` a été supprimé.
+
 **Date :** 2026-08-10
 **Branche auditée :** `dev` (HEAD `1c7c98d`)
 **Prod observée :** `https://www.sitekept.com` (Vercel, `fra1`)

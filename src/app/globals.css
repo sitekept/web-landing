@@ -41,6 +41,236 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Tokens de template : vocabulaire fermé, valeurs dans [data-template]. */
+  --color-tpl-ink: var(--tpl-ink);
+  --color-tpl-ink-muted: var(--tpl-ink-muted);
+  --color-tpl-surface: var(--tpl-surface);
+  --color-tpl-raised: var(--tpl-raised);
+  /*
+   * Troisième fond clair : teinte facultative du thème, sinon surface foncée de
+   * 6 %. `surface` en premier : c'est elle que garde le repli sans color-mix.
+   */
+  --color-tpl-tint: var(
+    --tpl-tint,
+    color-mix(in oklch, var(--tpl-surface) 94%, var(--tpl-ink))
+  );
+  --color-tpl-line: var(--tpl-line);
+  /* Sur-titres : teinte facultative du thème, sinon l'encre secondaire. */
+  --color-tpl-eyebrow: var(--tpl-eyebrow, var(--tpl-ink-muted));
+  --color-tpl-accent: var(--tpl-accent);
+  --color-tpl-accent-ink: var(--tpl-accent-ink);
+  --color-tpl-inverse: var(--tpl-inverse);
+  --color-tpl-inverse-ink: var(--tpl-inverse-ink);
+  --radius-tpl: var(--tpl-radius);
+  --radius-tpl-pill: var(--tpl-radius-pill);
+  --font-tpl-display: var(--tpl-font-display, var(--font-inter));
+  --font-tpl-text: var(--tpl-font-text, var(--font-inter));
+  --shadow-tpl-sm: var(--tpl-shadow-sm);
+  --shadow-tpl-lg: var(--tpl-shadow-lg);
+  --spacing-tpl-section: var(--tpl-space-section);
+  --container-tpl-measure: var(--tpl-measure);
+  --leading-tpl-display: var(--tpl-leading-display);
+  --leading-tpl-body: var(--tpl-leading-body);
+  --tracking-tpl-eyebrow: var(--tpl-tracking-eyebrow);
+  /* xs à lg : texte courant (interlignage body) ; xl à 3xl : titres (display). */
+  --text-tpl-xs: var(--tpl-text-xs);
+  --text-tpl-xs--line-height: var(--tpl-leading-body);
+  --text-tpl-sm: var(--tpl-text-sm);
+  --text-tpl-sm--line-height: var(--tpl-leading-body);
+  --text-tpl-base: var(--tpl-text-base);
+  --text-tpl-base--line-height: var(--tpl-leading-body);
+  --text-tpl-lg: var(--tpl-text-lg);
+  --text-tpl-lg--line-height: var(--tpl-leading-body);
+  --text-tpl-xl: var(--tpl-text-xl);
+  --text-tpl-xl--line-height: var(--tpl-leading-display);
+  --text-tpl-2xl: var(--tpl-text-2xl);
+  --text-tpl-2xl--line-height: var(--tpl-leading-display);
+  --text-tpl-3xl: var(--tpl-text-3xl);
+  --text-tpl-3xl--line-height: var(--tpl-leading-display);
+}
+
+/*
+ * Bande d'avis défilante du kit (`vendor/testimonials-marquee`).
+ * `inline` : la durée `--tpl-marquee-duration` est lue sur la bande, pas sur
+ * :root. L'espace entre cartes (`--tpl-marquee-gap`) est posé par le composant.
+ * `--tpl-marquee-dir` vaut -1 en `dir="rtl"` : la piste part vers la droite.
+ * Sous `prefers-reduced-motion`, le composant applique `motion-reduce:animate-none`
+ * et masque la piste dupliquée.
+ */
+@theme inline {
+  --animate-tpl-marquee: tpl-marquee var(--tpl-marquee-duration, 40s) linear
+    infinite;
+
+  @keyframes tpl-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(
+        calc((-100% - var(--tpl-marquee-gap, 1rem)) * var(--tpl-marquee-dir, 1))
+      );
+    }
+  }
+}
+
+/*
+ * Contrat des templates : un template rebinde ces --tpl-* via `style` sur
+ * l'élément [data-template] (voir src/lib/template-theme.ts). Les valeurs
+ * ci-dessous sont des replis neutres. Un nouveau besoin visuel devient
+ * d'abord un token ici, jamais une valeur en dur dans un composant.
+ * En @layer base pour que les utilitaires et le `style` inline priment.
+ */
+@layer base {
+  [data-template] {
+    /* Palette */
+    --tpl-ink: oklch(0.22 0.01 260);
+    --tpl-ink-muted: color-mix(
+      in oklch,
+      var(--tpl-ink) 68%,
+      var(--tpl-surface)
+    );
+    --tpl-surface: oklch(0.985 0.003 260);
+    --tpl-raised: oklch(1 0 0);
+    --tpl-line: color-mix(in oklch, var(--tpl-ink) 14%, transparent);
+    --tpl-accent: oklch(0.3 0.02 260);
+    --tpl-accent-ink: oklch(0.985 0.003 260);
+    --tpl-inverse: oklch(0.2 0.01 260);
+    --tpl-inverse-ink: oklch(0.97 0.003 260);
+
+    /* Formes et profondeur (2 paliers) */
+    --tpl-radius: 0.75rem;
+    --tpl-radius-pill: 9999px;
+    --tpl-shadow-sm:
+      0 1px 2px color-mix(in oklch, var(--tpl-ink) 8%, transparent),
+      0 1px 1px color-mix(in oklch, var(--tpl-ink) 4%, transparent);
+    --tpl-shadow-lg:
+      0 24px 48px -16px color-mix(in oklch, var(--tpl-ink) 18%, transparent),
+      0 8px 16px -8px color-mix(in oklch, var(--tpl-ink) 8%, transparent);
+
+    /* Rythme et mesure */
+    --tpl-space-section: clamp(4rem, 2.5rem + 6vw, 8rem);
+    --tpl-measure: 68ch;
+
+    /* Typographie */
+    --tpl-font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    --tpl-font-text: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    /*
+     * Graisse des titres en police d'affichage (kit : titres de section, de
+     * carte, marque du shell). Repli = `font-semibold`. Classe d'usage :
+     * `font-(weight:--tpl-display-weight)`. Pas de `--font-weight-tpl-*` dans
+     * @theme : il générerait `font-tpl-*`, que tailwind-merge (`cn()`) range
+     * parmi les familles et qui écraserait `font-tpl-display`.
+     */
+    --tpl-display-weight: 600;
+    --tpl-text-xs: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+    --tpl-text-sm: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
+    --tpl-text-base: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+    --tpl-text-lg: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+    --tpl-text-xl: clamp(1.5rem, 1.3rem + 1vw, 2.125rem);
+    --tpl-text-2xl: clamp(2.125rem, 1.6rem + 2.6vw, 3.75rem);
+    --tpl-text-3xl: clamp(2.25rem, 1rem + 6vw, 6.75rem);
+    --tpl-leading-display: 1.04;
+    --tpl-leading-body: 1.65;
+    --tpl-tracking-eyebrow: 0.18em;
+
+    /*
+     * En-tête du shell (`header` de TemplateShell). `--tpl-header-offset` est
+     * la hauteur que l'en-tête `floating` prend AU-DESSUS du premier bloc de la
+     * page, sans y réserver de place : le padding haut de la première section
+     * s'écrit `pt-[calc(var(--tpl-header-offset)+4rem)]`. Il vaut 0 pour `bar`
+     * et `rail` (en-tête dans le flux, ou colonne à côté du contenu), donc la
+     * même classe sert à toute largeur et à tout en-tête.
+     * `--tpl-header-height` = hauteur de la carte flottante (68 px de contenu
+     * + 2 px de bordure) ; `--tpl-header-gap` = distance au
+     * haut de l'écran, au repos comme collée.
+     */
+    --tpl-header-radius: var(--tpl-radius);
+    --tpl-header-gap: 0.75rem;
+    --tpl-header-height: 4.375rem;
+    --tpl-header-offset: 0px;
+    --tpl-rail-width: 18.125rem;
+  }
+
+  [data-template][data-header="floating"] {
+    --tpl-header-offset: calc(var(--tpl-header-gap) + var(--tpl-header-height));
+  }
+
+  /*
+   * Section inverse (TemplateSection tone="inverse") : l'encre et la surface
+   * basculent sur la paire inverse. `--tpl-ink-muted` et `--tpl-line` étant
+   * hérités déjà calculés depuis [data-template], on les redérive ici, ainsi
+   * que `--tpl-raised` pour les cartes posées sur ce fond.
+   */
+  [data-tone="inverse"] {
+    --tpl-ink: var(--tpl-inverse-ink);
+    --tpl-surface: var(--tpl-inverse);
+    /* `inverse` en premier : c'est lui que garde le repli sans color-mix. */
+    --tpl-raised: color-mix(
+      in oklch,
+      var(--tpl-inverse) 93%,
+      var(--tpl-inverse-ink)
+    );
+    --tpl-ink-muted: color-mix(
+      in oklch,
+      var(--tpl-ink) 68%,
+      var(--tpl-surface)
+    );
+    --tpl-line: color-mix(in oklch, var(--tpl-ink) 14%, transparent);
+    --tpl-eyebrow: var(--tpl-eyebrow-inverse, var(--tpl-ink-muted));
+    --tpl-tint: var(--tpl-raised);
+  }
+}
+
+/*
+ * Dégagement du focus clavier des templates (WCAG 2.4.11, focus non masqué).
+ * L'en-tête du shell est `sticky top-0` (69 px à toutes les largeurs) et la
+ * barre d'actions mobile `sticky bottom-0` (`data-mobile-actions` = point de
+ * rupture où elle disparaît, 57 à 86 px selon le template, la langue et le
+ * retour à la ligne). Sans réserve, Tab (ou Maj+Tab) peut laisser l'élément
+ * focalisé dessous. `scroll-padding` sur `html`, le conteneur de défilement,
+ * réduit la zone où le navigateur considère un élément visible. Aucun JS,
+ * aucun effet sur le site marketing ni sur les démos écrites à la main (pas de
+ * `[data-template]`). Valeurs en `rem` pour suivre la taille de police.
+ *  - haut : 5rem (80 px) = en-tête + 11 px ; vaut aussi pour les ancres `#…`
+ *    (corps de page et lien d'évitement `#contenu`), donc pas de `scroll-mt-*`
+ *    dans les vues : les deux s'additionneraient ;
+ *  - bas : 6rem (96 px) = la plus haute barre mesurée (85,6 px, deux lignes à
+ *    320 px) + une marge, seulement sous le point de rupture de la barre
+ *    (`md` = 48rem, `xl` = 80rem, comme les classes `md:hidden` / `xl:hidden`).
+ */
+html:has([data-template]) {
+  scroll-padding-top: 5rem;
+}
+
+/*
+ * En-tête flottant : la carte occupe de 12 px (`--tpl-header-gap`) à 82 px du
+ * haut ; 6rem (96 px) laisse 14 px sous elle. Si `--tpl-header-gap` ou
+ * `--tpl-header-height` changent, relever cette valeur (une variable posée sur
+ * [data-template] n'est pas lisible depuis `html`).
+ * Colonne latérale : à partir de `xl` il n'y a plus d'en-tête collé en haut,
+ * une marge de 1.5rem suffit ; en dessous, la barre habituelle (5rem).
+ */
+html:has([data-template][data-header="floating"]) {
+  scroll-padding-top: 6rem;
+}
+
+@media (width >= 80rem) {
+  html:has([data-template][data-header="rail"]) {
+    scroll-padding-top: 1.5rem;
+  }
+}
+
+@media (width < 80rem) {
+  html:has([data-template] > [data-mobile-actions="xl"]) {
+    scroll-padding-bottom: 6rem;
+  }
+}
+
+@media (width < 48rem) {
+  html:has([data-template] > [data-mobile-actions="md"]) {
+    scroll-padding-bottom: 6rem;
+  }
 }
 
 :root {

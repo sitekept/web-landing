@@ -1,0 +1,80 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  blogPageCopy,
+  blogPosts,
+  getLocalizedText,
+  type SiteLocale,
+} from "@/content/site-content";
+import { buildPageMetadata } from "@/lib/page-metadata";
+import { linkLocalizer } from "@/lib/localized-routes";
+
+export function blogIndexMetadata(locale: SiteLocale): Metadata {
+  return buildPageMetadata({
+    title:
+      locale === "fr"
+        ? "Blog Sitekept | Guides création de site et SEO"
+        : "Sitekept blog | Guides to building a website and SEO",
+    description:
+      locale === "fr"
+        ? "Nos guides pour créer, posséder et référencer votre site web : prix, propriété du code, SEO et visibilité dans les réponses IA."
+        : "Our guides to building, owning and ranking your website: pricing, code ownership, SEO and visibility in AI answers.",
+    path: "/blog",
+    locale,
+  });
+}
+
+export function BlogIndexView({ locale }: { locale: SiteLocale }) {
+  const href = linkLocalizer(locale);
+
+  return (
+    <>
+      <section className="bg-[linear-gradient(180deg,#eef2ff_0%,#ffffff_100%)] px-6 pb-16 pt-28 sm:pt-32 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-blue-700">
+            {getLocalizedText(blogPageCopy.eyebrow, locale)}
+          </p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+            {getLocalizedText(blogPageCopy.title, locale)}
+          </h1>
+          <p className="mt-5 text-lg leading-8 text-slate-600">
+            {getLocalizedText(blogPageCopy.description, locale)}
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-white px-6 pb-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+          {blogPosts.map((post) => (
+            <article
+              key={post.slug}
+              className="rounded-md border border-blue-100 bg-slate-50 p-8 shadow-sm"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-blue-700">
+                {getLocalizedText(post.category, locale)}
+              </p>
+              <h2 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">
+                {getLocalizedText(post.title, locale)}
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-slate-600">
+                {getLocalizedText(post.excerpt, locale)}
+              </p>
+              <Button
+                asChild
+                variant="outline"
+                className="mt-6 border-blue-200 bg-white text-slate-900 hover:bg-blue-50"
+              >
+                <Link href={href(`/blog/${post.slug}`)}>
+                  {locale === "fr" ? "Lire la page" : "Read the article"}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}

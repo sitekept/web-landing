@@ -6,7 +6,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { SiteLocale } from "@/content/site-content";
+import type { SiteLocale } from "@/content/site-content";
+import {
+  getAlternatePath,
+  localizeHref,
+  type PathMap,
+} from "@/lib/i18n-paths";
 
 const NAVIGATION_ITEMS = [
   { key: "templates", href: "/templates" },
@@ -31,6 +36,9 @@ const navigationLabels = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     brandMeta: "SEO, GEO, lancement rapide",
+    switchLabel: "EN",
+    switchAria: "Read this page in English",
+    homeAria: "Sitekept, accueil",
   },
   en: {
     templates: "Templates",
@@ -44,18 +52,27 @@ const navigationLabels = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     brandMeta: "SEO, GEO, fast launch",
+    switchLabel: "FR",
+    switchAria: "Lire cette page en français",
+    homeAria: "Sitekept, home",
   },
 } as const;
 
 interface NavigationProps {
   locale: SiteLocale;
+  /** Table des chemins français → anglais, construite côté serveur. */
+  pathMap: PathMap;
 }
 
-export function Navigation({ locale }: NavigationProps) {
+export function Navigation({ locale, pathMap }: NavigationProps) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const labels = navigationLabels[locale];
+  const href = (frenchPath: string) => localizeHref(frenchPath, locale, pathMap);
+  const homePath = href("/");
+  const alternatePath = getAlternatePath(pathname, locale, pathMap);
+  const alternateLocale = locale === "fr" ? "en" : "fr";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +85,7 @@ export function Navigation({ locale }: NavigationProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const solidNavigation = pathname !== "/" || isScrolled;
+  const solidNavigation = pathname !== homePath || isScrolled;
   const navClassName = solidNavigation
     ? "bg-white/95 shadow-sm backdrop-blur-md"
     : "bg-transparent";
@@ -80,7 +97,11 @@ export function Navigation({ locale }: NavigationProps) {
     <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${navClassName}`}>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-3">
+          <Link
+            href={homePath}
+            aria-label={labels.homeAria}
+            className="flex items-center gap-3"
+          >
             <div className="flex h-8 w-8 items-center justify-center">
               <Image
                 src="/logo.png"
@@ -108,17 +129,28 @@ export function Navigation({ locale }: NavigationProps) {
             {NAVIGATION_ITEMS.map((item) => (
               <Link
                 key={item.key}
-                href={item.href}
+                href={href(item.href)}
                 className={`text-sm font-medium transition-colors hover:text-blue-600 ${textClassName}`}
               >
                 {labels[item.key]}
               </Link>
             ))}
+            <a
+              href={alternatePath}
+              hrefLang={alternateLocale}
+              lang={alternateLocale}
+              aria-label={labels.switchAria}
+              className={`rounded-sm border px-2 py-1 text-xs font-semibold tracking-wider transition-colors hover:text-blue-600 ${
+                solidNavigation ? "border-slate-300" : "border-white/30"
+              } ${textClassName}`}
+            >
+              {labels.switchLabel}
+            </a>
             <Button
               asChild
               className="bg-blue-600 text-white hover:bg-blue-700"
             >
-              <Link href="/#contact">{labels.start}</Link>
+              <Link href={href("/#contact")}>{labels.start}</Link>
             </Button>
           </div>
 
@@ -139,7 +171,7 @@ export function Navigation({ locale }: NavigationProps) {
               {NAVIGATION_ITEMS.map((item) => (
                 <Link
                   key={item.key}
-                  href={item.href}
+                  href={href(item.href)}
                   onClick={() => setIsOpen(false)}
                   className="block rounded-md px-3 py-2 text-base font-medium text-slate-700 transition-colors hover:bg-blue-50 hover:text-slate-950"
               >
@@ -152,10 +184,19 @@ export function Navigation({ locale }: NavigationProps) {
                 asChild
                 className="flex-1 bg-blue-600 text-white hover:bg-blue-700"
               >
-                <Link href="/#contact" onClick={() => setIsOpen(false)}>
+                <Link href={href("/#contact")} onClick={() => setIsOpen(false)}>
                   {labels.start}
                 </Link>
               </Button>
+              <a
+                href={alternatePath}
+                hrefLang={alternateLocale}
+                lang={alternateLocale}
+                aria-label={labels.switchAria}
+                className="rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold tracking-wider text-slate-700 hover:bg-blue-50"
+              >
+                {labels.switchLabel}
+              </a>
             </div>
           </div>
         ) : null}
